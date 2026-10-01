@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MH K-pop Shop</title>
+  <meta name="description" content="Albums, photocards, lightsticks and K-pop merch. Order through Instagram @mh.kpop.sell.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#top"><span class="logo-mark">MH</span> K-pop Shop</a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#how">How to order</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-small" id="nav-ig" href="#" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">✦ Albums · Photocards · Lightsticks · Merch</p>
+        <h1>Your favourite idols,<br><span class="grad">delivered to you.</span></h1>
+        <p class="lead">Official K-pop goods, in stock and on pre-order. Browse below and send us a DM on Instagram to order.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#shop">Browse the shop</a>
+          <a class="btn btn-ghost" id="hero-ig" href="#" target="_blank" rel="noopener">DM to order</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="card-float c1">💿</div>
+        <div class="card-float c2">💌</div>
+        <div class="card-float c3">🔦</div>
+      </div>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="section-head">
+        <h2>Shop</h2>
+        <input id="search" type="search" placeholder="Search albums, groups…" aria-label="Search products">
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>Nothing matches that. Try another search, or DM us to ask about it!</p>
+    </section>
+
+    <section id="how" class="section how">
+      <h2>How to order</h2>
+      <ol class="steps">
+        <li><span>1</span><h3>Pick your items</h3><p>Tap <b>Order</b> on any product. It copies an order message for you.</p></li>
+        <li><span>2</span><h3>DM us on Instagram</h3><p>Paste the message in a DM to <b class="ig-handle">@mh.kpop.sell</b> and we'll confirm stock and the total.</p></li>
+        <li><span>3</span><h3>Pay &amp; receive</h3><p>Once paid, we pack it carefully and send your tracking details.</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" class="section faq">
+      <h2>FAQ</h2>
+      <details><summary>Are the items official?</summary><p>Yes, everything we sell is official merchandise.</p></details>
+      <details><summary>How do pre-orders work?</summary><p>You reserve the item now and we ship it as soon as it's released and arrives with us.</p></details>
+      <details><summary>How is shipping packed?</summary><p>Albums go in bubble wrap and sturdy boxes, and photocards are sleeved and toploaded.</p></details>
+      <details><summary>Can I ask for something not listed?</summary><p>Of course. Send us a DM and we'll do our best to source it.</p></details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><b>MH K-pop Shop</b> · Follow us on <a class="ig-link" href="#" target="_blank" rel="noopener">Instagram</a></p>
+    <p class="small">© <span id="year"></span> MH K-pop Shop</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
