@@ -623,5 +623,47 @@ IB.addDrill("phys", {
         rule: "(a) M1 A1. (b) M1 A1, [1] judgement. (c) [1] apparatus, [1] variables controlled, [1] graph. ECF.", numeric: { value: 0.00001, tol: 0.0000001 },
         pts: ["(a) B = 4π × 10⁻⁷ × 500 ÷ (2π × 10) (M1) [1] = 0.00001 T / 1.0 × 10⁻⁵ T (A1) [1].", "(b) 1.0 × 10⁻⁵ ÷ 5.0 × 10⁻⁵ (M1) [1] = 0.20 (A1) [1]; noticeable deflection for DC, but mains AC averages to zero so little effect [1].", "(c) Use a Hall probe / magnetic field sensor at measured distances from a wire carrying a constant current [1]; keep current constant, zero the probe in Earth's field, align probe perpendicular to field [1]; plot B against 1/r: a straight line through the origin [1]."] }
     ]
+  },
+  "phys-18": {
+    units: { a: "Charges in electric fields", b: "Charges in magnetic fields", c: "Force on conductors" },
+    paper: "P2",
+    qs: [
+      { u: "a", s: "A", m: "1", paper: "P1A", t: "A proton and an alpha particle are accelerated from rest through the same potential difference. What is the ratio KE(alpha) ÷ KE(proton)?",
+        options: ["1", "2", "4", "0.5"], answer: 1, rule: "[1] for the correct option.", pts: ["B: KE = qV and the alpha particle has charge 2e [1]."] },
+      { u: "a", s: "A", m: "2", t: "Define the electronvolt and convert 5.0 keV into joules.", rule: "[1] definition, [1] conversion.",
+        pts: ["Energy gained by an electron (charge e) accelerated through a p.d. of 1 V; 1 eV = 1.60 × 10⁻¹⁹ J [1];", "5.0 keV = 5000 × 1.60 × 10⁻¹⁹ = 8.0 × 10⁻¹⁶ J [1]."] },
+      { u: "a", s: "A", m: "3", t: "A proton is accelerated from rest through 2000 V. Calculate its final speed. m_p = 1.67 × 10⁻²⁷ kg, e = 1.60 × 10⁻¹⁹ C.", rule: "M1 qV = ½mv², M1 substitution, A1.", numeric: { value: 619000, tol: 6200 },
+        pts: ["qV = ½mv² (M1) [1]", "v = √(2 × 1.60 × 10⁻¹⁹ × 2000 ÷ 1.67 × 10⁻²⁷) (M1) [1]", "= 619000 m s⁻¹ / 6.2 × 10⁵ m s⁻¹ (A1) [1]."] },
+      { u: "a", s: "A", m: "2", t: "Explain why an electron moving parallel to a uniform electric field (in the direction of the field) slows down.", rule: "[1] force direction, [1] consequence.",
+        pts: ["Force on an electron is opposite to the field direction [1];", "the force opposes its motion so it decelerates uniformly / work is done against it, losing KE [1]."] },
+      { u: "a", s: "A", m: "2", t: "Compare the path of a charged particle entering a uniform electric field at right angles with the path of a projectile in a uniform gravitational field.", rule: "[1] same shape, [1] reason.",
+        pts: ["Both are parabolic [1];", "constant force (and acceleration) perpendicular to the initial velocity, with constant velocity in the original direction [1]."] },
+      { u: "b", s: "A", m: "1", paper: "P1A", t: "A charged particle moves in a circle in a uniform magnetic field. Its speed is doubled. The period of its motion",
+        options: ["doubles", "halves", "is unchanged", "quadruples"], answer: 2, rule: "[1] for the correct option.", pts: ["C: T = 2πm/qB, independent of speed [1]."] },
+      { u: "b", s: "A", m: "1", paper: "P1A", t: "Which particle, entering the same uniform magnetic field at right angles with the same speed, follows the path of greatest radius?",
+        options: ["Electron", "Proton", "Alpha particle", "Positron"], answer: 2, rule: "[1] for the correct option.", pts: ["C: r = mv/qB; m/q is largest for the alpha particle (4u/2e vs 1u/1e) [1]."] },
+      { u: "b", s: "A", m: "2", t: "Calculate the force on an electron moving at 3.0 × 10⁷ m s⁻¹ perpendicular to a magnetic field of 0.020 T. e = 1.60 × 10⁻¹⁹ C.", rule: "M1, A1.", 
+        pts: ["F = qvB = 1.60 × 10⁻¹⁹ × 3.0 × 10⁷ × 0.020 (M1) [1]", "= 9.6 × 10⁻¹⁴ N (A1) [1]."] },
+      { u: "b", s: "A", m: "2", t: "Explain why a magnetic field does no work on a moving charged particle.", rule: "[1] force perpendicular to velocity, [1] speed/KE constant.",
+        pts: ["The magnetic force is always perpendicular to the velocity [1];", "so no displacement in the direction of the force: speed and kinetic energy stay constant [1]."] },
+      { u: "b", s: "A", m: "3", t: "In a velocity selector, E = 4.0 × 10⁴ V m⁻¹ and B = 0.050 T. Calculate the speed of undeflected particles, and explain why this is independent of charge and mass.", rule: "M1 qE = qvB, A1, [1] explanation.", numeric: { value: 800000, tol: 8000 },
+        pts: ["qE = qvB so v = E/B (M1) [1]", "v = 4.0 × 10⁴ ÷ 0.050 = 800000 m s⁻¹ / 8.0 × 10⁵ m s⁻¹ (A1) [1]", "q cancels and neither force depends on mass [1]."] },
+      { u: "b", s: "A", m: "2", t: "Outline how the Earth's magnetic field produces the aurora.", rule: "[1] charged particles guided, [1] collision with atmosphere.",
+        pts: ["Charged particles from the solar wind spiral along magnetic field lines towards the polar regions [1];", "they collide with and excite atmospheric atoms (oxygen, nitrogen), which emit light when de-exciting [1]."] },
+      { u: "c", s: "A", m: "1", paper: "P1A", t: "A wire carrying current I lies at 30° to a uniform magnetic field B. What is the force per unit length?",
+        options: ["BI", "BI sin 30°", "BI cos 30°", "Zero"], answer: 1, rule: "[1] for the correct option.", pts: ["B: F = BIL sin θ [1]."] },
+      { u: "c", s: "A", m: "2", t: "Explain why a current-carrying coil in a magnetic field experiences a turning effect, as in a DC motor.", rule: "[1] opposite forces on sides, [1] couple.",
+        pts: ["Current flows in opposite directions in the two sides of the coil perpendicular to the field, so forces are in opposite directions [1];", "these forces have different lines of action, forming a couple / torque that rotates the coil [1]."] },
+      { u: "c", s: "A", m: "3", t: "A hypothetical current balance: a horizontal wire of length 0.050 m is in a field perpendicular to it. The extra mass reading on a balance changes with current. Use the data to determine B (g = 9.8 m s⁻²).",
+        data: [["Current / A", "1.0", "2.0", "3.0"], ["Mass reading change / g", "0.20", "0.40", "0.60"]],
+        rule: "[1] force from mass, M1 B = F/IL, A1.", numeric: { value: 0.0392, tol: 0.0004 },
+        pts: ["At 1.0 A: F = 0.20 × 10⁻³ × 9.8 = 1.96 × 10⁻³ N [1]", "B = F ÷ IL = 1.96 × 10⁻³ ÷ (1.0 × 0.050) (M1) [1]", "= 0.0392 T (A1) [1]."] },
+      { u: "b", s: "C", m: "3+3+2", t: "Protons of mass 1.67 × 10⁻²⁷ kg and charge 1.60 × 10⁻¹⁹ C are accelerated from rest through 5000 V and then enter a uniform magnetic field of 0.10 T at right angles. (a) Calculate the speed of the protons. (b) Calculate the radius of their circular path and the time for half a revolution. (c) Deuterons (charge e, mass about twice that of a proton) are accelerated through the same p.d. Determine the ratio of their radius to that of the protons.",
+        rule: "(a) M1 A1 (+[1] KE). (b) M1 A1 radius, A1 time. (c) M1 A1. ECF.", numeric: { value: 0.102, tol: 0.001 },
+        pts: ["(a) KE = 1.60 × 10⁻¹⁹ × 5000 = 8.0 × 10⁻¹⁶ J [1]; v = √(2 × 8.0 × 10⁻¹⁶ ÷ 1.67 × 10⁻²⁷) (M1) [1] = 9.79 × 10⁵ m s⁻¹ (A1) [1].", "(b) r = mv/qB = 1.67 × 10⁻²⁷ × 9.79 × 10⁵ ÷ (1.60 × 10⁻¹⁹ × 0.10) (M1) [1] = 0.102 m (A1) [1]; t = πm/qB = 3.3 × 10⁻⁷ s (A1) [1].", "(c) r = √(2mV/q)/B so r ∝ √m (M1) [1]; ratio = √2 = 1.41 (A1) [1]."] },
+      { u: "c", s: "C", m: "2+3+3", t: "A rectangular coil of 50 turns, 0.040 m by 0.030 m, carries 0.80 A in a uniform field of 0.25 T. The 0.040 m sides are perpendicular to the field. (a) Calculate the force on one 0.040 m side of the coil. (b) Calculate the maximum torque on the coil when its plane is parallel to the field. (c) Explain why the torque falls to zero when the plane of the coil is perpendicular to the field, and how a commutator keeps a DC motor turning.",
+        rule: "(a) M1 A1. (b) M1 lever arm, M1 couple, A1. (c) [1] forces in plane, [1] commutator reverses current, [1] every half turn. ECF.", numeric: { value: 0.4, tol: 0.004 },
+        pts: ["(a) F = NBIL = 50 × 0.25 × 0.80 × 0.040 (M1) [1] = 0.4 N / 0.40 N (A1) [1].", "(b) Separation of forces = 0.030 m (M1) [1]; torque = F × d = 0.40 × 0.030 (M1) [1] = 0.012 N m (A1) [1].", "(c) The forces then act along the same line through the axis in the coil's plane, so they have no turning moment [1]; the commutator reverses the current in the coil [1]; every half turn, so the torque always acts in the same rotational direction [1]."] }
+    ]
   }
 });
