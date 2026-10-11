@@ -7,6 +7,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -16,7 +17,7 @@ jobs:
         with: { node-version: 20 }
       - run: npm run check
   ai-worker:
-    if: github.event_name == 'push'
+    if: github.event_name != 'pull_request'
     needs: check
     runs-on: ubuntu-latest
     outputs:
@@ -46,7 +47,7 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
   deploy:
     # Runs even if the AI Worker step fails, so the site itself always publishes.
-    if: always() && github.event_name == 'push' && needs.check.result == 'success'
+    if: always() && github.event_name != 'pull_request' && needs.check.result == 'success'
     needs: [check, ai-worker]
     runs-on: ubuntu-latest
     steps:
