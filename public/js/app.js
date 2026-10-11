@@ -151,11 +151,12 @@
       if (!t) return;
       t.units = Object.assign(t.units || {}, d.units || {});
       t.questions = t.questions || [];
+      const base = t.questions.filter((q) => q.sec === "drill").length; // later files continue the numbering
       d.qs.forEach((x, i) => {
         const marks = String(x.m).split("+").reduce((a, b) => a + Number(b), 0);
         const table = x.data ? `<div class="table-wrap"><table class="data" style="width:auto">${x.data.map((r, ri) => `<tr>${r.map((c) => (ri ? `<td>${c}</td>` : `<th>${c}</th>`)).join("")}</tr>`).join("")}</table></div>` : "";
         const q = {
-          id: `${t.id}-d${i + 1}`, subject: s.id, topic: t.id, sec: "drill", paper: x.paper || d.paper || "P2",
+          id: `${t.id}-d${base + i + 1}`, subject: s.id, topic: t.id, sec: "drill", paper: x.paper || d.paper || "P2",
           type: x.options ? "mcq" : x.s === "C" ? "extended" : "short", marks, diff: x.diff || (x.s === "C" ? 3 : marks <= 2 ? 1 : 2),
           q: (x.html ? x.t : esc(x.t)) + table, ms: x.pts, rule: x.rule, unit: x.u, unitName: t.units[x.u] || x.u, part: x.s,
           alt: x.s !== "C" && !x.numeric && !x.options,
