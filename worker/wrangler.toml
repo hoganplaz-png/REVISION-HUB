@@ -5,6 +5,6 @@ compatibility_date = "2026-09-01"
 workers_dev = true
 
 [vars]
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-flash-latest"
 RATE_LIMIT = "30"   # AI requests per visitor per hour
 ALLOWED_ORIGINS = "https://ib-revision-hub.web.app,https://ib-revision-hub.firebaseapp.com"
