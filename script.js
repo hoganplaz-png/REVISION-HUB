@@ -9,7 +9,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 PRODUCTS.forEach((p) => (p.id = slug(`${p.group} ${p.name}`)));
 const byId = Object.fromEntries(PRODUCTS.map((p) => [p.id, p]));
 
-const STATUS = { "in-stock": "In stock", "pre-order": "Pre-order", "sold-out": "Sold out" };
+const STATUS = { "in-stock": "有貨", "pre-order": "預訂", "sold-out": "售罄" };
 const PALETTES = [
   ["#c6ff3d", "#7ee8fa"], ["#b9a4ff", "#ff9ad5"], ["#ffcf6b", "#ff7a59"],
   ["#7ee8fa", "#b9a4ff"], ["#ff9ad5", "#ffcf6b"], ["#9dffcb", "#c6ff3d"],
@@ -27,6 +27,9 @@ document.querySelectorAll(".ig-link").forEach((a) => (a.href = igUrl));
 document.querySelectorAll(".dm-link").forEach((a) => (a.href = dmUrl));
 document.querySelectorAll(".ig-handle").forEach((el) => (el.textContent = "@" + SHOP.instagram));
 $("#year").textContent = new Date().getFullYear();
+$("#store-address").innerHTML = SHOP.store.address.map(esc).join("<br>");
+$("#store-hours").textContent = SHOP.store.hours;
+$("#store-note").textContent = SHOP.store.note;
 
 // ---------- marquee ----------
 const tags = [...new Set([...PRODUCTS.map((p) => p.group), ...PRODUCTS.map((p) => p.category)])];
@@ -34,9 +37,9 @@ const run = tags.map((t) => `<span>${esc(t)}</span><i>✦</i>`).join("");
 $("#marquee").innerHTML = run + run + run + run;
 
 // ---------- catalogue ----------
-let cat = "All";
+let cat = "全部";
 const catEl = $("#cat-filters");
-["All", ...new Set(PRODUCTS.map((p) => p.category))].forEach((c) => {
+["全部", ...new Set(PRODUCTS.map((p) => p.category))].forEach((c) => {
   const b = document.createElement("button");
   b.className = "chip";
   b.textContent = c;
@@ -49,7 +52,7 @@ const catEl = $("#cat-filters");
   catEl.appendChild(b);
 });
 const groupEl = $("#group-filter");
-groupEl.innerHTML = ["All groups", ...new Set(PRODUCTS.map((p) => p.group))].map((g) => `<option>${esc(g)}</option>`).join("");
+groupEl.innerHTML = ["所有組合", ...new Set(PRODUCTS.map((p) => p.group))].map((g) => `<option>${esc(g)}</option>`).join("");
 groupEl.onchange = renderGrid;
 $("#search").oninput = renderGrid;
 
@@ -57,8 +60,8 @@ function renderGrid() {
   const q = $("#search").value.trim().toLowerCase();
   const g = groupEl.value;
   const items = PRODUCTS.filter((p) =>
-    (cat === "All" || p.category === cat) &&
-    (g === "All groups" || p.group === g) &&
+    (cat === "全部" || p.category === cat) &&
+    (g === "所有組合" || p.group === g) &&
     (!q || `${p.name} ${p.group} ${p.category} ${p.note}`.toLowerCase().includes(q)));
   $("#grid").innerHTML = items.map((p) => {
     const sold = p.status === "sold-out";
@@ -68,9 +71,10 @@ function renderGrid() {
         <div class="card-body">
           <p class="card-group">${esc(p.group)}</p>
           <h3>${esc(p.name)}</h3>
+          ${p.note ? `<p class="card-tag">${esc(p.note)}</p>` : ""}
           <div class="card-foot">
             <span class="price">${money(p.price)}</span>
-            <button class="add" data-add="${p.id}" ${sold ? "disabled" : ""} aria-label="Add ${esc(p.name)} to cart">${sold ? "Sold out" : "+ Add"}</button>
+            <button class="add" data-add="${p.id}" ${sold ? "disabled" : ""} aria-label="加入購物車：${esc(p.name)}">${sold ? "售罄" : "+ 加入"}</button>
           </div>
         </div>
       </article>`;
@@ -102,10 +106,10 @@ function openQuickView(id) {
       <p class="qv-price">${money(p.price)}</p>
       ${p.note ? `<p class="muted">${esc(p.note)}</p>` : ""}
       ${sold
-        ? `<a class="btn btn-line dm-link" href="${dmUrl}" target="_blank" rel="noopener">Ask about a restock</a>`
+        ? `<a class="btn btn-line dm-link" href="${dmUrl}" target="_blank" rel="noopener">查詢補貨</a>`
         : `<div class="qty-row">
-             <div class="qty"><button data-q="-1" aria-label="Less">−</button><input id="qv-qty" type="number" min="1" value="1" aria-label="Quantity"><button data-q="1" aria-label="More">+</button></div>
-             <button class="btn" id="qv-add">${p.status === "pre-order" ? "Pre-order" : "Add to cart"}</button>
+             <div class="qty"><button data-q="-1" aria-label="減少">−</button><input id="qv-qty" type="number" min="1" value="1" aria-label="數量"><button data-q="1" aria-label="增加">+</button></div>
+             <button class="btn" id="qv-add">${p.status === "pre-order" ? "預訂" : "加入購物車"}</button>
            </div>`}
     </div>`;
   qv.showModal();
@@ -136,7 +140,7 @@ function addToCart(id, qty) {
   cart[id] = (cart[id] || 0) + qty;
   saveCart();
   renderCart();
-  toast(`Added: ${byId[id].name}`);
+  toast(`已加入：${byId[id].name}`);
   const btn = $("#cart-open");
   btn.classList.remove("bump"); void btn.offsetWidth; btn.classList.add("bump");
 }
@@ -156,16 +160,16 @@ function renderCart() {
           <div class="line-info">
             <p class="card-group">${esc(p.group)}</p>
             <p class="line-name">${esc(p.name)}</p>
-            <div class="qty qty-sm"><button data-set="${p.id}" data-v="${qty - 1}" aria-label="Less">−</button><span>${qty}</span><button data-set="${p.id}" data-v="${qty + 1}" aria-label="More">+</button></div>
+            <div class="qty qty-sm"><button data-set="${p.id}" data-v="${qty - 1}" aria-label="減少">−</button><span>${qty}</span><button data-set="${p.id}" data-v="${qty + 1}" aria-label="增加">+</button></div>
           </div>
-          <div class="line-end"><b>${money(p.price * qty)}</b><button class="link" data-set="${p.id}" data-v="0">Remove</button></div>
+          <div class="line-end"><b>${money(p.price * qty)}</b><button class="link" data-set="${p.id}" data-v="0">移除</button></div>
         </div>`).join("")
-    : `<div class="cart-empty"><p>Your cart is empty.</p><button class="btn btn-small" id="keep-shopping">Start shopping</button></div>`;
+    : `<div class="cart-empty"><p>購物車未有貨品。</p><button class="btn btn-small" id="keep-shopping">去選購</button></div>`;
   const sub = subtotal();
   $("#cart-subtotal").textContent = money(sub);
   const left = SHOP.freeShippingOver - sub;
   $("#ship-note").textContent = !SHOP.freeShippingOver || !lines.length ? ""
-    : left > 0 ? `Add ${money(left)} more for free shipping` : "You've unlocked free shipping 🎉";
+    : left > 0 ? `再買 ${money(left)} 即免運費` : "已享免運費";
   $("#checkout-btn").disabled = !lines.length;
   const ks = $("#keep-shopping");
   if (ks) ks.onclick = () => { closeCart(); location.hash = "#shop"; };
@@ -198,53 +202,53 @@ function summaryHtml(shipIdx) {
   const ship = shippingCost(SHOP.shipping[shipIdx], sub);
   return `
     <div class="sum-lines">${cartLines().map(({ p, qty }) =>
-      `<div class="sum-line"><span>${qty} × ${esc(p.name)}<small>${esc(p.group)}${p.status === "pre-order" ? " · Pre-order" : ""}</small></span><b>${money(p.price * qty)}</b></div>`).join("")}</div>
-    <div class="row"><span>Subtotal</span><span>${money(sub)}</span></div>
-    <div class="row"><span>Shipping</span><span>${ship ? money(ship) : "Free"}</span></div>
-    <div class="row total"><span>Total</span><b>${money(sub + ship)} <small>${esc(SHOP.currency)}</small></b></div>`;
+      `<div class="sum-line"><span>${qty} × ${esc(p.name)}<small>${esc(p.group)}${p.status === "pre-order" ? " · 預訂" : ""}</small></span><b>${money(p.price * qty)}</b></div>`).join("")}</div>
+    <div class="row"><span>小計</span><span>${money(sub)}</span></div>
+    <div class="row"><span>運費</span><span>${ship ? money(ship) : (SHOP.shipping[shipIdx].name.includes("到付") ? "順豐到付" : "免費")}</span></div>
+    <div class="row total"><span>總計</span><b>${money(sub + ship)} <small>${esc(SHOP.currency)}</small></b></div>`;
 }
 
 function openCheckout() {
   closeCart();
   const methods = [
-    ...(SHOP.paypalClientId ? [{ id: PAYPAL, name: "Card or PayPal", desc: "Pay securely now with a debit/credit card or PayPal." }] : []),
-    ...SHOP.manualPayments.map((m, i) => ({ id: "m" + i, name: m.name, desc: "We'll show you the payment details after you place the order." })),
+    ...(SHOP.paypalClientId ? [{ id: PAYPAL, name: "信用卡 / PayPal", desc: "即時用信用卡、扣帳卡或 PayPal 安全付款。" }] : []),
+    ...SHOP.manualPayments.map((m, i) => ({ id: "m" + i, name: m.name, desc: "落單後會顯示付款資料。" })),
   ];
   coBody.innerHTML = `
     <div class="co">
       <form class="co-form" id="co-form" novalidate>
-        <p class="kicker">Checkout</p>
-        <h2>Your details</h2>
+        <p class="kicker">結帳</p>
+        <h2>你的資料</h2>
         <div class="fields">
-          <label><span>Full name</span><input name="name" required autocomplete="name"></label>
-          <label><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
-          <label><span>Instagram <span class="opt">(optional)</span></span><input name="instagram" placeholder="@yourhandle"></label>
-          <label><span>Phone <span class="opt">(optional)</span></span><input name="phone" type="tel" autocomplete="tel"></label>
+          <label><span>姓名</span><input name="name" required autocomplete="name"></label>
+          <label><span>電郵</span><input name="email" type="email" required autocomplete="email"></label>
+          <label><span>Instagram <span class="opt">（選填）</span></span><input name="instagram" placeholder="@yourhandle"></label>
+          <label><span>電話 <span class="opt">（選填）</span></span><input name="phone" type="tel" autocomplete="tel"></label>
         </div>
-        <h3>Delivery</h3>
+        <h3>交收方式</h3>
         <div class="options">${SHOP.shipping.map((s, i) => `
           <label class="option"><input type="radio" name="ship" value="${i}" ${i === 0 ? "checked" : ""}>
-            <span><b>${esc(s.name)}</b><small>${s.price ? money(s.price) : "Free"}</small></span></label>`).join("")}
+            <span><b>${esc(s.name)}</b><small>${s.price ? money(s.price) : (s.name.includes("到付") ? "運費由你付給順豐" : "免費")}</small></span></label>`).join("")}
         </div>
-        <label class="full" id="addr-wrap"><span>Shipping address</span><textarea name="address" rows="3" autocomplete="street-address" placeholder="Street, city, postcode, country"></textarea></label>
-        <label class="full"><span>Order notes <span class="opt">(optional)</span></span><textarea name="notes" rows="2" placeholder="Member preference, version, etc."></textarea></label>
-        <h3>Payment</h3>
+        <label class="full" id="addr-wrap"><span>收件地址</span><textarea name="address" rows="3" autocomplete="street-address" placeholder="請填寫完整收件地址"></textarea></label>
+        <label class="full"><span>備註 <span class="opt">（選填）</span></span><textarea name="notes" rows="2" placeholder="例如：版本、想要的成員"></textarea></label>
+        <h3>付款方式</h3>
         <div class="options">${methods.map((m, i) => `
           <label class="option"><input type="radio" name="pay" value="${m.id}" ${i === 0 ? "checked" : ""}>
             <span><b>${esc(m.name)}</b><small>${esc(m.desc)}</small></span></label>`).join("")}
         </div>
         <p class="form-error" id="form-error" role="alert"></p>
-        <button class="btn btn-block" type="submit" id="place-btn">Place order</button>
-        <p class="secure">🔒 Card payments are handled by PayPal. Your card details never touch this website.</p>
+        <button class="btn btn-block" type="submit" id="place-btn">確認落單</button>
+        <p class="secure">🔒 信用卡付款由 PayPal 處理，本網站不會接觸你的卡資料。</p>
       </form>
-      <div class="co-summary"><h3>Order summary</h3><div id="co-sum">${summaryHtml(0)}</div></div>
+      <div class="co-summary"><h3>訂單摘要</h3><div id="co-sum">${summaryHtml(0)}</div></div>
     </div>`;
   const form = $("#co-form");
   const sync = () => {
     const idx = +form.ship.value;
     $("#co-sum").innerHTML = summaryHtml(idx);
-    $("#addr-wrap").hidden = SHOP.shipping[idx].price === 0;
-    $("#place-btn").textContent = form.pay.value === PAYPAL ? "Continue to payment" : "Place order";
+    $("#addr-wrap").hidden = !!SHOP.shipping[idx].pickup;
+    $("#place-btn").textContent = form.pay.value === PAYPAL ? "前往付款" : "確認落單";
     $(".secure").hidden = form.pay.value !== PAYPAL;
   };
   form.addEventListener("change", sync);
@@ -262,10 +266,10 @@ function placeOrder(form) {
   const f = Object.fromEntries(new FormData(form));
   const ship = SHOP.shipping[+f.ship];
   const err = $("#form-error");
-  const needAddr = ship.price > 0;
-  if (!f.name.trim()) return (err.textContent = "Please enter your name.");
-  if (!/^\S+@\S+\.\S+$/.test(f.email)) return (err.textContent = "Please enter a valid email.");
-  if (needAddr && !f.address.trim()) return (err.textContent = "Please enter your shipping address.");
+  const needAddr = !ship.pickup;
+  if (!f.name.trim()) return (err.textContent = "請填寫姓名。");
+  if (!/^\S+@\S+\.\S+$/.test(f.email)) return (err.textContent = "請填寫有效的電郵。");
+  if (needAddr && !f.address.trim()) return (err.textContent = "請填寫收件地址。");
   err.textContent = "";
 
   const sub = subtotal();
@@ -283,28 +287,28 @@ function placeOrder(form) {
   };
 
   if (f.pay === PAYPAL) {
-    order.payment = { method: "Card / PayPal", status: "pending" };
+    order.payment = { method: "信用卡 / PayPal", status: "待付款" };
     return showPayPal(order);
   }
   const m = SHOP.manualPayments[+f.pay.slice(1)];
-  order.payment = { method: m.name, status: "awaiting payment" };
+  order.payment = { method: m.name, status: "等待付款" };
   sendOrderEmail(order);
   finishOrder(order, m);
 }
 
 function orderText(o) {
   return [
-    `New order ${o.id}`,
-    ...o.items.map((i) => `• ${i.qty} × ${i.name} (${i.group})${i.status === "pre-order" ? " [pre-order]" : ""}: ${money(i.price * i.qty)}`),
-    `Shipping: ${o.shipping.method} (${o.shipping.cost ? money(o.shipping.cost) : "free"})`,
-    `Total: ${money(o.total)} ${o.currency}`,
-    `Payment: ${o.payment.method} (${o.payment.status})${o.payment.txn ? " · ref " + o.payment.txn : ""}`,
-    `Name: ${o.customer.name}`,
-    `Email: ${o.customer.email}`,
-    o.customer.instagram && `Instagram: ${o.customer.instagram}`,
-    o.customer.phone && `Phone: ${o.customer.phone}`,
-    o.customer.address && `Address: ${o.customer.address}`,
-    o.notes && `Notes: ${o.notes}`,
+    `新訂單 ${o.id}`,
+    ...o.items.map((i) => `• ${i.qty} × ${i.name} (${i.group})${i.status === "pre-order" ? " [預訂]" : ""}: ${money(i.price * i.qty)}`),
+    `交收：${o.shipping.method}`,
+    `總計：${money(o.total)} ${o.currency}`,
+    `付款：${o.payment.method}（${o.payment.status}）${o.payment.txn ? " · 參考 " + o.payment.txn : ""}`,
+    `姓名：${o.customer.name}`,
+    `電郵：${o.customer.email}`,
+    o.customer.instagram && `Instagram：${o.customer.instagram}`,
+    o.customer.phone && `電話：${o.customer.phone}`,
+    o.customer.address && `地址：${o.customer.address}`,
+    o.notes && `備註：${o.notes}`,
   ].filter(Boolean).join("\n");
 }
 
@@ -314,7 +318,7 @@ async function sendOrderEmail(order) {
     await fetch(SHOP.orderEmailEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ _subject: `Order ${order.id} (${order.payment.status})`, email: order.customer.email, order: orderText(order) }),
+      body: JSON.stringify({ _subject: `訂單 ${order.id}（${order.payment.status}）`, email: order.customer.email, order: orderText(order) }),
     });
   } catch { /* the customer still has the DM/copy option */ }
 }
@@ -323,13 +327,13 @@ function showPayPal(order) {
   coBody.innerHTML = `
     <div class="co">
       <div class="co-form">
-        <button class="link back" id="back">← Back to details</button>
-        <p class="kicker">Payment · ${esc(order.id)}</p>
-        <h2>Pay ${money(order.total)} ${esc(order.currency)}</h2>
-        <p class="muted">Pay with your PayPal account or as a guest with a debit/credit card.</p>
-        <div id="paypal-buttons" class="paypal-box"><p class="muted">Loading secure payment…</p></div>
+        <button class="link back" id="back">← 返回修改資料</button>
+        <p class="kicker">付款 · ${esc(order.id)}</p>
+        <h2>付款 ${money(order.total)} ${esc(order.currency)}</h2>
+        <p class="muted">可用 PayPal 帳戶，或以訪客身份用信用卡／扣帳卡付款。</p>
+        <div id="paypal-buttons" class="paypal-box"><p class="muted">正在載入安全付款…</p></div>
       </div>
-      <div class="co-summary"><h3>Order summary</h3>${summaryHtml(SHOP.shipping.findIndex((s) => s.name === order.shipping.method))}</div>
+      <div class="co-summary"><h3>訂單摘要</h3>${summaryHtml(SHOP.shipping.findIndex((s) => s.name === order.shipping.method))}</div>
     </div>`;
   $("#back").onclick = openCheckout;
   loadPayPal().then((paypal) => {
@@ -348,15 +352,15 @@ function showPayPal(order) {
       }),
       onApprove: async (_, actions) => {
         const res = await actions.order.capture();
-        order.payment.status = "paid";
+        order.payment.status = "已付款";
         order.payment.txn = res?.purchase_units?.[0]?.payments?.captures?.[0]?.id || res?.id || "";
         sendOrderEmail(order);
         finishOrder(order, null);
       },
-      onError: () => toast("Payment didn't go through. Please try again or choose another method."),
+      onError: () => toast("付款未成功，請再試或選擇其他付款方式。"),
     }).render("#paypal-buttons");
   }).catch(() => {
-    $("#paypal-buttons").innerHTML = `<p class="form-error">Couldn't load PayPal. Check your connection, or go back and choose another payment method.</p>`;
+    $("#paypal-buttons").innerHTML = `<p class="form-error">無法載入 PayPal。請檢查網絡，或返回選擇其他付款方式。</p>`;
   });
 }
 
@@ -381,21 +385,21 @@ function finishOrder(order, manual) {
   coBody.innerHTML = `
     <div class="done">
       <div class="done-badge">${manual ? "✓" : "♥"}</div>
-      <p class="kicker">Order ${esc(order.id)}</p>
-      <h2>${manual ? "Order placed!" : "Payment received, thank you!"}</h2>
+      <p class="kicker">訂單 ${esc(order.id)}</p>
+      <h2>${manual ? "落單成功！" : "已收到付款，多謝！"}</h2>
       ${manual
-        ? `<p class="muted">Please pay <b>${money(order.total)} ${esc(order.currency)}</b> by ${esc(manual.name)} using the details below. Your order is confirmed once payment is received.</p>
+        ? `<p class="muted">請以 ${esc(manual.name)} 付款 <b>${money(order.total)} ${esc(order.currency)}</b>，付款資料如下。收到款項後訂單才算確認。售完即止，不設預留。</p>
            <pre class="paybox">${esc(manual.details)}</pre>`
-        : `<p class="muted">We've received your payment of <b>${money(order.total)} ${esc(order.currency)}</b>. A receipt from PayPal is on its way to your email.</p>`}
-      <p class="muted">Send us your order on Instagram so we can confirm it quickly${manual ? ", and attach your payment screenshot" : ""}.</p>
+        : `<p class="muted">已收到你的付款 <b>${money(order.total)} ${esc(order.currency)}</b>，PayPal 收據會寄到你的電郵。</p>`}
+      <p class="muted">請將訂單傳到 Instagram 讓我們盡快確認${manual ? "，並附上付款截圖" : ""}。請用文字訊息，本店不接受語音訊息。</p>
       <div class="done-actions">
-        <button class="btn" id="copy-dm">Copy order &amp; DM us</button>
-        <button class="btn btn-line" data-close-co>Done</button>
+        <button class="btn" id="copy-dm">複製訂單並 DM 我們</button>
+        <button class="btn btn-line" data-close-co>完成</button>
       </div>
-      <details class="order-text"><summary>View order details</summary><pre>${esc(text)}</pre></details>
+      <details class="order-text"><summary>查看訂單內容</summary><pre>${esc(text)}</pre></details>
     </div>`;
   $("#copy-dm").onclick = async () => {
-    try { await navigator.clipboard.writeText(text); toast("Order copied. Paste it in your DM!"); } catch { toast("Opening Instagram…"); }
+    try { await navigator.clipboard.writeText(text); toast("已複製訂單，請貼上到 DM！"); } catch { toast("正在打開 Instagram…"); }
     setTimeout(() => window.open(dmUrl, "_blank", "noopener"), 600);
   };
   $("[data-close-co]").onclick = () => co.close();

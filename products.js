@@ -1,67 +1,76 @@
 // ===================================================================
-//  SHOP SETTINGS: edit this file to change your website.
+//  商店設定：想改網站內容，只需要修改這個檔案。
 // ===================================================================
 
 const SHOP = {
-  name: "MH KPOP",
+  name: "MH_KPOP",
   instagram: "mh.kpop.sell",
-  currency: "USD",   // 3-letter code, e.g. USD, HKD, SGD, MYR, GBP, EUR
-  symbol: "$",       // shown before prices
+  currency: "HKD",   // 貨幣代碼
+  symbol: "$",       // 價錢前面顯示的符號
 
-  // Shipping choices the customer picks at checkout.
+  // ---------- 門市資料 ----------
+  store: {
+    address: ["新界西貢坑口常寧路厚德邨", "TKO Gateway 東翼一樓 E171 號舖", "別樹一格 A24 & B24 格位"],
+    hours: "星期一至日 12:00 - 20:00",
+    note: "查詢時請表示有意購買 xx，並不接受語音訊息 🙏🏻",
+  },
+
+  // 結帳時客人可選的交收方式。
+  // 順豐到付：運費由客人在收件時付給順豐，所以網上不收運費。
   shipping: [
-    { name: "Standard tracked shipping", price: 5 },
-    { name: "Express shipping", price: 15 },
-    { name: "Local pick-up / meet-up", price: 0 },
+    { name: "順豐到付（運費到付）", price: 0 },
+    { name: "門市自取（將軍澳）", price: 0, pickup: true },
   ],
-  // Orders at or above this amount ship free (set to 0 to turn it off).
-  freeShippingOver: 80,
+  freeShippingOver: 0, // 不設免運費門檻
 
-  // ---------- PAYMENTS ----------
-  // 1) PayPal: lets customers pay with PayPal OR a debit/credit card.
-  //    Paste your PayPal "Client ID" here (see README). Leave "" to hide it.
+  // ---------- 付款方式 ----------
+  // 1) PayPal：客人可用 PayPal 或信用卡／扣帳卡付款。
+  //    把 PayPal「Client ID」貼在下面（教學見 README）。留空 "" 即不顯示。
   paypalClientId: "",
 
-  // 2) Manual payments: shown with your instructions after the order is placed.
-  //    Remove any you don't use, or add your own (FPS, PayNow, Wise, Venmo...).
+  // 2) 手動付款：落單後顯示你的付款資料。請改成你的真實資料，不用的可以刪除。
   manualPayments: [
     {
-      name: "Bank transfer",
-      details: "Bank: YOUR BANK\nAccount name: YOUR NAME\nAccount no: 000-000000-000\nUse your order number as the reference.",
+      name: "轉數快 FPS",
+      details: "FPS 號碼：請填寫你的 FPS 號碼\n收款人：請填寫收款人姓名\n轉帳時請在備註寫上訂單編號。",
     },
     {
-      name: "PayPal Friends & Family / other",
-      details: "Send payment to: your-email@example.com\nInclude your order number in the note.",
+      name: "PayMe",
+      details: "PayMe 號碼：請填寫你的 PayMe 號碼\n請在備註寫上訂單編號。",
+    },
+    {
+      name: "門市付款（自取）",
+      details: "請於將軍澳門市自取時付款。\n門市營業時間：星期一至日 12:00 - 20:00",
     },
   ],
 
-  // 3) Optional: get every order emailed to you.
-  //    Create a free form at https://formspree.io and paste its URL here,
-  //    e.g. "https://formspree.io/f/abcdwxyz". Leave "" to turn off.
+  // 3) 可選：每張訂單都 email 給你。
+  //    在 https://formspree.io 免費建立表單，把網址貼在這裡，
+  //    例如 "https://formspree.io/f/abcdwxyz"。留空 "" 即關閉。
   orderEmailEndpoint: "",
 };
 
 // ===================================================================
-//  YOUR PRODUCTS
+//  你的商品
 // ===================================================================
 //  {
-//    name: "Product name",
-//    group: "Group name",
-//    category: "Album",            // Album, Photocard, Signed, Trading Card, Merch...
-//    price: 25,                    // number only
-//    image: "images/my-photo.jpg", // put the photo in the images/ folder ("" = placeholder)
-//    status: "in-stock",           // "in-stock", "pre-order" or "sold-out"
-//    note: "Short description",
+//    name: "商品名稱",
+//    group: "組合名稱",
+//    category: "專輯",
+//    price: 109,                    // 只寫數字
+//    image: "images/photo.jpg",     // 相片放在 images/ 資料夾（留空 "" 會顯示顏色卡）
+//    status: "in-stock",            // "in-stock" 有貨、"pre-order" 預訂、"sold-out" 售罄
+//    note: "獨家優惠價",             // 顯示在商品上的小標籤
 //  },
-//  The items below are SAMPLES. Replace them with your real stock.
+//  本店「售完即止、不設預留」。
 
 const PRODUCTS = [
-  { name: "DARK BLOOD Signed Postcard Set", group: "ENHYPEN", category: "Signed", price: 65, image: "", status: "in-stock", note: "Signed postcards (NI-KI, JAKE, SUNOO). Official, with album." },
-  { name: "FATE World Tour Trading Cards", group: "ENHYPEN", category: "Trading Card", price: 12, image: "", status: "in-stock", note: "Official tour MD trading cards. Random pull." },
-  { name: "MANIFESTO Tour MD Photocards", group: "ENHYPEN", category: "Photocard", price: 9, image: "", status: "in-stock", note: "Official tour photocards, sleeved and toploaded." },
-  { name: "Baekhyun Reorder Photocard", group: "EXO", category: "Photocard", price: 14, image: "", status: "in-stock", note: "Official reorder photocard." },
-  { name: "Latest Mini Album (Random Ver.)", group: "TXT", category: "Album", price: 22, image: "", status: "pre-order", note: "Sealed. Ships when released." },
-  { name: "Beomgyu Folded Poster", group: "TXT", category: "Merch", price: 10, image: "", status: "in-stock", note: "Official poster, shipped in a tube." },
-  { name: "Sunghoon Selfie Photocard", group: "ENHYPEN", category: "Photocard", price: 18, image: "", status: "sold-out", note: "Official album inclusion." },
-  { name: "Season's Greetings Package", group: "ENHYPEN", category: "Merch", price: 45, image: "", status: "pre-order", note: "Full package with pre-order benefit." },
+  { name: "CORTIS Album (PB ver)",       group: "CORTIS",      category: "專輯", price: 109, image: "", status: "in-stock", note: "獨家優惠價" },
+  { name: "CORTIS Album (WVS ver)",      group: "CORTIS",      category: "專輯", price: 69,  image: "", status: "in-stock", note: "獨家優惠價" },
+  { name: "-CHOOM PB",                   group: "BABYMONSTER", category: "專輯", price: 109, image: "", status: "in-stock", note: "期間限定" },
+  { name: "JEWEL VER",                   group: "BABYMONSTER", category: "專輯", price: 79,  image: "", status: "in-stock", note: "期間限定" },
+  { name: "最新 PB 補貨",                 group: "TXT",         category: "專輯", price: 85,  image: "", status: "in-stock", note: "低過市價 $30" },
+  { name: "THE ACTION PB",               group: "BOYNEXTDOOR", category: "專輯", price: 35,  image: "", status: "in-stock", note: "震撼價" },
+  { name: "NEVER SAY NEVER PB",          group: "ZEROBASEONE", category: "專輯", price: 49,  image: "", status: "in-stock", note: "只限門市" },
+  { name: "Album 首批 (PB ver)",          group: "BLACKPINK",   category: "專輯", price: 125, image: "", status: "in-stock", note: "送預售禮" },
 ];

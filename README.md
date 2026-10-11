@@ -1,4 +1,6 @@
-# MH KPOP website
+# MH_KPOP 韓國 K-POP 產品專賣店 website
+
+The site is in Traditional Chinese with HKD prices. Store address, opening hours, SF Express collect (順豐到付) and store pick-up are set in `products.js`. Replace the placeholder FPS and PayMe details with your real ones before going live.
 
 Shop website for [@mh.kpop.sell](https://www.instagram.com/mh.kpop.sell/).
 Customers browse products, add them to a cart and check out with **card/PayPal** or a **manual payment** (bank transfer etc.).

@@ -13,8 +13,8 @@
   --bad: #c0362c;
   --radius: 22px;
   --shadow: 0 20px 50px -20px rgba(15, 15, 18, 0.25);
-  --display: "Space Grotesk", system-ui, sans-serif;
-  --body: "Inter", system-ui, sans-serif;
+  --display: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
+  --body: "Inter", "Noto Sans TC", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -169,7 +169,7 @@ select { font: inherit; color: var(--ink); background: var(--surface); border: 1
     linear-gradient(160deg, var(--a), var(--b));
   color: #0f0f12;
 }
-.ph span { font: 700 clamp(1.5rem, 3vw, 2rem)/1 var(--display); letter-spacing: -0.03em; }
+.ph span { font: 700 clamp(1.1rem, 2vw, 1.5rem)/1.05 var(--display); letter-spacing: -0.03em; overflow-wrap: anywhere; }
 .ph small { font-weight: 600; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem; margin-top: 0.3rem; }
 .ph-big span { font-size: clamp(2rem, 5vw, 3.2rem); }
 .tag { position: absolute; top: 12px; left: 12px; font-size: 0.72rem; font-weight: 700; padding: 0.3rem 0.65rem; border-radius: 999px; background: var(--surface); color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; }
@@ -354,3 +354,13 @@ select { font: inherit; color: var(--ink); background: var(--surface); border: 1
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- 門市 ---------- */
+.topbar { background: var(--accent); color: var(--accent-ink); text-align: center; padding: 0.5rem 16px; font-size: 0.85rem; font-weight: 600; }
+.card-tag { align-self: flex-start; margin: -0.4rem 0 0.8rem; background: var(--accent); color: var(--accent-ink); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; }
+.store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+.store-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; min-width: 0; }
+.store-card h3 { font-size: 1.2rem; margin: 0 0 0.6rem; }
+.store-card p { margin: 0 0 0.5rem; }
+.store-warn { color: var(--bad); font-weight: 600; font-size: 0.9rem; }
+.hero h1 { word-break: keep-all; }
