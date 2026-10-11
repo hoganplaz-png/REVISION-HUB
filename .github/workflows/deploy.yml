@@ -44,9 +44,9 @@ jobs:
           GEMINI_API_KEY="$(printf '%s' "$GEMINI_API_KEY" | tr -d '[:space:]')"
           echo "Token length: ${#CLOUDFLARE_API_TOKEN}, Gemini key length: ${#GEMINI_API_KEY}"
           [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || unset CLOUDFLARE_ACCOUNT_ID
-          npx --yes wrangler@4 deploy 2>&1 | tee deploy.log
-          printf '%s' "$GEMINI_API_KEY" | npx --yes wrangler@4 secret put GEMINI_API_KEY
-          if [ -n "$ACCESS_CODE" ]; then printf '%s' "$ACCESS_CODE" | npx --yes wrangler@4 secret put ACCESS_CODE; fi
+          npx --yes wrangler@4.149.0 deploy 2>&1 | tee deploy.log
+          printf '%s' "$GEMINI_API_KEY" | npx --yes wrangler@4.149.0 secret put GEMINI_API_KEY
+          if [ -n "$ACCESS_CODE" ]; then printf '%s' "$ACCESS_CODE" | npx --yes wrangler@4.149.0 secret put ACCESS_CODE; fi
           url=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' deploy.log | head -1)
           echo "Worker URL: $url"
           echo "url=$url" >> "$GITHUB_OUTPUT"
