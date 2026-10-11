@@ -473,5 +473,53 @@ IB.addDrill("engb", {
       { u: "b", s: "C", m: "30", t: "Prepare a presentation on an extract from The Great Gatsby (F. Scott Fitzgerald, 1925) in which Gatsby throws one of his lavish parties. Link the extract to the theme Experiences or Social organization.", rule: "A [12] + B1 [6] + B2 [6] + C [6] = 30. B1 needs detail from the extract (description of guests, music, excess) and interpretation of wealth and class.",
         pts: ["Context: the Jazz Age, 1920s New York, narrator Nick Carraway.", "Detail: crowds of uninvited guests, rumours about Gatsby, extravagance.", "Ideas: the American Dream, superficial relationships, Gatsby's loneliness amid crowds.", "Link: Social organization (class, old vs new money) or Experiences (leisure, ambition).", "Personal response: relevance to today's celebrity and social media culture."] }
     ]
+  },
+"engb-11": {
+    units: { a: "Tense & structure accuracy", b: "Vocabulary & idiom", c: "Complex sentences & cohesion" },
+    paper: "P1",
+    qs: [
+      /* ---------- a. tense and structure ---------- */
+      { u: "a", s: "A", m: "1", t: "Correct the error: 'When I arrived, the film already started.'", rule: "[1] correct tense.",
+        pts: ["When I arrived, the film had already started [1] (past perfect for the earlier action)."] },
+      { u: "a", s: "A", m: "1", t: "Correct the error: 'I look forward to hear from you.'", rule: "[1].",
+        pts: ["I look forward to hearing from you [1] ('to' is a preposition here, followed by -ing)."] },
+      { u: "a", s: "A", m: "1", t: "Correct the error: 'Neither the teacher nor the students was aware of the change.' (Formal English)", rule: "[1].",
+        pts: ["Neither the teacher nor the students were aware [1] (verb agrees with the nearer subject)."] },
+      { u: "a", s: "A", m: "1", t: "Correct the error: 'He has visited Paris last summer.'", rule: "[1]. Either correction accepted.",
+        pts: ["He visited Paris last summer [1] (finished time takes past simple) / He has visited Paris [1]."] },
+      { u: "a", s: "A", m: "2", t: "Rewrite as a third conditional: 'She didn't revise, so she failed the exam.'", rule: "[1] correct if-clause + [1] correct main clause.",
+        pts: ["If she had revised [1],", "she would not have failed the exam / she would have passed [1]."] },
+      { u: "a", s: "A", m: "2", t: "Rewrite in reported speech: 'Have you finished your essay?' the teacher asked me.", rule: "[1] word order (no inversion) + [1] backshift and pronoun.",
+        pts: ["The teacher asked me if / whether [1]", "I had finished my essay [1]. 'had I finished' (question order): max [1]."] },
+      /* ---------- b. vocabulary and idiom ---------- */
+      { u: "b", s: "A", m: "2", t: "Distinguish between 'economic' and 'economical'.", rule: "[1] each.",
+        pts: ["Economic: relating to the economy (e.g. economic growth) [1];", "economical: using money or resources efficiently / not wasteful (e.g. an economical car) [1]."] },
+      { u: "b", s: "A", m: "1", t: "Give the meaning of the idiom 'to be on the fence'.", rule: "[1].",
+        pts: ["To be undecided / not take a side [1]."] },
+      { u: "b", s: "A", m: "1", t: "Give the meaning of the idiom 'the tip of the iceberg'.", rule: "[1].",
+        pts: ["A small, visible part of a much larger (hidden) problem [1]."] },
+      { u: "b", s: "A", m: "3", t: "Complete each with the correct collocation: (a) to ____ a crime (b) to ____ progress (c) a ____ shower of rain.", rule: "[1] each.",
+        pts: ["(a) commit [1].", "(b) make [1].", "(c) heavy / light / brief [1]. 'big' or 'strong': [0]."] },
+      { u: "b", s: "A", m: "2", t: "Replace the informal phrasal verbs with more formal single-word verbs: 'The council will look into the problem and find out the cause.'", rule: "[1] each.",
+        pts: ["look into → investigate / examine [1].", "find out → discover / determine / establish [1]."] },
+      { u: "b", s: "A", m: "1", t: "Identify and correct the false-friend error: 'I am actually studying in Year 12, so I have exams next month.' (The writer means 'currently'.)", rule: "[1] identification and correction.",
+        pts: ["'actually' should be 'currently' / 'at the moment' [1]; 'actually' means 'in fact'."] },
+      /* ---------- c. complex sentences and cohesion ---------- */
+      { u: "c", s: "A", m: "2", t: "Combine using a participle clause: 'She finished her homework. She went out with her friends.'", rule: "[1] correct participle form + [1] correct punctuation/meaning.",
+        pts: ["Having finished her homework [1],", "she went out with her friends [1]. 'Finishing her homework, she...' accepted for [1] only (less precise time relationship)."] },
+      { u: "c", s: "A", m: "2", t: "Rewrite using a cleft sentence to emphasise the underlined idea: 'Lack of funding caused the project to fail.' (Emphasise: lack of funding)", rule: "[1] correct structure + [1] grammar.",
+        pts: ["It was lack of funding [1]", "that / which caused the project to fail [1]. Alternative: 'What caused the project to fail was lack of funding' [2]."] },
+      { u: "c", s: "A", m: "2", t: "Explain the difference in meaning between defining and non-defining relative clauses, using: (a) 'My brother who lives in Canada is a doctor.' (b) 'My brother, who lives in Canada, is a doctor.'", rule: "[1] each.",
+        pts: ["(a) defining: identifies which brother, implying the writer has more than one [1].", "(b) non-defining: adds extra information about the only brother; commas required [1]."] },
+      { u: "c", s: "A", m: "1", t: "Correct the sentence: 'Although the weather was bad, but we went hiking.'", rule: "[1].",
+        pts: ["Remove 'but': 'Although the weather was bad, we went hiking.' / 'The weather was bad, but we went hiking.' [1]."] },
+      { u: "c", s: "A", m: "2", t: "Rewrite with 'Not only... but also' using inversion: 'The scheme saves money and protects the environment.'", rule: "[1] inversion + [1] correct completion.",
+        pts: ["Not only does the scheme save money [1],", "but it also protects the environment [1]. Missing auxiliary 'does': max [1]."] },
+      /* ---------- Section C ---------- */
+      { u: "c", s: "C", m: "12+12+6", t: "Write a text for a youth magazine on the question 'Should homework be abolished?', deliberately using a range of complex structures (conditionals, relative clauses, passive voice, inversion) accurately. Choose one text type: opinion article, blog post, or debate speech. Write 450-600 words.", rule: "A [12] + B [12] + C [6]. High A requires a wide range of accurate complex structures used naturally, not forced; errors must not impede communication.",
+        pts: ["Message: arguments for (stress, rest, inequality of home support) and against (practice, independent learning, preparation for exams).", "Range: 'Were homework abolished, ...'; 'Students who...'; 'Research has been conducted...'; 'Not only... but also...'.", "Cohesion: varied linking devices, topic sentences, clear conclusion.", "Debate speech: address, signposting, rebuttal; blog: title, personal voice.", "Accuracy: tense consistency, subject-verb agreement, punctuation."] },
+      { u: "b", s: "C", m: "30", t: "Write a text describing a place in your country that you think every visitor should see, using precise, vivid vocabulary and some idiomatic language. Choose one text type: travel blog post, magazine article, or brochure. Write 450-600 words.", rule: "A [12] + B [12] + C [6] = 30. High A: precise, varied vocabulary and idioms used appropriately; high B: vivid description with reasons to visit; high C: type conventions.",
+        pts: ["Vocabulary: sensory adjectives, precise nouns and verbs (meander, tower, bustling).", "Idiom used naturally (e.g. 'off the beaten track', 'a hidden gem').", "Practical information: how to get there, best time to visit.", "Brochure: headings, bullet points, contact information; blog: title, personal anecdotes.", "Language: avoid overused 'nice', 'good', 'very'."] }
+    ]
   }
 });
