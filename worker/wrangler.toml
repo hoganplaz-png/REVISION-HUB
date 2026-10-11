@@ -1,0 +1,10 @@
+# Cloudflare Worker that does the site's AI marking with Gemini (deployed by .github/workflows/deploy.yml).
+name = "ib-revision-ai"
+main = "ai-worker.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[vars]
+GEMINI_MODEL = "gemini-2.5-flash"
+RATE_LIMIT = "30"   # AI requests per visitor per hour
+ALLOWED_ORIGINS = "https://ib-revision-hub.web.app,https://ib-revision-hub.firebaseapp.com"

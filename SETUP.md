@@ -80,3 +80,12 @@ In Firebase, go to **Hosting → Add custom domain** and follow the steps. Then 
 | Popup is blocked | Allow pop-ups for the site. The site also falls back to a full-page redirect. |
 
 Free plan limits: about 50,000 reads and 20,000 writes per day. That is plenty for a class or a whole school year group; progress saves are batched every few seconds.
+
+## AI marking with Gemini (free)
+
+The live site marks answers with Google Gemini through a small free Cloudflare Worker (`worker/`), so the key never appears in the website's code.
+
+1. Get a free key at https://aistudio.google.com/apikey (don't turn on billing, so it stays free).
+2. Make a free Cloudflare account, open **Workers & Pages** once (this creates your `workers.dev` address), then create an API token from the **Edit Cloudflare Workers** template.
+3. In GitHub, go to **Settings → Secrets and variables → Actions** and add `GEMINI_API_KEY` and `CLOUDFLARE_API_TOKEN` (and `CLOUDFLARE_ACCOUNT_ID` if the token can see more than one account). You can also add `AI_ACCESS_CODE` so that only people with the code can use AI marking.
+4. Push to `main`. The workflow deploys the Worker and points the site at it.

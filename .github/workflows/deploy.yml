@@ -1,5 +1,7 @@
 # Checks the content on every pull request and publishes the site to Firebase Hosting when main changes.
 # Needs one repository secret: FIREBASE_SERVICE_ACCOUNT (the JSON key of a Firebase service account).
+# AI marking (optional): with secrets CLOUDFLARE_API_TOKEN and GEMINI_API_KEY (and CLOUDFLARE_ACCOUNT_ID if the
+# token can see more than one account), the Gemini marking Worker in worker/ is deployed too and the site points at it.
 name: Check and deploy
 on:
   pull_request:
@@ -13,12 +15,49 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: npm run check
-  deploy:
+  ai-worker:
     if: github.event_name == 'push'
     needs: check
     runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      ACCESS_CODE: ${{ secrets.AI_ACCESS_CODE }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - id: deploy
+        working-directory: worker
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$GEMINI_API_KEY" ]; then
+            echo "AI marking not set up (CLOUDFLARE_API_TOKEN / GEMINI_API_KEY secrets missing) - skipping."
+            exit 0
+          fi
+          [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || unset CLOUDFLARE_ACCOUNT_ID
+          npx --yes wrangler@4 deploy 2>&1 | tee deploy.log
+          printf '%s' "$GEMINI_API_KEY" | npx --yes wrangler@4 secret put GEMINI_API_KEY
+          if [ -n "$ACCESS_CODE" ]; then printf '%s' "$ACCESS_CODE" | npx --yes wrangler@4 secret put ACCESS_CODE; fi
+          url=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' deploy.log | head -1)
+          echo "Worker URL: $url"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+  deploy:
+    # Runs even if the AI Worker step fails, so the site itself always publishes.
+    if: always() && github.event_name == 'push' && needs.check.result == 'success'
+    needs: [check, ai-worker]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Point the site at the AI marking Worker
+        if: needs.ai-worker.outputs.url != ''
+        env:
+          AI_URL: ${{ needs.ai-worker.outputs.url }}
+        run: |
+          echo "window.IB_CONFIG = Object.assign({ aiServer: \"$AI_URL\" }, window.IB_CONFIG);" > public/js/ai-config.js
+          cat public/js/ai-config.js
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}

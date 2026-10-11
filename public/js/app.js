@@ -617,14 +617,17 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:5p
 
   // AI is off by default: answers are marked by the built-in markscheme marker (js/marker.js).
   // A self-hosted copy with an API key can switch it back on with window.IB_CONFIG = { ai: true }.
-  IB.config = Object.assign({ ai: false }, window.IB_CONFIG || {});
+  // js/ai-config.js sets aiServer to the Gemini marking Worker, which switches AI on for the hosted site.
+  IB.config = Object.assign({ ai: false, aiServer: "" }, window.IB_CONFIG || {});
+  if (IB.config.aiServer) IB.config.ai = true;
+  const aiUrl = (url) => (IB.config.aiServer ? IB.config.aiServer.replace(/\/$/, "") + url : url);
   // Calls the AI server, sending the class access code (asked for once, kept in this browser) when the server requires one.
   IB.apiFetch = async function (url, init = {}) {
     const get = () => { try { return localStorage.getItem("ib-access-code") || ""; } catch (e) { return ""; } };
-    const go = () => fetch(url, Object.assign({}, init, { headers: Object.assign({}, init.headers, { "x-access-code": get() }) }));
+    const go = () => fetch(aiUrl(url), Object.assign({}, init, { headers: Object.assign({}, init.headers, { "x-access-code": get() }) }));
     let r = await go();
     if (r.status === 401) {
-      const code = prompt("This site's Claude features need an access code (ask your teacher):");
+      const code = prompt("This site's AI features need an access code (ask your teacher):");
       if (code) {
         try { localStorage.setItem("ib-access-code", code.trim()); } catch (e) {}
         r = await go();
@@ -651,7 +654,7 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:5p
           this._health = !!(await this.sampler());
         } else {
           try {
-            const r = await fetch("/api/health", { cache: "no-store" });
+            const r = await fetch(aiUrl("/api/health"), { cache: "no-store" });
             this._health = r.ok ? (await r.json()).ai === true : false;
           } catch (e) {
             this._health = false;
