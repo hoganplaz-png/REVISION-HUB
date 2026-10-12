@@ -1,60 +1,57 @@
-# MH_KPOP 韓國 K-POP 產品專賣店 website
+# MHKPOP shop website
 
-The site is in Traditional Chinese with HKD prices. Store address, opening hours, SF Express collect (順豐到付) and store pick-up are set in `products.js`. Replace the placeholder FPS and PayMe details with your real ones before going live.
+Information website for MH KPOP SELL (@mh.kpop.sell). Customers read the price list and place orders **only through the order form**.
+You change prices and stock in a **Google Sheet**, with no coding. Shop details are in one plain text file.
 
-Shop website for [@mh.kpop.sell](https://www.instagram.com/mh.kpop.sell/).
-Customers browse products, add them to a cart and check out with **card/PayPal** or a **manual payment** (bank transfer etc.).
-Every order gets an order number, and customers can send the full order to you by Instagram DM in one tap.
+## How you change things
 
-Everything you need to change is in **`products.js`**.
+| I want to change... | Where | Needs code? |
+|---|---|---|
+| Add, remove or reprice an album, change a tag, mark **sold out** | Your Google Sheet | No |
+| Opening hours, address, headline, delivery text | `settings.js` (edit the text between the quote marks on github.com) | No, only text |
+| Album photos | Upload to the `images` folder, then write the file name in the sheet's 圖片 column | No |
 
-## 1. Add your products
+After you save, the Sheet updates the site within a few minutes. A change to `settings.js` shows after about a minute.
 
-1. Put product photos in the `images/` folder (for example `images/enhypen-pc.jpg`). Portrait photos (4:5) look best.
-2. In `products.js`, edit the `PRODUCTS` list: name, group, category, price, image, status (`in-stock`, `pre-order` or `sold-out`) and a short note.
+## Setup (once, about 20 minutes)
 
-The products in the file now are **samples**. Replace them with your real stock.
+### 1. Put the site online (free)
+1. On github.com open this repository, then **Settings → Pages**.
+2. Under **Build and deployment**, choose **Deploy from a branch**, pick this branch and **/ (root)**, then **Save**.
+3. After about a minute your site is at `https://<your-github-name>.github.io/MH/`. Put this link in your Instagram bio.
 
-## 2. Set up payments
+Prefer another host? Download this repository as a ZIP and drag the unzipped folder onto https://app.netlify.com/drop. That also works.
 
-### Card + PayPal (customers pay online)
-Customers can pay with a PayPal account **or a debit/credit card, without a PayPal account**. Card details are handled by PayPal and never touch your site.
+### 2. Make your product sheet
+1. In Google Sheets choose **File → Import → Upload**, pick `products-template.csv`, then **Replace spreadsheet**.
+2. Keep the first row exactly as it is. The columns are:
+   - **組合**: group, such as TXT
+   - **名稱**: album name
+   - **價錢**: number only, such as 109
+   - **標籤**: small label, such as 期間限定 (optional)
+   - **圖片**: photo file name in the `images` folder, such as `cortis-pb.jpg`, or a full web link (optional)
+   - **狀態**: leave empty if available. Write **售罄** for sold out, or **只限門市** for in-store only.
+3. Choose **File → Share → Publish to web**. Pick the sheet tab, change "Web page" to **Comma-separated values (.csv)**, click **Publish**, and copy the link.
+4. On github.com open `settings.js`, click the pencil icon, and paste the link between the quote marks of `sheetCsvUrl: ""`. Click **Commit changes**.
 
-1. Make a free **PayPal Business** account at paypal.com, or upgrade your personal one.
-2. Go to <https://developer.paypal.com>, log in, open **Apps & Credentials**, switch to **Live** and click **Create App**.
-3. Copy the **Client ID**. Never share the "Secret".
-4. Paste it into `products.js`: `paypalClientId: "AbC123..."`.
-5. Set `currency` and `symbol` to your currency (e.g. `"HKD"` and `"HK$"`).
+Anyone with the link can read a published sheet. Do not put private information in it.
 
-> **Tip:** test first with a **Sandbox** Client ID and PayPal's test accounts, then switch to the Live one.
->
-> **Important:** this is a static website, so prices are sent from the customer's browser. Before shipping,
-> always check in PayPal that the amount you received matches the order total. PayPal shows the order
-> number (e.g. `MH-ABC1234`) on each payment.
+### 3. Switch on the order form (orders arrive in your email)
+1. Make a free account at https://formspree.io and create a new form. Use your own email address.
+2. Copy the form link, which looks like `https://formspree.io/f/abcdwxyz`.
+3. Paste it between the quote marks of `formEndpoint: ""` in `settings.js` and commit.
+4. Place a test order on your site and check that the email arrives. Formspree asks you to confirm your email address first.
 
-### Manual payments (bank transfer, FPS, PayNow, etc.)
-Edit `manualPayments` in `products.js` with your real payment details. After placing the order, the customer sees
-those details and the amount to pay, then DMs you the order and a payment screenshot.
+Until this step is done, the form stays switched off and customers are asked to message you on Instagram, so no order can get lost.
 
-### Get orders by email (optional, recommended)
-1. Create a free form at <https://formspree.io>.
-2. Paste its URL into `orderEmailEndpoint`.
-You'll get an email for every order, both manual orders and paid card/PayPal orders.
-
-### Shipping
-Edit the `shipping` options and `freeShippingOver` in `products.js`.
-
-## 3. Put it online for free (GitHub Pages)
-
-1. On GitHub, open this repository and go to **Settings → Pages**.
-2. Choose **Deploy from a branch**, pick `main` and `/ (root)`, then save.
-3. Your site will be live at `https://<your-username>.github.io/<repo-name>/`. Put that link in your Instagram bio.
-
-PayPal needs the site to be on `https://`, which GitHub Pages provides.
+## Daily use
+- **Item sold out:** type 售罄 in the 狀態 column. It is greyed out and cannot be ordered.
+- **New album:** add a row. **New price:** change the number. **Remove an album:** delete the row.
+- **A row is ignored** if it has no group, no name or a price that is not a number.
+- If the sheet cannot be read, the site shows the sample list stored in `settings.js`.
 
 ## Files
-
-- `products.js`: **shop settings, payments and products (edit this one)**
-- `index.html`: page layout and text
-- `styles.css`: design and colours (change `--accent` to change the highlight colour)
-- `script.js`: shop, cart and checkout logic
+- `index.html`, `styles.css`, `script.js`: the page (you don't need to touch these)
+- `settings.js`: shop details and the two links above
+- `products-template.csv`: the starting product list for your Google Sheet
+- `assets/`: logo files. `images/`: album photos.

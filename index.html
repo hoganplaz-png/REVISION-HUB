@@ -3,157 +3,195 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MH_KPOP 韓國 K-POP 產品專賣店</title>
-  <meta name="description" content="將軍澳韓國 K-POP 專輯專賣店。價錢低至市價 3 折，可選順豐到付或門市自取。Instagram：@mh.kpop.sell">
+  <title>MHKPOP 韓國 K-POP 專輯專賣店</title>
+  <meta name="description" content="將軍澳韓國 K-POP 專輯專賣店。專輯價錢低至市價 3 折，填寫網上表格落單，可選順豐到付或門市自取。">
+  <link rel="icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="topbar">本店持有效商業登記 ・ 營運超過 2 年 ・ 將軍澳區最強質素及最強格價保證</div>
+  <div class="topbar caps">
+    <span data-s="addressShort"></span>
+    <span data-s="hours"></span>
+    <span>售完即止 · 不設預留</span>
+  </div>
 
   <header class="nav">
-    <a class="logo" href="#top" aria-label="MH_KPOP 首頁">MH<span>KPOP</span></a>
-    <nav class="nav-links">
-      <a href="#shop">商品</a>
-      <a href="#how">購買流程</a>
-      <a href="#store">門市資料</a>
-      <a href="#faq">常見問題</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="icon-btn ig-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-      </a>
-      <button class="cart-btn" id="cart-open" aria-label="打開購物車">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
-        <span>購物車</span><b id="cart-count">0</b>
-      </button>
+    <div class="wrap nav-in">
+      <a class="brand" href="#top"><img src="assets/logo.png" alt="MH KPOP SELL 標誌" width="46" height="45"><span class="caps">MHKPOP</span></a>
+      <nav class="nav-links">
+        <a href="#shelf">價目</a>
+        <a href="#how">購買流程</a>
+        <a href="#info">購買須知</a>
+        <a href="#store">門市</a>
+        <a href="#faq">問題</a>
+      </nav>
+      <a class="btn btn-solid" href="#order">落單表格</a>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero wrap">
       <div class="hero-copy">
-        <p class="pill"><span class="dot"></span> 暑期限定優惠 ・ 熱門專輯</p>
-        <h1>價錢低至<br>市價 <em>3 折</em></h1>
-        <p class="lead">韓國 K-POP 專輯專賣店，位於將軍澳。大量購買可接受順豐到付，售完即止，不設預留。</p>
-        <div class="hero-cta">
-          <a class="btn" href="#shop">立即選購 <span aria-hidden="true">→</span></a>
-          <a class="btn btn-line dm-link" href="#" target="_blank" rel="noopener">Instagram 查詢</a>
+        <p class="caps kicker">韓國 K-POP 專輯專賣店 · 將軍澳</p>
+        <h1 aria-label="MHKPOP">
+          <span class="mask" aria-hidden="true"><span class="ltr" style="--d:0ms">M</span></span><span class="mask" aria-hidden="true"><span class="ltr" style="--d:90ms">H</span></span><span class="mask" aria-hidden="true"><span class="ltr" style="--d:180ms">K</span></span><span class="mask" aria-hidden="true"><span class="ltr" style="--d:270ms">P</span></span><span class="mask" aria-hidden="true"><span class="ltr" style="--d:360ms">O</span></span><span class="mask" aria-hidden="true"><span class="ltr" style="--d:450ms">P</span></span>
+        </h1>
+        <p class="headline" data-s="headline"></p>
+        <p class="lead" data-s="intro"></p>
+        <div class="row">
+          <a class="btn btn-solid btn-lg" href="#shelf">睇價目</a>
+          <a class="btn btn-line btn-lg" href="#order">填寫落單表格</a>
         </div>
-        <ul class="trust">
-          <li><b>商業登記</b> 有效</li>
-          <li><b>營運</b> 超過 2 年</li>
-          <li><b>順豐到付</b> ／ 門市自取</li>
-        </ul>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="pc pc-1"><span>CORTIS</span></div>
-        <div class="pc pc-2"><span>BABYMONSTER</span></div>
-        <div class="pc pc-3"><span>TXT</span></div>
-        <div class="sticker">MH<br>KPOP</div>
+      <div class="hero-art">
+        <div class="tile"><img class="logo-float" src="assets/logo.png" alt="MH KPOP SELL 標誌" width="534" height="518"></div>
+        <div class="badge" aria-hidden="true">
+          <svg class="badge-spin" viewBox="0 0 120 120" width="100%" height="100%" aria-hidden="true">
+            <defs><path id="ring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+            <text font-family="Jost, sans-serif" font-size="11" font-weight="500" letter-spacing="3.2" fill="#122521"><textPath href="#ring">SELL OUT · 售完即止 · ALBUMS · 專輯 ·</textPath></text>
+          </svg>
+          <span class="badge-num">3折</span>
+        </div>
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+    <div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
 
-    <section id="shop" class="section">
-      <div class="section-head">
+    <section id="shelf" class="section wrap">
+      <div class="section-head reveal">
         <div>
-          <p class="kicker">暑期限定優惠</p>
-          <h2>熱門專輯</h2>
+          <p class="caps kicker">暑期限定優惠</p>
+          <h2>熱門專輯價目</h2>
         </div>
-        <label class="search">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="search" type="search" placeholder="搜尋組合、專輯" aria-label="搜尋商品">
-        </label>
+        <div class="chips" id="chips" role="group" aria-label="按組合篩選"></div>
       </div>
-      <div class="filters">
-        <div class="chips" id="cat-filters" role="group" aria-label="分類"></div>
-        <select id="group-filter" aria-label="按組合篩選"></select>
-      </div>
+      <p class="loading" id="loading">正在載入價目…</p>
       <div class="grid" id="grid"></div>
-      <p class="empty" id="empty" hidden>找不到相關商品。歡迎 <a class="dm-link" href="#" target="_blank" rel="noopener">Instagram 查詢</a>，我們會盡力幫你搵貨。</p>
+      <p class="note" data-s="shelfNote"></p>
     </section>
 
-    <section id="how" class="section">
-      <p class="kicker">購買流程</p>
-      <h2>簡單三步</h2>
-      <div class="bento">
-        <div class="tile tile-a"><span class="num">1</span><h3>加入購物車</h3><p>揀選專輯，按「加入」。售完即止，不設預留。</p></div>
-        <div class="tile tile-b"><span class="num">2</span><h3>落單及付款</h3><p>填寫資料，選擇順豐到付或門市自取，再選擇付款方式。落單後會收到訂單編號。</p></div>
-        <div class="tile tile-c"><span class="num">3</span><h3>傳訂單到 Instagram</h3><p>按「複製訂單並 DM 我們」，貼上訊息即可。請用文字訊息，不接受語音訊息。</p></div>
-        <div class="tile tile-d"><h3>想搵其他專輯？</h3><p>查詢時請表示有意購買 xx，我們會盡快回覆。</p><a class="btn btn-small dm-link" href="#" target="_blank" rel="noopener">DM 我們</a></div>
-      </div>
-    </section>
-
-    <section id="store" class="section">
-      <p class="kicker">門市資料</p>
-      <h2>歡迎到將軍澳門市</h2>
-      <div class="store-grid">
-        <div class="store-card">
-          <h3>門市地址</h3>
-          <p id="store-address"></p>
-        </div>
-        <div class="store-card">
-          <h3>營業時間</h3>
-          <p id="store-hours"></p>
-        </div>
-        <div class="store-card">
-          <h3>查詢</h3>
-          <p>Instagram：<a class="ig-link ig-handle" href="#" target="_blank" rel="noopener">@mh.kpop.sell</a></p>
-          <p class="store-warn" id="store-note"></p>
+    <section id="how" class="band">
+      <div class="wrap section">
+        <h2 class="reveal">購買流程</h2>
+        <div class="steps">
+          <div class="step reveal"><div class="outline">1</div><h3>睇價目</h3><p>在價目表睇清楚想買的專輯和價錢。</p></div>
+          <div class="step reveal"><div class="outline">2</div><h3>填寫落單表格</h3><p>留低姓名、聯絡方式和交收方式，揀選貨品後提交。</p></div>
+          <div class="step reveal"><div class="outline">3</div><h3>等我們聯絡</h3><p>我們會確認貨量，並告知付款方法和交收安排。</p></div>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="section faq">
-      <p class="kicker">常見問題</p>
-      <h2>落單前須知</h2>
-      <details><summary>可以預留貨品嗎？</summary><p>本店售完即止，不設預留。請於網上落單，或到門市購買。</p></details>
-      <details><summary>運費點計？</summary><p>可選順豐到付，運費由你在收件時付給順豐。大量購買亦可接受順豐到付。你也可以到將軍澳門市自取。</p></details>
-      <details><summary>接受哪些付款方式？</summary><p>可選轉數快 FPS、PayMe 或門市付款。如店主開通了 PayPal，亦可用信用卡或扣帳卡付款。落單後你會看到付款資料。</p></details>
-      <details><summary>點樣查詢？</summary><p>請在 Instagram 私訊 @mh.kpop.sell，並表示有意購買 xx。本店不接受語音訊息。</p></details>
+    <section id="info" class="section wrap">
+      <h2 class="reveal">購買須知</h2>
+      <div class="info-grid">
+        <div class="reveal"><h3 class="caps">順豐到付</h3><p>運費由你在收件時付給順豐，網上不收運費。大量購買亦可接受順豐到付。</p></div>
+        <div class="reveal"><h3 class="caps">門市自取</h3><p>將軍澳 TKO Gateway 東翼一樓 E171 號舖，別樹一格 A24 &amp; B24 格位。營業時間：<span data-s="hours"></span>。</p></div>
+        <div class="reveal"><h3 class="caps">落單規則</h3><p>售完即止，不設預留。查詢請用文字訊息，並表示有意購買 xx。本店不接受語音訊息。</p></div>
+      </div>
+    </section>
+
+    <section id="order" class="band">
+      <div class="wrap section order-wrap">
+        <div class="order-intro reveal">
+          <p class="caps kicker">只接受表格落單</p>
+          <h2>落單表格</h2>
+          <p class="lead">本店只接受透過這張表格落單。提交後我們會用你留下的聯絡方式確認貨量，並告知付款方法。</p>
+          <ul class="list">
+            <li>售完即止，不設預留</li>
+            <li>請留下 Instagram 帳號或電話</li>
+            <li>順豐到付，運費在收件時付給順豐</li>
+          </ul>
+        </div>
+
+        <div class="order-card">
+          <p class="closed" id="closed" hidden>網上落單暫時未開放。請在 Instagram 私訊 <a data-s-ig href="#" target="_blank" rel="noopener">@mh.kpop.sell</a>，並表示有意購買 xx（請用文字訊息）。</p>
+
+          <form id="order-form" novalidate>
+            <div class="two">
+              <div><label for="f-name">姓名</label><input id="f-name" name="name" class="field" type="text" autocomplete="name"></div>
+              <div><label for="f-contact">Instagram 或電話</label><input id="f-contact" name="contact" class="field" type="text" autocomplete="tel"></div>
+            </div>
+
+            <fieldset>
+              <legend>揀選貨品</legend>
+              <div class="items" id="items"></div>
+              <div class="total-row"><span>貨品總額（未計運費）</span><b id="total">HK$0</b></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>交收方式</legend>
+              <div class="pills" id="delivery"></div>
+              <p class="hint" id="delivery-note"></p>
+            </fieldset>
+
+            <div id="address-wrap">
+              <label for="f-address">收件地址</label>
+              <textarea id="f-address" name="address" class="field" rows="3" autocomplete="street-address"></textarea>
+            </div>
+
+            <div>
+              <label for="f-notes">備註（選填）</label>
+              <textarea id="f-notes" name="notes" class="field" rows="2"></textarea>
+            </div>
+
+            <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+
+            <p class="error" id="error" role="alert" hidden></p>
+            <button class="btn btn-solid btn-lg" type="submit" id="submit">提交訂單</button>
+            <p class="hint">提交後我們會確認貨量，再告知付款方法。查詢請用文字訊息，本店不接受語音訊息。</p>
+          </form>
+
+          <div class="done" id="done" hidden>
+            <p class="caps kicker" id="done-no"></p>
+            <h3>已收到你的訂單</h3>
+            <p class="lead">我們會用你留下的聯絡方式（<span id="done-contact"></span>）確認貨量，並告知付款方法。</p>
+            <div class="summary" id="summary"></div>
+            <button class="btn btn-line" type="button" id="again">再填一張表格</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="store" class="dark">
+      <div class="wrap section store-wrap">
+        <div>
+          <p class="caps kicker">門市</p>
+          <h2 id="stall"></h2>
+          <p class="addr" id="address"></p>
+          <dl class="facts">
+            <div><dt class="caps">營業時間</dt><dd data-s="hours"></dd></div>
+            <div><dt class="caps">Instagram</dt><dd><a data-s-ig href="#" target="_blank" rel="noopener">@mh.kpop.sell</a></dd></div>
+            <div><dt class="caps">查詢須知</dt><dd data-s="enquiryNote"></dd></div>
+          </dl>
+          <p class="claims" data-s="claims"></p>
+        </div>
+        <div class="store-art reveal"><img src="assets/logo-tile.jpg" alt="MH KPOP SELL 標誌，灰色背景" width="900" height="900" loading="lazy"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section wrap">
+      <h2 class="reveal">常見問題</h2>
+      <div class="faq">
+        <details><summary>點樣落單？</summary><p>請填寫網頁上的落單表格。本店只接受透過表格落單。</p></details>
+        <details><summary>可以預留貨品嗎？</summary><p>不可以。本店售完即止，不設預留。</p></details>
+        <details><summary>運費點計？</summary><p>選順豐到付，運費由你在收件時付給順豐，大量購買亦可。到將軍澳門市自取則不用運費。</p></details>
+        <details><summary>點樣查詢？</summary><p>請在 Instagram 私訊 <a data-s-ig href="#" target="_blank" rel="noopener">@mh.kpop.sell</a>，並表示有意購買 xx。本店不接受語音訊息。</p></details>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-big">MH<span>KPOP</span></div>
-    <p>追蹤 <a class="ig-link ig-handle" href="#" target="_blank" rel="noopener">@mh.kpop.sell</a> 睇最新貨品。</p>
-    <p class="small">© <span id="year"></span> MH_KPOP 韓國 K-POP 產品專賣店</p>
+    <div class="wrap footer-in">
+      <span class="brand"><img src="assets/logo.png" alt="" width="40" height="39"><span class="caps">MHKPOP</span></span>
+      <span>韓國 K-POP 專輯專賣店 · 將軍澳</span>
+    </div>
   </footer>
 
-  <!-- 商品詳情 -->
-  <dialog class="modal" id="quickview" aria-label="商品詳情">
-    <button class="close" data-close aria-label="關閉">×</button>
-    <div class="qv" id="qv-body"></div>
-  </dialog>
-
-  <!-- 購物車 -->
-  <div class="scrim" id="scrim" hidden></div>
-  <aside class="drawer" id="drawer" aria-label="購物車" aria-hidden="true">
-    <div class="drawer-head">
-      <h2>你的購物車</h2>
-      <button class="close" id="cart-close" aria-label="關閉購物車">×</button>
-    </div>
-    <div class="drawer-body" id="cart-items"></div>
-    <div class="drawer-foot">
-      <p class="ship-note" id="ship-note"></p>
-      <div class="row"><span>小計</span><b id="cart-subtotal"></b></div>
-      <button class="btn btn-block" id="checkout-btn">結帳</button>
-    </div>
-  </aside>
-
-  <!-- 結帳 -->
-  <dialog class="modal modal-wide" id="checkout" aria-label="結帳">
-    <button class="close" data-close aria-label="關閉">×</button>
-    <div id="checkout-body"></div>
-  </dialog>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="products.js"></script>
+  <noscript><p style="padding:16px;text-align:center">請開啟 JavaScript 以查看價目和使用落單表格。</p></noscript>
+  <script src="settings.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
