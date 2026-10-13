@@ -11,12 +11,15 @@ IB.page = function () {
       <div class="filters">
         <label class="field">Subject<select id="fSub"><option value="">All subjects</option>${IB.subjectList().map((s) => `<option value="${s.id}">${s.name}</option>`).join("")}</select></label>
         <label class="field">Topic<select id="fTopic"></select></label>
+        <label class="field">Sub-topic<select id="fUnit"></select></label>
         <label class="field">Paper<select id="fPaper"><option value="">Any paper</option></select></label>
-        <label class="field">Type<select id="fType"><option value="">Any type</option><option value="mcq">Multiple choice</option><option value="short">Short / structured</option><option value="extended">Extended response / essay</option><option value="calc">Calculations only</option></select></label>
+        <label class="field">Question type<select id="fQt"><option value="">Any question type</option>${IB.QTYPES.map(([k, n]) => `<option value="${k}">${n}</option>`).join("")}</select></label>
+        <label class="field">Format<select id="fType"><option value="">Any format</option><option value="mcq">Multiple choice</option><option value="short">Short / structured</option><option value="extended">Extended response / essay</option><option value="calc">Calculations only</option></select></label>
         <label class="field">Section<select id="fSec"><option value="">All sections</option>${IB.SECTIONS.map(([k, n]) => `<option value="${k}">${n}</option>`).join("")}</select></label>
         <label class="field">Difficulty<select id="fDiff"><option value="">Any</option><option value="1">Foundation</option><option value="2">Standard</option><option value="3">Challenging</option></select></label>
         <label class="field">Source<select id="fSource"><option value="">All questions</option><option value="site">Site questions</option><option value="mine">My past papers</option></select></label>
         <label class="field">Status<select id="fStatus"><option value="">All questions</option><option value="new">Not attempted</option><option value="weak">Scored under 60%</option><option value="saved">Saved for review</option></select></label>
+        <label class="field">Sort by<select id="fSort"><option value="unit">Topic and sub-topic</option><option value="paper">Paper</option><option value="qtype">Question type</option><option value="marks">Marks (low to high)</option><option value="marks-desc">Marks (high to low)</option><option value="diff">Difficulty</option></select></label>
         <label class="field field-wide">Search<input type="search" id="fSearch" placeholder="e.g. elasticity, pH, Spearman, tariff…"></label>
       </div>
       <div class="btn-row" style="margin-top:14px">
@@ -55,21 +58,40 @@ IB.page = function () {
     <div class="pager no-print" id="pager"></div>`;
 
   const f = {
-    sub: IB.qs("#fSub"), topic: IB.qs("#fTopic"), paper: IB.qs("#fPaper"), type: IB.qs("#fType"),
+    sub: IB.qs("#fSub"), topic: IB.qs("#fTopic"), unit: IB.qs("#fUnit"), paper: IB.qs("#fPaper"), qt: IB.qs("#fQt"), type: IB.qs("#fType"), sort: IB.qs("#fSort"),
     diff: IB.qs("#fDiff"), sec: IB.qs("#fSec"), status: IB.qs("#fStatus"), source: IB.qs("#fSource"), search: IB.qs("#fSearch"),
   };
   f.sub.value = IB.param("subject") || "";
   f.source.value = IB.param("source") || "";
   f.sec.value = IB.param("sec") || "";
+  f.qt.value = IB.param("qt") || "";
+  f.sort.value = IB.param("sort") || "unit";
 
   function fillTopics() {
     const subs = f.sub.value ? [IB.subjects[f.sub.value]] : IB.subjectList();
     f.topic.innerHTML = `<option value="">All topics</option>` + subs.map((s) => `<optgroup label="${s.name}">${s.topics.map((t) => `<option value="${t.id}">${IB.esc(t.code)} ${IB.esc(t.title)}</option>`).join("")}</optgroup>`).join("");
-    const papers = new Set(IB.allQuestions(f.sub.value || undefined).map((q) => q.paper).filter(Boolean));
-    f.paper.innerHTML = `<option value="">Any paper</option>` + Array.from(papers).sort().map((p) => `<option>${p}</option>`).join("");
+    const papers = new Set(IB.allQuestions(f.sub.value || undefined).map(IB.paperOf));
+    const sid = f.sub.value;
+    const ord = (p) => (p === IB.ANY_PAPER ? "zzz" : p);
+    f.paper.innerHTML = `<option value="">Any paper</option>` + Array.from(papers).sort((a, b) => ord(a).localeCompare(ord(b))).map((p) => `<option value="${p}">${IB.esc(sid ? IB.paperLabel(sid, p) : p === IB.ANY_PAPER ? "Any paper (core skills)" : p)}</option>`).join("");
+  }
+  // sub-topics of the chosen topic (or of every topic in the chosen subject); value is "topicId|unitKey"
+  function fillUnits() {
+    const keep = f.unit.value;
+    const ts = f.topic.value ? [IB.topic(f.topic.value)] : f.sub.value ? IB.subjects[f.sub.value].topics : [];
+    const opts = (t) => Object.entries(t.units || {}).map(([k, n]) => `<option value="${t.id}|${k}">${IB.esc(n)}</option>`).join("");
+    const withUnits = ts.filter((t) => t && Object.keys(t.units || {}).length);
+    f.unit.disabled = !withUnits.length;
+    f.unit.innerHTML = !withUnits.length ? `<option value="">Choose a subject or topic first</option>`
+      : `<option value="">All sub-topics</option>` + (withUnits.length === 1 ? opts(withUnits[0]) : withUnits.map((t) => `<optgroup label="${IB.esc(t.code)} ${IB.esc(t.title)}">${opts(t)}</optgroup>`).join(""));
+    f.unit.value = keep;
+    if (f.unit.selectedIndex < 0) f.unit.value = "";
   }
   fillTopics();
   if (IB.param("topic")) f.topic.value = IB.param("topic");
+  if (IB.param("paper")) f.paper.value = IB.param("paper");
+  fillUnits();
+  if (IB.param("unit")) { f.unit.value = IB.param("unit"); if (f.unit.selectedIndex < 0) f.unit.value = ""; }
 
   function filtered(topicSet) {
     const data = IB.store.get();
@@ -79,7 +101,9 @@ IB.page = function () {
     let qs = extra.concat(IB.allQuestions(f.sub.value || undefined)).filter((q) => !f.sub.value || q.subject === f.sub.value);
     return qs.filter((q) => {
       if (topicSet ? !topicSet.has(q.topic) : f.topic.value && q.topic !== f.topic.value) return false;
-      if (f.paper.value && q.paper !== f.paper.value) return false;
+      if (f.unit.value && `${q.topic}|${IB.unitOf(q)}` !== f.unit.value) return false;
+      if (f.paper.value && IB.paperOf(q) !== f.paper.value) return false;
+      if (f.qt.value && !IB.qtypesOf(q).includes(f.qt.value)) return false;
       if (f.source.value === "mine" && !q.custom) return false;
       if (f.source.value === "site" && q.custom) return false;
       if (f.type.value === "calc" ? !q.numeric : f.type.value && q.type !== f.type.value) return false;
@@ -133,8 +157,29 @@ IB.page = function () {
     if (back) back.onclick = () => { drillId = null; render(); };
   }
 
+  // stable sort: topic order first, then the chosen key, so every group reads in syllabus order
+  function sorted(qs) {
+    const ord = topicOrder(), key = f.sort.value;
+    const unitIdx = (q) => Object.keys((IB.topic(q.topic) || {}).units || {}).indexOf(IB.unitOf(q));
+    const qtIdx = (q) => IB.QTYPES.findIndex((x) => x[0] === IB.qtypeOf(q));
+    const pk = (q) => { const p = IB.paperOf(q); return p === IB.ANY_PAPER ? "zzz" : p; };
+    const cmp = {
+      unit: (a, b) => unitIdx(a) - unitIdx(b),
+      paper: (a, b) => pk(a).localeCompare(pk(b)),
+      qtype: (a, b) => qtIdx(a) - qtIdx(b),
+      marks: (a, b) => a.marks - b.marks,
+      "marks-desc": (a, b) => b.marks - a.marks,
+      diff: (a, b) => (a.diff || 2) - (b.diff || 2),
+    }[key];
+    const byTopic = (a, b) => (ord[a.topic] ?? 1e9) - (ord[b.topic] ?? 1e9);
+    const keyed = qs.map((q, i) => [q, i]);
+    // paper / question type / marks / difficulty sort across the chosen topics; sub-topic sort groups inside each topic
+    keyed.sort((x, y) => (key === "unit" ? byTopic(x[0], y[0]) || cmp(x[0], y[0]) : cmp(x[0], y[0]) || byTopic(x[0], y[0]) || unitIdx(x[0]) - unitIdx(y[0])) || x[1] - y[1]);
+    return keyed.map((x) => x[0]);
+  }
+
   function render() {
-    let qs = filtered();
+    let qs = sorted(filtered());
     drillBar(qs);
     if (drillId) qs = qs.filter((q) => q.id === drillId);
     const pages = Math.max(1, Math.ceil(qs.length / PER_PAGE));
@@ -142,7 +187,15 @@ IB.page = function () {
     IB.qs("#count").textContent = `${qs.length} question${qs.length === 1 ? "" : "s"}`;
     const list = IB.qs("#list");
     list.innerHTML = qs.length ? "" : `<div class="card muted">No questions match these filters.</div>`;
-    qs.slice((page - 1) * PER_PAGE, page * PER_PAGE).forEach((q, i) => list.appendChild(IB.renderQuestion(q, { number: (page - 1) * PER_PAGE + i + 1, onScored: () => f.sec.value === "drill" && drillBar(filtered()) })));
+    let lastHead = null;
+    const headOf = (q) => {
+      const k = f.sort.value;
+      if (k === "paper") return IB.paperLabel(q.subject, IB.paperOf(q));
+      if (k === "qtype") return IB.qtypeLabel(IB.qtypeOf(q));
+      if (k === "unit") { const t = IB.topic(q.topic); return t ? `${t.code} ${t.title}${q.unitName ? " › " + q.unitName : ""}` : ""; }
+      return "";
+    };
+    qs.slice((page - 1) * PER_PAGE, page * PER_PAGE).forEach((q, i) => { const h = headOf(q); if (h && h !== lastHead && !drillId) list.appendChild(IB.el(`<h3 class="q-group">${IB.esc(h)}</h3>`)); lastHead = h; list.appendChild(IB.renderQuestion(q, { number: (page - 1) * PER_PAGE + i + 1, onScored: () => f.sec.value === "drill" && drillBar(filtered()) })); });
     const pager = IB.qs("#pager");
     pager.innerHTML = "";
     if (pages > 1) {
@@ -158,10 +211,11 @@ IB.page = function () {
   }
 
   Object.values(f).forEach((el) => el.addEventListener(el.tagName === "INPUT" ? "input" : "change", () => {
-    if (el === f.sub) fillTopics();
+    if (el === f.sub) { f.topic.value = ""; fillTopics(); }
+    if (el === f.sub || el === f.topic) { f.unit.value = ""; fillUnits(); }
     page = 1;
     drillId = null;
-    history.replaceState(null, "", `questionbank.html?subject=${f.sub.value}${f.topic.value ? "&topic=" + f.topic.value : ""}${f.sec.value ? "&sec=" + f.sec.value : ""}`);
+    history.replaceState(null, "", `questionbank.html?subject=${f.sub.value}${f.topic.value ? "&topic=" + f.topic.value : ""}${f.sec.value ? "&sec=" + f.sec.value : ""}${f.unit.value ? "&unit=" + f.unit.value : ""}${f.paper.value ? "&paper=" + f.paper.value : ""}${f.qt.value ? "&qt=" + f.qt.value : ""}${f.sort.value !== "unit" ? "&sort=" + f.sort.value : ""}`);
     render();
   }));
 

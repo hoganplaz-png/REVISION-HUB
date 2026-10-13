@@ -1131,3 +1131,6 @@ body::after {
 @media print { .fx-net, .fx-glow, .band-curves, .fx-top, #toast { display: none !important; } }
 /* the marking demo card stays white in dark mode, so its subject pill keeps dark text */
 .hero-demo .pill.econ { color: #0F1B2D; }
+
+/* question bank: group headings when sorted by sub-topic, paper or question type */
+.q-group { margin: 22px 0 8px; padding-bottom: 6px; border-bottom: 2px solid var(--surface-2); font-size: 1rem; }
