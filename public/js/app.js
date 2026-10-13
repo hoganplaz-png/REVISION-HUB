@@ -811,6 +811,7 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
         <span class="pill ${q.subject}">${esc(s ? s.short : q.subject)}</span>
         ${opts.showTopic !== false && t ? `<span class="pill">${esc(t.code)} ${esc(t.title)}</span>` : ""}
         ${q.paper ? `<span class="pill">${esc(q.paper)}</span>` : ""}
+        ${IB.qtypeOf ? `<span class="pill">${esc(IB.qtypeLabel(IB.qtypeOf(q)))}</span>` : ""}
         ${diff ? `<span class="pill ${q.diff === 3 ? "bad" : q.diff === 1 ? "good" : "warn"}">${diff}</span>` : ""}
         ${q.generated ? `<span class="pill">Auto-generated</span>` : ""}
         ${q.sec && q.sec !== "exam" && IB.sectionName ? `<span class="pill sec ${q.sec}">${esc(IB.sectionName(q.sec))}</span>` : ""}
