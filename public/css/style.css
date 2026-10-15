@@ -1134,3 +1134,17 @@ body::after {
 
 /* question bank: group headings when sorted by sub-topic, paper or question type */
 .q-group { margin: 22px 0 8px; padding-bottom: 6px; border-bottom: 2px solid var(--surface-2); font-size: 1rem; }
+
+/* question bank: tap-to-filter chips */
+.qb-main { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.qb-chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; }
+.qb-chips[hidden] { display: none; }
+.qb-chips-h { font-size: .78rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-right: 4px; flex-basis: 100%; }
+.qb-chip { font: inherit; font-size: .88rem; font-weight: 700; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--border, rgba(120,130,160,.35)); background: var(--surface-2); color: var(--text); cursor: pointer; }
+.qb-chip em { font-style: normal; font-weight: 600; color: var(--muted); margin-left: 4px; }
+.qb-chip:hover:not(:disabled) { border-color: var(--accent, #3b5bdb); }
+.qb-chip.on { background: var(--accent, #3b5bdb); border-color: var(--accent, #3b5bdb); color: #fff; }
+.qb-chip.on em { color: rgba(255, 255, 255, .85); }
+.qb-chip:disabled { opacity: .4; cursor: default; }
+.qb-more { margin-top: 16px; }
+.qb-more summary { cursor: pointer; font-weight: 700; color: var(--muted); font-size: .9rem; }
