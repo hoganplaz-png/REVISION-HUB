@@ -597,6 +597,7 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:5p
 - Calculations: apply method (M) and accuracy (A) marks and follow-through (FT) as IB would.
 - Feedback is for a 16-18 year old: specific, encouraging and actionable; quote or paraphrase their words.`;
   const plain = (s) => String(s || "").replace(/<br\s*\/?>/g, "\n").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+  IB.plain = plain;
   const SAMPLE_MSG = {
     not_granted: "AI was not allowed for this page. You can allow it from the page's Permissions menu.",
     sampling_disabled: "AI isn't available for this Claude account.",
@@ -893,6 +894,14 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
       const dgp = IB.diagramPanel ? IB.diagramPanel(q) : null;
       if (dgp) ansBox.appendChild(dgp.el);
       card.diagram = dgp;
+      // Essays and maths: upload handwritten or typed work (photos / PDF) to be marked by the AI (js/filemark.js).
+      const upl = IB.uploadPanel && IB.config.ai && !IB.hosted && !opts.hideActions && opts.mode !== "exam" && (q.type === "extended" || q.subject === "math" || q.subject === "phys" || q.subject === "chem")
+        ? IB.uploadPanel({ title: q.subject === "math" ? "Or upload your handwritten working" : "Or upload your handwritten or typed answer" }) : null;
+      if (upl) {
+        const wrap = IB.el(`<details class="up-wrap"><summary>📎 Mark a photo or PDF of my work instead</summary></details>`);
+        wrap.appendChild(upl.el);
+        ansBox.appendChild(wrap);
+      }
       const aiBtn = IB.el(`<button class="btn primary small">✓ Mark my answer</button>`);
       const msBtn = IB.el(`<button class="btn small">Show markscheme & self-mark</button>`);
       if (!opts.hideActions && opts.mode !== "exam") {
@@ -939,12 +948,16 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
       const runMark = async () => {
         const answer = ta.value;
         const dg = dgp ? dgp.state() : null;
-        if (!answer.trim() && !dg) return IB.toast("Write an answer first.");
+        const hasFiles = upl && upl.count() > 0;
+        if (!answer.trim() && !dg && !hasFiles) return IB.toast("Write an answer or upload your work first.");
         aiBtn.disabled = true;
         aiBtn.textContent = "Marking…";
         let fb;
         try {
-          if (await IB.ai.available()) fb = await IB.ai.mark(q, answer + (dgp ? dgp.describe() : ""));
+          if (hasFiles) {
+            const t = IB.topic(q.topic);
+            fb = await IB.ai.markFiles({ subject: q.subject, topic: t ? t.title : "", question: IB.plain(q.q), ms: q.ms.map(IB.plain), marks: q.marks, answer, files: upl.files() });
+          } else if (await IB.ai.available()) fb = await IB.ai.mark(q, answer + (dgp ? dgp.describe() : ""));
           else fb = IB.offlineMark(q, answer, { diagram: dg });
         } catch (e) {
           IB.toast(e.message + " - using offline marker.");
@@ -954,7 +967,7 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
         aiBtn.disabled = false;
         IB.qsa(".feedback", result).forEach((n) => n.remove());
         card._lastFb = fb;
-        const fbEl = IB.feedbackEl(fb);
+        const fbEl = fb.transcription !== undefined && IB.fileFeedbackEl ? IB.fileFeedbackEl(fb) : IB.feedbackEl(fb);
         result.prepend(fbEl);
         if (IB.animateFeedback) IB.animateFeedback(fbEl);
         IB.math(result);
@@ -1041,7 +1054,7 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
         ${link("mypapers.html", "Papers", "mypapers")}
         ${link("friends.html", "Friends", "friends")}
         ${link("progress.html", "Progress", "progress")}
-        ${IB.config.ai ? link("tutor.html", "AI Tutor", "tutor") : ""}
+        ${IB.config.ai ? link("aimark.html", "AI Marking", "aimark") + link("tutor.html", "AI Tutor", "tutor") : ""}
         <a href="#" class="nav-lvl" id="navLvl">SL / HL levels</a>
       </nav>
       ${IB.gameChip ? IB.gameChip() : ""}
