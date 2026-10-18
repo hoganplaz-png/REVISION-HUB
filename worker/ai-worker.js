@@ -58,6 +58,34 @@ const MARK_SCHEMA = {
   required: ["score", "level", "summary", "awarded", "missing", "improvements", "model_answer"],
 };
 
+const FILE_SYSTEM = `You are a senior, strict IB examiner. The student's work arrives as photos or PDFs (handwritten or typed) and/or typed text.
+1. First transcribe what the student wrote as faithfully as you can (keep their working, crossed-out work excluded). Mark [illegible] where you cannot read it. Never fill gaps with what the answer "should" say.
+2. Mark ONLY what is on the page, strictly against the markscheme / IB criteria, the way a moderated IB examiner would: credit only creditworthy points that are clearly present, accept equivalent wording and valid alternatives (OWTTE), give no marks for vague or wrong statements.
+3. Maths: apply M (method), A (accuracy) and R (reasoning) marks, award follow-through (FT) after an earlier error, and give no marks for an answer with no supporting working when working is required. Check every algebraic step.
+4. Essays: pick the best-fit level/band from the level descriptors, then the mark within it; name which assessment criterion (e.g. Economics Paper 1 Criterion A-D, Geography, English B, Chinese A) each comment relates to.
+5. The result is an estimate to help the student revise, not an official IB grade. Set confidence to "low" if the writing is hard to read, the image is cropped, or the markscheme had to be reconstructed.
+6. Feedback is for a 16-18 year old: specific, kind and actionable. Quote or paraphrase their own words. If the files are not the student's answer to this question (blank, wrong subject, unreadable), score 0, set legible to false and say why in the summary.`;
+
+const FILE_SCHEMA = {
+  type: "object",
+  properties: Object.assign({}, MARK_SCHEMA.properties, {
+    transcription: { type: "string", description: "Faithful transcription of the student's work" },
+    legible: { type: "boolean" },
+    confidence: { type: "string", enum: ["high", "medium", "low"] },
+    criteria: {
+      type: "array",
+      description: "Marks broken down by markscheme point or assessment criterion",
+      items: {
+        type: "object",
+        properties: { name: { type: "string" }, awarded: { type: "number" }, max: { type: "number" }, comment: { type: "string" } },
+        required: ["name", "awarded", "max", "comment"],
+      },
+    },
+    markscheme_used: { type: "array", items: { type: "string" }, description: "Only when no markscheme was supplied: the markscheme points/criteria you marked against" },
+  }),
+  required: ["score", "level", "summary", "awarded", "missing", "improvements", "model_answer", "transcription", "legible", "confidence", "criteria", "markscheme_used"],
+};
+
 const GEN_SCHEMA = {
   type: "object",
   properties: {
@@ -179,12 +207,18 @@ function parseJson(text) {
   }
 }
 
-async function gemini(env, { system, parts, schema, maxTokens = 8192 }) {
+async function gemini(env, { system, parts, schema, maxTokens = 8192, search = false, meta = null }) {
   const body = {
     contents: [{ role: "user", parts }],
     generationConfig: { maxOutputTokens: maxTokens, responseMimeType: "application/json" },
   };
   if (system) body.systemInstruction = { parts: [{ text: system }] };
+  if (search) {
+    // Google Search grounding can't be combined with a JSON schema/mime type, so the prompt asks for JSON and we parse it.
+    body.tools = [{ google_search: {} }];
+    delete body.generationConfig.responseMimeType;
+    schema = null;
+  }
   if (schema) body.generationConfig.responseJsonSchema = schema;
   const call = (b) =>
     fetch(`${API}/${env.GEMINI_MODEL || "gemini-flash-latest"}:generateContent`, {
@@ -204,7 +238,12 @@ async function gemini(env, { system, parts, schema, maxTokens = 8192 }) {
     r = await call(body);
   }
   if (!r.ok) throw geminiError(r.status, await r.text());
-  return parseJson(textOf(await r.json()));
+  const data = await r.json();
+  if (meta) {
+    const chunks = (((data.candidates || [])[0] || {}).groundingMetadata || {}).groundingChunks || [];
+    meta.sources = chunks.map((c) => c.web).filter((w) => w && /^https?:\/\//.test(w.uri || "")).map((w) => ({ title: String(w.title || w.uri).slice(0, 120), url: w.uri })).slice(0, 6);
+  }
+  return parseJson(textOf(data));
 }
 
 // ---------- API routes ----------
@@ -235,6 +274,57 @@ Mark the student answer out of ${max}. Reply with only a JSON object with keys s
     score: Math.max(0, Math.min(max, Math.round(Number(r.score) || 0))), max,
     level: String(r.level || ""), summary: String(r.summary || ""),
     awarded: arr(r.awarded), missing: arr(r.missing), improvements: arr(r.improvements), model_answer: String(r.model_answer || ""),
+  };
+}
+
+const FILE_MIMES = ["image/jpeg", "image/png", "image/webp", "application/pdf"];
+
+// Marks handwritten/typed work sent as photos or PDFs (and/or typed text) against the bank's markscheme,
+// or, for a question the student typed in themselves, against an IB markscheme the model looks up first.
+async function handleMarkFile(req, env) {
+  const b = await readBody(req, 24_000_000);
+  const files = (Array.isArray(b.files) ? b.files : []).slice(0, 6);
+  let total = 0;
+  const fileParts = files.map((f) => {
+    const mime = String((f && f.mime) || "");
+    const data = String((f && f.data) || "");
+    if (!FILE_MIMES.includes(mime) || !/^[A-Za-z0-9+/=]+$/.test(data)) throw new HttpError(400, "Upload photos (JPEG/PNG) or a PDF.");
+    total += data.length;
+    return { inlineData: { mimeType: mime, data } };
+  });
+  if (total > 18_000_000) throw new HttpError(413, "The files are too big - upload fewer pages or smaller photos.");
+  const typed = str(b.answer, 30_000).trim();
+  if (!fileParts.length && !typed) throw new HttpError(400, "Upload your work or type an answer first.");
+  const max = Math.max(1, Math.min(60, parseInt(b.marks, 10) || 1));
+  const ms = (Array.isArray(b.ms) ? b.ms : []).map((p) => str(p, 2000).trim()).filter(Boolean).slice(0, 60);
+  const search = !ms.length;
+  const subject = SUBJECT_NAMES[b.subject] || str(b.subject, 60);
+  const prompt = `Subject: ${subject}${b.level ? ` (${str(b.level, 4)})` : ""}
+${b.paper ? `Paper / component: ${str(b.paper, 80)}\n` : ""}Topic: ${str(b.topic, 200) || "(not given)"}
+Maximum marks: ${max}
+
+<question>
+${str(b.question, 8000) || "(the question is shown in the uploaded files)"}
+</question>
+
+${search
+    ? `No markscheme was supplied. Before marking, use Google Search to find the official IB markscheme conventions, command-term expectations and assessment criteria/level descriptors that apply to a question like this for the current ${subject} syllabus (prefer ibo.org, ibdocuments, subject guides, and examiner reports). Write the points you will mark against into "markscheme_used". If you can only find general criteria, say so in the summary and set confidence to "low" or "medium".`
+    : `<markscheme>\n${ms.map((p) => "- " + p).join("\n")}\n</markscheme>`}
+${typed ? `\n<typed_answer>\n${typed}\n</typed_answer>\n` : ""}
+${fileParts.length ? `The student's work is in the ${fileParts.length} attached file(s), in the order uploaded.` : ""}
+Mark out of ${max}. Reply with only a JSON object with keys score, level, summary, awarded, missing, improvements, model_answer, transcription, legible, confidence ("high"|"medium"|"low"), criteria (array of {name, awarded, max, comment}), markscheme_used (array of strings, [] if a markscheme was supplied).`;
+  const meta = {};
+  const r = await gemini(env, { system: FILE_SYSTEM, parts: [...fileParts, { text: prompt }], schema: FILE_SCHEMA, maxTokens: 16384, search, meta });
+  const arr = (x) => (Array.isArray(x) ? x.map(String) : []);
+  const num = (x, hi) => Math.max(0, Math.min(hi, Math.round(Number(x) * 2) / 2 || 0));
+  return {
+    score: Math.max(0, Math.min(max, Math.round(Number(r.score) || 0))), max,
+    level: String(r.level || ""), summary: String(r.summary || ""),
+    awarded: arr(r.awarded), missing: arr(r.missing), improvements: arr(r.improvements), model_answer: String(r.model_answer || ""),
+    transcription: String(r.transcription || ""), legible: r.legible !== false,
+    confidence: ["high", "medium", "low"].includes(r.confidence) ? r.confidence : "medium",
+    criteria: (Array.isArray(r.criteria) ? r.criteria : []).slice(0, 30).map((c) => ({ name: String(c.name || ""), awarded: num(c.awarded, max), max: num(c.max, max), comment: String(c.comment || "") })),
+    markscheme_used: arr(r.markscheme_used), sources: meta.sources || [], grounded: search,
   };
 }
 
@@ -352,7 +442,7 @@ async function handleTutor(req, env, cors) {
   return new Response(readable, { headers: { ...cors, "Content-Type": "text/event-stream; charset=utf-8", "Cache-Control": "no-cache" } });
 }
 
-const ROUTES = { "/api/mark": handleMark, "/api/mark-diagram": handleMarkDiagram, "/api/generate": handleGenerate, "/api/json": handleJson };
+const ROUTES = { "/api/mark": handleMark, "/api/mark-diagram": handleMarkDiagram, "/api/mark-file": handleMarkFile, "/api/generate": handleGenerate, "/api/json": handleJson };
 
 export default {
   async fetch(req, env) {

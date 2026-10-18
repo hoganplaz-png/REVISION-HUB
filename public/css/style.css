@@ -1148,3 +1148,22 @@ body::after {
 .qb-chip:disabled { opacity: .4; cursor: default; }
 .qb-more { margin-top: 16px; }
 .qb-more summary { cursor: pointer; font-weight: 700; color: var(--muted); font-size: .9rem; }
+
+/* Upload your work (js/filemark.js) and the AI marking page */
+.up-wrap { margin-top: 12px; border: 1.5px dashed var(--border); border-radius: var(--radius-sm); background: var(--surface-2); }
+.up-wrap > summary { cursor: pointer; padding: 10px 14px; font-weight: 600; }
+.up-wrap .up-panel { padding: 0 14px 14px; }
+.up-drop { border: 2px dashed var(--border); border-radius: var(--radius-sm); background: var(--surface); padding: 18px; text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center; cursor: pointer; transition: border-color .2s, background .2s; }
+.up-drop:hover, .up-drop:focus-visible, .up-drop.over { border-color: var(--primary); background: var(--primary-soft); outline: none; }
+.up-thumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.up-thumb { position: relative; width: 96px; display: flex; flex-direction: column; gap: 2px; }
+.up-thumb img, .up-pdf { width: 96px; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); }
+.up-pdf { display: grid; place-items: center; font-weight: 800; color: var(--muted); }
+.up-thumb .icon-btn { position: absolute; top: 4px; right: 4px; width: 26px; height: 26px; background: var(--surface); }
+.up-err { color: var(--danger, #c0392b); margin: 8px 0 0; }
+.fm-extra { margin-top: 12px; display: grid; gap: 10px; }
+.fm-est { margin: 0; padding: 8px 12px; border-radius: var(--radius-sm); background: rgba(127,127,127,.14); border-left: 3px solid var(--mark, #e0a800); color: inherit; }
+.fm-table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+.fm-table th { background: transparent; color: inherit; }
+.fm-table th, .fm-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.fm-trans { white-space: pre-wrap; word-break: break-word; background: rgba(127,127,127,.14); color: inherit; padding: 10px; border-radius: 8px; font-family: inherit; }
