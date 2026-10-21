@@ -194,7 +194,7 @@
     if (to === cloud.user.uid) throw new Error("That's your own code.");
     await db.doc(`requests/${to}/from/${cloud.user.uid}`).set({ name: cloud.profile.name, photo: cloud.profile.photo || "", at: Date.now() });
   };
-  cloud.requests = async () => (await db.collection(`requests/${cloud.user.uid}/from`).get()).docs.map((d) => Object.assign({ uid: d.id }, d.data()));
+  cloud.requests = async () => (await db.collection(`requests/${cloud.user.uid}/from`).get()).docs.map((d) => { const r = d.data() || {}; return { uid: d.id, name: String(r.name || "Student").slice(0, 40), photo: safePhoto(r.photo), at: Number(r.at) || 0 }; });
   cloud.accept = async (uid) => {
     const me = cloud.user.uid, now = Date.now();
     await db.doc(`friends/${me}/list/${uid}`).set({ since: now });
@@ -211,10 +211,30 @@
     const ids = (await db.collection(`friends/${cloud.user.uid}/list`).get()).docs.map((d) => d.id);
     const out = [];
     for (const id of ids) {
-      try { const p = await db.doc(`users/${id}`).get(); if (p.exists) out.push(Object.assign({ uid: id }, p.data())); } catch (e) { /* not visible */ }
+      try { const p = await db.doc(`users/${id}`).get(); if (p.exists) out.push(cleanProfile(id, p.data())); } catch (e) { /* not visible */ }
     }
     return out;
   };
+  // A friend's profile is written by their own browser, so only keep the fields the friends page shows,
+  // with the types it expects (numbers stay numbers, the photo must be a Google profile picture).
+  const num = (x, hi = 1e9) => Math.max(0, Math.min(hi, Number(x) || 0));
+  const safePhoto = (u) => (/^https:\/\/[a-z0-9-]+\.googleusercontent\.com\//i.test(String(u || "")) ? String(u) : "");
+  function cleanProfile(uid, d) {
+    const p = (d && d.public) || {};
+    const subjects = {};
+    if (p.subjects && typeof p.subjects === "object") Object.keys(p.subjects).forEach((k) => { subjects[k] = Math.round(num(p.subjects[k], 100)); });
+    return {
+      uid,
+      name: String((d && d.name) || "Student").slice(0, 40),
+      photo: safePhoto(d && d.photo),
+      public: {
+        xp: num(p.xp), weekXp: num(p.weekXp), weekKey: String(p.weekKey || ""), level: num(p.level, 1e4), streak: num(p.streak, 1e5),
+        badges: Array.isArray(p.badges) ? p.badges.map(String) : undefined,
+        subjects: p.subjects ? subjects : undefined,
+      },
+    };
+  }
+  cloud.cleanPhoto = safePhoto;
 
   // ---------- account button in the header ----------
   function renderSlot() {

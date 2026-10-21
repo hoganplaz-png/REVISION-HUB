@@ -28,7 +28,7 @@ IB.page = function () {
     if (/\.pdf$/i.test(file.name) || file.type === "application/pdf") {
       if (!window.pdfjsLib) throw new Error("The PDF reader didn't load. Copy the text from the PDF and paste it instead.");
       window.pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";
-      const pdf = await window.pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+      const pdf = await window.pdfjsLib.getDocument({ data: await file.arrayBuffer(), isEvalSupported: false }).promise;
       let out = "";
       for (let p = 1; p <= pdf.numPages; p++) {
         const content = await (await pdf.getPage(p)).getTextContent();

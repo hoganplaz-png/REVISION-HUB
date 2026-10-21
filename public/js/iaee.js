@@ -76,7 +76,7 @@ IB.page = function () {
         if (/\.pdf$/i.test(f.name)) {
           if (!window.pdfjsLib) throw new Error("PDF reader unavailable - paste the text instead.");
           window.pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";
-          const pdf = await window.pdfjsLib.getDocument({ data: await f.arrayBuffer() }).promise;
+          const pdf = await window.pdfjsLib.getDocument({ data: await f.arrayBuffer(), isEvalSupported: false }).promise;
           let t = "";
           for (let p = 1; p <= pdf.numPages; p++) t += (await (await pdf.getPage(p)).getTextContent()).items.map((i) => i.str).join(" ") + "\n";
           ta.value = t;

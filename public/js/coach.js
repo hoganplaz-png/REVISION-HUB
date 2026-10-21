@@ -1,4 +1,4 @@
-/* Claude IA & EE Coach: examiner-style grading of a draft against the criteria, a supervisor chat that
+/* AI IA & EE Coach: examiner-style grading of a draft against the criteria, a supervisor chat that
    knows the draft (coaches, never ghostwrites), and a history of graded drafts. */
 IB.page = async function () {
   IB.config.ai = true; // this page is built around Claude; available() still checks the server / claude.ai
@@ -21,11 +21,11 @@ IB.page = async function () {
   const draftKey = () => `${kind}:${sid}`;
   const words = (t) => (t.trim() ? t.trim().split(/\s+/).length : 0);
 
-  app.innerHTML = `<h1 style="margin-bottom:.2em">Claude IA &amp; EE Coach</h1>
-    <p class="muted" style="margin-top:0">Upload or paste your Internal Assessment or Extended Essay draft. Claude marks it against every criterion like an IB moderator, shows the evidence it used, and then coaches you as a supervisor. It never writes your coursework for you, so your work stays your own.</p>
+  app.innerHTML = `<h1 style="margin-bottom:.2em">AI IA &amp; EE Coach</h1>
+    <p class="muted" style="margin-top:0">Upload or paste your Internal Assessment or Extended Essay draft. The AI marks it against every criterion like an IB moderator, shows the evidence it used, and then coaches you as a supervisor. It never writes your coursework for you, so your work stays your own.</p>
     ${ai ? "" : IB.hosted
-      ? `<div class="notice warn small"><strong>Claude isn't connected in this view.</strong> Open the site from its claude.ai link while signed in, and allow AI if the page asks.</div>`
-      : `<div class="notice warn small"><strong>Claude is offline on this copy of the site.</strong> Start the server with an Anthropic API key (<code>ANTHROPIC_API_KEY=… npm start</code>) to switch on grading and the supervisor chat. Meanwhile, use the self-assessment on the <a href="ia.html">IA &amp; EE page</a>.</div>`}
+      ? `<div class="notice warn small"><strong>AI isn't connected in this view.</strong> Open the site from its claude.ai link while signed in, and allow AI if the page asks.</div>`
+      : `<div class="notice warn small"><strong>AI is offline on this copy of the site.</strong> Start the server with an Anthropic API key (<code>ANTHROPIC_API_KEY=… npm start</code>) to switch on grading and the supervisor chat. Meanwhile, use the self-assessment on the <a href="ia.html">IA &amp; EE page</a>.</div>`}
     <div class="card">
       <div class="filters">
         <label class="field">Coursework<select id="cKind"><option value="ia">Internal assessment</option><option value="ee">Extended Essay</option></select></label>
@@ -82,7 +82,7 @@ IB.page = async function () {
       if (/\.pdf$/i.test(f.name)) {
         if (!window.pdfjsLib) throw new Error("PDF reader unavailable - paste the text instead.");
         window.pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";
-        const pdf = await window.pdfjsLib.getDocument({ data: await f.arrayBuffer() }).promise;
+        const pdf = await window.pdfjsLib.getDocument({ data: await f.arrayBuffer(), isEvalSupported: false }).promise;
         let t = "";
         for (let p = 1; p <= pdf.numPages; p++) t += (await (await pdf.getPage(p)).getTextContent()).items.map((i) => i.str).join(" ") + "\n\n";
         draft.value = t.trim();
@@ -112,7 +112,7 @@ IB.page = async function () {
 
   // ---------- grading ----------
   function gradeView() {
-    body.innerHTML = `<div class="card"><p class="small muted" style="margin-top:0">Claude reads the whole draft, decides the best-fit level for each criterion, quotes the evidence, and lists the changes that would raise your mark most. It's a prediction for feedback - your teacher's and the IB's marks can differ.</p>
+    body.innerHTML = `<div class="card"><p class="small muted" style="margin-top:0">The AI reads the whole draft, decides the best-fit level for each criterion, quotes the evidence, and lists the changes that would raise your mark most. It's a prediction for feedback - your teacher's and the IB's marks can differ.</p>
       <div class="btn-row"><button class="btn primary" id="gBtn">✦ Grade my draft</button><span class="small muted" id="gStat"></span></div></div><div id="gOut"></div>`;
     const last = (st().history || []).find((h) => h.key === draftKey() && h.full);
     if (last) showReport(last.full, true);
@@ -122,10 +122,10 @@ IB.page = async function () {
   async function grade() {
     const text = draft.value.trim();
     if (words(text) < 150) return IB.toast("Paste or upload at least a few pages of your draft first.");
-    if (!(await IB.ai.available())) return IB.toast("Claude isn't connected here - see the note at the top of the page.");
+    if (!(await IB.ai.available())) return IB.toast("The AI isn't connected here - see the note at the top of the page.");
     const btn = IB.qs("#gBtn"), stat = IB.qs("#gStat");
     btn.disabled = true;
-    stat.textContent = "Claude is marking every criterion… (about a minute)";
+    stat.textContent = "The AI is marking every criterion… (about a minute)";
     const rubric = crit().map((c) => `${c.k} (max ${c.max}):\n` + c.levels.map((l) => `  ${l[0]}: ${l[1]}`).join("\n")).join("\n\n");
     const prompt = `You are a senior IB ${kind === "ee" ? "Extended Essay examiner" : "internal assessment moderator"} for ${subjName()}. Mark the student's draft against these criteria (level descriptors paraphrased from the IB guide):
 
@@ -176,7 +176,7 @@ Reply with only a JSON object:
     const prev = (st().history || []).filter((h) => h.key === draftKey())[1];
     const delta = prev && !isOld ? r.total - prev.total : null;
     IB.qs("#gOut").innerHTML = `<section class="card">
-      <div class="ia-hero" style="--c:var(--primary)"><div><span class="eyebrow">${isOld ? "Last grading" : "Claude's prediction"} · ${IB.esc(subjName())}</span>
+      <div class="ia-hero" style="--c:var(--primary)"><div><span class="eyebrow">${isOld ? "Last grading" : "AI prediction"} · ${IB.esc(subjName())}</span>
         <h2>${r.total} / ${r.max}${delta !== null ? ` <span class="small muted">(${delta >= 0 ? "+" : ""}${delta} since last draft)</span>` : ""}</h2><p>${IB.esc(r.summary)}</p>
         ${r.rq ? `<p class="small"><strong>Research question:</strong> ${IB.esc(r.rq)}</p>` : ""}</div>${ring(r.total, r.max, gradeLabel(r.total, r.max))}</div>
       ${r.criteria.map((c) => `<div class="card" style="margin:12px 0 0">
@@ -188,7 +188,7 @@ Reply with only a JSON object:
       ${r.priorities.length ? `<h4>Do these next</h4><ol class="small">${r.priorities.map((x) => `<li>${IB.esc(x)}</li>`).join("")}</ol>` : ""}
       ${r.strengths.length ? `<h4>Strengths</h4><ul class="small">${r.strengths.map((x) => `<li>${IB.esc(x)}</li>`).join("")}</ul>` : ""}
       ${r.integrity.length ? `<div class="notice warn small"><strong>Academic integrity checks</strong><ul>${r.integrity.map((x) => `<li>${IB.esc(x)}</li>`).join("")}</ul></div>` : ""}
-      <div class="btn-row"><button class="btn small" id="gAsk">Discuss this feedback with Claude</button></div></section>`;
+      <div class="btn-row"><button class="btn small" id="gAsk">Discuss this feedback with the AI</button></div></section>`;
     IB.qs("#gAsk").onclick = () => {
       tab = "chat";
       render();
@@ -199,7 +199,7 @@ Reply with only a JSON object:
   // ---------- supervisor chat ----------
   function chatView() {
     body.innerHTML = `<div class="card">
-      <p class="small muted" style="margin-top:0">Claude acts as your supervisor: it has read the draft above and helps you think, plan and improve, without writing your ${kind === "ee" ? "essay" : "IA"} for you.</p>
+      <p class="small muted" style="margin-top:0">The AI acts as your supervisor: it has read the draft above and helps you think, plan and improve, without writing your ${kind === "ee" ? "essay" : "IA"} for you.</p>
       <div class="chat" id="chat" aria-live="polite"></div>
       <div class="suggestions" id="sugg"></div>
       <div class="chat-input"><textarea id="msg" placeholder="Ask your supervisor…  (Enter to send, Shift+Enter for a new line)"></textarea><button class="btn primary" id="send">Send</button></div>
@@ -225,7 +225,7 @@ Reply with only a JSON object:
     async function send() {
       const text = input.value.trim();
       if (!text || busy) return;
-      if (!(await IB.ai.available())) return IB.toast("Claude isn't connected here - see the note at the top of the page.");
+      if (!(await IB.ai.available())) return IB.toast("The AI isn't connected here - see the note at the top of the page.");
       busy = true;
       input.value = "";
       messages.push({ role: "user", content: text });
