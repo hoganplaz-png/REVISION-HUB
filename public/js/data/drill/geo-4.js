@@ -223,7 +223,7 @@ IB.addDrill("geo", {
       { u: "c", s: "A", m: "3", paper: "P2", t: "Explain one way in which a negative feedback could reduce the rate of global warming.",
         rule: "[1] mechanism, [1] link to warming, [1] stabilising effect.",
         pts: ["Higher CO2 levels and temperatures can increase plant growth (CO2 fertilisation) in some regions [1].", "Greater photosynthesis removes more CO2 from the atmosphere [1].", "This weakens the enhanced greenhouse effect and slows warming, so it works against the original change [1]."] },
-      { u: "c", s: "A", m: "2", paper: "P2", t: "Arctic sea ice extent in September fell from 7.0 million km² to 4.4 million km² between 1980 and 2020. Calculate the percentage decrease.",
+      { u: "c", s: "A", m: "2", paper: "P2", t: "In a hypothetical climate-model run, Arctic sea ice extent in September fell from 7.0 million km² to 4.4 million km² over 40 years. Calculate the percentage decrease.",
         rule: "[1] method, [1] answer.", numeric: { value: 37.1, tol: 0.2 },
         pts: ["(7.0 - 4.4) ÷ 7.0 × 100 [1]", "= 37.1% [1]."] },
       { u: "c", s: "A", m: "4", paper: "P2", t: "Explain the possible consequences of a weakening of the Atlantic Meridional Overturning Circulation (AMOC) for climate.",
