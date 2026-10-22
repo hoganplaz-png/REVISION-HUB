@@ -19,11 +19,11 @@ jobs:
       - name: Gemini key direct
         run: |
           K="$(printf '%s' "$GEMINI_API_KEY" | tr -d '[:space:]')"
-          for m in gemini-flash-latest gemini-2.5-flash gemini-2.5-flash-lite; do
+          for m in gemini-flash-latest gemini-flash-latest gemini-3.8-flash gemini-3.7-flash gemini-3.5-flash gemini-3.5-flash-lite gemini-flash-lite-latest gemini-3.1-flash-lite; do
             echo "--- $m"
             curl -s -m 60 -w '\nHTTP %{http_code}\n' -H "x-goog-api-key: $K" -H "Content-Type: application/json" \
               -d '{"contents":[{"parts":[{"text":"Say OK"}]}]}' \
-              "https://generativelanguage.googleapis.com/v1beta/models/$m:generateContent" | head -c 1200; echo
+              "https://generativelanguage.googleapis.com/v1beta/models/$m:generateContent" | grep -E '"message"|"text"|HTTP' | head -c 400; echo
           done
           echo "--- models"
           curl -s -m 30 -H "x-goog-api-key: $K" "https://generativelanguage.googleapis.com/v1beta/models?pageSize=100" | grep -o '"name": "models/[^"]*flash[^"]*"' | head -20
