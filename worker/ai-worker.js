@@ -7,6 +7,47 @@
 
 const API = "https://generativelanguage.googleapis.com/v1beta/models";
 
+// Models to try in order. Google's busy models answer 503 ("high demand") for hours at a time, and old ones get
+// retired (404), so when one fails like that the next one is tried instead of the student getting an error.
+const FALLBACK_MODELS = ["gemini-3.5-flash", "gemini-flash-latest", "gemini-3.5-flash-lite", "gemini-flash-lite-latest"];
+const RETRY_STATUS = new Set([404, 429, 500, 503, 504]);
+
+function modelList(env) {
+  const own = String(env.GEMINI_MODEL || "").split(",").map((s) => s.trim()).filter(Boolean);
+  return [...new Set([...own, ...FALLBACK_MODELS])];
+}
+
+// Gives up on a model that hasn't started answering within a minute (the reply itself may stream for longer).
+async function post(env, model, method, body) {
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), 60_000);
+  try {
+    return await fetch(`${API}/${model}:${method}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-goog-api-key": env.GEMINI_API_KEY },
+      body: JSON.stringify(body),
+      signal: ctl.signal,
+    });
+  } catch {
+    return new Response(JSON.stringify({ error: { message: "The AI took too long to answer." } }), { status: 504 });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// POSTs body to each model in turn until one answers; returns the last failure when none do.
+// retry(res) may return a changed body to try once more on the same model.
+async function callGemini(env, method, body, retry = () => null) {
+  let r;
+  for (const model of modelList(env)) {
+    r = await post(env, model, method, body);
+    const again = !r.ok && retry(r);
+    if (again) r = await post(env, model, method, again);
+    if (r.ok || !RETRY_STATUS.has(r.status)) return r;
+  }
+  return r;
+}
+
 const SUBJECT_NAMES = {
   econ: "IB Economics SL",
   chem: "IB Chemistry SL",
@@ -178,6 +219,7 @@ function rateLimited(req, env) {
 
 function geminiError(status, detail) {
   if (status === 429) return new HttpError(429, "The free Gemini limit has been reached for now. Try again in a little while.");
+  if (status === 503 || status === 504) return new HttpError(503, "Google's AI is very busy right now. Please try again in a minute.");
   if (status === 400 && /api key/i.test(detail)) return new HttpError(503, "AI marking isn't set up correctly (the Gemini key was rejected).");
   if (status === 403) return new HttpError(503, "AI marking isn't set up correctly (the Gemini key isn't allowed to use this model).");
   let msg = "";
@@ -220,23 +262,13 @@ async function gemini(env, { system, parts, schema, maxTokens = 8192, search = f
     schema = null;
   }
   if (schema) body.generationConfig.responseJsonSchema = schema;
-  const call = (b) =>
-    fetch(`${API}/${env.GEMINI_MODEL || "gemini-flash-latest"}:generateContent`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": env.GEMINI_API_KEY },
-      body: JSON.stringify(b),
-    });
-  let r = await call(body);
-  if (r.status === 404 && !env._fellBack) {
-    // Model retired or renamed: fall back to Google's rolling alias.
-    env = { ...env, GEMINI_MODEL: "gemini-flash-latest", _fellBack: true };
-    r = await call(body);
-  }
-  if (r.status === 400 && schema) {
-    // Older models don't take a JSON schema; fall back to plain JSON mode (the prompts describe the shape too).
-    delete body.generationConfig.responseJsonSchema;
-    r = await call(body);
-  }
+  // Older models don't take a JSON schema; on a 400 retry that model in plain JSON mode (the prompts describe the shape too).
+  const r = await callGemini(env, "generateContent", body, (res) => {
+    if (res.status !== 400 || !schema) return null;
+    const plain = structuredClone(body);
+    delete plain.generationConfig.responseJsonSchema;
+    return plain;
+  });
   if (!r.ok) throw geminiError(r.status, await r.text());
   const data = await r.json();
   if (meta) {
@@ -403,11 +435,7 @@ async function handleTutor(req, env, cors) {
     ? IAEE_SYSTEM + (b.context ? `\n\n<student_work_context>\n${str(b.context, 60_000)}\n</student_work_context>` : "") + context
     : TUTOR_SYSTEM + context;
 
-  const upstream = await fetch(`${API}/${env.GEMINI_MODEL || "gemini-flash-latest"}:streamGenerateContent?alt=sse`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "x-goog-api-key": env.GEMINI_API_KEY },
-    body: JSON.stringify({ systemInstruction: { parts: [{ text: system }] }, contents: history, generationConfig: { maxOutputTokens: 8192 } }),
-  });
+  const upstream = await callGemini(env, "streamGenerateContent?alt=sse", { systemInstruction: { parts: [{ text: system }] }, contents: history, generationConfig: { maxOutputTokens: 8192 } });
   if (!upstream.ok) throw geminiError(upstream.status, await upstream.text());
 
   const { readable, writable } = new TransformStream();
@@ -450,7 +478,7 @@ export default {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
     const path = new URL(req.url).pathname;
     try {
-      if (path === "/api/health") return json({ ai: !!env.GEMINI_API_KEY, model: env.GEMINI_API_KEY ? env.GEMINI_MODEL || "gemini-flash-latest" : null }, 200, cors);
+      if (path === "/api/health") return json({ ai: !!env.GEMINI_API_KEY, model: env.GEMINI_API_KEY ? modelList(env)[0] : null }, 200, cors);
       if (!path.startsWith("/api/")) return json({ error: "Not found" }, 404, cors);
       if (req.method !== "POST") return json({ error: "POST only" }, 405, cors);
       if (env.ACCESS_CODE && req.headers.get("x-access-code") !== env.ACCESS_CODE) return json({ error: "Enter the access code to use AI marking.", code: "access_code" }, 401, cors);
