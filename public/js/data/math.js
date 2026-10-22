@@ -130,6 +130,7 @@ IB.register({
       concepts: [
         { h: "Three forms", b: "<p>Standard: \\(f(x) = ax^2 + bx + c\\) (y-intercept c, axis \\(x = -\\frac{b}{2a}\\)). Vertex: \\(a(x - h)^2 + k\\) (vertex (h, k)). Factorised: \\(a(x - p)(x - q)\\) (roots p, q).</p>" },
         { h: "Solving and the discriminant", b: "<p>$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\qquad \\Delta = b^2 - 4ac$$ Δ &gt; 0: two distinct real roots; Δ = 0: one repeated root (tangent to x-axis); Δ &lt; 0: no real roots.</p>" },
+        { h: "Quadratic formula and axis of symmetry", b: "<p>For $$ax^2+bx+c=0$$ the roots are $$x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$$ The graph of $$y=ax^2+bx+c$$ has <strong>axis of symmetry</strong> $$x=-\\frac{b}{2a}$$ (halfway between the roots), and the vertex lies on it: substitute this x to get the y-coordinate. In vertex form $$y=a(x-h)^2+k$$ the axis is x = h and the vertex (h, k). The roots are symmetric about the axis, so if you know one root and the axis you can find the other: $$x_2 = 2\\left(-\\frac{b}{2a}\\right)-x_1$$</p>" },
       ],
       terms: [["Discriminant", "\\(\\Delta = b^2 - 4ac\\), determining the number of real roots."], ["Vertex", "The turning point of a parabola."]],
       skills: [{ h: "Discriminant parameter questions", b: "When a line is tangent to a curve, substitute to get a quadratic and set Δ = 0. For 'no real roots' set Δ < 0 and solve the inequality." }],
