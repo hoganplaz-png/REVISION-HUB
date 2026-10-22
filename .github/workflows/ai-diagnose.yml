@@ -1,0 +1,29 @@
+# Temporary: checks the live AI Worker and the Gemini key. Prints status codes and error text only, never the key.
+name: AI diagnose
+on:
+  push:
+    branches: [claude/ai-diagnose]
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - name: Worker health
+        run: |
+          W=https://ib-revision-ai.successfuture.workers.dev
+          curl -s -m 20 -i -H "Origin: https://ib-revision-hub.web.app" $W/api/health | grep -iv '^set-cookie'; echo
+          echo "--- mark"
+          curl -s -m 60 -i -X POST -H "Origin: https://ib-revision-hub.web.app" -H "Content-Type: application/json" \
+            -d '{"subject":"econ","topic":"Intro","question":"Define opportunity cost.","answer":"The value of the next best alternative forgone.","marks":2}' $W/api/mark | head -c 2000; echo
+      - name: Gemini key direct
+        run: |
+          K="$(printf '%s' "$GEMINI_API_KEY" | tr -d '[:space:]')"
+          for m in gemini-flash-latest gemini-2.5-flash gemini-2.5-flash-lite; do
+            echo "--- $m"
+            curl -s -m 60 -w '\nHTTP %{http_code}\n' -H "x-goog-api-key: $K" -H "Content-Type: application/json" \
+              -d '{"contents":[{"parts":[{"text":"Say OK"}]}]}' \
+              "https://generativelanguage.googleapis.com/v1beta/models/$m:generateContent" | head -c 1200; echo
+          done
+          echo "--- models"
+          curl -s -m 30 -H "x-goog-api-key: $K" "https://generativelanguage.googleapis.com/v1beta/models?pageSize=100" | grep -o '"name": "models/[^"]*flash[^"]*"' | head -20
