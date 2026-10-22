@@ -179,10 +179,16 @@ class HttpError extends Error {
 
 const str = (v, max = 20_000) => String(v ?? "").slice(0, max);
 
+function originAllowed(req, env) {
+  const origin = req.headers.get("Origin") || "";
+  const allowed = String(env.ALLOWED_ORIGINS || "").split(",").map((s) => s.trim()).filter(Boolean);
+  return !allowed.length || allowed.includes(origin) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+}
+
 function corsHeaders(req, env) {
   const origin = req.headers.get("Origin") || "";
   const allowed = String(env.ALLOWED_ORIGINS || "").split(",").map((s) => s.trim()).filter(Boolean);
-  const ok = !allowed.length || allowed.includes(origin) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  const ok = originAllowed(req, env);
   return {
     "Access-Control-Allow-Origin": ok ? origin || "*" : allowed[0],
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -340,7 +346,7 @@ ${str(b.question, 8000) || "(the question is shown in the uploaded files)"}
 </question>
 
 ${search
-    ? `No markscheme was supplied. Before marking, use Google Search to find the official IB markscheme conventions, command-term expectations and assessment criteria/level descriptors that apply to a question like this for the current ${subject} syllabus (prefer ibo.org, ibdocuments, subject guides, and examiner reports). Write the points you will mark against into "markscheme_used". If you can only find general criteria, say so in the summary and set confidence to "low" or "medium".`
+    ? `No markscheme was supplied. Before marking, use Google Search to find the official IB markscheme conventions, command-term expectations and assessment criteria/level descriptors that apply to a question like this for the current ${subject} syllabus (prefer ibo.org and publicly available IB subject guides and examiner reports; do not use sites that host leaked or unauthorised copies of IB papers or markschemes). Write the points you will mark against into "markscheme_used". If you can only find general criteria, say so in the summary and set confidence to "low" or "medium".`
     : `<markscheme>\n${ms.map((p) => "- " + p).join("\n")}\n</markscheme>`}
 ${typed ? `\n<typed_answer>\n${typed}\n</typed_answer>\n` : ""}
 ${fileParts.length ? `The student's work is in the ${fileParts.length} attached file(s), in the order uploaded.` : ""}
@@ -481,6 +487,8 @@ export default {
       if (path === "/api/health") return json({ ai: !!env.GEMINI_API_KEY, model: env.GEMINI_API_KEY ? modelList(env)[0] : null }, 200, cors);
       if (!path.startsWith("/api/")) return json({ error: "Not found" }, 404, cors);
       if (req.method !== "POST") return json({ error: "POST only" }, 405, cors);
+      // Only the site itself may spend the Gemini quota: other websites (and scripts that send no Origin) are refused.
+      if (!originAllowed(req, env)) return json({ error: "AI marking is only available on the IB Revision Hub website." }, 403, cors);
       if (env.ACCESS_CODE && req.headers.get("x-access-code") !== env.ACCESS_CODE) return json({ error: "Enter the access code to use AI marking.", code: "access_code" }, 401, cors);
       if (rateLimited(req, env)) return json({ error: "Hourly AI limit reached - try again later." }, 429, cors);
       if (!env.GEMINI_API_KEY) return json({ error: "AI marking isn't set up yet (no Gemini key on the server)." }, 503, cors);

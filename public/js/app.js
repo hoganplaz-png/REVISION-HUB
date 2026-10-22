@@ -1050,7 +1050,7 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
         ${link("mistakes.html", "Mistakes", "mistakes")}
         ${link("skills.html", "Skills", "skills")}
         ${link("ia.html", "IA &amp; EE", "ia")}
-        ${link("coach.html", "Claude Coach", "coach")}
+        ${link("coach.html", "AI Coach", "coach")}
         ${link("mypapers.html", "Papers", "mypapers")}
         ${link("friends.html", "Friends", "friends")}
         ${link("progress.html", "Progress", "progress")}
@@ -1068,6 +1068,7 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
       IB.el(`<footer class="site-footer"><div class="container">
       <p><strong>IB Revision Hub</strong> · Economics SL/HL · Chemistry SL/HL · Physics SL/HL · Geography SL/HL · Mathematics AA SL/HL · Biology SL/HL · English B HL · 中文A 語言與文學 SL</p>
       <p>All notes and questions are original IB-style material written for revision. They are not official IB past-paper questions and this site is not affiliated with or endorsed by the International Baccalaureate Organization. Get official past papers and markschemes from your school or the IB store.</p>
+      <p>International Baccalaureate® and IB® are registered trademarks of the International Baccalaureate Organization, used here only to describe the courses this site helps with. AI marks and predicted grades are estimates for revision, not official IB results. <a href="privacy.html">Privacy &amp; terms</a></p>
     </div></footer>`)
     );
     IB.qs("#menuBtn").onclick = () => IB.qs("#navLinks").classList.toggle("open");
