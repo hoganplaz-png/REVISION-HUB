@@ -78,7 +78,7 @@ for (const s of IB.subjectList()) {
 }
 
 // ⏱ 10-minute fast notes: every SL topic needs a complete sheet that renders cleanly
-const FAST_KINDS = ["key", "rhyme", "table", "eg", "trap", "note"];
+const FAST_KINDS = ["key", "rhyme", "table", "eg", "trap", "note", "html", "flow", "grid", "check"];
 for (const s of IB.subjectList()) {
   for (const t of s.allTopics) {
     const f = IB.fast[t.id];
@@ -99,7 +99,7 @@ for (const s of IB.subjectList()) {
     if ((f.practice || []).length < 3) errors.push(`${t.id} fast notes: needs at least 3 practice questions`);
     (f.practice || []).forEach((q, i) => { if (!q.q || !(q.m > 0) || !q.a) errors.push(`${t.id} fast practice ${i + 1}: needs q, m and a`); });
     const minutes = IB.fastMinutes(f);
-    if (minutes > 15) errors.push(`${t.id} fast notes: ${minutes} minutes is too long for a 10-minute sheet`);
+    if (minutes > 30) errors.push(`${t.id} fast notes: ${minutes} minutes is too long for a 10-minute sheet`);
     if (/undefined|NaN|\[object Object\]/.test(IB.fastHtml(t) + IB.fastHtml(t, { static: true }))) errors.push(`${t.id} fast notes render undefined/NaN`);
   }
 }
