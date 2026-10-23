@@ -42,3 +42,28 @@ table.fn-table thead th { background: var(--surface-2); }
 .case-cap { font-weight: 800; margin: 0 0 6px; }
 .case-part { margin-top: 4px; }
 .case-part > b { margin-right: 4px; }
+
+/* richer sheets: mole-bridge hub, step chips, 口訣 grid, checklist, MCQ options */
+.fn-hub { display: grid; grid-template-columns: 1fr auto 1fr; grid-template-rows: auto auto auto; gap: 6px 10px; align-items: center; justify-items: center; margin: 0 0 12px; }
+.fn-hub .hub-n { grid-column: 2; grid-row: 2; width: 84px; height: 84px; border-radius: 50%; background: #6D28D9; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 1.3rem; }
+.fn-hub .hub-n small { font-size: .7rem; font-weight: 600; opacity: .9; }
+.fn-hub .hub-t { grid-column: 2; grid-row: 1; } .fn-hub .hub-b { grid-column: 2; grid-row: 3; }
+.fn-hub .hub-l { grid-column: 1; grid-row: 2; } .fn-hub .hub-r { grid-column: 3; grid-row: 2; }
+.fn-hub .hub-box { border: 2px solid var(--hc); background: color-mix(in srgb, var(--hc) 10%, transparent); color: var(--text); border-radius: 10px; padding: 6px 12px; text-align: center; font-size: .84rem; line-height: 1.35; }
+.fn-hub .hub-box b { display: block; color: var(--hc); }
+.fn-hub .hub-op { grid-column: 1 / -1; font-size: .8rem; color: var(--muted); font-weight: 700; text-align: center; }
+.fn-flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; margin: 0 0 10px; }
+.fn-step-chip { flex: 1 1 120px; background: var(--surface-2); border: 1.4px solid var(--border); border-radius: 10px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; font-size: .88rem; }
+.fn-step-chip b { color: #6D28D9; }
+.fn-arrow { align-self: center; font-weight: 800; color: var(--muted); }
+.fn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 0 10px; }
+.fn-gi { border: 1.6px dashed #D97706; background: var(--mark-soft); border-radius: 10px; padding: 8px 12px; display: flex; flex-direction: column; gap: 2px; line-height: 1.45; color: var(--text); }
+.fn-gi b { color: #C2410C; } .fn-gi small { color: var(--muted); font-weight: 600; }
+.fn-tag { align-self: flex-start; background: #6D28D9; color: #fff; border-radius: 999px; padding: 0 8px; font-size: .68rem; font-weight: 800; }
+.fn-check { list-style: none; margin: 0 0 10px; padding: 0; columns: 2; column-gap: 18px; }
+.fn-check li { break-inside: avoid; margin: 0 0 6px; }
+.fn-check label { display: flex; gap: 8px; align-items: flex-start; cursor: pointer; line-height: 1.45; }
+.fn-check input { margin-top: 4px; width: 18px; height: 18px; flex: none; accent-color: #15803D; }
+.fn-check input:checked + span { color: var(--muted); text-decoration: line-through; }
+.fn-opts { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 4px 0; font-size: .92rem; }
+@media (max-width: 600px) { .fn-grid, .fn-check { grid-template-columns: 1fr; columns: 1; } .fn-hub .hub-box { padding: 5px 8px; font-size: .78rem; } }

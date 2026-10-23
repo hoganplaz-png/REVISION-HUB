@@ -13,9 +13,13 @@
        ["eg", questionHtml, [step…]],       // worked example, step by step
        ["trap", [item…]],                   // pink 失分位 box
        ["note", html],                      // any other short box
+       ["html", html],                      // raw html (diagrams built from .fn-hub / .fn-flow)
+       ["flow", [[label, html]…]],          // chevron chain, e.g. ① 轉 mol → ② 比例 → ③ 轉返
+       ["grid", [[tag, phrase, hint]…]],    // all the 口訣 of a topic in a two-column grid
+       ["check", [item…]],                  // "can you do this without notes?" tick list
      ] }],
      summary: [phrase…],                    // 一頁總口訣 (read 3 times before the exam)
-     practice: [{ q, m, a }],               // IB-style questions, marks, answers
+     practice: [{ q, m, a, o? }],           // IB-style questions, marks, answers; o = MCQ options ["A. …", …]
    } */
 (function () {
   "use strict";
@@ -37,6 +41,10 @@
     if (k === "rhyme") return `<div class="fn-rhyme"><div class="fn-rhyme-h"><b>${b[1]}：</b><span>「${b[2]}」</span></div>${b[3] ? `<div class="fn-rhyme-b">${b[3]}</div>` : ""}</div>`;
     if (k === "table") return table(b[1], b[2]);
     if (k === "eg") return `<div class="fn-eg"><div class="fn-eg-q"><b>例：</b>${b[1]}</div>${(b[2] || []).map((s) => `<div class="fn-step">${s}</div>`).join("")}</div>`;
+    if (k === "html") return b[1];
+    if (k === "flow") return `<div class="fn-flow">${b[1].map((x, i) => `${i ? '<span class="fn-arrow">→</span>' : ""}<div class="fn-step-chip"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("")}</div>`;
+    if (k === "grid") return `<div class="fn-grid">${b[1].map((x) => `<div class="fn-gi"><span class="fn-tag">${x[0]}</span><b>「${x[1]}」</b>${x[2] ? `<small>${x[2]}</small>` : ""}</div>`).join("")}</div>`;
+    if (k === "check") return `<ul class="fn-check">${b[1].map((x) => `<li><label><input type="checkbox"> <span>${x}</span></label></li>`).join("")}</ul>`;
     if (k === "trap") return `<div class="fn-trap"><div class="fn-trap-h">⚠ 失分位</div><ul>${b[1].map((x) => `<li>${x}</li>`).join("")}</ul></div>`;
     return "";
   }
@@ -59,7 +67,7 @@
       n++;
     }
     if (f.practice && f.practice.length) {
-      const qs = f.practice.map((q, i) => `<div class="fn-q"><b>${i + 1}.</b> ${q.q} <i class="fn-m">[${q.m}]</i>${opts.static ? `<div class="fn-lines">${'<i></i>'.repeat(Math.min(4, 1 + Math.ceil(q.m / 2)))}</div>` : `<details class="fn-ans"><summary>Show answer · 睇答案</summary><div>${q.a}</div></details>`}</div>`).join("");
+      const qs = f.practice.map((q, i) => `<div class="fn-q"><b>${i + 1}.</b> ${q.q} <i class="fn-m">[${q.m}]</i>${q.o ? `<div class="fn-opts">${q.o.map((x) => `<span>${x}</span>`).join("")}</div>` : ""}${opts.static ? `<div class="fn-lines">${'<i></i>'.repeat(Math.min(4, 1 + Math.ceil(q.m / 2)))}</div>` : `<details class="fn-ans"><summary>Show answer · 睇答案</summary><div>${q.a}</div></details>`}</div>`).join("");
       const ms = opts.static ? `<div class="fn-ms"><b>答案 Markscheme</b><ol>${f.practice.map((q) => `<li>${q.a}</li>`).join("")}</ol></div>` : "";
       out.push(`<div class="fn-part">${bar(n, "IB-style Practice（1 分鐘快試）", 1, "#BE123C")}${qs}</div>${ms}`);
     }
