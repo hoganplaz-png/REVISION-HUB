@@ -404,7 +404,7 @@ IB.addFast({
           ["eg", "<b>P2 · Write · 1 mark</b>　Write the equation for the first ionisation energy of magnesium.", [
             "Mg(g) → Mg⁺(g) + e⁻ [1]（state symbols mandatory）",
           ]],
-          ["note", "Successive ionisation energies (big jump shows the group) are listed as AHL in the 2025 guide — only revise if your teacher teaches it. SL needs first IE only."],
+          ["note", "Successive ionisation energies (big jump shows the group) are not a core SL requirement here — check the 2025 guide / your teacher before revising it. This sheet focuses on first IE."],
           ["trap", ["寫 IE equation 漏 (g)。", "解釋 dip 淨係寫「p orbital higher energy」而唔講係 Al 嘅電子入咗 3p（或者 S 有 pair）。", "解釋 trend 少咗 shielding / distance 其一。", "IE 單位 kJ mol⁻¹，唔係 kJ。"]],
         ],
       },

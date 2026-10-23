@@ -2847,7 +2847,7 @@ IB.addFast({
             "Banks lend more, cutting interest rates to attract borrowers → money supply increases",
             "Cheaper borrowing → I and C rise → AD shifts right → real GDP up, cyclical unemployment down, price level up a little",
           ]],
-          ["eg", "<b>P2 · 4 marks · Suggest / Justify.</b> Policy choice. Inflation is 5% (target 2%), unemployment equals its natural rate and real GDP is above potential. Recommend a policy.", [
+          ["eg", "<b>P2 · 4 marks · Suggest / Justify.</b> Policy choice. Inflation is 5% (target 2%), unemployment is below its natural rate and real GDP is above potential. Recommend a policy.", [
             "Diagnosis: inflationary gap, demand-pull inflation (Ye &gt; Yp).",
             "Monetary: raise policy rate → borrowing dearer → C and I fall, currency appreciates → AD shifts left from AD₂ to AD₁ → price level falls back towards target.",
             "Fiscal alternative: cut G or raise T → AD left. But politically hard, so central bank usually leads.",
@@ -3369,7 +3369,7 @@ IB.addFast({
       { q: "Country A can produce 20 cars or 40 t of rice; Country B 10 cars or 30 t of rice. Calculate the opportunity cost of one car in each country and state which has the comparative advantage in cars.", m: 3, a: "A: 40 ÷ 20 = 2 t rice [1]; B: 30 ÷ 10 = 3 t rice [1]; A has the comparative advantage in cars (lower opportunity cost) [1]." },
       { q: "Using a diagram, explain the effect of a tariff on domestic consumers and producers.", m: 4, a: "Correct tariff diagram: Pw, Pw + t, domestic D and S, quantities Q1–Q4 [1]. Domestic price rises; consumers buy less (Q4 → Q3) and CS falls [1]. Domestic producers sell more (Q1 → Q2) at the higher price, PS rises [1]. Imports fall; government gains revenue; welfare loss [1]." },
       { q: "Domestic Qd = 120 − 4P, Qs = 4P − 20, world price $10. A $2 tariff is imposed. Calculate the tariff revenue.", m: 3, a: "New price 12: Qd = 72 [1]; Qs = 28 so imports = 44 [1]; revenue = 2 × 44 = $88 thousand [1]." },
-      { q: "Explain two reasons why a government might use a subsidy to domestic producers rather than a tariff.", m: 4, a: "Consumer prices do not rise (price stays at world price), protecting consumers/low-income households [1+1]. Avoids retaliation from trading partners / is less likely to breach WTO rules, and exports can still be supported [1+1]." },
+      { q: "Explain two reasons why a government might use a subsidy to domestic producers rather than a tariff.", m: 4, a: "Consumer prices do not rise (price stays at world price), protecting consumers/low-income households [1+1]. Avoids retaliation from trading partners / does not add a new import barrier, and domestic producers still expand output [1+1]." },
       { q: "Using real-world examples, evaluate the view that protectionism is necessary to support developing economies. [15]", m: 15, a: "Definitions: protectionism, developing economy, comparative advantage [2]. Tariff diagram with welfare loss [2]. For: infant industry, diversification, employment, revenue, strategic industries [3]. Against: inefficiency, higher prices, retaliation, rent-seeking, failure of import substitution [3]. Examples: South Korea’s selective protection, India pre-1991, US–China tariffs [2]. Judgement: temporary, targeted protection may help, long-term growth needs openness; depends on institutions and retaliation [3]." },
     ],
   },
@@ -3628,7 +3628,7 @@ IB.addFast({
           ["eg", "<b>P2 · 3 marks · 旅遊</b> £1 = US$1.25 changes to £1 = US$1.30. A New York hotel charges US$260 per night. Calculate the £ cost before and after and comment.", [
             "之前：260 ÷ 1.25 = <b>£208</b>",
             "之後：260 ÷ 1.30 = <b>£200</b>",
-            "£ appreciated → 英國遊客去美國平咗 £8 → 傾向增加 UK imports of services（tourism）；美國 exports（tourism）對英國人變相貴咗，視乎 PED",
+            "£ appreciated → 英國遊客去美國平咗 £8 → 傾向增加 UK imports of services（tourism）；美國 exports（tourism）對英國人變相平咗，視乎 PED",
           ]],
           ["eg", "<b>P1 MCQ</b> £1 = ¥180 changes to £1 = ¥195. A £50 UK product is sold in Japan. What is the change in its yen price?", [
             "之前 50 × 180 = ¥9000；之後 50 × 195 = <b>¥9750</b>",

@@ -263,7 +263,7 @@ IB.addFast({
             "(a) 8 + 3(n − 1) = 200 → n − 1 = 64 → <b>n = 65</b>",
             "(b) 8 + 3(n − 1) = 150 → n − 1 = 142/3 → 唔係整數 → <b>150 唔係 term</b>（n 一定係正整數）",
             "(c) \\(\\frac n2(16+3(n-1)) > 1000\\) → \\(3n^2 + 13n - 2000 > 0\\)",
-            "GDC：解 \\(3n^2+13n-2000=0\\) 得 n ≈ 23.3 → 或試 n = 23：S = 943（&lt; 1000）；n = 24：S = 1020 → <b>n = 24</b> ✅",
+            "GDC：解 \\(3n^2+13n-2000=0\\) 得 n ≈ 23.7 → 或試 n = 23：S = 943（&lt; 1000）；n = 24：S = 1020 → <b>n = 24</b> ✅",
           ]],
           ["note", "<b>GDC (c) 做法</b>：Table / Spreadsheet 輸入 Y1 = x/2 × (16 + 3(x − 1))，睇邊個 x 第一次 &gt; 1000；或者 Y1 同 Y = 1000 畫圖搵 intersection，之後 round up 到整數 n。"],
           ["note", "<b>常考</b>：①兩項已知求 u₁, d / r 再求 S_n（P1 必考）；②“least n such that S_n &gt; k”（P2 GDC 或 log）；③複利 / 貶值用 TVM 或公式（P2，錢 2 d.p.）；④S∞ 加 “justify |r| &lt; 1”。Command terms：Find / Show that / Hence / Determine [1 mark 一步]。"],
@@ -373,7 +373,7 @@ IB.addFast({
           ["eg", "<b>P2 · 8 marks</b> Geometric sequence with \\(u_1 = 4\\), \\(u_3 = 36\\), all terms positive. (i) Find r [2]. (ii) Find \\(S_6\\) [2]. (iii) Find the least n such that \\(S_n > 10^5\\) [4].", [
             "(i) r² = 36/4 = 9，positive terms → <b>r = 3</b>",
             "(ii) \\(S_6 = \\dfrac{4(3^6 - 1)}{2} = 2 \\times 728 =\\) <b>1456</b>",
-            "(iii) \\(S_n = 2(3^n - 1) > 100000\\) → \\(3^n > 50001\\) → n &gt; ln 50001/ln 3 = 9.84 → <b>n = 10</b>",
+            "(iii) \\(S_n = 2(3^n - 1) > 100000\\) → \\(3^n > 50001\\) → n &gt; ln 50001/ln 3 = 9.85 → <b>n = 10</b>",
             "驗算：S₁₀ = 2(59049 − 1) = 118 096 &gt; 10⁵；S₉ = 2(19683 − 1) = 39 364 ✅",
           ]],
           ["trap", ["Sequence 與 series：sequence 係項嘅列表，series 係項嘅和。", "Paper 2 問 “find n” 用 GDC graph / table，Paper 1 用 log。", "“Show that” 題：最後一行必須係題目答案，唔好 round 到另一個數。"]],
@@ -411,7 +411,7 @@ IB.addFast({
       { q: "The 3rd and 6th terms of a geometric sequence are 12 and 96. What is the common ratio?", m: 1, o: ["A. 2", "B. 3", "C. 4", "D. 8"], a: "<b>A</b>. r³ = 96/12 = 8 → r = 2 [1]" },
       { q: "Write 0.00045 × 8 000 000 in the form a × 10^k, 1 ≤ a &lt; 10.", m: 2, a: "0.00045 = 4.5 × 10⁻⁴ and 8 000 000 = 8 × 10⁶ [1]; 4.5 × 8 = 36, 10⁻⁴ × 10⁶ = 10² → 36 × 10² = <b>3.6 × 10³</b> [1]" },
       { q: "An arithmetic sequence has u₄ = 17 and u₁₀ = 41. Find u₁, d and S₁₅.", m: 4, a: "6d = 24 → <b>d = 4</b> [1]; u₁ = 17 − 12 = <b>5</b> [1]; S₁₅ = (15/2)(2·5 + 14·4) [1] = <b>495</b> [1]" },
-      { q: "An arithmetic sequence has u₁ = 8, d = 3. Find the least n such that Sₙ > 1000.", m: 3, a: "Sₙ = (n/2)(16 + 3(n − 1)) [1]; Sₙ > 1000 → n ≥ 23.3 or test S₂₃ = 943, S₂₄ = 1020 [1]; <b>n = 24</b> [1]" },
+      { q: "An arithmetic sequence has u₁ = 8, d = 3. Find the least n such that Sₙ > 1000.", m: 3, a: "Sₙ = (n/2)(16 + 3(n − 1)) [1]; Sₙ > 1000 → n ≥ 23.7 or test S₂₃ = 943, S₂₄ = 1020 [1]; <b>n = 24</b> [1]" },
       { q: "A geometric sequence has u₂ = 6 and u₅ = 162. Find r, u₁ and S₆.", m: 4, a: "r³ = 27 → <b>r = 3</b> [1]; u₁ = 2 [1]; S₆ = 2(3⁶ − 1)/2 [1] = <b>728</b> [1]" },
       { q: "Evaluate Σ (k = 1 to 10) (3k + 2).", m: 3, a: "arithmetic, u₁ = 5, u₁₀ = 32 [1]; S = (10/2)(5 + 32) [1]; = <b>185</b> [1]" },
       { q: "$5000 is invested at 4% per annum compounded quarterly. Find the value after 6 years, to the nearest cent.", m: 3, a: "5000(1 + 4/400)^(4×6) [2] = <b>$6348.67</b> [1]" },
@@ -419,7 +419,7 @@ IB.addFast({
       { q: "Find the number of full years needed for an investment to double at 6% p.a. compounded annually.", m: 3, a: "1.06ⁿ &gt; 2 [1]; n &gt; ln 2/ln 1.06 = 11.9 [1]; <b>12 years</b> [1]" },
       { q: "Find the sum to infinity of 12 + 6 + 3 + …, justifying that it exists.", m: 3, a: "r = ½, |r| &lt; 1 so S∞ exists [1]; S∞ = 12/(1 − ½) [1] = <b>24</b> [1]" },
       { q: "Write 0.727272… as a fraction in the form a/b using a geometric series.", m: 3, a: "0.72 + 0.0072 + …; u₁ = 0.72, r = 0.01 [1]; S∞ = 0.72/0.99 [1] = <b>8/11</b> [1]" },
-      { q: "A geometric sequence has u₁ = 4, u₃ = 36, all terms positive. Find the least n for which Sₙ > 100 000.", m: 4, a: "r = 3 [1]; Sₙ = 2(3ⁿ − 1) [1]; 3ⁿ &gt; 50 001 → n &gt; 9.84 [1]; <b>n = 10</b> [1]" },
+      { q: "A geometric sequence has u₁ = 4, u₃ = 36, all terms positive. Find the least n for which Sₙ > 100 000.", m: 4, a: "r = 3 [1]; Sₙ = 2(3ⁿ − 1) [1]; 3ⁿ &gt; 50 001 → n &gt; 9.85 [1]; <b>n = 10</b> [1]" },
     ],
   },
   "math-2": {
@@ -483,7 +483,7 @@ IB.addFast({
             "化底 2：\\(2^{3x} = 2^{2x+2}\\) [1]",
             "指數相等：3x = 2x + 2 [1] → <b>x = 2</b> [1] ✅",
           ]],
-          ["eg", "<b>P1/P2 · 4 marks</b> Solve \\(3^{2x-1} = 20\\). Give (a) the exact form (b) the answer to 3 s.f.", [
+          ["eg", "<b>P1/P2 · 3 marks</b> Solve \\(3^{2x-1} = 20\\). Give (a) the exact form (b) the answer to 3 s.f.", [
             "取 ln：\\((2x-1)\\ln 3 = \\ln 20\\) [1]",
             "\\(2x - 1 = \\dfrac{\\ln 20}{\\ln 3} = \\log_3 20\\) → exact：<b>\\(x = \\dfrac{1 + \\log_3 20}{2}\\)</b> [1]",
             "數值：ln 20 = 2.9957，ln 3 = 1.0986 → 2x − 1 = 2.7268 → <b>x = 1.86</b> [1] ✅",
@@ -823,7 +823,7 @@ IB.addFast({
             "\\(y-1=\\frac12(x-4)\\) → \\(y=\\frac12x-1\\) [M1]",
             "× 2 搬晒：\\(2y=x-2\\) → <b>\\(x-2y-2=0\\)</b> [A1]　（a, b, d 要係整數，所以要 × 2）",
           ]],
-          ["eg", "[P1 · 4 marks] Find the perpendicular bisector of P(2, 1) and Q(6, 7).", [
+          ["eg", "[P1 · 3 marks] Find the perpendicular bisector of P(2, 1) and Q(6, 7).", [
             "Midpoint = \\(\\left(\\frac{2+6}{2},\\frac{1+7}{2}\\right)=(4,4)\\) [A1]",
             "\\(m_{PQ}=\\frac{7-1}{6-2}=\\frac32\\) → 垂直 \\(m=-\\frac23\\) [M1]",
             "\\(y-4=-\\frac23(x-4)\\) → ×3：\\(3y-12=-2x+8\\) → <b>\\(2x+3y-20=0\\)</b> [A1]",
@@ -867,7 +867,7 @@ IB.addFast({
         blocks: [
           ["key", "<b>\\((f\\circ g)(x)=f(g(x))\\)</b>：先做 g，再做 f。<br>Domain of \\(f\\circ g\\)：x 要喺 g 嘅 domain 內，而且 g(x) 要喺 f 嘅 domain 內。"],
           ["rhyme", "口訣", "入面先做，由右至左", "\\(f\\circ g\\)：g 貼住 x，所以 g 先做。一般 \\(f\\circ g\\ne g\\circ f\\)。"],
-          ["eg", "[P1 · 5 marks] \\(f(x)=2x+1\\), \\(g(x)=x^2-3\\). Find (a) \\((f\\circ g)(x)\\); (b) \\((g\\circ f)(x)\\); (c) \\((f\\circ g)(2)\\); (d) solve \\((f\\circ g)(x)=13\\).", [
+          ["eg", "[P1 · 4 marks] \\(f(x)=2x+1\\), \\(g(x)=x^2-3\\). Find (a) \\((f\\circ g)(x)\\); (b) \\((g\\circ f)(x)\\); (c) \\((f\\circ g)(2)\\); (d) solve \\((f\\circ g)(x)=13\\).", [
             "(a) \\(f(g(x))=2(x^2-3)+1=\\) <b>\\(2x^2-5\\)</b> [A1]",
             "(b) \\(g(f(x))=(2x+1)^2-3=\\) <b>\\(4x^2+4x-2\\)</b> [A1]　（兩個唔同！）",
             "(c) 數字題最快：g(2) = 1 → f(1) = <b>3</b> [A1]　驗：用 (a)：2(4) − 5 = 3 ✓",
@@ -1089,7 +1089,7 @@ IB.addFast({
             "\\(=\\frac{4\\pm\\sqrt{28}}{2}=\\frac{4\\pm2\\sqrt7}2\\) [A1]",
             "<b>\\(x=2\\pm\\sqrt7\\)</b> [A1]　（decimal：4.65, −0.646）",
           ]],
-          ["eg", "[P1 · 5 marks] Solve \\(e^{2x}-5e^{x}+6=0\\).", [
+          ["eg", "[P1 · 4 marks] Solve \\(e^{2x}-5e^{x}+6=0\\).", [
             "令 \\(u=e^x\\)：\\(u^2-5u+6=0\\) [M1]",
             "\\((u-2)(u-3)=0\\) → u = 2 或 3 [A1]",
             "\\(e^x=2\\) → <b>x = ln 2</b>；\\(e^x=3\\) → <b>x = ln 3</b> [A1][A1]",
@@ -1114,7 +1114,7 @@ IB.addFast({
             "\\(k^2-4(1)(9)=0\\) [A1]",
             "\\(k^2=36\\) → <b>\\(k=\\pm6\\)</b> [A1][A1]　（記得 ± 兩個）",
           ]],
-          ["eg", "[P1 · 4 marks] Find the range of k for which \\(2x^2-4x+k=0\\) has two distinct real roots.", [
+          ["eg", "[P1 · 3 marks] Find the range of k for which \\(2x^2-4x+k=0\\) has two distinct real roots.", [
             "Δ > 0 [M1]　\\(16-8k>0\\) [A1]",
             "\\(8k<16\\) → <b>k < 2</b> [A1]",
             "驗：k = 0 → \\(2x^2-4x=0\\) 兩根 0, 2 ✓",
@@ -1257,7 +1257,7 @@ IB.addFast({
             "(a) 差：(4, 4, 2) → \\(\\sqrt{16+16+4}=\\sqrt{36}=\\) <b>6</b> [M1][A1]",
             "(b) <b>(4, 1, 4)</b> [A1]",
           ]],
-          ["eg", "[P2 · 6 marks] A right cone has radius 5 cm and slant height 13 cm. Find (a) the height; (b) the volume; (c) the total surface area.", [
+          ["eg", "[P2 · 5 marks] A right cone has radius 5 cm and slant height 13 cm. Find (a) the height; (b) the volume; (c) the total surface area.", [
             "(a) \\(h=\\sqrt{13^2-5^2}=\\sqrt{144}=\\) <b>12 cm</b> [A1]",
             "(b) \\(V=\\frac13\\pi(25)(12)=100\\pi=\\) <b>314 cm³</b> [M1][A1]",
             "(c) curved \\(=\\pi(5)(13)=65\\pi\\)；base \\(=\\pi(25)=25\\pi\\) [M1] → total \\(90\\pi=\\) <b>283 cm²</b> [A1]　（total = curved + base 圓面）",
@@ -1281,7 +1281,7 @@ IB.addFast({
         min: 5,
         blocks: [
           ["key", "<b>Sine rule</b>：\\(\\frac a{\\sin A}=\\frac b{\\sin B}=\\frac c{\\sin C}\\)　<b>Cosine rule</b>：\\(c^2=a^2+b^2-2ab\\cos C\\)；\\(\\cos C=\\frac{a^2+b^2-c^2}{2ab}\\)　<b>Area</b> \\(=\\frac12ab\\sin C\\)<br>邊 a 對角 A（小寫對大寫）。三角形內角和 180°。"],
-          ["eg", "[P2 · 5 marks] In triangle ABC, AB = 9, AC = 11, angle A = 70°. Find (a) BC; (b) the area; (c) angle B.", [
+          ["eg", "[P2 · 6 marks] In triangle ABC, AB = 9, AC = 11, angle A = 70°. Find (a) BC; (b) the area; (c) angle B.", [
             "(a) \\(BC^2=81+121-2(9)(11)\\cos70°\\) [M1] = 202 − 198(0.34202) = 134.28 → <b>BC = 11.6</b> [A1]",
             "(b) \\(\\frac12(9)(11)\\sin70°=\\) <b>46.5</b> [M1][A1]",
             "(c) \\(\\frac{\\sin B}{11}=\\frac{\\sin70°}{11.588}\\) → sin B = 0.8920 → <b>B = 63.1°</b> [M1][A1]　（BC 係最長邊，對最大角 A，所以 B 係銳角，無 ambiguity）",
@@ -1290,7 +1290,7 @@ IB.addFast({
             "最大角對最長邊 8：\\(\\cos A=\\frac{25+49-64}{2(5)(7)}=\\frac{10}{70}=\\frac17\\) [M1] → <b>A = 81.8°</b> [A1]",
             "Area \\(=\\frac12(5)(7)\\sin81.8°=\\) <b>17.3</b> [A1]　（Heron 驗：s = 10，\\(\\sqrt{10\\cdot2\\cdot5\\cdot3}=17.32\\) ✓）",
           ]],
-          ["eg", "[P2 · 3 marks] A = 40°, B = 65°, a = 8. Find b.", [
+          ["eg", "[P2 · 2 marks] A = 40°, B = 65°, a = 8. Find b.", [
             "\\(\\frac b{\\sin65°}=\\frac8{\\sin40°}\\) [M1]",
             "\\(b=\\frac{8\\sin65°}{\\sin40°}=\\) <b>11.3</b> [A1]（≈ 11.28）",
           ]],
@@ -1310,7 +1310,7 @@ IB.addFast({
         min: 3,
         blocks: [
           ["key", "<b>True bearing</b>：由 <b>北</b> 順時針量度，用三位數（例 065°, 270°）。<br><b>Angle of elevation</b>：由水平線向上望；<b>angle of depression</b>：由水平線向下望（兩者 alternate angles 相等）。<br>步驟：每個點畫一條北線，標出角；搵三角形內角；用 sine / cosine rule。"],
-          ["eg", "[P2 · 6 marks] A ship sails 12 km on bearing 040° from A to B, then 9 km on bearing 130° to C. Find (a) the distance AC; (b) the bearing of C from A; (c) the bearing of A from C.", [
+          ["eg", "[P2 · 5 marks] A ship sails 12 km on bearing 040° from A to B, then 9 km on bearing 130° to C. Find (a) the distance AC; (b) the bearing of C from A; (c) the bearing of A from C.", [
             "(a) 兩次方向差 130° − 40° = 90° → 喺 B 係直角 [M1]　\\(AC=\\sqrt{12^2+9^2}=\\) <b>15 km</b> [A1]",
             "(b) 角 BAC：\\(\\tan=\\frac9{12}\\) → 36.9° [M1]；bearing = 40° + 36.9° = <b>076.9° ≈ 077°</b> [A1]",
             "(c) back bearing = 77° + 180° = <b>257°</b> [A1]（或 076.9 + 180 = 256.9°）",
@@ -1332,7 +1332,7 @@ IB.addFast({
           ["table", ["度", "30°", "45°", "60°", "90°", "120°", "135°", "150°", "180°", "270°", "360°"], [
             ["弧度", "\\(\\frac\\pi6\\)", "\\(\\frac\\pi4\\)", "\\(\\frac\\pi3\\)", "\\(\\frac\\pi2\\)", "\\(\\frac{2\\pi}3\\)", "\\(\\frac{3\\pi}4\\)", "\\(\\frac{5\\pi}6\\)", "\\(\\pi\\)", "\\(\\frac{3\\pi}2\\)", "\\(2\\pi\\)"],
           ]],
-          ["eg", "[P1 · 4 marks] A sector has radius 6 cm and angle \\(\\frac\\pi3\\). Find, in exact form, (a) the arc length; (b) the area; (c) the perimeter.", [
+          ["eg", "[P1 · 5 marks] A sector has radius 6 cm and angle \\(\\frac\\pi3\\). Find, in exact form, (a) the arc length; (b) the area; (c) the perimeter.", [
             "(a) \\(l=6\\times\\frac\\pi3=\\) <b>\\(2\\pi\\) cm</b> [M1][A1]",
             "(b) \\(A=\\frac12(36)\\frac\\pi3=\\) <b>\\(6\\pi\\) cm²</b> [M1][A1]",
             "(c) \\(P=12+2\\pi\\) cm [A1]",
@@ -1349,7 +1349,7 @@ IB.addFast({
           ]],
           ["eg", "[P1 · 3 marks] Convert (a) 150° to radians; (b) 2.4 rad to degrees (3 s.f.).", [
             "(a) \\(150\\times\\frac\\pi{180}=\\) <b>\\(\\frac{5\\pi}6\\)</b> [A1]",
-            "(b) \\(2.4\\times\\frac{180}\\pi=\\) <b>137°</b>（137.5°）[M1][A1]",
+            "(b) \\(2.4\\times\\frac{180}\\pi=\\) <b>138°</b>（137.5°）[M1][A1]",
           ]],
           ["trap", ["θ 用咗 degrees 代入 \\(r\\theta\\)。", "Perimeter of sector 漏咗兩條半徑。", "Segment 面積減咗錯三角形（要 \\(\\frac12r^2\\sin\\theta\\)）。", "Exact 答案寫成小數。"]],
         ],
@@ -1358,7 +1358,7 @@ IB.addFast({
         h: "長題拆解法",
         min: 2.5,
         blocks: [
-          ["eg", "[P2 · 14 marks] A park is in the shape of triangle PQR with PQ = 80 m, PR = 100 m, angle QPR = 70°. A circular flower bed centre P radius 30 m lies inside (sector QPR region cut by radii along PQ, PR). Find (a) QR; (b) the area of the park; (c) the area of the sector of the flower bed inside the park; (d) the area of the park outside the flower bed. (Hint: flower bed region is the sector of radius 30 m at P.)", [
+          ["eg", "[P2 · 7 marks] A park is in the shape of triangle PQR with PQ = 80 m, PR = 100 m, angle QPR = 70°. A circular flower bed centre P radius 30 m lies inside (sector QPR region cut by radii along PQ, PR). Find (a) QR; (b) the area of the park; (c) the area of the sector of the flower bed inside the park; (d) the area of the park outside the flower bed. (Hint: flower bed region is the sector of radius 30 m at P.)", [
             "圈數：PQ 80、PR 100、夾角 70° → SAS；花圃 radius 30、同一個角 70°",
             "(a) \\(QR^2=80^2+100^2-2(80)(100)\\cos70°=6400+10000-16000(0.34202)=10927.7\\) → <b>QR = 105 m</b> [M1][A1]",
             "(b) \\(\\frac12(80)(100)\\sin70°=\\) <b>3760 m²</b> [M1][A1]（3758.8）",
@@ -1422,7 +1422,7 @@ IB.addFast({
       { q: "A sector has radius 6 cm and angle \\(\\frac\\pi3\\). Find, in exact form, the arc length and the area of the sector.", m: 4, a: "Arc \\(=6\\times\\frac\\pi3=\\) <b>2π cm</b> [M1][A1]. Area \\(=\\frac12(36)\\frac\\pi3=\\) <b>6π cm²</b> [M1][A1]." },
       { q: "In triangle PQR, angle P = 35°, angle Q = 80°, QR = 10 cm. Find PR.", m: 3, a: "\\(\\frac{PR}{\\sin80°}=\\frac{10}{\\sin35°}\\) [M1][A1] → <b>PR = 17.2 cm</b> [A1]." },
       { q: "A rectangular-based pyramid has base 8 cm by 6 cm and vertical height 12 cm, apex above the centre. Find the volume and the length of a slant edge.", m: 5, a: "\\(V=\\frac13(48)(12)=\\) <b>192 cm³</b> [M1][A1]. Base diagonal \\(\\sqrt{64+36}=10\\), half = 5 [A1]. Edge \\(=\\sqrt{5^2+12^2}=\\) <b>13 cm</b> [M1][A1]." },
-      { q: "From a boat the angle of elevation of the top of a cliff is 24°. After sailing 100 m directly towards the cliff the angle is 38°. Find the height of the cliff (to 3 s.f.).", m: 6, a: "Let h = height, x = distance after sailing. \\(\\tan38°=\\frac hx\\), \\(\\tan24°=\\frac h{x+100}\\) [M1][M1]. \\(x=\\frac h{\\tan38°}\\), \\(x+100=\\frac h{\\tan24°}\\) → \\(h(\\frac1{\\tan24°}-\\frac1{\\tan38°})=100\\) [M1] → \\(h(2.2460-1.2799)=100\\) [A1] → \\(h=103.5\\) → <b>h = 104 m</b> [A1]. (Alternatively sine rule in the triangle with angle 14°.)" },
+      { q: "From a boat the angle of elevation of the top of a cliff is 24°. After sailing 100 m directly towards the cliff the angle is 38°. Find the height of the cliff (to 3 s.f.).", m: 5, a: "Let h = height, x = distance after sailing. \\(\\tan38°=\\frac hx\\), \\(\\tan24°=\\frac h{x+100}\\) [M1][M1]. \\(x=\\frac h{\\tan38°}\\), \\(x+100=\\frac h{\\tan24°}\\) → \\(h(\\frac1{\\tan24°}-\\frac1{\\tan38°})=100\\) [M1] → \\(h(2.2460-1.2799)=100\\) [A1] → \\(h=103.5\\) → <b>h = 104 m</b> [A1]. (Alternatively sine rule in the triangle with angle 14°.)" },
       { q: "Circle centre O, radius 8 cm. Chord AB subtends angle 1.5 rad at O. Find (a) the area of the minor segment; (b) the perimeter of the segment.", m: 6, a: "(a) Sector \\(=\\frac12(64)(1.5)=48\\) [A1]; triangle \\(=\\frac12(64)\\sin1.5=31.92\\) [M1][A1]; segment <b>16.1 cm²</b> [A1]. (b) Chord \\(=2(8)\\sin0.75=10.91\\) [M1]; arc = 12; perimeter <b>22.9 cm</b> [A1]." },
     ],
   },
@@ -1492,7 +1492,7 @@ IB.addFast({
             ["Equation 有 \\(\\cos^2x\\) 同 \\(\\sin x\\)", "\\(\\cos^2x=1-\\sin^2x\\)"],
             ["化簡 / 證明", "全部轉做 sin 同 cos，約分"],
           ]],
-          ["eg", "[P1 · 6 marks] Given \\(\\cos\\theta=-\\frac5{13}\\) and \\(\\pi<\\theta<\\frac{3\\pi}2\\), find the exact value of (a) \\(\\sin\\theta\\); (b) \\(\\tan\\theta\\); (c) \\(\\sin2\\theta\\); (d) \\(\\cos2\\theta\\).", [
+          ["eg", "[P1 · 5 marks] Given \\(\\cos\\theta=-\\frac5{13}\\) and \\(\\pi<\\theta<\\frac{3\\pi}2\\), find the exact value of (a) \\(\\sin\\theta\\); (b) \\(\\tan\\theta\\); (c) \\(\\sin2\\theta\\); (d) \\(\\cos2\\theta\\).", [
             "(a) \\(\\sin^2\\theta=1-\\frac{25}{169}=\\frac{144}{169}\\) [M1]；Q3 sin 負 → <b>\\(-\\frac{12}{13}\\)</b> [A1]",
             "(b) \\(\\tan\\theta=\\frac{-12/13}{-5/13}=\\) <b>\\(\\frac{12}5\\)</b> [A1]",
             "(c) \\(2\\left(-\\frac{12}{13}\\right)\\left(-\\frac5{13}\\right)=\\) <b>\\(\\frac{120}{169}\\)</b> [A1]",
@@ -1544,7 +1544,7 @@ IB.addFast({
             "參考角 \\(\\frac\\pi4\\)；tan 負 → Q2, Q4 [M1]",
             "<b>\\(x=\\frac{3\\pi}4,\\ \\frac{7\\pi}4\\)</b> [A1][A1]",
           ]],
-          ["eg", "[P1 · 5 marks] Solve \\(2\\sin2x=\\sqrt3\\) for \\(0\\le x\\le2\\pi\\).", [
+          ["eg", "[P1 · 4 marks] Solve \\(2\\sin2x=\\sqrt3\\) for \\(0\\le x\\le2\\pi\\).", [
             "\\(\\sin2x=\\frac{\\sqrt3}2\\)；\\(0\\le2x\\le4\\pi\\) [M1]",
             "\\(2x=\\frac\\pi3,\\ \\frac{2\\pi}3,\\ \\frac{7\\pi}3,\\ \\frac{8\\pi}3\\) [A1][A1]",
             "<b>\\(x=\\frac\\pi6,\\ \\frac\\pi3,\\ \\frac{7\\pi}6,\\ \\frac{4\\pi}3\\)</b> [A1]　（4 個解：週期減半 → 解數目加倍）",
@@ -2277,7 +2277,7 @@ IB.addFast({
         min: 3.5,
         blocks: [
           ["key", "<b>z = (x − μ) ÷ σ</b>　當 μ 或 σ 未知：用 invNorm(area, 0, 1) 搵 z，再代入 z 公式解方程。<br>1 個未知 → 1 條方程；2 個未知 → 2 條方程。"],
-          ["eg", "<b>P2 · 4 marks</b>　X ~ N(μ, 5²) and P(X &gt; 40) = 0.15. Find μ.", [
+          ["eg", "<b>P2 · 3 marks</b>　X ~ N(μ, 5²) and P(X &gt; 40) = 0.15. Find μ.", [
             "Area to the left = 0.85 → z = invNorm(0.85, 0, 1) = <b>1.036</b> [M1]",
             "(40 − μ) ÷ 5 = 1.036 [M1] → 40 − μ = 5.18",
             "<b>μ = 34.8</b> [A1] ✅",
@@ -2519,7 +2519,7 @@ IB.addFast({
         min: 3.5,
         blocks: [
           ["flow", [["① 寫式", "Express quantity in ONE variable using the constraint"], ["② 求導令零", "dS/dx = 0 → solve"], ["③ 驗證", "Second derivative or sign change (R1)"], ["④ 答問題", "Substitute for the required value + units"]]],
-          ["eg", "<b>P2 · 7 marks</b>　An open box has a square base of side x cm and height h cm. Its volume is 500 cm³. (a) Show that the surface area is S = x² + 2000/x. (b) Find the value of x that minimises S. (c) Find the minimum surface area, and justify that it is a minimum.", [
+          ["eg", "<b>P2 · 6 marks</b>　An open box has a square base of side x cm and height h cm. Its volume is 500 cm³. (a) Show that the surface area is S = x² + 2000/x. (b) Find the value of x that minimises S. (c) Find the minimum surface area, and justify that it is a minimum.", [
             "(a) x²h = 500 → h = 500/x²；S = x² + 4xh = x² + 4x(500/x²) = <b>x² + 2000/x</b> [M1][A1] (show every line)",
             "(b) S′ = 2x − 2000/x² = 0 → x³ = 1000 → <b>x = 10</b> [M1][A1]",
             "(c) S(10) = 100 + 200 = <b>300 cm²</b> [A1]",
@@ -2612,7 +2612,7 @@ IB.addFast({
       { q: "Find the equations of the tangent and normal to f(x) = 2x² − 3x + 1 at x = 2.", m: 5, a: "f(2) = 3 [A1]; f′(x) = 4x − 3 → f′(2) = 5 [M1][A1]; tangent y − 3 = 5(x − 2) → <b>y = 5x − 7</b> [A1]; normal gradient −1/5: <b>y = −0.2x + 3.4</b> (x + 5y = 17) [A1]." },
       { q: "Find the stationary points of f(x) = x³ − 12x + 5 and determine their nature.", m: 6, a: "f′ = 3x² − 12 = 0 → x = ±2 [M1][A1]; f(2) = −11, f(−2) = 21 [A1]; f″ = 6x [A1]; f″(2) = 12 &gt; 0 → <b>minimum (2, −11)</b> [A1]; f″(−2) = −12 &lt; 0 → <b>maximum (−2, 21)</b> [A1]." },
       { q: "Show that f(x) = x³ − 6x² + 9x + 1 has a point of inflexion at x = 2 and find its coordinates.", m: 4, a: "f″ = 6x − 12 [A1]; = 0 → x = 2 [A1]; f″ changes sign (− for x &lt; 2, + for x &gt; 2) [R1]; f(2) = 3 → <b>(2, 3)</b> [A1]." },
-      { q: "An open box with square base of side x cm and height h cm has volume 500 cm³. (a) Show that its surface area is S = x² + 2000/x. (b) Find the value of x for which S is a minimum, and the minimum area. (c) Justify that it is a minimum.", m: 8, a: "(a) h = 500/x² [M1]; S = x² + 4xh [M1]; = x² + 2000/x [A1] (shown). (b) S′ = 2x − 2000/x² = 0 [M1] → x³ = 1000 → <b>x = 10</b> [A1]; S = <b>300 cm²</b> [A1]. (c) S″ = 2 + 4000/x³ = 6 &gt; 0 → minimum [R1] (7+1 marks: allocate as shown)." },
+      { q: "An open box with square base of side x cm and height h cm has volume 500 cm³. (a) Show that its surface area is S = x² + 2000/x. (b) Find the value of x for which S is a minimum, and the minimum area. (c) Justify that it is a minimum.", m: 7, a: "(a) h = 500/x² [M1]; S = x² + 4xh [M1]; = x² + 2000/x [A1] (shown). (b) S′ = 2x − 2000/x² = 0 [M1] → x³ = 1000 → <b>x = 10</b> [A1]; S = <b>300 cm²</b> [A1]. (c) S″ = 2 + 4000/x³ = 6 &gt; 0 → minimum [R1]." },
       { q: "The tangent to y = x² + kx at x = 2 has gradient 7. Find k and the equation of the tangent.", m: 4, a: "dy/dx = 2x + k [A1]; 4 + k = 7 → <b>k = 3</b> [A1]; y(2) = 4 + 6 = 10 [A1]; y − 10 = 7(x − 2) → <b>y = 7x − 4</b> [A1]." },
       { q: "Find the set of values of x for which f(x) = x³ − 6x² + 9x is increasing.", m: 4, a: "f′ = 3x² − 12x + 9 = 3(x − 1)(x − 3) [M1][A1]; f′ &gt; 0 [M1] → <b>x &lt; 1 or x &gt; 3</b> [A1]." },
       { q: "The graph of f′ is an upward parabola crossing the x-axis at x = −1 and x = 3, with its minimum at x = 1. (a) Find the x-coordinates of the stationary points of f and state their nature. (b) State where f is decreasing. (c) Find the x-coordinate of the point of inflexion of f.", m: 5, a: "(a) x = −1: f′ changes + to − → <b>maximum</b> [A1]; x = 3: − to + → <b>minimum</b> [A1][A1 for both x-values]. (b) f′ &lt; 0: <b>−1 &lt; x &lt; 3</b> [A1]. (c) f′ has its minimum at x = 1 so f″(1) = 0 with a sign change → <b>x = 1</b> [A1] (5 total: lose no mark for combined phrasing)." },
@@ -2796,7 +2796,7 @@ IB.addFast({
           ["eg", "<b>P1 · 4 marks</b> Find the area of the region enclosed by \\(y = 4x - x^2\\) and the x-axis.", [
             "Roots: x(4 − x) = 0 → x = 0, 4 [A1]",
             "Curve is above axis between 0 and 4 → \\(\\int_0^4 (4x - x^2)dx\\) [M1]",
-            "\\(\\left[2x^2 - \\frac{x^3}{3}\\right]_0^4 = 32 - \\frac{64}{3}\\)",
+            "\\(\\left[2x^2 - \\frac{x^3}{3}\\right]_0^4 = 32 - \\frac{64}{3}\\) [M1]",
             "Area = <b>\\(\\frac{32}{3}\\)</b> (≈ 10.7) [A1] ✅"
           ]],
           ["eg", "Find the area between \\(y = x^2 - 4\\), the x-axis, x = 0 and x = 3.", [
@@ -2805,7 +2805,7 @@ IB.addFast({
             "\\(\\int_2^3 (x^2 - 4)dx = (9 - 12) - \\left(\\frac83 - 8\\right) = -3 + \\frac{16}{3} = \\frac73\\)",
             "Total = \\(\\frac{16}{3} + \\frac73 = \\) <b>\\(\\frac{23}{3}\\)</b> ✅ (If you integrated 0 to 3 in one go you get −3: WRONG for area.)"
           ]],
-          ["eg", "<b>P1/P2 · 5 marks</b> Find the area enclosed by \\(y = x^2\\) and \\(y = x + 2\\).", [
+          ["eg", "<b>P1/P2 · 3 marks</b> Find the area enclosed by \\(y = x^2\\) and \\(y = x + 2\\).", [
             "Intersections: \\(x^2 = x + 2\\) → (x − 2)(x + 1) = 0 → x = −1, 2 [A1]",
             "Line is above parabola between them: \\(\\int_{-1}^{2}(x + 2 - x^2)dx\\) [M1]",
             "\\(\\left[\\frac{x^2}{2} + 2x - \\frac{x^3}{3}\\right]_{-1}^{2} = \\frac{10}{3} - \\left(-\\frac76\\right)\\)",
@@ -3058,7 +3058,7 @@ IB.addFast({
           ["note", "Radian mode for any trig model. Use a sensible window (set t-range from the question, e.g. 0 ≤ t ≤ 8). Quote 3 s.f. unless told otherwise. Write the set-up first (M1) then the value (A1)."],
           ["eg", "From a v–t graph: v rises linearly from 0 at t = 0 to 8 at t = 4, stays 8 until t = 10, then falls linearly to 0 at t = 14. Find (a) acceleration for 0 < t < 4 (b) distance.", [
             "(a) Gradient = (8 − 0) ÷ (4 − 0) = <b>2 m s⁻²</b> [A1]",
-            "(b) Area = trapezium: ½(parallel sides)(height) = ½ × (10 + 14) × 8 [M1] (parallel sides: top 6 wide, base 14 wide → ½(6 + 14) × 8)",
+            "(b) Area = trapezium: ½(parallel sides)(height) = ½ × (6 + 14) × 8 [M1] (parallel sides: top 6 wide, base 14 wide)",
             "= ½ × 20 × 8 = <b>80 m</b> [A1] ✅ (top is from t = 4 to 10 = 6 wide; base 14)"
           ]],
           ["trap", ["Calculator degree mode：trig v(t) 全錯。", "冇寫 ∫|v| 集合，只寫答案：失 M 分。", "Graph 面積喺 t 軸下面當正數去加位移（位移要減）。"]]
@@ -3069,7 +3069,7 @@ IB.addFast({
         min: 3,
         blocks: [
           ["flow", [["① 抄資料", "List: a(t) or v(t) or s(t); initial v(0), s(0); interval"], ["② 一步一步上／落", "Differentiate or integrate; find C immediately"], ["③ 翻譯字眼", "at rest → v = 0; distance → |v|; speeding up → signs"], ["④ 每個 part 單獨交代", "Write answer + unit"]]],
-          ["eg", "<b>P1/P2 · 12 marks (long)</b> A particle moves in a straight line with acceleration \\(a = 6t - 12\\) m s⁻², 0 ≤ t ≤ 4. Initially v = 9 and s = 0. (a) Find v(t). (b) Find when the particle is at rest. (c) Find s(t). (d) Find the total distance travelled. (e) Is it speeding up or slowing down at t = 3.5?", [
+          ["eg", "<b>P1/P2 · 11 marks (long)</b> A particle moves in a straight line with acceleration \\(a = 6t - 12\\) m s⁻², 0 ≤ t ≤ 4. Initially v = 9 and s = 0. (a) Find v(t). (b) Find when the particle is at rest. (c) Find s(t). (d) Find the total distance travelled. (e) Is it speeding up or slowing down at t = 3.5?", [
             "(a) \\(v = 3t^2 - 12t + C\\); v(0) = 9 → C = 9. <b>\\(v = 3t^2 - 12t + 9\\)</b> [M1 A1]",
             "(b) \\(3(t^2 - 4t + 3) = 3(t - 1)(t - 3) = 0\\) → <b>t = 1, 3</b> [M1 A1]",
             "(c) \\(s = t^3 - 6t^2 + 9t + C\\); s(0) = 0 → C = 0. <b>\\(s = t^3 - 6t^2 + 9t\\)</b> [M1 A1]",

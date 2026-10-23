@@ -1679,7 +1679,7 @@ IB.addFast({
             "(b) T ∝ √l → √4 = 2 → period <b>doubles</b>",
             "Amplitude and pendulum mass: no effect ✅",
           ]],
-          ["eg", "<b>P2 · 2 marks</b>　Show that a mass–spring system performs SHM. [3 marks]", [
+          ["eg", "<b>P2 · 3 marks</b>　Show that a mass–spring system performs SHM. [3 marks]", [
             "Restoring force F = −kx (towards equilibrium) [1]",
             "Newton's second law: ma = −kx → a = −(k/m)x [1]",
             "k/m is constant, so a ∝ −x; this has the form a = −ω²x with ω² = k/m → SHM [1]",
