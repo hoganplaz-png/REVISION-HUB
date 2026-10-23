@@ -114,7 +114,7 @@ u.kw{text-decoration:underline;text-decoration-color:#D0312D;text-decoration-thi
 .mf-diagram{margin:0 0 8px}.mf-diagram>b{display:block;font-size:10.5px;color:#55607A;text-transform:uppercase}.mf-diagram svg{width:300px;height:auto;--plot-a:${c};--plot-b:#2D5BFF;--plot-c:#1F8A4C;--muted:#6B7487;--text:#1B2436}
 .fig{margin:0;width:330px;--fig-a:${c};--fig-b:#2D5BFF;--fig-c:#1F8A4C;--fig-d:#D0312D;--fig-muted:#6B7487;--fig-fill:#F3F5F9;color:#1B2436}.fig svg{width:100%;height:auto}.fig figcaption{font-size:10.5px;color:#55607A;text-align:center}
 .mf-legend{font-size:11px;color:#55607A}
-/* 10-minute fast notes */
+/* chapter notes (exam-ready write-up) */
 .fn-head{background:linear-gradient(110deg,#4C1D95,#6D28D9);color:#fff;border-radius:12px;padding:14px 20px;margin:0 0 10px}
 .fn-eyebrow{font:800 11px Figtree,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
 .fn-title{font-size:24px;line-height:1.2;margin:4px 0 2px;color:#fff}
@@ -132,6 +132,17 @@ table.fn-table{margin:0 0 8px}table.fn-table thead th{background:#E2E8F0;color:#
 .fn-q{border:1.4px solid #334155;border-radius:8px;padding:8px 12px;margin:0 0 8px}.fn-m{color:#55607A}
 .fn-lines i{display:block;height:24px;border-bottom:1px dashed #94A3B8}
 .fn-ms{background:#EEF2F7;border-left:4px solid #64748B;border-radius:6px;padding:8px 12px;margin:0 0 8px}.fn-ms ol{margin:4px 0 0}
+.fn-hub{display:grid;grid-template-columns:1fr auto 1fr;gap:6px 10px;align-items:center;justify-items:center;margin:0 0 8px}
+.fn-hub .hub-n{grid-column:2;grid-row:2;width:70px;height:70px;border-radius:50%;background:#6D28D9;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.fn-hub .hub-n small{font-size:10px;font-weight:600}
+.fn-hub .hub-t{grid-column:2;grid-row:1}.fn-hub .hub-b{grid-column:2;grid-row:3}.fn-hub .hub-l{grid-column:1;grid-row:2}.fn-hub .hub-r{grid-column:3;grid-row:2}
+.fn-hub .hub-box{border:2px solid var(--hc);border-radius:8px;padding:4px 10px;text-align:center;font-size:11px}.fn-hub .hub-box b{display:block;color:var(--hc)}
+.fn-hub .hub-op{grid-column:1/-1;font-size:10.5px;color:#55607A;font-weight:700}
+.fn-flow{display:flex;gap:6px;margin:0 0 8px}.fn-step-chip{flex:1;background:#EEF2F7;border:1.2px solid #CBD5E1;border-radius:8px;padding:6px 8px;display:flex;flex-direction:column;font-size:11px}.fn-step-chip b{color:#6D28D9}.fn-arrow{align-self:center;font-weight:800;color:#64748B}
+.fn-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 8px}.fn-gi{border:1.4px dashed #D97706;background:#FEF3C7;border-radius:8px;padding:5px 9px;display:flex;flex-direction:column;font-size:11px}.fn-gi b{color:#C2410C}.fn-gi small{color:#55607A;font-weight:600}
+.fn-tag{align-self:flex-start;background:#6D28D9;color:#fff;border-radius:999px;padding:0 7px;font-size:9px;font-weight:800}
+.fn-check{list-style:none;margin:0 0 8px;padding:0;columns:2}.fn-check li{break-inside:avoid;margin:0 0 4px}.fn-check input{margin-right:6px}
+.fn-opts{display:flex;flex-wrap:wrap;gap:2px 14px;margin:3px 0;font-size:11.5px}
 `;
 
   // ---------- content builders ----------
@@ -316,6 +327,7 @@ table.fn-table{margin:0 0 8px}table.fn-table thead th{background:#E2E8F0;color:#
     let frame;
     try {
       await loadLibs();
+      if (IB.loadFast && !opts.fast) await Promise.all(Array.from(new Set(opts.topics.map((t) => t.subject))).map((id) => IB.loadFast(id)));
       frame = document.createElement("iframe");
       frame.setAttribute("aria-hidden", "true");
       frame.style.cssText = `position:fixed;left:-${PW * 3}px;top:0;width:${PW}px;height:${PH}px;border:0;visibility:hidden`;
@@ -418,7 +430,7 @@ table.fn-table{margin:0 0 8px}table.fn-table thead th{background:#E2E8F0;color:#
           const secAnchor = () => { const id = anchor(); tocItems.push([id, null]); return id; };
           const blocks = topicBlocks(s, t, { single: true, anchor: secAnchor });
           addHtml(`<div class="banner" data-anchor="${a}"><span class="n">${String(s.topics.indexOf(t) + 1).padStart(2, "0")}</span><div><h2>${IB.esc(t.title)}</h2><small>${IB.esc(t.code)} · ${IB.esc(t.unit)}</small></div></div>` +
-            blocks.join("").replace(/<div class="bar" data-anchor="(a\d+)">([^<]*)<\/div>/g, (m, id, label) => {
+            (IB.fastHtml ? IB.fastHtml(t, { static: true }) : "") + blocks.join("").replace(/<div class="bar" data-anchor="(a\d+)">([^<]*)<\/div>/g, (m, id, label) => {
               n++;
               const item = tocItems.find((x) => x[0] === id);
               if (item) item[1] = label;
@@ -427,7 +439,7 @@ table.fn-table{margin:0 0 8px}table.fn-table thead th{background:#E2E8F0;color:#
         } else {
           const a = anchor();
           tocItems.push([a, t.title]);
-          addHtml(`<div class="banner" data-anchor="${a}"><span class="n">${String(i + 1).padStart(2, "0")}</span><div><h2>${IB.esc(t.title)}</h2><small>${IB.esc(t.code)} · ${IB.esc(t.unit)}</small></div></div>` + topicBlocks(s, t, { single: false }).join(""), terms);
+          addHtml(`<div class="banner" data-anchor="${a}"><span class="n">${String(i + 1).padStart(2, "0")}</span><div><h2>${IB.esc(t.title)}</h2><small>${IB.esc(t.code)} · ${IB.esc(t.unit)}</small></div></div>` + (IB.fastHtml ? IB.fastHtml(t, { static: true }) : "") + topicBlocks(s, t, { single: false }).join(""), terms);
         }
       });
 
