@@ -1,4 +1,4 @@
-/* ⏱ 10-minute fast notes: a last-minute revision sheet per topic, modelled on printed "10 分鐘搞掂" notes.
+/* Chapter notes: the exam-ready write-up shown first on each topic page, modelled on printed "10 分鐘搞掂" notes.
    Numbered, colour-banded parts with a time budget; core box, 口訣 (memory hooks), tables, a worked example,
    失分位 (where marks are lost); then a one-page 總口訣 summary and IB-style practice with answers.
    Data lives in js/data/fast/<subject>.js and is loaded on demand: IB.addFast({ "<topicId>": sheet }).
@@ -57,7 +57,7 @@
     const s = IB.subjects[t.subject];
     let n = 0;
     const out = [];
-    out.push(`<div class="fn-head" style="--fc:${COLORS[0]}"><div class="fn-eyebrow">⏱ ${Math.ceil(IB.fastMinutes(f))} 分鐘搞掂 · ${ZH(t.subject) ? "考前速讀" : "Fast notes"}</div><h3 class="fn-title">${f.title}</h3><div class="fn-sub">IB ${IB.esc(s ? s.baseName : "")} · ${IB.esc(t.code)} ${IB.esc(t.title)}｜${f.intro || "由零開始，最後衝刺版。每個 section 有時間建議，跟住讀就得。"}</div></div>`);
+    out.push(`<div class="fn-head" style="--fc:${COLORS[0]}"><div class="fn-eyebrow">📘 ${ZH(t.subject) ? "章節筆記" : "Chapter notes"} · ${Math.ceil(IB.fastMinutes(f))} 分鐘</div><h3 class="fn-title">${f.title}</h3><div class="fn-sub">IB ${IB.esc(s ? s.baseName : "")} · ${IB.esc(t.code)} ${IB.esc(t.title)}｜${f.intro || "每個 part 有時間建議，跟住讀就得。"}</div></div>`);
     f.parts.forEach((p) => {
       out.push(`<div class="fn-part">${bar(n, p.h, p.min, COLORS[n % COLORS.length])}${p.blocks.map((b) => block(b, opts)).join("")}</div>`);
       n++;
@@ -77,7 +77,7 @@
   /** Section for the topic notes page (same shape as IB.topicSections entries). */
   IB.fastSection = function (t) {
     if (!IB.fast[t.id]) return null;
-    return ["fast", "⏱ 10-min notes", `<section class="card fast" id="sec-fast" data-reveal>${IB.fastHtml(t)}</section>`];
+    return ["fast", "Exam notes", `<section class="card fast" id="sec-fast" data-reveal>${IB.fastHtml(t)}</section>`];
   };
 
   // ---------- on-demand loading ----------
