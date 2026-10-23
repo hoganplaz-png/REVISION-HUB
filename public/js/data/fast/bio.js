@@ -429,9 +429,9 @@ IB.addFast({
             ["<b>eDNA</b>（environmental DNA）", "由水 / 泥土樣本抽 DNA，PCR 後 sequencing 認出該處 species", "監測 biodiversity，唔使見到動物"],
           ]],
           ["rhyme", "口訣 2", "Key 睇得到，karyotype 數染色體", "Key 用 observable features（唔好用 “bigger” / “darker” 相對字眼）；karyotype 數 + 排 chromosomes。"],
-          ["eg", "<b>P2 · 2 marks</b>　Use the key to identify organism Q (wings, six legs, long antennae, no stripes). [2]<br>1a Has wings → go to 2　1b No wings → <i>Ant sp.</i><br>2a Two wings → <i>Fly sp.</i>　2b Four wings → go to 3<br>3a Stripes on body → <i>Wasp sp.</i>　3b No stripes → <i>Moth sp.</i>", [
+          ["eg", "<b>P2 · 2 marks</b>　Use the key to identify organism Q (four wings, six legs, long antennae, no stripes). [2]<br>1a Has wings → go to 2　1b No wings → <i>Ant sp.</i><br>2a Two wings → <i>Fly sp.</i>　2b Four wings → go to 3<br>3a Stripes on body → <i>Wasp sp.</i>　3b No stripes → <i>Moth sp.</i>", [
             "Q has wings → 1a → go to 2 [1]",
-            "Q has four wings (assumed) and no stripes → 2b → 3b → <b><i>Moth sp.</i></b> [1]",
+            "Q has four wings and no stripes → 2b → 3b → <b><i>Moth sp.</i></b> [1]",
           ]],
           ["note", "<b>自己整 key 嘅規則</b>：每一步只有兩個選擇（dichotomous）；用 presence / absence 嘅特徵（有翅 / 冇翅、6 隻腳 / 8 隻腳）；每個 species 最後落喺一個位。"],
           ["eg", "<b>P2 · 2 marks</b>　A karyotype shows 47 chromosomes with three copies of chromosome 21. Identify the condition and explain the cause. [2]", [
@@ -1661,7 +1661,7 @@ IB.addFast({
             "(1.60 − 0.80) ÷ 0.80 [1]",
             "× 100 = <b>100 %</b> [1]",
           ]],
-          ["eg", "P2 · From a product-vs-time graph, rate at 20 s: tangent drawn touches (0, 0) and (40 s, 20 cm³). Find the initial rate. [2]", [
+          ["eg", "P2 · From a product-vs-time graph, tangent drawn at t = 0 touches (0, 0) and (40 s, 20 cm³). Find the initial rate. [2]", [
             "Initial rate = gradient of tangent = Δy ÷ Δx [1]",
             "= 20 ÷ 40 = <b>0.5 cm³ s⁻¹</b> [1]",
           ]],
@@ -2892,7 +2892,7 @@ IB.addFast({
           ["table", ["Pattern", "Heterozygote shows", "Example"], [
             ["Complete dominance", "Dominant phenotype only", "Tall (T) over short (t)"],
             ["<b>Codominance</b>", "<b>Both</b> alleles fully expressed", "ABO: IᴬIᴮ = AB; also MN blood groups, roan coat"],
-            ["<b>Incomplete dominance</b>", "An intermediate (blend) phenotype", "Pink snapdragons; tail length"],
+            ["<b>Incomplete dominance</b>", "An intermediate (blend) phenotype", "Pink snapdragons"],
           ]],
           ["trap", ["Gametes 要圈住（只有 1 個 allele per gamete）；Punnett 格入面係 offspring。", "Codominant alleles 用大寫上標（Iᴬ Iᴮ），唔好用 A、a；question 用咩字母你就用咩。"]],
         ],

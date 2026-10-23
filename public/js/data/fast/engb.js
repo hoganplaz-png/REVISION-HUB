@@ -814,7 +814,7 @@
             ["Imperative", "“Bring your own bottle. Sign the petition. Start today.”", "call to action"],
             ["Repetition", "“We cannot wait. We cannot ignore. We cannot afford to fail.”", "emphasis"],
           ]],
-          ["eg", "<b>P1 · 30 marks · 常考</b><br>You are a student at an international school. Write a <b>speech</b> for a school assembly persuading students to reduce single-use plastic. (450-600 words)", [
+          ["eg", "<b>P1 · 30 marks · 常考</b><br>You are a student at an international school. Write a <b>speech</b> for a school assembly persuading students to reduce single-use plastic. (250-400 words)", [
             "<b>Plan (3 min)</b>：Type = speech；Audience = students；Purpose = persuade；Context = assembly。Points：(1) problem — ocean plastic; (2) effect on wildlife/health; (3) what we can do at school。",
             "<b>Opening</b>：“Good morning, everyone. Raise your hand if you have used a plastic bottle today. Look around — that is the problem in one picture.”",
             "<b>Body paragraph model</b>：“Firstly, let us consider the damage. Plastic does not disappear; it breaks into microplastics that enter our food chain. <b>As a result</b>, marine animals are harmed and, ultimately, so are we. <b>What is more</b>, producing it requires fossil fuels, which <b>contributes to</b> climate change.”",
@@ -833,7 +833,7 @@
             ["Proposal", "To / From / Date / Subject; Introduction; Current situation; Proposal; Benefits; Cost; Conclusion + request for approval", "formal, persuasive, “I propose that…”"],
             ["Article (magazine)", "Headline; by-line; lead paragraph; subheadings; quotes; conclusion", "engaging, semi-formal, facts + opinion"],
           ]],
-          ["eg", "<b>P1 · 30 marks · 常考</b><br>Write a <b>report</b> for the school’s environment committee on food waste in the canteen and recommend solutions. (450-600 words)", [
+          ["eg", "<b>P1 · 30 marks · 常考</b><br>Write a <b>report</b> for the school’s environment committee on food waste in the canteen and recommend solutions. (250-400 words)", [
             "<b>Title</b>：Report on Food Waste in the School Canteen<br><b>To</b>: Environment Committee <b>From</b>: [name] <b>Date</b>: 12 March",
             "<b>Introduction</b>：“The purpose of this report is to outline the extent of food waste in the canteen and to recommend practical solutions.”",
             "<b>Findings</b>：“A one-week observation revealed that approximately a third of lunches were thrown away uneaten. The most frequently wasted items were vegetables and rice. <b>This suggests that</b> portions are too large and menus do not reflect students’ preferences.”",
@@ -879,7 +879,7 @@
       {
         h: "Paper 2 reading on Theme 5 閱讀題型", min: 3,
         blocks: [
-          ["note", "<b>P2 Reading (40 marks, 1 h)</b>：常見 true/false + justification、short answer、word meaning、reference、gap-fill、matching、MCQ。Environmental / rights texts 通常有 statistics 同 contrast words（but, yet, however）。"],
+          ["note", "<b>P2 Reading (40 marks)</b>：常見 true/false + justification、short answer、word meaning、reference、gap-fill、matching、MCQ。Environmental / rights texts 通常有 statistics 同 contrast words（but, yet, however）。"],
           ["eg", "<b>P2 · Reading · 3 marks</b><br>Text: “Every minute, the equivalent of one rubbish truck of plastic enters the ocean. Yet the solution is not only bigger clean-ups; it is designing products that never become waste in the first place.”<br>(a) How much plastic enters the ocean every minute? [1] (b) What does the writer say is the real solution? [1] (c) Which word shows a contrast with the previous sentence? [1]", [
             "(a) <b>The equivalent of one rubbish truck</b> [1]",
             "(b) <b>Designing products that never become waste</b> [1] (not “bigger clean-ups”)",
@@ -982,7 +982,7 @@
             ["Advice", "I would strongly recommend that you… / It would be advisable to…", "If I were you, I’d… / Why don’t you…?"],
             ["Closing", "I look forward to hearing from you. / Thank you for your attention.", "Write back soon! / Can’t wait to hear from you!"],
           ]],
-          ["eg", "<b>P1 · 30 marks · 常考</b><br>Write a <b>formal letter</b> to the editor of a local newspaper about the lack of safe cycle lanes in your town, suggesting solutions. (450-600 words)", [
+          ["eg", "<b>P1 · 30 marks · 常考</b><br>Write a <b>formal letter</b> to the editor of a local newspaper about the lack of safe cycle lanes in your town, suggesting solutions. (250-400 words)", [
             "<b>Plan</b>：Type = letter to editor；audience = editor + readers；purpose = complain + persuade；register = formal。",
             "<b>Layout</b>：Your address; date; Editor, address; <b>Dear Sir or Madam,</b>（唔識名）",
             "<b>Opening</b>：“I am writing to express my deep concern about the shortage of safe cycle lanes in our town.”",
@@ -990,7 +990,7 @@
             "<b>Body 2 (solution)</b>：“I would therefore suggest that the council build protected lanes on the main routes. Not only would this improve safety, but it would also reduce congestion and pollution.”",
             "<b>Closing</b>：“I would be grateful if you could publish this letter and I look forward to hearing the council’s response. <b>Yours faithfully</b>, Ka Ho Chan”",
           ]],
-          ["eg", "<b>P1 · 30 marks</b><br>Write an <b>informal email</b> to an overseas friend telling them about a school trip and inviting them to visit. (450-600 words)", [
+          ["eg", "<b>P1 · 30 marks</b><br>Write an <b>informal email</b> to an overseas friend telling them about a school trip and inviting them to visit. (250-400 words)", [
             "<b>Subject</b>：Guess where we went!<br><b>Greeting</b>：Hi Alex,",
             "<b>Opening</b>：“Thanks so much for your last email — I loved the photos of your new puppy! How is he settling in?”（respond to friend + question）",
             "<b>Narration</b>：“Last week our class went to Lantau Island. We set off at 7 a.m., and <b>I couldn’t believe</b> how green it was. The highlight was hiking up to the Big Buddha — I was exhausted but <b>it was totally worth it</b>.”",
@@ -1008,7 +1008,7 @@
             ["Personal blog", "Title; date; author; direct address; short paragraphs/subheadings; invite comments", "present + past; conversational"],
             ["Opinion blog", "Title; clear stance; examples; counter-argument; call to action", "present"],
           ]],
-          ["eg", "<b>P1 · 30 marks · 常考</b><br>Write a <b>diary entry</b> after your first week at a new school abroad. (450-600 words)", [
+          ["eg", "<b>P1 · 30 marks · 常考</b><br>Write a <b>diary entry</b> after your first week at a new school abroad. (250-400 words)", [
             "<b>Heading</b>：Friday 5 September, 11.30 p.m.",
             "<b>Opening with emotion</b>：“What a week! I am so tired that my head is spinning, but I’m too excited to sleep.”",
             "<b>Events + feelings</b>：“On Monday I got lost three times, and when the teacher asked me to introduce myself, <b>my mind went blank</b>. I felt my cheeks burning.”",
@@ -1033,7 +1033,7 @@
             ["Questionnaire / survey", "Title; short intro (purpose + thanks); numbered questions; mix of closed and open; thanks", "Please tick one box. · How often do you…? · Any further comments?"],
             ["Memo", "To/From/Date/Subject; brief; action required", "Please note that… · Could you ensure…"],
           ]],
-          ["eg", "<b>P1 · 30 marks · 常考</b><br>You are the student council president. Write a <b>proposal</b> to the principal for a student-run café. (450-600 words)", [
+          ["eg", "<b>P1 · 30 marks · 常考</b><br>You are the student council president. Write a <b>proposal</b> to the principal for a student-run café. (250-400 words)", [
             "<b>Header</b>：To: Mr Wong, Principal · From: [name], Student Council President · Date: · Subject: Proposal for a student-run café",
             "<b>Introduction</b>：“The aim of this proposal is to suggest the creation of a student-run café, which would benefit both the school community and the students themselves.”",
             "<b>Current situation</b>：“At present, students have only vending machines, which offer few healthy options.”",
@@ -1044,7 +1044,7 @@
           ["eg", "<b>P1 · 30 marks</b><br>Write a <b>questionnaire</b> for classmates about their sleeping habits.", [
             "<b>Title</b>：Student Sleep Survey",
             "<b>Intro</b>：“We are researching how much sleep students get. This takes two minutes and is anonymous. Thank you for your help.”",
-            "<b>Q1 (closed)</b>：How many hours do you usually sleep on school nights? ☐ under 6 ☐ 6-7 ☐ 7-8 ☐ 9+",
+            "<b>Q1 (closed)</b>：How many hours do you usually sleep on school nights? ☐ under 6 ☐ 6-7 ☐ 7-8 ☐ 8-9 ☐ more than 9",
             "<b>Q2 (frequency)</b>：How often do you use your phone in bed? ☐ Never ☐ Sometimes ☐ Often ☐ Always",
             "<b>Q3 (open)</b>：What stops you from sleeping earlier? Please explain.",
             "<b>End</b>：“Thank you for completing the survey.”",
@@ -1731,7 +1731,7 @@
       {
         h: "IO 結構 · 時間 · 分數", min: 2.5,
         blocks: [
-          ["key", "HL IO 共四步：<b>準備 20 分鐘 → presentation 3–4 分鐘 → follow-up discussion 4–5 分鐘 → general conversation 5–6 分鐘</b>。Extract 最多 <b>300 字</b>，來自你學過嘅 literary work，由老師揀；你可寫<b>最多 10 個 bullet points</b> 筆記。"],
+          ["key", "HL IO 共四步：<b>準備 20 分鐘 → presentation 3–4 分鐘 → follow-up discussion 4–5 分鐘 → general conversation 5–6 分鐘</b>。Extract 最多 <b>300 字</b>，來自你學過嘅 literary works：老師預備兩段 extract（每部 work 一段），你喺準備時間揀其中一段；你可寫<b>最多 10 個 bullet points</b> 筆記。"],
           ["flow", [["① 準備 20 min", "讀 extract；寫最多 10 個 bullet points（keyword，不寫成稿）"], ["② Presentation 3–4 min", "講 context、內容、language／techniques、同一個 course theme 嘅連繫"], ["③ Discussion 4–5 min", "老師就 extract 發問；你要答得具體"], ["④ Conversation 5–6 min", "轉去另一個 theme（唔係 extract 嗰個），日常話題深入討論"]]],
           ["table", ["Criterion", "Marks", "考咩"], [
             ["A: Language", "12", "vocabulary range、grammar accuracy、fluency、pronunciation"],
@@ -1880,7 +1880,7 @@
         ],
       },
     ],
-    summary: ["前因後果，手法主題，十點為限", "講事、講手法、講效果、連主題", "Technique + quote + effect 缺一不可", "Discussion：Point → Evidence → Explain → Link", "Conversation：觀點加例子，記得反問", "唔明就問：Could you rephrase that?", "Criterion A 佔 12 分：多樣 + 準確", "兩部 works 都要熟，extract 唔係自己揀"],
+    summary: ["前因後果，手法主題，十點為限", "講事、講手法、講效果、連主題", "Technique + quote + effect 缺一不可", "Discussion：Point → Evidence → Explain → Link", "Conversation：觀點加例子，記得反問", "唔明就問：Could you rephrase that?", "Criterion A 佔 12 分：多樣 + 準確", "兩部 works 都要熟，extract 由老師預備（兩段中揀一段）"],
     practice: [
       { q: "IO MCQ · How many marks is the HL individual oral worth in total?", o: ["A. 20", "B. 24", "C. 30", "D. 40"], m: 1, a: "<b>C</b>. A 12 + B1 6 + B2 6 + C 6 = 30." },
       { q: "IO MCQ · How many bullet points of notes may you take into the HL IO?", o: ["A. None", "B. Up to 5", "C. Up to 10", "D. As many as you like"], m: 1, a: "<b>C</b>. Up to 10 bullet points." },

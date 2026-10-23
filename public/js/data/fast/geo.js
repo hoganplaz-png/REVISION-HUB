@@ -799,7 +799,7 @@ IB.addFast({
             ["Carbon cycle", "存、流：光合、呼吸、燃燒、溶解", "Stores (sinks) + fluxes between them"],
             ["CO₂", "二百八變四百二", "~280 ppm pre-industrial → ~420+ ppm today"],
             ["Positive feedback", "越變越大", "Amplifies the change (ice-albedo, permafrost)"],
-            ["Negative feedback", "自動剎車", "Dampens change (clouds? CO₂ fertilisation)"],
+            ["Negative feedback", "自動剎車", "Dampens change (e.g. CO₂ fertilisation, ocean uptake)"],
             ["Tipping point", "過咗界就返唔到轉頭", "Threshold; self-sustaining, irreversible change"],
             ["Natural causes", "軌道、太陽、火山", "Milankovitch, solar output, volcanoes"],
           ]],
@@ -922,7 +922,7 @@ IB.addFast({
             ["Forest dieback", "Positive", "warming + drought → trees die / burn → CO₂ released and less uptake → more warming"],
             ["Ocean warming", "Positive", "warming → CO₂ less soluble in warmer water → less ocean uptake → more CO₂ stays in air"],
             ["CO₂ fertilisation", "Negative", "more CO₂ → more plant growth → more photosynthesis → CO₂ removed (limited by nutrients, water)"],
-            ["Cloud (low clouds)", "Negative / uncertain", "warming → more low cloud → more reflection → cooling (net cloud effect still uncertain)"],
+            ["Clouds", "Uncertain (net positive in IPCC AR6)", "warming → changes in cloud amount/height → altered reflection and trapping of heat (low-cloud cover is assessed to shrink, so net cloud feedback is weakly positive)"],
             ["Weathering / ocean uptake", "Negative", "more CO₂ → more dissolved in oceans and rocks over long time"],
           ]],
           ["table", ["Tipping element", "Threshold change", "Risk"], [
@@ -1258,7 +1258,7 @@ IB.addFast({
         blocks: [
           ["table", ["Strategy", "How it reduces emissions", "Example", "Evaluation"], [
             ["Renewable energy", "replaces fossil fuel electricity", "Costa Rica; offshore wind in UK/Denmark", "intermittency, storage cost; fast cost falls in solar/wind"],
-            ["Carbon pricing: tax", "makes emitters pay per tonne", "Sweden/Canada carbon tax", "efficient but politically unpopular; may hit poor"],
+            ["Carbon pricing: tax", "makes emitters pay per tonne", "Sweden carbon tax (since 1991)", "efficient but politically unpopular; may hit poor"],
             ["Carbon trading: cap-and-trade", "cap total permits; firms trade spare ones", "EU ETS", "flexible; cap too high = low price; allows 'buy your way out'"],
             ["Energy efficiency / EVs", "less energy per unit service", "Norway: very high EV share of new cars", "needs grid decarbonisation; upfront cost"],
             ["Afforestation / sinks", "trees absorb CO₂ by photosynthesis", "Great Green Wall (Sahel), Costa Rica reforestation", "slow, land competition, can burn or die"],
@@ -1707,7 +1707,7 @@ IB.addFast({
         blocks: [
           ["trap", [
             "Lag time 計錯起點：由 peak rainfall 計。",
-            "Interception、infiltration 係 flow/transfer；evapotranspiration 同 discharge 先係 outputs。",
+            "Interception 係 store，infiltration 係 flow/transfer；evapotranspiration 同 discharge 先係 outputs。",
             "Hard engineering 以為冇 downside：要提 transfers flood downstream。",
             "Physical 同 economic scarcity 反轉。",
             "Eutrophication 冇講 oxygen depletion 一步。",
