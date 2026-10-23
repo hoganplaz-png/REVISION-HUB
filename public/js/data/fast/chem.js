@@ -201,6 +201,15 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["State / Name","One fact, no reason. 1 mark, one short line."],["Define","Exact textbook wording: e.g. A<sub>r</sub> = weighted mean mass of atoms relative to 1/12 of ¹²C."],["Explain","Cause + effect: IMF overcome, not KE; link to temperature ∝ average KE."],["Calculate","Show formula / substitution; A<sub>r</sub> answer to 2 d.p. (data booklet gives 2 d.p.)."],["Outline / Describe","Ordered steps for a separation: dissolve, filter, evaporate."],["Deduce","Use given data (A, Z, charge) to give p, n, e."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Particle count of ion","p = Z; n = A − Z; e = Z − charge."],["Ar from mass spectrum","Σ(m/z × abundance) ÷ Σ abundance, 2 d.p."],["Unknown abundance","x and (100 − x); solve; check Ar sits between the isotopes."],["Heating curve / state change","Flat part: energy used to overcome IMF, KE (temperature) constant."],["Choose separation","Name property difference (solubility, b.p.) then the technique."]]],
+          ["note", "Data booklet 有 periodic table 的 A<sub>r</sub>，唔使背。1 mark ≈ 1 個 point：問 Explain 2 分就要寫兩個獨立 point。Accept: “IMF” 可；Reject: “bonds break” 當 boiling 嘅原因。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -425,6 +434,15 @@ IB.addFast({
             "(b) five 3d electrons in five separate orbitals, parallel spins (Hund) → <b>5 unpaired</b> [1]",
             "(c) Al outer electron is in 3p (Mg: 3s) [1]; 3p is higher in energy / further from nucleus / shielded by 3s electrons [1]; so less energy needed to remove it [1] ✅",
           ]],
+        ],
+      },
+      {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["State","Give configuration or sublevel order only, no working."],["Explain","Emission lines: electron falls from higher to lower energy level, emits photon of one frequency; energy levels are discrete, convergence at high energy."],["Deduce","Write full configuration from Z (1s² 2s² 2p⁶ …)."],["Explain (IE trend)","Nuclear charge, shielding, distance; for dips: sublevel (B < Be) and electron pairing (O < N)."],["Sketch","Label axes and mark the convergence point for IE or spectra."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Why lines in emission spectrum","Discrete energy levels, so only specific ΔE (= hf) values; lines converge as levels get closer."],["Successive IE of an element","Large jump in IE shows a new shell: number before jump = valence electrons = group."],["Why IE₁ drops Be→B / N→O","B: 2p higher energy than 2s; O: paired 2p electrons repel."],["Write configuration of ion","Remove from outermost shell first (4s before 3d)."],["Group trend IE₁","Down group: bigger radius + more shielding, so less attraction, lower IE."]]],
+          ["note", "每個 IE 解釋至少寫兩個 factor（nuclear charge + distance/shielding），一個 factor 通常得 1 分。E = hf 同 c = fλ 喺 data booklet；唔好忘記 ground state 同 excited state 要分清。"],
         ],
       },
       {
@@ -654,6 +672,15 @@ IB.addFast({
             ["Amounts of two reactants / “excess” / % yield / titration", "see R2.1 Stoichiometry", "next topic sheet"],
           ]],
           ["note", "<b>Sig figs & working</b>：final answer to the fewest significant figures in the data (usually 3)。Keep full calculator values in between — round only at the end。Always write the unit（M → g mol⁻¹；M<sub>r</sub> and A<sub>r</sub> → no unit；c → mol dm⁻³）。Show each step — “calculate” questions give method marks even if the final number is wrong (error carried forward, ECF)。"],
+        ],
+      },
+      {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Define","Mole: amount containing 6.02 × 10²³ (N<sub>A</sub>) particles; molar mass: mass per mole."],["Calculate","Formula, substitution, answer with correct s.f. and unit. Method mark (ECF) is given even if the number is wrong."],["Determine","Empirical formula: ÷ M<sub>r</sub>, then smallest ratio; molecular = empirical × (M ÷ M<sub>e</sub>)."],["Deduce","Use data (combustion masses, % composition) to reach a formula."],["Suggest","Reasonable source of error or a sensible conclusion from the data."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Empirical formula from % or masses","mass ÷ A<sub>r</sub> → ÷ smallest → whole numbers (×2 or ×3 if x.5 / x.33)."],["Concentration / dilution","n = cV (V in dm³); c₁V₁ = c₂V₂."],["Ideal gas","PV = nRT: P kPa with V dm³, or Pa with m³; T in K; R = 8.31 (data booklet)."],["Gas at STP","V = n × 22.7 dm³ mol⁻¹ (STP 273 K, 100 kPa; given in booklet)."],["Hydrate X·nH₂O","Mass loss = water; mol H₂O ÷ mol salt = n."]]],
+          ["note", "Data booklet: N<sub>A</sub> = 6.02 × 10²³、R = 8.31 J K⁻¹ mol⁻¹、molar volume 22.7 dm³ mol⁻¹ at STP。最後答案跟題目數據用相同 s.f.，寫單位；中間步驟唔好過早 round。"],
         ],
       },
       {
@@ -905,6 +932,15 @@ IB.addFast({
           ]],
           ["note", "<b>Interpreting a chromatogram</b>：number of spots = minimum number of components；spot level with a standard = that compound is present；more attracted to the stationary phase → smaller R<sub>f</sub> (stays low)；colourless spots located with a UV lamp or locating agent (e.g. ninhydrin for amino acids). TLC (thin-layer, silica gel) is faster and more sensitive than paper."],
           ["trap", ["Rf 由 baseline 量起；solvent front 都要由 baseline 量。", "Rf 寫單位 cm ✗。", "Baseline 用 ink ✗，會跟住 solvent 走。", "Baseline 浸入 solvent ✗，sample 溶晒入 solvent。"]],
+        ],
+      },
+      {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Describe","Ionic: electrostatic attraction between oppositely charged ions in a lattice; covalent: shared pair; metallic: cations in sea of delocalised electrons."],["Explain (property)","Structure → bonding → property: e.g. high m.p. because strong electrostatic attraction needs much energy."],["Compare / Distinguish","Both sides each, with same property. Use comparative words."],["Deduce / Predict","Shape and bond angle from electron domains (VSEPR); polarity from shape + electronegativity."],["Draw","Lewis: all valence electrons, lone pairs shown. Dot-and-cross not penalised if consistent."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Explain boiling point order","Identify strongest IMF (H-bond > dipole–dipole > London); larger M<sub>r</sub> raises London forces."],["Why does X conduct / not conduct","Mobile charged particles: ions when molten or dissolved, delocalised electrons in metals."],["Shape + bond angle","Count domains → shape → angle (lone pair reduces angle: CH₄ 109.5°, NH₃ 107°, H₂O 104.5°)."],["Is molecule polar","Polar bonds AND asymmetric shape → net dipole (CO₂ non-polar, H₂O polar)."],["Calculate R<sub>f</sub>","distance spot ÷ distance solvent front."]]],
+          ["note", "Metal：mp 高係因為 cation–electron attraction 強，唔好寫 “metallic bonds are broken” 當 conduction reason。Ionic compound 融化要寫 “overcome electrostatic attraction between ions”，唔好寫 “break covalent bonds”。Bond angles 唔喺 booklet，要背。"],
         ],
       },
       {
@@ -1175,6 +1211,15 @@ IB.addFast({
           ]],
           ["note", "Transition elements (d-block) show variable oxidation states (e.g. Fe²⁺/Fe³⁺, Cu⁺/Cu²⁺, Mn +2 to +7) and often form coloured compounds."],
           ["trap", ["寫 oxidation state 漏正號 / 位置：+7 唔好寫 7+（7+ 係 ion charge）。", "H₂O₂ 入面 O 係 −1；metal hydride（NaH）入面 H 係 −1。", "Al₂O₃ 當 basic only ✗ → amphoteric。", "SO₂ 同 SO₃ 同 SO₄²⁻ 唔好混：S +4, +6, +6。"]],
+        ],
+      },
+      {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Explain (trend)","Period 3: nuclear charge increases, same shell, shielding about constant. Group: more shells, more shielding."],["Predict","Use trend plus a named reason; state the direction (increases / decreases)."],["Write an equation","Balanced with state symbols; oxide + water acid / alkaline equations."],["Identify (bonding type)","Use electronegativity difference and bonding triangle (data booklet: values of χ)."],["Compare","Both elements, same property, comparative word."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Atomic radius / IE / EN across period","Nuclear charge ↑, same shielding, stronger attraction: radius ↓, IE ↑, EN ↑."],["Reactivity Group 1 vs 17","Group 1 more reactive down (lose e⁻ easier); halogens less reactive down (gain e⁻ harder)."],["Halogen displacement","More reactive halogen displaces less reactive from its halide: Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂."],["Period 3 oxides","Metal oxides basic, Al₂O₃ amphoteric, non-metal oxides acidic; write equation with water."],["Bonding type from EN","Δχ large → ionic; small → covalent; low average χ → metallic."]]],
+          ["note", "Trend 題要用 “because” 加 nuclear charge / shielding / distance 三選二。Periodic trend 數據（EN、radius）喺 data booklet，答題引用數字可得 1 分。Reject “bigger nucleus” 當 explanation，要寫 nuclear charge。"],
         ],
       },
       {
@@ -1499,6 +1544,15 @@ IB.addFast({
             "3 : 1 = CH₃ and COOH → <b>ethanoic acid, CH₃COOH</b> ✅（M<sub>r</sub> = 60）",
           ]],
           ["trap", ["寫答案要列 evidence + conclusion，唔好只寫 “it is ethanoic acid”。", "同 formula 嘅 isomers 常考 distinguish：signals 數量 / IR 有冇 O–H。", "Calculate IHD 先，可以即刻排除一半 candidate（IHD = 0 → 冇 C=O / C=C / ring）。"]],
+        ],
+      },
+      {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Identify / State","Name functional group or give IUPAC name; no explanation."],["Draw / Deduce","Structural formula with all bonds clear; give isomers without repeats."],["Determine","Molecular formula from M<sub>r</sub>, % or IHD: IHD = (2C + 2 + N − H − X) ÷ 2."],["Deduce (spectra)","Link each peak (IR wavenumber, m/z fragment, NMR shift / splitting) to a group."],["Explain","Isomers: same molecular formula, different structure; link structure to property."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Name / draw from IUPAC","Longest chain → suffix → lowest locants → prefixes alphabetical."],["Isomer counting","Systematic: shorten chain by one C, move branch, check not repeated."],["Identify from MS","M⁺ = M<sub>r</sub>; fragments: 15 (CH₃⁺), 29 (C₂H₅⁺), 43, 45 (CH₃CH₂O⁺)… from booklet."],["Identify from IR","Use booklet table: O–H 3200–3600, C=O 1700–1750, C–H ~2850–3090."],["Identify from ¹H NMR (SL)","Number of signals = environments; area ratio = H count; shift from booklet."]]],
+          ["note", "IR / NMR 數值喺 data booklet（唔好背數值）。答 spectra 題要寫 “peak at ~1710 cm⁻¹ shows C=O”：先講數據，再講 group。IHD 計算亦喺 booklet。"],
         ],
       },
       {
@@ -1881,6 +1935,15 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Calculate","Moles → ratio → target; units and s.f. Mark scheme gives ECF."],["Determine (limiting)","Compare n ÷ coefficient for each reactant; smallest is limiting."],["Calculate % yield","actual ÷ theoretical × 100; atom economy = M<sub>r</sub>(desired) ÷ ΣM<sub>r</sub>(products) × 100."],["Suggest (error)","Name specific: not all solid transferred, incomplete reaction, loss on filtering."],["Outline (titration)","Burette, pipette, indicator, concordant titres within 0.10 cm³."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Mass of product from reactant","n = m/M → ratio → m = nM."],["Limiting reagent + excess left","Compare moles, compute excess remaining."],["Titration concentration","n(known) = cV → ratio → c(unknown) = n ÷ V."],["Gas volume reaction","Avogadro: volume ratio = mole ratio at same T, P."],["Percentage yield from mass data","Theoretical from limiting reactant first."]]],
+          ["note", "Titration 計算 V 要轉 dm³（cm³ ÷ 1000）。Average titre 只用 concordant results（相差 ≤ 0.10 cm³）。步驟分好重要：寫 “mol = c × V = …” 比淨係寫答案安全。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -2070,6 +2133,15 @@ IB.addFast({
           ]],
           ["note", "<b>常考</b>：給你 graph（volume or mass vs time）→ draw tangent / compare curves；問 “What does the final volume depend on?” 答：amount (mol) of the <b>limiting reactant</b>，同 rate 無關。"],
           ["trap", ["曲線 plateau 高度由 limiting reactant 決定，不是 rate。", "Fair test 一次只改一個 variable。", "Mass-loss data: 小 mass 變化→ balance 要 precise；H₂ 太輕。", "Marble chips + acid 實驗：surface area 同 mass 都要控制好。"]],
+        ],
+      },
+      {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Define","Rate = change in concentration of reactant / product per unit time."],["Explain (collision theory)","Frequency of collisions up AND fraction of collisions with E ≥ E<sub>a</sub> (for temperature, catalyst); two points."],["Sketch","M–B curve: same area, peak shifts right and lower at higher T; mark E<sub>a</sub>; axes labelled."],["Suggest / Evaluate (experiment)","Measurable change, control variables, source of error, improvement."],["Describe","Gradient of tangent = rate at that time."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Why higher T increases rate","Particles have more KE; more collisions with E ≥ E<sub>a</sub>; frequency also slightly up."],["Why higher concentration / pressure","More particles per volume, more frequent collisions (E<sub>a</sub> fraction unchanged)."],["Catalyst effect","Alternative pathway with lower E<sub>a</sub>: more particles E ≥ E<sub>a</sub>; ΔH and yield unchanged."],["Read rate from graph","Tangent at t; initial rate at t = 0."],["Evaluate method","Gas syringe: leaks, time delay; mass loss: dense gas only."]]],
+          ["note", "“Particles collide more often” 單獨只得半分：一定要加 “with energy ≥ E<sub>a</sub>” 或 “greater proportion”。Catalyst 唔改 equilibrium position 亦唔改 ΔH。"],
         ],
       },
       {
@@ -2548,6 +2620,15 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Define","Acid: proton donor; base: proton acceptor (Brønsted–Lowry)."],["Distinguish (strong/weak)","Degree of dissociation, not concentration; compare conductivity and pH at same concentration."],["Calculate","pH = −log[H⁺]; [H⁺] = 10<sup>−pH</sup>; K<sub>w</sub> = 1.00 × 10⁻¹⁴ at 298 K."],["Write equation","Include state symbols; weak acid uses ⇌."],["Sketch (pH curve)","Starting pH, equivalence volume, vertical region; shape for strong/weak combos."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["pH of strong acid / base","pH = −log c; for base pOH = −log[OH⁻], pH = 14 − pOH."],["Conjugate pairs","Acid → loses H⁺ → conjugate base; list both."],["Choose indicator","Match indicator range to the steep part; weak acid–strong base → phenolphthalein."],["Back titration","Excess reagent − reacted = amount in sample."],["Acid + carbonate / metal / base","Salt + water (+ CO₂ / H₂) balanced equation."]]],
+          ["note", "pH 1 unit change = 10× [H⁺]。pH 答案 2 d.p. 通常接受，但跟有效數字。Strong vs weak 唔等於 concentrated vs dilute，呢個係常見 reject point。Indicator pH ranges 喺 booklet。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -2811,6 +2892,15 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Deduce","Oxidation states by rules; identify oxidised / reduced species and oxidising / reducing agent."],["Write / Construct","Half-equations: balance atoms, charge with e⁻, H⁺ and H₂O in acid; combine so e⁻ cancel."],["Explain (cell)","Anode: oxidation (negative in voltaic); cathode: reduction; electron flow external wire, ions via salt bridge."],["Predict","Use activity series / E° values in booklet; more reactive displaces less reactive."],["Describe (electrolysis)","Cathode product, anode product, with half-equations (molten ionic)."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Oxidised / reduced","OIL RIG: oxidation = loss of electrons / increase in oxidation state."],["Balance redox in acid","Half-equations → equal e⁻ → add → cancel."],["Voltaic cell diagram","Label anode, cathode, e⁻ direction, salt bridge, electrolyte."],["Electrolysis of molten salt","Cathode: M⁺ + e⁻ → M; anode: 2X⁻ → X₂ + 2e⁻."],["Organic redox","Alcohol → aldehyde → carboxylic acid with K₂Cr₂O₇/H⁺ (orange → green)."]]],
+          ["note", "Anode / cathode 喺 voltaic 同 electrolytic 一樣定義（oxidation / reduction），但極性相反。Oxidation state 要寫符號 +2 唔係 2+（charge 先係 2+）。Reflux 見 “complete oxidation”，distil 見 “aldehyde”。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -3044,6 +3134,15 @@ IB.addFast({
             "（Shortcut 其實可用 ethene + steam → ethanol，但題目指定 3 步就跟）"
           ]],
           ["note", "<b>常考</b>：「name the type of reaction」+「give the reagent」+「write the equation」三連問；synthesis route 4–5 分。每步寫 reagent、condition、equation。"],
+        ],
+      },
+      {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Describe / Outline (mechanism)","Curly arrows from lone pair or bond to atom; show lone pairs, partial charges, intermediate."],["Explain","Why: C–X polar, δ⁺ carbon attacked by nucleophile; bond enthalpy decides reactivity (C–I fastest)."],["Distinguish","Radical (UV, one-electron arrows, fish-hook) vs ionic (full arrows)."],["Deduce","Product and type of reaction from reagent and conditions."],["Write equation","Initiation, propagation, termination for radical substitution."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Radical substitution of alkane","Initiation: Cl₂ → 2Cl• (UV); propagation 2 steps; termination: radicals combine."],["Nucleophilic substitution","Nu: attacks δ⁺ C, X⁻ leaves; keep to the SL mechanism taught in class."],["Electrophilic addition to alkene","π bond attacks E⁺; carbocation intermediate; Nu⁻ adds. Br₂ test: orange to colourless."],["Lewis acid / base","Lone pair donor = Lewis base; forms coordinate bond."],["Rate of halogenoalkane hydrolysis","Weaker C–X bond reacts faster: I > Br > Cl."]]],
+          ["note", "Mechanism 箭頭一定由 lone pair / bond 出發，指向 atom 或 bond，唔好由 atom 出發。Fish-hook 半箭咀係 radical。每個 mechanism step 通常 1 mark，要畫曬 charges 同 lone pairs。"],
         ],
       },
       {

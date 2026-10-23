@@ -2524,6 +2524,29 @@ IB.addFast({
           ["rhyme", "口訣 22", "硬工程救自己害鄰居，軟工程慢但長命", "Evaluate：cost、effectiveness、environmental impact、impact on other places（down-drift）。"],
         ],
       },
+      {
+        h: "Exam toolkit 命題位 + command terms",
+        min: 3,
+        blocks: [
+          ["table", ["Command term", "Full-mark pattern"], [
+            ["State / Define", "1 句；EEZ = 200 nm from baseline；acidification = pH drop from absorbed CO₂。無需解釋。"],
+            ["Describe", "用 resource 數據（GSA）：general pattern → figure → anomaly。"],
+            ["Explain", "Process 逐步：cause → mechanism → landform/effect；每步 1 mark，要 named example。"],
+            ["Evaluate / Discuss", "Strengths + limits（cost、effectiveness、環境、down-drift）→ 有 case study → 一句 judgement。"],
+          ]],
+          ["table", ["常見題型", "Model answer pattern"], [
+            ["Explain formation of landform（spit / stack / wave-cut platform）", "按次序 4 步：process → deposit/erode → growth → named example。"],
+            ["Explain El Niño / La Niña impacts", "trade wind 強弱 → 暖水移動 → upwelling 變 → 一個 wet + 一個 dry 地區。"],
+            ["Compare hard vs soft engineering", "每種 1 例 + cost / lifespan / side-effect，對比用 whereas。"],
+            ["Evaluate coastal management in a named place", "Mappleton→Cowden 或 Sand Engine；winners / losers + conclusion。"],
+          ]],
+          ["trap", [
+            "Longshore drift 同 swash/backwash 講反：swash <b>斜</b>上沙灘，backwash <b>直</b>落。",
+            "寫 hard engineering 「stops erosion」：要講只係 protect 一段，亦可 move erosion downdrift。",
+            "10-mark 無 named case = 封頂 Level 3；約 1 分鐘 1 mark。",
+          ]],
+        ],
+      },
     ],
     summary: [
       "El Niño 風弱暖水東，秘魯浸水澳洲乾",

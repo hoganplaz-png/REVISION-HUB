@@ -1185,6 +1185,7 @@ IB.topicSections = function (t, opts = {}) {
 IB.topicHtml = function (t, opts = {}) {
   const s = IB.subjects[t.subject];
   let h = `<h2>${IB.esc(t.code)} ${IB.esc(t.title)}</h2><p class="meta">${IB.esc(s.name)} · ${IB.esc(t.unit)}</p><p><em>${t.summary}</em></p>`;
+  if (IB.fastHtml) h += IB.fastHtml(t, { static: true });
   h += IB.topicSections(t, { static: true }).map((x) => x[2]).join("");
   if (opts.questions) h += IB.worksheetHtml(t.questions.filter((q) => !q.derived), `Practice questions - ${t.title}`, true);
   return h;

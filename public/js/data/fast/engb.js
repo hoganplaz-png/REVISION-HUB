@@ -153,6 +153,10 @@
         ],
       },
       {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["常見題型", "Model 答題模式"], [["Blog / article about identity", "title + 個人例子 → 為何影響 identity → 結論反思，語氣 informal 但 accurate"], ["Speech to students", "greeting → 引起共鳴 question → 2–3 點 + 例 → call to action → Thank you"], ["Advice / letter", "you 為主；先同理，再建議 (should / could / It might help to...)"], ["P2 True/False", "答案 + 原文 quote（≤ 10 字）"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
+      },
+      {
         h: "失分位 + 自我檢查", min: 2,
         blocks: [
           ["trap", [
@@ -332,6 +336,10 @@
             "對照 criteria：A (vocab: heritage, ritual, commemorate) · B (developed with example) · C (speech conventions)。",
           ]],
         ],
+      },
+      {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["常見題型", "Model 答題模式"], [["Travel / personal narrative", "opening hook → 時間順序 → 感受 + reflection；past tense 保持一致"], ["Diary / blog", "date / Dear Diary；first person；感受用具體 detail 而非 'It was good'"], ["Article on tradition", "現象 → 例子 → 年輕一代影響 → opinion"], ["P2 inference", "答 writer 暗示乜，用 'suggests / implies' + 原文證據"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
       },
       {
         h: "失分位 + 自我檢查", min: 2,
@@ -517,6 +525,10 @@
             "對照：A formal vocab (misinformation, verify) · B logical findings → recommendations · C report headings + objective tone。",
           ]],
         ],
+      },
+      {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["常見題型", "Model 答題模式"], [["Opinion article (tech / media)", "thesis → 論點 + evidence + counter-argument + rebuttal → 結論"], ["Review", "basic info → summary（唔劇透）→ evaluation + 例 → rating / recommend"], ["Speech on technology", "hook stat（合理，用 'a recent study suggests'）→ 2 論點 → call to action"], ["P2 tone / purpose", "tone 一個準確形容詞 + 原文證據；purpose 用 'to persuade / inform / entertain'"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
       },
       {
         h: "失分位 + 自我檢查", min: 2,
@@ -705,6 +717,10 @@
             "對照：A (employability, qualifications, to boost) · B (cause→solution developed) · C (article conventions)。",
           ]],
         ],
+      },
+      {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["常見題型", "Model 答題模式"], [["Formal letter / email", "Dear Sir/Madam → purpose line → 論點段 → 要求 / 行動 → Yours faithfully"], ["Proposal / report", "headings、bullet、objective → findings → recommendations（客觀 formal）"], ["Article on education / work", "problem → causes → solutions，用 passive + formal vocab"], ["P2 reference", "指代詞（this / they）答返所指嘅 noun phrase，唔好只抄代詞"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
       },
       {
         h: "失分位 + 自我檢查", min: 2,
@@ -898,6 +914,10 @@
         ],
       },
       {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["常見題型", "Model 答題模式"], [["Speech / leaflet on environment", "hook → problem → solution → call to action；persuasive devices（rule of three, rhetorical question）"], ["Both-sides article", "一邊 + evidence，另一邊 + evidence，再表態 'On balance...'"], ["Proposal for local action", "objective, current situation, recommendation, cost / benefit"], ["P2 argument", "逐段認 claim → evidence → writer's purpose"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
+      },
+      {
         h: "失分位 + 自我檢查", min: 1.5,
         blocks: [
           ["trap", [
@@ -1074,6 +1094,10 @@
         ],
       },
       {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["Text type", "Convention 必寫"], [["Formal letter", "地址 / 日期 / Dear Sir or Madam / subject line / Yours faithfully (未知名) 或 sincerely (知名)"], ["Email", "Subject、Dear/Hi 按 audience；結尾 Kind regards"], ["Diary", "Date、first person、感受 + reflection、informal"], ["Report / proposal", "Title, To/From/Date, headings, bullet, recommendations"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
+      },
+      {
         h: "失分位 + 自我檢查", min: 1.5,
         blocks: [
           ["trap", [
@@ -1241,6 +1265,10 @@
             "<b>Devices to use</b>：statistics (plausible), tricolon, rhetorical question, “we”。",
           ]],
         ],
+      },
+      {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["Text type", "Convention 必寫"], [["News report", "headline + by-line + who/what/when/where + quote + 引述 source"], ["Opinion column", "strong thesis + rhetorical devices + call to action"], ["Review", "title, rating, plot summary 不劇透, evaluation"], ["Interview", "Q&A 或 narrative；question 清晰，answer 有個性 voice"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
       },
       {
         h: "失分位 + 自我檢查", min: 1.5,
@@ -1473,7 +1501,11 @@
         ],
       },
       {
-        h: "失分位 + 自我檢查", min: 3,
+        h: "IB 考試速勝：題型 + 拎分位", min: 1.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["Criterion", "高分關鍵詞"], [["A", "varied structures (conditional, passive, relative clauses) + precise vocab；少量錯可接受"], ["B", "明確 argument，每個 point 有 example / evidence；paragraph 有 cohesive devices"], ["C", "text type conventions + register 一致 + tone fit audience"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
+      },
+      {
+        h: "失分位 + 自我檢查", min: 2.5,
         blocks: [
           ["trap", [
             "❌ 少過 250 words → ✅ 目標 300–350：idea 要 develop，唔係淨係列點。",
@@ -1678,7 +1710,11 @@
         ],
       },
       {
-        h: "失分位 + 自我檢查", min: 3,
+        h: "IB 考試速勝：題型 + 拎分位", min: 1.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["P2 技巧", "拎分位"], [["Reading", "先睇題目再 scan；答案喺 text 內，唔好用 outside knowledge"], ["Listening", "第一次聽主旨，第二次填細節；答案按 audio 字詞，注意 spelling"], ["Marks", "1 mark = 1 point；Explain 題寫 2 句，唔好無限擴大"], ["Time", "每 mark 約 1 分鐘；卡住就 skip 再返嚟"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
+      },
+      {
+        h: "失分位 + 自我檢查", min: 2.5,
         blocks: [
           ["trap", [
             "T/F 只答 True／False，漏 justification → 淨係得 0。",
@@ -1850,6 +1886,10 @@
           ]],
           ["note", "<b>失分位</b>：長時間停頓、不停 “um”；用 “and then… and then…” 串句；literary terms 讀錯（e.g. ‘foreshadowing’）。練習時錄音，自己聽返。"],
         ],
+      },
+      {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["IO 部份", "時間 / 拎分"], [["Presentation", "3–4 min，literary extract 分析 + 同 theme 連結；speak，唔好 read"], ["Follow-up", "about 4 min，examiner 追問你 extract；答要引 line / technique"], ["General conversation", "about 5 min，另一 theme；用 Point–Example–Reason，主動延伸"], ["Criteria", "A language 12 · B message 12 · C interactive skills 6 (共 30)"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
       },
       {
         h: "失分位 + 自我檢查", min: 3,
@@ -2089,6 +2129,10 @@
             "“<b>Ken said (that) he would submit the essay the next day.</b>” [1 would][1 time change]",
           ]],
         ],
+      },
+      {
+        h: "IB 考試速勝：題型 + 拎分位", min: 2.5,
+        blocks: [["key", "<b>HL Paper 1 = 1 個 task，30 marks（A12 / B12 / C6）。</b>每分鐘都要對應 criterion：先 plan 2 分鐘，寫 40 分鐘，check 5 分鐘。"], ["table", ["Paper 1 重點", "點拎分"], [["揀題", "3 個 task 揀 1 個：睇邊個 TAP（text type / audience / purpose）你最有 ideas + vocab；揀咗唔好轉"], ["字數", "HL 450–600 words；唔夠 → B 發展唔夠，太多 → 後面錯多。留 5 分鐘 check"], ["Criteria", "A 語言 12 · B 內容 12 · C 概念 6 = 30；每個 criterion 獨立打分"]]], ["table", ["Grammar 題型", "點答"], [["Error correction", "逐句睇 tense / agreement / article / preposition，改最少"], ["Sentence transformation", "保持原意；用題目關鍵字，唔好加減意思"], ["Gap fill", "睇前後 form（V-ing / to V / past participle）"]]], ["table", ["Command term", "要做乜 / 滿分位"], [["Identify / State / Give / Find", "只要答案，無需解釋；短答，抄原文關鍵字（唔好整句抄）"], ["Explain", "答案 + 原因（because / which means）；1 mark = 1 個完整 point"], ["Justify（T/F）", "True/False/Not stated + 引原文短句；兩樣齊先有分"], ["Outline / Describe", "列重點 / 描述特徵，唔需深入分析"], ["Select / Complete / Match", "按選項或原文用字，spelling 要啱"]]]],
       },
       {
         h: "高分 vocab upgrade + 失分位 + 檢查", min: 3,

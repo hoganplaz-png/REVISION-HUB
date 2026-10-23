@@ -49,7 +49,7 @@ IB.page = function () {
       return;
     }
     t ? renderTopic(s, t, data) : renderOverview(s, data);
-    // the 10-minute notes load on demand; redraw the topic once they arrive
+    // the full chapter notes load on demand; redraw the topic once they arrive
     if (t && IB.loadFast && !IB.fast[t.id]) IB.loadFast(s.id).then(() => { if (topicId === t.id && IB.fast[t.id] && !IB.qs("#sec-fast")) renderTopic(s, t, IB.store.get()); });
   }
 
@@ -78,7 +78,7 @@ IB.page = function () {
       ${IB.hasHL(s.id) ? `<p class="small" style="margin:.2em 0 .6em;opacity:.85">${IB.levelOf(s.id) === "HL" ? `HL view: all ${s.allTopics.length} topics including ${s.allTopics.filter((t) => t.hl).length} AHL topics (marked AHL), HL papers and AHL questions.` : `SL view: ${s.topics.length} topics. Switch to HL to add ${s.allTopics.filter((t) => t.hl).length} AHL topics and HL papers.`}</p>` : ""}
       <div class="chip-row">${s.topics.slice(0, 12).map((t) => `<a href="#" data-t="${t.id}" class="chip">${IB.esc(t.title)}</a>`).join("")}${s.topics.length > 12 ? `<span class="chip">+${s.topics.length - 12} more</span>` : ""}</div>
       <div class="hero-progress"><div class="bar"><span style="width:${IB.pct(read, s.topics.length)}%"></span></div><span class="small">${read}/${s.topics.length} topics revised</span></div>
-      <div class="btn-row no-print"><button class="btn mark" id="dlAll">⬇ PDF: all notes</button><button class="btn" id="dlFastAll">⏱ PDF: 10-min notes</button><button class="btn" id="dlAllQ">⬇ PDF: notes + practice paper</button><button class="btn" id="dlHtml">⬇ HTML version</button></div>
+      <div class="btn-row no-print"><button class="btn mark" id="dlAll">⬇ PDF: all notes</button><button class="btn" id="dlFastAll">⏱ PDF: 10-min fast notes</button><button class="btn" id="dlAllQ">⬇ PDF: notes + practice paper</button><button class="btn" id="dlHtml">⬇ HTML version</button></div>
     </div>
     <h2>How to read these notes</h2>
     ${legend()}
@@ -98,7 +98,8 @@ IB.page = function () {
     <h2>Topics</h2>
     <div class="topic-cards">${topicCards}</div>`;
     IB.qsa("#content a[data-t]").forEach((a) => (a.onclick = (e) => { e.preventDefault(); go(s.id, a.dataset.t); }));
-    const dl = (withQ) => {
+    const dl = async (withQ) => {
+      if (IB.loadFast) await IB.loadFast(s.id);
       const body = `<h1>${s.name} - Revision notes</h1><p class="meta">${s.guide}</p>` + s.topics.map((t) => IB.topicHtml(t, { questions: withQ })).join('<div class="page-break"></div>');
       IB.download(`IB-${s.short.replace(/\s+/g, "-")}-notes${withQ ? "-with-questions" : ""}.html`, IB.standaloneDoc(`${s.name} notes`, body));
     };
@@ -146,7 +147,7 @@ IB.page = function () {
       <a class="btn" href="practice.html?subject=${s.id}&topic=${t.id}">Quiz this topic</a>
       ${IB.config.ai ? `<a class="btn" href="tutor.html?subject=${s.id}&topic=${t.id}">Ask the AI tutor</a>` : ""}
       <button class="btn mark" id="dlTopic">⬇ PDF notes</button>
-      ${fastSec ? '<button class="btn" id="dlFast">⏱ 10-min notes PDF</button>' : ""}
+      ${fastSec ? '<button class="btn" id="dlFast">⏱ 10-min fast notes PDF</button>' : ""}
       <button class="btn" id="dlTopicQ">⬇ PDF + practice paper</button>
       <button class="btn" id="dlSheet">⬇ Worksheet</button>
       <button class="btn ${hlOn() ? "on" : ""}" id="hlBtn" aria-pressed="${hlOn()}">🖍 Highlights</button>

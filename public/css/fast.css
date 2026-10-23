@@ -6,12 +6,16 @@
 .fn-eyebrow { font: 800 .74rem/1.2 var(--font); letter-spacing: .12em; text-transform: uppercase; opacity: .9; }
 .fn-title { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.2; margin: 6px 0 4px; color: #fff; }
 .fn-sub { font-size: .86rem; opacity: .92; }
+.card.fast { --fn-or: #9A3412; --fn-pu: #5B21B6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .card.fast { --fn-or: #FDBA74; --fn-pu: #C4B5FD; } :root:not([data-theme="light"]) .fn-hub .hub-box { --hc-t: var(--text); background: color-mix(in srgb, var(--hc) 22%, var(--surface)); } }
+:root[data-theme="dark"] .card.fast { --fn-or: #FDBA74; --fn-pu: #C4B5FD; }
+:root[data-theme="dark"] .fn-hub .hub-box { --hc-t: var(--text); background: color-mix(in srgb, var(--hc) 22%, var(--surface)); }
 .fn-part { margin: 0 0 6px; }
 .fn-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--fc); color: #fff; border-radius: 10px; padding: 9px 14px; margin: 16px 0 10px; font-weight: 800; font-size: 1.02rem; }
 .fn-min { background: rgba(0, 0, 0, .55); color: #fff; border-radius: 999px; padding: 2px 10px; font-size: .74rem; white-space: nowrap; }
 .fn-key, .fn-eg, .fn-ms { background: var(--surface-2); border-left: 4px solid var(--muted); border-radius: 8px; padding: 10px 14px; margin: 0 0 10px; line-height: 1.6; }
 .fn-rhyme { border: 1.6px dashed #D97706; background: var(--mark-soft); color: var(--text); border-radius: 10px; padding: 10px 14px; margin: 0 0 10px; font-weight: 700; line-height: 1.6; }
-.fn-rhyme-h span { color: #C2410C; }
+.fn-rhyme-h span { color: var(--fn-or); }
 .fn-rhyme-b { font-weight: 600; margin-top: 2px; }
 .fn-sum ol { margin: 0; padding-left: 1.4em; }
 .fn-sum li + li { margin-top: 4px; }
@@ -24,6 +28,7 @@ table.fn-table th, table.fn-table td { border: 1px solid var(--border); padding:
 table.fn-table thead th { background: var(--surface-2); }
 .fn-q { border: 1.4px solid var(--border); border-radius: 10px; padding: 10px 14px; margin: 0 0 10px; }
 .fn-m { color: var(--muted); font-style: italic; }
+.fn-ans summary { text-decoration: underline; text-underline-offset: 3px; }
 .fn-ans { margin-top: 6px; }
 .fn-ans summary { cursor: pointer; color: var(--primary); font-weight: 700; font-size: .9rem; }
 .fn-ans > div { margin-top: 6px; background: var(--good-soft); border-radius: 8px; padding: 8px 12px; }
@@ -50,15 +55,15 @@ table.fn-table thead th { background: var(--surface-2); }
 .fn-hub .hub-t { grid-column: 2; grid-row: 1; } .fn-hub .hub-b { grid-column: 2; grid-row: 3; }
 .fn-hub .hub-l { grid-column: 1; grid-row: 2; } .fn-hub .hub-r { grid-column: 3; grid-row: 2; }
 .fn-hub .hub-box { border: 2px solid var(--hc); background: color-mix(in srgb, var(--hc) 10%, transparent); color: var(--text); border-radius: 10px; padding: 6px 12px; text-align: center; font-size: .84rem; line-height: 1.35; }
-.fn-hub .hub-box b { display: block; color: var(--hc); }
+.fn-hub .hub-box b { display: block; color: var(--hc-t, color-mix(in srgb, var(--hc) 75%, #000)); }
 .fn-hub .hub-op { grid-column: 1 / -1; font-size: .8rem; color: var(--muted); font-weight: 700; text-align: center; }
 .fn-flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; margin: 0 0 10px; }
 .fn-step-chip { flex: 1 1 120px; background: var(--surface-2); border: 1.4px solid var(--border); border-radius: 10px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; font-size: .88rem; }
-.fn-step-chip b { color: #6D28D9; }
+.fn-step-chip b { color: var(--fn-pu); }
 .fn-arrow { align-self: center; font-weight: 800; color: var(--muted); }
 .fn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 0 10px; }
 .fn-gi { border: 1.6px dashed #D97706; background: var(--mark-soft); border-radius: 10px; padding: 8px 12px; display: flex; flex-direction: column; gap: 2px; line-height: 1.45; color: var(--text); }
-.fn-gi b { color: #C2410C; } .fn-gi small { color: var(--muted); font-weight: 600; }
+.fn-gi b { color: var(--fn-or); } .fn-gi small { color: var(--muted); font-weight: 600; }
 .fn-tag { align-self: flex-start; background: #6D28D9; color: #fff; border-radius: 999px; padding: 0 8px; font-size: .68rem; font-weight: 800; }
 .fn-check { list-style: none; margin: 0 0 10px; padding: 0; columns: 2; column-gap: 18px; }
 .fn-check li { break-inside: avoid; margin: 0 0 6px; }

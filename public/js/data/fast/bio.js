@@ -115,6 +115,20 @@ IB.addFast({
         ],
       },
       {
+        h: "Water / DNA：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["State / Identify", "1 個詞或短句，唔解釋", "“Hydrogen bonds” 或 “Thymine”；寫多無分"],
+            ["Outline", "主要點，唔使深入", "Property → H-bond 原因 → 用處（每步 1 分）"],
+            ["Explain", "因果鏈，要 “because / so”", "Polar → H-bond → cohesion → 連續水柱上 xylem"],
+            ["Compare / Distinguish", "兩邊都寫，每點用 whereas", "DNA vs RNA：deoxyribose / ribose；T / U；double / single strand"],
+            ["Calculate", "列式 + 答案 + 單位", "Chargaff：100 − (C+G) ÷ 2；H-bond = 2×(A–T) + 3×(C–G)"],
+          ]],
+          ["note", "P2 常見 4 型：①水特性 2–3 分（property→H-bond→例子）②DNA/RNA 比較 2 分 ③Chargaff / H-bond 計數 2–3 分 ④水 vs 空氣 habitat 3 分。<b>時間</b>：約 1 分 ≈ 1 分鐘；計數題寫晒 working 先有 M1。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -339,6 +353,20 @@ IB.addFast({
         ],
       },
       {
+        h: "Cells：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["State", "單一事實", "“70S ribosomes”；“no membrane-bound organelles”"],
+            ["Calculate (magnification)", "公式 M = I ÷ A；單位統一（1 mm = 1000 µm）", "Scale bar：實際大小 = 量度長度 ÷ M；答案寫單位"],
+            ["Distinguish", "Prokaryote vs Eukaryote 每點兩邊都寫", "nucleoid vs nucleus；70S vs 80S；no vs yes mitochondria"],
+            ["Explain", "Structure → function", "Mitochondrion cristae → 大表面積 → 更多 ATP synthase"],
+            ["Outline", "主要特徵", "Cell theory 三點；endosymbiosis 證據"],
+          ]],
+          ["note", "P2 常見：①放大率 / scale bar 計算（2–3 分）②prokaryote vs eukaryote 表（3 分）③organelle 功能 ④light vs electron microscope。<b>Trap</b>：magnification 同 resolution 唔同；resolution = 分辨兩點最短距離。<b>Data booklet</b> 有 magnification 公式。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 1.5,
         blocks: [
@@ -497,6 +525,20 @@ IB.addFast({
             "淨係 “separated” 唔夠，一定要寫 <b>no gene flow</b> 同 <b>different selection pressures</b>。",
             "Allopatric = geographical；sympatric = 同一區域，唔好調轉。",
           ]],
+        ],
+      },
+      {
+        h: "Classification / Evolution：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Define", "一句準確定義", "Species = 能 interbreed 產生 fertile offspring 嘅群體"],
+            ["State", "名稱 / 單一事實", "Binomial：Genus 大寫 + species 細寫；斜體或加底線"],
+            ["Outline", "3–4 個要點", "Allopatric speciation：隔離 → 獨立選擇 → 基因庫分歧 → 不能交配"],
+            ["Explain", "因果", "Homologous structures → 共同祖先 + adaptive radiation"],
+            ["Discuss", "兩面 / 局限", "Biological species concept 局限：asexual、化石、hybrids、ring species"],
+          ]],
+          ["note", "<b>題型</b>：①binomial 寫法 1 分 ②speciation 步驟 3–4 分 ③進化證據（fossil / homologous / DNA）3 分 ④DNA barcoding 用處。<b>Trap</b>：寫 “evolve because they need to” = 目的論，唔得分；要用 variation + selection。"],
         ],
       },
       {
@@ -672,6 +714,20 @@ IB.addFast({
           ]],
           ["note", "<b>Mutualism:</b> an interaction in which both species benefit.<br><b>Keystone species:</b> a species with a disproportionately large effect on its community (sea otter → sea urchin → kelp).<br>Top-down（predator 控制）vs bottom-up（食物 / 資源控制）。"],
           ["rhyme", "口訣 5", "互利、寄生、捕食、競爭、毒殺、分泌", "六種 interaction 加 allelopathy。"],
+        ],
+      },
+      {
+        h: "Biodiversity / Population：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Calculate", "列式 + 單位", "Lincoln index N = (M × n) ÷ m"],
+            ["Outline", "列步驟", "Capture–mark–release–recapture：假設 mark 唔影響生存、充分混合"],
+            ["Evaluate", "利弊 + 結論", "Ex situ vs in situ conservation 各舉優缺點再下判斷"],
+            ["Explain", "因果", "Sigmoid curve：carrying capacity ← 限制因素 density-dependent"],
+            ["State (hypotheses)", "H₀ 無關聯 / H₁ 有關聯", "Chi-squared：df = (行−1)(列−1)；χ² > critical → reject H₀"],
+          ]],
+          ["note", "<b>題型</b>：①Lincoln 計數 2 分 ②chi-squared 結論句 2 分（要用 critical value 同 p = 0.05）③sampling 方法（quadrat / transect）④保育策略評價。<b>Data booklet</b>：chi-squared 表同 Lincoln 公式。<b>Trap</b>：df 算錯；漏寫 “reject / fail to reject H₀” 後面嘅 biological 結論。"],
         ],
       },
       {
@@ -1075,6 +1131,20 @@ IB.addFast({
         ],
       },
       {
+        h: "Membranes / Cells：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Draw / Label", "清晰線條 + 標籤線指到位", "Phospholipid bilayer：head 向外、tails 向內、protein、cholesterol"],
+            ["Distinguish", "兩邊", "Simple vs facilitated diffusion；facilitated 需要 channel protein"],
+            ["Explain", "結構 → 功能", "Fluid mosaic：phospholipid 流動 → 膜可彎曲、vesicle 融合"],
+            ["Calculate", "SA = 6l²；V = l³", "SA:V 比：寫成 x : 1；cell 越大比值越細"],
+            ["Predict", "按 tonicity 推方向", "Hypotonic → water in → animal cell lyse；plant cell turgid"],
+          ]],
+          ["note", "<b>題型</b>：①SA:V 計數 2 分 ②膜運輸比較表 3 分 ③osmosis 預測 ④stem cell 應用同倫理。<b>Trap</b>：osmosis 係水由低溶質濃度去高溶質濃度；唔好寫 “water moves to where there is less water”。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -1300,6 +1370,20 @@ IB.addFast({
         ],
       },
       {
+        h: "Transport / Gas exchange：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Describe", "陳述特徵 / 過程", "Alveolus：單層薄壁、濕潤、毛細血管網"],
+            ["Explain", "因果", "Inhalation：diaphragm 收縮 → 胸腔體積↑ → 壓力↓ → 空氣入"],
+            ["Compare", "比較", "Artery 厚肌肉壁高壓 vs vein 瓣膜低壓"],
+            ["Annotate / Label", "圖上加簡短說明", "Heart：房室瓣、半月瓣、血流方向"],
+            ["Suggest", "用知識推理，唔係背書", "Transpiration 速率變化：光 / 風 / 濕度 / 溫度"],
+          ]],
+          ["note", "<b>題型</b>：①alveolus 適應 3 分 ②血管比較表 3 分 ③transpiration + xylem 機制 3 分（cohesion–tension）④coronary occlusion 後果。<b>Trap</b>：寫 “air goes in because lungs expand” 倒轉因果；正確係肌肉收縮 → 體積增 → 壓力降。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -1492,6 +1576,20 @@ IB.addFast({
             "Corals need dissolved carbonate/ calcium for skeleton; sediment/nutrients harm [1] ✅"
           ]],
           ["note", "<b>常考</b>: coral reef conditions and mutualism (3 marks), bleaching, hominid teeth to diet (2–3 marks), dentition comparison."],
+        ],
+      },
+      {
+        h: "Ecology：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Define", "準確定義", "Niche = organism 喺生態系統嘅 role 同 resources 使用"],
+            ["Distinguish", "兩邊", "Autotroph vs heterotroph；saprotroph vs detritivore"],
+            ["Explain", "適應 → 環境", "Xerophyte：厚 cuticle、sunken stomata → 減少 transpiration"],
+            ["Outline", "要點", "Competitive exclusion principle：兩 species 同 niche 唔能長期共存"],
+            ["Discuss", "兩面", "Coral reef 受 ocean acidification + bleaching 影響"],
+          ]],
+          ["note", "<b>題型</b>：①adaptation 配環境 2 分 ②classify nutrition 類型 ③biome 比較 ④coral bleaching / acidification。<b>Trap</b>：adaptation 要連埋 “why it helps survival”；niche 唔等於 habitat。"],
         ],
       },
       {
@@ -1703,6 +1801,20 @@ IB.addFast({
           ]],
           ["note", "<b>End-product inhibition：</b>pathway 最尾嘅 product 作為 non-competitive inhibitor 抑制第一步 enzyme → 唔浪費 → <b>negative feedback</b>（product 多就停，少就再開）。"],
           ["trap", ["Competitive = 同 substrate 爭位；唔好寫成「inhibitor 同 enzyme 一齊 react」。"]],
+        ],
+      },
+      {
+        h: "Enzymes：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Define", "一句", "Enzyme = biological catalyst，降低 activation energy"],
+            ["Outline", "主要點", "Lock-and-key vs induced fit"],
+            ["Explain", "機制鏈", "Heat → bonds break → active site 變形 → enzyme denatured"],
+            ["Describe (graph)", "趨勢 + 數據引用", "Rate ↑ 至 optimum 後急跌；引用具體溫度 / 速率"],
+            ["Calculate rate", "變化量 ÷ 時間", "Rate = Δproduct ÷ time；或 1/time；寫單位"],
+          ]],
+          ["note", "<b>題型</b>：①factor 圖描述 + 解釋 3 分（兩步分開寫）②rate 計算 ③實驗設計：IV / DV / controls / repeats ④competitive vs non-competitive inhibition。<b>Trap</b>：低溫 enzyme 只係 inactive 唔係 denatured；high substrate 後 plateau 因為 enzyme 飽和。"],
         ],
       },
       {
@@ -2121,6 +2233,20 @@ IB.addFast({
         ],
       },
       {
+        h: "Neuro / Hormones：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["State", "單一事實", "Resting potential 約 −70 mV"],
+            ["Outline", "按次序", "Action potential：depolarisation（Na⁺ in）→ repolarisation（K⁺ out）"],
+            ["Explain", "因果", "Synapse：Ca²⁺ in → vesicle exocytosis → neurotransmitter → receptor"],
+            ["Compare", "兩邊", "Nervous 快、短暫、局部 vs endocrine 慢、持久、廣泛"],
+            ["Suggest", "推理", "Neonicotinoid 結合 acetylcholine receptor → 持續刺激"],
+          ]],
+          ["note", "<b>題型</b>：①action potential 逐步 3–4 分 ②synapse 傳遞 3 分 ③nervous vs endocrine 比較表 ④reflex arc 次序（receptor → sensory → relay → motor → effector）。<b>Trap</b>：depolarisation 係 Na⁺ 入；K⁺ 係出；唔好寫 “ions flow”。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 3,
         blocks: [
@@ -2523,6 +2649,20 @@ IB.addFast({
         ],
       },
       {
+        h: "Energy / Carbon：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Calculate", "公式 + 單位", "Efficiency = 輸出 ÷ 輸入 × 100；NPP = GPP − R"],
+            ["Explain", "因果", "Energy 損失：respiration、heat、未食、排泄 → 約 10% 傳落去"],
+            ["Construct", "按比例畫圖", "Pyramid of energy 必定直立，單位 kJ m⁻² yr⁻¹"],
+            ["Outline", "要點", "Carbon cycle：photosynthesis、respiration、combustion、decomposition"],
+            ["Discuss", "兩面", "CO₂ 趨勢 + 季節波動（Keeling curve）"],
+          ]],
+          ["note", "<b>題型</b>：①energy 效率計數 2 分 ②點解 food chain 短 2–3 分 ③carbon cycle 流向 ④Keeling curve 描述（長期↑ + 季節鋸齒）。<b>Trap</b>：energy flow 係單向，matter 循環；寫 “energy is lost” 要講以咩形式（heat）。"],
+        ],
+      },
+      {
         h: "Long questions 長題拆解 + 失分位",
         min: 3,
         blocks: [
@@ -2712,6 +2852,20 @@ IB.addFast({
           ]],
           ["rhyme", "口訣 4", "Guide RNA 揀位，Cas9 剪刀", "Guide RNA finds the sequence by base pairing; Cas9 cuts it."],
           ["note", "Uses: correct genetic disease mutations, produce disease-resistant crops, research. Ethical issues: designer babies, unknown long-term effects, off-target cuts, inheritance of germ-line edits, unequal access."],
+        ],
+      },
+      {
+        h: "Genetics：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Outline", "步驟", "PCR：denature 95 °C → anneal 55–65 °C → extend 72 °C (Taq)"],
+            ["Explain", "因果", "Semi-conservative replication：Meselson–Stahl 密度梯度證據"],
+            ["Deduce", "由資料推出", "由 mRNA codon 推 amino acid；由 mutation 推影響"],
+            ["Compare", "兩邊", "Transcription vs translation 位置、產物、酵素"],
+            ["Evaluate", "利弊", "CRISPR-Cas9 基因編輯 倫理 vs 益處"],
+          ]],
+          ["note", "<b>題型</b>：①transcription / translation 步驟 3–4 分 ②gel electrophoresis 結果解讀 ③mutation 種類（substitution / insertion / deletion → frameshift）④codon 表（<b>data booklet</b>）。<b>Trap</b>：mRNA 係由 template strand 互補；DNA 同 mRNA 序列容易倒轉。"],
         ],
       },
       {
@@ -2928,6 +3082,20 @@ IB.addFast({
         ],
       },
       {
+        h: "Cell division / Genetics：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Distinguish", "兩邊", "Mitosis vs meiosis：2 vs 4 daughter cells；2n vs n"],
+            ["Outline", "按次序", "Mitosis：prophase、metaphase、anaphase、telophase"],
+            ["Explain", "因果", "Meiosis 增加 variation：crossing over、independent assortment"],
+            ["Deduce", "由資料推出", "Punnett square：genotype 同 phenotype ratio"],
+            ["Calculate", "用比例", "F2 ratio 3:1；carrier probability"],
+          ]],
+          ["note", "<b>題型</b>：①genetic cross 3–4 分（寫 parental genotype、gametes、offspring、ratio）②pedigree 推論 dominant/recessive ③meiosis variation 3 分 ④sex-linked 例子。<b>Trap</b>：用 Punnett 要寫 key（allele 符號）；X-linked 男性只有一個 allele。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -3079,6 +3247,20 @@ IB.addFast({
           ]],
           ["note", "Brown adipose tissue (babies, hibernators): mitochondria release energy as heat instead of ATP. <b>Thyroxin</b> raises metabolic rate. Fat layer (adipose tissue) insulates."],
           ["trap", ["唔好寫 “blood vessels move closer to the skin”；正確係 arterioles <b>dilate / constrict</b>。", "Sweating 靠 <b>evaporation</b> 帶走熱，唔係汗本身。"]],
+        ],
+      },
+      {
+        h: "Homeostasis：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Define", "一句", "Homeostasis = 維持內環境穩定"],
+            ["Outline", "要點", "Negative feedback：receptor → control centre → effector → 回到 set point"],
+            ["Explain", "因果", "高血糖 → insulin → liver 儲 glycogen → 血糖↓"],
+            ["Compare", "兩邊", "Type 1 vs Type 2 diabetes：成因、治療"],
+            ["Calculate", "公式", "Osmosis practical：% change in mass"],
+          ]],
+          ["note", "<b>題型</b>：①negative feedback 圖 / 流程 3 分 ②血糖調節 insulin vs glucagon ③thermoregulation（vasodilation、sweating、shivering）④osmosis practical 計數。<b>Trap</b>：negative feedback 係 “反方向抵消”，唔係 “負面”。"],
         ],
       },
       {
@@ -3252,6 +3434,20 @@ IB.addFast({
             "Habitat or food loss on migration route or wintering areas, or range shift to cooler regions [1]",
             "Correlation does not prove causation; other factors such as disease may contribute [1]",
           ]],
+        ],
+      },
+      {
+        h: "Evolution / Climate：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Outline", "要點", "Natural selection：variation → overproduction → struggle → survival of fittest → inheritance"],
+            ["Explain", "因果", "Antibiotic resistance 或 beak size 例子"],
+            ["Evaluate", "利弊 + 判斷", "Climate change mitigation 方案"],
+            ["Discuss", "兩面", "Tipping points 同 ecosystem stability"],
+            ["Analyse (data)", "趨勢 + 引用數值", "Eutrophication 圖：nitrate↑ → algal bloom → oxygen↓"],
+          ]],
+          ["note", "<b>題型</b>：①natural selection 逐步 4 分 ②eutrophication 因果鏈 3 分 ③biomagnification 例子（DDT / mercury）④climate data 描述（引用具體數值 + 單位）。<b>Trap</b>：個體唔會 “adapt”，係 population 隨世代改變。"],
         ],
       },
       {

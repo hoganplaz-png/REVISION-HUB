@@ -1167,3 +1167,14 @@ body::after {
 .fm-table th { background: transparent; color: inherit; }
 .fm-table th, .fm-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
 .fm-trans { white-space: pre-wrap; word-break: break-word; background: rgba(127,127,127,.14); color: inherit; padding: 10px; border-radius: 8px; font-family: inherit; }
+
+/* AA contrast: accent colours used as text are pulled toward the body-text colour (works in both themes) */
+.section-title, .sec-tab .sec-count, .frame-type, .case-src .section-title, details > summary.section-title { color: color-mix(in srgb, var(--c, var(--primary)) 55%, var(--text)); }
+.sec-tab .sec-count { color: color-mix(in srgb, var(--k, var(--muted)) 55%, var(--text)); }
+.callout-title, .callout > b:first-child { color: color-mix(in srgb, var(--k) 55%, var(--text)); }
+.mf-q > b { color: color-mix(in srgb, #0F9F8C 50%, var(--text)); }
+.mf-model > b { color: color-mix(in srgb, #1C7ED6 50%, var(--text)); }
+.mf-acc b { color: color-mix(in srgb, #2F9E44 50%, var(--text)); }
+.mf-rej b { color: color-mix(in srgb, #E03131 50%, var(--text)); }
+.mf-tip { color: color-mix(in srgb, #D6336C 55%, var(--text)); }
+.topic-sections details > summary { color: color-mix(in srgb, var(--c, var(--primary)) 55%, var(--text)); }
