@@ -212,7 +212,16 @@ IB.addFast({
             "⑤ Angle below horizontal = tan⁻¹(24.8/14.1) = <b>60.4°</b> ✅",
             "Check by energy-style suvat: v² = u² + 2gh = 15² + 2(9.81)(30) = 813.6 → v = 28.5 ✓ (speed on landing does not depend on launch angle)",
           ]],
-          ["note", "<b>Command terms</b>: <b>State</b> = one fact, no working. <b>Calculate</b> = numerical answer with working and unit. <b>Determine</b> = obtain the answer from given data/graph, working shown. <b>Explain</b> = give reasons (cause → effect). <b>Sketch</b> = shape and key features only. <b>Show that</b> = full working, answer to one more s.f. than the printed value."],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["State","One fact or unit, no working [1]."],["Calculate","Substitution + answer + unit + direction; ECF allowed [1 per step]."],["Determine","Use graph/data: show the gradient triangle or area, not just the final number."],["Sketch","Shape, start point, labelled axes; no numbers needed unless asked."],["Explain","Cause → effect chain; 3 marks = 3 linked statements."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["v–t graph","gradient = a [1]; area = displacement [1]; substitute read-off values [1]"],["Projectile","split u into components [1]; vertical suvat → t [1]; x = u<sub>x</sub>t [1]"],["Air resistance sketch","lower peak, shorter range, steeper descent, not symmetrical"],["Terminal speed","drag ↑ with v → drag = weight → resultant force 0, so constant v"],["Curve s–t","tangent → gradient = instantaneous v"]]],
+          ["trap", ["Gradient 'determine' with no triangle drawn or points quoted loses the method mark","Drag-free symmetric path drawn when the question says air resistance acts","Rounding g or intermediate values early: keep 3 s.f. until the last line"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Data booklet gives the four suvat equations and g = 9.81 m s⁻²: look them up, don't memorise-and-misquote. On 4+ mark projectile questions, the first mark is almost always the component split."],
         ],
       },
       {
@@ -463,7 +472,16 @@ IB.addFast({
             "④ Fraction lost = (800 − 3.98) ÷ 800 = 0.995 → <b>99.5 %</b> of the kinetic energy is lost (thermal, sound, deformation) ✅",
             "Never apply energy conservation <i>through</i> the collision, only after it.",
           ]],
-          ["note", "<b>Command terms</b>: <b>Explain</b> = reasons with physics law named (e.g. 'by Newton's third law…'). <b>Calculate</b> = working + unit. <b>Determine</b> = may be read from graph/data. <b>Show that</b> = full working; give the value to one more s.f. <b>Suggest</b> = apply knowledge to an unfamiliar situation."],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["State Newton's 3rd law","Pair forces: equal magnitude, opposite direction, same type, act on <b>different</b> bodies."],["Define","Impulse = force × time (= change in momentum); linear momentum = mass × velocity."],["Explain","Name the law used, then link net force → acceleration / momentum change."],["Calculate","Signs for direction fixed first; unit N, kg m s⁻¹ or N s."],["Discuss / Compare","Elastic vs inelastic: momentum conserved in both; KE only in elastic."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Free-body diagram","arrows from object centre, labelled by name (weight, normal reaction, friction, tension), lengths match if in equilibrium"],["Collision","'no external force' [1]; Σp before = Σp after [1]; solve [1]; check KE for type [1]"],["Impulse","area under F–t graph = Δp [1]; then Δp = mΔv [1]"],["Circular motion","identify which force supplies centripetal [1]; F = mv²/r [1]"],["Equilibrium","resultant = 0: resolve both directions [1 each]"]]],
+          ["trap", ["Weight and normal reaction called a 'third-law pair' (different type, same body)","'Centrifugal force' drawn on a free-body diagram","Forgetting that momentum is a vector: opposite directions need opposite signs","Saying centripetal force is an <i>extra</i> force; it is the net inward force"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Data booklet gives p = mv, F = ma, F = Δp/Δt, Ek = p²/2m, a = v²/r and the friction relations. For a conservation-of-momentum question always write the 'closed system / no external force' condition: it is a mark."],
         ],
       },
       {
@@ -673,6 +691,16 @@ IB.addFast({
             "(b) ½kx² = 22.2 → x = √(2 × 22.2 ÷ 500) = <b>0.30 m</b> [A1] ✅",
           ]],
           ["note", "<b>常考</b>: 'Explain why the energy at the end is less' (2 marks) — friction/air resistance acts against the motion [1]; work done against it dissipates energy as thermal energy in the surroundings [1]. 'Outline why a fuel with higher energy density is preferred for transport' — more energy for same volume/mass, so smaller/lighter tank [1]. Command terms: <b>State</b> (1 fact), <b>Outline</b> (brief account), <b>Explain</b> (cause + effect), <b>Calculate/Determine</b> (working + unit)."],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Define work","W = Fs cos θ: force × displacement in the direction of the force; unit J."],["Define power / efficiency","P = energy transferred ÷ time = Fv; efficiency = useful output ÷ total input (no unit)."],["Calculate / Determine","Area under an F–x graph = work done; show the area."],["Explain","Name the energy stores and the transfer, e.g. gravitational → kinetic + thermal."],["Discuss","Both sides: energy is conserved in total, but usable energy is dissipated."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Energy conservation","state the stores before/after [1]; equate with friction work as loss [1]; solve [1]"],["F–x area","area = work [1]; count squares/shape [1]"],["Efficiency","useful ÷ total [1]; use power, not energy, if the data are rates"],["Power = Fv","constant speed on a slope: F balances drag + weight component"],["Why energy is lost","friction/drag does work → thermal energy in surroundings, not 'used up'"]]],
+          ["trap", ["θ in W = Fs cos θ taken as the angle to the slope, not between F and displacement","Efficiency quoted above 100% or with a unit","Writing 'energy is lost/used up'; say transferred to thermal energy of surroundings","Using the mass in E<sub>k</sub> = ½mv² but forgetting to square v"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: Ek = ½mv², ΔEp = mgΔh, Ee = ½kx², P = Fv, efficiency = useful power out ÷ total power in. 'Show that' energy questions: write the equality in symbols first, then substitute."],
         ],
       },
       {
@@ -909,7 +937,16 @@ IB.addFast({
             "③ (b) Useful energy in 60 s = 1700 × 60 = 1.02 × 10⁵ J [M1]; m = Q/L = 1.02 × 10⁵ ÷ 2.26 × 10⁶ = <b>0.045 kg</b> [A1]",
             "(c) Thermal energy lost to surroundings (conduction/convection/radiation from the walls) [1]; some energy heats the kettle itself [1] ✅",
           ]],
-          ["note", "<b>Command terms</b>: <b>State</b> (1 fact), <b>Outline</b> (brief), <b>Explain</b> (linked reasoning), <b>Estimate</b> (approximate with sensible assumptions), <b>Suggest</b> (apply to new context), <b>Sketch</b> (shape + labelled axes), <b>Determine</b> (from data, working shown)."],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Distinguish","Temperature = measure of average random KE of particles; thermal energy = energy transferred due to a temperature difference."],["Define c / L","c = energy per kg per K; L = energy per kg to change phase at constant temperature."],["Outline","Short statement of each mode (conduction, convection, radiation) with the mechanism."],["Estimate","State assumptions (e.g. no heat loss) then calculate."],["Explain heating curve","flat parts: energy raises PE (bonds broken), KE and T constant; sloped: KE rises."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Q = mcΔT","ΔT in K or °C is the same; units J, kg"],["Mixing / calorimetry","energy lost = energy gained [1]; solve T<sub>f</sub> [1]"],["Heater with losses","electrical energy VIt = mcΔT + loss; real c from gradient"],["Black-body","P = σAT⁴ [1]; use K [1]; Wien λ<sub>max</sub>T = 2.90 × 10⁻³ m K"],["Compare surfaces","emissivity/colour/area explanation for radiation rate"]]],
+          ["trap", ["Using °C in σAT⁴ or Wien's law (must be K)","Applying ΔT = mcΔT with phase change; use mL when T is constant","Saying 'heat is stored'; it is internal (thermal) energy"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: Q = mcΔT, Q = mL, P = eσAT⁴, λ<sub>max</sub>T = 2.90 × 10⁻³ m K, σ = 5.67 × 10⁻⁸. Always write the heat-balance equation before numbers."],
         ],
       },
       {
@@ -1115,6 +1152,16 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Outline (greenhouse)","3 marks: short-wave in → surface absorbs, re-emits long-wave IR → GHG absorb/re-radiate, part back to surface."],["Define albedo","Fraction (or %) of incident radiation reflected/scattered by a surface (no unit)."],["Explain","Link to equilibrium: power in = power out; change one term → new T."],["Calculate / Show that","P = eσAT⁴, I = P/A, solar intensity ÷ 4 for whole-sphere averaging."],["Discuss","Evidence and cause, with enhanced greenhouse effect from added CO₂ / CH₄."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Mechanism 3-marker","visible/UV in; IR out (longer λ); GHG molecules absorb and re-emit in all directions"],["Albedo calc","absorbed = (1 − α) × S × πR²; emitted = σ4πR²T⁴"],["Equilibrium T","set power in = power out [1]; solve for T [1]; convert K → °C only if asked"],["Effect of change","e.g. ↑ albedo → less absorbed → lower equilibrium T"],["Compare planets","atmosphere thickness, GHG content"]]],
+          ["trap", ["Mixing up with the ozone layer problem","Saying GHG 'trap heat' without the absorb/re-emit in all directions idea","Forgetting ÷ 4 (πR² intercepts, 4πR² emits)"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet gives σ, Wien's law, P = eσAT⁴. Mark scheme words: 'infrared', 'longer wavelength', 'absorbed and re-radiated', 'in all directions', 'natural frequency of vibration of molecules'."],
+        ],
+      },
+      {
         h: "Long question 長題拆解 + 失分位",
         min: 3,
         blocks: [
@@ -1304,6 +1351,16 @@ IB.addFast({
             "Same T → same mean KE (ratio 1 : 1)",
             "v ∝ 1/√m → v<sub>He</sub>/v<sub>Ar</sub> = √(40/4) = √10 = <b>3.2</b> ✅",
           ]],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["State assumptions","Ideal gas: negligible volume, no intermolecular forces, elastic collisions, random motion."],["Define pressure","Force per unit area (normal to surface)."],["Explain (pressure)","molecule hits wall → momentum change → force; many collisions → average force/area."],["Calculate","pV = nRT with SI units; state which law is used."],["Sketch","P–T and V–T lines extrapolating to −273 °C (0 K) on the axis."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Same gas, two states","P<sub>1</sub>V<sub>1</sub>/T<sub>1</sub> = P<sub>2</sub>V<sub>2</sub>/T<sub>2</sub>; T in K [1]"],["pV = nRT","convert kPa → Pa, cm³ → m³ [1 for conversion]"],["Kinetic explanation","↑ T → ↑ average KE → faster, harder, more frequent hits"],["E<sub>k</sub> = (3/2)k<sub>B</sub>T","mean KE per molecule depends only on T"],["Real vs ideal","deviation at high pressure / low T: intermolecular forces, finite volume"]]],
+          ["trap", ["Using °C in gas laws","Giving 'collisions more frequent' only: need ↑ force per collision as well","n (mol) vs N (molecules): n = N/N<sub>A</sub>"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: pV = nRT, n = N/N<sub>A</sub>, E<sub>k</sub> = (3/2)k<sub>B</sub>T, R = 8.31, N<sub>A</sub> = 6.02 × 10²³, k<sub>B</sub> = 1.38 × 10⁻²³. Convert units on the first line to avoid 10³ errors."],
         ],
       },
       {
@@ -1537,6 +1594,16 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Define emf","Energy transferred per unit charge by the source (J C⁻¹), measured with no current drawn."],["Define p.d. / resistance","p.d. = work per unit charge between two points; R = V/I."],["Explain internal resistance","Energy dissipated inside the cell → terminal p.d. = ε − Ir."],["Draw circuit","Ammeter in series, voltmeter in parallel, correct symbols."],["Determine r","From V–I graph: intercept = ε, gradient = −r."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Series / parallel","find R<sub>total</sub> [1]; I = V/R [1]; p.d. across each [1]"],["Internal resistance","ε = I(R + r) [1]; two data points or graph [1]"],["Potential divider","V<sub>out</sub> = V × R<sub>2</sub>/(R<sub>1</sub>+R<sub>2</sub>); effect of LDR/thermistor change"],["Ohmic?","straight line through origin at constant T"],["Resistivity","R = ρL/A, doubling length / halving area effects"]]],
+          ["trap", ["Voltmeter in series / ammeter in parallel","'Current is used up': charge is conserved, energy is transferred","Using ε instead of terminal p.d. when a current flows"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: V = IR, P = VI, R = ρL/A, ε = I(R + r), series/parallel formulas. In a multi-step circuit, label I and V on each resistor on your diagram first."],
+        ],
+      },
+      {
         h: "Long question + 失分位",
         min: 2.5,
         blocks: [
@@ -1717,6 +1784,16 @@ IB.addFast({
             "v = √(2gh) = √(2 × 9.81 × 0.050) = <b>0.99 m s⁻¹</b> ✅",
           ]],
           ["trap", ["Ek–x 圖係倒轉拋物線，Ep–x 係正拋物線，兩者相加係水平線。", "Ek 同 Ep 變化頻率係 2f，唔係 f。", "有 damping 時 amplitude 同 total energy 逐漸減少，但 period 近似唔變。"]],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Define SHM","Acceleration proportional to displacement from equilibrium and always directed towards it (a ∝ −x)."],["Sketch","x–t, v–t, a–t on same axes: v leads x by a quarter cycle; a opposite to x."],["Determine","T from graph: peak-to-peak time; ω = 2π/T."],["Explain energy","KE ↔ PE exchange; total constant if undamped; KE max at equilibrium."],["Outline damping","Energy dissipated, amplitude decreases, T almost unchanged for light damping."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Identify SHM","force/acceleration ∝ −displacement [1], towards equilibrium [1]"],["Period","mass–spring T = 2π√(m/k); pendulum T = 2π√(l/g)"],["Graph reading","state amplitude, T, then f = 1/T"],["Energy graph","E<sub>k</sub> and E<sub>p</sub> against x: parabolas that add to a constant"],["Phase","compare two graphs by quarter-cycle shifts"]]],
+          ["trap", ["Calculator in degree mode for sin ωt","Saying 'a is zero at the extremes'; it is maximum there","Pendulum formula used for large angles"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet gives the T formulas and ω = 2π/T. Draw the graph in pencil first and label 'T', 'x₀' on it: many marks are for reading these correctly."],
         ],
       },
       {
@@ -1921,6 +1998,16 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Define","Amplitude: max displacement; wavelength: distance between two points in phase; frequency: waves per second."],["Distinguish","Transverse: oscillation ⟂ to energy travel; longitudinal: oscillation ∥ (compressions/rarefactions)."],["Describe","Say what the particles do and which direction the energy goes."],["Calculate","v = fλ; intensity I ∝ A²; point source I = P/4πr²."],["Sketch","Label λ on displacement–position, T on displacement–time."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Two graphs","from d–x read λ; from d–t read T; v = λ/T"],["Intensity","doubling A → 4× I; doubling r → I ÷ 4"],["Polarisation","I = I<sub>0</sub> cos²θ; unpolarised → I<sub>0</sub>/2 after first polariser"],["EM spectrum","order by λ; all travel at c in vacuum"],["Sound","longitudinal; speed depends on medium; cannot be polarised"]]],
+          ["trap", ["Reading λ from a displacement–time graph","Saying longitudinal waves can be polarised","Treating intensity as ∝ A, not A²"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: v = fλ, I = P/A, I = I<sub>0</sub>cos²θ, c = 3.00 × 10⁸. Quote the order of the EM spectrum from radio to γ."],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -2108,6 +2195,16 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["State Snell's law","n₁ sin θ₁ = n₂ sin θ₂; angles from the normal."],["Explain TIR","Needs n₁ > n₂ and incident angle > critical angle; sin θ<sub>c</sub> = n₂/n₁."],["Outline diffraction","Spreading of a wave as it passes a gap/edge; most when gap ≈ λ."],["Explain interference","Superposition: path difference nλ → constructive; (n+½)λ → destructive."],["Calculate","Double slit s = λD/d; single slit first minimum θ ≈ λ/b."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Refraction","n = c/v [1]; Snell [1]; angle from normal [1]"],["Optical fibre","TIR, cladding lower n, critical angle argument"],["Double slit","coherent sources; bright fringes at path diff nλ; s ∝ λ"],["Single slit","central max twice as wide as others; narrower slit → wider pattern"],["Diagram","ray arrows, normal, labelled angles"]]],
+          ["trap", ["Measuring angles from the surface instead of the normal","Frequency changes on refraction; it does not","Forgetting 'coherent' for double-slit sources"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: n = c/v, n₁sinθ₁ = n₂sinθ₂, sin θ<sub>c</sub> = n₂/n₁, s = λD/d. Fringe questions are ratios: proportional reasoning gets full marks faster than recalculation."],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -2286,6 +2383,16 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Explain standing wave","Superposition of incident and reflected waves of same f; nodes (zero amplitude) and antinodes."],["Define resonance","Driving frequency = natural frequency, giving maximum amplitude."],["Sketch","Draw the envelope, mark N and A, show L = nλ/2 etc."],["Compare","Standing: no net energy transfer, nodes fixed; progressive: energy moves, amplitude equal everywhere."],["Calculate","Harmonic frequencies from v/λ with the right boundary conditions."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["String fixed–fixed","L = nλ/2, f<sub>n</sub> = nv/2L"],["Pipe open–open","antinodes at both ends; L = nλ/2, all harmonics"],["Pipe closed–open","L = (2n−1)λ/4; odd harmonics only"],["Resonance tube","adjacent resonances differ by λ/2"],["Damping","reduces amplitude and sharpness of resonance"]]],
+          ["trap", ["Closed end drawn as antinode (it is a node)","Adjacent nodes separated by λ, not λ/2","Assuming all harmonics exist in a closed pipe"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Always sketch the pattern before applying a formula: the picture gives L in terms of λ with fewer slips than recalling a formula."],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -2415,6 +2522,16 @@ IB.addFast({
             ["'observed wavelength shorter'", "Blueshift, approaching"],
             ["'speed of source calculated'", "v = cΔλ/λ (light only at SL)"],
           ]],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Describe Doppler","Observed frequency changes when source and observer have relative motion."],["Explain (wavefronts)","Source moves: wavefronts compressed in front (↑ f), stretched behind (↓ f)."],["Calculate","f′ = f·v/(v ∓ u<sub>s</sub>) for moving source; v ≪ c: Δf/f ≈ v/c."],["Determine","Speed of a galaxy/object from redshift or speed gun data."],["Outline","Redshift = λ increased, source moving away."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Source approaching","f′ = f·v/(v − u<sub>s</sub>)"],["Source receding","f′ = f·v/(v + u<sub>s</sub>)"],["Wavefront diagram","closer spaced = ↑ f"],["Astronomical","Δλ/λ ≈ v/c"],["Reflection (speed gun)","moving reflector acts as moving source after acting as observer, so shift is about double"]]],
+          ["trap", ["Using the wrong sign in the denominator","Saying the wave speed changes (it depends only on the medium)","Light: wrong approximation if v is not ≪ c"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: f′ = f·v/(v ± u<sub>s</sub>), Δf/f ≈ Δλ/λ ≈ v/c. Rule: approaching → bigger f → smaller denominator."],
         ],
       },
       {
@@ -2603,6 +2720,16 @@ IB.addFast({
           ["note", "<b>Why faster near the Sun?</b> Gravity does positive work as the planet moves closer, so kinetic energy increases (speed up); the line to the Sun is shorter so it must move faster to sweep the same area."],
           ["note", "<b>Weightless astronaut (2-mark answer)</b>: The astronaut and the spacecraft are both in free fall with the same acceleration (the local g) [1]; so there is no contact force between them / the astronaut feels no normal reaction force [1]. Gravity has NOT disappeared — it provides the centripetal force."],
           ["trap", ["Kepler III 要寫 “mean radius”，同埋只係喺同一個 central body 周圍先成立。", "Never say astronauts are weightless because “there is no gravity in space”."]],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["State Newton's law of gravitation","F = GMm/r² between point masses, attractive."],["Define g","Gravitational field strength = force per unit mass; g = GM/r²."],["Show that","T²∝r³ from F = centripetal; mass of satellite cancels."],["Explain","Weightlessness is free fall, not absence of gravity."],["Calculate","Use r from centre, not altitude; orbital v = √(GM/r)."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Orbit","GMm/r² = mv²/r [1]; v = √(GM/r) [1]"],["Kepler 3","T² = 4π²r³/GM [1]"],["Field strength","g at height h: r = R + h"],["Potential","V = −GM/r; energy of a mass = mV"],["Escape/binding","energy to reach infinity"]]],
+          ["trap", ["Using altitude as r","Saying satellite astronauts have no gravity","Sign of gravitational potential (negative)"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: F = GMm/r², g = GM/r², V = −GM/r, v = √(GM/r), T²/r³ = 4π²/GM. In derivations, the cancellation of m is a mark: write it."],
         ],
       },
       {
@@ -2803,6 +2930,16 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Define E","Force per unit positive test charge."],["Sketch field lines","Direction (+ to −), density = strength, never cross, ⟂ to charged surface."],["Calculate","F = kq₁q₂/r², E = kQ/r², uniform E = V/d."],["Compare","Gravity attractive only; electric attractive or repulsive; both ∝ 1/r²."],["Determine direction","Right-hand rules for magnetic field of wire/solenoid."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Coulomb","F = kQq/r²; signs give direction"],["Two charges","vector sum of fields at a point"],["Parallel plates","uniform field, E = V/d, equipotential lines"],["Potential","V = kQ/r; work = qΔV"],["Magnetic field","dot / cross notation; solenoid like bar magnet"]]],
+          ["trap", ["Field arrows pointing into positive charge","Distances not squared or not in metres","Field lines of different charges crossing"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: F = kq₁q₂/r², k = 8.99 × 10⁹ N m² C⁻², E = F/q, E = V/d, V = kQ/r. Draw vector arrows before adding fields."],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 3,
         blocks: [
@@ -2981,6 +3118,16 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Describe the motion","Perpendicular B: circular path in plane ⟂ B, constant speed."],["Explain","Magnetic force ⟂ velocity → does no work → speed constant, only direction changes."],["Determine direction","Use right-hand rule for positive charge (reverse for negative / electron)."],["Calculate","F = qvB sinθ, r = mv/(qB); F = BIL sinθ."],["Compare parallel wires","Same direction currents attract."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Velocity selector","qE = qvB → v = E/B"],["Circular path","F = qvB = mv²/r"],["Current in B","F = BIL; direction by RH rule"],["Parallel wires","each wire in the field of the other"],["Charged particle in E","parabolic path like projectile"]]],
+          ["trap", ["Using electron flow as conventional current","Saying magnetic force speeds the particle up","Forgetting sinθ"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: F = qvB sinθ, F = BIL sinθ, F = qE. Say which finger rule you use in the answer."],
+        ],
+      },
+      {
         h: "Long question 拆解 + 失分位",
         min: 4,
         blocks: [
@@ -3144,6 +3291,16 @@ IB.addFast({
           ]],
           ["note", "Highest frequency line = largest ΔE (biggest jump, e.g. to the ground state). Lowest frequency = smallest ΔE. Energy values quoted negative means bound; zero energy = free electron (ionisation)."],
           ["trap", ["eV 冇轉 J。", "Dark lines 解釋冇講 re-emitted in all directions。", "Absorption 要啱啱好 ΔE，唔係任何能量都得。", "Line count 用 n² 或者 n − 1。", "Wavelength nm 單位 × 10⁻⁹。"]],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Outline Rutherford","Alpha scattering on thin gold foil: most pass straight, few deflect strongly, very few rebound."],["Explain conclusions","Mostly empty space, small dense positive nucleus."],["Explain spectra","Electron transitions between discrete energy levels emit photons hf = E₂ − E₁."],["Calculate","E = hf = hc/λ, energy in eV (÷ 1.60 × 10⁻¹⁹)."],["Distinguish","Emission lines vs absorption dark lines."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Observation → inference","pair each observation with conclusion"],["Energy levels","transition arrows downwards = emission"],["Photon wavelength","λ = hc/ΔE"],["Ionisation","energy needed to reach 0 eV"],["Spectrum identification","match lines to element"]]],
+          ["trap", ["Giving observations without the inference (or vice versa)","Wrong sign of energy levels (negative in bound states)","Forgetting eV → J conversion"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: E = hf, hc = 1.99 × 10⁻²⁵ J m (≈ 1240 eV nm), 1 eV = 1.60 × 10⁻¹⁹ J. 'Discrete lines' needs 'discrete energy levels' in the same sentence."],
         ],
       },
       {
@@ -3393,6 +3550,16 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Define half-life","Time for the number of undecayed nuclei (or activity) to halve."],["Outline","α, β, γ: nature, ionising power, penetration."],["Explain (decay)","Random and spontaneous: cannot predict which nucleus, but probability fixed."],["Calculate","N = N₀(½)^(t/T); balance A and Z."],["Determine","Binding energy: Δm × 931.5 MeV; per nucleon."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Decay equation","A and Z balance [1]; correct particle [1]"],["Half-life","N₀(½)^n [1]; background subtracted [1]"],["Graph","read two successive half-lives [1]"],["Binding energy curve","Fe-56 peak; fusion light, fission heavy releases energy"],["Mass defect","Δm in u × 931.5 MeV"]]],
+          ["trap", ["Forgetting the neutrino / antineutrino in β decay","Using total BE instead of BE per nucleon","Not subtracting background count rate"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: A = λN, N = N₀e^(−λt), λ = ln2/T½, E = mc², 1 u = 931.5 MeV c⁻². Check A and Z on both sides: it takes five seconds."],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 1.5,
         blocks: [
@@ -3589,6 +3756,16 @@ IB.addFast({
           ]],
           ["note", "<b>常考</b>：一定要 <i>one advantage + one disadvantage</i> 各自完整；唔好寫「pollution」之類含糊詞，要 greenhouse gas、radioactive waste。<i>Discuss</i>（4–6 marks）要正反兩面 + 判斷（e.g. 低碳但要長期廢料管理）。"],
           ["rhyme", "口訣 5", "冇碳排但有長壽廢料"],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Outline fission","Neutron absorbed by heavy nucleus → splits into two fragments + neutrons + energy."],["Explain chain reaction","Neutrons released cause further fission; critical mass needed."],["Describe components","Moderator slows neutrons; control rods absorb neutrons; coolant removes thermal energy."],["Discuss","Waste storage, safety, no CO₂ vs risks."],["Calculate","Energy from mass defect: Q = Δm c²."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Reactor part function","one part, one function sentence [1 each]"],["Energy release","BE after − BE before"],["Chain reaction","on average ≥ 1 neutron per fission causes another"],["Nuclear waste","long half-life, storage"],["Efficiency","thermal → electrical loss"]]],
+          ["trap", ["Saying control rods 'slow down' neutrons","Mixing moderator and coolant roles","Writing fission releases energy because mass is 'destroyed'; it is converted"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: E = mc², 1 u = 931.5 MeV c⁻². For 'discuss' questions give at least one advantage and one disadvantage with reasons."],
         ],
       },
       {
@@ -3818,6 +3995,16 @@ IB.addFast({
           ["note", "<b>常考 (perennial favourites)</b>：evolution 路徑（低質量 vs 高質量）；HR diagram 描述 / 位置；ratio 計算（R、T、L）；fusion 條件；parallax。<i>Describe</i> 要有依序階段；<i>Explain</i> 要連結因果（H 用完 → 核心收縮 → 外層膨脹）。"],
           ["rhyme", "口訣 5", "細星變紅巨，白矮收尾；大星超紅巨，爆完剩中子或黑洞"],
           ["trap", ["低質量星會 supernova ×（Sun 只會成為 white dwarf）。", "Main sequence 之後就直接 white dwarf（漏 red giant）。", "話 star 「燒」氧氣：星內係 nuclear fusion。", "Neutron star 同 black hole 判斷基準係 remnant mass，唔係 initial mass 直接。"]],
+        ],
+      },
+      {
+        h: "IB 考試位 · command terms + 常考題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "全分要寫乜"], [["Explain equilibrium","Outward radiation + gas pressure balances inward gravity."],["Describe fusion conditions","Very high T and density to overcome Coulomb repulsion."],["Outline HR diagram","Luminosity vs temperature (T reversed); main sequence, giants, white dwarfs."],["Calculate","L = σAT⁴, b = L/4πd², d = 1/p (pc)."],["Describe evolution","Mass decides the final state."]]],
+          ["table", ["常考題型", "Model answer 步驟 (每步 ≈ 1 mark)"], [["Luminosity","L = 4πR²σT⁴"],["Brightness","b ∝ 1/d²"],["Parallax","d(pc) = 1/p(arcsec)"],["HR position","hot + bright top left; cool + dim bottom right"],["Life cycle","main sequence → red giant → white dwarf (or supernova → NS/BH)"]]],
+          ["trap", ["T axis increasing left to right on HR diagram","Using parallax angle in degrees with pc","Confusing luminosity and apparent brightness"]],
+          ["note", "<b>Data booklet / 考試貼士</b>: Booklet: L = σAT⁴, b = L/4πd², d = 1/p, 1 pc = 3.26 ly. Place stars on HR with two properties (T and L), not one."],
         ],
       },
       {

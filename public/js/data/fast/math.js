@@ -188,6 +188,25 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["State / Write down", "直接寫答案，無需過程（通常 1 分），但要用正確記號"],
+            ["Describe", "一定要有變換名稱 + 數值（vector、scale factor、axis），缺一不得分"],
+            ["Sketch", "形狀 + 截距 + 漸近線（虛線並標方程）+ 端點座標；唔需要精確比例"],
+            ["Hence", "必須用上一部分結果，另起爐灶會失分"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• 點變換：抽 b → x 相反、y 照計（2–3 分）<br>• Describe transformation：名 + 向量 / scale factor + 順序（每個變換 1 分）<br>• Domain / range：用不等式，端點睇 ≥ 定 &gt;<br>• 漸近線：VA 分母 = 0，HA 睇 x→∞<br>• exp 方程：\\(u=e^x\\) 變二次"],
+          ["trap", [
+            "Describe 只寫 “shift” 或 “stretch”：要 “translation by \\(\\binom{h}{k}\\)” 同 “scale factor”",
+            "Range 用 x 值答，或者漏咗端點值",
+            "漸近線只寫 “2” 而唔係 “x = 2”",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：1 mark ≈ 1 分鐘；GDC 畫圖可驗證你嘅 sketch 同 range。Formula booklet 無變換公式，要背。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -380,6 +399,26 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Find", "列式 + 答案；每個步驟 1 分"],
+            ["Show that", "由已知推到所給結果，不可倒推，最後一行要同題目一樣"],
+            ["Determine", "需要過程，GDC 求解要寫出所設方程"],
+            ["Give your answer to 3 s.f.", "最終答案才捨入，中間保持完整數值；錢可以 2 d.p. 但 accuracy 條件要睇題"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• Find u_n / S_n：寫出 u₁、d 或 r，代入 booklet 公式（2–4 分）<br>• 已知兩項求 d、r：列兩條方程相除 / 相減<br>• Compound interest：用 GDC finance solver，記錄 N, I%, PV, FV, P/Y, C/Y<br>• 求 n 最細整數：GDC 表格或 log，答案要取整<br>• Sum to infinity：先確認 |r| &lt; 1"],
+          ["trap", [
+            "將 u₁ 當成 u₀，n 搞錯 1",
+            "複利 compounding 次數 / P/Y 同 C/Y 設錯",
+            "S∞ 忘記檢查 |r| &lt; 1",
+            "中間步驟提早 round，答案偏離",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Formula booklet Topic 1 有 u_n、S_n（arithmetic + geometric）、S∞ 同 compound interest 公式，唔使背但要識揀。長題最後一部通常係 “Hence” 或 GDC。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -545,6 +584,27 @@ IB.addFast({
           ]],
           ["note", "<b>常考</b>：①Paper 2 model：initial value / time to reach value（取 ln 或 GDC）/ long-term 值；②Paper 1：solve exact；③“Show that” 轉 log 形式；④“Hence” 用上一問結果。"],
           ["trap", ["t 單位要睇清楚（hours / years）。", "Half-life 公式 \\((\\tfrac12)^{t/T}\\)：T 係每次減半所需時間。", "Model 答案要有單位，同合理 round（3 s.f.）。"]],
+        ],
+      },
+      {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Simplify", "合併成單一項 / 最簡形式，一般要用定律"],
+            ["Solve", "exact 或 3 s.f. 按題目；log 方程要檢查真數 &gt; 0"],
+            ["Show that", "每個定律用一步，寫清楚，唔好跳"],
+            ["Hence", "要用上題結果（例如 \\(u=2^x\\)）"],
+            ["Interpret", "用 context 單位同詞語講 k 或 A 代表乜"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• 化簡 log / 指數式：用 log 定律每步 1 分<br>• 解 \\(a^x=b\\)：兩邊取 log 或 ln，答案 3 s.f. 或 exact<br>• Show that + log：由定律推出所給式<br>• 指數模型：由兩個條件求 A、k，再預測 / 求 t<br>• Exact value：答案寫成 ln 或 log 形式，唔好用小數"],
+          ["trap", [
+            "\\(\\log(a+b)\\) 當成 \\(\\log a+\\log b\\)",
+            "解 log 方程後唔檢查，保留負數真數嘅假根",
+            "用 GDC 答案但題目要 exact",
+            "模型中 t = 0 嘅意義講錯",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有 \\(a^x=e^{x\\ln a}\\)、換底公式、log 定律。Exact 題用 GDC 驗證但唔好直接寫小數。"],
         ],
       },
       {
@@ -730,6 +790,26 @@ IB.addFast({
             ["“Show that … = …”", "每步寫清，最後等於所給值"],
             ["“Find n”", "用已知某項係數建立 equation"],
           ]],
+        ],
+      },
+      {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Show that / Prove", "每步合理，最後明確寫 “hence … is divisible by …” 或 “therefore”；舉例子唔算證明"],
+            ["Expand", "寫到指定項數或降冪，每項要簡化"],
+            ["Find the coefficient", "只要數字，唔好連 x 一齊寫"],
+            ["Hence", "用上題展開結果再做近似 / 求值"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• Proof：開頭設變量（例如 n 為整數），逐步代數，最後下結論（3–4 分）<br>• 展開：用 booklet 嘅 \\(\\binom{n}{r}\\) 公式寫出前幾項<br>• 搵指定項 / 係數：通項 \\(\\binom{n}{r}a^{n-r}b^r\\)，設 r 再解<br>• 常數項：令 x 嘅指數 = 0<br>• (a+b)ⁿ 中 a、b 要包括系數同負號"],
+          ["trap", [
+            "證明用數字代入，唔係代數",
+            "通項 r 同 n−r 次序搞錯",
+            "忘記 b 內嘅負號或係數要連冪次",
+            "冇寫結論句，失最後 1 分",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Binomial 公式喺 booklet，但 nCr 要識用 GDC。Proof 題 4 分通常：設式 1、代數 2、結論 1。"],
         ],
       },
       {
@@ -965,6 +1045,27 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Write down", "由圖或式直接得出，不需過程"],
+            ["Find", "列式；GDC 結果要寫出你點樣設"],
+            ["Sketch", "軸截距、頂點、漸近線、形狀，標明座標"],
+            ["Hence", "要用上一部分結果"],
+            ["State the domain", "用不等式或區間，f⁻¹ 嘅 domain = f 嘅 range"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• 求直線方程：點斜式 / 兩點，斜率 \\(m=\\frac{y_2-y_1}{x_2-x_1}\\)<br>• 垂直：\\(m_1m_2=-1\\)；平行：m 相等<br>• f∘g、f⁻¹：由內到外 / 對調 x y，並寫 domain<br>• Domain、range：結合圖像寫不等式<br>• GDC：找 zero、intersection、max / min 並寫座標"],
+          ["trap", [
+            "f(g(x)) 同 g(f(x)) 次序倒轉",
+            "反函數冇改 domain、range",
+            "直線方程答案冇化成題目要求嘅形式（y = mx + c 或 ax+by+d=0）",
+            "GDC 交點只寫 x，唔寫 y 座標",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有直線方程、斜率公式、距離 / 中點。Domain、range 通常 1–2 分，係易拎分位。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -1167,6 +1268,26 @@ IB.addFast({
             "<b>x = 10 m</b>，A = 200 m²，length 20 m [A1]",
           ]],
           ["trap", ["Context 題兩個根要判斷邊個合理（時間不能為負）。", "最大值答咗 x 而唔係 y（或者相反）— 睇清楚問「when」定「what」。", "單位漏咗，或者提早 round。"]],
+        ],
+      },
+      {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Find the roots / Solve", "寫出所有解；GDC 要列方程"],
+            ["Determine the values of k", "令 Δ &gt; 0、= 0 或 &lt; 0 再解不等式"],
+            ["Show that", "由已知推到結論，每步清楚"],
+            ["Interpret", "用情境語言解釋頂點或截距"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• Factorised / vertex form：寫出頂點、截距（2–3 分）<br>• 解方程：因式分解 / 公式 / GDC，揀最快者<br>• 判別式 Δ：兩根、重根、無實根，求 k 嘅範圍<br>• 二次不等式：畫 sketch 再讀區間<br>• P2 模型：求最大值，用 vertex 或 GDC max"],
+          ["trap", [
+            "Δ 用錯：兩個不同根係 Δ &gt; 0，重根 Δ = 0",
+            "解不等式時只寫一個區間或錯方向",
+            "配方法 \\(a(x-h)^2+k\\) 嘅符號搞錯",
+            "答案漏單位 / 解釋",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有 \\(x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\) 同 Δ。GDC polynomial solver 驗算。"],
         ],
       },
       {
@@ -1375,6 +1496,26 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Find / Calculate", "列式，代入 booklet 公式，答案 3 s.f."],
+            ["Show that", "最後一行同題目一樣"],
+            ["Hence", "用上一部分結果"],
+            ["State the units", "長度、面積、角度都要有單位，degree 或 radian"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• 三角形：識別 right-angled / sine rule / cosine rule（2–4 分）<br>• 面積：\\(\\frac12ab\\sin C\\)<br>• 3D：先畫右角三角形，標出邊<br>• Bearings：北線畫出，角度順時針 3 位數<br>• 弧度：arc \\(l=r\\theta\\)，sector \\(A=\\frac12r^2\\theta\\)"],
+          ["trap", [
+            "GDC 模式 degree / radian 唔對",
+            "Sine rule 中 ambiguous case 漏第二個解",
+            "Bearing 寫成 -45° 或唔足三位數",
+            "弧度題用度數公式",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有 sine rule、cosine rule、triangle area、arc length、sector area。畫圖標清楚已知，可以拎方法分。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -1567,6 +1708,26 @@ IB.addFast({
           ]],
           ["note", "<b>GDC</b>：① Mode 要同題目一致；② 畫 Y1 = 左邊，Y2 = 右邊，限制 window 喺 interval，逐個 intersect；③ 如果有 sin⁻¹，只俾主值，其他解靠對稱；④ P2 通常問 3 s.f.，P1 通常 exact（π 分數）。"],
           ["trap", ["漏咗 interval 入面第二個（或以上）解。", "\\(\\sin2x=k\\) 只解 \\(0\\le2x\\le2\\pi\\)（應該延伸到 4π）。", "兩邊除以 \\(\\sin x\\) 令解消失 → 應該移項分解。", "答案超出 interval。", "令 \\(\\sin x=2\\)（無解）— 檢查 \\(|\\sin x|\\le1\\)。"]],
+        ],
+      },
+      {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Solve", "指定範圍內所有解，不可漏"],
+            ["Find the exact value", "分數 / 根號形式，不用小數"],
+            ["Show that", "由一邊證到另一邊"],
+            ["State the amplitude / period", "直接讀出數值，週期用 \\(\\frac{2\\pi}{b}\\)"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• Exact values：用 unit circle / 30°-60°-45° 三角形<br>• 恆等式：\\(\\sin^2\\theta+\\cos^2\\theta=1\\)，\\(\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}\\)<br>• 解三角方程：先找主值，再用對稱找所有解<br>• 圖像：振幅、週期、平移<br>• 模型：\\(y=a\\sin(b(x-c))+d\\)"],
+          ["trap", [
+            "只寫主值，漏咗其他象限解",
+            "弧度同度數範圍混用",
+            "\\(\\sin^2\\theta\\) 同 \\(\\sin\\theta^2\\) 搞錯",
+            "兩邊約 sin x 令解丟失",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有 identities、double angle 同週期公式，但 exact values 要自己識。Solve 題畫 sketch 最穩陣。"],
         ],
       },
       {
@@ -1841,6 +2002,27 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Calculate", "用 GDC 讀出，列出所用統計量"],
+            ["Comment on", "必須指出趨勢同情境意義"],
+            ["Interpret", "用情境語言解釋斜率 / 截距"],
+            ["Estimate", "在 data range 內預測；範圍外要話 unreliable"],
+            ["Describe", "一般性描述，包括強弱同方向"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• Mean、median、IQR：由表或 GDC 讀出<br>• Box plot：五數概括；outlier 用 1.5×IQR 判斷<br>• 相關：r 描述強弱同方向，再用回歸線預測<br>• 線性變換：mean、SD 隨 \\(ax+b\\) 變<br>• 抽樣：描述方法同 bias"],
+          ["trap", [
+            "r 當成因果關係",
+            "Extrapolation 仍然話可靠",
+            "Outlier 判斷用錯公式",
+            "Mean、SD 變換時，SD 唔受加減影響",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有 regression y on x、r 嘅定義、outlier 判斷同 Q 公式。Interpretation 題至少 1 分係 “in context”。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 1.5,
         blocks: [
@@ -2073,6 +2255,26 @@ IB.addFast({
             ["4", "“Hence” → use the previous result; “determine whether” → compare, then conclude"],
             ["5", "Check: branches sum to 1; answer 0 ≤ p ≤ 1"],
           ]],
+        ],
+      },
+      {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Find", "列式 + 答案；分數或 3 s.f."],
+            ["Show that", "每步清楚，最終同所給一致"],
+            ["Determine whether independent", "用公式驗證，比較 P(A∩B) 同 P(A)P(B)"],
+            ["Hence", "用上一部分結果"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• Venn / 表：先填交集，再補其餘<br>• 條件概率：\\(P(A|B)=\\frac{P(A\\cap B)}{P(B)}\\)<br>• Tree：沿枝相乘，不同路徑相加<br>• 獨立：\\(P(A\\cap B)=P(A)P(B)\\)<br>• 互斥：\\(P(A\\cap B)=0\\)"],
+          ["trap", [
+            "獨立同互斥搞亂",
+            "Tree diagram 冇更新第二層條件概率",
+            "Without replacement 漏改分母",
+            "答案超過 1 或者負數",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有 P(A∪B)、P(A|B)、獨立公式。長題先填 Venn 或 tree，已經拎方法分。"],
         ],
       },
       {
@@ -2313,6 +2515,27 @@ IB.addFast({
             ["4", "Carry full calculator values into later parts; round at the end to 3 s.f."],
             ["5", "Check: probability between 0 and 1; E(X) sensible"],
           ]],
+        ],
+      },
+      {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Find", "列式 + GDC 輸入 + 答案"],
+            ["Show that", "列出 Σp = 1 並解出 k"],
+            ["Write down the distribution", "寫明 B 或 N 同參數"],
+            ["Sketch", "鐘形圖，標 μ，shade 要求區域"],
+            ["Interpret", "用情境語言"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• Distribution table：Σp = 1，求未知 k<br>• E(X) = Σxp<br>• 二項：\\(X\\sim B(n,p)\\)，用 GDC binompdf / binomcdf<br>• 常態：寫出 N(μ, σ²)，用 GDC normalcdf / invNorm<br>• 標準化：\\(z=\\frac{x-\\mu}{\\sigma}\\)"],
+          ["trap", [
+            "binomcdf 嘅 ≤ 同 &lt; 搞錯",
+            "invNorm 面積方向搞錯",
+            "P(X ≥ k) = 1 − P(X ≤ k−1)",
+            "normalcdf 冇寫界限",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有 binomial pmf、E(X)、Var(X)。GDC 步驟要寫低（distribution, bounds），作為方法分。"],
         ],
       },
       {
@@ -2566,6 +2789,27 @@ IB.addFast({
             ["“Justify”", "One clear reason, e.g. f″ &gt; 0"],
             ["“Increasing / decreasing”", "Solve f′ &gt; 0 / f′ &lt; 0 for an interval"],
           ]],
+        ],
+      },
+      {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Find", "列式，每項導數 1 分"],
+            ["Show that", "由所給式出發"],
+            ["Justify / Hence", "需要用 f″ 或符號表驗證 max / min"],
+            ["Determine", "最終答案及 nature"],
+            ["Interpret", "gradient 嘅意義，加單位"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• 求導：用 power、product、chain，booklet 有 sin、cos、e、ln<br>• 切線 / 法線：f(a)、f′(a)，再 \\(y-y_1=m(x-x_1)\\)<br>• Stationary：f′(x)=0，用 f″ 或符號變化分辨<br>• Optimisation：建立函數，求導，驗證<br>• Increasing / decreasing：f′ 嘅符號"],
+          ["trap", [
+            "忘記 chain rule 內部導數",
+            "法線斜率冇取負倒數",
+            "Stationary point 只求 x，漏 y 座標",
+            "Optimisation 冇驗證 max 或 min",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有導數規則同基本函數導數。長題常 3–4 部分：求導 → 切線 → 最值 → 解釋。"],
         ],
       },
       {
@@ -2860,6 +3104,27 @@ IB.addFast({
         ],
       },
       {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Find", "列式，積分，+ C"],
+            ["Hence", "用上題結果"],
+            ["Show that", "由所給積分推到結論"],
+            ["Calculate area", "先畫圖識別上下曲線，GDC 可用但要寫積分式"],
+            ["Write down", "由結果直接得出"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• 不定積分：每項 +1 冪，記得 + C<br>• 由條件求 C：代入點 (a, b)<br>• Chain 逆：inspection \\(\\int f'(g)g'\\)，booklet 無 substitution 通用表<br>• 面積：\\(\\int_a^b f\\,dx\\)，GDC 驗算<br>• 兩曲線之間：上 − 下"],
+          ["trap", [
+            "漏 + C",
+            "定積分上下限代錯",
+            "面積在 x 軸下面變負號",
+            "兩曲線面積，用錯誰上誰下",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有積分表同 area 公式。畫圖睇交點，決定分段。"],
+        ],
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -3077,6 +3342,27 @@ IB.addFast({
             "(e) v(3.5) = 3(2.5)(0.5) = 3.75 (+). a(3.5) = 21 − 12 = 9 (+). Same sign → <b>speeding up</b> [A1 R1] ✅"
           ]],
           ["note", "Check shortcut: v = 3(t − 1)(t − 3) has the factor form, so sign changes at t = 1 and 3. Displacement for (d) would be s(4) − s(0) = 4, not 12, a quick way to catch mixing them up."]
+        ],
+      },
+      {
+        h: "IB 考試位 · 題型 + 命令詞",
+        min: 2.5,
+        blocks: [
+          ["table", ["命令詞 / 題型", "拎滿分要點"], [
+            ["Find", "列式 + GDC 結果"],
+            ["Determine when", "令 v = 0 或 a = 0 後解 t"],
+            ["Distance travelled", "\\(\\int|v|\\), 唔係 displacement"],
+            ["Interpret", "用 context 同單位解釋正負號"],
+            ["Show that", "由所給式推導"],
+          ]],
+          ["note", "<b>常見題型 → 一句答法</b><br>• s、v、a 轉換：求導 / 積分<br>• v = 0 → 方向改變<br>• Distance：\\(\\int|v|\\,dt\\)，用 GDC<br>• Displacement：\\(\\int v\\,dt\\)<br>• 由 a 積分求 v，要用初始條件求 C"],
+          ["trap", [
+            "Distance 同 displacement 搞錯",
+            "積分漏 + C，冇用初始條件",
+            "t 範圍錯，例如 t ≥ 0",
+            "速度負係方向，唔係減速",
+          ]],
+          ["note", "<b>⏱ 考試 tips</b>：Booklet 有 v = ds/dt、a = dv/dt 同 distance、displacement 積分。GDC 對 |v| 積分最快。"],
         ],
       },
       {

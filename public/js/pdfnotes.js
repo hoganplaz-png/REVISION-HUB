@@ -294,7 +294,7 @@ table.fn-table{margin:0 0 8px}table.fn-table thead th{background:#E2E8F0;color:#
       P.breakPage();
       const tmp = doc.createElement("div");
       root.appendChild(tmp);
-      tmp.innerHTML = IB.fastHtml(t, { static: true });
+      tmp.innerHTML = IB.fastHtml(t, { static: true, brief: true });
       IB.math(tmp);
       const kids = Array.from(tmp.children);
       root.removeChild(tmp);

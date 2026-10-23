@@ -219,6 +219,14 @@ IB.addFast({
         ]
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Define OC / scarcity [2]", "Term + 關鍵字：next best alternative + forgone；scarcity = limited resources vs unlimited wants"], ["PPC + 外移 [4]", "圖 [1] → 資源增加/技術進步 [1] → potential growth [1] → 例子 [1]"], ["Compare systems [4]", "Whereas 對比：decision-maker、ownership、efficiency/equity 各 1 點"]]],
+          ["note", "<b>Accept</b>：「value of next best alternative given up」。<b>Reject</b>：「cost of everything given up」、「money」。每個 explain 點 = 1 claim + 1 development，唔好淨係列名詞。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -472,6 +480,14 @@ IB.addFast({
         ]
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Shift vs movement [4]", "價錢變 → movement along；非價錢 determinant 變 → shift；寫明邊條 curve、邊個方向"], ["Determinants of D/S [4]", "點名 determinant → 方向 → 為何影響 Qd/Qs（因果）"], ["Linear 計數 [2-3]", "Qd = Qs 解 P → 代入求 Q；寫埋單位同步驟 [1 method + 1 answer]"]]],
+          ["note", "<b>Accept</b>：「change in demand」= shift；<b>Reject</b>：用「demand increases」描述價錢下跌引致嘅 Qd 增加（應寫 quantity demanded）。Diagram 要有 axes、D、S、arrow。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -711,6 +727,14 @@ IB.addFast({
         ]
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Equilibrium diagram [4]", "圖 [1] + 由 shift 到新 Pe/Qe [1] + 解釋 excess demand/supply 如何調整 [2]"], ["CS / PS 計數 [2-3]", "三角形面積 ½ × base × height；base = Qe，height = 價差；寫公式 [1] + 答案 [1]"], ["Allocative efficiency [3]", "MB = MC（market：D = S）→ CS + PS 最大 → total welfare 最大"]]],
+          ["note", "<b>Accept</b>：「price signals ration scarce resources」。<b>Reject</b>：「market is efficient」而冇指明 allocative (MB = MC)。計 surplus 記得用 Qe，唔係 Pe。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -945,6 +969,14 @@ IB.addFast({
             "Biases (anchoring, framing, availability) lead to inconsistent choices [1].",
             "Bounded self-control/selfishness: act against long-term or self-interest, e.g. under-saving or donating [1]."
           ]]
+        ]
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Define bias / heuristic [2]", "Term + 理性決策被心理捷徑偏離；配一個 e.g."], ["Nudge / choice architecture [4]", "名稱 [1] + 點樣改變行為 [1] + 例子 [1] + limitation [1]"], ["Business objectives [4]", "Profit max vs revenue max vs growth/survival：每個講目標 + 點解企業揀"]]],
+          ["note", "<b>Accept</b>：「predictable irrational behaviour」。<b>Reject</b>：「people are stupid」。Evaluate behavioural 要講 limitations（難量度、短期效果、ethical concern）。"]
         ]
       },
       {
@@ -1204,6 +1236,14 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["PED / YED / PES 計數 [2-3]", "公式 [1] + 代入 [1] + 答案同 interpretation [1]（elastic/inelastic）"], ["Revenue + PED [4]", "變價 → %ΔQ vs %ΔP → TR 升定跌；elastic 減價增 TR，inelastic 加價增 TR"], ["Determinants [4]", "Substitutes、necessity、time、proportion of income，要同題目商品掛鉤"]]],
+          ["note", "<b>Formula booklet</b>：elasticity 公式喺 booklet。<b>Accept</b>：「PED = 1.5 → elastic」；<b>Reject</b>：PED 寫負號當結果有問題（用 absolute value）、答案加 % 或單位。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -1449,6 +1489,14 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Tax diagram [4]", "圖：S 左移（specific = 平行）→ 新 Pe → 分清 consumer/producer burden → tax revenue + 福利損失"], ["Subsidy [4]", "S 右移 → Pe 下降，Q 上升 → 成本 = subsidy per unit × Q；效率/公平/成本 limitation"], ["Price ceiling / floor [4]", "Ceiling 低過 Pe → shortage；floor 高過 Pe → surplus；逐個講後果"]]],
+          ["note", "<b>Accept</b>：「burden depends on PED and PES」。<b>Reject</b>：Tax revenue 用舊 Q 計；ceiling/floor 畫喺 Pe 錯邊（無效）。計 revenue = 每單位稅 × 新 Q。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -1663,6 +1711,14 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Externality diagram [4]", "MPB/MSB/MPC/MSC 標清 → Qm 同 Qopt → welfare loss 三角形 → 方向（over/under-produced）"], ["Define externality [2]", "Third party + not reflected in market price（cost or benefit）"], ["Intervention [10]", "Tax/subsidy/regulation/education：機制 → 圖 → 限制（cost, info, enforcement）→ 判斷"]]],
+          ["note", "<b>Accept</b>：「spillover cost/benefit to third parties」。<b>Reject</b>：externality 只講 pollution；Qopt 同 Qm 位置倒轉。Evaluate 一定要講 information failure 同 unintended consequences。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
@@ -1841,6 +1897,14 @@ IB.addFast({
             ["Evaluate / Discuss", "both sides + example + conclusion"],
           ]],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Public good 兩測試 [3]", "Non-rivalrous + non-excludable → free rider → market failure 冇供應"], ["Why governments provide [4]", "Free-rider problem → 私人冇利潤 → 稅款提供；e.g. street lighting/national defence"], ["CPR [4]", "Rivalrous + non-excludable → overuse → tragedy of the commons → quotas/property rights"]]],
+          ["note", "<b>Accept</b>：兩個特徵都要寫。<b>Reject</b>：「public good = government-provided」或只講一個特徵就當 definition。例子唔好用 toll road（可排除）。"]
+        ]
       },
       {
         h: "失分位 + 自我檢查",
@@ -2048,6 +2112,14 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Real vs nominal [3]", "Real = 已除去 inflation（用 price index 調整）；公式 Real = Nominal ÷ deflator × 100"], ["Business cycle [4]", "圖 [1] + 四個階段 [1] + GDP 同 unemployment 變化 [2]"], ["GDP 作為 well-being 指標 [10]", "GDP per capita 好處 + 限制（inequality、環境、非市場活動、質量）+ 其他指標比較 → 判斷"]]],
+          ["note", "<b>Accept</b>：「real GDP per capita at PPP」。<b>Reject</b>：只話「GDP measures happiness」；nominal 直接比較不同年份。計 real GDP 先搵 index base。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 3,
         blocks: [
@@ -2248,6 +2320,14 @@ IB.addFast({
           ]],
           ["note", "<b>常考</b>：AD/AS 圖 4 分 explain、Keynesian vs monetarist 10 分、AD determinants MCQ。Evaluation 句式：「The effect depends on how close the economy is to full employment, the size of the shift, and time lags; if the economy has lots of spare capacity AD expansion raises output with little inflation, but near capacity it is mainly inflationary.」"],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["AD/AS 圖 [4]", "圖 [1] + 邊條 curve 移 [1] + 新 price level/real GDP [1] + 解釋原因 [1]"], ["Output gap [3]", "Actual vs potential output；recessionary gap 低過、inflationary gap 高過"], ["Multiplier [3]", "Initial injection → income 循環 → 最終 ΔY 大過初始；MPW（leakage）細 = multiplier 大"]]],
+          ["note", "<b>Accept</b>：「AD = C + I + G + (X − M)」。<b>Reject</b>：由價錢引致 AD 移動（應係 movement along）。SRAS 移動因成本，LRAS 移動因 capacity/技術。"]
+        ]
       },
       {
         h: "失分位 + 自我檢查",
@@ -2463,6 +2543,14 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["CPI / inflation 計 [2-3]", "Inflation = (CPI₂ − CPI₁) ÷ CPI₁ × 100；寫公式 + 代入 + 答案"], ["Unemployment 類型 [4]", "Cyclical（AD 低）、frictional、structural；每種 1 個原因 + 對策"], ["Conflicts between objectives [10]", "舉 trade-off（growth vs inflation，unemployment vs inflation）→ 圖/例 → 判斷"]]],
+          ["note", "<b>Accept</b>：「Unemployment rate = unemployed ÷ labour force × 100」。<b>Reject</b>：分母用 population；disinflation 同 deflation 混淆。CPI 局限：basket 偏差、substitution、quality。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 3,
         blocks: [
@@ -2672,6 +2760,14 @@ IB.addFast({
           ]],
           ["note", "<b>常考</b>：Lorenz 圖解釋、tax 計數、定義 relative / absolute poverty、policy + evaluation。"],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Lorenz / Gini [3-4]", "Lorenz 離 45° 線愈遠 = 愈不平等；Gini 面積比，0 到 1 或 0 到 100，寫明讀圖步驟"], ["Taxation 種類 [4]", "Progressive / regressive / proportional：公式 tax paid ÷ income，邊類比例變化"], ["Redistribution policies [10]", "Progressive tax、transfers、public provision → 機制 → 限制（disincentive、cost、incentives）→ 判斷"]]],
+          ["note", "<b>Accept</b>：「relative poverty = below 50% median」（以題目定義為準）。<b>Reject</b>：equality = equity。評估要講 trade-off between efficiency and equity。"]
+        ]
       },
       {
         h: "失分位 + 自我檢查",
@@ -2888,6 +2984,14 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Fiscal policy 圖 [4]", "圖 AD 右移 [1] + G↑ 或 T↓ [1] + multiplier [1] + 通脹風險 [1]"], ["Monetary policy [4]", "Interest rate ↓ → C, I ↑ → AD ↑；寫 transmission 鏈 + lag"], ["Evaluate policy [15]", "兩邊 effects + limitations（time lags、crowding out、liquidity trap、debt）+ 判斷"]]],
+          ["note", "<b>Accept</b>：「expansionary fiscal = ↑G or ↓T」。<b>Reject</b>：central bank 控制 taxes。Evaluation 必須 conditional：「depends on size of output gap / time horizon」。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2.5,
         blocks: [
@@ -3086,6 +3190,14 @@ IB.addFast({
             ["Government failure", "Governments may choose wrong projects or waste money."],
           ]],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Supply-side policy [4]", "Policy 名 → 機制 → LRAS 右移 → 價錢水平 ↓、Y ↑"], ["Interventionist vs market-based [10]", "Education/infrastructure（interventionist）vs deregulation/tax cuts（market-based）：比較成本、時間、效果"], ["LRAS 圖 [4]", "Keynesian vs neoclassical LRAS 形狀（只用題目要求嗰種）；標清 Yp"]]],
+          ["note", "<b>Accept</b>：「increase potential output / productive capacity」。<b>Reject</b>：supply-side = AD policy。評估要講 time lag 同 cost（opportunity cost of government spending）。"]
+        ]
       },
       {
         h: "失分位 + 自我檢查",
@@ -3320,6 +3432,14 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Comparative advantage [4]", "Lower opportunity cost 嘅國家專門；計 OC 表 [2] + 結論 [2]"], ["Tariff 圖 [4]", "圖：world price → tariff → 新 Qd/Qs → gov revenue + DWL；import 下降"], ["Protection evaluate [10]", "Infant industry、dumping、jobs 論點 + 限制（retaliation、higher prices）+ 判斷"]]],
+          ["note", "<b>Accept</b>：「country with lower opportunity cost has comparative advantage」。<b>Reject</b>：用 absolute advantage 取代。Tariff 圖要分清 consumer loss 同 government revenue 同 DWL。"]
+        ]
+      },
+      {
         h: "失分位 + 自我檢查",
         min: 2.5,
         blocks: [
@@ -3493,6 +3613,14 @@ IB.addFast({
             "<b>Conclusion:</b> depends on whether members have complementary economies, the depth of integration and the ability to compensate losers; benefits are stronger in the long run, costs arise first.",
           ]],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Trade creation vs diversion [4]", "Creation = 由 higher-cost 轉向 lower-cost member；diversion = 由 lower-cost non-member 轉向 member"], ["Bloc 類型 [3]", "FTA → customs union → common market → monetary union，逐級講特徵"], ["Evaluate integration [10]", "好處（larger market, EoS, lower prices）+ 壞處（lose sovereignty, diversion）+ 判斷"]]],
+          ["note", "<b>Accept</b>：「common external tariff = customs union」。<b>Reject</b>：FTA 有 common external tariff（冇）。EU 例子要指明 euro 係 monetary union 部分成員先用。"]
+        ]
       },
       {
         h: "失分位 + 自我檢查",
@@ -3707,6 +3835,14 @@ IB.addFast({
           ]],
           ["note", "<b>常考 note：</b>15 marks 用 Level 描述：定義準確 + 圖正確 + 兩面分析 + 有例子 + 有 judgement。只講好處或壞處最多 Level 3。"],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Exchange rate 圖 [4]", "D/S of currency → 新 equilibrium rate → appreciation 或 depreciation；寫明誰需求變"], ["BOP 組成 [3]", "Current account（goods, services, income, transfers）+ capital + financial account；要識分類"], ["Devaluation / depreciation evaluate [10]", "X↑ M↓（Marshall-Lerner / PED）→ AD↑ → 通脹；J-curve 時間；判斷"]]],
+          ["note", "<b>Accept</b>：「appreciation = currency worth more in foreign units」。<b>Reject</b>：Strong currency = good economy。Floating 圖用 demand/supply of currency，唔好畫 AD/AS。"]
+        ]
       },
       {
         h: "失分位 + 自我檢查",
@@ -3943,6 +4079,14 @@ IB.addFast({
           ]],
           ["note", "<b>常考 note：</b>最常見失分：(1) 只有 list，冇 chain of analysis；(2) 冇引用 text / data；(3) 冇 real-world example；(4) 冇 judgement；(5) 評估只喺最後一句講 “it depends”，冇說明依賴乜。"],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [["Define development [2]", "Improvement in living standards + economic, social, environmental dimensions"], ["HDI [3]", "三項：health（life expectancy）、education、income（GNI per capita）"], ["Strategies evaluate [10]", "Trade, aid, microfinance, infrastructure：機制 + limitations + 判斷"]]],
+          ["note", "<b>Accept</b>：「HDI includes income, education, life expectancy」。<b>Reject</b>：HDI = GDP。評估要考慮 sustainability 同 context-specific 因素。"]
+        ]
       },
       {
         h: "失分位 + 自我檢查",
