@@ -127,7 +127,7 @@
           { skill: "<strong>Bright fringe order = path difference in wavelengths.</strong> Central bright: 0; first bright: λ; first dark: λ/2.",
             q: "The second dark fringe from the centre of a double-slit pattern corresponds to a path difference of", options: ["λ/2", "λ", "3λ/2", "2λ"], answer: 2, why: "Dark fringes at (n + ½)λ: first λ/2, second 3λ/2." },
           { hl: true, skill: "<strong>Grating: n_max = d/λ rounded down; d = 1/(lines per metre).</strong> Convert lines per mm × 10³ first. If d/λ is a whole number, that order would be at 90° and cannot be seen.",
-            q: "A grating with 500 lines per mm is used with 500 nm light. How many orders can be seen on each side of the central maximum?", options: ["2", "3", "4", "5"], answer: 2, why: "d = 2.0 µm; d/λ = 4.0 but sin θ = 1 (90°) cannot be observed, so 3." },
+            q: "A grating with 500 lines per mm is used with 500 nm light. How many orders can be seen on each side of the central maximum?", options: ["2", "3", "4", "5"], answer: 1, why: "d = 2.0 µm; d/λ = 4.0, but the 4th order would need sin θ = 1 (90°), which cannot be observed, so 3 orders are seen." },
         ],
         concepts: [
           { h: "Two-slit pattern with finite slit width (AHL)", hl: true, b: "<p>Real slits have a width b, so the equally spaced double-slit fringes (spacing \\(s = \\frac{\\lambda D}{d}\\)) are modulated by the single-slit envelope, which has its first minimum at \\(\\theta = \\frac{\\lambda}{b}\\). The central envelope is twice as wide as the others. Increasing the number of slits (N) keeps the maxima at the same angles but makes them narrower and brighter - the basis of the diffraction grating.</p>" },

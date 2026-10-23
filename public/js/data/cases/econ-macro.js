@@ -244,7 +244,7 @@
       id: "econ-c12b", topic: "econ-12", paper: "P2",
       title: "Text I — Cash transfers in Lomari",
       text: P([
-        "Lomari is a low-income economy with a population of 30 million. According to the latest survey, 9.6 million people live in <b>absolute poverty</b>, below the international poverty line of $2.15 per day.",
+        "Lomari is a low-income economy with a population of 30 million. According to the latest survey, 9.6 million people live in <b>absolute poverty</b>, below the international poverty line of $3.00 per day.",
         "Poverty is concentrated in rural areas, where households depend on rain-fed agriculture. Droughts in recent years have reduced harvests and pushed many families into debt.",
         "The government plans a conditional cash transfer programme. Two million poor households would each receive $15 per month, provided that their children attend school and visit health clinics regularly.",
         "These <b>transfer payments</b> would be financed from general government revenue, which is $4.8 billion per year. Some foreign aid donors have offered to share the cost.",
