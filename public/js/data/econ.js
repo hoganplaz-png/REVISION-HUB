@@ -58,11 +58,10 @@ IB.register({
 
     // ---------------- UNIT 2 MICRO ----------------
     {
-      id: "econ-2", code: "2.1-2.2", unit: "Unit 2: Microeconomics", title: "Demand and supply",
-      summary: "The law of demand and supply, movements vs shifts, determinants, and the theory behind each curve.",
+      id: "econ-2", code: "2.1", unit: "Unit 2: Microeconomics", title: "Demand",
+      summary: "The law of demand, why the demand curve slopes down, movements vs shifts and the non-price determinants of demand.",
       concepts: [
         { h: "Demand", b: "<p><strong>Demand</strong> is the quantity of a good consumers are willing and able to buy at each price in a given time period. The <strong>law of demand</strong>: ceteris paribus, as price rises quantity demanded falls (inverse relationship), explained by the <em>income effect</em>, <em>substitution effect</em> and <em>diminishing marginal utility</em>.</p><ul><li>A change in the good's own price → <strong>movement along</strong> the curve (extension/contraction).</li><li>Non-price determinants → <strong>shift</strong> of the curve: income (normal vs inferior goods), prices of substitutes and complements, tastes and preferences, future price expectations, number of consumers.</li></ul>" },
-        { h: "Supply", b: "<p><strong>Supply</strong> is the quantity firms are willing and able to produce at each price. <strong>Law of supply</strong>: higher price → higher quantity supplied, because of higher profit incentive and increasing marginal costs.</p><p>Non-price determinants (shift supply): costs of factors of production, technology, prices of related goods (joint/competitive supply), expectations, indirect taxes and subsidies, number of firms, shocks (weather, disasters).</p>" },
         { h: "Demand and supply schedules / linear functions", b: "<p>Linear demand: \\(Q_d = a - bP\\). Linear supply: \\(Q_s = c + dP\\). A change in <em>a</em> or <em>c</em> shifts the curve; <em>b</em> and <em>d</em> determine slope. (Calculations appear in Paper 2 for HL; SL students should read and plot simple schedules.)</p>" },
       ],
       terms: [
@@ -80,16 +79,43 @@ IB.register({
         { q: "Explain, using a diagram, the effect of a rise in the price of coffee on the market for tea. [4]", a: "Tea and coffee are substitutes. When coffee becomes more expensive, some consumers switch to tea, so demand for tea increases: D₁ shifts right to D₂. At the original price P₁ there is excess demand, pushing the price of tea up to P₂ and quantity up to Q₂." },
       ],
       questions: [
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 1, q: "Which would cause a movement along the demand curve for smartphones?", options: ["A rise in consumer incomes", "A fall in the price of smartphones", "A successful advertising campaign", "A fall in the price of mobile data plans"], answer: 1, ms: ["Only a change in the good's own price causes a movement along the curve."] },
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Bus travel is an inferior good. If incomes rise, ceteris paribus:", options: ["Demand for bus travel shifts right", "Demand for bus travel shifts left", "Supply of bus travel shifts left", "Quantity demanded of bus travel rises"], answer: 1, ms: ["For inferior goods demand falls as income rises, so D shifts left."] },
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which factor would shift the supply curve of wheat to the right?", options: ["An increase in demand for bread", "A subsidy paid to wheat farmers", "A rise in the price of fertiliser", "A rise in the price of wheat"], answer: 1, ms: ["A subsidy lowers costs of production, shifting supply right."] },
-        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>complementary goods</em>.", ms: ["Goods that are consumed/used together (jointly demanded)", "so a rise in the price of one leads to a fall in demand for the other (negative XED)."] },
-        { type: "short", paper: "P2", marks: 4, diff: 2, q: "Using a demand and supply diagram, explain how a severe drought in Brazil is likely to affect the world price of coffee.", ms: ["Correct diagram: axes P and Q, D, S₁ shifting left to S₂", "New equilibrium shown at higher price P₂ and lower quantity Q₂", "Drought reduces crop yields / output, decreasing supply", "Shortage at original price causes price to rise until a new equilibrium is reached"] },
-        { type: "extended", paper: "P1", marks: 10, diff: 2, q: "Explain two non-price determinants of demand and two non-price determinants of supply for electric vehicles. [10]", ms: ["Level 4 (9-10): relevant, accurate diagrams with full explanation, clear definitions, effective use of EV context.", "Define demand and supply.", "Demand: e.g. rising incomes (normal good) / falling price of a complement (charging, electricity) / changing tastes (environmental awareness) / government grants raising willingness to buy - D shifts right on diagram.", "Supply: e.g. falling battery costs (cost of production) / technological improvement / subsidies to producers / entry of new firms - S shifts right on diagram.", "Diagrams correctly labelled with new equilibria."] },
+        { id: "econ-2-q1", type: "mcq", paper: "Quiz", marks: 1, diff: 1, q: "Which would cause a movement along the demand curve for smartphones?", options: ["A rise in consumer incomes", "A fall in the price of smartphones", "A successful advertising campaign", "A fall in the price of mobile data plans"], answer: 1, ms: ["Only a change in the good's own price causes a movement along the curve."] },
+        { id: "econ-2-q2", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Bus travel is an inferior good. If incomes rise, ceteris paribus:", options: ["Demand for bus travel shifts right", "Demand for bus travel shifts left", "Supply of bus travel shifts left", "Quantity demanded of bus travel rises"], answer: 1, ms: ["For inferior goods demand falls as income rises, so D shifts left."] },
+        { id: "econ-2-q4", type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>complementary goods</em>.", ms: ["Goods that are consumed/used together (jointly demanded)", "so a rise in the price of one leads to a fall in demand for the other (negative XED)."] },
       ],
     },
     {
-      id: "econ-3", code: "2.3, 2.5", unit: "Unit 2: Microeconomics", title: "Market equilibrium and efficiency",
+      id: "econ-2b", code: "2.2", unit: "Unit 2: Microeconomics", title: "Supply",
+      summary: "The law of supply, why the supply curve slopes up, movements vs shifts and the non-price determinants of supply.",
+      concepts: [
+        { h: "Supply", b: "<p><strong>Supply</strong> is the quantity firms are willing and able to produce at each price. <strong>Law of supply</strong>: higher price → higher quantity supplied, because of higher profit incentive and increasing marginal costs.</p><p>Non-price determinants (shift supply): costs of factors of production, technology, prices of related goods (joint/competitive supply), expectations, indirect taxes and subsidies, number of firms, shocks (weather, disasters).</p>" },
+        { h: "Movements along vs shifts of the supply curve", b: "<p>A change in the good's <strong>own price</strong> causes a <strong>movement along</strong> the supply curve: an <strong>extension</strong> (higher price, more supplied) or a <strong>contraction</strong> (lower price, less supplied). A change in any <strong>non-price determinant</strong> shifts the whole curve: S₁ → S₂ to the <strong>right</strong> is an <strong>increase in supply</strong> (more at every price, or the same quantity at a lower price), to the <strong>left</strong> a <strong>decrease in supply</strong>.</p><ul><li>An indirect tax shifts S <strong>up/left</strong> by the tax per unit; a subsidy shifts S <strong>down/right</strong> by the subsidy per unit.</li><li><strong>Joint supply</strong>: goods produced together (beef and leather) - more of one means more of the other. <strong>Competitive supply</strong>: goods that use the same resources (wheat and corn on the same land) - a higher price for one reduces supply of the other.</li></ul>" },
+        { h: "Why the supply curve slopes upwards", b: "<p>The <strong>law of supply</strong>: ceteris paribus, as price rises, quantity supplied rises. Two reasons: (1) the <strong>profit incentive</strong> - a higher price makes production more profitable, so existing firms produce more and new firms are attracted; (2) <strong>increasing marginal costs</strong> - in the short run, with some factors fixed, the law of diminishing marginal returns means each extra unit costs more to produce, so firms will only supply more at a higher price.</p><p>Linear supply: \\(Q_s = c + dP\\), where <em>d</em> &gt; 0. A change in <em>c</em> shifts the curve (a fall in costs raises <em>c</em>); the market supply curve is the horizontal sum of individual firms' supply curves.</p>" },
+      ],
+      terms: [
+        ["Supply", "The quantity of a good or service that producers are willing and able to offer for sale at each price in a given time period, ceteris paribus."],
+        ["Law of supply", "As the price of a good rises, the quantity supplied rises, and vice versa, ceteris paribus."],
+        ["Joint supply", "Goods produced together, so that an increase in the output of one also increases the supply of the other (e.g. beef and leather)."],
+        ["Competitive supply", "Goods that use the same resources, so producing more of one means producing less of the other (e.g. wheat and corn)."],
+        ["Increasing marginal cost", "The cost of producing each additional unit rises as output increases, because of diminishing marginal returns in the short run."],
+      ],
+      skills: [
+        { h: "Supply diagram labels", b: "Axes <em>Price</em> and <em>Quantity</em>; curves D, S₁, S₂. A cost increase shifts S <strong>left (up)</strong>; a cost fall shifts S <strong>right (down)</strong>. Show P₁/Q₁ → P₂/Q₂ with dotted lines and an arrow on the shift." },
+        { h: "Increase in supply vs increase in quantity supplied", b: "A higher price causes an <em>extension</em> (increase in quantity supplied) along S; only a non-price determinant (costs, technology, taxes, subsidies, number of firms, weather) causes an <em>increase in supply</em>." },
+      ],
+      examples: [
+        { q: "Explain, using a diagram, the effect of a rise in wages on the market for restaurant meals. [4]", a: "Wages are a cost of production for restaurants, so higher wages raise costs and restaurants are willing to supply fewer meals at every price: supply shifts left from S₁ to S₂. At the original price P₁ there is excess demand, so the price rises to P₂ and quantity demanded contracts to Q₂. The new equilibrium has a higher price and a lower quantity." },
+      ],
+      questions: [
+        { id: "econ-2-q3", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which factor would shift the supply curve of wheat to the right?", options: ["An increase in demand for bread", "A subsidy paid to wheat farmers", "A rise in the price of fertiliser", "A rise in the price of wheat"], answer: 1, ms: ["A subsidy lowers costs of production, shifting supply right."] },
+        { id: "econ-2-q5", type: "short", paper: "P2", marks: 4, diff: 2, q: "Using a demand and supply diagram, explain how a severe drought in Brazil is likely to affect the world price of coffee.", ms: ["Correct diagram: axes P and Q, D, S₁ shifting left to S₂", "New equilibrium shown at higher price P₂ and lower quantity Q₂", "Drought reduces crop yields / output, decreasing supply", "Shortage at original price causes price to rise until a new equilibrium is reached"] },
+        { id: "econ-2-q6", type: "extended", paper: "P1", marks: 10, diff: 2, q: "Explain two non-price determinants of demand and two non-price determinants of supply for electric vehicles. [10]", ms: ["Level 4 (9-10): relevant, accurate diagrams with full explanation, clear definitions, effective use of EV context.", "Define demand and supply.", "Demand: e.g. rising incomes (normal good) / falling price of a complement (charging, electricity) / changing tastes (environmental awareness) / government grants raising willingness to buy - D shifts right on diagram.", "Supply: e.g. falling battery costs (cost of production) / technological improvement / subsidies to producers / entry of new firms - S shifts right on diagram.", "Diagrams correctly labelled with new equilibria."] },
+        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Beef and leather are in joint supply. A rise in demand for beef will most likely:", options: ["increase the supply of leather", "decrease the supply of leather", "increase the demand for leather", "cause a movement along the supply curve of leather"], answer: 0, ms: ["More cattle are slaughtered for beef, so more hides are produced: the supply of leather shifts right."] },
+        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>supply</em>.", ms: ["The quantity of a good that producers are willing and able to offer for sale", "at each possible price in a given time period, ceteris paribus."] },
+      ],
+    },
+    {
+      id: "econ-3", code: "2.3", unit: "Unit 2: Microeconomics", title: "Competitive market equilibrium",
       summary: "How equilibrium is reached, the signalling and incentive functions of price, and consumer/producer surplus.",
       concepts: [
         { h: "Equilibrium and disequilibrium", b: "<p><strong>Equilibrium</strong> occurs where Qd = Qs; there is no tendency to change. Above equilibrium there is <strong>excess supply</strong> (surplus) and price falls; below it there is <strong>excess demand</strong> (shortage) and price rises.</p>" },
@@ -145,18 +171,16 @@ IB.register({
       ],
     },
     {
-      id: "econ-5", code: "2.6-2.7", unit: "Unit 2: Microeconomics", title: "Elasticities (PED, YED, PES)",
-      summary: "Calculating and interpreting price elasticity of demand, income elasticity and price elasticity of supply, with applications.",
+      id: "econ-5", code: "2.5", unit: "Unit 2: Microeconomics", title: "Elasticity of demand (PED and YED)",
+      summary: "Calculating and interpreting price and income elasticity of demand, their determinants, and applications to total revenue, taxes and economic change.",
       concepts: [
         { h: "Price elasticity of demand (PED)", b: "<p>$$PED = \\frac{\\%\\Delta Q_d}{\\%\\Delta P}$$ (ignore the minus sign when classifying).</p><ul><li>|PED| &gt; 1 price elastic; &lt; 1 inelastic; = 1 unit elastic; 0 perfectly inelastic; ∞ perfectly elastic.</li><li><strong>Determinants</strong>: number and closeness of substitutes, necessity vs luxury, proportion of income spent, time period, addictiveness.</li><li>PED varies along a linear demand curve: elastic at high prices, inelastic at low prices.</li></ul>" },
         { h: "PED and total revenue", b: "<p>If demand is <strong>inelastic</strong>, raising price raises total revenue (TR = P × Q). If <strong>elastic</strong>, cutting price raises TR. TR is maximised where PED = 1.</p><p>Applications: firm pricing decisions; governments tax goods with inelastic demand (petrol, tobacco) to raise revenue; primary commodities often have low PED and PES, causing price volatility.</p>" },
         { h: "Income elasticity of demand (YED)", b: "<p>$$YED = \\frac{\\%\\Delta Q_d}{\\%\\Delta Y}$$ Positive = normal good (0-1 necessity, &gt;1 luxury); negative = inferior good. As economies grow, the share of output from primary sector falls because food has low YED (Engel's law), and services with high YED expand.</p>" },
-        { h: "Price elasticity of supply (PES)", b: "<p>$$PES = \\frac{\\%\\Delta Q_s}{\\%\\Delta P}$$ Determinants: time period, mobility of factors, spare capacity, ability to store stocks, rate of cost increase. Primary products have low PES in the short run (crops take time to grow); manufactured goods are more elastic.</p>" },
       ],
       terms: [
         ["PED", "The responsiveness of quantity demanded to a change in the good's own price."],
         ["YED", "The responsiveness of demand to a change in income."],
-        ["PES", "The responsiveness of quantity supplied to a change in the good's own price."],
         ["Total revenue", "Price × quantity sold."],
       ],
       skills: [
@@ -168,17 +192,45 @@ IB.register({
         { q: "Average income rises by 5% and demand for organic food rises by 8%. Calculate YED.", a: "YED = 8/5 = 1.6 → normal, income-elastic (luxury) good." },
       ],
       questions: [
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 1, q: "If PED for a good is −0.3, a firm that raises its price will see:", options: ["Total revenue fall", "Total revenue rise", "Quantity demanded rise", "No change in quantity demanded"], answer: 1, ms: ["Demand is inelastic, so the % fall in Q is smaller than the % rise in P - TR rises."] },
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "A good with YED of −0.4 is:", options: ["A luxury", "A necessity", "An inferior good", "A complement"], answer: 2, ms: ["Negative YED means demand falls as income rises: an inferior good."] },
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which is most likely to make supply of a good price inelastic?", options: ["Large stocks of finished goods", "Spare production capacity", "A long time period", "Specialised, immobile factors of production"], answer: 3, ms: ["Immobile factors mean firms cannot quickly increase output."] },
-        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>price elasticity of demand</em>.", ms: ["A measure of the responsiveness of quantity demanded", "to a change in the good's own price."] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: -1.5, tol: 0.02 }, q: "The price of a streaming subscription falls from $12 to $10.80 and subscriptions rise from 20 000 to 23 000. Calculate the PED.", ms: ["%ΔQd = +15%, %ΔP = −10% [M1]", "PED = −1.5 (accept 1.5) [A1]"] },
-        { type: "short", paper: "P2", marks: 4, diff: 2, q: "Explain why the government may prefer to place indirect taxes on goods with price inelastic demand.", ms: ["Demand inelastic: quantity demanded falls proportionally less than the price rise", "So the tax base (quantity) remains large", "Therefore tax revenue is high and predictable", "Diagram/comment that the burden falls mainly on consumers; may be regressive"] },
-        { type: "extended", paper: "P1", marks: 10, diff: 2, q: "Explain why the prices of primary commodities tend to be more volatile than the prices of manufactured goods. [10]", ms: ["Level 4 (9-10): accurate diagram(s), precise definitions, full explanation.", "Define PED and PES.", "Primary commodities: low PED (necessities, few substitutes) and low PES (time lags in production, perishability).", "Diagram: with inelastic D and S, a supply shock (weather) or demand shift causes a large price change.", "Manufactured goods: more elastic supply (can adjust output, store stocks) and more substitutes.", "Comparison diagram showing smaller price change for manufactured goods."] },
+        { id: "econ-5-q1", type: "mcq", paper: "Quiz", marks: 1, diff: 1, q: "If PED for a good is −0.3, a firm that raises its price will see:", options: ["Total revenue fall", "Total revenue rise", "Quantity demanded rise", "No change in quantity demanded"], answer: 1, ms: ["Demand is inelastic, so the % fall in Q is smaller than the % rise in P - TR rises."] },
+        { id: "econ-5-q2", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "A good with YED of −0.4 is:", options: ["A luxury", "A necessity", "An inferior good", "A complement"], answer: 2, ms: ["Negative YED means demand falls as income rises: an inferior good."] },
+        { id: "econ-5-q4", type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>price elasticity of demand</em>.", ms: ["A measure of the responsiveness of quantity demanded", "to a change in the good's own price."] },
+        { id: "econ-5-q5", type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: -1.5, tol: 0.02 }, q: "The price of a streaming subscription falls from $12 to $10.80 and subscriptions rise from 20 000 to 23 000. Calculate the PED.", ms: ["%ΔQd = +15%, %ΔP = −10% [M1]", "PED = −1.5 (accept 1.5) [A1]"] },
+        { id: "econ-5-q6", type: "short", paper: "P2", marks: 4, diff: 2, q: "Explain why the government may prefer to place indirect taxes on goods with price inelastic demand.", ms: ["Demand inelastic: quantity demanded falls proportionally less than the price rise", "So the tax base (quantity) remains large", "Therefore tax revenue is high and predictable", "Diagram/comment that the burden falls mainly on consumers; may be regressive"] },
       ],
     },
     {
-      id: "econ-6", code: "2.8", unit: "Unit 2: Microeconomics", title: "Government intervention in markets",
+      id: "econ-5b", code: "2.6", unit: "Unit 2: Microeconomics", title: "Elasticity of supply (PES)",
+      summary: "Calculating and interpreting price elasticity of supply, its determinants, and why low PES makes primary commodity prices volatile.",
+      concepts: [
+        { h: "Price elasticity of supply (PES)", b: "<p>$$PES = \\frac{\\%\\Delta Q_s}{\\%\\Delta P}$$ Determinants: time period, mobility of factors, spare capacity, ability to store stocks, rate of cost increase. Primary products have low PES in the short run (crops take time to grow); manufactured goods are more elastic.</p>" },
+        { h: "Interpreting PES values and supply curves", b: "<ul><li><strong>PES &gt; 1</strong>: price elastic supply - quantity supplied changes by a larger % than price (manufactured goods with spare capacity).</li><li><strong>0 &lt; PES &lt; 1</strong>: price inelastic supply (crops in the short run, housing, specialist labour).</li><li><strong>PES = 0</strong>: perfectly inelastic - a vertical supply curve (seats in a stadium, a painting by a dead artist).</li><li><strong>PES = ∞</strong>: perfectly elastic - a horizontal supply curve.</li><li><strong>PES = 1</strong>: any straight-line supply curve through the origin, whatever its slope.</li></ul><p>PES is normally positive because of the law of supply. It rises with time: momentary period (vertical S) → short run → long run (flatter S) as firms change capacity.</p>" },
+        { h: "Why PES matters", b: "<p>When supply is <strong>inelastic</strong>, an increase in demand mainly raises <strong>price</strong> rather than quantity (housing in big cities, concert tickets); when supply is <strong>elastic</strong>, the increase is met mainly by more <strong>output</strong>. <strong>Primary commodities</strong> have low PES in the short run (crops take months to grow, mines take years to open), and combined with low PED this makes their prices <strong>volatile</strong> and farmers' incomes unstable. PES also affects <strong>tax incidence</strong>: the more inelastic supply is, the larger the share of an indirect tax paid by producers.</p>" },
+      ],
+      terms: [
+        ["PES", "The responsiveness of quantity supplied to a change in the good's own price."],
+        ["Perfectly inelastic supply", "Supply where quantity supplied does not change at all when price changes (PES = 0); a vertical supply curve."],
+        ["Perfectly elastic supply", "Supply where producers will supply any quantity at one price but none below it (PES = ∞); a horizontal supply curve."],
+        ["Spare capacity", "The ability of a firm to increase output with its existing factors because they are not fully used, which makes supply more price elastic."],
+        ["Primary commodities", "Raw materials and agricultural products from the primary sector (e.g. wheat, coffee, copper, oil), which often have price inelastic supply in the short run."],
+      ],
+      skills: [
+        { h: "PES calculation format", b: "Write \\(PES = \\frac{\\%\\Delta Q_s}{\\%\\Delta P}\\), substitute both % changes (new − old)/old × 100, give the answer to 2 d.p. with no units, and interpret it (\"supply is price inelastic\"). PES is normally positive." },
+        { h: "Drawing PES", b: "Elastic S: a straight line cutting the <em>price</em> axis; inelastic S: cutting the <em>quantity</em> axis; unit elastic: through the origin. Show the same rise in demand on an inelastic and an elastic supply curve to compare price and quantity changes." },
+      ],
+      examples: [
+        { q: "The price of a garden chair rises from $40 to $50 and the quantity supplied rises from 2000 to 3000 per month. Calculate PES and explain one reason for your answer.", a: "%ΔP = +25%, %ΔQs = +50%. PES = 50/25 = 2.0, so supply is price elastic. Chairs are manufactured goods: firms can hold stocks of finished chairs and have spare capacity, so they can raise output quickly when the price rises." },
+      ],
+      questions: [
+        { id: "econ-5-q3", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which is most likely to make supply of a good price inelastic?", options: ["Large stocks of finished goods", "Spare production capacity", "A long time period", "Specialised, immobile factors of production"], answer: 3, ms: ["Immobile factors mean firms cannot quickly increase output."] },
+        { id: "econ-5-q7", type: "extended", paper: "P1", marks: 10, diff: 2, q: "Explain why the prices of primary commodities tend to be more volatile than the prices of manufactured goods. [10]", ms: ["Level 4 (9-10): accurate diagram(s), precise definitions, full explanation.", "Define PED and PES.", "Primary commodities: low PED (necessities, few substitutes) and low PES (time lags in production, perishability).", "Diagram: with inelastic D and S, a supply shock (weather) or demand shift causes a large price change.", "Manufactured goods: more elastic supply (can adjust output, store stocks) and more substitutes.", "Comparison diagram showing smaller price change for manufactured goods."] },
+        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>price elasticity of supply</em>.", ms: ["A measure of the responsiveness of quantity supplied", "to a change in the good's own price."] },
+        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "A straight-line supply curve passes through the origin. Its price elasticity of supply is:", options: ["0", "between 0 and 1", "1", "greater than 1"], answer: 2, ms: ["Any straight-line supply curve through the origin has PES = 1, whatever its slope."] },
+        { type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: 0.4, tol: 0.01 }, q: "The price of wheat rises from $250 to $300 per tonne and the quantity supplied rises from 50 000 to 54 000 tonnes. Calculate the price elasticity of supply.", ms: ["%ΔQs = +8%, %ΔP = +20% [M1]", "PES = 8/20 = 0.4 (price inelastic) [A1]"] },
+      ],
+    },
+    {
+      id: "econ-6", code: "2.7", unit: "Unit 2: Microeconomics", title: "Government intervention in markets",
       summary: "Indirect taxes, subsidies, price ceilings and price floors - effects on stakeholders and welfare.",
       concepts: [
         { h: "Why governments intervene", b: "<p>To earn revenue, support firms, support households on low incomes, influence production/consumption, correct market failure and promote equity.</p>" },
@@ -210,7 +262,7 @@ IB.register({
       ],
     },
     {
-      id: "econ-7", code: "2.9", unit: "Unit 2: Microeconomics", title: "Market failure: externalities and common pool resources",
+      id: "econ-7", code: "2.8", unit: "Unit 2: Microeconomics", title: "Market failure: externalities and common pool resources",
       summary: "Negative and positive externalities of production and consumption, common pool resources, and policy responses.",
       concepts: [
         { h: "Market failure", b: "<p>The failure of markets to achieve allocative efficiency - resources are over- or under-allocated so MSB ≠ MSC and there is welfare loss.</p>" },
@@ -244,7 +296,7 @@ IB.register({
       ],
     },
     {
-      id: "econ-8", code: "2.10", unit: "Unit 2: Microeconomics", title: "Public goods",
+      id: "econ-8", code: "2.9", unit: "Unit 2: Microeconomics", title: "Public goods",
       summary: "Non-rivalry, non-excludability, the free-rider problem and government provision.",
       concepts: [
         { h: "Characteristics", b: "<p><strong>Public goods</strong> are <strong>non-rivalrous</strong> (one person's consumption does not reduce availability to others) and <strong>non-excludable</strong> (impossible to prevent non-payers from consuming). Examples: street lighting, national defence, flood barriers, lighthouses.</p>" },
@@ -388,18 +440,13 @@ IB.register({
       ],
     },
     {
-      id: "econ-13", code: "3.5-3.6", unit: "Unit 3: Macroeconomics", title: "Monetary and fiscal policy",
-      summary: "Demand-side policies: central bank interest rates and money supply tools; government spending and taxation; strengths and limitations.",
+      id: "econ-13", code: "3.5", unit: "Unit 3: Macroeconomics", title: "Monetary policy",
+      summary: "How the central bank uses interest rates, open market operations and quantitative easing to manage aggregate demand, and the strengths and limits of monetary policy.",
       concepts: [
         { h: "Monetary policy", b: "<p>Conducted by the <strong>central bank</strong> to achieve low and stable inflation (often an inflation target of ~2%), low unemployment and stable growth.</p><ul><li><strong>Tools</strong>: open market operations, minimum reserve requirements, changes in the policy rate, quantitative easing.</li><li><strong>Transmission</strong>: lower interest rates → cheaper borrowing, less incentive to save, lower mortgage payments, currency depreciation → higher C, I and (X−M) → AD rises.</li></ul><p><strong>Strengths</strong>: independent central bank (credibility), incremental and quick to implement, reversible. <strong>Limitations</strong>: time lags, low confidence (liquidity trap - rates near zero), limited effect in deep recession, cost of borrowing may not fall for households.</p>" },
-        { h: "Fiscal policy", b: "<p>Government use of spending and taxation. <strong>Expansionary</strong>: raise G, cut taxes → AD rises. <strong>Contractionary</strong>: reduce G, raise taxes. <strong>Automatic stabilisers</strong> (progressive taxes, unemployment benefits) dampen the cycle without new decisions.</p><p><strong>Strengths</strong>: can target specific sectors/regions; effective in deep recession; G directly adds to AD; multiplier. <strong>Limitations</strong>: time lags (recognition, decision, implementation), political pressure, budget deficit and debt, <strong>crowding out</strong> (government borrowing raises interest rates and reduces private investment), inability to fine-tune.</p>" },
-        { h: "Budget balance", b: "<p>Budget deficit = G &gt; tax revenue; surplus = revenue &gt; G. Public debt = accumulated deficits. Large debt raises interest payments (opportunity cost), may reduce credit rating.</p>" },
       ],
       terms: [
         ["Monetary policy", "Central bank manipulation of interest rates and the money supply to influence AD."],
-        ["Fiscal policy", "Changes in government spending and/or taxation to influence AD."],
-        ["Automatic stabilisers", "Factors that automatically reduce fluctuations in AD (e.g. progressive taxes, unemployment benefits)."],
-        ["Crowding out", "Reduction in private investment due to higher interest rates caused by government borrowing."],
         ["Quantitative easing", "Central bank creation of money to buy financial assets, increasing the money supply."],
       ],
       skills: [
@@ -407,11 +454,35 @@ IB.register({
       ],
       examples: [{ q: "Explain how an increase in the central bank's policy rate could reduce inflation.", a: "Higher policy rates raise commercial bank lending rates. Borrowing becomes more expensive and saving more attractive, so consumption (especially on credit) and investment fall; mortgage payments rise reducing disposable income; the currency may appreciate reducing net exports. AD shifts left, reducing demand-pull inflation, though with a time lag of 12-24 months." }],
       questions: [
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 1, q: "Which is an example of expansionary fiscal policy?", options: ["Raising interest rates", "Cutting income tax rates", "Selling government bonds in open market operations", "Raising the reserve requirement"], answer: 1, ms: ["Fiscal policy uses taxes and spending; tax cuts raise disposable income and C."] },
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Crowding out refers to:", options: ["Imports replacing domestic goods", "Government borrowing raising interest rates and reducing private investment", "Firms leaving a market", "Higher taxes reducing consumption"], answer: 1, ms: ["Government demand for loanable funds raises rates."] },
-        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>automatic stabilisers</em>.", ms: ["Elements of fiscal policy (e.g. progressive taxes, unemployment benefits)", "that automatically counteract fluctuations in economic activity/AD without government action."] },
-        { type: "short", paper: "P2", marks: 4, diff: 2, q: "Using an AD/AS diagram, explain how expansionary monetary policy could close a recessionary gap.", ms: ["Diagram: AD shifts right, Ye moves towards Yp, price level rises", "Central bank cuts the policy interest rate / buys bonds", "Cheaper borrowing / lower incentive to save → C and I increase", "AD rises, real GDP increases and cyclical unemployment falls"] },
-        { type: "extended", paper: "P1", marks: 15, diff: 3, q: "Using real-world examples, evaluate the effectiveness of fiscal policy in closing a recessionary gap. [15]", ms: ["Level 5 (13-15): precise definitions, accurate AD/AS diagram, balanced evaluation with examples and conclusion.", "Define fiscal policy and recessionary gap.", "Diagram: expansionary fiscal policy shifts AD right towards Yp; multiplier effect.", "Strengths: direct effect of G on AD, can target sectors, effective when monetary policy faces zero lower bound, infrastructure improves LRAS.", "Limitations: time lags, budget deficits/debt, crowding out, political constraints, Ricardian equivalence/low confidence, may cause inflation if overestimated.", "Examples: US CARES Act 2020, China stimulus 2008, eurozone austerity.", "Judgement: e.g. most effective in deep recession with spare capacity and low debt."] },
+        { id: "econ-13-q4", type: "short", paper: "P2", marks: 4, diff: 2, q: "Using an AD/AS diagram, explain how expansionary monetary policy could close a recessionary gap.", ms: ["Diagram: AD shifts right, Ye moves towards Yp, price level rises", "Central bank cuts the policy interest rate / buys bonds", "Cheaper borrowing / lower incentive to save → C and I increase", "AD rises, real GDP increases and cyclical unemployment falls"] },
+      ],
+    },
+    {
+      id: "econ-13b", code: "3.6", unit: "Unit 3: Macroeconomics", title: "Fiscal policy",
+      summary: "How government spending and taxation shift aggregate demand, the multiplier, automatic stabilisers, the budget balance and debt, and the strengths and limits of fiscal policy.",
+      concepts: [
+        { h: "Fiscal policy", b: "<p>Government use of spending and taxation. <strong>Expansionary</strong>: raise G, cut taxes → AD rises. <strong>Contractionary</strong>: reduce G, raise taxes. <strong>Automatic stabilisers</strong> (progressive taxes, unemployment benefits) dampen the cycle without new decisions.</p><p><strong>Strengths</strong>: can target specific sectors/regions; effective in deep recession; G directly adds to AD; multiplier. <strong>Limitations</strong>: time lags (recognition, decision, implementation), political pressure, budget deficit and debt, <strong>crowding out</strong> (government borrowing raises interest rates and reduces private investment), inability to fine-tune.</p>" },
+        { h: "Budget balance", b: "<p>Budget deficit = G &gt; tax revenue; surplus = revenue &gt; G. Public debt = accumulated deficits. Large debt raises interest payments (opportunity cost), may reduce credit rating.</p>" },
+      ],
+      terms: [
+        ["Fiscal policy", "Changes in government spending and/or taxation to influence AD."],
+        ["Automatic stabilisers", "Factors that automatically reduce fluctuations in AD (e.g. progressive taxes, unemployment benefits)."],
+        ["Crowding out", "Reduction in private investment due to higher interest rates caused by government borrowing."],
+        ["Budget deficit", "When government spending is greater than government revenue (mainly taxes) in a given year."],
+        ["Public debt", "The accumulated total of past budget deficits minus surpluses: the total amount the government owes."],
+      ],
+      skills: [
+        { h: "Fiscal policy chain", b: "Name the tool (G↑, direct tax↓, transfer payments↑) → which component of AD changes (G directly, or C/I via disposable income and profits) → AD shifts right → the multiplier makes the final rise in real GDP larger → effect on unemployment, inflation and the budget balance." },
+        { h: "Evaluate fiscal policy", b: "Weigh time lags (recognition, decision, implementation), crowding out, the size of the public debt, the size of the output gap and spare capacity, political constraints, and whether spending also raises potential output (infrastructure, education)." },
+      ],
+      examples: [{ q: "Explain how a cut in income tax could reduce cyclical unemployment.", a: "A cut in income tax raises households' disposable income, so consumption rises. Consumption is a component of AD, so AD shifts right from AD₁ to AD₂ and the multiplier effect increases real GDP further. Firms need more workers to produce the extra output, so demand-deficient (cyclical) unemployment falls, although the budget balance worsens and the price level may rise if the economy is near full employment." }],
+      questions: [
+        { id: "econ-13-q1", type: "mcq", paper: "Quiz", marks: 1, diff: 1, q: "Which is an example of expansionary fiscal policy?", options: ["Raising interest rates", "Cutting income tax rates", "Selling government bonds in open market operations", "Raising the reserve requirement"], answer: 1, ms: ["Fiscal policy uses taxes and spending; tax cuts raise disposable income and C."] },
+        { id: "econ-13-q2", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Crowding out refers to:", options: ["Imports replacing domestic goods", "Government borrowing raising interest rates and reducing private investment", "Firms leaving a market", "Higher taxes reducing consumption"], answer: 1, ms: ["Government demand for loanable funds raises rates."] },
+        { id: "econ-13-q3", type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>automatic stabilisers</em>.", ms: ["Elements of fiscal policy (e.g. progressive taxes, unemployment benefits)", "that automatically counteract fluctuations in economic activity/AD without government action."] },
+        { id: "econ-13-q5", type: "extended", paper: "P1", marks: 15, diff: 3, q: "Using real-world examples, evaluate the effectiveness of fiscal policy in closing a recessionary gap. [15]", ms: ["Level 5 (13-15): precise definitions, accurate AD/AS diagram, balanced evaluation with examples and conclusion.", "Define fiscal policy and recessionary gap.", "Diagram: expansionary fiscal policy shifts AD right towards Yp; multiplier effect.", "Strengths: direct effect of G on AD, can target sectors, effective when monetary policy faces zero lower bound, infrastructure improves LRAS.", "Limitations: time lags, budget deficits/debt, crowding out, political constraints, Ricardian equivalence/low confidence, may cause inflation if overestimated.", "Examples: US CARES Act 2020, China stimulus 2008, eurozone austerity.", "Judgement: e.g. most effective in deep recession with spare capacity and low debt."] },
+        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which is an example of contractionary fiscal policy?", options: ["Cutting the policy interest rate", "Raising the rate of value added tax", "Selling government bonds through open market operations", "Increasing unemployment benefits"], answer: 1, ms: ["A higher tax reduces disposable income and spending, so AD falls: contractionary fiscal policy (C is monetary policy)."] },
+        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Distinguish between a <em>budget deficit</em> and <em>public debt</em>.", ms: ["A budget deficit is the excess of government spending over revenue in one year (a flow)", "whereas public debt is the accumulated total of past deficits minus surpluses (a stock)."] },
       ],
     },
     {
@@ -441,32 +512,69 @@ IB.register({
 
     // ---------------- UNIT 4 GLOBAL ----------------
     {
-      id: "econ-15", code: "4.1-4.3", unit: "Unit 4: The global economy", title: "International trade and protectionism",
-      summary: "Gains from trade, absolute and comparative advantage, tariffs, quotas, subsidies and arguments for and against protection.",
+      id: "econ-15", code: "4.1", unit: "Unit 4: The global economy", title: "Benefits of international trade",
+      summary: "Absolute and comparative advantage, specialisation and the gains from trade, the free trade diagram and the role of the WTO.",
       concepts: [
         { h: "Benefits of trade", b: "<p>Lower prices, greater choice, economies of scale, increased competition, efficient resource allocation, access to resources, source of foreign exchange, spread of technology. <strong>Absolute advantage</strong>: produce more with the same resources. <strong>Comparative advantage</strong>: produce at a lower opportunity cost - the basis of mutually beneficial specialisation (Ricardo). Limitations: assumes no transport costs, perfect mobility, constant costs, no externalities.</p>" },
-        { h: "Types of protection", b: "<ul><li><strong>Tariff</strong>: tax on imports - raises domestic price, domestic output rises, imports fall, government revenue, welfare loss.</li><li><strong>Quota</strong>: limit on quantity of imports - foreign firms with licences earn higher price (quota rent).</li><li><strong>Production subsidy</strong>: lowers domestic costs, domestic supply rises, imports fall; government cost.</li><li><strong>Administrative barriers</strong>: health/safety standards, bureaucratic procedures.</li></ul>" },
-        { h: "Arguments for and against", b: "<p><strong>For</strong>: protect infant industries, national security, protect domestic employment, health/safety/environmental standards, anti-dumping, raise government revenue, overcome balance of payments deficit, economic diversification. <strong>Against</strong>: misallocation of resources, higher prices for consumers, retaliation/trade wars, reduced competition and efficiency, higher costs for firms using imported inputs, reduced export competitiveness, corruption.</p>" },
-        { h: "Embargoes", b: "<p>An <strong>embargo</strong> is a complete government ban on trade with a country or in a product, usually for political reasons (sanctions) or safety. It is the most extreme trade barrier: imports (and/or exports) fall to zero. Effects: domestic producers are protected and consumers lose choice and pay higher prices; the targeted country loses export revenue, though retaliation and smuggling are risks.</p>" },
       ],
       terms: [
         ["Comparative advantage", "The ability to produce a good at a lower opportunity cost than another country."],
-        ["Tariff", "A tax on imported goods."],
-        ["Quota", "A physical limit on the quantity of a good that can be imported."],
-        ["Dumping", "Selling goods abroad at a price below cost of production / below the domestic price."],
-        ["Infant industry", "A new industry that cannot yet compete with established foreign firms."],
+        ["Absolute advantage", "The ability of a country to produce more of a good than another country with the same resources."],
+        ["Free trade", "International trade without government-imposed barriers such as tariffs, quotas or subsidies."],
+        ["World Trade Organization (WTO)", "The international organisation that sets rules for trade between member countries, negotiates trade liberalisation and settles trade disputes."],
       ],
       skills: [
-        { h: "Tariff diagram checklist", b: "Domestic D and S, world supply Sw at Pw, Sw+tariff at Pw+t. Mark Q1-Q4 (domestic production and consumption before/after). Identify: imports fall from Q1Q4 to Q2Q3, government revenue rectangle, welfare loss triangles." },
         { h: "Opportunity cost tables", b: "Compute opportunity cost of one unit of each good for both countries; the country with the lower opportunity cost has the comparative advantage." },
       ],
       examples: [{ q: "Country A can produce 20 cars or 40 tonnes of rice; Country B 10 cars or 30 tonnes of rice. Who has comparative advantage in cars?", a: "Opportunity cost of 1 car: A = 2 tonnes rice, B = 3 tonnes rice. A has the comparative advantage in cars; B in rice (1 tonne costs B 1/3 car vs 1/2 car for A)." }],
       questions: [
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "A tariff on imported steel will most likely:", options: ["Lower the domestic price of steel", "Increase domestic steel production", "Increase steel imports", "Reduce government revenue"], answer: 1, ms: ["Higher domestic price encourages domestic producers to supply more."] },
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Country X can produce 10 units of wheat or 5 units of cloth; Country Y can produce 6 wheat or 6 cloth. Which is true?", options: ["X has comparative advantage in cloth", "Y has comparative advantage in wheat", "X has comparative advantage in wheat", "Neither benefits from trade"], answer: 2, ms: ["OC of 1 wheat: X = 0.5 cloth, Y = 1 cloth, so X specialises in wheat."] },
-        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>comparative advantage</em>.", ms: ["The ability of a country to produce a good", "at a lower opportunity cost than another country."] },
-        { type: "short", paper: "P2", marks: 4, diff: 2, q: "Using a diagram, explain the effect of a tariff on domestic consumers and producers.", ms: ["Correct tariff diagram: Pw, Pw+tariff, domestic D and S, quantities Q1-Q4", "Domestic price rises - consumers pay more and consume less (Q4 → Q3)", "Domestic producers sell more (Q1 → Q2) at higher price, revenue rises", "Imports fall; consumer surplus falls / welfare loss"] },
-        { type: "extended", paper: "P1", marks: 15, diff: 3, q: "Using real-world examples, evaluate the view that protectionism is necessary to support developing economies. [15]", ms: ["Level 5 (13-15): precise definitions, accurate diagram, balanced evaluation with examples, justified conclusion.", "Define protectionism, developing economy, comparative advantage.", "Arguments for: infant industry, diversification away from primary commodities, employment, government revenue (tariffs important tax source), strategic industries.", "Arguments against: inefficiency, higher prices, retaliation, loss of export markets, corruption/rent-seeking, failure of import-substitution (Latin America).", "Diagram of tariff with welfare loss.", "Examples: South Korea's selective protection; India pre-1991; WTO rules.", "Judgement: temporary, targeted protection may help but long-term growth needs openness."] },
+        { id: "econ-15-q2", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Country X can produce 10 units of wheat or 5 units of cloth; Country Y can produce 6 wheat or 6 cloth. Which is true?", options: ["X has comparative advantage in cloth", "Y has comparative advantage in wheat", "X has comparative advantage in wheat", "Neither benefits from trade"], answer: 2, ms: ["OC of 1 wheat: X = 0.5 cloth, Y = 1 cloth, so X specialises in wheat."] },
+        { id: "econ-15-q3", type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>comparative advantage</em>.", ms: ["The ability of a country to produce a good", "at a lower opportunity cost than another country."] },
+      ],
+    },
+    {
+      id: "econ-15b", code: "4.2", unit: "Unit 4: The global economy", title: "Types of trade protection",
+      summary: "Tariffs, quotas, production and export subsidies and administrative barriers: how each works and its effects on stakeholders, with diagrams and calculations.",
+      concepts: [
+        { h: "Types of protection", b: "<ul><li><strong>Tariff</strong>: tax on imports - raises domestic price, domestic output rises, imports fall, government revenue, welfare loss.</li><li><strong>Quota</strong>: limit on quantity of imports - foreign firms with licences earn higher price (quota rent).</li><li><strong>Production subsidy</strong>: lowers domestic costs, domestic supply rises, imports fall; government cost.</li><li><strong>Administrative barriers</strong>: health/safety standards, bureaucratic procedures.</li></ul>" },
+        { h: "Embargoes", b: "<p>An <strong>embargo</strong> is a complete government ban on trade with a country or in a product, usually for political reasons (sanctions) or safety. It is the most extreme trade barrier: imports (and/or exports) fall to zero. Effects: domestic producers are protected and consumers lose choice and pay higher prices; the targeted country loses export revenue, though retaliation and smuggling are risks.</p>" },
+      ],
+      terms: [
+        ["Tariff", "A tax on imported goods."],
+        ["Quota", "A physical limit on the quantity of a good that can be imported."],
+        ["Production subsidy", "A payment by the government to domestic producers per unit of output, lowering their costs so they can compete with imports."],
+        ["Export subsidy", "A payment by the government to domestic firms for each unit they export, making exports cheaper on world markets."],
+        ["Administrative barrier", "A rule or procedure (e.g. strict standards, slow customs checks, complex paperwork) used to make importing more difficult."],
+      ],
+      skills: [
+        { h: "Tariff diagram checklist", b: "Domestic D and S, world supply Sw at Pw, Sw+tariff at Pw+t. Mark Q1-Q4 (domestic production and consumption before/after). Identify: imports fall from Q1Q4 to Q2Q3, government revenue rectangle, welfare loss triangles." },
+      ],
+      examples: [{ q: "The world price of steel is $400 per tonne. A tariff of $50 per tonne is imposed and imports fall to 2 million tonnes. Calculate the tariff revenue.", a: "Tariff revenue = tariff per unit × quantity imported after the tariff = $50 × 2 million = $100 million." }],
+      questions: [
+        { id: "econ-15-q1", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "A tariff on imported steel will most likely:", options: ["Lower the domestic price of steel", "Increase domestic steel production", "Increase steel imports", "Reduce government revenue"], answer: 1, ms: ["Higher domestic price encourages domestic producers to supply more."] },
+        { id: "econ-15-q4", type: "short", paper: "P2", marks: 4, diff: 2, q: "Using a diagram, explain the effect of a tariff on domestic consumers and producers.", ms: ["Correct tariff diagram: Pw, Pw+tariff, domestic D and S, quantities Q1-Q4", "Domestic price rises - consumers pay more and consume less (Q4 → Q3)", "Domestic producers sell more (Q1 → Q2) at higher price, revenue rises", "Imports fall; consumer surplus falls / welfare loss"] },
+      ],
+    },
+    {
+      id: "econ-15c", code: "4.3", unit: "Unit 4: The global economy", title: "Arguments for and against trade protection",
+      summary: "Infant industries, national security, jobs, anti-dumping and other arguments for protection, weighed against higher prices, inefficiency and retaliation.",
+      concepts: [
+        { h: "Arguments for and against", b: "<p><strong>For</strong>: protect infant industries, national security, protect domestic employment, health/safety/environmental standards, anti-dumping, raise government revenue, overcome balance of payments deficit, economic diversification. <strong>Against</strong>: misallocation of resources, higher prices for consumers, retaliation/trade wars, reduced competition and efficiency, higher costs for firms using imported inputs, reduced export competitiveness, corruption.</p>" },
+      ],
+      terms: [
+        ["Dumping", "Selling goods abroad at a price below cost of production / below the domestic price."],
+        ["Infant industry", "A new industry that cannot yet compete with established foreign firms."],
+        ["Protectionism", "Government policies that restrict imports or support domestic producers to protect them from foreign competition."],
+        ["Retaliation", "When a country responds to another country's trade barriers by imposing barriers of its own, which can lead to a trade war."],
+      ],
+      skills: [
+        { h: "Argument → reason → stakeholder", b: "For each argument for or against protection, state the claim, explain the economic reason (e.g. economies of scale for infant industries) and name who gains or loses. Then evaluate: is the protection temporary, targeted and likely to provoke retaliation?" },
+      ],
+      examples: [{ q: "Explain the infant industry argument for protection. [4]", a: "A new domestic industry has high average costs because it is too small to benefit from economies of scale and lacks experience. Temporary protection, such as a tariff on imports, gives it time to grow, lower its costs and become competitive with established foreign firms. The protection should then be removed; the risk is that the industry never becomes efficient and keeps lobbying for protection." }],
+      questions: [
+        { id: "econ-15-q5", type: "extended", paper: "P1", marks: 15, diff: 3, q: "Using real-world examples, evaluate the view that protectionism is necessary to support developing economies. [15]", ms: ["Level 5 (13-15): precise definitions, accurate diagram, balanced evaluation with examples, justified conclusion.", "Define protectionism, developing economy, comparative advantage.", "Arguments for: infant industry, diversification away from primary commodities, employment, government revenue (tariffs important tax source), strategic industries.", "Arguments against: inefficiency, higher prices, retaliation, loss of export markets, corruption/rent-seeking, failure of import-substitution (Latin America).", "Diagram of tariff with welfare loss.", "Examples: South Korea's selective protection; India pre-1991; WTO rules.", "Judgement: temporary, targeted protection may help but long-term growth needs openness."] },
+        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which is an argument AGAINST protectionism?", options: ["It may lead to retaliation by trading partners", "It protects infant industries", "It safeguards national security", "It prevents dumping"], answer: 0, ms: ["Retaliation can cut export sales and jobs; B-D are arguments for protection."] },
+        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>dumping</em>.", ms: ["Selling goods in a foreign market", "at a price below their cost of production / below the price in the home market."] },
       ],
     },
     {
@@ -493,19 +601,15 @@ IB.register({
       ],
     },
     {
-      id: "econ-17", code: "4.5-4.6", unit: "Unit 4: The global economy", title: "Exchange rates and the balance of payments",
-      summary: "Floating, fixed and managed exchange rates, causes and consequences of currency changes, and current/capital/financial accounts.",
+      id: "econ-17", code: "4.5", unit: "Unit 4: The global economy", title: "Exchange rates",
+      summary: "Floating, fixed and managed exchange rates: how demand and supply of a currency set its value, conversions, and the effects of appreciation and depreciation.",
       concepts: [
         { h: "Floating exchange rates", b: "<p>The price of one currency in terms of another, determined by demand and supply on the foreign exchange market. <strong>Demand</strong> for a currency comes from foreigners buying exports, investing (FDI, portfolio), tourism, speculation, central bank purchases. <strong>Supply</strong> comes from domestic residents buying imports and investing abroad. Factors: relative interest rates, inflation, growth, investment flows, speculation, current account balance.</p><p><strong>Appreciation</strong> (floating) / <strong>revaluation</strong> (fixed): exports dearer, imports cheaper → lower inflation, lower export competitiveness. <strong>Depreciation</strong> / <strong>devaluation</strong>: the opposite.</p>" },
         { h: "Fixed and managed systems", b: "<p><strong>Fixed</strong>: government/central bank pegs the currency and maintains it using reserves and interest rates. <strong>Managed float</strong>: floats within limits with occasional intervention. Fixed rates bring certainty but require reserves and sacrifice monetary independence.</p>" },
-        { h: "Balance of payments", b: "<p>Record of all transactions between residents of a country and the rest of the world.</p><ul><li><strong>Current account</strong>: balance of trade in goods + services, primary income (wages, interest, profit), secondary income (transfers, remittances).</li><li><strong>Capital account</strong>: capital transfers, purchase/sale of non-produced, non-financial assets.</li><li><strong>Financial account</strong>: FDI, portfolio investment, reserve assets.</li></ul><p>Current account + capital account + financial account (+ errors and omissions) = 0. A current account deficit must be matched by a surplus on the capital and financial accounts.</p>" },
       ],
       terms: [
         ["Exchange rate", "The value of one currency expressed in terms of another."],
         ["Appreciation", "An increase in the value of a currency in a floating exchange rate system."],
-        ["Current account", "Records trade in goods and services, primary income and secondary income flows."],
-        ["Financial account", "Records flows of FDI, portfolio investment and changes in reserve assets."],
-        ["Remittances", "Money sent home by workers employed abroad (secondary income)."],
       ],
       skills: [
         { h: "Currency conversions", b: "If €1 = $1.10, then $1 = €1/1.10 = €0.909. A $22 000 car costs 22 000 ÷ 1.10 = €20 000." },
@@ -513,43 +617,115 @@ IB.register({
       ],
       examples: [{ q: "The exchange rate changes from £1 = ¥180 to £1 = ¥195. Calculate the change in price in Japan of a £50 UK product.", a: "Before: 50 × 180 = ¥9000. After: 50 × 195 = ¥9750. The pound has appreciated, so the UK export is ¥750 (8.3%) dearer in Japan." }],
       questions: [
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which is most likely to cause an appreciation of a country's floating currency?", options: ["A fall in domestic interest rates", "Higher inflation than trading partners", "An increase in inward FDI", "An increase in imports"], answer: 2, ms: ["Foreign investors must buy the currency, increasing demand for it."] },
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Remittances from workers abroad are recorded in the:", options: ["Capital account", "Financial account", "Current account (secondary income)", "Current account (balance of trade)"], answer: 2, ms: ["Remittances are current transfers - secondary income."] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: 18750, tol: 1 }, q: "The exchange rate is US$1 = ₹80. Calculate the price in US$ of an Indian product priced at ₹1 500 000.", ms: ["1 500 000 ÷ 80 [M1]", "= $18 750 [A1]"] },
-        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>depreciation</em>.", ms: ["A fall in the value of a currency in terms of another currency", "in a floating exchange rate system (determined by market forces)."] },
-        { type: "short", paper: "P2", marks: 4, diff: 2, q: "Using an exchange rate diagram, explain how an increase in a country's interest rates may affect its currency.", ms: ["Diagram: D for currency shifts right (and/or S shifts left), exchange rate rises", "Higher interest rates make deposits/financial assets more attractive to foreign investors (hot money)", "Investors must buy the currency, increasing demand", "Currency appreciates"] },
-        { type: "extended", paper: "P1", marks: 15, diff: 3, q: "Using real-world examples, evaluate the consequences of a significant depreciation of a country's currency. [15]", ms: ["Level 5 (13-15): precise definitions, accurate diagram, balanced evaluation, examples.", "Define depreciation; exchange rate diagram.", "Positive: exports cheaper → higher X, lower M → AD rises, growth, employment, improved current account (if Marshall-Lerner holds / over time J-curve).", "Negative: imported inflation (cost-push, especially for import-dependent economies), higher foreign-currency debt burden, lower living standards, uncertainty.", "Stakeholders: exporters, importers, consumers, tourists, debtors.", "Examples: Turkish lira 2021-23, UK pound post-Brexit referendum, Japanese yen 2022-24.", "Judgement depending on PED of exports/imports, cause of depreciation and spare capacity."] },
+        { id: "econ-17-q1", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which is most likely to cause an appreciation of a country's floating currency?", options: ["A fall in domestic interest rates", "Higher inflation than trading partners", "An increase in inward FDI", "An increase in imports"], answer: 2, ms: ["Foreign investors must buy the currency, increasing demand for it."] },
+        { id: "econ-17-q3", type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: 18750, tol: 1 }, q: "The exchange rate is US$1 = ₹80. Calculate the price in US$ of an Indian product priced at ₹1 500 000.", ms: ["1 500 000 ÷ 80 [M1]", "= $18 750 [A1]"] },
+        { id: "econ-17-q4", type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>depreciation</em>.", ms: ["A fall in the value of a currency in terms of another currency", "in a floating exchange rate system (determined by market forces)."] },
+        { id: "econ-17-q5", type: "short", paper: "P2", marks: 4, diff: 2, q: "Using an exchange rate diagram, explain how an increase in a country's interest rates may affect its currency.", ms: ["Diagram: D for currency shifts right (and/or S shifts left), exchange rate rises", "Higher interest rates make deposits/financial assets more attractive to foreign investors (hot money)", "Investors must buy the currency, increasing demand", "Currency appreciates"] },
+        { id: "econ-17-q6", type: "extended", paper: "P1", marks: 15, diff: 3, q: "Using real-world examples, evaluate the consequences of a significant depreciation of a country's currency. [15]", ms: ["Level 5 (13-15): precise definitions, accurate diagram, balanced evaluation, examples.", "Define depreciation; exchange rate diagram.", "Positive: exports cheaper → higher X, lower M → AD rises, growth, employment, improved current account (if Marshall-Lerner holds / over time J-curve).", "Negative: imported inflation (cost-push, especially for import-dependent economies), higher foreign-currency debt burden, lower living standards, uncertainty.", "Stakeholders: exporters, importers, consumers, tourists, debtors.", "Examples: Turkish lira 2021-23, UK pound post-Brexit referendum, Japanese yen 2022-24.", "Judgement depending on PED of exports/imports, cause of depreciation and spare capacity."] },
       ],
     },
     {
-      id: "econ-18", code: "4.7-4.10", unit: "Unit 4: The global economy", title: "Sustainable development and growth strategies",
-      summary: "Meaning and measurement of development, the SDGs, barriers to development and strategies (trade, aid, FDI, microfinance, institutions).",
+      id: "econ-17b", code: "4.6", unit: "Unit 4: The global economy", title: "Balance of payments",
+      summary: "The current, capital and financial accounts, why they balance, the causes and consequences of current account deficits and surpluses, and policies to correct them.",
+      concepts: [
+        { h: "Balance of payments", b: "<p>Record of all transactions between residents of a country and the rest of the world.</p><ul><li><strong>Current account</strong>: balance of trade in goods + services, primary income (wages, interest, profit), secondary income (transfers, remittances).</li><li><strong>Capital account</strong>: capital transfers, purchase/sale of non-produced, non-financial assets.</li><li><strong>Financial account</strong>: FDI, portfolio investment, reserve assets.</li></ul><p>Current account + capital account + financial account (+ errors and omissions) = 0. A current account deficit must be matched by a surplus on the capital and financial accounts.</p>" },
+      ],
+      terms: [
+        ["Current account", "Records trade in goods and services, primary income and secondary income flows."],
+        ["Financial account", "Records flows of FDI, portfolio investment and changes in reserve assets."],
+        ["Remittances", "Money sent home by workers employed abroad (secondary income)."],
+        ["Balance of payments", "A record of all the economic transactions between the residents of a country and the rest of the world over a period of time."],
+        ["Capital account", "Records capital transfers (e.g. debt forgiveness) and the purchase or sale of non-produced, non-financial assets such as patents."],
+      ],
+      skills: [
+        { h: "Classify the transaction", b: "Goods and services → current account (trade balance); wages, interest, profits and dividends → primary income; remittances, aid and pensions → secondary income; FDI, shares, bonds and reserves → financial account; debt forgiveness and patents → capital account." },
+        { h: "BoP calculations", b: "Current account balance = balance of trade in goods + balance of trade in services + net primary income + net secondary income. The current account + capital account + financial account (+ errors and omissions) = 0, so a current account deficit is matched by a surplus on the capital and financial accounts." },
+      ],
+      examples: [{ q: "Exports of goods are $320 bn, imports of goods $365 bn, exports of services $90 bn, imports of services $60 bn, net primary income −$15 bn and net secondary income +$8 bn. Calculate the current account balance.", a: "Trade in goods = 320 − 365 = −$45 bn; trade in services = 90 − 60 = +$30 bn. Current account = −45 + 30 − 15 + 8 = −$22 bn, a current account deficit." }],
+      questions: [
+        { id: "econ-17-q2", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Remittances from workers abroad are recorded in the:", options: ["Capital account", "Financial account", "Current account (secondary income)", "Current account (balance of trade)"], answer: 2, ms: ["Remittances are current transfers - secondary income."] },
+        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "A foreign company builds a new factory in Country Z. In Country Z's balance of payments this is recorded in the:", options: ["financial account (FDI inflow)", "current account (trade in goods)", "current account (primary income)", "capital account"], answer: 0, ms: ["Foreign direct investment is recorded in the financial account."] },
+        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>current account deficit</em>.", ms: ["When the value of payments out of the country for goods, services, primary and secondary income", "is greater than the value of receipts into the country for these items over a period of time."] },
+      ],
+    },
+    {
+      id: "econ-18", code: "4.7", unit: "Unit 4: The global economy", title: "Sustainable development",
+      summary: "Economic growth vs economic development, the meaning of sustainable development, the SDGs, natural capital and inclusive growth.",
       concepts: [
         { h: "Development and the SDGs", b: "<p><strong>Economic development</strong> is a multidimensional process involving improvements in living standards, reduction in poverty and inequality, better health and education, and expanded freedom and choice. <strong>Sustainable development</strong> meets present needs without compromising future generations' ability to meet theirs. The 17 UN <strong>Sustainable Development Goals</strong> (2015-2030).</p>" },
-        { h: "Measuring development", b: "<p>Single indicators: GDP/GNI per capita (PPP), health (life expectancy, infant mortality), education (mean years of schooling), inequality (Gini). Composite: <strong>HDI</strong> (life expectancy, education, GNI per capita), <strong>IHDI</strong>, <strong>GII</strong>, <strong>MPI</strong>. A country with HDI rank much higher than GNI rank converts income into human development effectively.</p>" },
-        { h: "Barriers", b: "<p>Poverty traps (cycles), inequality, weak institutions (corruption, poor property rights, weak legal system), lack of infrastructure, low human capital, dependence on primary commodities, informal economy, geography (landlocked), political instability, unsustainable debt, gender inequality, lack of access to credit.</p>" },
-        { h: "Strategies", b: "<ul><li><strong>Trade strategies</strong>: export promotion, import substitution, diversification, trade liberalisation, fair trade.</li><li><strong>Foreign direct investment</strong>: capital, technology, jobs vs profit repatriation, environmental damage.</li><li><strong>Foreign aid</strong> (humanitarian, development) and <strong>multilateral assistance</strong> (World Bank, IMF).</li><li><strong>Microfinance</strong>, <strong>education</strong>, <strong>healthcare</strong>, <strong>infrastructure</strong>, <strong>good governance</strong>, <strong>empowering women</strong>, <strong>debt relief</strong>.</li></ul><p>Evaluate each in terms of sustainability, distribution of benefits and dependency.</p>" },
         { h: "Natural capital, inclusive growth and the doughnut", b: "<ul><li><strong>Natural capital</strong>: the stock of natural resources (forests, fisheries, minerals, clean air and water) that provides goods and services. Conventional GDP ignores its depletion, so \"green GDP\" subtracts the cost of environmental degradation. Sustainable development means not running down natural capital faster than it is replaced.</li><li><strong>Inclusive growth</strong>: growth whose benefits are shared widely across income groups, regions and genders, e.g. through investment in education, health and infrastructure for the poor. Contrast with growth that raises GDP but widens inequality.</li><li><strong>Doughnut economics</strong> (Raworth): an economy should operate between a <em>social foundation</em> (minimum needs such as food, health, education, income) and an <em>ecological ceiling</em> (planetary limits such as climate, biodiversity). Staying in the \"safe and just space\" between them is the aim, instead of GDP growth alone.</li></ul>" },
-        { h: "Barriers to economic growth and development", b: "<p>Common barriers: <strong>lack of infrastructure</strong> (roads, power, ports), <strong>weak institutions and corruption</strong>, <strong>poor education and health</strong> (low human capital), <strong>over-dependence on primary commodities</strong> (volatile prices, declining terms of trade), <strong>high debt</strong> servicing, <strong>lack of access to credit and capital</strong>, <strong>political instability and conflict</strong>, and <strong>lack of property rights</strong>. Evaluation: barriers interact (a vicious circle of poverty), so policies often need to tackle several at once, and the importance of each differs by country.</p>" },
       ],
       terms: [
         ["Economic development", "A broad process involving improvements in standards of living, reduction in poverty, and improvements in health, education and freedom."],
+        ["Sustainable development", "Development that meets the needs of the present without compromising the ability of future generations to meet their own needs."],
+        ["Sustainable Development Goals (SDGs)", "The 17 goals adopted by the United Nations in 2015, to be achieved by 2030, covering poverty, hunger, health, education, equality and the environment."],
+        ["Natural capital", "The stock of natural resources (forests, fish, minerals, clean air and water) that provides goods and services to the economy."],
+      ],
+      questions: [
+        { id: "econ-18-q3", type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>sustainable development</em>.", ms: ["Development that meets the needs of the present generation", "without compromising the ability of future generations to meet their own needs."] },
+        { id: "econ-18-q101", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "Which best describes sustainable development?", options: ["Development that meets present needs without compromising the ability of future generations to meet theirs", "A permanent increase in real GDP per capita", "Growth driven only by renewable energy", "A rise in the Human Development Index every year"], answer: 0, ms: ["The Brundtland definition: present needs met without compromising future generations."] },
+      ],
+    },
+    {
+      id: "econ-18b", code: "4.8", unit: "Unit 4: The global economy", title: "Measuring development",
+      summary: "Single indicators (GNI per capita, health, education) and composite indicators (HDI, IHDI, GII, MPI), GNI rank minus HDI rank, and the strengths and limits of each.",
+      concepts: [
+        { h: "Measuring development", b: "<p>Single indicators: GDP/GNI per capita (PPP), health (life expectancy, infant mortality), education (mean years of schooling), inequality (Gini). Composite: <strong>HDI</strong> (life expectancy, education, GNI per capita), <strong>IHDI</strong>, <strong>GII</strong>, <strong>MPI</strong>. A country with HDI rank much higher than GNI rank converts income into human development effectively.</p>" },
+      ],
+      terms: [
         ["HDI", "Human Development Index - composite of health (life expectancy), education (expected and mean years of schooling) and standard of living (GNI per capita PPP)."],
+        ["GNI per capita (PPP)", "Gross national income divided by the population, adjusted for purchasing power parity so that living standards can be compared between countries."],
+        ["Composite indicator", "A measure that combines several single indicators into one index (e.g. HDI, IHDI, MPI)."],
+        ["Inequality-adjusted HDI (IHDI)", "The HDI adjusted for inequality in health, education and income within a country; the gap from the HDI shows the loss due to inequality."],
+      ],
+      skills: [
+        { h: "GNI rank − HDI rank", b: "Subtract the HDI rank from the GNI per capita rank. A positive result means the country ranks better on HDI than on income, so it converts income into human development well; a negative result means it does poorly." },
+      ],
+      questions: [
+        { id: "econ-18-q1", type: "mcq", paper: "Quiz", marks: 1, diff: 1, q: "The HDI includes all of the following EXCEPT:", options: ["Life expectancy at birth", "Expected years of schooling", "GNI per capita (PPP)", "Gini coefficient"], answer: 3, ms: ["Inequality is captured by the IHDI, not the HDI."] },
+        { id: "econ-18-q2", type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "If a country's GNI per capita rank minus its HDI rank is strongly positive, this suggests:", options: ["It converts income into human development relatively well", "It has very high inequality", "It is a high-income country", "Its HDI is falling"], answer: 0, ms: ["HDI rank better than income rank → effective conversion of income into health/education."] },
+      ],
+    },
+    {
+      id: "econ-18c", code: "4.9", unit: "Unit 4: The global economy", title: "Barriers to economic growth and development",
+      summary: "The poverty trap, dependence on primary commodities, weak institutions and corruption, poor infrastructure, low human capital, gender inequality, debt and other barriers.",
+      concepts: [
+        { h: "Barriers", b: "<p>Poverty traps (cycles), inequality, weak institutions (corruption, poor property rights, weak legal system), lack of infrastructure, low human capital, dependence on primary commodities, informal economy, geography (landlocked), political instability, unsustainable debt, gender inequality, lack of access to credit.</p>" },
+        { h: "Barriers to economic growth and development", b: "<p>Common barriers: <strong>lack of infrastructure</strong> (roads, power, ports), <strong>weak institutions and corruption</strong>, <strong>poor education and health</strong> (low human capital), <strong>over-dependence on primary commodities</strong> (volatile prices, declining terms of trade), <strong>high debt</strong> servicing, <strong>lack of access to credit and capital</strong>, <strong>political instability and conflict</strong>, and <strong>lack of property rights</strong>. Evaluation: barriers interact (a vicious circle of poverty), so policies often need to tackle several at once, and the importance of each differs by country.</p>" },
+      ],
+      terms: [
         ["Poverty trap", "A cycle in which low incomes prevent saving and investment, keeping incomes low."],
+        ["Capital flight", "The movement of large amounts of money out of a country by residents and investors, often because of political or economic instability."],
+        ["Informal economy", "Economic activity that is not registered or taxed by the government and not recorded in official statistics."],
+      ],
+      skills: [
+        { h: "Barrier chains", b: "For each barrier write a chain: barrier → mechanism → effect on investment / productivity / human capital → lower growth and development. Example: poor roads → high transport costs → firms cannot reach markets → low investment and exports." },
+      ],
+      examples: [{ q: "Explain how a lack of access to credit can be a barrier to development.", a: "Many poor households and small firms have no collateral and cannot borrow from banks. Without credit they cannot invest in tools, seeds, livestock or education, so their productivity and incomes stay low. Low incomes mean low savings, which keeps them in the poverty trap and limits growth and development." }],
+      questions: [
+        { id: "econ-18-q4", type: "short", paper: "P2", marks: 4, diff: 2, q: "Explain how dependence on primary commodity exports can be a barrier to economic development.", ms: ["Low PED/PES → volatile prices and export revenues", "Volatile foreign exchange earnings/government revenue make planning and investment difficult", "Low YED means demand grows slowly as world incomes rise; declining terms of trade", "Little value added / few linkages; Dutch disease; resource curse"] },
+      ],
+    },
+    {
+      id: "econ-18d", code: "4.10", unit: "Unit 4: The global economy", title: "Growth and development strategies",
+      summary: "Trade strategies, FDI, foreign aid, microfinance, investment in human capital and infrastructure, institutions, and market-oriented vs interventionist approaches.",
+      concepts: [
+        { h: "Strategies", b: "<ul><li><strong>Trade strategies</strong>: export promotion, import substitution, diversification, trade liberalisation, fair trade.</li><li><strong>Foreign direct investment</strong>: capital, technology, jobs vs profit repatriation, environmental damage.</li><li><strong>Foreign aid</strong> (humanitarian, development) and <strong>multilateral assistance</strong> (World Bank, IMF).</li><li><strong>Microfinance</strong>, <strong>education</strong>, <strong>healthcare</strong>, <strong>infrastructure</strong>, <strong>good governance</strong>, <strong>empowering women</strong>, <strong>debt relief</strong>.</li></ul><p>Evaluate each in terms of sustainability, distribution of benefits and dependency.</p>" },
+      ],
+      terms: [
         ["Microfinance", "Provision of small loans and financial services to people on low incomes without access to banks."],
         ["FDI", "Long-term investment by a firm in another country, e.g. building a factory (MNC)."],
+        ["Official development assistance (ODA)", "Aid from governments of high-income countries to promote the welfare and development of developing countries, given as grants or concessional loans."],
+        ["Import substitution", "A strategy of replacing imported manufactured goods with domestically produced ones, usually behind tariffs and quotas."],
+        ["Export promotion", "A strategy of growth based on expanding exports, often through openness to trade, FDI and support for exporting industries."],
       ],
       skills: [
         { h: "Paper 2 (h) - the 15-mark question", b: "Use information from the text/data AND your knowledge of economics. Reference the text explicitly (\"Paragraph 3 states…\"). Include at least one diagram, and conclude." },
       ],
       examples: [{ q: "Explain how microfinance can help women escape poverty.", a: "Women often lack collateral and credit histories so cannot borrow from banks. Microfinance institutions provide small loans (often to groups for peer accountability) that allow women to start small businesses, earn income, increase household spending on children's education and health, and gain bargaining power - breaking the poverty trap. Limitations: high interest rates, small scale, risk of over-indebtedness." }],
       questions: [
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 1, q: "The HDI includes all of the following EXCEPT:", options: ["Life expectancy at birth", "Expected years of schooling", "GNI per capita (PPP)", "Gini coefficient"], answer: 3, ms: ["Inequality is captured by the IHDI, not the HDI."] },
-        { type: "mcq", paper: "Quiz", marks: 1, diff: 2, q: "If a country's GNI per capita rank minus its HDI rank is strongly positive, this suggests:", options: ["It converts income into human development relatively well", "It has very high inequality", "It is a high-income country", "Its HDI is falling"], answer: 0, ms: ["HDI rank better than income rank → effective conversion of income into health/education."] },
-        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define <em>sustainable development</em>.", ms: ["Development that meets the needs of the present generation", "without compromising the ability of future generations to meet their own needs."] },
-        { type: "short", paper: "P2", marks: 4, diff: 2, q: "Explain how dependence on primary commodity exports can be a barrier to economic development.", ms: ["Low PED/PES → volatile prices and export revenues", "Volatile foreign exchange earnings/government revenue make planning and investment difficult", "Low YED means demand grows slowly as world incomes rise; declining terms of trade", "Little value added / few linkages; Dutch disease; resource curse"] },
-        { type: "extended", paper: "P1", marks: 15, diff: 3, q: "Using real-world examples, evaluate the effectiveness of foreign direct investment (FDI) as a strategy for achieving economic development. [15]", ms: ["Level 5 (13-15): precise definitions, balanced evaluation with real examples, justified conclusion.", "Define FDI, MNC and economic development.", "Benefits: capital inflow fills savings gap, technology transfer, employment, human capital, tax revenue, exports/foreign exchange, infrastructure.", "Costs: profit repatriation, transfer pricing/tax avoidance, environmental damage, weak labour standards, crowding out of local firms, enclave economies, political influence.", "Examples: Vietnam (Samsung), Ireland, extractive FDI in DRC.", "Depends on government regulation, type of FDI, linkages with local economy.", "Judgement."] },
-        { type: "extended", paper: "P2", marks: 15, diff: 3, q: "<em>Data response (final 15-mark question).</em> A low-income country has HDI 0.48, 70% of exports are cocoa, 35% of adults have no access to formal banking, and women own 12% of small businesses. Using the information and your knowledge of economics, evaluate the use of microfinance to promote economic development in this country. [15]", ms: ["Levels 5 (13-15): uses data explicitly, relevant theory and diagram, balanced evaluation and conclusion.", "Define microfinance and development.", "Use data: 35% unbanked - microfinance increases access to credit; women own 12% of businesses - empowerment potential.", "Diagram e.g. PPC/LRAS shift from entrepreneurship or poverty cycle.", "Benefits: entrepreneurship, diversification away from cocoa, women's empowerment, human capital spending.", "Limitations: high interest rates, small loans, over-indebtedness, doesn't address infrastructure/institutions, commodity dependence remains.", "Compare with other strategies e.g. diversification, education, infrastructure.", "Conclusion relating to the specific country data."] },
+        { id: "econ-18-q5", type: "extended", paper: "P1", marks: 15, diff: 3, q: "Using real-world examples, evaluate the effectiveness of foreign direct investment (FDI) as a strategy for achieving economic development. [15]", ms: ["Level 5 (13-15): precise definitions, balanced evaluation with real examples, justified conclusion.", "Define FDI, MNC and economic development.", "Benefits: capital inflow fills savings gap, technology transfer, employment, human capital, tax revenue, exports/foreign exchange, infrastructure.", "Costs: profit repatriation, transfer pricing/tax avoidance, environmental damage, weak labour standards, crowding out of local firms, enclave economies, political influence.", "Examples: Vietnam (Samsung), Ireland, extractive FDI in DRC.", "Depends on government regulation, type of FDI, linkages with local economy.", "Judgement."] },
+        { id: "econ-18-q6", type: "extended", paper: "P2", marks: 15, diff: 3, q: "<em>Data response (final 15-mark question).</em> A low-income country has HDI 0.48, 70% of exports are cocoa, 35% of adults have no access to formal banking, and women own 12% of small businesses. Using the information and your knowledge of economics, evaluate the use of microfinance to promote economic development in this country. [15]", ms: ["Levels 5 (13-15): uses data explicitly, relevant theory and diagram, balanced evaluation and conclusion.", "Define microfinance and development.", "Use data: 35% unbanked - microfinance increases access to credit; women own 12% of businesses - empowerment potential.", "Diagram e.g. PPC/LRAS shift from entrepreneurship or poverty cycle.", "Benefits: entrepreneurship, diversification away from cocoa, women's empowerment, human capital spending.", "Limitations: high interest rates, small loans, over-indebtedness, doesn't address infrastructure/institutions, commodity dependence remains.", "Compare with other strategies e.g. diversification, education, infrastructure.", "Conclusion relating to the specific country data."] },
       ],
     },
   ],

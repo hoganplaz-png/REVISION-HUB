@@ -534,7 +534,7 @@
       // =====================================================================
       "econ-13": {
         frames: [
-          { title: "Money market: how the central bank changes the interest rate", star: true, paper: "P2", where: "Paper 2 · 4 marks · money market diagram",
+          { id: "econ-13-q12", title: "Money market: how the central bank changes the interest rate", star: true, paper: "P2", where: "Paper 2 · 4 marks · money market diagram",
             q: "Using a money market diagram, explain how a central bank can use open market operations to lower the equilibrium interest rate.",
             marks: [
               ["Diagram", "axes __interest rate__ and __quantity of money__; __vertical money supply__ Sm shifts right; downward-sloping Dm; interest rate falls i₁ → i₂", 1],
@@ -550,8 +550,7 @@
             accept: "lowering the minimum reserve requirement or quantitative easing as alternative tools that shift Sm right",
             reject: "an upward-sloping money supply curve; selling bonds to lower interest rates",
             tip: "央行買債券 → 放錢入銀行體系 → 貨幣供應右移 → 利率跌。賣債券就相反。" },
-
-          { title: "Explain the tools of monetary policy", paper: "P2", where: "Paper 2 · 4 marks",
+          { id: "econ-13-q13", title: "Explain the tools of monetary policy", paper: "P2", where: "Paper 2 · 4 marks",
             q: "Explain two tools a central bank could use to reduce the money supply and raise interest rates.",
             marks: [
               "tool 1: __open market operations__ - the central bank __sells__ government bonds",
@@ -563,8 +562,7 @@
             accept: "quantitative tightening; changing the central bank minimum lending (policy) rate",
             reject: "fiscal tools such as taxes; \"printing less money\" without explanation",
             tip: "貨幣政策工具：公開市場操作、最低儲備要求、政策利率、量化寬鬆。稅同政府開支係財政政策！" },
-
-          { title: "Contractionary monetary policy and an inflationary gap", star: true, paper: "P2", where: "Paper 2 · 4 marks · AD/AS diagram",
+          { id: "econ-13-q14", title: "Contractionary monetary policy and an inflationary gap", star: true, paper: "P2", where: "Paper 2 · 4 marks · AD/AS diagram",
             q: "Using an AD/AS diagram, explain how an increase in the central bank's policy interest rate could close an inflationary gap.",
             marks: [
               ["Diagram", "initial equilibrium beyond Yp; __AD shifts left__ (AD₁ → AD₂) to Yp; __lower price level__ / inflation falls", 1],
@@ -579,8 +577,45 @@
             model: "A higher policy rate leads commercial banks to raise interest rates on loans and mortgages. Borrowing is more expensive and saving more rewarding, so households cut spending on durables and firms postpone investment; higher rates may also attract financial inflows, appreciating the currency and reducing net exports. AD shifts left from AD₁ to AD₂, real GDP falls from Y₁ to Yp, and the price level falls from P₁ to P₂ (in practice inflation slows), closing the inflationary gap.",
             reject: "\"the government raises interest rates\" (it is the central bank); shifting SRAS; describing fiscal policy",
             tip: "傳導機制要寫晒：利率 → 借貸成本 / 儲蓄誘因 / 匯率 → C、I、(X − M) → AD。" },
-
-          { title: "Expansionary fiscal policy and the multiplier", star: true, paper: "P2", where: "Paper 2 · 4 marks · AD/AS diagram",
+          { id: "econ-13-q18", title: "Explain the limitations of monetary policy", paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Explain two reasons why a cut in interest rates may fail to increase aggregate demand during a deep recession.",
+            marks: [
+              "__low consumer and business confidence__: households and firms are pessimistic about future income and profits",
+              "so they do not borrow or spend even though borrowing is cheaper; __C and I do not rise__",
+              "interest rates may already be close to zero (__zero lower bound / liquidity trap__) so there is little room to cut further",
+              "and commercial banks may not pass on the cut / may be unwilling to lend, so the __transmission mechanism__ breaks down",
+            ],
+            model: "First, in a deep recession confidence is very low: households fear job losses and firms expect weak sales, so even with cheaper credit they do not borrow to spend or invest, and AD barely rises. Second, interest rates may already be near zero, leaving little scope for cuts (a liquidity trap), and banks with weak balance sheets may refuse to lend, so the lower policy rate is not transmitted to the economy.",
+            accept: "time lags (12-24 months) as a limitation; high household debt",
+            reject: "limitations of fiscal policy (crowding out, political pressures)",
+            tip: "「推繩子」(pushing on a string)：利率再低，冇信心都唔會借錢。" },
+          { id: "econ-13-q19", title: "Evaluate monetary policy to reduce inflation (Paper 2 final 15-mark question)", star: true, paper: "P2", where: "Paper 2 · 15 marks · use the text/data",
+            q: "<em>Data response.</em> In Country M inflation is 7.5% against a central bank target of 2%. Unemployment is 4.2%, household debt is 140% of disposable income, most mortgages have variable interest rates, and the rise in inflation was largely caused by higher imported energy prices. Using information from the text/data and your knowledge of economics, evaluate the decision of Country M's central bank to raise its policy interest rate.",
+            marks: [
+              ["Definitions", "define __monetary policy__ / inflation / inflation targeting", 2],
+              ["Diagram", "AD/AS diagram with __AD shifting left__ (and/or SRAS shifted left by energy prices), explained", 3],
+              ["Use of text/data", "explicit reference to inflation __7.5% vs 2% target__, unemployment 4.2%, household debt 140%, variable-rate mortgages, imported energy prices", 3],
+              ["Evaluation", "higher rates reduce C and I and anchor __inflation expectations__, may appreciate the currency (cheaper imports); BUT inflation is __cost-push__ so lower AD reduces output and raises unemployment; heavy debt and variable mortgages make the impact large; __time lags__", 5],
+              ["Judgement", "a __supported conclusion__, e.g. moderate rises justified to anchor expectations but risk recession", 2],
+            ],
+            model: "Define monetary policy and inflation targeting. Explain that a higher policy rate raises borrowing costs, reducing consumption and investment, so AD shifts left and inflation falls, and it signals commitment to the 2% target, anchoring expectations; an appreciation would also reduce imported energy prices. However, the data show inflation is mainly cost-push: reducing AD lowers inflation only by reducing output and raising unemployment from 4.2%. With household debt at 140% of income and variable-rate mortgages, rate rises hit disposable income quickly and could cause a sharp recession. Time lags mean the full effect arrives after energy prices may have fallen. Conclude that gradual rises may be justified to stop a wage-price spiral, but the bank should move cautiously.",
+            accept: "Keynesian AD/AS diagram; reference to stakeholders (borrowers vs savers)",
+            reject: "an answer that ignores the cost-push cause given in the data; no conclusion",
+            tip: "Paper 2 (h)：每段評價都要扣返題目數據，例如「家庭負債 140% → 加息影響大」。" },
+        ],
+        mc: [
+          { id: "econ-13-q20", skill: "<strong>Monetary or fiscal?</strong> Interest rates, money supply, OMO, reserve requirements, QE = monetary (central bank). Taxes and government spending = fiscal (government).",
+            q: "Which is an example of contractionary monetary policy?", options: ["Raising income tax", "Selling government bonds in open market operations", "Cutting government spending on roads", "Lowering the reserve requirement"], answer: 1, why: "Selling bonds drains reserves and reduces the money supply." },
+          { skill: "<strong>Bond trick:</strong> central bank BUYS bonds → money supply up → interest rate down. SELLS → money supply down → rates up." },
+          { skill: "<strong>Strengths list (monetary):</strong> independent central bank, incremental, quick to change. <strong>Fiscal:</strong> can target sectors/regions, works in deep recession, direct effect of G on AD." },
+        ],
+        concepts: [
+          { h: "Demand for and supply of money", b: "<p>In the money market the <strong>supply of money</strong> is drawn as a vertical line because it is fixed by the central bank, and the <strong>demand for money</strong> slopes downward because at lower interest rates the opportunity cost of holding money (instead of interest-bearing assets) is lower. The equilibrium interest rate is where they meet. Buying bonds, lowering the reserve requirement or quantitative easing shift the money supply right and lower interest rates; the opposite actions raise them.</p>" },
+        ],
+      },
+      "econ-13b": {
+        frames: [
+          { id: "econ-13-q15", title: "Expansionary fiscal policy and the multiplier", star: true, paper: "P2", where: "Paper 2 · 4 marks · AD/AS diagram",
             q: "Using an AD/AS diagram, explain how a cut in personal income tax could reduce cyclical unemployment.",
             marks: [
               ["Diagram", "economy below Yp; __AD shifts right__ (AD₁ → AD₂) towards Yp; real GDP and price level rise", 1],
@@ -596,8 +631,7 @@
             accept: "Keynesian AS diagram with AD rising in the horizontal/upward section",
             reject: "shifting LRAS; describing a cut in interest rates; \"tax cut increases government spending\"",
             tip: "減稅 → 可支配收入↑ → C↑ → AD 右移 → 乘數效應 → 週期性失業↓。" },
-
-          { title: "Explain how automatic stabilisers work", paper: "P2", where: "Paper 2 · 4 marks",
+          { id: "econ-13-q16", title: "Explain how automatic stabilisers work", paper: "P2", where: "Paper 2 · 4 marks",
             q: "Explain how automatic stabilisers reduce fluctuations in real GDP over the business cycle.",
             marks: [
               "in a recession, incomes fall so __progressive tax__ revenue falls __more than proportionately__ and __unemployment benefits__ rise",
@@ -608,8 +642,7 @@
             model: "Automatic stabilisers are features of the tax and benefit system that change without new policy decisions. In a recession, falling incomes push people into lower tax brackets, so tax revenue falls more than proportionately, and more people claim unemployment benefits; disposable income and consumption fall less, cushioning AD. In a boom, rising incomes mean more tax is paid at higher marginal rates and benefit payments fall, which slows the growth of AD and limits inflation.",
             reject: "\"the government decides to cut taxes in a recession\" (that is discretionary fiscal policy)",
             tip: "自動穩定器 = 唔使政府決定都會自動變：累進稅 + 失業救濟金。冇決策時滯。" },
-
-          { title: "Distinguish types of government expenditure and the budget outcome", paper: "P2", where: "Paper 2 · 2 marks",
+          { id: "econ-13-q17", title: "Distinguish types of government expenditure and the budget outcome", paper: "P2", where: "Paper 2 · 2 marks",
             q: "Distinguish between current government expenditure and capital government expenditure.",
             marks: [
               "__current__ expenditure is spending on day-to-day items that are used up within the year, e.g. __public-sector wages__, medicines",
@@ -619,45 +652,15 @@
             accept: "transfer payments as a third category (pensions, unemployment benefits) where relevant",
             reject: "classing transfer payments as capital expenditure",
             tip: "政府開支三類：經常性（人工）、資本性（基建）、轉移支付（退休金、救濟金）。" },
-
-          { title: "Explain the limitations of monetary policy", paper: "P2", where: "Paper 2 · 4 marks",
-            q: "Explain two reasons why a cut in interest rates may fail to increase aggregate demand during a deep recession.",
-            marks: [
-              "__low consumer and business confidence__: households and firms are pessimistic about future income and profits",
-              "so they do not borrow or spend even though borrowing is cheaper; __C and I do not rise__",
-              "interest rates may already be close to zero (__zero lower bound / liquidity trap__) so there is little room to cut further",
-              "and commercial banks may not pass on the cut / may be unwilling to lend, so the __transmission mechanism__ breaks down",
-            ],
-            model: "First, in a deep recession confidence is very low: households fear job losses and firms expect weak sales, so even with cheaper credit they do not borrow to spend or invest, and AD barely rises. Second, interest rates may already be near zero, leaving little scope for cuts (a liquidity trap), and banks with weak balance sheets may refuse to lend, so the lower policy rate is not transmitted to the economy.",
-            accept: "time lags (12-24 months) as a limitation; high household debt",
-            reject: "limitations of fiscal policy (crowding out, political pressures)",
-            tip: "「推繩子」(pushing on a string)：利率再低，冇信心都唔會借錢。" },
-
-          { title: "Evaluate monetary policy to reduce inflation (Paper 2 final 15-mark question)", star: true, paper: "P2", where: "Paper 2 · 15 marks · use the text/data",
-            q: "<em>Data response.</em> In Country M inflation is 7.5% against a central bank target of 2%. Unemployment is 4.2%, household debt is 140% of disposable income, most mortgages have variable interest rates, and the rise in inflation was largely caused by higher imported energy prices. Using information from the text/data and your knowledge of economics, evaluate the decision of Country M's central bank to raise its policy interest rate.",
-            marks: [
-              ["Definitions", "define __monetary policy__ / inflation / inflation targeting", 2],
-              ["Diagram", "AD/AS diagram with __AD shifting left__ (and/or SRAS shifted left by energy prices), explained", 3],
-              ["Use of text/data", "explicit reference to inflation __7.5% vs 2% target__, unemployment 4.2%, household debt 140%, variable-rate mortgages, imported energy prices", 3],
-              ["Evaluation", "higher rates reduce C and I and anchor __inflation expectations__, may appreciate the currency (cheaper imports); BUT inflation is __cost-push__ so lower AD reduces output and raises unemployment; heavy debt and variable mortgages make the impact large; __time lags__", 5],
-              ["Judgement", "a __supported conclusion__, e.g. moderate rises justified to anchor expectations but risk recession", 2],
-            ],
-            model: "Define monetary policy and inflation targeting. Explain that a higher policy rate raises borrowing costs, reducing consumption and investment, so AD shifts left and inflation falls, and it signals commitment to the 2% target, anchoring expectations; an appreciation would also reduce imported energy prices. However, the data show inflation is mainly cost-push: reducing AD lowers inflation only by reducing output and raising unemployment from 4.2%. With household debt at 140% of income and variable-rate mortgages, rate rises hit disposable income quickly and could cause a sharp recession. Time lags mean the full effect arrives after energy prices may have fallen. Conclude that gradual rises may be justified to stop a wage-price spiral, but the bank should move cautiously.",
-            accept: "Keynesian AD/AS diagram; reference to stakeholders (borrowers vs savers)",
-            reject: "an answer that ignores the cost-push cause given in the data; no conclusion",
-            tip: "Paper 2 (h)：每段評價都要扣返題目數據，例如「家庭負債 140% → 加息影響大」。" },
         ],
         mc: [
-          { skill: "<strong>Monetary or fiscal?</strong> Interest rates, money supply, OMO, reserve requirements, QE = monetary (central bank). Taxes and government spending = fiscal (government).",
-            q: "Which is an example of contractionary monetary policy?", options: ["Raising income tax", "Selling government bonds in open market operations", "Cutting government spending on roads", "Lowering the reserve requirement"], answer: 1, why: "Selling bonds drains reserves and reduces the money supply." },
-          { skill: "<strong>Bond trick:</strong> central bank BUYS bonds → money supply up → interest rate down. SELLS → money supply down → rates up." },
-          { skill: "<strong>Budget terms:</strong> deficit = spending > revenue in one year (flow); debt = accumulated deficits (stock).",
+          { id: "econ-13-q21", skill: "<strong>Budget terms:</strong> deficit = spending > revenue in one year (flow); debt = accumulated deficits (stock).",
             q: "A government's revenue is $300 bn and its spending is $340 bn. Which statement is correct?", options: ["It has a budget surplus of $40 bn", "Its government debt falls by $40 bn", "It has a budget deficit of $40 bn", "Its debt is $40 bn"], answer: 2, why: "Spending exceeds revenue by $40 bn in that year; debt rises by roughly that amount." },
           { skill: "<strong>Crowding out</strong> = government borrowing raises interest rates and reduces private investment. It weakens expansionary fiscal policy." },
-          { skill: "<strong>Strengths list (monetary):</strong> independent central bank, incremental, quick to change. <strong>Fiscal:</strong> can target sectors/regions, works in deep recession, direct effect of G on AD." },
+          { skill: "<strong>Automatic stabilisers:</strong> progressive taxes and unemployment benefits move the budget towards deficit in a recession and towards surplus in a boom - with no new decision.", paper: "P2",
+            q: "During a recession, which change in the budget happens automatically?", options: ["Tax revenue falls and spending on unemployment benefits rises", "Tax revenue rises and spending on benefits falls", "The central bank cuts interest rates", "The government announces a new infrastructure programme"], answer: 0, why: "Lower incomes mean less tax is paid and more people claim benefits, cushioning the fall in AD." },
         ],
         concepts: [
-          { h: "Demand for and supply of money", b: "<p>In the money market the <strong>supply of money</strong> is drawn as a vertical line because it is fixed by the central bank, and the <strong>demand for money</strong> slopes downward because at lower interest rates the opportunity cost of holding money (instead of interest-bearing assets) is lower. The equilibrium interest rate is where they meet. Buying bonds, lowering the reserve requirement or quantitative easing shift the money supply right and lower interest rates; the opposite actions raise them.</p>" },
           { h: "Government revenue and expenditure", b: "<p><strong>Revenue</strong>: direct taxes (income, corporate, wealth), indirect taxes (VAT/GST, excise), sale of goods and services, sale of state-owned assets. <strong>Expenditure</strong>: <strong>current</strong> (day-to-day items such as public-sector wages), <strong>capital</strong> (infrastructure, long-lasting assets) and <strong>transfer payments</strong> (pensions, unemployment benefits - not payment for output). The <strong>budget outcome</strong> is a deficit, surplus or balanced budget; persistent deficits add to government debt.</p>" },
         ],
       },
@@ -881,7 +884,44 @@
       // =====================================================================
       "econ-15": {
         frames: [
-          { title: "Tariff diagram: effects on stakeholders and welfare", star: true, paper: "P2", where: "Paper 2 · 4 marks · tariff diagram",
+          { id: "econ-15-q15", title: "Explain the benefits of international trade", paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Explain two benefits of international trade for an economy.",
+            marks: [
+              "benefit 1, e.g. __lower prices and greater choice__ for consumers",
+              "explained: imports from more efficient producers and stronger __competition__ lower prices and increase variety",
+              "benefit 2, e.g. __economies of scale__ / access to resources / more efficient allocation of resources (specialisation)",
+              "explained: selling to larger world markets lowers __average costs__ / countries specialise in what they produce relatively efficiently",
+            ],
+            model: "First, trade lowers prices and widens choice: consumers can buy goods from the most efficient producers worldwide, and import competition forces domestic firms to cut costs. Second, firms that export can sell to much larger markets and gain economies of scale, lowering their average costs, while countries can specialise in producing goods they make relatively efficiently, so resources are allocated more efficiently and total output rises.",
+            accept: "source of foreign exchange; diffusion of technology; access to raw materials; increased competition",
+            reject: "benefits stated without explanation",
+            tip: "每個好處都要「點解」：例如規模經濟 → 平均成本↓。" },
+          { id: "econ-15-q101", title: "Distinguish absolute and comparative advantage", star: true, paper: "P2", where: "Paper 2 · 2 marks",
+            q: "Distinguish between <em>absolute advantage</em> and <em>comparative advantage</em>.",
+            marks: ["absolute advantage: a country can produce __more of a good__ than another country with the same resources", "comparative advantage: a country can produce a good at a __lower opportunity cost__ than another country"],
+            model: "A country has an absolute advantage when it can produce more of a good than another country using the same resources, whereas it has a comparative advantage when it can produce the good at a lower opportunity cost than the other country.",
+            accept: "\"uses fewer resources to produce the same output\" for absolute advantage",
+            reject: "defining comparative advantage as \"producing more\" or \"producing more cheaply\" in money terms",
+            tip: "Absolute = 生產得多；comparative = 機會成本低。" },
+          { id: "econ-15-q102", title: "Calculate opportunity cost and identify comparative advantage", paper: "P2", where: "Paper 2 · 3 marks · data given",
+            q: "With the same resources, Country A can produce 20 tablets or 40 tonnes of coffee, and Country B can produce 10 tablets or 30 tonnes of coffee. Calculate the opportunity cost of one tablet in each country and identify which country has a comparative advantage in tablets.",
+            marks: [["M1", "Country A: 1 tablet costs 40 ÷ 20 = __2 tonnes of coffee__"], ["M2", "Country B: 1 tablet costs 30 ÷ 10 = __3 tonnes of coffee__"], ["A1", "Country A has the __lower opportunity cost__, so it has the comparative advantage in tablets (B in coffee)"]],
+            model: "In Country A one tablet costs 40/20 = 2 tonnes of coffee; in Country B it costs 30/10 = 3 tonnes. Country A has the lower opportunity cost, so it has a comparative advantage in tablets, while Country B has a comparative advantage in coffee (1/3 tablet per tonne compared with 1/2 in A).",
+            accept: "the comparative advantage in coffee stated for B as the consequence",
+            reject: "choosing A because it produces more of both goods (that is absolute advantage)",
+            tip: "OC of X = Y 放棄 ÷ X 得到。邊個 OC 低就專門做。" },
+        ],
+        mc: [
+          { id: "econ-15-q103", skill: "<strong>Comparative advantage in 20 seconds:</strong> divide to get the opportunity cost of one unit of a good in each country; the lower one specialises in it.", paper: "P2",
+            q: "Country X can produce 8 cars or 16 computers; Country Y can produce 4 cars or 12 computers. Which statement is correct?", options: ["X has a comparative advantage in cars", "Y has a comparative advantage in cars", "X has a comparative advantage in both goods", "Neither country gains from trade"], answer: 0, why: "OC of a car: X = 2 computers, Y = 3 computers, so X specialises in cars." },
+          { id: "econ-15-q104", skill: "<strong>Benefits of trade checklist:</strong> lower prices, greater choice, economies of scale, more competition and efficiency, access to resources and technology, a larger market for exporters.", paper: "P2",
+            q: "Which is a benefit of international trade for domestic consumers?", options: ["A wider choice of goods at lower prices", "Higher tariff revenue", "Protection of infant industries", "A higher domestic price for imports"], answer: 0, why: "Trade brings cheaper imports and more variety; B-D are effects of protection." },
+          { skill: "<strong>Free trade diagram:</strong> for an importing country, Pw is below the domestic equilibrium; consumption rises to Q₂, domestic output falls to Q₁ and imports = Q₁Q₂. Consumer surplus gains more than producer surplus loses." },
+        ],
+      },
+      "econ-15b": {
+        frames: [
+          { id: "econ-15-q12", title: "Tariff diagram: effects on stakeholders and welfare", star: true, paper: "P2", where: "Paper 2 · 4 marks · tariff diagram",
             q: "Using a tariff diagram, explain the effects of a tariff on domestic producers, the government and overall welfare.",
             marks: [
               ["Diagram", "domestic D and S, __Pw__ and __Pw + tariff__; quantities __Q₁-Q₄__; imports fall from Q₁Q₄ to Q₂Q₃", 1],
@@ -896,8 +936,7 @@
             accept: "labelling Sw and Sw + tariff as horizontal world supply curves",
             reject: "the world supply curve shifting up by anything other than the tariff; claiming imports rise",
             tip: "關稅圖：Q₁ 到 Q₄ 一定要標。c = 政府收入，b + d = 社會福利淨損失。" },
-
-          { title: "Quota diagram: effects on consumers and foreign producers", star: true, paper: "P2", where: "Paper 2 · 4 marks · quota diagram",
+          { id: "econ-15-q13", title: "Quota diagram: effects on consumers and foreign producers", star: true, paper: "P2", where: "Paper 2 · 4 marks · quota diagram",
             q: "Using a diagram, explain the effect of an import quota on consumers and on foreign producers.",
             marks: [
               ["Diagram", "domestic S + __quota__ curve parallel to S dom starting at Pw; new price P_q above Pw; imports limited to Q₂Q₃", 1],
@@ -911,8 +950,7 @@
             model: "A quota fixes the maximum quantity of imports. Total supply above Pw is now domestic supply plus the quota, so the price rises to Pq, where D meets S + quota. Consumers pay more and buy less (Q₄ to Q₃), losing consumer surplus. Domestic producers expand from Q₁ to Q₂. Foreign exporters or importers holding licences sell the quota quantity at the higher price, gaining area c (quota rent) - unlike a tariff, this area is not government revenue, though the volume of imports falls from Q₁Q₄ to Q₂Q₃.",
             reject: "showing government revenue from a quota (unless licences are auctioned); quota drawn as a vertical line through the whole diagram without explanation",
             tip: "配額同關稅最大分別：c 區唔係政府收入，而係外國生產者 / 持牌者嘅「配額租金」。" },
-
-          { title: "Production subsidy diagram: effects on imports and the government", paper: "P2", where: "Paper 2 · 4 marks · subsidy diagram",
+          { id: "econ-15-q14", title: "Production subsidy diagram: effects on imports and the government", paper: "P2", where: "Paper 2 · 4 marks · subsidy diagram",
             q: "Using a diagram, explain the effects of a production subsidy to domestic producers of an imported good.",
             marks: [
               ["Diagram", "domestic S shifts __down/right__ by the subsidy (S dom → S dom + subsidy); price stays at __Pw__; domestic output Q₁ → Q₂; consumption Q₄ unchanged", 1],
@@ -926,21 +964,29 @@
             model: "A subsidy per unit lowers domestic firms' costs, so domestic supply shifts down by the amount of the subsidy. Because the country is a price-taker, the price to consumers stays at Pw and consumption remains Q₄. Domestic output rises from Q₁ to Q₂ and imports fall from Q₁Q₄ to Q₂Q₄. The government pays the subsidy on every unit produced domestically, which must be financed through taxes or borrowing, and there is a welfare loss because higher-cost domestic production replaces cheaper imports. Domestic producers gain and foreign producers lose.",
             reject: "the price falling below Pw; consumers consuming less",
             tip: "生產補貼：消費者價格唔變（仍然係 Pw），只係本地產出↑、進口↓，政府要出錢。" },
-
-          { title: "Explain the benefits of international trade", paper: "P2", where: "Paper 2 · 4 marks",
-            q: "Explain two benefits of international trade for an economy.",
-            marks: [
-              "benefit 1, e.g. __lower prices and greater choice__ for consumers",
-              "explained: imports from more efficient producers and stronger __competition__ lower prices and increase variety",
-              "benefit 2, e.g. __economies of scale__ / access to resources / more efficient allocation of resources (specialisation)",
-              "explained: selling to larger world markets lowers __average costs__ / countries specialise in what they produce relatively efficiently",
-            ],
-            model: "First, trade lowers prices and widens choice: consumers can buy goods from the most efficient producers worldwide, and import competition forces domestic firms to cut costs. Second, firms that export can sell to much larger markets and gain economies of scale, lowering their average costs, while countries can specialise in producing goods they make relatively efficiently, so resources are allocated more efficiently and total output rises.",
-            accept: "source of foreign exchange; diffusion of technology; access to raw materials; increased competition",
-            reject: "benefits stated without explanation",
-            tip: "每個好處都要「點解」：例如規模經濟 → 平均成本↓。" },
-
-          { title: "Explain arguments against protectionism", paper: "P2", where: "Paper 2 · 4 marks",
+          { title: "Define a tariff / quota and distinguish them", star: true, paper: "P2", where: "Paper 2 · 2 marks",
+            q: "Distinguish between a <em>tariff</em> and an <em>import quota</em>.",
+            marks: ["a tariff is a __tax on imported goods__, which raises their price and earns revenue for the government", "a quota is a __physical limit on the quantity__ of a good that can be imported; it earns no tax revenue (quota rent goes to licence holders)"],
+            model: "A tariff is a tax on imported goods, which raises their domestic price and gives the government revenue, whereas an import quota is a legal limit on the quantity of a good that can be imported, which raises the domestic price by restricting supply but earns no tax revenue for the government.",
+            accept: "\"customs duty\" for tariff; \"maximum quantity of imports\" for quota",
+            reject: "\"a quota is a tax\"; \"a tariff is a limit on imports\"",
+            tip: "Tariff = 稅（政府有錢收）；quota = 數量上限（冇稅收）。" },
+        ],
+        mc: [
+          { id: "econ-15-q18", skill: "<strong>Tariff vs quota:</strong> both raise the domestic price and domestic output and cut imports; only the tariff gives the government revenue.",
+            q: "Which effect occurs with an import quota but NOT with a tariff?", options: ["The domestic price rises", "Domestic production increases", "Foreign exporters with licences gain quota rent", "Consumer surplus falls"], answer: 2, why: "With a quota the area that would be tariff revenue goes to licence holders as quota rent." },
+          { id: "econ-15-q19", skill: "<strong>Subsidy check:</strong> a production subsidy does NOT change the price consumers pay (still Pw) or the quantity they consume; only domestic output and imports change.",
+            q: "A production subsidy for domestic producers of an imported good will:", options: ["raise the price consumers pay", "reduce consumption", "reduce imports with consumption unchanged", "earn revenue for the government"], answer: 2, why: "Domestic supply rises at Pw; imports fall while consumption stays the same." },
+          { skill: "<strong>Export subsidies</strong> are payments to firms for each unit exported: they make exports cheaper abroad, can be challenged at the WTO, and cost the government money." },
+          { skill: "<strong>Administrative barriers</strong> (strict standards, slow customs, complex paperwork) protect domestic firms without a tariff - name one when asked for \"non-tariff barriers\"." },
+        ],
+        concepts: [
+          { h: "Export subsidies", b: "<p>An <strong>export subsidy</strong> is a payment by the government to domestic firms for each unit they export. It lowers the price of exports in world markets, increasing export volumes and the income of exporting firms. Costs: the government pays the subsidy (opportunity cost), consumers abroad gain while foreign producers lose, it can trigger retaliation, and it may breach WTO rules. Agricultural export subsidies in high-income countries have been criticised for depressing world prices and harming farmers in developing economies.</p>" },
+        ],
+      },
+      "econ-15c": {
+        frames: [
+          { id: "econ-15-q16", title: "Explain arguments against protectionism", paper: "P2", where: "Paper 2 · 4 marks",
             q: "Explain two arguments against the use of protectionist measures.",
             marks: [
               "argument 1, e.g. __retaliation__ by trading partners / trade wars",
@@ -952,8 +998,7 @@
             accept: "corruption / rent-seeking; reduced export competitiveness; harm to developing country exporters",
             reject: "two arguments that repeat the same idea",
             tip: "反對保護主義：報復、資源錯配、價格上升、輸入成本上升、缺乏競爭。" },
-
-          { title: "Evaluate a tariff on steel imports (Paper 2 final 15-mark question)", star: true, paper: "P2", where: "Paper 2 · 15 marks · use the text/data",
+          { id: "econ-15-q17", title: "Evaluate a tariff on steel imports (Paper 2 final 15-mark question)", star: true, paper: "P2", where: "Paper 2 · 15 marks · use the text/data",
             q: "<em>Data response.</em> Country S imposes a 25% tariff on imported steel. Domestic steel employs 80 000 workers, but car and construction firms that use steel employ 1.2 million. After the tariff, domestic steel prices rose by 18%, steel imports fell by 30%, and the country's two largest trading partners announced tariffs on its agricultural exports. Using information from the text/data and your knowledge of economics, evaluate the decision to impose the tariff.",
             marks: [
               ["Definitions", "define __tariff__ / protectionism", 2],
@@ -965,18 +1010,26 @@
             model: "Define a tariff and draw the diagram: price rises from Pw to Pw + t, domestic output rises, imports fall (30% in the data), the government gains revenue and there is a deadweight loss. Evaluate using the data: the 80 000 steel workers may keep their jobs, and steel may be strategic. But steel prices rose 18%, raising costs for car and construction firms employing 1.2 million, which may cut output or jobs and make their exports less competitive. Retaliation against agricultural exports harms farmers. In the long run protected steel firms may not become efficient. Conclude that the tariff probably reduces overall welfare unless it is temporary and linked to restructuring.",
             reject: "no use of the figures; no diagram",
             tip: "評價關稅：一定要比較受益者（鋼鐵業）同受害者（用鋼嘅行業、消費者、被報復嘅出口商）。" },
+          { title: "Explain the infant industry argument", star: true, paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Explain the infant industry argument for protection.",
+            marks: ["a new (infant) industry has __high average costs__ because it is small and lacks experience", "it cannot benefit from __economies of scale__ and cannot compete with established foreign firms", "__temporary protection__ (e.g. a tariff) gives it time to grow and lower its costs", "once it is competitive the protection should be __removed__"],
+            model: "An infant industry is a new domestic industry that has high average costs because it is still small, lacks experience and cannot yet exploit economies of scale, so it cannot compete with established foreign producers. Temporary protection, such as a tariff or subsidy, allows it to grow, gain economies of scale and lower its costs until it can compete, after which the protection should be removed.",
+            accept: "\"learning by doing\"; a subsidy as the form of protection",
+            reject: "\"protecting jobs\" without reference to costs and economies of scale",
+            tip: "Infant industry 重點：economies of scale + 暫時保護 + 之後要撤。" },
+          { title: "Explain the anti-dumping argument", paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Explain why a government might use protection against dumping.",
+            marks: ["dumping is selling goods abroad at a price __below the cost of production__ / below the home price", "it may be subsidised by the foreign government or used to __drive domestic firms out__ of the market", "domestic firms lose sales, profits and jobs, even if they are efficient", "an __anti-dumping duty__ raises the import price to a fair level; it is allowed under WTO rules"],
+            model: "Dumping occurs when foreign firms sell exports at a price below their cost of production or below their home-market price, often helped by government subsidies. This is unfair competition that can drive efficient domestic firms out of business, after which the foreign firm may raise prices. An anti-dumping duty raises the price of the dumped imports, protecting domestic producers and jobs, and is permitted by the WTO.",
+            accept: "\"predatory pricing in export markets\"",
+            reject: "treating any cheap import as dumping",
+            tip: "Dumping = 低過成本賣；唔係「平啲」就叫 dumping。" },
         ],
         mc: [
-          { skill: "<strong>Tariff vs quota:</strong> both raise the domestic price and domestic output and cut imports; only the tariff gives the government revenue.",
-            q: "Which effect occurs with an import quota but NOT with a tariff?", options: ["The domestic price rises", "Domestic production increases", "Foreign exporters with licences gain quota rent", "Consumer surplus falls"], answer: 2, why: "With a quota the area that would be tariff revenue goes to licence holders as quota rent." },
-          { skill: "<strong>Subsidy check:</strong> a production subsidy does NOT change the price consumers pay (still Pw) or the quantity they consume; only domestic output and imports change.",
-            q: "A production subsidy for domestic producers of an imported good will:", options: ["raise the price consumers pay", "reduce consumption", "reduce imports with consumption unchanged", "earn revenue for the government"], answer: 2, why: "Domestic supply rises at Pw; imports fall while consumption stays the same." },
-          { skill: "<strong>Export subsidies</strong> are payments to firms for each unit exported: they make exports cheaper abroad, can be challenged at the WTO, and cost the government money." },
-          { skill: "<strong>Administrative barriers</strong> (strict standards, slow customs, complex paperwork) protect domestic firms without a tariff - name one when asked for \"non-tariff barriers\"." },
           { skill: "<strong>Arguments for protection in one breath:</strong> infant industry, national security, employment, anti-dumping, health/safety/environmental standards, revenue, diversification, balance of payments." },
-        ],
-        concepts: [
-          { h: "Export subsidies", b: "<p>An <strong>export subsidy</strong> is a payment by the government to domestic firms for each unit they export. It lowers the price of exports in world markets, increasing export volumes and the income of exporting firms. Costs: the government pays the subsidy (opportunity cost), consumers abroad gain while foreign producers lose, it can trigger retaliation, and it may breach WTO rules. Agricultural export subsidies in high-income countries have been criticised for depressing world prices and harming farmers in developing economies.</p>" },
+          { skill: "<strong>Arguments against protection:</strong> higher prices for consumers, inefficiency and less innovation, retaliation and trade wars, higher costs for firms using imported inputs, misallocation of resources away from comparative advantage.", paper: "P2",
+            q: "A country imposes a tariff on imported steel. Which group is most likely to LOSE?", options: ["Domestic car makers that use steel", "Domestic steel producers", "The government", "Workers in domestic steel mills"], answer: 0, why: "Car makers pay more for an input, raising their costs; B, C and D gain." },
+          { skill: "<strong>Retaliation logic:</strong> barriers abroad → exporters lose markets → export jobs fall; a trade war can leave both countries worse off than under free trade." },
         ],
       },
 
@@ -1069,7 +1122,7 @@
       // =====================================================================
       "econ-17": {
         frames: [
-          { title: "Exchange rate diagram: fall in demand for a currency", star: true, paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
+          { id: "econ-17-q13", title: "Exchange rate diagram: fall in demand for a currency", star: true, paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
             q: "Using an exchange rate diagram, explain how a fall in foreign demand for a country's exports affects the value of its currency (the peso).",
             marks: [
               ["Diagram", "axes __price of peso in foreign currency (e.g. US$ per peso)__ and __quantity of pesos__; D shifts left; exchange rate falls e₁ → e₂", 1],
@@ -1084,8 +1137,7 @@
             model: "To buy the country's exports, foreigners must buy pesos, so demand for pesos comes from foreign buyers of exports. If demand for exports falls, fewer pesos are demanded at every exchange rate and the demand curve shifts left from D₁ to D₂. With a floating exchange rate the peso depreciates from e₁ to e₂ US$ per peso.",
             reject: "axes labelled price and quantity; shifting the supply of pesos for a change in exports; calling it a devaluation in a floating system",
             tip: "出口 → 外國人要買本幣 → 影響「本幣需求」。進口 → 本國人要賣本幣 → 影響「本幣供應」。" },
-
-          { title: "Exchange rate diagram: higher domestic inflation", paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
+          { id: "econ-17-q14", title: "Exchange rate diagram: higher domestic inflation", paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
             q: "Using an exchange rate diagram, explain how inflation that is higher than in trading partners is likely to affect a country's floating exchange rate.",
             marks: [
               ["Diagram", "__supply of the currency shifts right__ (and/or demand shifts left); exchange rate falls", 1],
@@ -1101,8 +1153,7 @@
             accept: "showing both the demand and supply shifts",
             reject: "appreciation; shifting only demand to the right",
             tip: "相對通脹高 → 本國貨唔吸引 → 多買進口（本幣供應↑）+ 少出口（本幣需求↓）→ 貶值。" },
-
-          { title: "Maintaining a fixed exchange rate", paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
+          { id: "econ-17-q15", title: "Maintaining a fixed exchange rate", paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
             q: "Using an exchange rate diagram, explain how a central bank could maintain a fixed exchange rate when demand for its currency falls.",
             marks: [
               ["Diagram", "fixed rate as a horizontal line; D shifts left creating __excess supply__ of the currency at the fixed rate", 1],
@@ -1117,8 +1168,7 @@
             model: "At the fixed exchange rate, a fall in demand from D₁ to D₂ means the quantity of currency supplied exceeds the quantity demanded, which would push the rate below the peg. To defend it the central bank buys its own currency in the foreign exchange market, paying with foreign currency reserves, which shifts demand back to D₁. It can also raise interest rates to attract capital inflows. Both methods have limits: reserves run out and higher interest rates reduce AD.",
             reject: "the central bank selling its own currency to support it",
             tip: "要撐住匯率：央行用外匯儲備買入本幣，或者加息吸引資金流入。" },
-
-          { title: "Calculate exchange rate effects on prices", star: true, hl: true, paper: "P3", where: "Paper 3 / Paper 2 (HL) · 3 marks · exchange rates given",
+          { id: "econ-17-q16", title: "Calculate exchange rate effects on prices", star: true, hl: true, paper: "P3", where: "Paper 3 / Paper 2 (HL) · 3 marks · exchange rates given",
             q: "The exchange rate changes from US$1 = ¥140 to US$1 = ¥150. A Japanese car is priced at ¥4 500 000. Calculate the percentage change in the US$ price of the car.",
             marks: [
               ["M1", "before: 4 500 000 ÷ 140 = $32 142.86"],
@@ -1130,44 +1180,7 @@
             accept: "−6.7%",
             reject: "multiplying the yen price by the exchange rate; +7.1% (percentage change in the exchange rate itself)",
             tip: "外幣價 = 本幣價 ÷ 匯率（每 1 美元換幾多日圓）。先判斷乘定除：答案要合理。" },
-
-          { title: "Calculate the current account balance", hl: true, paper: "P3", where: "Paper 3 / Paper 2 (HL) · 3 marks · balance of payments table",
-            q: "A country's balance of payments data (US$ billion): exports of goods 320, imports of goods 365, exports of services 140, imports of services 95, primary income −22, secondary income −6. Calculate the current account balance.",
-            marks: [
-              ["M1", "trade in goods = 320 − 365 = −45"],
-              ["M1", "trade in services = 140 − 95 = +45"],
-              ["A1", "current account = −45 + 45 − 22 − 6 = −28 (a deficit of $28 billion)"],
-            ],
-            numeric: { value: -28, tol: 0.5 },
-            model: "Balance of trade in goods = 320 − 365 = −45; services = 140 − 95 = +45; current account = −45 + 45 + (−22) + (−6) = −$28 bn, a current account deficit.",
-            accept: "\"deficit of $28 bn\"",
-            reject: "adding financial account items such as FDI; ignoring the sign of income flows",
-            tip: "經常帳 = 貨物貿易 + 服務貿易 + 初次收入 + 二次收入。FDI 係金融帳，唔好加入去。" },
-
-          { title: "Explain the relationship between the current and financial accounts", star: true, paper: "P2", where: "Paper 2 · 2-4 marks",
-            q: "Explain why a country with a current account deficit must have a surplus on its capital and financial accounts.",
-            marks: [
-              "the balance of payments must __balance__: current + capital + financial accounts (+ errors and omissions) = 0",
-              "a current account deficit means the country spends more foreign currency than it earns; this must be financed by __net inflows__ (borrowing from abroad, FDI, portfolio inflows, or using __reserve assets__) recorded as a surplus on the capital/financial accounts",
-            ],
-            model: "The balance of payments is an accounting identity: the current, capital and financial accounts (with errors and omissions) sum to zero. A current account deficit means more money flows out for imports and income payments than flows in, so the difference must be financed by net inflows of capital - foreign borrowing, inward FDI or portfolio investment, or a run-down of reserves - which appear as a surplus on the capital and financial accounts.",
-            reject: "\"the government must pay the deficit\"; confusing it with the budget deficit",
-            tip: "國際收支一定平衡：經常帳赤字 = 資本帳 + 金融帳盈餘（借錢或者資產流入）。" },
-
-          { title: "Methods to correct a current account deficit", paper: "P2", where: "Paper 2 · 4 marks",
-            q: "Distinguish between expenditure-switching and expenditure-reducing policies to correct a persistent current account deficit.",
-            marks: [
-              "__expenditure-switching__ policies aim to switch spending from __imports to domestically produced goods__",
-              "e.g. protectionism (tariffs, quotas) or a __depreciation/devaluation__ that makes imports dearer and exports cheaper",
-              "__expenditure-reducing__ policies reduce total spending / AD, including spending on imports",
-              "e.g. __contractionary fiscal or monetary policy__ - reducing income lowers imports but also reduces growth and employment",
-            ],
-            model: "Expenditure-switching policies change the relative prices of imports and domestic goods so that spending switches towards domestic output, e.g. tariffs or a devaluation. Expenditure-reducing policies lower overall spending through contractionary fiscal or monetary policy; because imports depend on income, import spending falls, but output and employment fall too. Supply-side policies improving competitiveness are a longer-term alternative.",
-            accept: "supply-side policies as a third, long-run method",
-            reject: "\"expenditure-reducing means cutting government spending only\" without the link to imports",
-            tip: "轉換開支（貶值、保護主義）vs 減少開支（緊縮政策）。長遠要靠供給面提升競爭力。" },
-
-          { title: "Evaluate fixed versus floating exchange rates (Paper 1 part b)", paper: "P1", where: "Paper 1(b) · 15 marks",
+          { id: "econ-17-q20", title: "Evaluate fixed versus floating exchange rates (Paper 1 part b)", paper: "P1", where: "Paper 1(b) · 15 marks",
             q: "Evaluate the view that a fixed exchange rate system is better than a floating exchange rate system for a developing economy.",
             marks: [
               ["Definitions", "define __fixed__ and __floating__ exchange rates", 2],
@@ -1181,13 +1194,62 @@
             tip: "固定匯率：穩定但要大量儲備 + 失去貨幣政策自主；浮動：自動調整但波動大。結論可以話 managed float。" },
         ],
         mc: [
-          { skill: "<strong>Demand or supply of the currency?</strong> Exports, inward FDI, inbound tourism, hot money in → demand. Imports, outward investment, residents travelling abroad → supply.",
+          { id: "econ-17-q21", skill: "<strong>Demand or supply of the currency?</strong> Exports, inward FDI, inbound tourism, hot money in → demand. Imports, outward investment, residents travelling abroad → supply.",
             q: "An increase in the number of tourists from abroad visiting Thailand will:", options: ["increase the supply of baht", "increase the demand for baht", "decrease the demand for baht", "have no effect on the baht"], answer: 1, why: "Tourists must buy baht to spend in Thailand." },
           { skill: "<strong>Appreciation/depreciation</strong> (floating) vs <strong>revaluation/devaluation</strong> (fixed, by the government/central bank). Use the right word for the system in the question." },
-          { skill: "<strong>Account sort:</strong> goods, services, primary income (wages, interest, profits), secondary income (remittances, transfers) = current account; FDI, portfolio investment, reserve assets = financial account.",
-            q: "Profits sent home by a foreign-owned factory are recorded in the:", options: ["financial account", "capital account", "current account (primary income)", "current account (secondary income)"], answer: 2, why: "Profits are income from investment: primary income." },
           { skill: "<strong>Conversion sense check:</strong> if US$1 = ¥150, a dollar price is always a much smaller number than the yen price - divide yen by 150.", hl: true },
+        ],
+      },
+      "econ-17b": {
+        frames: [
+          { id: "econ-17-q17", title: "Calculate the current account balance", hl: true, paper: "P3", where: "Paper 3 / Paper 2 (HL) · 3 marks · balance of payments table",
+            q: "A country's balance of payments data (US$ billion): exports of goods 320, imports of goods 365, exports of services 140, imports of services 95, primary income −22, secondary income −6. Calculate the current account balance.",
+            marks: [
+              ["M1", "trade in goods = 320 − 365 = −45"],
+              ["M1", "trade in services = 140 − 95 = +45"],
+              ["A1", "current account = −45 + 45 − 22 − 6 = −28 (a deficit of $28 billion)"],
+            ],
+            numeric: { value: -28, tol: 0.5 },
+            model: "Balance of trade in goods = 320 − 365 = −45; services = 140 − 95 = +45; current account = −45 + 45 + (−22) + (−6) = −$28 bn, a current account deficit.",
+            accept: "\"deficit of $28 bn\"",
+            reject: "adding financial account items such as FDI; ignoring the sign of income flows",
+            tip: "經常帳 = 貨物貿易 + 服務貿易 + 初次收入 + 二次收入。FDI 係金融帳，唔好加入去。" },
+          { id: "econ-17-q18", title: "Explain the relationship between the current and financial accounts", star: true, paper: "P2", where: "Paper 2 · 2-4 marks",
+            q: "Explain why a country with a current account deficit must have a surplus on its capital and financial accounts.",
+            marks: [
+              "the balance of payments must __balance__: current + capital + financial accounts (+ errors and omissions) = 0",
+              "a current account deficit means the country spends more foreign currency than it earns; this must be financed by __net inflows__ (borrowing from abroad, FDI, portfolio inflows, or using __reserve assets__) recorded as a surplus on the capital/financial accounts",
+            ],
+            model: "The balance of payments is an accounting identity: the current, capital and financial accounts (with errors and omissions) sum to zero. A current account deficit means more money flows out for imports and income payments than flows in, so the difference must be financed by net inflows of capital - foreign borrowing, inward FDI or portfolio investment, or a run-down of reserves - which appear as a surplus on the capital and financial accounts.",
+            reject: "\"the government must pay the deficit\"; confusing it with the budget deficit",
+            tip: "國際收支一定平衡：經常帳赤字 = 資本帳 + 金融帳盈餘（借錢或者資產流入）。" },
+          { id: "econ-17-q19", title: "Methods to correct a current account deficit", paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Distinguish between expenditure-switching and expenditure-reducing policies to correct a persistent current account deficit.",
+            marks: [
+              "__expenditure-switching__ policies aim to switch spending from __imports to domestically produced goods__",
+              "e.g. protectionism (tariffs, quotas) or a __depreciation/devaluation__ that makes imports dearer and exports cheaper",
+              "__expenditure-reducing__ policies reduce total spending / AD, including spending on imports",
+              "e.g. __contractionary fiscal or monetary policy__ - reducing income lowers imports but also reduces growth and employment",
+            ],
+            model: "Expenditure-switching policies change the relative prices of imports and domestic goods so that spending switches towards domestic output, e.g. tariffs or a devaluation. Expenditure-reducing policies lower overall spending through contractionary fiscal or monetary policy; because imports depend on income, import spending falls, but output and employment fall too. Supply-side policies improving competitiveness are a longer-term alternative.",
+            accept: "supply-side policies as a third, long-run method",
+            reject: "\"expenditure-reducing means cutting government spending only\" without the link to imports",
+            tip: "轉換開支（貶值、保護主義）vs 減少開支（緊縮政策）。長遠要靠供給面提升競爭力。" },
+          { title: "Calculate the current account balance", star: true, paper: "P2", where: "Paper 2 · 2 marks · data given",
+            q: "Country K (US$ billion): exports of goods 150, imports of goods 180, exports of services 50, imports of services 35, net primary income −10, net secondary income +6. Calculate the current account balance.",
+            marks: [["M1", "trade in goods = 150 − 180 = −30; trade in services = 50 − 35 = +15"], ["A1", "current account = −30 + 15 − 10 + 6 = __−19__ (a deficit of US$19 billion)"]],
+            numeric: { value: -19, tol: 0.05 },
+            model: "Balance of trade in goods = 150 − 180 = −30 and balance of trade in services = 50 − 35 = +15. Adding net primary income (−10) and net secondary income (+6), the current account balance = −30 + 15 − 10 + 6 = −19, a deficit of US$19 billion.",
+            accept: "\"deficit of 19 billion\"",
+            reject: "using only trade in goods; adding financial account items",
+            tip: "Current account = goods + services + primary + secondary，記住帶正負號。" },
+        ],
+        mc: [
+          { id: "econ-17-q22", skill: "<strong>Account sort:</strong> goods, services, primary income (wages, interest, profits), secondary income (remittances, transfers) = current account; FDI, portfolio investment, reserve assets = financial account.",
+            q: "Profits sent home by a foreign-owned factory are recorded in the:", options: ["financial account", "capital account", "current account (primary income)", "current account (secondary income)"], answer: 2, why: "Profits are income from investment: primary income." },
           { skill: "<strong>Current account surplus</strong> is not automatically good: it can mean low domestic consumption, appreciation pressure and retaliation from trading partners." },
+          { skill: "<strong>BoP identity:</strong> current + capital + financial (+ errors and omissions) = 0, so a current account deficit must be matched by a capital + financial surplus.", paper: "P2",
+            q: "A country has a current account deficit of $30 bn and a capital account surplus of $2 bn. Ignoring errors and omissions, its financial account balance is:", options: ["+$28 bn", "−$28 bn", "+$32 bn", "−$32 bn"], answer: 0, why: "−30 + 2 + F = 0, so F = +28 bn." },
         ],
         concepts: [
           { h: "Correcting current account deficits; consequences of surpluses", b: "<p>Causes of a persistent <strong>current account deficit</strong>: low competitiveness, strong domestic demand, an overvalued currency, high income outflows. Consequences: financing by borrowing or selling assets (rising foreign debt, foreign ownership), downward pressure on the currency, higher interest rates to attract capital. Correction methods: <strong>expenditure-switching</strong> (depreciation/devaluation, protectionism), <strong>expenditure-reducing</strong> (contractionary fiscal and monetary policy) and <strong>supply-side</strong> policies that raise competitiveness in the long run.</p><p>A persistent <strong>current account surplus</strong> can mean low domestic consumption, appreciation pressure on the currency, lower export competitiveness over time, and tension or retaliation from deficit trading partners.</p>" },
@@ -1317,7 +1379,7 @@
       // =====================================================================
       "econ-18": {
         frames: [
-          { title: "Distinguish between economic growth and economic development", star: true, paper: "P2", where: "Paper 2 · 2 marks",
+          { id: "econ-18-q13", title: "Distinguish between economic growth and economic development", star: true, paper: "P2", where: "Paper 2 · 2 marks",
             q: "Distinguish between economic growth and economic development.",
             marks: [
               "economic growth is an __increase in real GDP__ (real output/income) over time",
@@ -1326,8 +1388,38 @@
             model: "Economic growth is an increase in real GDP (the output of goods and services) over time. Economic development is a broader process involving improvements in the standard of living, such as reduced poverty and inequality, better health, education and access to basic services, and greater freedom and choice. Growth can occur without development if its benefits are not widely shared.",
             reject: "using the terms as synonyms; defining development only as \"more income\"",
             tip: "增長 = 實質 GDP 上升（數量）；發展 = 生活質素全面改善（多方面）。" },
-
-          { title: "Interpret the HDI and the GNI per capita rank minus HDI rank", star: true, paper: "P2", where: "Paper 2 · 3 marks · data table",
+          { id: "econ-18-q102", title: "Define sustainable development", star: true, paper: "P2", where: "Paper 2 · 2 marks",
+            q: "Define <em>sustainable development</em>.",
+            marks: ["development that __meets the needs of the present generation__", "__without compromising the ability of future generations__ to meet their own needs"],
+            model: "Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.",
+            accept: "reference to economic, social and environmental dimensions",
+            reject: "\"growth that lasts\" or \"environmentally friendly growth\" without the future generations idea",
+            tip: "一定要寫 future generations：唔犧牲下一代。" },
+          { id: "econ-18-q103", title: "Explain why growth may not be sustainable", paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Explain why high rates of economic growth may not lead to sustainable development.",
+            marks: ["growth may __deplete natural capital__ (deforestation, overfishing, non-renewable resources)", "it can create __negative externalities__ such as pollution and climate change", "the benefits may be __unequally distributed__, so poverty and inequality remain (not inclusive)", "so future generations may be __less able to meet their needs__"],
+            model: "Rapid growth often uses up natural capital such as forests, fish stocks and minerals faster than it can be renewed, and creates negative externalities such as air pollution and greenhouse gas emissions. Its benefits may also go mainly to richer groups, leaving poverty high. These costs reduce the ability of future generations to meet their needs, so growth may not be sustainable development.",
+            accept: "reference to the doughnut model's ecological ceiling",
+            reject: "\"growth is bad\" without explanation",
+            tip: "三個角度：環境（natural capital）、社會（inclusive）、未來世代。" },
+          { id: "econ-18-q104", title: "Outline the Sustainable Development Goals", paper: "P2", where: "Paper 2 · 2 marks",
+            q: "Outline the role of the United Nations Sustainable Development Goals (SDGs).",
+            marks: ["17 goals agreed by UN members in __2015__ to be achieved by __2030__", "they set measurable targets (e.g. ending extreme poverty, quality education, climate action) to __guide policy and measure progress__"],
+            model: "The SDGs are 17 goals agreed by the United Nations in 2015 for 2030, such as no poverty, zero hunger, quality education and climate action. They give governments and aid agencies shared, measurable targets for sustainable development and a way to track progress.",
+            accept: "any two named goals",
+            reject: "confusing SDGs with the HDI",
+            tip: "SDGs：17 個目標，2015 年定，2030 年達成。" },
+        ],
+        mc: [
+          { skill: "<strong>Sustainable development</strong> = meets present needs without compromising future generations' ability to meet theirs. Link answers to the SDGs where relevant." },
+          { id: "econ-18-q105", skill: "<strong>Growth vs development:</strong> growth = rise in real GDP; development = broader rise in well-being (health, education, freedom, lower poverty). Growth can happen without development.", paper: "P2",
+            q: "Which change is evidence of economic development rather than only economic growth?", options: ["A fall in the infant mortality rate", "A rise in real GDP", "A rise in exports of oil", "An increase in the size of the labour force"], answer: 0, why: "Lower infant mortality shows better health and living standards; the others are output measures." },
+          { skill: "<strong>Three pillars:</strong> sustainable development balances economic (growth, jobs), social (equity, health, education) and environmental (natural capital) goals." },
+        ],
+      },
+      "econ-18b": {
+        frames: [
+          { id: "econ-18-q14", title: "Interpret the HDI and the GNI per capita rank minus HDI rank", star: true, paper: "P2", where: "Paper 2 · 3 marks · data table",
             q: "Country A is ranked 45th in the world for GNI per capita and 30th for HDI. Country B is ranked 40th for GNI per capita and 62nd for HDI. Explain what these rankings suggest about the two countries.",
             marks: [
               "the HDI combines __health__ (life expectancy), __education__ (expected and mean years of schooling) and __standard of living__ (GNI per capita at PPP)",
@@ -1338,8 +1430,7 @@
             accept: "\"positive difference = good conversion of income into well-being\"",
             reject: "saying a higher rank number means a better position",
             tip: "GNI 排名 − HDI 排名：正數 = 將收入轉化成健康教育做得好；負數 = 做得差。" },
-
-          { title: "Explain limitations of the HDI", paper: "P2", where: "Paper 2 · 4 marks",
+          { id: "econ-18-q15", title: "Explain limitations of the HDI", paper: "P2", where: "Paper 2 · 4 marks",
             q: "Explain two limitations of the Human Development Index (HDI) as a measure of economic development.",
             marks: [
               "the HDI is an __average__ and does not show __inequality__ in income, health or education",
@@ -1350,8 +1441,32 @@
             model: "First, the HDI uses national averages, so it hides inequality: a country where a rich minority has very high incomes and long life expectancy may score well even if many people are deprived; the inequality-adjusted HDI addresses this. Second, it covers only three dimensions and ignores gender inequality, environmental damage, political freedoms and the quality (not just quantity) of schooling, so it gives an incomplete picture.",
             reject: "\"the HDI only measures income\"",
             tip: "HDI 缺點：只係平均數（睇唔到不平等）、只得三個維度。可以提 IHDI、GII、MPI 作補充。" },
-
-          { title: "Explain the poverty trap as a barrier to development", paper: "P2", where: "Paper 2 · 4 marks",
+          { title: "Distinguish single and composite indicators", star: true, paper: "P2", where: "Paper 2 · 2 marks",
+            q: "Distinguish between a single indicator and a composite indicator of economic development.",
+            marks: ["a single indicator measures __one aspect__ of development (e.g. GNI per capita, life expectancy, literacy rate)", "a composite indicator __combines several indicators__ into one index (e.g. HDI = health, education and income)"],
+            model: "A single indicator measures only one dimension of development, such as GNI per capita or the infant mortality rate, whereas a composite indicator combines several indicators into a single index, such as the HDI, which combines life expectancy, years of schooling and GNI per capita.",
+            accept: "IHDI, GII or MPI as examples of composite indicators",
+            reject: "giving GDP as a composite indicator",
+            tip: "Single = 一樣嘢；composite = 幾樣夾埋（HDI）。" },
+          { title: "Explain two strengths of the HDI", paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Explain two reasons why the HDI is a better measure of economic development than GNI per capita.",
+            marks: ["the HDI includes __health__ (life expectancy at birth), not only income", "so it reflects whether income is turned into longer, healthier lives", "it includes __education__ (mean and expected years of schooling)", "so it captures human capital and opportunities that GNI per capita ignores"],
+            model: "GNI per capita measures only average income. The HDI also includes life expectancy at birth, showing whether people live longer, healthier lives, and mean and expected years of schooling, showing access to education. It therefore gives a broader picture of living standards and allows countries with similar incomes but different health and education outcomes to be compared.",
+            accept: "\"composite measure\"; GNI uses PPP within the HDI",
+            reject: "\"HDI includes inequality\" (that is the IHDI)",
+            tip: "HDI = 壽命 + 讀書 + 荷包，比淨係睇收入全面。" },
+        ],
+        mc: [
+          { id: "econ-18-q20", skill: "<strong>HDI components:</strong> life expectancy at birth, expected and mean years of schooling, GNI per capita (PPP). No Gini, no pollution, no gender measure.",
+            q: "Which indicator is NOT part of the HDI?", options: ["Mean years of schooling", "Life expectancy at birth", "GNI per capita (PPP)", "Infant mortality rate"], answer: 3, why: "Infant mortality is a single health indicator, not one of the HDI components." },
+          { skill: "<strong>Other composite indices:</strong> IHDI (HDI adjusted for inequality), GII (gender inequality), MPI (multidimensional poverty). Match the index to what the question is about." },
+          { skill: "<strong>HDI-IHDI gap:</strong> the bigger the fall from HDI to IHDI, the more unequal the distribution of health, education and income.", paper: "P2",
+            q: "Country X has an HDI of 0.80 and an IHDI of 0.60. This shows that:", options: ["inequality reduces its human development by 25%", "its income per capita is falling", "its HDI is overstated by 0.60", "it has no inequality in education"], answer: 0, why: "(0.80 − 0.60)/0.80 = 25% loss due to inequality." },
+        ],
+      },
+      "econ-18c": {
+        frames: [
+          { id: "econ-18-q16", title: "Explain the poverty trap as a barrier to development", paper: "P2", where: "Paper 2 · 4 marks",
             q: "Explain how the poverty cycle (poverty trap) can act as a barrier to economic development.",
             marks: [
               "low incomes mean households and the economy have __low savings__",
@@ -1363,8 +1478,32 @@
             accept: "a cycle diagram drawn and explained",
             reject: "listing barriers without explaining the cycle",
             tip: "貧窮陷阱四步：低收入 → 低儲蓄 → 低投資 → 低生產力 → 低收入。" },
-
-          { title: "Explain export promotion as a growth strategy", paper: "P2", where: "Paper 2 · 4 marks",
+          { title: "Explain how weak institutions and corruption act as barriers", star: true, paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Explain how corruption and weak institutions can act as a barrier to economic growth and development.",
+            marks: ["weak property rights and legal systems make investment __risky__", "so domestic and foreign firms __invest less__ (lower FDI, capital flight)", "corruption __diverts public funds__ from health, education and infrastructure", "so human capital and productivity stay low, slowing growth and development"],
+            model: "Where property rights are insecure and courts unreliable, investors face high risks, so domestic and foreign investment fall and capital may leave the country. Corruption diverts tax revenue and aid away from schools, hospitals and roads into private hands, so human capital and infrastructure remain poor. Both reduce productivity and so limit growth and development.",
+            accept: "bribery raising business costs; political instability",
+            reject: "naming corruption without explaining its effects",
+            tip: "Institutions → investment → productivity → development：要寫條鏈。" },
+          { title: "Explain how gender inequality is a barrier", paper: "P2", where: "Paper 2 · 4 marks",
+            q: "Explain how gender inequality can act as a barrier to economic development.",
+            marks: ["girls and women may have __less access to education__ and health care", "so a large part of the labour force has __low human capital__ and productivity", "women may be excluded from __credit, property ownership and formal jobs__", "so national output is lower and children's health and education also suffer (intergenerational effect)"],
+            model: "Where girls receive less schooling and women have less access to health care, credit, land and formal employment, the economy wastes the potential of half its population. Productivity and output are lower, and because educated mothers tend to have healthier, better-educated children, gender inequality also slows development in the next generation.",
+            accept: "reference to the Gender Inequality Index (GII)",
+            reject: "\"women are discriminated against\" without economic consequences",
+            tip: "Gender inequality → human capital 低 → 生產力低 → 下一代都受影響。" },
+        ],
+        mc: [
+          { skill: "<strong>Barriers checklist:</strong> poverty trap, inequality, weak institutions/corruption, poor infrastructure, low human capital, commodity dependence, informal economy, debt, geography, political instability." },
+          { skill: "<strong>Poverty trap chain:</strong> low income → low saving → low investment (physical and human capital) → low productivity → low income.", paper: "P2",
+            q: "Which is the best description of the poverty trap?", options: ["Low incomes lead to low saving and investment, which keep incomes low", "High inflation reduces real incomes", "Rising inequality raises the Gini coefficient", "Low tax revenue causes a budget deficit"], answer: 0, why: "The poverty trap is a self-reinforcing cycle of low income, saving and investment." },
+          { skill: "<strong>Commodity dependence:</strong> low PED and PES → volatile prices and export earnings; low YED → demand grows slowly; little value added; risk of Dutch disease.", paper: "P2",
+            q: "Why does dependence on primary commodity exports make export earnings unstable?", options: ["Demand and supply are price inelastic, so small shifts cause large price changes", "Commodities have high income elasticity of demand", "Commodity prices are fixed by the WTO", "Commodities are always subject to tariffs"], answer: 0, why: "Low PED and PES make prices, and so revenues, volatile." },
+        ],
+      },
+      "econ-18d": {
+        frames: [
+          { id: "econ-18-q17", title: "Explain export promotion as a growth strategy", paper: "P2", where: "Paper 2 · 4 marks",
             q: "Explain two advantages of an export promotion (export-led growth) strategy for a developing economy.",
             marks: [
               "access to large __world markets__ allows firms to gain __economies of scale__",
@@ -1376,8 +1515,7 @@
             accept: "attracting FDI; diversification of exports",
             reject: "advantages of import substitution",
             tip: "出口導向：規模經濟 + 外匯 + 競爭壓力。缺點：依賴外國需求、易受保護主義影響。" },
-
-          { title: "Distinguish types of foreign aid", paper: "P2", where: "Paper 2 · 2 marks",
+          { id: "econ-18-q18", title: "Distinguish types of foreign aid", paper: "P2", where: "Paper 2 · 2 marks",
             q: "Distinguish between humanitarian aid and development aid.",
             marks: [
               "__humanitarian aid__ is short-term emergency help (food, medical supplies, shelter) after disasters or conflict to relieve __immediate suffering__",
@@ -1387,8 +1525,7 @@
             accept: "tied aid as a feature of some development aid",
             reject: "\"humanitarian aid is from governments, development aid is from NGOs\"",
             tip: "人道援助 = 短期緊急；發展援助 = 長期建設。" },
-
-          { title: "Evaluate trade liberalisation as a development strategy (Paper 2 final 15-mark question)", star: true, paper: "P2", where: "Paper 2 · 15 marks · use the text/data",
+          { id: "econ-18-q19", title: "Evaluate trade liberalisation as a development strategy (Paper 2 final 15-mark question)", star: true, paper: "P2", where: "Paper 2 · 15 marks · use the text/data",
             q: "<em>Data response.</em> Country D's exports are 75% unprocessed coffee. Its average tariff is 18%, tariffs provide 25% of government revenue, 60% of workers are in agriculture, and a neighbouring country that liberalised trade attracted textile FDI and doubled manufacturing exports in ten years. Using information from the text/data and your knowledge of economics, evaluate the use of trade liberalisation to promote economic development in Country D.",
             marks: [
               ["Definitions", "define __trade liberalisation__ and __economic development__", 2],
@@ -1402,13 +1539,11 @@
             tip: "Paper 2 (h)：每個論點都要扣返數據（75% 咖啡、25% 政府收入），最後畀一個有條件嘅結論。" },
         ],
         mc: [
-          { skill: "<strong>HDI components:</strong> life expectancy at birth, expected and mean years of schooling, GNI per capita (PPP). No Gini, no pollution, no gender measure.",
-            q: "Which indicator is NOT part of the HDI?", options: ["Mean years of schooling", "Life expectancy at birth", "GNI per capita (PPP)", "Infant mortality rate"], answer: 3, why: "Infant mortality is a single health indicator, not one of the HDI components." },
-          { skill: "<strong>Other composite indices:</strong> IHDI (HDI adjusted for inequality), GII (gender inequality), MPI (multidimensional poverty). Match the index to what the question is about." },
-          { skill: "<strong>Strategy sorting:</strong> import substitution (protect domestic industry), export promotion (sell abroad), trade liberalisation, diversification, fair trade, FDI, aid, microfinance, debt relief, good governance, women's empowerment.",
+          { id: "econ-18-q21", skill: "<strong>Strategy sorting:</strong> import substitution (protect domestic industry), export promotion (sell abroad), trade liberalisation, diversification, fair trade, FDI, aid, microfinance, debt relief, good governance, women's empowerment.",
             q: "A government places high tariffs on manufactured imports so that domestic firms can produce them. This strategy is:", options: ["export promotion", "import substitution", "trade liberalisation", "fair trade"], answer: 1, why: "Domestic production replaces imports behind protective barriers." },
-          { skill: "<strong>Sustainable development</strong> = meets present needs without compromising future generations' ability to meet theirs. Link answers to the SDGs where relevant." },
-          { skill: "<strong>Barriers checklist:</strong> poverty trap, inequality, weak institutions/corruption, poor infrastructure, low human capital, commodity dependence, informal economy, debt, geography, political instability." },
+          { skill: "<strong>Market-oriented vs interventionist:</strong> trade liberalisation, FDI, privatisation and deregulation vs government provision of infrastructure, education, health, import substitution and industrial policy.", paper: "P2",
+            q: "Which is a market-oriented strategy for economic growth?", options: ["Trade liberalisation", "Import substitution behind high tariffs", "State provision of free primary education", "Nationalisation of key industries"], answer: 0, why: "Removing trade barriers relies on markets; B-D are interventionist." },
+          { skill: "<strong>Microfinance check:</strong> small loans without collateral → small businesses, especially for women → income and empowerment; limits: high interest rates, small scale, over-indebtedness." },
         ],
       },
     },
