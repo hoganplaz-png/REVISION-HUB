@@ -215,7 +215,8 @@ for (const s of IB.subjectList()) {
 const topicIds = new Set(IB.subjectList().flatMap((s) => s.allTopics.map((t) => t.id)));
 if (topicIds.size !== IB.subjectList().reduce((n, s) => n + s.allTopics.length, 0)) errors.push("duplicate topic ids");
 
-// question ids are saved in students' progress and mistakes, so a question keeps its id when it moves topic
+// hand-written question ids are saved in students' progress and mistakes, so a question keeps its id when it moves topic
+// (ids built from notes by bankbuild.js, -k/-c/-w/-g, follow their notes and are not listed)
 const known = JSON.parse(fs.readFileSync(path.join(root, "..", "..", "scripts", "question-ids.json"), "utf8"));
 for (const [sid, list] of Object.entries(known)) {
   const lost = list.filter((id) => !ids.has(id));
