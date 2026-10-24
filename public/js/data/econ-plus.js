@@ -39,9 +39,15 @@
       },
       "econ-2": {
         methods: ["<strong>Movement vs shift:</strong> own price change → movement (\"quantity demanded\"); anything else → shift (\"demand\").", "<strong>Diagram chain:</strong> which curve? → which direction? → new P and Q → explain the shortage/surplus that moves the price."],
-        traps: ["Saying \"demand increases\" when price falls - it's quantity demanded.", "Shifting both curves when only one is affected."],
+        traps: ["Saying \"demand increases\" when price falls - it's quantity demanded."],
         tips: ["Name the determinant precisely: \"a fall in the price of a complement\", not \"cheaper related goods\"."],
         diagrams: [sd("Increase in demand: D₁ → D₂, P and Q rise", { lines: [D(9, 1, "D₁"), { from: [2.5, 9.5], to: [9.5, 2.5], label: "D₂", color: "b" }, { from: [1, 1], to: [9, 9], label: "S", color: "c" }, { from: [0, 5], to: [5, 5], dash: true, color: "muted", label: "P₁", labelAt: "start" }, { from: [0, 6], to: [6, 6], dash: true, color: "muted", label: "P₂", labelAt: "start" }], points: [{ at: [5, 5] }, { at: [6, 6] }] })],
+      },
+      "econ-2b": {
+        methods: ["<strong>Supply chain of reasoning:</strong> name the determinant → say whether costs rise or fall → S shifts left/up or right/down → excess demand or supply at P₁ → new P₂ and Q₂.", "<strong>Tax and subsidy:</strong> shift S vertically by the amount per unit; the gap between the curves is the tax or subsidy."],
+        traps: ["Shifting both curves when only one is affected.", "Saying \"supply increases\" when price rises - it's an extension of quantity supplied.", "Saying a tax shifts supply \"down\": it raises costs, so S shifts up/left."],
+        tips: ["Name the cost precisely (\"higher wages\", \"a rise in the price of fertiliser\") and say it is a cost of production before shifting S."],
+        diagrams: [sd("Decrease in supply: S₁ → S₂, P rises and Q falls", { lines: [D(9, 1, "D"), { from: [1, 1], to: [9, 9], label: "S₁", color: "c" }, { from: [1, 3], to: [8, 10], label: "S₂", color: "b" }, { from: [0, 5], to: [5, 5], dash: true, color: "muted", label: "P₁", labelAt: "start" }, { from: [0, 6], to: [4, 6], dash: true, color: "muted", label: "P₂", labelAt: "start" }], points: [{ at: [5, 5] }, { at: [4, 6] }] })],
       },
       "econ-3": {
         methods: ["<strong>Price mechanism answers:</strong> use the three functions by name - signalling, incentive, rationing.", "<strong>Surplus calculations:</strong> area of triangle = ½ × base × height; identify the vertices from the diagram."],
@@ -55,12 +61,19 @@
         tips: ["Good examples: UK pension auto-enrolment, organ donation opt-out, calorie labelling, cafeteria layout."],
       },
       "econ-5": {
-        formulas: ["\\(PED = \\frac{\\%\\Delta Q_d}{\\%\\Delta P}\\)", "\\(YED = \\frac{\\%\\Delta Q_d}{\\%\\Delta Y}\\)", "\\(PES = \\frac{\\%\\Delta Q_s}{\\%\\Delta P}\\)", "\\(\\%\\Delta = \\frac{new - old}{old}\\times 100\\)"],
+        formulas: ["\\(PED = \\frac{\\%\\Delta Q_d}{\\%\\Delta P}\\)", "\\(YED = \\frac{\\%\\Delta Q_d}{\\%\\Delta Y}\\)", "\\(\\%\\Delta = \\frac{new - old}{old}\\times 100\\)"],
         table: { head: ["Value", "PED", "YED", "PES"], rows: [["> 1", "price elastic", "normal, luxury", "elastic"], ["0 to 1", "price inelastic", "normal, necessity", "inelastic"], ["< 0", "(ignore sign)", "inferior good", "-"]] },
-        methods: ["<strong>Calculation layout:</strong> formula → %ΔQ and %ΔP with signs → answer to 2 d.p. → interpret in words.", "<strong>Revenue test:</strong> inelastic → raise price raises TR; elastic → cut price raises TR.", "<strong>Primary commodities:</strong> low PED + low PES → large price swings from small shifts."],
+        methods: ["<strong>Calculation layout:</strong> formula → %ΔQ and %ΔP with signs → answer to 2 d.p. → interpret in words.", "<strong>Revenue test:</strong> inelastic → raise price raises TR; elastic → cut price raises TR."],
         traps: ["Giving elasticity units or a % sign.", "Using absolute changes instead of % changes.", "Calling YED of 0.6 a luxury (it's a necessity)."],
         tips: ["Link PED to tax incidence and revenue in policy essays."],
         diagrams: [sd("Inelastic demand: a big price rise, a small fall in Q", { lines: [{ from: [3, 9.5], to: [5, 0.5], label: "D (inelastic)" }, { from: [0, 3], to: [4.45, 3], dash: true, color: "muted", label: "P₁", labelAt: "start" }, { from: [0, 7], to: [3.55, 7], dash: true, color: "muted", label: "P₂", labelAt: "start" }] })],
+      },
+      "econ-5b": {
+        formulas: ["\\(PES = \\frac{\\%\\Delta Q_s}{\\%\\Delta P}\\)", "\\(PES = \\frac{\\%\\Delta Q_s}{\\%\\Delta P}\\)", "\\(\\%\\Delta = \\frac{new - old}{old}\\times 100\\)"],
+        methods: ["<strong>Primary commodities:</strong> low PED + low PES → large price swings from small shifts.", "<strong>PES determinants (時存閒流):</strong> time period, stocks of finished goods, spare capacity, mobility of factors - name one and link it to how fast output can change."],
+        traps: ["Calling PES negative - quantity supplied normally moves in the same direction as price.", "Saying a steep supply line through the origin is inelastic - every straight line through the origin has PES = 1."],
+        tips: ["Link PES to housing (inelastic, so prices rise when demand rises), commodity price volatility and the long run vs the short run."],
+        diagrams: [sd("Inelastic supply: a rise in demand mainly raises price", { lines: [D(8, 2, "D₁"), D(9.5, 3.5, "D₂", "b"), { from: [4, 0.5], to: [6, 9.5], label: "S (inelastic)", color: "c" }] })],
       },
       "econ-6": {
         methods: ["<strong>Tax diagram:</strong> S → S + tax (vertical distance = tax). Mark Pc, Pp, Qt; shade revenue (Pc − Pp) × Qt.", "<strong>Stakeholders:</strong> consumers, producers, workers, government, society - one sentence each with direction of effect."],
@@ -100,9 +113,14 @@
         diagrams: [{ title: "Lorenz curve: further from the diagonal = more inequality", x: [0, 100], y: [0, 100], origin: false, grid: false, xLabel: "% population", yLabel: "% income", lines: [{ from: [0, 0], to: [100, 100], label: "equality", color: "muted" }], curves: [{ f: (x) => 100 * Math.pow(x / 100, 2.2), label: "Lorenz", labelX: 70 }, { f: (x) => 100 * Math.pow(x / 100, 1.5), color: "b", dash: true, label: "after tax", labelX: 55 }] }],
       },
       "econ-13": {
-        methods: ["<strong>Transmission:</strong> interest rate → cost of borrowing / saving / mortgages / exchange rate → C, I, (X − M) → AD.", "<strong>Evaluate with time lags, confidence, debt, crowding out</strong> and the current interest rate level."],
-        traps: ["Calling interest-rate changes \"fiscal policy\".", "Forgetting the multiplier when explaining fiscal policy."],
+        methods: ["<strong>Transmission:</strong> interest rate → cost of borrowing / saving / mortgages / exchange rate → C, I, (X − M) → AD."],
+        traps: ["Calling interest-rate changes \"fiscal policy\"."],
         tips: ["Examples: US CARES Act 2020, ECB negative rates 2014-2022, Bank of England rate rises 2022-23."],
+      },
+      "econ-13b": {
+        methods: ["<strong>Evaluate with time lags, confidence, debt, crowding out</strong> and the current interest rate level.", "<strong>Fiscal transmission:</strong> G↑ adds directly to AD; tax cuts work through disposable income (C) and post-tax profits (I) → AD shifts right → multiplier → real GDP and employment rise.", "<strong>Budget calculations:</strong> budget balance = revenue − spending; deficit as % of GDP = deficit ÷ GDP × 100."],
+        traps: ["Forgetting the multiplier when explaining fiscal policy.", "Confusing the budget deficit (one year) with public debt (accumulated).", "Calling automatic stabilisers a new policy decision - they work without any decision."],
+        tips: ["Examples: US CARES Act 2020 (about $2.2 trillion), China's infrastructure stimulus 2008-09, UK furlough scheme 2020-21, Greek austerity 2010-15."],
       },
       "econ-14": {
         methods: ["<strong>Show both shifts</strong> for interventionist policies: AD right (short run) and LRAS right (long run)."],
@@ -110,21 +128,51 @@
         tips: ["Examples: India 1991 liberalisation, UK privatisation, Singapore SkillsFuture."],
       },
       "econ-15": {
-        methods: ["<strong>Comparative advantage:</strong> compute the opportunity cost of one unit of each good for both countries; lower OC wins.", "<strong>Tariff diagram:</strong> mark Q1-Q4; imports fall from Q1Q4 to Q2Q3; revenue rectangle; two welfare-loss triangles."],
-        traps: ["Confusing absolute with comparative advantage.", "Saying protection always protects jobs - retaliation can destroy export jobs."],
+        methods: ["<strong>Comparative advantage:</strong> compute the opportunity cost of one unit of each good for both countries; lower OC wins."],
+        traps: ["Confusing absolute with comparative advantage."],
+        tips: ["Benefits of trade examples: Vietnam's electronics exports, Chile's copper and fruit, the EU single market; WTO membership of China (2001)."],
+      },
+      "econ-15b": {
+        methods: ["<strong>Tariff diagram:</strong> mark Q1-Q4; imports fall from Q1Q4 to Q2Q3; revenue rectangle; two welfare-loss triangles.", "<strong>Compare the tools:</strong> tariff (price up, government revenue), quota (price up, quota rent to licence holders), production subsidy (price unchanged, government pays), export subsidy (cheaper exports abroad), administrative barriers (hidden costs)."],
+        traps: ["Calculating tariff revenue from total consumption - it is the tariff × imports only.", "Saying a quota raises government revenue - the quota rent goes to whoever holds the import licences."],
         tips: ["Examples: US-China tariffs 2018-19, EU CAP, Indonesia's nickel export ban."],
         diagrams: [sd("Tariff raises the domestic price from Pw to Pw + t", { lines: [D(9, 1, "D dom"), { from: [1, 1], to: [9, 9], label: "S dom", color: "c" }, { from: [0, 2.5], to: [10, 2.5], label: "Pw", color: "b" }, { from: [0, 4], to: [10, 4], label: "Pw + t", color: "b", dash: true }] })],
+      },
+      "econ-15c": {
+        methods: ["<strong>Evaluate protection:</strong> argument for (infant industry, strategic/national security, jobs, anti-dumping, revenue, diversification) → limitations (higher prices, inefficiency, retaliation, higher input costs, rent-seeking) → depends on whether it is temporary, targeted and WTO-legal."],
+        traps: ["Saying protection always protects jobs - retaliation can destroy export jobs."],
+        tips: ["Examples: US-China tariffs 2018-19 and soybean retaliation, EU anti-dumping duties on Chinese solar panels (2013), US CHIPS Act subsidies (2022) for national security."],
       },
       "econ-16": { methods: ["<strong>Climb the ladder:</strong> PTA → FTA → customs union → common market → monetary union - each adds one feature."], traps: ["Saying an FTA has a common external tariff."], tips: ["Name a real bloc at each level: ASEAN (FTA), Mercosur (CU), EU (common market + eurozone)."] },
       "econ-17": {
         methods: ["<strong>Currency conversions:</strong> if €1 = $1.10, $ price ÷ 1.10 = € price.", "<strong>Exchange-rate chain:</strong> event → demand or supply of the currency → appreciation/depreciation → effect on X, M, inflation, growth."],
-        traps: ["Shifting demand for a currency when imports rise (that's supply of the currency).", "Mixing up current and financial accounts."],
-        tips: ["Remittances are secondary income in the current account; FDI is in the financial account."],
+        traps: ["Shifting demand for a currency when imports rise (that's supply of the currency)."],
+        tips: ["Examples: the pound's fall after the 2016 Brexit vote, the yen's depreciation in 2022-24 as Japanese rates stayed low, the Hong Kong dollar peg to the US dollar."],
         diagrams: [{ title: "Rise in demand for the € → appreciation", x: [0, 10], y: [0, 10], origin: false, grid: false, xLabel: "Quantity of €", yLabel: "$ per €", lines: [D(9, 1, "D€₁"), { from: [2.5, 9.5], to: [9.5, 2.5], label: "D€₂", color: "b" }, { from: [1, 1], to: [9, 9], label: "S€", color: "c" }] }],
       },
+      "econ-17b": {
+        methods: ["<strong>BoP layout:</strong> list each component with its sign → add for the current account → use the identity (current + capital + financial = 0) to find the missing balance.", "<strong>Correcting a deficit:</strong> expenditure-switching (depreciation, protection) vs expenditure-reducing (contractionary fiscal/monetary) vs supply-side (competitiveness) - evaluate each."],
+        traps: ["Mixing up current and financial accounts."],
+        tips: ["Remittances are secondary income in the current account; FDI is in the financial account."],
+      },
       "econ-18": {
-        methods: ["<strong>Paper 2 final question:</strong> pick a strategy from the text, explain how it works (with a diagram), evaluate with the country's data, and compare with another strategy."],
+        methods: ["<strong>Sustainability test:</strong> for any growth path ask - does it run down natural capital, is it inclusive (do the poor gain), and can it last for future generations? Link to specific SDGs."],
         traps: ["Treating growth and development as the same thing."],
+        tips: ["Examples: Costa Rica's reforestation and payments for ecosystem services, Indonesia's deforestation for palm oil, Kerala's high human development at modest income, Norway's oil fund."],
+      },
+      "econ-18b": {
+        methods: ["<strong>Indicator answers:</strong> name the indicator → what it measures → one strength → one limitation (what it leaves out: inequality, environment, freedom, informal economy).", "<strong>Compare countries:</strong> use GNI rank − HDI rank and the HDI-IHDI gap, quoting the numbers."],
+        traps: ["Saying the HDI uses GDP - it uses GNI per capita (PPP).", "Getting the sign of GNI rank − HDI rank the wrong way round."],
+        tips: ["Single indicators: life expectancy, infant mortality, literacy, access to clean water; composite: HDI, IHDI, GII, MPI. Example: Cuba and Sri Lanka rank much higher on HDI than on GNI per capita."],
+      },
+      "econ-18c": {
+        methods: ["<strong>Barrier answers:</strong> name the barrier → chain of analysis (poverty trap, commodity dependence, weak institutions, corruption, poor infrastructure, low human capital, gender inequality, debt, geography) → link to the text's country.", "<strong>Prioritise:</strong> barriers reinforce each other, so evaluate which is most binding for the country in the data."],
+        traps: ["Listing barriers without a chain of analysis.", "Forgetting the PED/PES and YED reasoning when explaining commodity dependence."],
+        tips: ["Examples: Zambia's copper dependence, Afghanistan and Sahel instability, landlocked Malawi's transport costs, Sri Lanka's 2022 debt crisis, gender gaps in education in parts of South Asia."],
+      },
+      "econ-18d": {
+        methods: ["<strong>Paper 2 final question:</strong> pick a strategy from the text, explain how it works (with a diagram), evaluate with the country's data, and compare with another strategy."],
+        traps: ["Describing a strategy without evaluating it - every strategy needs limitations and a judgement for the country in the text.", "Confusing humanitarian aid (emergency relief) with development aid (long-term projects)."],
         tips: ["Examples: Bangladesh (Grameen microfinance), Rwanda (governance), Botswana (diamonds and institutions), Vietnam (FDI and exports)."],
       },
     },

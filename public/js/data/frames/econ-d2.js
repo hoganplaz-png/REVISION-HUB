@@ -361,6 +361,15 @@
             points: [{ at: [4, 4] }, { at: [5, 5] }],
             texts: [TX(4, "Y₁"), TX(5, "Yp"), TY(4, "P₁"), TY(5, "P₂")],
           }),
+          AX("Money market: contractionary monetary policy - Sm shifts left → interest rate rises", "Quantity of money", "Interest rate", {
+            lines: [L([5, 0], [5, 9.5], "Sm₁", "c"), L([3.5, 0], [3.5, 9.5], "Sm₂", "b"), L([1, 9], [8, 2], "Dm"), H(5, 5), H(3.5, 6.5)],
+            points: [{ at: [5, 5] }, { at: [3.5, 6.5] }],
+            texts: [TY(5, "i₁"), TY(6.5, "i₂"), TX(3.5, "Q₂"), TX(5, "Q₁")],
+          }),
+        ],
+      },
+      "econ-13b": {
+        diagrams: [
           ADAS("Contractionary fiscal policy: higher taxes / lower G → AD shifts left, inflationary gap closes", {
             lines: [LRAS(5, "LRAS"), AD(12, "AD₁"), AD(10, "AD₂", "b"), SRAS(0, "SRAS"), V(6, 6), H(6, 6), H(5, 5)],
             points: [{ at: [6, 6] }, { at: [5, 5] }],
@@ -371,14 +380,9 @@
             points: [{ at: [5, 5] }, { at: [5, 7] }],
             texts: [TY(5, "i₁"), TY(7, "i₂"), TX(5, "Qm")],
           }),
-          AX("Money market: contractionary monetary policy - Sm shifts left → interest rate rises", "Quantity of money", "Interest rate", {
-            lines: [L([5, 0], [5, 9.5], "Sm₁", "c"), L([3.5, 0], [3.5, 9.5], "Sm₂", "b"), L([1, 9], [8, 2], "Dm"), H(5, 5), H(3.5, 6.5)],
-            points: [{ at: [5, 5] }, { at: [3.5, 6.5] }],
-            texts: [TY(5, "i₁"), TY(6.5, "i₂"), TX(3.5, "Q₂"), TX(5, "Q₁")],
-          }),
         ],
         frames: [
-          { title: "Explain crowding out with a diagram", paper: "P2", where: "Paper 2 / Paper 1(a) · 4 marks · money market or AD/AS diagram",
+          { id: "econ-13-q22", title: "Explain crowding out with a diagram", paper: "P2", where: "Paper 2 / Paper 1(a) · 4 marks · money market or AD/AS diagram",
             q: "Using a diagram, explain how expansionary fiscal policy financed by government borrowing may lead to crowding out.",
             marks: [
               ["Diagram", "interest rate against quantity of money/loanable funds; demand shifts right (Dm₁ → Dm₂); interest rate rises __i₁ → i₂__", 1],
@@ -485,7 +489,7 @@
           }),
         ],
         frames: [
-          { title: "Draw a free trade diagram showing imports", paper: "P2", where: "Paper 2 · 4 marks · international trade diagram",
+          { id: "econ-15-q20", title: "Draw a free trade diagram showing imports", paper: "P2", where: "Paper 2 · 4 marks · international trade diagram",
             q: "Using a diagram, explain how opening up to free trade affects domestic consumers, domestic producers and the quantity of imports.",
             marks: [
               ["Diagram", "domestic D and S; __horizontal world supply at Pw below Pe__; domestic production Q₁, consumption Q₂, imports __Q₁Q₂__", 1],
@@ -498,6 +502,10 @@
             reject: "world supply drawn upward sloping without explanation; imports measured as the gap between Pe and Pw",
             tip: "進口量 = 世界價格下需求量 − 本地供應量（Q₁Q₂）。" },
         ],
+      },
+      "econ-15b": {
+      },
+      "econ-15c": {
       },
 
       // =====================================================================
@@ -527,9 +535,6 @@
 
       // =====================================================================
       "econ-17": {
-        figures: [
-          { title: "Structure of the balance of payments", caption: "A current account deficit must be matched by a net surplus on the capital and financial accounts.", svg: BOP },
-        ],
         diagrams: [
           FX("Appreciation: higher foreign demand for exports (or inward FDI) shifts D right → e₁ to e₂", {
             lines: [L([1, 9], [9, 1], "D₁"), L([3, 9], [10, 2], "D₂", "b"), L([1, 1], [9, 9], "S", "c"), H(5, 5), H(6, 6), V(5, 5), V(6, 6)],
@@ -549,7 +554,7 @@
           }),
         ],
         frames: [
-          { title: "Show the effect of a rise in interest rates on the exchange rate", star: true, paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
+          { id: "econ-17-q23", title: "Show the effect of a rise in interest rates on the exchange rate", star: true, paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
             q: "Using an exchange rate diagram, explain how an increase in the central bank's interest rate could affect the value of the currency.",
             marks: [
               ["Diagram", "axes __price of the currency in another currency__ and __quantity of the currency__; D shifts right (and/or S shifts left); rate rises __e₁ → e₂__", 1],
@@ -562,7 +567,7 @@
             accept: "showing only the demand shift",
             reject: "'price' and 'quantity' without naming the currency on the axes",
             tip: "加息 → 熱錢流入 → 對本幣需求上升 → 升值。軸要寫明貨幣。" },
-          { title: "Explain how a central bank maintains a managed float / fixed rate", paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
+          { id: "econ-17-q24", title: "Explain how a central bank maintains a managed float / fixed rate", paper: "P2", where: "Paper 2 · 4 marks · exchange rate diagram",
             q: "Using a diagram, explain how a central bank could prevent its currency from falling below a target lower limit.",
             marks: [
               ["Diagram", "D falls (D₁ → D₂) so the free-market rate would fall below the lower limit; central bank action shifts D right (__D₃__) to keep the rate at the limit", 1],
@@ -573,6 +578,11 @@
             diagram: FX("Managed float: intervention D₂ → D₃", { lines: [L([1, 9], [9, 1], "D₁"), L([0.5, 6.5], [5.5, 1.5], "D₂", "b"), L([1, 1], [9, 9], "S", "c"), L([0, 7], [8, 7], "upper limit", "muted", { dash: true }), L([0, 4], [8, 4], "lower limit", "muted", { dash: true }), L([2, 6], [6.6, 1.4], "D₃", "muted", { dash: true, labelAt: "start" })], points: [{ at: [3.5, 3.5] }, { at: [4, 4] }] }),
             model: "If demand for the currency falls from D₁ to D₂, the market rate would fall below the lower limit. To prevent this the central bank sells foreign currency reserves and buys its own currency, or raises interest rates to attract inflows, shifting demand to D₃ so the rate stays at the lower limit. This can only continue while reserves last, and higher interest rates may slow the economy.",
             tip: "央行用外匯儲備買入本幣 → 需求右移。" },
+        ],
+      },
+      "econ-17b": {
+        figures: [
+          { title: "Structure of the balance of payments", caption: "A current account deficit must be matched by a net surplus on the capital and financial accounts.", svg: BOP },
         ],
       },
 
@@ -626,9 +636,15 @@
 
       // =====================================================================
       "econ-18": {
+      },
+      "econ-18b": {
+        figures: [
+          { title: "The Human Development Index (HDI)", caption: "A composite indicator of development (UNDP); 0-1, higher = more developed.", svg: HDI },
+        ],
+      },
+      "econ-18c": {
         figures: [
           { title: "The poverty cycle (poverty trap)", caption: "Low income in one period causes low income in the next, unless an outside injection breaks the chain.", svg: POVERTY },
-          { title: "The Human Development Index (HDI)", caption: "A composite indicator of development (UNDP); 0-1, higher = more developed.", svg: HDI },
         ],
         diagrams: [
           AX("Commodity price volatility: inelastic D and S mean a small supply shock causes a large price change", "Quantity of commodity", "Price of commodity", {
@@ -636,14 +652,9 @@
             points: [{ at: [5, 5] }, { at: [4.67, 6.5] }],
             texts: [TY(5, "P₁"), TY(6.5, "P₂")],
           }),
-          ADAS("FDI or aid for infrastructure: AD rises now, LRAS rises later", {
-            lines: [LRAS(5, "LRAS₁"), LRAS(7, "LRAS₂", "b"), AD(10, "AD₁"), AD(12, "AD₂", "b"), SRAS(0, "SRAS₁"), SRAS(-2, "SRAS₂", "b"), H(7, 5)],
-            points: [{ at: [5, 5] }, { at: [7, 5] }],
-            texts: [TX(5, "Y₁"), TX(7, "Y₂")],
-          }),
         ],
         frames: [
-          { title: "Draw a diagram to explain commodity price volatility", paper: "P2", where: "Paper 2 · 4 marks · commodity market diagram",
+          { id: "econ-18-q22", title: "Draw a diagram to explain commodity price volatility", paper: "P2", where: "Paper 2 · 4 marks · commodity market diagram",
             q: "Using a diagram, explain why over-specialisation in primary commodities can be a barrier to development.",
             marks: [
               ["Diagram", "__steep (inelastic) D and S__; a supply shift (S₁ → S₂) causes a __large price change__ (P₁ → P₂) for a small quantity change", 1],
@@ -654,7 +665,18 @@
             diagram: AX("Inelastic commodity market: supply shock S₁ → S₂", "Quantity of commodity", "Price of commodity", { lines: [L([4, 9.5], [5.8, 1.4], "D"), L([3, 0.5], [7, 9.5], "S₁", "c"), L([2, 0.5], [6, 9.5], "S₂", "b"), H(5, 5), H(4.67, 6.5)], points: [{ at: [5, 5] }, { at: [4.67, 6.5] }], texts: [TY(5, "P₁"), TY(6.5, "P₂")] }),
             model: "Demand for and supply of primary commodities are price inelastic. A shift in supply, for example from bad weather, causes only a small change in quantity but a large change in price, from P₁ to P₂. Countries that depend on one or two commodities therefore face volatile export earnings and government revenue, which makes it hard to plan investment in health, education and infrastructure. Low income elasticity of demand for commodities also tends to worsen their terms of trade over time.",
             tip: "商品供求缺乏彈性 → 價格大幅波動 → 出口收入不穩定。" },
-          { title: "Draw the poverty cycle and explain how it can be broken", paper: "P2", where: "Paper 2 · 4 marks · diagram",
+        ],
+      },
+      "econ-18d": {
+        diagrams: [
+          ADAS("FDI or aid for infrastructure: AD rises now, LRAS rises later", {
+            lines: [LRAS(5, "LRAS₁"), LRAS(7, "LRAS₂", "b"), AD(10, "AD₁"), AD(12, "AD₂", "b"), SRAS(0, "SRAS₁"), SRAS(-2, "SRAS₂", "b"), H(7, 5)],
+            points: [{ at: [5, 5] }, { at: [7, 5] }],
+            texts: [TX(5, "Y₁"), TX(7, "Y₂")],
+          }),
+        ],
+        frames: [
+          { id: "econ-18-q23", title: "Draw the poverty cycle and explain how it can be broken", paper: "P2", where: "Paper 2 · 4 marks · diagram",
             q: "Using a diagram of the poverty cycle, explain how foreign aid could help a country to break out of the cycle.",
             marks: [
               ["Diagram", "a cycle: __low income → low saving → low investment (physical/human capital) → low productivity → low income__", 1],

@@ -11,9 +11,9 @@
   const out = {};
   const add = (topic, pairs) => {
     out[topic] = [];
-    for (const [qa, ma, qb, mb] of pairs) {
-      out[topic].push({ id: `${topic}-p1-${out[topic].length / 2 + 1}a`, paper: "P1", type: "extended", marks: 10, diff: 2, q: "<strong>(a)</strong> " + qa + " [10]", ms: [A[0], ...ma, A[1]] });
-      out[topic].push({ id: `${topic}-p1-${(out[topic].length - 1) / 2 + 1}b`, paper: "P1", type: "extended", marks: 15, diff: 3, q: "<strong>(b)</strong> Using real-world examples, " + qb + " [15]", ms: [B[0], ...mb, EV, B[1]] });
+    for (const [qa, ma, qb, mb, id] of pairs) { // id: an essay that moved topic keeps its old id ("econ-2-p1-2")
+      out[topic].push({ id: id ? id + "a" : `${topic}-p1-${out[topic].length / 2 + 1}a`, paper: "P1", type: "extended", marks: 10, diff: 2, q: "<strong>(a)</strong> " + qa + " [10]", ms: [A[0], ...ma, A[1]] });
+      out[topic].push({ id: id ? id + "b" : `${topic}-p1-${(out[topic].length - 1) / 2 + 1}b`, paper: "P1", type: "extended", marks: 15, diff: 3, q: "<strong>(b)</strong> Using real-world examples, " + qb + " [15]", ms: [B[0], ...mb, EV, B[1]] });
     }
   };
 
@@ -32,11 +32,14 @@
     ["Using a diagram, explain the difference between a change in demand and a change in quantity demanded.",
       ["Define demand and the law of demand", "Diagram: movement along a demand curve from a change in price", "Diagram: shift of the demand curve from a change in a non-price determinant", "Non-price determinants: income, price of substitutes/complements, tastes, population, expectations", "Clear link from diagram to explanation"],
       "evaluate the effects of a significant increase in the price of a key input (such as energy) on different stakeholders.",
-      ["Diagram: supply shifts left, higher equilibrium price, lower quantity", "Consumers: higher prices, lower real income, regressive effect", "Producers: higher costs and lower profits; some pass costs on depending on PED", "Workers: possible job losses in energy-intensive industries", "Government: pressure for subsidies or price controls; tax revenue effects", "Example, e.g. 2022 European gas price spike after the war in Ukraine"]],
+      ["Diagram: supply shifts left, higher equilibrium price, lower quantity", "Consumers: higher prices, lower real income, regressive effect", "Producers: higher costs and lower profits; some pass costs on depending on PED", "Workers: possible job losses in energy-intensive industries", "Government: pressure for subsidies or price controls; tax revenue effects", "Example, e.g. 2022 European gas price spike after the war in Ukraine"], "econ-2-p1-1"],
+  ]);
+
+  add("econ-2b", [
     ["Using a diagram, explain how the price mechanism allocates resources through signalling and incentives.",
       ["Define price mechanism, signalling and incentive functions", "Diagram: increase in demand creating a shortage at the original price", "Rising price signals scarcity to producers and consumers", "Incentive for firms to supply more (profit) and for consumers to ration (buy less)", "New equilibrium where shortage is eliminated"],
       "discuss the view that markets are the most efficient way to allocate scarce resources.",
-      ["Define allocative efficiency (MSB = MSC; social surplus maximised)", "Diagram: competitive equilibrium with consumer and producer surplus", "For: price signals, consumer sovereignty, innovation", "Against: market failure (externalities, public goods, information asymmetry) and inequality", "Example, e.g. vaccine distribution in COVID-19 or housing markets", "Most economies are mixed; depends on government effectiveness"]],
+      ["Define allocative efficiency (MSB = MSC; social surplus maximised)", "Diagram: competitive equilibrium with consumer and producer surplus", "For: price signals, consumer sovereignty, innovation", "Against: market failure (externalities, public goods, information asymmetry) and inequality", "Example, e.g. vaccine distribution in COVID-19 or housing markets", "Most economies are mixed; depends on government effectiveness"], "econ-2-p1-2"],
   ]);
 
   add("econ-3", [
@@ -65,15 +68,15 @@
     ["Using a diagram, explain why a negative externality of production leads to market failure.",
       ["Define negative production externality and market failure", "Diagram: MSC above MPC; Qm > Qopt", "Firms ignore external costs such as pollution", "Overallocation of resources and welfare loss triangle", "Example of a polluting industry"],
       "evaluate the use of carbon taxes to reduce the negative externalities associated with fossil fuel use.",
-      ["Define carbon tax", "Diagram: tax shifts MPC towards MSC, output falls towards Qopt", "Advantages: internalises externality, raises revenue, incentive for clean technology", "Disadvantages: hard to measure external cost, regressive, inelastic demand, carbon leakage", "Example, e.g. Sweden's carbon tax, Canada's carbon pricing", "Compare with cap and trade (EU ETS) and regulation"]],
+      ["Define carbon tax", "Diagram: tax shifts MPC towards MSC, output falls towards Qopt", "Advantages: internalises externality, raises revenue, incentive for clean technology", "Disadvantages: hard to measure external cost, regressive, inelastic demand, carbon leakage", "Example, e.g. Sweden's carbon tax, Canada's carbon pricing", "Compare with cap and trade (EU ETS) and regulation"], "econ-5-p1-1"],
     ["Using a diagram, explain why merit goods are underprovided in a free market.",
       ["Define merit good and positive consumption externality", "Diagram: MSB above MPB; Qm < Qopt", "Imperfect information: consumers underestimate benefits", "Underallocation and welfare loss", "Example, e.g. vaccinations or education"],
       "evaluate government responses to the underconsumption of merit goods.",
-      ["Diagram: subsidy or direct provision increasing quantity to Qopt", "Policies: subsidies, direct provision, legislation, information campaigns/nudges", "Benefits: higher consumption, positive externalities, equity", "Costs: opportunity cost, government failure, taxpayers' burden", "Example, e.g. free school meals in the UK, free vaccines, Finland's education system", "Judgement depends on the good, the size of the externality and budget constraints"]],
+      ["Diagram: subsidy or direct provision increasing quantity to Qopt", "Policies: subsidies, direct provision, legislation, information campaigns/nudges", "Benefits: higher consumption, positive externalities, equity", "Costs: opportunity cost, government failure, taxpayers' burden", "Example, e.g. free school meals in the UK, free vaccines, Finland's education system", "Judgement depends on the good, the size of the externality and budget constraints"], "econ-5-p1-2"],
     ["Explain why common pool resources are threatened with depletion.",
       ["Define common pool resources: rivalrous, non-excludable", "Tragedy of the commons: individuals act in self-interest", "Diagram: negative production externality (MSC > MPC) from overuse", "Examples: fisheries, forests, groundwater", "Unsustainable use and loss for future generations"],
       "discuss the effectiveness of international cooperation in addressing climate change.",
-      ["Define climate change as a global negative externality and a threat to sustainability", "International agreements, e.g. Paris Agreement, COP summits", "Strengths: shared targets, technology transfer, climate finance", "Weaknesses: free rider problem, non-binding targets, conflict between growth and emissions", "Example, e.g. EU carbon border adjustment, US withdrawal and re-entry to Paris", "Other approaches: domestic policies, collective self-governance (Ostrom)"]],
+      ["Define climate change as a global negative externality and a threat to sustainability", "International agreements, e.g. Paris Agreement, COP summits", "Strengths: shared targets, technology transfer, climate finance", "Weaknesses: free rider problem, non-binding targets, conflict between growth and emissions", "Example, e.g. EU carbon border adjustment, US withdrawal and re-entry to Paris", "Other approaches: domestic policies, collective self-governance (Ostrom)"], "econ-5-p1-3"],
   ]);
 
   add("econ-6", [
@@ -149,11 +152,14 @@
     ["Using an AD/AS diagram, explain how expansionary monetary policy can reduce unemployment.",
       ["Define monetary policy and interest rates", "Diagram: AD shifts right, real GDP rises", "Transmission: lower interest rates raise consumption and investment", "Exchange rate depreciation raises net exports", "Fall in cyclical unemployment"],
       "evaluate the effectiveness of monetary policy in controlling inflation.",
-      ["Define monetary policy and inflation targeting", "Diagram: contractionary policy shifts AD left", "Strengths: central bank independence, quick to implement, incremental", "Weaknesses: time lags, ineffective against cost-push inflation, slows growth", "Example, e.g. US Fed 2022-23 rate rises, ECB", "Depends on type of inflation and confidence"]],
+      ["Define monetary policy and inflation targeting", "Diagram: contractionary policy shifts AD left", "Strengths: central bank independence, quick to implement, incremental", "Weaknesses: time lags, ineffective against cost-push inflation, slows growth", "Example, e.g. US Fed 2022-23 rate rises, ECB", "Depends on type of inflation and confidence"], "econ-13-p1-1"],
+  ]);
+
+  add("econ-13b", [
     ["Using an AD/AS diagram, explain how expansionary fiscal policy can close a recessionary gap.",
       ["Define fiscal policy and recessionary gap", "Diagram: AD shifts right to full employment output", "Tools: increased government spending, lower taxes", "Multiplier effect", "Example of a fiscal stimulus"],
       "evaluate the use of fiscal policy to promote economic growth.",
-      ["Define fiscal policy and economic growth", "Diagram: AD and LRAS shift right (e.g. infrastructure spending)", "Strengths: targeted, multiplier, can raise potential output", "Weaknesses: time lags, crowding out, budget deficits and debt", "Example, e.g. US CARES Act, China's infrastructure spending", "Effectiveness depends on size of output gap and debt levels"]],
+      ["Define fiscal policy and economic growth", "Diagram: AD and LRAS shift right (e.g. infrastructure spending)", "Strengths: targeted, multiplier, can raise potential output", "Weaknesses: time lags, crowding out, budget deficits and debt", "Example, e.g. US CARES Act, China's infrastructure spending", "Effectiveness depends on size of output gap and debt levels"], "econ-13-p1-2"],
   ]);
 
   add("econ-14", [
@@ -163,11 +169,11 @@
       ["Define market-based supply-side policies", "Diagram: LRAS shifts right", "Benefits: efficiency, competition, lower costs", "Costs: inequality, job losses, reduced worker protection", "Example, e.g. UK privatisation, labour market reforms in Germany (Hartz)", "Long time lags; depends on institutions"]],
   ]);
 
-  add("econ-15", [
+  add("econ-15b", [
     ["Using a diagram, explain the effects of a tariff on domestic producers and consumers.",
       ["Define tariff", "Diagram: world price and tariff-inclusive price", "Domestic producers gain; consumers pay more", "Government revenue; welfare loss", "Imports fall"],
       "evaluate the view that free trade benefits all countries.",
-      ["Define free trade and comparative advantage", "Diagram: welfare gain from removing a tariff", "Benefits: lower prices, more choice, efficiency", "Costs: job losses in some industries, inequality", "Example, e.g. US-China trade war, NAFTA/USMCA", "Depends on the country's economic structure"]],
+      ["Define free trade and comparative advantage", "Diagram: welfare gain from removing a tariff", "Benefits: lower prices, more choice, efficiency", "Costs: job losses in some industries, inequality", "Example, e.g. US-China trade war, NAFTA/USMCA", "Depends on the country's economic structure"], "econ-15-p1-1"],
   ]);
 
   add("econ-16", [
@@ -177,18 +183,18 @@
       ["Define depreciation", "Benefits: export competitiveness, growth, employment", "Costs: imported inflation, higher import costs", "Debt in foreign currencies becomes more costly", "Example, e.g. Turkish lira, Japanese yen 2022-24", "Depends on PED of exports/imports and stage of development"]],
   ]);
 
-  add("econ-17", [
+  add("econ-17b", [
     ["Explain the causes of a current account deficit.",
       ["Define current account deficit", "High domestic demand for imports", "Lack of competitiveness, strong exchange rate", "Net income outflows", "Example, e.g. UK or US deficits"],
       "evaluate the methods of correcting a persistent current account deficit.",
-      ["Define current account deficit", "Expenditure-switching: tariffs, depreciation", "Expenditure-reducing: contractionary fiscal/monetary policy", "Supply-side policies for competitiveness", "Example, e.g. Greece post-2010", "Trade-offs between growth, employment and inflation"]],
+      ["Define current account deficit", "Expenditure-switching: tariffs, depreciation", "Expenditure-reducing: contractionary fiscal/monetary policy", "Supply-side policies for competitiveness", "Example, e.g. Greece post-2010", "Trade-offs between growth, employment and inflation"], "econ-17-p1-1"],
   ]);
 
-  add("econ-18", [
+  add("econ-18c", [
     ["Explain the barriers to economic development faced by developing countries.",
       ["Define economic development", "Barriers: poverty cycle, weak institutions, corruption", "Lack of infrastructure, low human capital", "Overdependence on primary commodities", "Example"],
       "evaluate the role of foreign direct investment in promoting economic development.",
-      ["Define FDI", "Benefits: capital, technology, jobs, tax", "Costs: profit repatriation, exploitation, environment", "Example, e.g. Vietnam, Ethiopia", "Depends on regulation and linkages", "Compare with aid and trade"]],
+      ["Define FDI", "Benefits: capital, technology, jobs, tax", "Costs: profit repatriation, exploitation, environment", "Example, e.g. Vietnam, Ethiopia", "Depends on regulation and linkages", "Compare with aid and trade"], "econ-18-p1-1"],
   ]);
 
   IB.addQuestions("econ", out);

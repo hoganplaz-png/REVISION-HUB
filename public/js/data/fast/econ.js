@@ -285,11 +285,11 @@ IB.addFast({
   },
 
   "econ-2": {
-    title: "Demand · Supply · Movement vs shift · Determinants · Linear functions",
-    intro: "D 同 S 兩張圖就係成個 micro：先分清「沿線行」同「成條郁」，再背 determinants，最後識計 linear function。",
+    title: "Demand · Law of demand · Movement vs shift · Determinants · Linear demand",
+    intro: "需求圖就係 2.1 嘅全部：先分清「沿線行」同「成條郁」，再背 determinants of demand，最後識計 linear demand function。",
     parts: [
       {
-        h: "核心圖 D-S 兩步 + 判斷樹",
+        h: "核心圖 D 兩步 + 判斷樹",
         min: 2,
         blocks: [
           ["rhyme", "口訣", "自己價錢沿線行，其他因素成條郁", "Own price changes → movement along the curve (extension/contraction). Any non-price determinant → shift of the whole curve (increase/decrease in D or S)."],
@@ -297,16 +297,13 @@ IB.addFast({
           ["table", ["Question says…", "Type", "Write"], [
             ["‘A rise in the price of coffee’ (own price)", "Movement", "contraction of Qd of coffee"],
             ["‘Incomes rise’ (normal good)", "D shifts right", "increase in demand"],
-            ["‘Cost of raw materials falls’", "S shifts right", "increase in supply"],
-            ["‘Government imposes tax on producers’", "S shifts left (up)", "decrease in supply"],
-            ["‘New technology’", "S shifts right", "increase in supply"],
             ["‘Price of substitute rises’", "D shifts right", "increase in demand"]
           ]]
         ]
       },
       {
         h: "口訣一頁 + 定義",
-        min: 3,
+        min: 2,
         blocks: [
           ["grid", [
             ["2.1", "價升量跌，反向", "Law of demand: P↑ → Qd↓ (ceteris paribus)"],
@@ -314,10 +311,6 @@ IB.addFast({
             ["2.1", "正常貨收入升就買多，劣等貨收入升就買少", "Normal good: income↑ → D↑; inferior: income↑ → D↓"],
             ["2.1", "替代品價升，我哋要多；互補品價升，我哋要少", "Substitute P↑ → D↑; complement P↑ → D↓"],
             ["2.1", "收入、替代、邊際效用", "Why D slopes down: income effect, substitution effect, diminishing marginal utility"],
-            ["2.2", "價升量升，同向", "Law of supply: P↑ → Qs↑ (ceteris paribus)"],
-            ["2.2", "成本科技稅補貼，相關預期災難多公司", "Costs, technology, taxes/subsidies, related goods, expectations, shocks, number of firms"],
-            ["2.2", "利潤誘因加邊際成本遞增", "Why S slopes up: profit incentive + increasing marginal cost"],
-            ["2.2", "稅令成本升，補貼令成本跌", "Indirect tax shifts S left/up; subsidy shifts S right/down"],
             ["2.1/2.2", "Qd / Qs = 因價錢；D / S = 因其他", "Wording matters: ‘quantity demanded’ vs ‘demand’"],
             ["2.1/2.2", "斜率係 −b 或 +d，截距 a 或 c", "Qd = a − bP; Qs = c + dP"],
             ["2.1/2.2", "需求入嘅 a 變 = 平移", "Change in the intercept (a or c) = shift of the curve"]
@@ -326,18 +319,12 @@ IB.addFast({
             ["Demand", "The quantity of a good or service that consumers are willing and able to buy at a given price in a given time period, ceteris paribus."],
             ["Law of demand", "As the price of a good rises, the quantity demanded falls, and vice versa, ceteris paribus."],
             ["Quantity demanded", "The amount of a good consumers are willing and able to buy at a specific price."],
-            ["Supply", "The quantity of a good or service that producers are willing and able to supply at a given price in a given time period, ceteris paribus."],
-            ["Law of supply", "As the price of a good rises, the quantity supplied rises, and vice versa, ceteris paribus."],
             ["Normal good", "A good for which demand increases as income increases (positive YED)."],
             ["Inferior good", "A good for which demand decreases as income increases (negative YED)."],
             ["Substitutes", "Goods that can be used in place of each other (competitive demand)."],
             ["Complements", "Goods that are used together (joint demand)."],
-            ["Joint supply", "Goods produced together, so that an increase in supply of one also increases supply of the other (e.g. beef and leather)."],
-            ["Competitive supply", "Goods that use the same resources, so producing more of one means producing less of the other."],
             ["Marginal utility", "The additional satisfaction from consuming one more unit of a good."],
-            ["Diminishing marginal utility", "As more units are consumed, the extra satisfaction from each additional unit falls."],
-            ["Indirect tax", "A tax on spending (e.g. VAT/GST, excise duty) that raises the producers' costs."],
-            ["Subsidy", "A payment from the government to producers that lowers their costs of production."]
+            ["Diminishing marginal utility", "As more units are consumed, the extra satisfaction from each additional unit falls."]
           ]]
         ]
       },
@@ -371,33 +358,8 @@ IB.addFast({
         ]
       },
       {
-        h: "Supply 供應 · determinants + 圖",
+        h: "Linear demand 計數 · worked examples",
         min: 3,
-        blocks: [
-          ["key", "<b>Diagram</b>：S slopes upward. Own price change = movement along S; non-price determinant = S₁ → S₂ shift. <b>Why S slopes up</b>: higher price → higher profit incentive; and increasing marginal costs (diminishing returns) mean producers need a higher price to cover higher MC."],
-          ["table", ["Determinant of supply", "Change", "Effect on S", "Example"], [
-            ["Cost of factors (wages, raw materials, energy)", "↑", "Left", "Oil price ↑ → airline fares S left"],
-            ["Cost of factors", "↓", "Right", "Cheaper steel → car S right"],
-            ["Technology", "Improves", "Right", "Robots / automation"],
-            ["Indirect tax", "Imposed / ↑", "Left (up by tax)", "Excise duty on cigarettes"],
-            ["Subsidy", "Granted / ↑", "Right (down by subsidy)", "Subsidy on solar panels"],
-            ["Prices of related goods (competitive supply)", "Price of alternative good ↑", "Left", "Farmer switches from wheat to corn"],
-            ["Prices of related goods (joint supply)", "Price of beef ↑", "Right for leather", "Beef and leather produced together"],
-            ["Expectations", "Price expected to rise", "Left now (hold back stock)", "Oil stockpiling"],
-            ["Shocks (weather, disasters, strikes)", "Bad harvest", "Left", "Drought reduces wheat supply"],
-            ["Number of firms", "More firms", "Right", "New entrants"]
-          ]],
-          ["note", "<b>S shift direction trick</b>：S right = more at every price = also ‘down’ (lower cost). S left = ‘up’ (higher cost). Tax of $t per unit moves S vertically up by $t at each Q. Subsidy of $s moves S vertically down by $s."],
-          ["trap", [
-            "S 左移 = decrease in supply，唔好講 supply ‘increase’ 因為線向上。",
-            "Expectations: producers expecting higher future prices supply LESS now.",
-            "Price↑ → Qs extension (movement), not ‘supply increases’."
-          ]]
-        ]
-      },
-      {
-        h: "Linear functions 計數 · 4 worked examples",
-        min: 4,
         blocks: [
           ["key", "<b>Linear demand</b>: Qd = a − bP (b = how much Qd falls per $1 rise; slope of P on Q is −1/b). <b>Linear supply</b>: Qs = c + dP. <b>Inverse form</b>: rearrange to P = ... for the diagram. Change in <b>a</b> or <b>c</b> = parallel shift. Change in b or d = pivot (rare)."],
           ["eg", "<b>[P1/P2 · 常考題型]</b> Qd = 100 − 2P. Find Qd at P = 10 and P = 15; state the intercepts for the diagram.", [
@@ -409,43 +371,18 @@ IB.addFast({
           ["eg", "<b>[P1/P2 · 常考題型]</b> Income rises and Qd becomes 120 − 2P (a normal good). What is the change in Qd at P = 10? Describe the change.", [
             "New Qd at P = 10: 120 − 20 = <b>100</b>. Old Qd = 80 → change = +20.",
             "Because a changed from 100 to 120 (non-price determinant): <b>increase in demand</b>, D shifts right (parallel)."
-          ]],
-          ["eg", "<b>[P1/P2 · 常考題型]</b> Qs = −20 + 4P. Find Qs at P = 10, Qs at P = 20, and the P-intercept.", [
-            "P = 10: Qs = −20 + 40 = <b>20</b>. P = 20: Qs = −20 + 80 = <b>60</b>.",
-            "P-intercept (Qs = 0): 4P = 20 → P = <b>5</b> (below $5 firms supply nothing).",
-            "Slope dQs/dP = 4: each $1 rise extends Qs by 4 units."
-          ]],
-          ["eg", "<b>[P1/P2 · 常考題型]</b> A $3 per unit indirect tax is imposed on the supplier with Qs = −20 + 4P. Write the new supply function.", [
-            "Producers receive P − 3 for each unit sold at price P, so Qs = −20 + 4(P − 3).",
-            "= −20 + 4P − 12 = <b>−32 + 4P</b>.",
-            "Equivalent: at each Q the supply price is $3 higher → vertical shift up by 3 = decrease in supply."
-          ]],
-          ["eg", "<b>[P1/P2 · 常考題型]</b> Qd = 100 − 2P, Qs = −20 + 4P. At P = 10, find the market situation. At P = 30?", [
-            "P = 10: Qd = 80, Qs = 20 → <b>excess demand (shortage)</b> of 80 − 20 = 60 → price rises.",
-            "P = 30: Qd = 100 − 60 = 40, Qs = −20 + 120 = 100 → <b>excess supply (surplus)</b> of 60 → price falls.",
-            "Equilibrium (see econ-3): 100 − 2P = −20 + 4P → P = 20, Q = 60."
           ]]
         ]
       },
       {
-        h: "事件分析 · 5 worked diagrams",
-        min: 3,
+        h: "事件分析 · demand diagrams",
+        min: 2,
         blocks: [
           ["eg", "<b>[P1/P2 · 常考題型]</b> Explain how a rise in the price of coffee affects the market for tea. (4 marks)", [
             "Coffee and tea are <b>substitutes</b>. Consumers switch from coffee to tea → D for tea shifts right (D₁ → D₂) [1].",
             "At old price P₁ there is <b>excess demand</b> (shortage) [1].",
             "Price rises to P₂ → Qs extends, Qd contracts [1].",
             "New equilibrium P₂ &gt; P₁, Q₂ &gt; Q₁; diagram with labelled axes, D₁, D₂, S, P₁Q₁, P₂Q₂ [1]."
-          ]],
-          ["eg", "<b>[P1/P2 · 常考題型]</b> Explain how a poor rice harvest due to drought affects the rice market.", [
-            "Drought = supply shock → cost/yield falls → S shifts left (S₁ → S₂) [1].",
-            "Shortage at P₁ (Qd &gt; Qs) → price rises to P₂ [1].",
-            "Qs contracts along S₂, Qd contracts along D → new Q₂ &lt; Q₁ [1]; P₂ &gt; P₁."
-          ]],
-          ["eg", "<b>[P1/P2 · 常考題型]</b> A government pays a subsidy to producers of electric cars. Explain the effect on the electric car market.", [
-            "Subsidy lowers costs of production → S shifts right (down) from S₁ to S₂ by the amount of subsidy [1].",
-            "Surplus at P₁ → price falls to P₂; Qd extends [1].",
-            "New equilibrium: lower price P₂ &lt; P₁, higher quantity Q₂ &gt; Q₁ [1]."
           ]],
           ["eg", "<b>[P1/P2 · 常考題型]</b> Incomes rise. Explain the effect on the markets for (i) restaurant meals (normal) and (ii) public buses in a rich area (inferior).", [
             "(i) Normal good: income↑ → D shifts right → P↑ Q↑ [1].",
@@ -454,8 +391,7 @@ IB.addFast({
           ["eg", "<b>[P1/P2 · 常考題型]</b> The price of printers falls sharply. Explain the effect on the market for ink cartridges.", [
             "Printers and ink are <b>complements</b> (joint demand). Qd of printers extends → more printers in use → D for ink shifts right [1].",
             "Shortage at old price → price of ink rises; Q rises [1]."
-          ]],
-          ["note", "<b>Both D and S change</b>: draw both shifts; Q is certain, P uncertain (or vice versa) depending on which shifts more. D right + S right → Q certainly up, P uncertain. D right + S left → P certainly up, Q uncertain."]
+          ]]
         ]
       },
       {
@@ -495,15 +431,8 @@ IB.addFast({
             "價錢變 → 寫「demand increases」→ 要寫 quantity demanded extends/contracts。",
             "非價格因素變 → 寫「quantity demanded」→ 要寫 demand increases/decreases (shift)。",
             "圖冇 label axes (P, Q)、curves、new/old equilibrium → 失分。",
-            "Supply 左移但寫成「supply 增加」→ decrease in supply。",
-            "只寫結果，冇 shortage/surplus 過程 → 要寫 adjustment process。",
             "Substitute / complement 方向搞錯 → substitute P↑ → D↑; complement P↑ → D↓。",
-            "Tax 令 S 向右移 → tax 令 S 向左（上）移。",
-            "Subsidy 令 S 向左 → 向右（下）。",
-            "Inferior good 同 low quality 混淆 → 看 YED 是否為負。",
-            "Expectations of price rise → 供應即時增加 → 反而 S 即時減少（保留貨存）。",
-            "計數題冇寫單位 / 冇代入步驟。",
-            "D shift 後寫新價錢一定更高 → 如果 S 同時移，結果可能不確定。"
+            "Inferior good 同 low quality 混淆 → 看 YED 是否為負。"
           ]],
           ["check", [
             "Can you define demand, supply, law of demand and law of supply word-for-word?",
@@ -511,8 +440,6 @@ IB.addFast({
             "Can you state three reasons why D slopes downward and why S slopes upward?",
             "Can you draw and label a D–S diagram for any event in 90 seconds?",
             "Can you distinguish a change in demand from a change in quantity demanded?",
-            "Can you calculate Qd, Qs, intercepts and shortage/surplus from Qd = a − bP and Qs = c + dP?",
-            "Can you adjust a supply function for an indirect tax or subsidy?",
             "Can you explain the effect of a change in the price of a substitute, a complement and a related good in production?"
           ]]
         ]
@@ -521,26 +448,176 @@ IB.addFast({
     summary: [
       "自己價錢沿線行，其他因素成條郁",
       "收入口味人，替補預期（D 移）",
-      "成本科技稅補貼，相關預期災難多公司（S 移）",
       "D 向下：收入、替代、邊際效用遞減",
-      "S 向上：利潤誘因 + 邊際成本遞增",
       "Qd = a − bP，Qs = c + dP，a / c 變 = 平移",
-      "稅令 S 左（上）移，補貼令 S 右（下）移",
       "圖：軸、線、P₁Q₁→P₂Q₂ 都要 label"
     ],
     practice: [
       { q: "Which would cause a rightward shift in the demand curve for tea?", m: 1, o: ["A fall in the price of tea", "A rise in the price of coffee (a substitute)", "A rise in the price of milk (a complement)", "An increase in the cost of tea leaves"], a: "B. A rise in the price of a substitute increases demand for tea [1]. A is a movement along D; C shifts D left; D shifts S left." },
-      { q: "A government grants a subsidy to wheat farmers. The effect on the wheat market is:", m: 1, o: ["D shifts right, price rises", "S shifts left, price rises", "S shifts right, price falls", "D shifts left, price falls"], a: "C. Subsidy lowers costs → S shifts right → price falls, quantity rises [1]." },
       { q: "For an inferior good, an increase in income leads to:", m: 1, o: ["An increase in demand", "A decrease in demand", "A contraction in quantity demanded", "An extension in quantity supplied"], a: "B. Income↑ → demand for inferior goods falls (negative YED) [1]." },
-      { q: "Given Qd = 100 − 2P and Qs = −20 + 4P, at a price of $10 there is:", m: 1, o: ["Excess supply of 60", "Excess demand of 60", "Excess demand of 40", "Equilibrium"], a: "B. Qd = 80, Qs = 20, shortage = 60 [1]." },
-      { q: "Which is NOT a non-price determinant of supply?", m: 1, o: ["Technology", "Number of firms", "The price of the good itself", "Cost of raw materials"], a: "C. Own price causes a movement along S [1]." },
       { q: "Define <i>demand</i>.", m: 2, a: "The quantity of a good or service that consumers are willing and able to buy [1] at each possible price in a given time period, ceteris paribus [1]." },
       { q: "Distinguish between a change in demand and a change in quantity demanded.", m: 2, a: "A change in quantity demanded is a movement along the demand curve caused by a change in the good's own price [1]; a change in demand is a shift of the whole demand curve caused by a change in a non-price determinant (e.g. income) [1]." },
       { q: "Explain two reasons why the demand curve slopes downward.", m: 4, a: "Any two, each [1] named + [1] explained: Income effect: lower price raises real income/purchasing power so more can be bought [1+1]. Substitution effect: lower price makes the good relatively cheaper so consumers switch to it [1+1]. Diminishing marginal utility: each additional unit gives less satisfaction so consumers will only buy more at lower prices [1+1]." },
-      { q: "Using a demand and supply diagram, explain the effect of an increase in the cost of fertiliser on the market for rice.", m: 4, a: "Diagram: axes P/Q, D, S₁ shifting left to S₂, P₁→P₂, Q₁→Q₂ labelled [1]. Fertiliser is a cost of production, so producers supply less at each price: S shifts left [1]. Excess demand at P₁ pushes price up to P₂ [1]. Qd contracts and Qs extends along S₂ to a new equilibrium at higher price and lower quantity [1]." },
       { q: "Explain why an increase in income may decrease the demand for second-hand clothing.", m: 3, a: "Second-hand clothing is likely an inferior good (negative YED) [1]. As income rises, consumers can afford new clothing and switch away from second-hand [1], so demand shifts left [1]." },
+      { q: "Explain the effect on the market for printer ink if the price of printers falls.", m: 4, a: "Printers and ink are complements [1]. Fall in printer price: Qd of printers extends, more printers owned [1], so demand for ink rises (D shifts right) [1]. Shortage at old price pushes the price of ink up and quantity rises [1]." },
+    ],
+  },
+  "econ-2b": {
+    title: "Supply · Law of supply · Movement vs shift · Determinants · Linear supply",
+    intro: "供應圖就係 2.2：分清 extension 同 increase in supply，背熟 determinants of supply（成本、科技、稅、補貼……），識計 linear supply function 同 tax 點樣移 S。",
+    parts: [
+      {
+        h: "核心圖 S 兩步 + 判斷樹",
+        min: 2,
+        blocks: [
+          ["rhyme", "口訣", "自己價錢沿 S 行，成本因素成條郁", "Own price changes → extension/contraction along S. Any non-price determinant (costs, technology, taxes, subsidies, related goods, expectations, shocks, number of firms) → shift of S."],
+          ["flow", [["① 認 market", "Which good? Is the producer side affected?"], ["② 認 determinant", "Costs, technology, indirect tax, subsidy, related goods (joint / competitive supply), expectations, shocks, number of firms"], ["③ 方向", "Costs ↑ → S left (up); costs ↓ → S right (down)"], ["④ 圖", "Axes P and Q, D, S₁ → S₂, P₁Q₁ → P₂Q₂ dotted"], ["⑤ 文字", "Shortage/surplus at P₁ → price adjusts → Qd extends/contracts → new equilibrium"]]],
+          ["table", ["Question says…", "Type", "Write"], [
+            ["‘Cost of raw materials falls’", "S shifts right", "increase in supply"],
+            ["‘Government imposes tax on producers’", "S shifts left (up)", "decrease in supply"],
+            ["‘New technology’", "S shifts right", "increase in supply"]
+          ]]
+        ]
+      },
+      {
+        h: "口訣一頁 + 定義",
+        min: 2,
+        blocks: [
+          ["grid", [
+            ["2.2", "價升量升，同向", "Law of supply: P↑ → Qs↑ (ceteris paribus)"],
+            ["2.2", "成本科技稅補貼，相關預期災難多公司", "Costs, technology, taxes/subsidies, related goods, expectations, shocks, number of firms"],
+            ["2.2", "利潤誘因加邊際成本遞增", "Why S slopes up: profit incentive + increasing marginal cost"],
+            ["2.2", "稅令成本升，補貼令成本跌", "Indirect tax shifts S left/up; subsidy shifts S right/down"]
+          ]],
+          ["table", ["Term", "Exam definition (word-for-word)"], [
+            ["Supply", "The quantity of a good or service that producers are willing and able to supply at a given price in a given time period, ceteris paribus."],
+            ["Law of supply", "As the price of a good rises, the quantity supplied rises, and vice versa, ceteris paribus."],
+            ["Joint supply", "Goods produced together, so that an increase in supply of one also increases supply of the other (e.g. beef and leather)."],
+            ["Competitive supply", "Goods that use the same resources, so producing more of one means producing less of the other."],
+            ["Indirect tax", "A tax on spending (e.g. VAT/GST, excise duty) that raises the producers' costs."],
+            ["Subsidy", "A payment from the government to producers that lowers their costs of production."]
+          ]]
+        ]
+      },
+      {
+        h: "Supply 供應 · determinants + 圖",
+        min: 3,
+        blocks: [
+          ["key", "<b>Diagram</b>：S slopes upward. Own price change = movement along S; non-price determinant = S₁ → S₂ shift. <b>Why S slopes up</b>: higher price → higher profit incentive; and increasing marginal costs (diminishing returns) mean producers need a higher price to cover higher MC."],
+          ["table", ["Determinant of supply", "Change", "Effect on S", "Example"], [
+            ["Cost of factors (wages, raw materials, energy)", "↑", "Left", "Oil price ↑ → airline fares S left"],
+            ["Cost of factors", "↓", "Right", "Cheaper steel → car S right"],
+            ["Technology", "Improves", "Right", "Robots / automation"],
+            ["Indirect tax", "Imposed / ↑", "Left (up by tax)", "Excise duty on cigarettes"],
+            ["Subsidy", "Granted / ↑", "Right (down by subsidy)", "Subsidy on solar panels"],
+            ["Prices of related goods (competitive supply)", "Price of alternative good ↑", "Left", "Farmer switches from wheat to corn"],
+            ["Prices of related goods (joint supply)", "Price of beef ↑", "Right for leather", "Beef and leather produced together"],
+            ["Expectations", "Price expected to rise", "Left now (hold back stock)", "Oil stockpiling"],
+            ["Shocks (weather, disasters, strikes)", "Bad harvest", "Left", "Drought reduces wheat supply"],
+            ["Number of firms", "More firms", "Right", "New entrants"]
+          ]],
+          ["note", "<b>S shift direction trick</b>：S right = more at every price = also ‘down’ (lower cost). S left = ‘up’ (higher cost). Tax of $t per unit moves S vertically up by $t at each Q. Subsidy of $s moves S vertically down by $s."],
+          ["trap", [
+            "S 左移 = decrease in supply，唔好講 supply ‘increase’ 因為線向上。",
+            "Expectations: producers expecting higher future prices supply LESS now.",
+            "Price↑ → Qs extension (movement), not ‘supply increases’."
+          ]]
+        ]
+      },
+      {
+        h: "Linear supply 計數 · worked examples",
+        min: 3,
+        blocks: [
+          ["key", "<b>Linear supply</b>: Qs = c + dP (d &gt; 0 = how much Qs rises per $1 rise in price). <b>P-intercept</b>: set Qs = 0. A change in <b>c</b> = shift of S (lower costs raise c); a change in <b>d</b> = change in slope. <b>Per-unit tax $t</b>: replace P with (P − t). <b>Per-unit subsidy $s</b>: replace P with (P + s)."],
+          ["eg", "<b>[P1/P2 · 常考題型]</b> Qs = −20 + 4P. Find Qs at P = 10, Qs at P = 20, and the P-intercept.", [
+            "P = 10: Qs = −20 + 40 = <b>20</b>. P = 20: Qs = −20 + 80 = <b>60</b>.",
+            "P-intercept (Qs = 0): 4P = 20 → P = <b>5</b> (below $5 firms supply nothing).",
+            "Slope dQs/dP = 4: each $1 rise extends Qs by 4 units."
+          ]],
+          ["eg", "<b>[P1/P2 · 常考題型]</b> A $3 per unit indirect tax is imposed on the supplier with Qs = −20 + 4P. Write the new supply function.", [
+            "Producers receive P − 3 for each unit sold at price P, so Qs = −20 + 4(P − 3).",
+            "= −20 + 4P − 12 = <b>−32 + 4P</b>.",
+            "Equivalent: at each Q the supply price is $3 higher → vertical shift up by 3 = decrease in supply."
+          ]],
+          ["eg", "<b>[P1/P2 · 常考題型]</b> Qd = 100 − 2P, Qs = −20 + 4P. At P = 10, find the market situation. At P = 30?", [
+            "P = 10: Qd = 80, Qs = 20 → <b>excess demand (shortage)</b> of 80 − 20 = 60 → price rises.",
+            "P = 30: Qd = 100 − 60 = 40, Qs = −20 + 120 = 100 → <b>excess supply (surplus)</b> of 60 → price falls.",
+            "Equilibrium (see econ-3): 100 − 2P = −20 + 4P → P = 20, Q = 60."
+          ]]
+        ]
+      },
+      {
+        h: "事件分析 · supply diagrams",
+        min: 2,
+        blocks: [
+          ["eg", "<b>[P1/P2 · 常考題型]</b> Explain how a poor rice harvest due to drought affects the rice market.", [
+            "Drought = supply shock → cost/yield falls → S shifts left (S₁ → S₂) [1].",
+            "Shortage at P₁ (Qd &gt; Qs) → price rises to P₂ [1].",
+            "Qs contracts along S₂, Qd contracts along D → new Q₂ &lt; Q₁ [1]; P₂ &gt; P₁."
+          ]],
+          ["eg", "<b>[P1/P2 · 常考題型]</b> A government pays a subsidy to producers of electric cars. Explain the effect on the electric car market.", [
+            "Subsidy lowers costs of production → S shifts right (down) from S₁ to S₂ by the amount of subsidy [1].",
+            "Surplus at P₁ → price falls to P₂; Qd extends [1].",
+            "New equilibrium: lower price P₂ &lt; P₁, higher quantity Q₂ &gt; Q₁ [1]."
+          ]],
+          ["note", "<b>Both D and S change</b>: draw both shifts; Q is certain, P uncertain (or vice versa) depending on which shifts more. D right + S right → Q certainly up, P uncertain. D right + S left → P certainly up, Q uncertain."]
+        ]
+      },
+      {
+        h: "長題拆解 + 命令詞",
+        min: 2,
+        blocks: [
+          ["note", "<b>常考</b>：define supply [2]；explain why S slopes upward [3-4]；explain (with diagram) the effect of a cost change / technology / tax / subsidy / weather on a market [4]；distinguish increase in supply vs increase in quantity supplied [2-4]；calculate Qs from a linear function [2]。"],
+          ["table", ["Command term", "What to write"], [
+            ["Define supply", "Willing and able to offer for sale + each price + time period + ceteris paribus"],
+            ["Explain why S slopes up", "Profit incentive + increasing marginal cost (diminishing returns)"],
+            ["Explain (with diagram)", "Name the cost change → S left/right → excess demand/supply at P₁ → new P₂, Q₂"],
+            ["Distinguish increase in S vs Qs", "Shift (non-price determinant) vs extension (own price)"]
+          ]],
+          ["eg", "<b>[P1/P2 · 常考題型]</b> ‘Using a demand and supply diagram, explain the effect of a rise in the wages of farm workers on the market for strawberries.’ (4 marks)", [
+            "Wages are a cost of production → costs ↑ → S shifts left (S₁ → S₂) [1].",
+            "At P₁ there is excess demand (shortage) [1].",
+            "Price rises to P₂; quantity demanded contracts to Q₂ [1].",
+            "Diagram: P and Q axes, D, S₁, S₂, P₂ &gt; P₁, Q₂ &lt; Q₁ [1]."
+          ]]
+        ]
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["trap", [
+            "Supply 左移但寫成「supply 增加」→ decrease in supply。",
+            "只寫結果，冇 shortage/surplus 過程 → 要寫 adjustment process。",
+            "Tax 令 S 向右移 → tax 令 S 向左（上）移。",
+            "Subsidy 令 S 向左 → 向右（下）。",
+            "Expectations of price rise → 供應即時增加 → 反而 S 即時減少（保留貨存）。",
+            "計數題冇寫單位 / 冇代入步驟。",
+            "D shift 後寫新價錢一定更高 → 如果 S 同時移，結果可能不確定。"
+          ]],
+          ["check", [
+            "Can you calculate Qd, Qs, intercepts and shortage/surplus from Qd = a − bP and Qs = c + dP?",
+            "Can you adjust a supply function for an indirect tax or subsidy?"
+          ]],
+          ["check", ["Can you define supply and the law of supply word-for-word?", "Can you list six non-price determinants of supply from memory?", "Can you give two reasons why the supply curve slopes upward?", "Can you explain joint and competitive supply with an example of each?"]]
+        ]
+      }
+    ],
+    summary: [
+      "成本科技稅補貼，相關預期災難多公司（S 移）",
+      "S 向上：利潤誘因 + 邊際成本遞增",
+      "稅令 S 左（上）移，補貼令 S 右（下）移",
+      "Qs = c + dP：c 變 = 平移；tax 用 (P − t) 代入",
+      "Extension = 自己價錢；increase in supply = 其他因素"
+    ],
+    practice: [
+      { q: "A government grants a subsidy to wheat farmers. The effect on the wheat market is:", m: 1, o: ["D shifts right, price rises", "S shifts left, price rises", "S shifts right, price falls", "D shifts left, price falls"], a: "C. Subsidy lowers costs → S shifts right → price falls, quantity rises [1]." },
+      { q: "Given Qd = 100 − 2P and Qs = −20 + 4P, at a price of $10 there is:", m: 1, o: ["Excess supply of 60", "Excess demand of 60", "Excess demand of 40", "Equilibrium"], a: "B. Qd = 80, Qs = 20, shortage = 60 [1]." },
+      { q: "Which is NOT a non-price determinant of supply?", m: 1, o: ["Technology", "Number of firms", "The price of the good itself", "Cost of raw materials"], a: "C. Own price causes a movement along S [1]." },
+      { q: "Using a demand and supply diagram, explain the effect of an increase in the cost of fertiliser on the market for rice.", m: 4, a: "Diagram: axes P/Q, D, S₁ shifting left to S₂, P₁→P₂, Q₁→Q₂ labelled [1]. Fertiliser is a cost of production, so producers supply less at each price: S shifts left [1]. Excess demand at P₁ pushes price up to P₂ [1]. Qd contracts and Qs extends along S₂ to a new equilibrium at higher price and lower quantity [1]." },
       { q: "Qd = 100 − 2P and Qs = −20 + 4P. A $3 per unit indirect tax is placed on producers. (a) Write the new supply function. (b) State what happens to the supply curve.", m: 3, a: "(a) Qs = −20 + 4(P − 3) [1] = −32 + 4P [1]. (b) Supply decreases / shifts left (vertically upward by $3) [1]." },
-      { q: "Explain the effect on the market for printer ink if the price of printers falls.", m: 4, a: "Printers and ink are complements [1]. Fall in printer price: Qd of printers extends, more printers owned [1], so demand for ink rises (D shifts right) [1]. Shortage at old price pushes the price of ink up and quantity rises [1]." }
+      { q: "Define <i>supply</i>.", m: 2, a: "The quantity of a good or service that producers are willing and able to offer for sale [1] at each possible price in a given time period, ceteris paribus [1]." },
+      { q: "Explain two reasons why the supply curve slopes upward.", m: 4, a: "Profit incentive [1]: a higher price makes production more profitable, so firms produce more and new firms enter [1]. Increasing marginal cost [1]: with diminishing marginal returns each extra unit costs more, so firms supply more only at a higher price [1]." },
     ],
   },
 
@@ -1037,23 +1114,22 @@ IB.addFast({
   },
 
   "econ-5": {
-    title: "PED · YED · PES — formulas, determinants, revenue",
-    intro: "三條彈性公式都係「%變幅 ÷ %變幅」：識計、識分類、識解釋，再加上 TR 同應用，呢張紙就夠 7/7。",
+    title: "PED · Total revenue · YED · Applications",
+    intro: "2.5 講需求彈性：PED（價格）同 YED（收入）。計數三步：%Δ → 相除 → 用文字解讀；再識 PED 同 total revenue、稅收、Engel's law 嘅關係。",
     parts: [
       {
-        h: "Elasticity 彈性總覽",
+        h: "Elasticity of demand 總覽",
         min: 2,
         blocks: [
           ["key", "<b>Elasticity = responsiveness</b>：anything that changes ÷ the thing that caused it，全部用 <b>% change</b>。<br>%Δ = (new − old) ÷ <b>old</b> × 100　｜　冇單位、唔好寫 %、通常計到 2 d.p."],
           ["rhyme", "口訣", "上面係反應，下面係原因", "Numerator = the response (Q<sub>d</sub> or Q<sub>s</sub>)；denominator = the cause (own price P, or income Y)。三條公式只係換咗呢兩個字。"],
           ["table", ["Elasticity", "Formula", "Cause (denominator)", "Sign tells you"], [
             ["<b>PED</b>", "%ΔQ<sub>d</sub> ÷ %ΔP", "good's own price", "negative normally (law of demand)；classify with |PED|"],
-            ["<b>YED</b>", "%ΔQ<sub>d</sub> ÷ %ΔY", "consumer income", "<b>sign matters</b>：− inferior，+ normal"],
-            ["<b>PES</b>", "%ΔQ<sub>s</sub> ÷ %ΔP", "good's own price", "positive normally (law of supply)"],
+            ["<b>YED</b>", "%ΔQ<sub>d</sub> ÷ %ΔY", "consumer income", "<b>sign matters</b>：− inferior，+ normal"]
           ]],
           ["note", "<b>常考 (frequent IB question types)</b>：① Define PED/YED/PES [2]　② Calculate from data [2–3] + state elastic/inelastic　③ Calculate new Q or TR from given elasticity　④ Explain why govts tax inelastic goods [4]　⑤ Explain commodity price volatility [4 / 10]　⑥ Explain determinants of PED / PES [4]　⑦ Evaluate usefulness of elasticity to firms / govts [15]。"],
-          ["flow", [["① %Δ", "算每個 %Δ，分母用 <b>old</b> value"], ["② 相除", "response ÷ cause，keep the sign"], ["③ 分類", "大小睇 |value|；YED 睇正負"], ["④ 解釋", "用句子講：demand is price inelastic，所以…"]]],
-        ],
+          ["flow", [["① %Δ", "算每個 %Δ，分母用 <b>old</b> value"], ["② 相除", "response ÷ cause，keep the sign"], ["③ 分類", "大小睇 |value|；YED 睇正負"], ["④ 解釋", "用句子講：demand is price inelastic，所以…"]]]
+        ]
       },
       {
         h: "口訣 + 定義 + 數值表",
@@ -1069,11 +1145,8 @@ IB.addFast({
             ["YED", "負 inferior，零至一 necessity，大過一 luxury", "YED &lt; 0 · 0–1 · &gt; 1"],
             ["YED", "富咗食少啲 = inferior", "Income up, Q down"],
             ["YED", "Engel：食物 YED 低，服務 YED 高", "Primary share falls, services grow"],
-            ["PES", "時間、存貨、閒置、流動", "Time · Stocks · Spare capacity · Mobility of factors"],
-            ["PES", "穿過原點 = 1，截價軸 &gt; 1，截量軸 &lt; 1", "Straight-line supply curve shortcut"],
-            ["App", "Primary goods：PED、PES 都低 → 價格大上大落", "Volatile commodity prices"],
             ["App", "邊個 inelastic 邊個孭 tax", "Tax incidence"],
-            ["Exam", "計完要「解釋」，唔好淨係畀數字", "Write elastic / inelastic in words"],
+            ["Exam", "計完要「解釋」，唔好淨係畀數字", "Write elastic / inelastic in words"]
           ]],
           ["note", "<b>Definitions (word-for-word)</b><br><b>Price elasticity of demand (PED):</b> a measure of the responsiveness of quantity demanded to a change in the good's own price.<br><b>Income elasticity of demand (YED):</b> a measure of the responsiveness of demand to a change in consumers' income.<br><b>Price elasticity of supply (PES):</b> a measure of the responsiveness of quantity supplied to a change in the good's own price.<br><b>Total revenue (TR):</b> price × quantity sold.<br><b>Normal good:</b> demand rises as income rises (YED &gt; 0).　<b>Inferior good:</b> demand falls as income rises (YED &lt; 0).<br><b>Necessity:</b> normal good with 0 &lt; YED &lt; 1.　<b>Luxury:</b> normal good with YED &gt; 1."],
           ["table", ["Value", "Name", "Curve shape / meaning"], [
@@ -1081,10 +1154,9 @@ IB.addFast({
             ["0 &lt; |PED| &lt; 1", "price inelastic", "%ΔQ &lt; %ΔP"],
             ["|PED| = 1", "unit elastic", "%ΔQ = %ΔP；TR 唔變（rectangular hyperbola）"],
             ["1 &lt; |PED| &lt; ∞", "price elastic", "%ΔQ &gt; %ΔP"],
-            ["PED = ∞", "perfectly elastic", "horizontal D：價格稍微升 Q 變 0"],
-            ["PES = 0 / ∞", "perfectly inelastic / elastic", "vertical S / horizontal S"],
-          ]],
-        ],
+            ["PED = ∞", "perfectly elastic", "horizontal D：價格稍微升 Q 變 0"]
+          ]]
+        ]
       },
       {
         h: "PED 計算 + 解讀",
@@ -1171,48 +1243,22 @@ IB.addFast({
         ],
       },
       {
-        h: "PES 供應彈性",
-        min: 3,
-        blocks: [
-          ["key", "<b>PES = %ΔQ<sub>s</sub> ÷ %ΔP</b>　normally positive：|PES| &gt; 1 elastic，&lt; 1 inelastic，= 1 unit，0 perfectly inelastic（vertical S），∞ perfectly elastic（horizontal S）"],
-          ["table", ["口訣", "Determinant", "Explain"], [
-            ["<b>時</b>", "Time period", "Short run: fixed factors (capital) → inelastic；long run: build factories, new entrants → elastic"],
-            ["<b>存</b>", "Ability to store stocks", "Large inventories → release stock quickly → elastic；perishables → inelastic"],
-            ["<b>閒</b>", "Spare capacity", "Idle machines / workers → raise output easily → elastic；at full capacity → inelastic"],
-            ["<b>流</b>", "Mobility of factors of production", "Easy to switch land, labour, capital → elastic；specialised factors → inelastic"],
-            ["<b>本</b>", "Rate at which costs rise as output rises", "Slowly rising marginal costs → elastic"],
-          ]],
-          ["eg", "<b>P2 · 2 marks (calculate)</b> 價格由 $20 升到 $25，供應量由 400 升到 440 件。Calculate PES.", [
-            "%ΔP = 5 ÷ 20 = <b>+25%</b>；%ΔQ<sub>s</sub> = 40 ÷ 400 = <b>+10%</b>",
-            "PES = 10 ÷ 25 = <b>0.4</b> → price <b>inelastic</b> supply ✅"],
-          ],
-          ["eg", "Price rises $5 → $6; supply rises 1000 → 1500 units.", [
-            "%ΔP = +20%；%ΔQ<sub>s</sub> = +50%",
-            "PES = 50 ÷ 20 = <b>2.5</b> → elastic ✅"],
-          ],
-          ["eg", "PES = 0.5. Price rises 12%. By how much does Q<sub>s</sub> change?", ["%ΔQ<sub>s</sub> = 0.5 × 12 = <b>+6%</b> ✅"]],
-          ["rhyme", "圖形捷徑", "穿過原點 = 1，截價軸 &gt; 1，截量軸 &lt; 1", "Straight-line S 延長：passes through the origin → PES = 1（不論斜度！）；cuts the <b>price</b> axis → PES &gt; 1；cuts the <b>quantity</b> axis → PES &lt; 1。"],
-          ["note", "<b>Diagram descriptions</b>：(a) Perfectly inelastic S：vertical line at fixed Q (e.g. 球場座位)。(b) Perfectly elastic S：horizontal line at one price。(c) Elastic S：flatter curve；inelastic S：steeper curve — 畫兩條 S，標 ΔP 同 ΔQ 比較。"],
-        ],
-      },
-      {
         h: "Applications + evaluation 應用同評價",
-        min: 3,
+        min: 2.5,
         blocks: [
           ["table", ["Application", "Exam logic (write this)"], [
             ["Firm pricing", "Inelastic D → raise price → TR↑；elastic D → cut price → TR↑（e.g. airlines discount off-peak）"],
             ["Government indirect tax", "Choose goods with inelastic D (cigarettes, petrol) → Q falls little → <b>tax revenue high and reliable</b>；but burden falls mainly on consumers, may be regressive, little effect on reducing consumption"],
             ["Tax incidence", "More inelastic D (or more elastic S) → consumers bear more；more elastic D (or more inelastic S) → producers bear more. 邊個 inelastic 邊個孭"],
-            ["Primary commodity volatility", "Low PED + low PES (short run) → any supply or demand shock causes a <b>large change in price</b> → unstable farmers' incomes"],
-            ["Sectoral change", "Engel: food low YED → primary sector shrinks as GDP grows"],
+            ["Sectoral change", "Engel: food low YED → primary sector shrinks as GDP grows"]
           ]],
           ["eg", "<b>P1 · 10-mark stem (explain)</b> Wheat: PED = −0.3. Drought cuts Q by 6% (along the demand curve). Find the %ΔP and the effect on farmers' revenue. Then repeat for a bumper harvest raising Q by 6%.", [
             "Drought：%ΔP = −6 ÷ −0.3 = <b>+20%</b>。TR: 1.20 × 0.94 = 1.128 → farmers' TR <b>↑ about 12.8%</b>（inelastic：價格升幅 &gt; 量跌幅）",
             "Bumper：%ΔP = +6 ÷ −0.3 = <b>−20%</b>。TR: 0.80 × 1.06 = 0.848 → TR <b>↓ about 15.2%</b>",
             "結論：low PED → 小小 Q 變動令價格大變動，農民喺豐收年反而收入跌 → prices and incomes volatile ✅"],
           ],
-          ["note", "<b>Evaluation phrases</b>：<i>It depends on…</i> (time period, whether firm is at capacity)；<i>In the short run… but in the long run…</i>；<i>Elasticity estimates are unreliable / change over time</i>；<i>ceteris paribus rarely holds</i>；<i>other taxes, stakeholders (low-income households)</i>；<i>demand may be inelastic but government may want to cut consumption (demerit goods) — tax then raises revenue but fails to reduce demand</i>。"],
-        ],
+          ["note", "<b>Evaluation phrases</b>：<i>It depends on…</i> (time period, whether firm is at capacity)；<i>In the short run… but in the long run…</i>；<i>Elasticity estimates are unreliable / change over time</i>；<i>ceteris paribus rarely holds</i>；<i>other taxes, stakeholders (low-income households)</i>；<i>demand may be inelastic but government may want to cut consumption (demerit goods) — tax then raises revenue but fails to reduce demand</i>。"]
+        ]
       },
       {
         h: "Long question 長題拆解",
@@ -1253,23 +1299,22 @@ IB.addFast({
             "用 absolute value 判斷 YED。→ YED 要睇 sign。",
             "「斜啲 = 彈性大」。→ 彈性睇 % 唔睇 slope；直線 D 每點唔同。",
             "Inelastic 都話減價賺多啲。→ Inelastic 加價賺多啲。",
-            "PES 穿過原點話 inelastic。→ 穿過原點 = 1，與斜度無關。",
             "計 TR 用 old Q 乘 new P。→ 兩邊都用 new P × new Q。",
             "只畀數字，冇解釋。→ 加一句 price elastic / inelastic。",
             "Tax incidence 話 elastic 嗰邊孭多啲。→ <b>Inelastic</b> 嗰邊孭多啲。",
             "YED 0.4 當 inferior。→ 0.4 = necessity，−0.4 先係 inferior。",
-            "忘記講 time period。→ 短期比長期更 inelastic（D 同 S 都係）。",
-            "Define PED 漏咗 &lt;own&gt; price。→ 寫 change in the good's <b>own</b> price。"]],
+            "Define PED 漏咗 &lt;own&gt; price。→ 寫 change in the good's <b>own</b> price。"
+          ]],
           ["check", [
             "Can I write the three definitions word-for-word?",
             "Can I calculate PED / YED / PES from raw P, Q, Y data in 3 steps?",
             "Can I find %ΔQ or new Q when given an elasticity?",
             "Can I say what TR does for elastic and inelastic demand, and show it on a straight-line D diagram?",
-            "Can I list five PED and five PES determinants and explain each?",
             "Can I classify a good from YED and link to Engel's law?",
-            "Can I explain tax incidence and commodity volatility with elasticities?"]],
-        ],
-      },
+            "Can I explain tax incidence and commodity volatility with elasticities?"
+          ]]
+        ]
+      }
     ],
     summary: [
       "上面係反應，下面係原因：PED = %ΔQd ÷ %ΔP，YED 換 Y，PES 換 Qs",
@@ -1277,26 +1322,127 @@ IB.addFast({
       "Inelastic 加價賺多啲，elastic 減價賺多啲",
       "直線 D：中點 PED = 1，TR 最大",
       "YED：負 inferior，0–1 necessity，大過 1 luxury",
-      "時間、存貨、閒置、流動（PES）",
       "PES：穿過原點 = 1，截價軸 &gt; 1，截量軸 &lt; 1",
-      "邊個 inelastic 邊個孭 tax",
-      "Primary goods：PED、PES 都低 → 價格大上大落",
-      "計完一定要寫句解釋",
+      "計完一定要寫句解釋"
     ],
     practice: [
       { q: "A good has PED = −2. Price falls by 5%. By how much does quantity demanded change?", o: ["A. rises by 2.5%", "B. rises by 5%", "C. rises by 10%", "D. falls by 10%"], m: 1, a: "<b>C</b>. %ΔQ = PED × %ΔP = −2 × −5 = +10%." },
       { q: "A good has YED = −0.4. It is:", o: ["A. a luxury", "B. a necessity", "C. an inferior good", "D. a complement"], m: 1, a: "<b>C</b>. Negative YED means demand falls as income rises: inferior good." },
       { q: "A firm raises its price by 10% and its total revenue falls. This means that:", o: ["A. PED = 0", "B. 0 &lt; |PED| &lt; 1", "C. |PED| = 1", "D. |PED| &gt; 1"], m: 1, a: "<b>D</b>. TR falls when price rises only if demand is price elastic (%ΔQ &gt; %ΔP)." },
-      { q: "Which makes supply of a product more price elastic?", o: ["A. firms already at full capacity", "B. a very short time period", "C. large stocks of finished goods", "D. highly specialised factors of production"], m: 1, a: "<b>C</b>. Stocks can be released quickly when price rises. A, B, D all make supply less elastic." },
-      { q: "A straight-line supply curve starts at the origin. Its PES is:", o: ["A. 0", "B. between 0 and 1", "C. exactly 1", "D. greater than 1"], m: 1, a: "<b>C</b>. Any straight line through the origin has PES = 1, whatever its slope." },
       { q: "Define <i>price elasticity of demand</i>.", m: 2, a: "A measure of the responsiveness of quantity demanded [1] to a change in the good's own price [1]." },
       { q: "The price of a gym membership falls from $50 to $45 and memberships rise from 2000 to 2400. Calculate PED and state whether demand is elastic or inelastic.", m: 3, a: "%ΔP = −10%, %ΔQ = +20% [1]; PED = +20 ÷ −10 = <b>−2</b> [1]; |PED| &gt; 1 so price elastic [1]." },
-      { q: "A seller's price rises from $20 to $25 and the quantity supplied rises from 400 to 440 units. Calculate PES and interpret the answer.", m: 3, a: "%ΔP = +25%, %ΔQ<sub>s</sub> = +10% [1]; PES = 10 ÷ 25 = <b>0.4</b> [1]; PES &lt; 1 so supply is price inelastic [1]." },
       { q: "A firm sells 2000 units a month at $15. PED = −0.5. It raises price by 20%. Calculate the new price, the new quantity and the change in total revenue.", m: 4, a: "New P = 15 × 1.2 = <b>$18</b> [1]; %ΔQ = −0.5 × 20 = −10% → Q = <b>1800</b> [1]; TR before = 15 × 2000 = $30 000 [1]; after = 18 × 1800 = $32 400 → <b>rises by $2400</b> [1]." },
       { q: "Explain two determinants of price elasticity of demand.", m: 4, a: "Any two, each [1] identify + [1] explain. Number / closeness of substitutes: more substitutes → consumers switch easily so demand is more elastic [2]. Time: in the long run consumers can find alternatives / change habits so demand is more elastic [2]. (Also necessity, proportion of income, addiction.)" },
       { q: "Average income rises by 5%. Demand for restaurant meals rises by 12% and demand for rice rises by 2%. Calculate YED for each and classify the goods.", m: 4, a: "Meals: 12 ÷ 5 = <b>2.4</b> [1]; &gt; 1 so normal luxury (income elastic) [1]. Rice: 2 ÷ 5 = <b>0.4</b> [1]; between 0 and 1 so normal necessity (income inelastic) [1]." },
       { q: "Explain why governments often place indirect taxes on goods with price inelastic demand.", m: 4, a: "With inelastic demand the % fall in quantity demanded is smaller than the % rise in price [1]; so the quantity sold (tax base) stays large [1]; tax revenue is therefore high and predictable [1]; most of the burden falls on consumers [1] (accept: consumption falls little so externalities are not much reduced / regressive)." },
+    ],
+  },
+  "econ-5b": {
+    title: "PES · Determinants · Supply curves · Commodity prices",
+    intro: "2.6 講供應彈性 PES：計數同 PED 一樣，分子換成 Qs。重點係 determinants（時存閒流）、直線 S 嘅捷徑，同點解 primary commodities 價格大上大落。",
+    parts: [
+      {
+        h: "PES 總覽",
+        min: 1.5,
+        blocks: [
+          ["key", "<b>PES = responsiveness of quantity supplied to a change in the good's own price</b>。分子 = %ΔQ<sub>s</sub>（response），分母 = %ΔP（cause）；PES 通常係 <b>positive</b>（law of supply）。"],
+          ["table", ["Elasticity", "Formula", "Cause (denominator)", "Sign tells you"], [
+            ["<b>PES</b>", "%ΔQ<sub>s</sub> ÷ %ΔP", "good's own price", "positive normally (law of supply)"]
+          ]]
+        ]
+      },
+      {
+        h: "口訣 + 數值表",
+        min: 1.5,
+        blocks: [
+          ["grid", [
+            ["PES", "時間、存貨、閒置、流動", "Time · Stocks · Spare capacity · Mobility of factors"],
+            ["PES", "穿過原點 = 1，截價軸 &gt; 1，截量軸 &lt; 1", "Straight-line supply curve shortcut"],
+            ["App", "Primary goods：PED、PES 都低 → 價格大上大落", "Volatile commodity prices"]
+          ]],
+          ["table", ["Value", "Name", "Curve shape / meaning"], [
+            ["PES = 0 / ∞", "perfectly inelastic / elastic", "vertical S / horizontal S"]
+          ]]
+        ]
+      },
+      {
+        h: "PES 供應彈性",
+        min: 3,
+        blocks: [
+          ["key", "<b>PES = %ΔQ<sub>s</sub> ÷ %ΔP</b>　normally positive：|PES| &gt; 1 elastic，&lt; 1 inelastic，= 1 unit，0 perfectly inelastic（vertical S），∞ perfectly elastic（horizontal S）"],
+          ["table", ["口訣", "Determinant", "Explain"], [
+            ["<b>時</b>", "Time period", "Short run: fixed factors (capital) → inelastic；long run: build factories, new entrants → elastic"],
+            ["<b>存</b>", "Ability to store stocks", "Large inventories → release stock quickly → elastic；perishables → inelastic"],
+            ["<b>閒</b>", "Spare capacity", "Idle machines / workers → raise output easily → elastic；at full capacity → inelastic"],
+            ["<b>流</b>", "Mobility of factors of production", "Easy to switch land, labour, capital → elastic；specialised factors → inelastic"],
+            ["<b>本</b>", "Rate at which costs rise as output rises", "Slowly rising marginal costs → elastic"],
+          ]],
+          ["eg", "<b>P2 · 2 marks (calculate)</b> 價格由 $20 升到 $25，供應量由 400 升到 440 件。Calculate PES.", [
+            "%ΔP = 5 ÷ 20 = <b>+25%</b>；%ΔQ<sub>s</sub> = 40 ÷ 400 = <b>+10%</b>",
+            "PES = 10 ÷ 25 = <b>0.4</b> → price <b>inelastic</b> supply ✅"],
+          ],
+          ["eg", "Price rises $5 → $6; supply rises 1000 → 1500 units.", [
+            "%ΔP = +20%；%ΔQ<sub>s</sub> = +50%",
+            "PES = 50 ÷ 20 = <b>2.5</b> → elastic ✅"],
+          ],
+          ["eg", "PES = 0.5. Price rises 12%. By how much does Q<sub>s</sub> change?", ["%ΔQ<sub>s</sub> = 0.5 × 12 = <b>+6%</b> ✅"]],
+          ["rhyme", "圖形捷徑", "穿過原點 = 1，截價軸 &gt; 1，截量軸 &lt; 1", "Straight-line S 延長：passes through the origin → PES = 1（不論斜度！）；cuts the <b>price</b> axis → PES &gt; 1；cuts the <b>quantity</b> axis → PES &lt; 1。"],
+          ["note", "<b>Diagram descriptions</b>：(a) Perfectly inelastic S：vertical line at fixed Q (e.g. 球場座位)。(b) Perfectly elastic S：horizontal line at one price。(c) Elastic S：flatter curve；inelastic S：steeper curve — 畫兩條 S，標 ΔP 同 ΔQ 比較。"],
+        ],
+      },
+      {
+        h: "Applications 應用",
+        min: 2,
+        blocks: [
+          ["table", ["Application", "Exam logic (write this)"], [
+            ["Primary commodity volatility", "Low PED + low PES (short run) → any supply or demand shock causes a <b>large change in price</b> → unstable farmers' incomes"]
+          ]],
+          ["note", "<b>Evaluation phrases (PES)</b>：<i>It depends on the time period</i>（short run inelastic, long run elastic）；<i>whether firms have spare capacity or stocks</i>；<i>whether factors are mobile</i>。Low PES + low PED → 價格波動大 → 政府可能用 buffer stocks / price floors（見 2.7）。"]
+        ]
+      },
+      {
+        h: "Long question 長題拆解 · PES",
+        min: 2,
+        blocks: [
+          ["note", "<b>常考</b>：define PES [2]；calculate PES from data and state elastic/inelastic [2]；explain two determinants of PES [4]；using a diagram explain why a rise in demand raises price more when supply is inelastic [4]；explain why primary commodity prices are volatile [4]；P1 (b)/P2 (g)：evaluate the consequences of low PES for commodity producers [15]。"],
+          ["flow", [["① 圈數", "Old/new P and Qs"], ["② %Δ", "(new − old) ÷ old × 100"], ["③ PES", "%ΔQs ÷ %ΔP，positive，no units"], ["④ 解讀", "&gt; 1 elastic / &lt; 1 inelastic + reason (time, stocks, spare capacity, mobility)"], ["⑤ 圖", "Same D shift on steep vs flat S → compare ΔP and ΔQ"]]],
+          ["eg", "<b>P2 · 4 marks (using a diagram, explain)</b> Explain why an increase in demand for flats in a city centre mainly raises rents.", [
+            "Supply of city-centre flats is price inelastic: land is fixed and new buildings take years to complete [1].",
+            "Diagram: steep S, D₁ → D₂ [1].",
+            "The rise in demand causes a large rise in price (rent) [1]",
+            "and only a small extension of quantity supplied [1]."
+          ]]
+        ]
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 1.5,
+        blocks: [
+          ["trap", [
+            "PES 穿過原點話 inelastic。→ 穿過原點 = 1，與斜度無關。",
+            "忘記講 time period。→ 短期比長期更 inelastic（D 同 S 都係）。"
+          ]],
+          ["check", [
+            "Can I list five PED and five PES determinants and explain each?"
+          ]],
+          ["check", ["Can I define PES word-for-word?", "Can I calculate PES and say elastic or inelastic?", "Can I draw vertical, horizontal and unit-elastic supply curves?", "Can I explain why a rise in demand raises house prices more than it raises the number of houses?"]]
+        ]
+      }
+    ],
+    summary: [
+      "時間、存貨、閒置、流動（PES）",
+      "邊個 inelastic 邊個孭 tax",
+      "Primary goods：PED、PES 都低 → 價格大上大落",
+      "PES = %ΔQs ÷ %ΔP，正數，冇單位",
+      "短期 inelastic，長期 elastic"
+    ],
+    practice: [
+      { q: "Which makes supply of a product more price elastic?", o: ["A. firms already at full capacity", "B. a very short time period", "C. large stocks of finished goods", "D. highly specialised factors of production"], m: 1, a: "<b>C</b>. Stocks can be released quickly when price rises. A, B, D all make supply less elastic." },
+      { q: "A straight-line supply curve starts at the origin. Its PES is:", o: ["A. 0", "B. between 0 and 1", "C. exactly 1", "D. greater than 1"], m: 1, a: "<b>C</b>. Any straight line through the origin has PES = 1, whatever its slope." },
+      { q: "A seller's price rises from $20 to $25 and the quantity supplied rises from 400 to 440 units. Calculate PES and interpret the answer.", m: 3, a: "%ΔP = +25%, %ΔQ<sub>s</sub> = +10% [1]; PES = 10 ÷ 25 = <b>0.4</b> [1]; PES &lt; 1 so supply is price inelastic [1]." },
       { q: "Explain why the price of agricultural products tends to be volatile.", m: 4, a: "Demand is price inelastic (necessities, few substitutes) [1]; supply is price inelastic in the short run (crops take time to grow, weather dependent, perishable) [1]; so a shift in supply (e.g. drought) or demand [1] causes a large change in price, e.g. PED −0.3 means a 6% fall in Q needs a 20% price rise [1]." },
+      { q: "Define <i>price elasticity of supply</i>.", m: 2, a: "A measure of the responsiveness of quantity supplied [1] to a change in the good's own price [1]." },
+      { q: "Explain two reasons why the supply of wheat is price inelastic in the short run.", m: 4, a: "Time period [1]: crops take months to grow, so output cannot respond quickly to a higher price [1]. Limited stocks / perishability [1]: fresh produce cannot be stored for long, so there are few stocks to release when price rises [1]. (Accept: land is a fixed factor; factors are immobile.)" },
     ],
   },
 
@@ -2825,11 +2971,11 @@ IB.addFast({
   },
 
   "econ-13": {
-    title: "Monetary policy · Fiscal policy · Strengths & limitations",
-    intro: "兩種 demand-side policy 都係「推 AD」：central bank 郁利率同貨幣供應，government 郁 G 同 T。睇完呢張 sheet 就識畫圖、識計數、識寫 15-mark evaluation。",
+    title: "Monetary policy · Interest rates · OMO · QE · Transmission · Evaluation",
+    intro: "3.5 貨幣政策：中央銀行用利率、open market operations 同 QE 去控制 AD。記住傳導鏈：利率 → 借貸、儲蓄、供樓、匯率 → C、I、X−M → AD，再用 time lag、confidence、liquidity trap 去評價。",
     parts: [
       {
-        h: "Big picture 兩隻手",
+        h: "Big picture 貨幣政策",
         min: 2,
         blocks: [
           ["rhyme", "口訣", "銀行管息，政府管數", "Monetary = central bank controls interest rates / money supply. Fiscal = government controls spending (G) and taxes (T)."],
@@ -2842,16 +2988,15 @@ IB.addFast({
           ]],
           ["table", ["", "Expansionary（擴張）", "Contractionary（緊縮）"], [
             ["Monetary", "Interest rate↓ / buy bonds / QE / reserve requirement↓", "Interest rate↑ / sell bonds / reserve requirement↑"],
-            ["Fiscal", "G↑ and/or T↓ (budget moves towards deficit)", "G↓ and/or T↑ (budget moves towards surplus)"],
             ["Effect on AD", "AD shifts right", "AD shifts left"],
-            ["Used when", "Recessionary (deflationary) gap, high cyclical unemployment", "Inflationary gap, demand-pull inflation, boom"],
+            ["Used when", "Recessionary (deflationary) gap, high cyclical unemployment", "Inflationary gap, demand-pull inflation, boom"]
           ]],
-          ["note", "<b>常考 (perennial favourites):</b> 「Explain how a rate change affects AD」(4 marks, 2 linked points + diagram); 「Evaluate fiscal vs monetary policy」(15 marks, both sides + judgement); calculate deficit / real rate; MCQ on which tool is expansionary.<br>AD = C + I + G + (X − M). Every demand-side policy works by changing one of these four. Name WHICH component you are changing in your answer."],
-        ],
+          ["note", "<b>常考 (perennial favourites):</b> 「Explain how a rate change affects AD」(4 marks, 2 linked points + diagram); 「Evaluate fiscal vs monetary policy」(15 marks, both sides + judgement); calculate deficit / real rate; MCQ on which tool is expansionary.<br>AD = C + I + G + (X − M). Every demand-side policy works by changing one of these four. Name WHICH component you are changing in your answer."]
+        ]
       },
       {
         h: "口訣 + definitions",
-        min: 2.5,
+        min: 2,
         blocks: [
           ["grid", [
             ["3.5", "減息 → 借錢平 → C、I 升", "Lower rates → cheaper borrowing → C and I rise"],
@@ -2860,15 +3005,11 @@ IB.addFast({
             ["3.5", "QE = 印錢買資產", "Create money to buy assets when rates near zero"],
             ["3.5", "利率近零，信心唔夠，借都冇人借", "Liquidity trap / low confidence limits monetary policy"],
             ["3.5", "12 至 24 個月先見效", "Monetary policy time lag"],
-            ["3.6", "G 升 T 跌，AD 右移", "Expansionary fiscal"],
-            ["3.6", "累進稅 + 失業金 = 自動穩定器", "Automatic stabilisers"],
-            ["3.6", "借得多，息就升，私人投資被擠走", "Crowding out"],
-            ["3.6", "赤字係一年，債務係累積", "Deficit = annual flow; debt = accumulated stock"],
             ["3.6", "財政可以揀對象，貨幣一刀切", "Fiscal can target sectors; interest rate is the same for everyone"],
-            ["Eval", "時間差、副作用、信心、債", "Time lags, side effects, confidence, debt"],
+            ["Eval", "時間差、副作用、信心、債", "Time lags, side effects, confidence, debt"]
           ]],
-          ["note", "<b>Definitions (word-for-word)</b><br><b>Monetary policy:</b> the manipulation of interest rates and/or the money supply by the central bank to influence aggregate demand (and so achieve macroeconomic objectives).<br><b>Fiscal policy:</b> changes in government spending and/or taxation to influence aggregate demand.<br><b>Expansionary policy:</b> policy that increases AD to raise real GDP.<br><b>Contractionary policy:</b> policy that reduces AD to reduce inflationary pressure.<br><b>Automatic stabilisers:</b> fiscal elements (e.g. progressive taxes and unemployment benefits) that automatically reduce fluctuations in AD without new government decisions.<br><b>Budget deficit:</b> government spending exceeds tax revenue in a year. <b>Budget surplus:</b> tax revenue exceeds spending.<br><b>Public (national) debt:</b> the accumulated total of past budget deficits (less surpluses).<br><b>Crowding out:</b> reduction in private sector spending/investment caused by higher interest rates when the government borrows to finance a deficit.<br><b>Quantitative easing (QE):</b> the central bank creates money electronically to buy financial assets (e.g. government bonds), increasing the money supply and lowering long-term interest rates.<br><b>Open market operations (OMO):</b> the central bank buying or selling government bonds in the financial market to change the money supply and interest rates.<br><b>Minimum reserve requirement:</b> the minimum fraction of deposits that commercial banks must hold as reserves and cannot lend out.<br><b>Policy (base) interest rate:</b> the rate the central bank sets which influences all other interest rates in the economy.<br><b>Real interest rate:</b> nominal interest rate minus inflation rate."],
-        ],
+          ["note", "<b>Definitions (word-for-word)</b><br><b>Monetary policy:</b> the manipulation of interest rates and/or the money supply by the central bank to influence aggregate demand (and so achieve macroeconomic objectives).<br><b>Fiscal policy:</b> changes in government spending and/or taxation to influence aggregate demand.<br><b>Expansionary policy:</b> policy that increases AD to raise real GDP.<br><b>Contractionary policy:</b> policy that reduces AD to reduce inflationary pressure.<br><b>Automatic stabilisers:</b> fiscal elements (e.g. progressive taxes and unemployment benefits) that automatically reduce fluctuations in AD without new government decisions.<br><b>Budget deficit:</b> government spending exceeds tax revenue in a year. <b>Budget surplus:</b> tax revenue exceeds spending.<br><b>Public (national) debt:</b> the accumulated total of past budget deficits (less surpluses).<br><b>Crowding out:</b> reduction in private sector spending/investment caused by higher interest rates when the government borrows to finance a deficit.<br><b>Quantitative easing (QE):</b> the central bank creates money electronically to buy financial assets (e.g. government bonds), increasing the money supply and lowering long-term interest rates.<br><b>Open market operations (OMO):</b> the central bank buying or selling government bonds in the financial market to change the money supply and interest rates.<br><b>Minimum reserve requirement:</b> the minimum fraction of deposits that commercial banks must hold as reserves and cannot lend out.<br><b>Policy (base) interest rate:</b> the rate the central bank sets which influences all other interest rates in the economy.<br><b>Real interest rate:</b> nominal interest rate minus inflation rate."]
+        ]
       },
       {
         h: "Monetary policy 貨幣政策",
@@ -2890,6 +3031,133 @@ IB.addFast({
             ["Can fight inflation by raising rates", "Raising rates can cause recession and raise cost of borrowing / mortgage stress; QE may inflate asset bubbles and raise inequality"],
           ]],
         ],
+      },
+      {
+        h: "Worked examples 計數",
+        min: 2.5,
+        blocks: [
+          ["eg", "<b>P2 · 2 marks · Calculate.</b> The nominal interest rate is 6% and inflation is 2.5%. Calculate the real interest rate. Then inflation rises to 4% with the nominal rate unchanged.", [
+            "Real rate = nominal − inflation = 6 − 2.5 = <b>3.5%</b>",
+            "After inflation 4%: 6 − 4 = <b>2%</b>",
+            "Meaning: borrowing is effectively cheaper, saving less rewarding → encourages C and I. Real rates matter more than nominal.",
+          ]],
+          ["eg", "<b>P2 · 3 marks · Explain.</b> Open market operations: the central bank buys $10bn of government bonds from commercial banks. Explain the effect.", [
+            "Banks give up bonds and receive $10bn of reserves → banks hold more reserves than needed",
+            "Banks lend more, cutting interest rates to attract borrowers → money supply increases",
+            "Cheaper borrowing → I and C rise → AD shifts right → real GDP up, cyclical unemployment down, price level up a little",
+          ]],
+          ["eg", "<b>P2 · 4 marks · Suggest / Justify.</b> Policy choice. Inflation is 5% (target 2%), unemployment is below its natural rate and real GDP is above potential. Recommend a policy.", [
+            "Diagnosis: inflationary gap, demand-pull inflation (Ye &gt; Yp).",
+            "Monetary: raise policy rate → borrowing dearer → C and I fall, currency appreciates → AD shifts left from AD₂ to AD₁ → price level falls back towards target.",
+            "Fiscal alternative: cut G or raise T → AD left. But politically hard, so central bank usually leads.",
+            "Evaluate: time lag 12–24 months; risk of over-tightening and recession; savers gain, borrowers lose.",
+          ]]
+        ]
+      },
+      {
+        h: "Long question 拆題法 (15 marks)",
+        min: 3,
+        blocks: [
+          ["flow", [
+            ["① Define", "Fiscal policy / monetary policy, recessionary gap, AD — each in one line"],
+            ["② Diagram", "AD/AS: AD₁ → AD₂ right, Ye → Yp, label APL and real GDP; Keynesian LRAS if deep recession"],
+            ["③ Explain", "Policy → component (C, I, G, X−M) → AD → output, employment, price level (use arrows: A → B → C)"],
+            ["④ Real example", "Name country, year, policy (see box below)"],
+            ["⑤ Evaluate", "At least 3 points: lags, crowding out/debt, liquidity trap/confidence, size of spare capacity, short vs long run, stakeholders"],
+            ["⑥ Conclude", "Judgement with 「depends on」 and a reason: which policy, in which conditions"],
+          ]],
+          ["note", "<b>Real-world examples (safe facts)</b><br>Fiscal: US CARES Act, March 2020 (about $2.2 trillion relief package); China 4 trillion yuan stimulus 2008–09; Japan repeated stimulus packages with high public debt.<br>Monetary: US Federal Reserve raised its policy rate from near 0% in early 2022 to 5.25–5.50% by mid-2023 to fight inflation; QE by Bank of Japan from 2001, Fed after 2008, ECB from 2015; central banks cut rates to near zero in 2020."],
+          ["table", ["Evaluation phrase", "Use it to say"], [
+            ["「depends on the size of the multiplier」", "spending leaks into savings, taxes, imports → weaker effect"],
+            ["「depends on spare capacity」", "if economy is near Yp, more AD only causes inflation"],
+            ["「in the short run… but in the long run…」", "crowding out, debt, interest payments emerge later"],
+            ["「confidence」", "firms/households may not respond to cheaper credit or tax cuts"],
+            ["「stakeholders」", "borrowers vs savers; taxpayers vs benefit recipients; exporters vs importers"],
+            ["「magnitude and time lag」", "gap may close on its own before policy works"]
+          ]]
+        ]
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["Monetary policy [4]", "Interest rate ↓ → C, I ↑ → AD ↑；寫 transmission 鏈 + lag"],
+            ["Evaluate policy [15]", "兩邊 effects + limitations（time lags、crowding out、liquidity trap、debt）+ 判斷"]
+          ]],
+          ["note", "<b>Accept</b>：「expansionary fiscal = ↑G or ↓T」。<b>Reject</b>：central bank 控制 taxes。Evaluation 必須 conditional：「depends on size of output gap / time horizon」。"]
+        ]
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["錯", "改正"], [
+            ["Saying government changes interest rates", "Central bank sets interest rates; government sets G and T"],
+            ["Selling bonds is expansionary", "Central bank BUYS bonds = expansionary; SELLS = contractionary"],
+            ["Labelling axes P and Q on AD/AS", "Average price level (APL) and Real GDP (Y)"],
+            ["Writing 「interest rates fall so AD rises」 only", "Name the chain: borrowing cheaper → I and C ↑ → AD ↑ → real GDP ↑"],
+            ["Forgetting the exchange-rate channel", "Rate↓ → currency depreciates → exports ↑ imports ↓ → X−M ↑"],
+            ["Evaluating with a list only", "Weigh points: which matters most, and why (depends on…)"],
+            ["Ignoring time lag", "Say how long: monetary roughly 12–24 months; fiscal has recognition, decision, implementation lags"],
+            ["Saying QE = printing banknotes", "QE = creating money electronically to buy financial assets"]
+          ]],
+          ["check", [
+            "I can define monetary policy, fiscal policy, automatic stabilisers, crowding out, QE word-for-word.",
+            "I can list four monetary tools and say whether each is expansionary or contractionary.",
+            "I can draw AD/AS for expansionary and contractionary policy with correct axis labels.",
+            "I can write the transmission chain from interest rate to AD in 4 steps.",
+            "I can give 3 strengths and 3 limitations of each policy.",
+            "I can explain why fiscal may beat monetary in a deep recession (zero lower bound).",
+            "I can quote at least one real-world example of each policy."
+          ]]
+        ]
+      }
+    ],
+    summary: [
+      "Monetary = central bank：利率 + money supply；Fiscal = government：G 同 T",
+      "減息 → 借錢平 → C、I 升；貨幣貶 → X−M 升 → AD 右移",
+      "買債放錢，賣債收錢（OMO）；QE = 印錢買資產",
+      "利率近零，貨幣冇力；深度衰退，財政先有用",
+      "結論要「depends on」：gap 幾大、spare capacity、債務水平"
+    ],
+    practice: [
+      { q: "The central bank buys government bonds from commercial banks. The most likely effect is:", o: ["A. Money supply falls and interest rates rise", "B. Money supply rises and interest rates fall", "C. Government spending rises", "D. Budget deficit falls"], m: 1, a: "<b>B</b>. OMO purchases raise bank reserves, lending and the money supply, lowering interest rates." },
+      { q: "The nominal interest rate is 5% and inflation is 3%. The real interest rate is:", o: ["A. 2%", "B. 3%", "C. 5%", "D. 8%"], m: 1, a: "<b>A</b>. Real = nominal − inflation = 5 − 3 = 2%." },
+      { q: "Define <i>monetary policy</i>.", m: 2, a: "The manipulation of interest rates and/or the money supply [1] by the central bank to influence aggregate demand / achieve macroeconomic objectives [1]." },
+      { q: "Explain how an increase in the policy interest rate may reduce inflation.", m: 4, a: "Commercial bank interest rates rise, so borrowing is dearer and saving more attractive [1]. Mortgage payments rise, reducing disposable income [1]. C and I fall, and the currency may appreciate, reducing X−M [1]. AD shifts left, reducing demand-pull inflation (with a time lag) [1]." },
+      { q: "Using an AD/AS diagram, explain how expansionary monetary policy could close a recessionary gap.", m: 4, a: "Diagram: axes APL and real GDP; AD₁ shifts right to AD₂; Ye moves towards Yp [1]. Central bank cuts the policy rate / buys bonds, so borrowing is cheaper and the incentive to save falls [1]. C and I increase (and X−M if the currency depreciates) [1]. AD rises, real GDP increases and cyclical unemployment falls [1]." },
+      { q: "Explain two reasons why fiscal policy may be more effective than monetary policy in a deep recession.", m: 4, a: "Interest rates may already be near zero (liquidity trap), and low confidence means further cuts do not stimulate borrowing [1+1]. Government spending adds directly to AD, can be targeted at sectors/regions and has a multiplier effect [1+1]." },
+    ],
+  },
+  "econ-13b": {
+    title: "Fiscal policy · G and T · Multiplier · Automatic stabilisers · Deficit and debt",
+    intro: "3.6 財政政策：政府用開支 (G) 同稅 (T) 去移 AD。要識 multiplier、automatic stabilisers、budget deficit vs public debt 同 crowding out，再評價 time lags、債務同 political constraints。",
+    parts: [
+      {
+        h: "Big picture 財政政策",
+        min: 2,
+        blocks: [
+          ["rhyme", "口訣", "政府管數：G 升 T 跌 AD 右移", "Fiscal policy = government changes spending (G) and/or taxation (T). Expansionary: G↑ and/or T↓ → budget towards deficit → AD shifts right. Contractionary: G↓ and/or T↑ → AD shifts left."],
+          ["table", ["", "Expansionary（擴張）", "Contractionary（緊縮）"], [
+            ["Fiscal", "G↑ and/or T↓ (budget moves towards deficit)", "G↓ and/or T↑ (budget moves towards surplus)"],
+            ["Effect on AD", "AD shifts right", "AD shifts left"],
+            ["Used when", "Recessionary (deflationary) gap, high cyclical unemployment", "Inflationary gap, demand-pull inflation, boom"]
+          ]]
+        ]
+      },
+      {
+        h: "口訣 + definitions",
+        min: 2,
+        blocks: [
+          ["grid", [
+            ["3.6", "G 升 T 跌，AD 右移", "Expansionary fiscal"],
+            ["3.6", "累進稅 + 失業金 = 自動穩定器", "Automatic stabilisers"],
+            ["3.6", "借得多，息就升，私人投資被擠走", "Crowding out"],
+            ["3.6", "赤字係一年，債務係累積", "Deficit = annual flow; debt = accumulated stock"]
+          ]],
+          ["note", "<b>Definitions (word-for-word)</b><br><b>Fiscal policy:</b> changes in government spending and/or taxation to influence aggregate demand.<br><b>Automatic stabilisers:</b> fiscal elements (e.g. progressive taxes and unemployment benefits) that automatically reduce fluctuations in AD without new government decisions.<br><b>Budget deficit:</b> government spending exceeds revenue in a year; <b>budget surplus:</b> revenue exceeds spending.<br><b>Public debt:</b> the accumulated total of past deficits minus surpluses.<br><b>Crowding out:</b> reduction in private investment caused by higher interest rates when the government borrows to finance a deficit.<br><b>Current vs capital expenditure:</b> day-to-day spending (wages, medicines) vs spending on long-lasting assets (roads, schools)."]
+        ]
       },
       {
         h: "Fiscal policy 財政政策",
@@ -2914,13 +3182,8 @@ IB.addFast({
       },
       {
         h: "Worked examples 計數",
-        min: 4,
+        min: 2.5,
         blocks: [
-          ["eg", "<b>P2 · 2 marks · Calculate.</b> The nominal interest rate is 6% and inflation is 2.5%. Calculate the real interest rate. Then inflation rises to 4% with the nominal rate unchanged.", [
-            "Real rate = nominal − inflation = 6 − 2.5 = <b>3.5%</b>",
-            "After inflation 4%: 6 − 4 = <b>2%</b>",
-            "Meaning: borrowing is effectively cheaper, saving less rewarding → encourages C and I. Real rates matter more than nominal.",
-          ]],
           ["eg", "<b>P2 · 2+2 marks · Calculate / Explain.</b> AD = C + I + G + (X − M). C = 600, I = 200, G = 250, X = 300, M = 350 (all $bn). (a) Calculate AD. (b) G rises by $50bn. (c) The government raises G by $50bn but crowding out cuts I by $20bn.", [
             "(a) AD = 600 + 200 + 250 + (300 − 350) = 1050 − 50 = <b>$1000bn</b>",
             "(b) AD = 600 + 200 + 300 + (−50) = <b>$1050bn</b> (initial effect, before any multiplier)",
@@ -2937,33 +3200,13 @@ IB.addFast({
             "Tax at $40,000 = 2,000 + 0.30 × 20,000 = 2,000 + 6,000 = $8,000 → disposable income $32,000",
             "Income fell $10,000 but tax fell $3,000, so disposable income fell only $7,000 (not $10,000) → consumption falls by less → AD cushioned.",
             "Average tax rate: 11,000/50,000 = 22% → 8,000/40,000 = 20% (progressive).",
-          ]],
-          ["eg", "<b>P2 · 3 marks · Explain.</b> Open market operations: the central bank buys $10bn of government bonds from commercial banks. Explain the effect.", [
-            "Banks give up bonds and receive $10bn of reserves → banks hold more reserves than needed",
-            "Banks lend more, cutting interest rates to attract borrowers → money supply increases",
-            "Cheaper borrowing → I and C rise → AD shifts right → real GDP up, cyclical unemployment down, price level up a little",
-          ]],
-          ["eg", "<b>P2 · 4 marks · Suggest / Justify.</b> Policy choice. Inflation is 5% (target 2%), unemployment is below its natural rate and real GDP is above potential. Recommend a policy.", [
-            "Diagnosis: inflationary gap, demand-pull inflation (Ye &gt; Yp).",
-            "Monetary: raise policy rate → borrowing dearer → C and I fall, currency appreciates → AD shifts left from AD₂ to AD₁ → price level falls back towards target.",
-            "Fiscal alternative: cut G or raise T → AD left. But politically hard, so central bank usually leads.",
-            "Evaluate: time lag 12–24 months; risk of over-tightening and recession; savers gain, borrowers lose.",
-          ]],
-        ],
+          ]]
+        ]
       },
       {
         h: "Long question 拆題法 (15 marks)",
-        min: 4,
+        min: 3,
         blocks: [
-          ["flow", [
-            ["① Define", "Fiscal policy / monetary policy, recessionary gap, AD — each in one line"],
-            ["② Diagram", "AD/AS: AD₁ → AD₂ right, Ye → Yp, label APL and real GDP; Keynesian LRAS if deep recession"],
-            ["③ Explain", "Policy → component (C, I, G, X−M) → AD → output, employment, price level (use arrows: A → B → C)"],
-            ["④ Real example", "Name country, year, policy (see box below)"],
-            ["⑤ Evaluate", "At least 3 points: lags, crowding out/debt, liquidity trap/confidence, size of spare capacity, short vs long run, stakeholders"],
-            ["⑥ Conclude", "Judgement with 「depends on」 and a reason: which policy, in which conditions"],
-          ]],
-          ["note", "<b>Real-world examples (safe facts)</b><br>Fiscal: US CARES Act, March 2020 (about $2.2 trillion relief package); China 4 trillion yuan stimulus 2008–09; Japan repeated stimulus packages with high public debt.<br>Monetary: US Federal Reserve raised its policy rate from near 0% in early 2022 to 5.25–5.50% by mid-2023 to fight inflation; QE by Bank of Japan from 2001, Fed after 2008, ECB from 2015; central banks cut rates to near zero in 2020."],
           ["eg", "<b>P1 · 15 marks · Evaluate.</b> Evaluate the effectiveness of fiscal policy in closing a recessionary gap. [15] — model frame", [
             "<b>Intro (define):</b> Fiscal policy = changes in G and/or taxation to influence AD. A recessionary gap exists when real GDP (Ye) is below potential output (Yp).",
             "<b>Diagram:</b> AD/AS: AD₁ shifts right to AD₂, real GDP rises from Ye to Yp.",
@@ -2977,74 +3220,51 @@ IB.addFast({
             ["「depends on the size of the multiplier」", "spending leaks into savings, taxes, imports → weaker effect"],
             ["「depends on spare capacity」", "if economy is near Yp, more AD only causes inflation"],
             ["「in the short run… but in the long run…」", "crowding out, debt, interest payments emerge later"],
-            ["「confidence」", "firms/households may not respond to cheaper credit or tax cuts"],
-            ["「stakeholders」", "borrowers vs savers; taxpayers vs benefit recipients; exporters vs importers"],
-            ["「magnitude and time lag」", "gap may close on its own before policy works"],
-          ]],
-        ],
+            ["「magnitude and time lag」", "gap may close on its own before policy works"]
+          ]]
+        ]
       },
       {
         h: "考場收分位 Exam edge",
         min: 1,
         blocks: [
-          ["table", ["Paper 常見題型","Model answer pattern"], [["Fiscal policy 圖 [4]", "圖 AD 右移 [1] + G↑ 或 T↓ [1] + multiplier [1] + 通脹風險 [1]"], ["Monetary policy [4]", "Interest rate ↓ → C, I ↑ → AD ↑；寫 transmission 鏈 + lag"], ["Evaluate policy [15]", "兩邊 effects + limitations（time lags、crowding out、liquidity trap、debt）+ 判斷"]]],
-          ["note", "<b>Accept</b>：「expansionary fiscal = ↑G or ↓T」。<b>Reject</b>：central bank 控制 taxes。Evaluation 必須 conditional：「depends on size of output gap / time horizon」。"]
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["Fiscal policy 圖 [4]", "圖 AD 右移 [1] + G↑ 或 T↓ [1] + multiplier [1] + 通脹風險 [1]"],
+            ["Evaluate policy [15]", "兩邊 effects + limitations（time lags、crowding out、liquidity trap、debt）+ 判斷"]
+          ]]
         ]
       },
       {
         h: "失分位 + 自我檢查",
-        min: 2.5,
+        min: 2,
         blocks: [
           ["table", ["錯", "改正"], [
-            ["Saying government changes interest rates", "Central bank sets interest rates; government sets G and T"],
-            ["Selling bonds is expansionary", "Central bank BUYS bonds = expansionary; SELLS = contractionary"],
-            ["Labelling axes P and Q on AD/AS", "Average price level (APL) and Real GDP (Y)"],
-            ["Writing 「interest rates fall so AD rises」 only", "Name the chain: borrowing cheaper → I and C ↑ → AD ↑ → real GDP ↑"],
             ["Mixing deficit and debt", "Deficit = one year (flow); debt = accumulated (stock)"],
             ["Crowding out = firms leave a market", "Gov borrowing → higher interest rates → lower private investment"],
-            ["Forgetting the exchange-rate channel", "Rate↓ → currency depreciates → exports ↑ imports ↓ → X−M ↑"],
             ["Automatic stabilisers = new government decisions", "They work with NO decision: progressive tax and benefits adjust by themselves"],
-            ["Evaluating with a list only", "Weigh points: which matters most, and why (depends on…)"],
-            ["Ignoring time lag", "Say how long: monetary roughly 12–24 months; fiscal has recognition, decision, implementation lags"],
-            ["Saying QE = printing banknotes", "QE = creating money electronically to buy financial assets"],
-            ["Treating G cut as always bad", "Contractionary fiscal reduces inflation and deficit; cost is lower growth and jobs"],
+            ["Treating G cut as always bad", "Contractionary fiscal reduces inflation and deficit; cost is lower growth and jobs"]
           ]],
           ["check", [
-            "I can define monetary policy, fiscal policy, automatic stabilisers, crowding out, QE word-for-word.",
-            "I can list four monetary tools and say whether each is expansionary or contractionary.",
-            "I can draw AD/AS for expansionary and contractionary policy with correct axis labels.",
-            "I can write the transmission chain from interest rate to AD in 4 steps.",
-            "I can calculate real interest rate, budget balance, deficit % GDP and the effect of a progressive tax in a recession.",
-            "I can give 3 strengths and 3 limitations of each policy.",
-            "I can explain why fiscal may beat monetary in a deep recession (zero lower bound).",
-            "I can quote at least one real-world example of each policy.",
+            "I can calculate real interest rate, budget balance, deficit % GDP and the effect of a progressive tax in a recession."
           ]],
-        ],
-      },
+          ["check", ["I can define fiscal policy, automatic stabilisers, budget deficit, public debt and crowding out word-for-word.", "I can explain how G and T shift AD and why the multiplier makes the effect larger.", "I can give three strengths and three limitations of fiscal policy.", "I can quote one real-world example of expansionary and one of contractionary fiscal policy."]]
+        ]
+      }
     ],
     summary: [
-      "Monetary = central bank：利率 + money supply；Fiscal = government：G 同 T",
-      "減息 → 借錢平 → C、I 升；貨幣貶 → X−M 升 → AD 右移",
-      "買債放錢，賣債收錢（OMO）；QE = 印錢買資產",
       "累進稅 + 失業金 = 自動穩定器，冇 time lag",
       "借得多，息就升，私人投資被擠走",
-      "利率近零，貨幣冇力；深度衰退，財政先有用",
       "赤字係一年，債務係累積；Evaluate 一定講 time lag、debt、confidence",
-      "結論要「depends on」：gap 幾大、spare capacity、債務水平",
+      "G 升 T 跌 = expansionary；multiplier 令 AD 效果放大",
+      "Current = 日常開支；capital = 長期資產（路、學校）"
     ],
     practice: [
       { q: "Which is an example of expansionary fiscal policy?", o: ["A. Raising the policy interest rate", "B. Cutting income tax rates", "C. Selling government bonds in open market operations", "D. Raising the minimum reserve requirement"], m: 1, a: "<b>B</b>. Fiscal policy uses G and T; a tax cut raises disposable income and C. A, C and D are monetary and contractionary." },
-      { q: "The central bank buys government bonds from commercial banks. The most likely effect is:", o: ["A. Money supply falls and interest rates rise", "B. Money supply rises and interest rates fall", "C. Government spending rises", "D. Budget deficit falls"], m: 1, a: "<b>B</b>. OMO purchases raise bank reserves, lending and the money supply, lowering interest rates." },
       { q: "Which is an automatic stabiliser?", o: ["A. A new road-building programme", "B. A cut in corporate tax announced in the budget", "C. Unemployment benefits", "D. Quantitative easing"], m: 1, a: "<b>C</b>. Benefits rise automatically in a recession; A and B are discretionary fiscal policy; D is monetary." },
       { q: "Crowding out occurs when:", o: ["A. Imports replace domestic goods", "B. Government borrowing raises interest rates and reduces private investment", "C. Higher taxes reduce consumption", "D. Firms leave a market"], m: 1, a: "<b>B</b>. Government demand for loanable funds raises interest rates, reducing private investment." },
       { q: "Government spending is $520bn and tax revenue is $480bn. GDP is $2,000bn. The budget deficit as a percentage of GDP is:", o: ["A. 1.0%", "B. 2.0%", "C. 2.6%", "D. 4.0%"], m: 1, a: "<b>B</b>. Deficit = 520 − 480 = 40; 40 ÷ 2000 = 2.0%." },
-      { q: "The nominal interest rate is 5% and inflation is 3%. The real interest rate is:", o: ["A. 2%", "B. 3%", "C. 5%", "D. 8%"], m: 1, a: "<b>A</b>. Real = nominal − inflation = 5 − 3 = 2%." },
-      { q: "Define <i>monetary policy</i>.", m: 2, a: "The manipulation of interest rates and/or the money supply [1] by the central bank to influence aggregate demand / achieve macroeconomic objectives [1]." },
       { q: "Define <i>automatic stabilisers</i>.", m: 2, a: "Elements of fiscal policy, such as progressive taxes and unemployment benefits [1], that automatically reduce fluctuations in aggregate demand without government action [1]." },
-      { q: "Explain how an increase in the policy interest rate may reduce inflation.", m: 4, a: "Commercial bank interest rates rise, so borrowing is dearer and saving more attractive [1]. Mortgage payments rise, reducing disposable income [1]. C and I fall, and the currency may appreciate, reducing X−M [1]. AD shifts left, reducing demand-pull inflation (with a time lag) [1]." },
-      { q: "Using an AD/AS diagram, explain how expansionary monetary policy could close a recessionary gap.", m: 4, a: "Diagram: axes APL and real GDP; AD₁ shifts right to AD₂; Ye moves towards Yp [1]. Central bank cuts the policy rate / buys bonds, so borrowing is cheaper and the incentive to save falls [1]. C and I increase (and X−M if the currency depreciates) [1]. AD rises, real GDP increases and cyclical unemployment falls [1]." },
       { q: "In a recession a progressive income tax and unemployment benefits act as automatic stabilisers. Explain how.", m: 3, a: "Incomes fall, so tax revenue falls automatically, by more than proportionally under a progressive tax [1]. Unemployment benefits rise as more people become unemployed [1]. Disposable income and consumption fall by less than otherwise, so AD is cushioned without any new government decision [1]." },
-      { q: "Explain two reasons why fiscal policy may be more effective than monetary policy in a deep recession.", m: 4, a: "Interest rates may already be near zero (liquidity trap), and low confidence means further cuts do not stimulate borrowing [1+1]. Government spending adds directly to AD, can be targeted at sectors/regions and has a multiplier effect [1+1]." },
       { q: "Evaluate the effectiveness of fiscal policy in closing a recessionary gap. [15]", m: 15, a: "Define fiscal policy and recessionary gap [2]. Accurate AD/AS diagram, AD₁→AD₂, Ye→Yp [2]. Explain: G ↑ or T ↓ → AD ↑ → real GDP ↑, unemployment ↓, multiplier [3]. Strengths: direct, targeted, works at zero lower bound, infrastructure raises LRAS [2]. Limitations: time lags, deficit/debt, crowding out, politics, confidence [3]. Real example (e.g. US CARES Act 2020; China 2008) [1]. Judgement: depends on size of gap, spare capacity, level of debt, whether monetary policy is exhausted [2]." },
     ],
   },
@@ -3254,43 +3474,32 @@ IB.addFast({
   },
 
   "econ-15": {
-    title: "Gains from trade · Comparative advantage · Tariffs, quotas, subsidies · Protection arguments",
-    intro: "貿易題三大塊：(1) comparative advantage 計 opportunity cost，(2) tariff / quota / subsidy 圖同 stakeholders，(3) 支持同反對 protection 嘅 evaluation。每個 part 都跟 P1 / P2 常見題型。",
+    title: "Absolute vs comparative advantage · Gains from trade · Free trade diagram",
+    intro: "4.1 講點解國家要貿易：機會成本低就專門做，換完雙贏。要識計 opportunity cost 表、分清 absolute 同 comparative advantage，同埋解釋貿易對消費者、生產者同經濟嘅好處。",
     parts: [
       {
-        h: "Big picture 貿易地圖",
+        h: "Big picture 貿易好處",
         min: 2,
         blocks: [
           ["rhyme", "口訣", "機會成本低就專攻，換完雙贏", "Specialise where your opportunity cost is lower, then trade: both countries can consume beyond their own PPC."],
           ["flow", [
             ["① 為何貿易", "Differences in resources and opportunity costs → comparative advantage → specialisation → higher total output → gains from trade"],
-            ["② 好處", "Lower prices, more choice, economies of scale, more competition/efficiency, access to resources and technology"],
-            ["③ 政府干預", "Protectionism: tariff, quota, subsidy, administrative barriers, embargo"],
-            ["④ 圖", "Domestic D and S, world price Pw (horizontal supply), Pw + tariff; Q1–Q4; shade CS loss, PS gain, revenue, welfare loss"],
-            ["⑤ 理由", "Infant industry, national security, employment, anti-dumping, protect standards, revenue, BoP, diversification"],
-            ["⑥ 反對", "Inefficiency, higher prices, retaliation, loss of competitiveness, higher input costs, corruption"],
+            ["② 好處", "Lower prices, more choice, economies of scale, more competition/efficiency, access to resources and technology"]
           ]],
-          ["note", "<b>常考 (perennial favourites):</b> P1 MCQ opportunity-cost table (who has comparative advantage); P2 「Using a tariff diagram, explain the effect on consumers, producers and government」 (4 marks); P2 calculate tariff revenue or change in imports (2–3 marks); P1 15-mark 「Evaluate protectionism」 with diagram and real example."],
-        ],
+          ["note", "<b>常考 (perennial favourites):</b> P1 MCQ opportunity-cost table (who has comparative advantage); P2 「Using a tariff diagram, explain the effect on consumers, producers and government」 (4 marks); P2 calculate tariff revenue or change in imports (2–3 marks); P1 15-mark 「Evaluate protectionism」 with diagram and real example."]
+        ]
       },
       {
         h: "口訣 + definitions",
-        min: 2.5,
+        min: 2,
         blocks: [
           ["grid", [
             ["4.1", "成本低，專門做", "Lower opportunity cost = comparative advantage"],
             ["4.1", "AC 樣樣勁，未必要樣樣做", "Absolute advantage can be in both goods; comparative in only one"],
-            ["4.1", "交易價喺兩國 OC 中間", "Mutually beneficial terms of trade lie between the two opportunity costs"],
-            ["4.2", "稅一加，價上升，進口少", "Tariff: domestic price up, imports down"],
-            ["4.2", "稅款歸政府，配額租歸外國", "Tariff revenue to government; quota rent to foreign producers/licence holders"],
-            ["4.2", "Q1 Q2 供應，Q3 Q4 需求", "Tariff diagram: Q1→Q2 domestic output; Q3 and Q4 consumption"],
-            ["4.2", "兩個三角：生產扭曲 + 消費扭曲", "Two welfare-loss triangles"],
-            ["4.2", "補貼：價唔變，量增，政府出錢", "Subsidy: price stays at Pw, domestic output up, government pays"],
-            ["4.3", "嬰兒產業、國防、就業", "Infant industry, national security, jobs"],
-            ["4.3", "貴、低效、被報復", "Against: higher prices, inefficiency, retaliation"],
+            ["4.1", "交易價喺兩國 OC 中間", "Mutually beneficial terms of trade lie between the two opportunity costs"]
           ]],
-          ["note", "<b>Definitions (word-for-word)</b><br><b>Absolute advantage:</b> the ability of a country to produce more of a good than another country using the same resources.<br><b>Comparative advantage:</b> the ability of a country to produce a good at a lower opportunity cost than another country.<br><b>Specialisation:</b> producing a narrow range of goods in which a country has comparative advantage.<br><b>Terms of trade:</b> the rate at which one good (or export) exchanges for another; the ratio of export prices to import prices.<br><b>Free trade:</b> trade between countries without barriers such as tariffs or quotas.<br><b>Protectionism:</b> government intervention to restrict imports and shield domestic producers from foreign competition.<br><b>Tariff:</b> a tax on imported goods.<br><b>Import quota:</b> a physical limit on the quantity of a good that can be imported.<br><b>Subsidy (to domestic producers):</b> a payment from government to producers to lower their costs or increase output.<br><b>Administrative (non-tariff) barriers:</b> rules such as health, safety and product standards, licensing or bureaucratic procedures that make imports harder.<br><b>Embargo:</b> a complete government ban on trade with a country or in a product.<br><b>Dumping:</b> selling goods in a foreign market at a price below cost of production or below the domestic price.<br><b>Infant industry:</b> a new industry that cannot yet compete with established foreign firms.<br><b>Trade war:</b> escalating retaliation as countries impose tariffs on each other’s goods.<br><b>World Trade Organization (WTO):</b> international body promoting free trade by negotiating agreements, settling disputes and monitoring trade policies."],
-        ],
+          ["note", "<b>Definitions (word-for-word)</b><br><b>Absolute advantage:</b> the ability of a country to produce more of a good than another country using the same resources.<br><b>Comparative advantage:</b> the ability of a country to produce a good at a lower opportunity cost than another country.<br><b>Specialisation:</b> producing a narrow range of goods in which a country has comparative advantage.<br><b>Terms of trade:</b> the rate at which one good (or export) exchanges for another; the ratio of export prices to import prices.<br><b>Free trade:</b> trade between countries without barriers such as tariffs or quotas.<br><b>Protectionism:</b> government intervention to restrict imports and shield domestic producers from foreign competition.<br><b>Tariff:</b> a tax on imported goods.<br><b>Import quota:</b> a physical limit on the quantity of a good that can be imported.<br><b>Subsidy (to domestic producers):</b> a payment from government to producers to lower their costs or increase output.<br><b>Administrative (non-tariff) barriers:</b> rules such as health, safety and product standards, licensing or bureaucratic procedures that make imports harder.<br><b>Embargo:</b> a complete government ban on trade with a country or in a product.<br><b>Dumping:</b> selling goods in a foreign market at a price below cost of production or below the domestic price.<br><b>Infant industry:</b> a new industry that cannot yet compete with established foreign firms.<br><b>Trade war:</b> escalating retaliation as countries impose tariffs on each other’s goods.<br><b>World Trade Organization (WTO):</b> international body promoting free trade by negotiating agreements, settling disputes and monitoring trade policies."]
+        ]
       },
       {
         h: "Comparative advantage 計數",
@@ -3317,6 +3526,73 @@ IB.addFast({
           ["note", "<b>Assumptions / limitations of comparative advantage:</b> no transport costs; constant opportunity costs (PPC straight); perfect factor mobility; no externalities or trade barriers; two countries two goods; it ignores over-specialisation risk (commodity price swings, structural unemployment, dependency) and environmental costs."],
           ["note", "<b>Benefits of trade (explain, not just list):</b> specialisation lets each country produce more in total; economies of scale lower unit costs; competition forces efficiency and innovation; consumers get lower prices and wider choice; access to resources and technology; foreign exchange for imports."],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["Comparative advantage [4]", "Lower opportunity cost 嘅國家專門；計 OC 表 [2] + 結論 [2]"]
+          ]],
+          ["note", "<b>Accept</b>：「country with lower opportunity cost has comparative advantage」。<b>Reject</b>：用 absolute advantage 取代。Tariff 圖要分清 consumer loss 同 government revenue 同 DWL。"]
+        ]
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["錯", "改正"], [
+            ["Using total output to find comparative advantage", "Compare opportunity costs, not who produces more"],
+            ["Dividing the wrong way (OC of car = cars ÷ rice)", "OC of X = amount of Y given up ÷ amount of X gained"],
+            ["Drawing world supply upward sloping", "For a small country it is horizontal at Pw"]
+          ]],
+          ["check", [
+            "I can define comparative advantage, tariff, quota, dumping, infant industry, protectionism word-for-word.",
+            "I can compute opportunity costs from a table and decide who specialises in what.",
+            "I can show that a mutually beneficial price lies between the two OCs."
+          ]]
+        ]
+      }
+    ],
+    summary: [
+      "OC 低就有 comparative advantage；absolute advantage 唔等於 comparative",
+      "OC of X = Y given up ÷ X gained；交易價喺兩個 OC 中間",
+      "Trade 好處：平、多選擇、規模經濟、競爭、科技"
+    ],
+    practice: [
+      { q: "Country X can produce 10 units of wheat or 5 of cloth; Country Y can produce 6 wheat or 6 cloth (same resources). Which is correct?", o: ["A. X has comparative advantage in cloth", "B. Y has comparative advantage in wheat", "C. X has comparative advantage in wheat", "D. Neither can benefit from trade"], m: 1, a: "<b>C</b>. OC of 1 wheat: X = 5/10 = 0.5 cloth; Y = 6/6 = 1 cloth. X’s OC is lower." },
+      { q: "Define <i>comparative advantage</i>.", m: 2, a: "The ability of a country to produce a good [1] at a lower opportunity cost than another country [1]." },
+      { q: "Country A can produce 20 cars or 40 t of rice; Country B 10 cars or 30 t of rice. Calculate the opportunity cost of one car in each country and state which has the comparative advantage in cars.", m: 3, a: "A: 40 ÷ 20 = 2 t rice [1]; B: 30 ÷ 10 = 3 t rice [1]; A has the comparative advantage in cars (lower opportunity cost) [1]." },
+      { q: "Explain two benefits of international trade for consumers.", m: 4, a: "Lower prices [1]: countries specialise according to comparative advantage and import goods produced at lower opportunity cost, so prices fall [1]. Greater choice [1]: consumers can buy goods and varieties that are not produced at home [1]." },
+    ],
+  },
+  "econ-15b": {
+    title: "Tariffs · Quotas · Subsidies · Administrative barriers",
+    intro: "4.2 講保護主義嘅工具：tariff、quota、production subsidy、export subsidy 同 administrative barriers。每樣都要識畫圖、計 revenue／cost，同講對 consumers、producers、government 同外國生產者嘅影響。",
+    parts: [
+      {
+        h: "Big picture 保護主義工具",
+        min: 1.5,
+        blocks: [
+          ["rhyme", "口訣", "稅、額、補、規", "Tariff (tax on imports) · Quota (limit on quantity) · Subsidy (payment to domestic producers or exporters) · Administrative barriers (standards, paperwork). Embargo = complete ban."],
+          ["flow", [
+            ["③ 政府干預", "Protectionism: tariff, quota, subsidy, administrative barriers, embargo"],
+            ["④ 圖", "Domestic D and S, world price Pw (horizontal supply), Pw + tariff; Q1–Q4; shade CS loss, PS gain, revenue, welfare loss"]
+          ]]
+        ]
+      },
+      {
+        h: "口訣",
+        min: 1.5,
+        blocks: [
+          ["grid", [
+            ["4.2", "稅一加，價上升，進口少", "Tariff: domestic price up, imports down"],
+            ["4.2", "稅款歸政府，配額租歸外國", "Tariff revenue to government; quota rent to foreign producers/licence holders"],
+            ["4.2", "Q1 Q2 供應，Q3 Q4 需求", "Tariff diagram: Q1→Q2 domestic output; Q3 and Q4 consumption"],
+            ["4.2", "兩個三角：生產扭曲 + 消費扭曲", "Two welfare-loss triangles"],
+            ["4.2", "補貼：價唔變，量增，政府出錢", "Subsidy: price stays at Pw, domestic output up, government pays"]
+          ]]
+        ]
       },
       {
         h: "Tariff 關稅 圖 + 計數",
@@ -3391,6 +3667,74 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["Tariff 圖 [4]", "圖：world price → tariff → 新 Qd/Qs → gov revenue + DWL；import 下降"]
+          ]]
+        ]
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["錯", "改正"], [
+            ["Tariff revenue = t × all consumption", "Revenue = t × IMPORTS (Q3 − Q2)"],
+            ["Forgetting domestic producers gain from a tariff", "PS rises; mention both gainers and losers"],
+            ["Saying a quota raises government revenue", "Quota rent goes to foreign producers/licence holders unless licences are auctioned"],
+            ["Labelling diagram Q1 Q2 inconsistent", "Q1/Q2 = domestic supply; Q3/Q4 = domestic demand (low to high price)"],
+            ["Subsidy = tax on imports", "Subsidy is a payment to domestic firms; consumers’ price unchanged"],
+            ["Calling any trade restriction a tariff", "Tariff = tax; quota = limit; embargo = ban; standards = administrative barrier"]
+          ]],
+          ["check", [
+            "I can draw a tariff diagram with all labels and name each area.",
+            "I can calculate imports, revenue, CS loss, PS gain and welfare loss from equations.",
+            "I can compare tariff, quota and subsidy in a table."
+          ]]
+        ]
+      }
+    ],
+    summary: [
+      "Tariff：價升、本地產量升、進口跌、政府收稅、淨損失",
+      "Revenue = 稅額 × 進口量（Q3 − Q2）",
+      "Quota：租金歸外國；Subsidy：價唔變，政府出錢"
+    ],
+    practice: [
+      { q: "A tariff on imported steel will most likely:", o: ["A. lower the domestic price of steel", "B. increase domestic steel production", "C. increase steel imports", "D. reduce government revenue"], m: 1, a: "<b>B</b>. The higher domestic price encourages domestic producers to supply more." },
+      { q: "Which is a difference between an import quota and a tariff?", o: ["A. A quota raises domestic price; a tariff does not", "B. A quota generates government revenue; a tariff does not", "C. A tariff generates government revenue; a quota usually does not", "D. A tariff limits quantity directly"], m: 1, a: "<b>C</b>. Tariff revenue goes to government; quota rent goes to foreign producers or licence holders." },
+      { q: "The world price is $20. A 25% ad valorem tariff is imposed. The domestic price of imports becomes:", o: ["A. $5", "B. $20", "C. $25", "D. $45"], m: 1, a: "<b>C</b>. 25% of $20 = $5; price = $25." },
+      { q: "Using a diagram, explain the effect of a tariff on domestic consumers and producers.", m: 4, a: "Correct tariff diagram: Pw, Pw + t, domestic D and S, quantities Q1–Q4 [1]. Domestic price rises; consumers buy less (Q4 → Q3) and CS falls [1]. Domestic producers sell more (Q1 → Q2) at the higher price, PS rises [1]. Imports fall; government gains revenue; welfare loss [1]." },
+      { q: "Domestic Qd = 120 − 4P, Qs = 4P − 20, world price $10. A $2 tariff is imposed. Calculate the tariff revenue.", m: 3, a: "New price 12: Qd = 72 [1]; Qs = 28 so imports = 44 [1]; revenue = 2 × 44 = $88 thousand [1]." },
+      { q: "Explain two reasons why a government might use a subsidy to domestic producers rather than a tariff.", m: 4, a: "Consumer prices do not rise (price stays at world price), protecting consumers/low-income households [1+1]. Avoids retaliation from trading partners / does not add a new import barrier, and domestic producers still expand output [1+1]." },
+    ],
+  },
+  "econ-15c": {
+    title: "Arguments for protection · Arguments against · Evaluation",
+    intro: "4.3 講保護主義嘅理由同反對：infant industry、國防、就業、anti-dumping 對比貴、低效、報復。考試多數係 evaluate，要兩邊講再下判斷。",
+    parts: [
+      {
+        h: "Big picture 支持同反對",
+        min: 1.5,
+        blocks: [
+          ["rhyme", "口訣", "嬰兒、國防、就業、傾銷；貴、低效、被報復", "For: infant industry, national security, employment, anti-dumping, revenue, diversification. Against: higher prices, inefficiency, retaliation, higher input costs, misallocation."],
+          ["flow", [
+            ["⑤ 理由", "Infant industry, national security, employment, anti-dumping, protect standards, revenue, BoP, diversification"],
+            ["⑥ 反對", "Inefficiency, higher prices, retaliation, loss of competitiveness, higher input costs, corruption"]
+          ]]
+        ]
+      },
+      {
+        h: "口訣",
+        min: 1,
+        blocks: [
+          ["grid", [
+            ["4.3", "嬰兒產業、國防、就業", "Infant industry, national security, jobs"],
+            ["4.3", "貴、低效、被報復", "Against: higher prices, inefficiency, retaliation"]
+          ]]
+        ]
+      },
+      {
         h: "Protection: for & against + long question 拆題法",
         min: 4,
         blocks: [
@@ -3435,62 +3779,36 @@ IB.addFast({
         h: "考場收分位 Exam edge",
         min: 1,
         blocks: [
-          ["table", ["Paper 常見題型","Model answer pattern"], [["Comparative advantage [4]", "Lower opportunity cost 嘅國家專門；計 OC 表 [2] + 結論 [2]"], ["Tariff 圖 [4]", "圖：world price → tariff → 新 Qd/Qs → gov revenue + DWL；import 下降"], ["Protection evaluate [10]", "Infant industry、dumping、jobs 論點 + 限制（retaliation、higher prices）+ 判斷"]]],
-          ["note", "<b>Accept</b>：「country with lower opportunity cost has comparative advantage」。<b>Reject</b>：用 absolute advantage 取代。Tariff 圖要分清 consumer loss 同 government revenue 同 DWL。"]
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["Protection evaluate [10]", "Infant industry、dumping、jobs 論點 + 限制（retaliation、higher prices）+ 判斷"]
+          ]]
         ]
       },
       {
         h: "失分位 + 自我檢查",
-        min: 2.5,
+        min: 1.5,
         blocks: [
           ["table", ["錯", "改正"], [
-            ["Using total output to find comparative advantage", "Compare opportunity costs, not who produces more"],
-            ["Dividing the wrong way (OC of car = cars ÷ rice)", "OC of X = amount of Y given up ÷ amount of X gained"],
-            ["Tariff revenue = t × all consumption", "Revenue = t × IMPORTS (Q3 − Q2)"],
-            ["Forgetting domestic producers gain from a tariff", "PS rises; mention both gainers and losers"],
-            ["Saying a quota raises government revenue", "Quota rent goes to foreign producers/licence holders unless licences are auctioned"],
-            ["Labelling diagram Q1 Q2 inconsistent", "Q1/Q2 = domestic supply; Q3/Q4 = domestic demand (low to high price)"],
-            ["Drawing world supply upward sloping", "For a small country it is horizontal at Pw"],
-            ["Subsidy = tax on imports", "Subsidy is a payment to domestic firms; consumers’ price unchanged"],
             ["Listing arguments with no reasoning", "Each point: claim → because → effect on a stakeholder"],
-            ["One-sided answer", "15-mark answers must include both for and against, plus a judgement"],
-            ["Calling any trade restriction a tariff", "Tariff = tax; quota = limit; embargo = ban; standards = administrative barrier"],
+            ["One-sided answer", "15-mark answers must include both for and against, plus a judgement"]
           ]],
           ["check", [
-            "I can define comparative advantage, tariff, quota, dumping, infant industry, protectionism word-for-word.",
-            "I can compute opportunity costs from a table and decide who specialises in what.",
-            "I can show that a mutually beneficial price lies between the two OCs.",
-            "I can draw a tariff diagram with all labels and name each area.",
-            "I can calculate imports, revenue, CS loss, PS gain and welfare loss from equations.",
-            "I can compare tariff, quota and subsidy in a table.",
             "I can give 4 arguments for and 4 against protection with examples.",
-            "I can plan a 15-mark evaluate answer with judgement.",
-          ]],
-        ],
-      },
+            "I can plan a 15-mark evaluate answer with judgement."
+          ]]
+        ]
+      }
     ],
     summary: [
-      "OC 低就有 comparative advantage；absolute advantage 唔等於 comparative",
-      "OC of X = Y given up ÷ X gained；交易價喺兩個 OC 中間",
-      "Tariff：價升、本地產量升、進口跌、政府收稅、淨損失",
-      "Revenue = 稅額 × 進口量（Q3 − Q2）",
-      "Quota：租金歸外國；Subsidy：價唔變，政府出錢",
       "支持：infant industry、國防、就業、anti-dumping、收入",
       "反對：貴、低效、報復、cost↑；結論要講 depends on",
+      "每個論點：claim → because → stakeholder → depends on"
     ],
     practice: [
-      { q: "A tariff on imported steel will most likely:", o: ["A. lower the domestic price of steel", "B. increase domestic steel production", "C. increase steel imports", "D. reduce government revenue"], m: 1, a: "<b>B</b>. The higher domestic price encourages domestic producers to supply more." },
-      { q: "Country X can produce 10 units of wheat or 5 of cloth; Country Y can produce 6 wheat or 6 cloth (same resources). Which is correct?", o: ["A. X has comparative advantage in cloth", "B. Y has comparative advantage in wheat", "C. X has comparative advantage in wheat", "D. Neither can benefit from trade"], m: 1, a: "<b>C</b>. OC of 1 wheat: X = 5/10 = 0.5 cloth; Y = 6/6 = 1 cloth. X’s OC is lower." },
-      { q: "Which is a difference between an import quota and a tariff?", o: ["A. A quota raises domestic price; a tariff does not", "B. A quota generates government revenue; a tariff does not", "C. A tariff generates government revenue; a quota usually does not", "D. A tariff limits quantity directly"], m: 1, a: "<b>C</b>. Tariff revenue goes to government; quota rent goes to foreign producers or licence holders." },
-      { q: "The world price is $20. A 25% ad valorem tariff is imposed. The domestic price of imports becomes:", o: ["A. $5", "B. $20", "C. $25", "D. $45"], m: 1, a: "<b>C</b>. 25% of $20 = $5; price = $25." },
       { q: "Which is NOT a common argument for protectionism?", o: ["A. protecting infant industries", "B. national security", "C. gains from specialisation", "D. protecting against dumping"], m: 1, a: "<b>C</b>. Gains from specialisation support free trade." },
-      { q: "Define <i>comparative advantage</i>.", m: 2, a: "The ability of a country to produce a good [1] at a lower opportunity cost than another country [1]." },
       { q: "Define <i>dumping</i>.", m: 2, a: "Selling goods in a foreign market [1] at a price below the cost of production (or below the price in the home market) [1]." },
-      { q: "Country A can produce 20 cars or 40 t of rice; Country B 10 cars or 30 t of rice. Calculate the opportunity cost of one car in each country and state which has the comparative advantage in cars.", m: 3, a: "A: 40 ÷ 20 = 2 t rice [1]; B: 30 ÷ 10 = 3 t rice [1]; A has the comparative advantage in cars (lower opportunity cost) [1]." },
-      { q: "Using a diagram, explain the effect of a tariff on domestic consumers and producers.", m: 4, a: "Correct tariff diagram: Pw, Pw + t, domestic D and S, quantities Q1–Q4 [1]. Domestic price rises; consumers buy less (Q4 → Q3) and CS falls [1]. Domestic producers sell more (Q1 → Q2) at the higher price, PS rises [1]. Imports fall; government gains revenue; welfare loss [1]." },
-      { q: "Domestic Qd = 120 − 4P, Qs = 4P − 20, world price $10. A $2 tariff is imposed. Calculate the tariff revenue.", m: 3, a: "New price 12: Qd = 72 [1]; Qs = 28 so imports = 44 [1]; revenue = 2 × 44 = $88 thousand [1]." },
-      { q: "Explain two reasons why a government might use a subsidy to domestic producers rather than a tariff.", m: 4, a: "Consumer prices do not rise (price stays at world price), protecting consumers/low-income households [1+1]. Avoids retaliation from trading partners / does not add a new import barrier, and domestic producers still expand output [1+1]." },
       { q: "Using real-world examples, evaluate the view that protectionism is necessary to support developing economies. [15]", m: 15, a: "Definitions: protectionism, developing economy, comparative advantage [2]. Tariff diagram with welfare loss [2]. For: infant industry, diversification, employment, revenue, strategic industries [3]. Against: inefficiency, higher prices, retaliation, rent-seeking, failure of import substitution [3]. Examples: South Korea’s selective protection, India pre-1991, US–China tariffs [2]. Judgement: temporary, targeted protection may help, long-term growth needs openness; depends on institutions and retaliation [3]." },
+      { q: "Explain the infant industry argument for protection.", m: 4, a: "A new industry has high average costs [1] because it is small and cannot yet benefit from economies of scale [1]. Temporary protection such as a tariff lets it grow and lower costs [1] until it can compete with foreign firms, when protection should be removed [1]." },
     ],
   },
 
@@ -3674,12 +3992,12 @@ IB.addFast({
   },
 
   "econ-17": {
-    title: "Exchange rates · Fixed & floating · Balance of payments",
-    intro: "呢個 topic 兩條主線：(1) 匯率 = 外匯市場嘅 D 同 S，升值/貶值對 X、M、inflation、AD 嘅影響；(2) BoP 三個 account 點分類同點計。全部 Paper 1 / Paper 2 都會考，最後有 11 條練習。",
+    title: "Exchange rates · Floating · Fixed and managed · Appreciation and depreciation",
+    intro: "4.5 匯率：匯率係貨幣嘅價錢，D 或 S 郁就變。要識畫 forex diagram、做貨幣換算、講升值貶值對出口、入口、通脹同 AD 嘅影響，同埋 fixed / managed 系統點守價。",
     parts: [
       {
         h: "總覽 + 口訣 一頁睇晒",
-        min: 3,
+        min: 2.5,
         blocks: [
           ["key", "<b>Master idea：匯率係貨幣嘅「價錢」</b>，所以同其他價錢一樣 —— D 或 S 郁，匯率就郁。<br><b>Exchange rate</b> = the value of one currency expressed in terms of another currency。<br>匯率郁 → 出口/入口嘅價錢郁 → X − M 郁 → AD、inflation、current account 郁。"],
           ["flow", [["① 搵嗰個 shift", "邊個 factor 郁咗？令 D€ 定 S€ 向左/右？（interest rate、FDI、exports、imports、speculation）"], ["② 睇匯率", "D 右移或 S 左移 → 升值；D 左移或 S 右移 → 貶值"], ["③ 睇價錢", "升值：出口貴（外幣計）、入口平；貶值：相反"], ["④ 睇宏觀", "X − M → AD → 產出、就業、inflation、current account"]]],
@@ -3688,14 +4006,10 @@ IB.addFast({
             ["4.5", "利率高、錢流入、貨幣升", "Higher interest rate → hot money inflow → D↑ → appreciation"],
             ["4.5", "浮動升降、固定重估貶", "Floating: appreciate/depreciate；Fixed: revalue/devalue"],
             ["4.5", "守價賣儲備、買本幣、加利息", "Defend a peg: sell reserves, buy domestic currency, raise interest rate"],
-            ["4.5", "y 軸寫 X 價 Y，x 軸寫 X 量", "Diagram: price of € in $ ; quantity of €"],
-            ["4.6", "貨服一次二次 = current", "Goods, services, primary income, secondary income"],
-            ["4.6", "FDI 股票儲備 = financial", "FDI, portfolio investment, reserve assets"],
-            ["4.6", "三個 account 加埋等於零", "Current + capital + financial (+ errors and omissions) = 0"],
-            ["4.6", "匯款係二次收入", "Remittances = secondary income (current account)"],
+            ["4.5", "y 軸寫 X 價 Y，x 軸寫 X 量", "Diagram: price of € in $ ; quantity of €"]
           ]],
-          ["note", "<b>常考 note：</b>Paper 2 常見 <b>匯率 / 貨幣換算</b> 計算（2 marks），再加一條「用 exchange rate diagram 解釋」（4 marks）。BoP 就多數考 <b>分類</b> 同 <b>計 current account balance</b>。"],
-        ],
+          ["note", "<b>常考 note：</b>Paper 2 常見 <b>匯率 / 貨幣換算</b> 計算（2 marks），再加一條「用 exchange rate diagram 解釋」（4 marks）。BoP 就多數考 <b>分類</b> 同 <b>計 current account balance</b>。"]
+        ]
       },
       {
         h: "Floating rate 浮動匯率 + diagram",
@@ -3789,6 +4103,96 @@ IB.addFast({
         ],
       },
       {
+        h: "長題拆解：Evaluate 貶值",
+        min: 3,
+        blocks: [
+          ["key", "<b>Paper 1 · 15 marks 套路：</b>Define → Diagram → 正面 (2 points) → 負面 (2 points) → Evaluation 因素 → 有 reasoning 嘅 conclusion。每個 point 都要 <b>chain of analysis</b>（A → B → C）同 <b>real-world example</b>。"],
+          ["flow", [["① Define + diagram", "Depreciation = fall in value of a currency in a floating system；畫 D€/S€ 圖，標示原因（e.g. 低利率、inflation）"], ["② 正面", "X 平 → X↑；M 貴 → M↓ → X − M↑ → AD↑ → real GDP↑、unemployment↓、current account 改善"], ["③ 負面", "imported cost-push inflation；外幣債務負擔↑；出國旅遊/進口原料變貴；生活水平↓"], ["④ Evaluate", "PED/PES、time lag、spare capacity、其他國家報復、貶值原因、import 倚賴度"], ["⑤ Judgement", "「To a large extent / It depends on…」+ 理由"]]],
+          ["eg", "<b>P1 · 15 marks · 常考</b> Evaluate the consequences of a significant depreciation of a country's currency. （只示範段落框架）", [
+            "<b>Intro：</b>Depreciation is a fall in the value of a currency against another in a floating system. [1] + diagram: D€ shifts left / S€ right → E₁ to E₂",
+            "<b>Para 1（正面）：</b>Depreciation makes exports cheaper abroad and imports dearer at home → X↑, M↓ → net exports↑ → AD↑ → real GDP↑ and unemployment↓. 例：2022–24 yen 貶值幫日本出口商同旅遊業。",
+            "<b>Para 2（負面）：</b>Dearer imports raise costs of production (cost-push inflation) and prices of imported goods → SRAS shifts left, living standards↓. 例：土耳其 lira 貶值令 inflation 大升；有 US$ 債務嘅企業還款負擔↑。",
+            "<b>Evaluation：</b>① 視乎 PED of exports and imports（低彈性 → X − M 唔升）② time lag ③ spare capacity（冇 → 只得 inflation）④ 本國對 imports 嘅倚賴 ⑤ 貶值原因（如係因競爭力差，唔解決根本問題）",
+            "<b>Conclusion：</b>“Overall, depreciation benefits exporters and tourism, but its net effect depends on …; in an import-dependent economy with little spare capacity the costs may outweigh the benefits.”",
+          ]],
+          ["note", "<b>常考 note：</b>15 marks 用 Level 描述：定義準確 + 圖正確 + 兩面分析 + 有例子 + 有 judgement。只講好處或壞處最多 Level 3。"],
+        ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["Exchange rate 圖 [4]", "D/S of currency → 新 equilibrium rate → appreciation 或 depreciation；寫明誰需求變"],
+            ["Devaluation / depreciation evaluate [10]", "X↑ M↓（Marshall-Lerner / PED）→ AD↑ → 通脹；J-curve 時間；判斷"]
+          ]],
+          ["note", "<b>Accept</b>：「appreciation = currency worth more in foreign units」。<b>Reject</b>：Strong currency = good economy。Floating 圖用 demand/supply of currency，唔好畫 AD/AS。"]
+        ]
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["trap", [
+            "升值/貶值方向搞反：記住「$ per €」上升 = € 升值。",
+            "換算方向錯（該除變乘）：做完檢查答案合唔合理。",
+            "圖 axis 冇寫 currency pair，或者只寫 “price” / “quantity”。",
+            "Floating 用 devalue、fixed 用 depreciate。",
+            "寫「貶值一定改善 current account」—— 要講 PED、time lag。",
+            "只講 appreciation 對 exports 嘅影響，唔提 imports / inflation。",
+            "加息令貨幣貶值（錯）：加息吸引資金，令貨幣升值。",
+            "Inflation 高令貨幣升值（錯）：長期傾向貶值。",
+            "計 % change 時用新數做分母：必須用 <b>舊數</b> 做分母。",
+            "15 marks 冇 conclusion，冇 real-world example。"
+          ]],
+          ["check", [
+            "Define exchange rate, floating, fixed, managed, appreciation, depreciation, revaluation, devaluation",
+            "Draw a labelled forex diagram and shift it for interest rate, FDI, exports, speculation",
+            "Convert prices both ways and calculate % change in an exchange rate",
+            "Explain effects of appreciation / depreciation on X, M, AD, inflation and current account",
+            "Explain how a central bank defends a peg and the costs of doing so",
+            "Write a 15-mark evaluation with definition, diagram, two sides and a judgement"
+          ]]
+        ]
+      }
+    ],
+    summary: [
+      "匯率係貨幣嘅價錢：D 或 S 郁就變",
+      "SPICED：升值出口貴、入口平",
+      "利率高、FDI 流入 → 升值；inflation 高 → 貶值",
+      "Floating：appreciate/depreciate；fixed：revalue/devalue",
+      "守價：賣儲備、買本幣、加利息",
+      "貶值有效要睇 PED、time lag、spare capacity"
+    ],
+    practice: [
+      { q: "Which is most likely to cause an appreciation of a country's floating currency?", o: ["A. A fall in domestic interest rates relative to other countries", "B. An increase in foreign demand for the country's exports", "C. An increase in the country's imports", "D. An increase in outward FDI by domestic firms"], m: 1, a: "<b>B</b>. Foreigners must buy the currency to pay for the exports, so demand for it rises. A, C and D all increase the supply of, or reduce the demand for, the currency." },
+      { q: "A central bank wants to stop its pegged currency from depreciating. Which action would help?", o: ["A. Selling domestic currency and buying foreign reserves", "B. Selling foreign reserves and buying domestic currency", "C. Lowering interest rates", "D. Devaluing the peg"], m: 1, a: "<b>B</b>. Buying domestic currency increases its demand. A and C reduce demand for it; D is a deliberate fall in the peg, not a defence of it." },
+      { q: "Define <i>appreciation</i>.", m: 2, a: "An increase in the value of a currency in terms of another currency [1] in a floating exchange rate system / determined by market forces [1]." },
+      { q: "The exchange rate is US$1 = ¥150. Calculate the US$ price of a Japanese camera priced at ¥225 000.", m: 2, a: "225 000 ÷ 150 [1] = <b>US$1500</b> [1]." },
+      { q: "The exchange rate changes from €1 = US$1.20 to €1 = US$1.08. (a) State whether the euro appreciated or depreciated, with the % change. (b) Calculate the change in the US$ price of a €50 French wine.", m: 3, a: "(a) The euro depreciated [1] by (1.08 − 1.20) ÷ 1.20 × 100 = <b>−10%</b> [1]. (b) Price falls from 50 × 1.20 = US$60 to 50 × 1.08 = <b>US$54</b> [1]." },
+      { q: "Using an exchange rate diagram, explain how a fall in a country's interest rates may affect its currency.", m: 4, a: "Diagram with labelled axes (price of currency in foreign currency; quantity), D shifts left (and/or S right), rate falls [1–2]. Lower rates make deposits/financial assets less attractive to foreign investors (hot money outflow) [1], so demand for the currency falls → depreciation [1]." },
+      { q: "Explain <b>two</b> possible consequences of a depreciation of a country's currency.", m: 4, a: "Any two, each stated [1] + explained [1]: exports become cheaper abroad and imports dearer → net exports and AD rise → growth/employment; imported raw materials and goods cost more → cost-push inflation; foreign-currency debts become dearer to repay; current account may improve if demand is price elastic (after a time lag)." },
+      { q: "Using real-world examples, evaluate the consequences of a significant depreciation of a country's currency.", m: 15, a: "Level 5 (13–15): definition + exchange-rate diagram [~2]; positives: cheaper exports/dearer imports → X − M↑ → AD↑ → growth, employment, current account [~4]; negatives: imported (cost-push) inflation, higher foreign debt burden, lower living standards, uncertainty [~4]; evaluation: PED of X and M, time lag, spare capacity, import dependence, reason for depreciation, stakeholders [~3]; real-world example(s) and a justified conclusion [~2]." },
+    ],
+  },
+  "econ-17b": {
+    title: "Balance of payments · Current, capital and financial accounts · Deficits and surpluses",
+    intro: "4.6 國際收支：current account（貨、服、一次、二次收入）、capital account 同 financial account（FDI、股票債券、儲備）。三個加埋等於零。要識分類、計 current account，同評價 deficit / surplus 嘅後果同糾正方法。",
+    parts: [
+      {
+        h: "總覽 + 口訣",
+        min: 1.5,
+        blocks: [
+          ["key", "<b>Balance of payments</b> = a record of all transactions between residents of a country and the rest of the world over a period. <b>Current account</b>: goods, services, primary income, secondary income. <b>Capital account</b>: capital transfers, non-produced assets. <b>Financial account</b>: FDI, portfolio investment, reserve assets."],
+          ["grid", [
+            ["4.6", "貨服一次二次 = current", "Goods, services, primary income, secondary income"],
+            ["4.6", "FDI 股票儲備 = financial", "FDI, portfolio investment, reserve assets"],
+            ["4.6", "三個 account 加埋等於零", "Current + capital + financial (+ errors and omissions) = 0"],
+            ["4.6", "匯款係二次收入", "Remittances = secondary income (current account)"]
+          ]]
+        ]
+      },
+      {
         h: "Balance of payments 國際收支",
         min: 4,
         blocks: [
@@ -3821,110 +4225,73 @@ IB.addFast({
         ],
       },
       {
-        h: "長題拆解：Evaluate 貶值",
-        min: 3,
+        h: "Deficit 點樣糾正 · 長題拆解",
+        min: 2.5,
         blocks: [
-          ["key", "<b>Paper 1 · 15 marks 套路：</b>Define → Diagram → 正面 (2 points) → 負面 (2 points) → Evaluation 因素 → 有 reasoning 嘅 conclusion。每個 point 都要 <b>chain of analysis</b>（A → B → C）同 <b>real-world example</b>。"],
-          ["flow", [["① Define + diagram", "Depreciation = fall in value of a currency in a floating system；畫 D€/S€ 圖，標示原因（e.g. 低利率、inflation）"], ["② 正面", "X 平 → X↑；M 貴 → M↓ → X − M↑ → AD↑ → real GDP↑、unemployment↓、current account 改善"], ["③ 負面", "imported cost-push inflation；外幣債務負擔↑；出國旅遊/進口原料變貴；生活水平↓"], ["④ Evaluate", "PED/PES、time lag、spare capacity、其他國家報復、貶值原因、import 倚賴度"], ["⑤ Judgement", "「To a large extent / It depends on…」+ 理由"]]],
-          ["eg", "<b>P1 · 15 marks · 常考</b> Evaluate the consequences of a significant depreciation of a country's currency. （只示範段落框架）", [
-            "<b>Intro：</b>Depreciation is a fall in the value of a currency against another in a floating system. [1] + diagram: D€ shifts left / S€ right → E₁ to E₂",
-            "<b>Para 1（正面）：</b>Depreciation makes exports cheaper abroad and imports dearer at home → X↑, M↓ → net exports↑ → AD↑ → real GDP↑ and unemployment↓. 例：2022–24 yen 貶值幫日本出口商同旅遊業。",
-            "<b>Para 2（負面）：</b>Dearer imports raise costs of production (cost-push inflation) and prices of imported goods → SRAS shifts left, living standards↓. 例：土耳其 lira 貶值令 inflation 大升；有 US$ 債務嘅企業還款負擔↑。",
-            "<b>Evaluation：</b>① 視乎 PED of exports and imports（低彈性 → X − M 唔升）② time lag ③ spare capacity（冇 → 只得 inflation）④ 本國對 imports 嘅倚賴 ⑤ 貶值原因（如係因競爭力差，唔解決根本問題）",
-            "<b>Conclusion：</b>“Overall, depreciation benefits exporters and tourism, but its net effect depends on …; in an import-dependent economy with little spare capacity the costs may outweigh the benefits.”",
+          ["table", ["Policy", "How it works", "Limitation"], [
+            ["Expenditure-switching: depreciation / devaluation", "Exports cheaper abroad, imports dearer → X↑ M↓", "Depends on PED (Marshall-Lerner); J-curve time lag; imported inflation"],
+            ["Expenditure-switching: protection", "Tariffs / quotas cut M", "Retaliation; higher prices; WTO rules"],
+            ["Expenditure-reducing: contractionary fiscal / monetary", "Lower AD → lower incomes → fewer imports", "Higher unemployment, lower growth"],
+            ["Supply-side policies", "Higher productivity → more competitive exports", "Long time lags; costly"]
           ]],
-          ["note", "<b>常考 note：</b>15 marks 用 Level 描述：定義準確 + 圖正確 + 兩面分析 + 有例子 + 有 judgement。只講好處或壞處最多 Level 3。"],
-        ],
+          ["flow", [["① Define", "Current account deficit; balance of payments"], ["② Cause", "High consumption/imports, low competitiveness, strong currency, primary income outflows"], ["③ Consequences", "Debt / foreign ownership, depreciation pressure, but may finance investment"], ["④ Policy + evaluate", "Switching vs reducing vs supply-side"], ["⑤ Judgement", "Size (% of GDP), persistence, how it is financed"]]],
+          ["note", "<b>Evaluation phrases</b>：<i>It depends on the size of the deficit as % of GDP</i>；<i>whether it is financed by FDI (long-term) or hot money (short-term)</i>；<i>whether imports are capital goods that raise future output</i>。"]
+        ]
       },
       {
         h: "考場收分位 Exam edge",
         min: 1,
         blocks: [
-          ["table", ["Paper 常見題型","Model answer pattern"], [["Exchange rate 圖 [4]", "D/S of currency → 新 equilibrium rate → appreciation 或 depreciation；寫明誰需求變"], ["BOP 組成 [3]", "Current account（goods, services, income, transfers）+ capital + financial account；要識分類"], ["Devaluation / depreciation evaluate [10]", "X↑ M↓（Marshall-Lerner / PED）→ AD↑ → 通脹；J-curve 時間；判斷"]]],
-          ["note", "<b>Accept</b>：「appreciation = currency worth more in foreign units」。<b>Reject</b>：Strong currency = good economy。Floating 圖用 demand/supply of currency，唔好畫 AD/AS。"]
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["BOP 組成 [3]", "Current account（goods, services, income, transfers）+ capital + financial account；要識分類"]
+          ]]
         ]
       },
       {
         h: "失分位 + 自我檢查",
-        min: 2.5,
+        min: 1.5,
         blocks: [
           ["trap", [
-            "升值/貶值方向搞反：記住「$ per €」上升 = € 升值。",
-            "換算方向錯（該除變乘）：做完檢查答案合唔合理。",
-            "圖 axis 冇寫 currency pair，或者只寫 “price” / “quantity”。",
-            "Floating 用 devalue、fixed 用 depreciate。",
             "把 remittances、aid 放入 financial account。",
             "以為 current account 只係貿易 —— 漏咗 primary / secondary income。",
-            "BoP 唔平衡：忘記 current + capital + financial (+ errors) = 0。",
-            "寫「貶值一定改善 current account」—— 要講 PED、time lag。",
-            "只講 appreciation 對 exports 嘅影響，唔提 imports / inflation。",
-            "加息令貨幣貶值（錯）：加息吸引資金，令貨幣升值。",
-            "Inflation 高令貨幣升值（錯）：長期傾向貶值。",
-            "計 % change 時用新數做分母：必須用 <b>舊數</b> 做分母。",
-            "15 marks 冇 conclusion，冇 real-world example。",
+            "BoP 唔平衡：忘記 current + capital + financial (+ errors) = 0。"
           ]],
           ["check", [
-            "Define exchange rate, floating, fixed, managed, appreciation, depreciation, revaluation, devaluation",
-            "Draw a labelled forex diagram and shift it for interest rate, FDI, exports, speculation",
-            "Convert prices both ways and calculate % change in an exchange rate",
-            "Explain effects of appreciation / depreciation on X, M, AD, inflation and current account",
-            "Explain how a central bank defends a peg and the costs of doing so",
             "Classify any transaction into current / capital / financial (and sub-category)",
-            "Calculate current account and financial account balance with the identity = 0",
-            "Write a 15-mark evaluation with definition, diagram, two sides and a judgement",
-          ]],
-        ],
-      },
+            "Calculate current account and financial account balance with the identity = 0"
+          ]]
+        ]
+      }
     ],
     summary: [
-      "匯率係貨幣嘅價錢：D 或 S 郁就變",
-      "SPICED：升值出口貴、入口平",
-      "利率高、FDI 流入 → 升值；inflation 高 → 貶值",
-      "Floating：appreciate/depreciate；fixed：revalue/devalue",
-      "守價：賣儲備、買本幣、加利息",
       "Current = 貨、服、一次、二次收入",
       "Financial = FDI、股票債券、儲備",
       "Current + capital + financial (+ errors) = 0",
-      "貶值有效要睇 PED、time lag、spare capacity",
+      "Deficit 糾正：switching（貶值、保護）、reducing（緊縮）、supply-side"
     ],
     practice: [
-      { q: "Which is most likely to cause an appreciation of a country's floating currency?", o: ["A. A fall in domestic interest rates relative to other countries", "B. An increase in foreign demand for the country's exports", "C. An increase in the country's imports", "D. An increase in outward FDI by domestic firms"], m: 1, a: "<b>B</b>. Foreigners must buy the currency to pay for the exports, so demand for it rises. A, C and D all increase the supply of, or reduce the demand for, the currency." },
       { q: "Money sent home by migrant workers to their families is recorded in the home country's balance of payments in the:", o: ["A. capital account", "B. financial account", "C. current account as primary income", "D. current account as secondary income"], m: 1, a: "<b>D</b>. Remittances are current transfers, which are secondary income in the current account." },
-      { q: "A central bank wants to stop its pegged currency from depreciating. Which action would help?", o: ["A. Selling domestic currency and buying foreign reserves", "B. Selling foreign reserves and buying domestic currency", "C. Lowering interest rates", "D. Devaluing the peg"], m: 1, a: "<b>B</b>. Buying domestic currency increases its demand. A and C reduce demand for it; D is a deliberate fall in the peg, not a defence of it." },
-      { q: "Define <i>appreciation</i>.", m: 2, a: "An increase in the value of a currency in terms of another currency [1] in a floating exchange rate system / determined by market forces [1]." },
-      { q: "The exchange rate is US$1 = ¥150. Calculate the US$ price of a Japanese camera priced at ¥225 000.", m: 2, a: "225 000 ÷ 150 [1] = <b>US$1500</b> [1]." },
-      { q: "The exchange rate changes from €1 = US$1.20 to €1 = US$1.08. (a) State whether the euro appreciated or depreciated, with the % change. (b) Calculate the change in the US$ price of a €50 French wine.", m: 3, a: "(a) The euro depreciated [1] by (1.08 − 1.20) ÷ 1.20 × 100 = <b>−10%</b> [1]. (b) Price falls from 50 × 1.20 = US$60 to 50 × 1.08 = <b>US$54</b> [1]." },
-      { q: "Using an exchange rate diagram, explain how a fall in a country's interest rates may affect its currency.", m: 4, a: "Diagram with labelled axes (price of currency in foreign currency; quantity), D shifts left (and/or S right), rate falls [1–2]. Lower rates make deposits/financial assets less attractive to foreign investors (hot money outflow) [1], so demand for the currency falls → depreciation [1]." },
       { q: "Identify the account of the balance of payments in which each is recorded: (i) a firm builds a factory abroad; (ii) migrant workers send money home; (iii) a firm sells a patent to a foreign company.", m: 3, a: "(i) Financial account (FDI) [1]; (ii) current account — secondary income [1]; (iii) capital account (non-produced, non-financial asset) [1]." },
       { q: "Country Y (US$ billion): exports of goods 200; imports of goods 230; exports of services 60; imports of services 40; net primary income −12; net secondary income +8; capital account +2; errors and omissions 0. Calculate the current account balance and the financial account balance.", m: 3, a: "Current account = (200 − 230) + (60 − 40) − 12 + 8 = −30 + 20 − 12 + 8 = <b>−14</b> (deficit) [2]. Financial account: −14 + 2 + FA + 0 = 0 → FA = <b>+12</b> [1]." },
-      { q: "Explain <b>two</b> possible consequences of a depreciation of a country's currency.", m: 4, a: "Any two, each stated [1] + explained [1]: exports become cheaper abroad and imports dearer → net exports and AD rise → growth/employment; imported raw materials and goods cost more → cost-push inflation; foreign-currency debts become dearer to repay; current account may improve if demand is price elastic (after a time lag)." },
-      { q: "Using real-world examples, evaluate the consequences of a significant depreciation of a country's currency.", m: 15, a: "Level 5 (13–15): definition + exchange-rate diagram [~2]; positives: cheaper exports/dearer imports → X − M↑ → AD↑ → growth, employment, current account [~4]; negatives: imported (cost-push) inflation, higher foreign debt burden, lower living standards, uncertainty [~4]; evaluation: PED of X and M, time lag, spare capacity, import dependence, reason for depreciation, stakeholders [~3]; real-world example(s) and a justified conclusion [~2]." },
+      { q: "Explain why a current account deficit must be matched by a surplus on the capital and financial accounts.", m: 4, a: "The balance of payments records every transaction twice, so the accounts sum to zero [1]. A current account deficit means more foreign currency is paid out than received for goods, services and income [1]. This must be financed by net inflows: FDI, portfolio investment, borrowing or using reserves [1], which appear as a surplus on the financial (and capital) account [1]." },
     ],
   },
 
   "econ-18": {
-    title: "Sustainable development · Measuring development · Barriers · Strategies",
-    intro: "呢個 topic 全部係定義 + 評估：先分清 growth vs development，再背熟 HDI、barriers、strategies 嘅「好 / 壞」。Paper 1 15-mark 同 Paper 2 最後 15-mark 都愛考 strategies（FDI、aid、microfinance、trade）。最後有 11 條練習。",
+    title: "Growth vs development · Sustainable development · SDGs · Natural capital",
+    intro: "4.7 講 sustainable development：growth 唔等於 development，發展要唔犧牲下一代。要識定義、SDGs、natural capital、inclusive growth 同 doughnut model。",
     parts: [
       {
-        h: "總覽 + 口訣 一頁睇晒",
-        min: 3,
+        h: "總覽 + 口訣",
+        min: 1.5,
         blocks: [
           ["key", "<b>Master idea：Growth ≠ Development。</b>Growth = real GDP↑（一個數字）；development = 人嘅生活真係好咗（健康、教育、貧窮、自由、可持續）。<br>所有 strategy 題都用同一個評估框架：<b>Effectiveness · Sustainability · Distribution（邊個得益）· Dependency（依賴）· Time lag / cost</b>。"],
-          ["flow", [["① 定義", "Development / sustainable development / 題目 strategy 嘅 definition"], ["② 機制", "strategy 點樣解決 barrier（chain：A → B → C → development）"], ["③ 限制", "cost、side-effects、時間、對邊啲人冇用"], ["④ 評估", "sustainability、distribution、dependency、國情（country context）"], ["⑤ 結論", "justified judgement + 引用 text / data / 例子"]]],
           ["grid", [
-            ["4.7", "壽命、讀書、荷包 = HDI", "Life expectancy · schooling · GNI per capita (PPP)"],
             ["4.7", "唔犧牲下一代", "Sustainable development: meets present needs without compromising future generations"],
-            ["4.7", "社會底線、生態天花板", "Doughnut: social foundation + ecological ceiling"],
-            ["4.8", "GNI 排名減 HDI 排名大過零 = 轉化得好", "GNI rank − HDI rank > 0 → converts income into development well"],
-            ["4.9", "窮 → 儲少 → 投資少 → 仍然窮", "Poverty trap / vicious circle"],
-            ["4.9", "商品價跳、需求慢、增值少", "Primary commodities: low PED/PES, low YED, little value added"],
-            ["4.10", "FDI：資本技術職位，但利潤走、環境傷", "FDI: capital, technology, jobs vs repatriation, environment"],
-            ["4.10", "Aid：救急有用，依賴貪污要小心", "Aid: humanitarian vs dependency, corruption, tied aid"],
-            ["4.10", "Microfinance：細額貸款，女性受惠，但息高", "Small loans, empowerment vs high interest, over-indebtedness"],
+            ["4.7", "社會底線、生態天花板", "Doughnut: social foundation + ecological ceiling"]
           ]],
-          ["note", "<b>常考 note：</b>「Distinguish growth and development」、「Define sustainable development」、「Explain barrier」、「Evaluate strategy（FDI / aid / microfinance / trade）」係 perennial favourites。15-mark 必須用 real-world example 同 explicit judgement。"],
-        ],
+          ["note", "<b>常考 note：</b>「Distinguish growth and development」、「Define sustainable development」、「Explain barrier」、「Evaluate strategy（FDI / aid / microfinance / trade）」係 perennial favourites。15-mark 必須用 real-world example 同 explicit judgement。"]
+        ]
       },
       {
         h: "Development 定義 + Sustainable 可持續",
@@ -3953,6 +4320,56 @@ IB.addFast({
             "Growth 得益集中喺少數人 → inequality 擴大，貧窮冇減 [1]；環境污染令健康成本↑，GDP 未計 [1]",
           ]],
         ],
+      },
+      {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["Define development [2]", "Improvement in living standards + economic, social, environmental dimensions"]
+          ]],
+          ["note", "<b>Accept</b>：「HDI includes income, education, life expectancy」。<b>Reject</b>：HDI = GDP。評估要考慮 sustainability 同 context-specific 因素。"]
+        ]
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 1.5,
+        blocks: [
+          ["trap", [
+            "Growth = development：錯，development 要講 health、education、poverty、freedom。",
+            "Sustainable development 定義漏咗 “future generations to meet their own needs”。"
+          ]],
+          ["check", [
+            "State word-for-word: economic growth, economic development, sustainable development",
+            "Explain natural capital, inclusive growth, doughnut economics"
+          ]]
+        ]
+      }
+    ],
+    summary: [
+      "Growth 係 GDP；development 係生活質素",
+      "Sustainable = 唔犧牲下一代",
+      "SDGs：17 個目標，2015 定，2030 達成"
+    ],
+    practice: [
+      { q: "Define <i>sustainable development</i>.", m: 2, a: "Development that meets the needs of the present generation [1] without compromising the ability of future generations to meet their own needs [1]." },
+      { q: "Distinguish between economic growth and economic development.", m: 2, a: "Growth is an increase in real GDP over time [1]; development is a broader, multidimensional improvement in living standards, poverty reduction, health, education and freedom [1]." },
+      { q: "Explain why high economic growth may not lead to sustainable development.", m: 4, a: "Growth may deplete natural capital such as forests and fish stocks [1] and create negative externalities such as pollution and emissions [1]. Its benefits may be unequally shared so poverty remains [1], reducing the ability of future generations to meet their needs [1]." },
+    ],
+  },
+  "econ-18b": {
+    title: "Measuring development · GNI per capita · HDI · IHDI · Other indicators",
+    intro: "4.8 點樣量度 development：single indicators（GNI per capita、壽命、識字率）同 composite indicators（HDI、IHDI、GII、MPI）。要識計 GNI rank − HDI rank，同評價 HDI 嘅優缺點。",
+    parts: [
+      {
+        h: "口訣",
+        min: 1,
+        blocks: [
+          ["grid", [
+            ["4.7", "壽命、讀書、荷包 = HDI", "Life expectancy · schooling · GNI per capita (PPP)"],
+            ["4.8", "GNI 排名減 HDI 排名大過零 = 轉化得好", "GNI rank − HDI rank > 0 → converts income into development well"]
+          ]]
+        ]
       },
       {
         h: "Measuring development 量度",
@@ -3989,6 +4406,56 @@ IB.addFast({
         ],
       },
       {
+        h: "考場收分位 Exam edge",
+        min: 1,
+        blocks: [
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["HDI [3]", "三項：health（life expectancy）、education、income（GNI per capita）"]
+          ]]
+        ]
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 1.5,
+        blocks: [
+          ["trap", [
+            "HDI 包括 inequality 或 environment：錯，IHDI 先調整 inequality。",
+            "HDI 用 GDP：正確係 <b>GNI per capita (PPP)</b>。",
+            "GNI rank − HDI rank 正負搞反：&gt; 0 = HDI 排名較好 = 轉化成功。"
+          ]],
+          ["check", [
+            "List HDI components and use GNI rank − HDI rank; know IHDI, GII, MPI, Gini",
+            "Evaluate HDI (strengths and limitations)"
+          ]]
+        ]
+      }
+    ],
+    summary: [
+      "HDI = 壽命、讀書、荷包",
+      "GNI 排名減 HDI 排名 &gt; 0 = 轉化得好",
+      "Single = 一樣嘢；composite = 幾樣夾埋（HDI、IHDI、GII、MPI）"
+    ],
+    practice: [
+      { q: "The HDI includes all of the following EXCEPT:", o: ["A. Life expectancy at birth", "B. Expected years of schooling", "C. GNI per capita (PPP)", "D. The Gini coefficient"], m: 1, a: "<b>D</b>. Inequality is not in the HDI; it is captured by the IHDI and the Gini coefficient." },
+      { q: "A country has a GNI per capita rank of 90 and an HDI rank of 60. This suggests that:", o: ["A. it converts income into human development relatively well", "B. it has very high income inequality", "C. its HDI is falling", "D. it is a high-income country"], m: 1, a: "<b>A</b>. 90 − 60 = +30: its HDI rank is better than its income rank, so income is converted into health and education effectively." },
+      { q: "Country A has GNI per capita rank 110 and HDI rank 80. Country B has GNI per capita rank 45 and HDI rank 70. Calculate GNI rank − HDI rank for each and state what each result suggests.", m: 3, a: "A: 110 − 80 = +30 [1]; B: 45 − 70 = −25 [1]. A converts income into human development well; B has high income but weaker health/education outcomes [1]." },
+    ],
+  },
+  "econ-18c": {
+    title: "Barriers · Poverty trap · Commodity dependence · Institutions · Infrastructure",
+    intro: "4.9 講阻礙增長同發展嘅因素：poverty trap、依賴初級商品、制度弱同貪污、基建差、人力資本低、性別不平等、債務等。每個 barrier 都要寫 chain of analysis。",
+    parts: [
+      {
+        h: "口訣",
+        min: 1,
+        blocks: [
+          ["grid", [
+            ["4.9", "窮 → 儲少 → 投資少 → 仍然窮", "Poverty trap / vicious circle"],
+            ["4.9", "商品價跳、需求慢、增值少", "Primary commodities: low PED/PES, low YED, little value added"]
+          ]]
+        ]
+      },
+      {
         h: "Barriers 障礙 + 悲慘循環",
         min: 3,
         blocks: [
@@ -4020,6 +4487,47 @@ IB.addFast({
           ]],
           ["note", "<b>評估位：</b>barriers 互相牽連（vicious circle），單一政策好難解決；國家情況不同，最重要嘅 barrier 唔同；institutions 常被認為是基礎。"],
         ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 1.5,
+        blocks: [
+          ["trap", [
+            "只寫 barrier 名稱，冇 chain（poverty → saving → investment …）。",
+            "Commodity 依賴：漏咗 PED/PES 同 YED 嘅 reasoning。"
+          ]],
+          ["check", [
+            "Explain at least 6 barriers with a chain of analysis (poverty trap, commodity dependence, institutions…)"
+          ]]
+        ]
+      }
+    ],
+    summary: [
+      "Poverty trap：低收入 → 低儲蓄 → 低投資",
+      "Commodity：價跳、需求慢、增值少",
+      "Barrier 要寫鏈：原因 → 機制 → 投資／生產力 → development"
+    ],
+    practice: [
+      { q: "Explain how dependence on primary commodity exports can be a barrier to development.", m: 4, a: "Low PED and PES cause volatile prices and export revenues [1], making government revenue and planning unstable [1]; low YED means demand grows slowly as world incomes rise [1]; little value added / few linkages to the rest of the economy [1]." },
+      { q: "Explain how a poverty trap can prevent a low-income country from developing.", m: 4, a: "Low incomes mean little saving [1]; low saving means low investment in capital, education and health [1]; low investment means low productivity and output [1]; so incomes stay low and the cycle repeats [1]. (Labelled cycle diagram can earn marks.)" },
+      { q: "Explain how poor infrastructure can act as a barrier to economic development.", m: 4, a: "Poor roads, ports and electricity raise firms' costs [1] and make it hard to reach markets [1], so investment, including FDI, and exports stay low [1]; poor water and sanitation also harm health and human capital [1]." },
+    ],
+  },
+  "econ-18d": {
+    title: "Strategies · Trade · FDI · Aid · Microfinance · Human capital · Evaluation",
+    intro: "4.10 講促進增長同發展嘅策略：貿易策略（export promotion、import substitution、diversification）、FDI、aid、microfinance、教育醫療基建同制度。Paper 2 最後 15 分題通常考呢度：機制 + 限制 + 國情判斷。",
+    parts: [
+      {
+        h: "總覽 · strategy 評估框架",
+        min: 1.5,
+        blocks: [
+          ["flow", [["① 定義", "Development / sustainable development / 題目 strategy 嘅 definition"], ["② 機制", "strategy 點樣解決 barrier（chain：A → B → C → development）"], ["③ 限制", "cost、side-effects、時間、對邊啲人冇用"], ["④ 評估", "sustainability、distribution、dependency、國情（country context）"], ["⑤ 結論", "justified judgement + 引用 text / data / 例子"]]],
+          ["grid", [
+            ["4.10", "FDI：資本技術職位，但利潤走、環境傷", "FDI: capital, technology, jobs vs repatriation, environment"],
+            ["4.10", "Aid：救急有用，依賴貪污要小心", "Aid: humanitarian vs dependency, corruption, tied aid"],
+            ["4.10", "Microfinance：細額貸款，女性受惠，但息高", "Small loans, empowerment vs high interest, over-indebtedness"]
+          ]]
+        ]
       },
       {
         h: "Strategies 策略 + 評估",
@@ -4084,63 +4592,39 @@ IB.addFast({
         h: "考場收分位 Exam edge",
         min: 1,
         blocks: [
-          ["table", ["Paper 常見題型","Model answer pattern"], [["Define development [2]", "Improvement in living standards + economic, social, environmental dimensions"], ["HDI [3]", "三項：health（life expectancy）、education、income（GNI per capita）"], ["Strategies evaluate [10]", "Trade, aid, microfinance, infrastructure：機制 + limitations + 判斷"]]],
-          ["note", "<b>Accept</b>：「HDI includes income, education, life expectancy」。<b>Reject</b>：HDI = GDP。評估要考慮 sustainability 同 context-specific 因素。"]
+          ["table", ["Paper 常見題型","Model answer pattern"], [
+            ["Strategies evaluate [10]", "Trade, aid, microfinance, infrastructure：機制 + limitations + 判斷"]
+          ]]
         ]
       },
       {
         h: "失分位 + 自我檢查",
-        min: 3,
+        min: 1.5,
         blocks: [
           ["trap", [
-            "Growth = development：錯，development 要講 health、education、poverty、freedom。",
-            "Sustainable development 定義漏咗 “future generations to meet their own needs”。",
-            "HDI 包括 inequality 或 environment：錯，IHDI 先調整 inequality。",
-            "HDI 用 GDP：正確係 <b>GNI per capita (PPP)</b>。",
-            "GNI rank − HDI rank 正負搞反：&gt; 0 = HDI 排名較好 = 轉化成功。",
-            "只寫 barrier 名稱，冇 chain（poverty → saving → investment …）。",
-            "Commodity 依賴：漏咗 PED/PES 同 YED 嘅 reasoning。",
             "FDI 只講好處（資本、職位），冇 repatriation / 環境 / 擠走本地企業。",
             "Aid 只寫 “money to help”：要分 humanitarian vs development、bilateral vs multilateral，同 tied aid、dependency。",
             "Microfinance 只講貸款，冇講點樣突破 poverty trap 或 limitations（高息）。",
             "15-mark 冇 real-world example 或冇 conclusion。",
             "P2 15-mark 冇引用 text / data（只用 own knowledge）。",
-            "冇用 diagram：poverty trap、LRAS、PPC 都可以用。",
+            "冇用 diagram：poverty trap、LRAS、PPC 都可以用。"
           ]],
           ["check", [
-            "State word-for-word: economic growth, economic development, sustainable development",
-            "List HDI components and use GNI rank − HDI rank; know IHDI, GII, MPI, Gini",
-            "Evaluate HDI (strengths and limitations)",
-            "Explain at least 6 barriers with a chain of analysis (poverty trap, commodity dependence, institutions…)",
             "Explain, with ✓ and ✗, FDI, aid, microfinance, trade strategies, education/health/infrastructure, institutions",
-            "Explain natural capital, inclusive growth, doughnut economics",
             "Write a 15-mark evaluation using define → theory → both sides → evaluation → judgement",
-            "Use a case study/example for each strategy",
-          ]],
-        ],
-      },
+            "Use a case study/example for each strategy"
+          ]]
+        ]
+      }
     ],
     summary: [
-      "Growth 係 GDP；development 係生活質素",
-      "Sustainable = 唔犧牲下一代",
-      "HDI = 壽命、讀書、荷包",
-      "GNI 排名減 HDI 排名 &gt; 0 = 轉化得好",
-      "Poverty trap：低收入 → 低儲蓄 → 低投資",
-      "Commodity：價跳、需求慢、增值少",
       "FDI：資本技術職位，但利潤走、環境傷",
       "Aid / microfinance：有用，但留意依賴同高息",
-      "評估：sustainability、distribution、dependency、國情",
+      "評估：sustainability、distribution、dependency、國情"
     ],
     practice: [
-      { q: "The HDI includes all of the following EXCEPT:", o: ["A. Life expectancy at birth", "B. Expected years of schooling", "C. GNI per capita (PPP)", "D. The Gini coefficient"], m: 1, a: "<b>D</b>. Inequality is not in the HDI; it is captured by the IHDI and the Gini coefficient." },
-      { q: "A country has a GNI per capita rank of 90 and an HDI rank of 60. This suggests that:", o: ["A. it converts income into human development relatively well", "B. it has very high income inequality", "C. its HDI is falling", "D. it is a high-income country"], m: 1, a: "<b>A</b>. 90 − 60 = +30: its HDI rank is better than its income rank, so income is converted into health and education effectively." },
       { q: "Which is a feature of tied aid?", o: ["A. It must be spent on goods or services from the donor country", "B. It is given only in emergencies", "C. It is provided by multilateral organisations only", "D. It must be repaid with no interest"], m: 1, a: "<b>A</b>. Tied aid requires the recipient to buy from the donor, which may raise costs and limit local benefit." },
-      { q: "Define <i>sustainable development</i>.", m: 2, a: "Development that meets the needs of the present generation [1] without compromising the ability of future generations to meet their own needs [1]." },
-      { q: "Distinguish between economic growth and economic development.", m: 2, a: "Growth is an increase in real GDP over time [1]; development is a broader, multidimensional improvement in living standards, poverty reduction, health, education and freedom [1]." },
-      { q: "Country A has GNI per capita rank 110 and HDI rank 80. Country B has GNI per capita rank 45 and HDI rank 70. Calculate GNI rank − HDI rank for each and state what each result suggests.", m: 3, a: "A: 110 − 80 = +30 [1]; B: 45 − 70 = −25 [1]. A converts income into human development well; B has high income but weaker health/education outcomes [1]." },
-      { q: "Explain how dependence on primary commodity exports can be a barrier to development.", m: 4, a: "Low PED and PES cause volatile prices and export revenues [1], making government revenue and planning unstable [1]; low YED means demand grows slowly as world incomes rise [1]; little value added / few linkages to the rest of the economy [1]." },
       { q: "Explain two limitations of foreign direct investment as a development strategy.", m: 4, a: "Any two, stated [1] + explained [1]: profit repatriation; environmental damage; weak labour standards / exploitation; crowding out local firms; tax avoidance (transfer pricing); enclave economies with few linkages." },
-      { q: "Explain how a poverty trap can prevent a low-income country from developing.", m: 4, a: "Low incomes mean little saving [1]; low saving means low investment in capital, education and health [1]; low investment means low productivity and output [1]; so incomes stay low and the cycle repeats [1]. (Labelled cycle diagram can earn marks.)" },
       { q: "Explain one advantage and one disadvantage of foreign aid for a recipient country.", m: 4, a: "Advantage [1] + explanation [1]: e.g. development aid funds schools/health/infrastructure → human capital and LRAS rise. Disadvantage [1] + explanation [1]: e.g. dependency, corruption or tied aid raising costs / weakening incentives to reform." },
       { q: "Using real-world examples, evaluate the effectiveness of foreign direct investment as a strategy for achieving economic development.", m: 15, a: "Level 5 (13–15): definitions of FDI/MNC and development [~2]; benefits: capital, technology transfer, jobs, tax, exports, skills [~4]; costs: profit repatriation, transfer pricing, environmental damage, weak labour standards, crowding out, enclave [~4]; evaluation: type of FDI, regulation, linkages, institutions, sustainability [~3]; real-world examples (e.g. Vietnam, DRC) and a justified conclusion [~2]." },
     ],

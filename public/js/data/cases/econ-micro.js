@@ -75,7 +75,7 @@
   },
   /* ---------------- econ-2 ---------------- */
   {
-    id: "econ-c2a", topic: "econ-2", paper: "P2",
+    id: "econ-c2a", topic: "econ-2b", paper: "P2",
     title: "Text D — Avocado prices in Ostria",
     text: `<p><b>[1]</b> Ostria is a high-income economy that imports almost all of its avocados. In 2025 the average price of avocados rose from $4 to $5 per kilogram, while the quantity bought stayed at 340 000 kg per week.</p>
 <p><b>[2]</b> <b>Demand</b> has been rising. Social-media influencers promote avocados as a healthy food, average incomes grew by 3%, and a popular café chain added avocado toast to every breakfast menu. Prices of bread, often eaten with avocado, also fell.</p>
@@ -131,6 +131,68 @@
         "Gainers: passengers (lower fares, more trips, convenience); new drivers (jobs in a lower-middle-income economy); app firms",
         "Losers: taxi drivers (lower demand plus higher fuel costs - falling incomes); possibly bus operators; congestion/pollution as trips rise",
         "Evaluation: drivers' incomes may fall as supply keeps rising; licensing limits protect taxis but raise fares; short run vs long run (taxi firms may adopt apps); informal workers lack protection; overall net benefit depends on weighting of stakeholders",
+      ]),
+    ],
+  },
+  {
+    id: "econ-c2c", topic: "econ-2", paper: "P2",
+    title: "Text — Bubble tea in Lumeria",
+    text: `<p><b>[1]</b> Lumeria is an upper-middle-income economy. In its capital, weekly sales of bubble tea rose from 200 000 cups in 2023 to 260 000 cups in 2025, even though the price of a standard cup stayed at $4.</p>
+<p><b>[2]</b> Average household income rose by 10% over the period. Market researchers describe bubble tea as a <b>normal good</b> for most young consumers, who now buy it several times a week rather than as an occasional treat.</p>
+<p><b>[3]</b> Tastes have also changed: short videos of new flavours are widely shared on social media, and the number of people aged 15-29 living in the capital grew by 8%. A new tax raised the price of iced coffee, a close substitute, by 12%. At the same time, food-delivery apps cut their delivery fees; delivery is a <b>complement</b> for many office workers who order bubble tea to their desks.</p>
+<p><b>[4]</b> Table 1 shows the results of a survey of weekly demand from the two main groups of consumers at different prices in 2025. Students said that when the price rises, a cup takes a bigger share of their small budgets and fruit juice becomes relatively more attractive.</p>
+<p><b>[5]</b> The health ministry plans a campaign about the sugar content of sweet drinks, and many consumers expect café prices to rise next year as rents increase. Some café owners fear that bubble tea is a passing fashion.</p>`,
+    data: [
+      { caption: "Table 1: Weekly demand for bubble tea in the capital, 2025 (thousand cups)", head: ["Price per cup ($)", "Students", "Office workers", "Market demand"], rows: [["3", "150", "170", "320"], ["4", "120", "140", "260"], ["5", "90", "110", "200"], ["6", "60", "80", "140"]] },
+    ],
+    parts: [
+      def("(a)(i)", "normal good", 2, ["A good for which demand increases as income increases [1]", "and decreases as income falls (positive income elasticity of demand) [1]"]),
+      def("(a)(ii)", "complement", 3, ["A good that is consumed / used together with another good (joint demand) [1]", "so a fall in the price of one increases the demand for the other [1]"]),
+      { n: "(b)(i)", marks: 1, diff: 1, numeric: { value: 30, tol: 0.05 }, q: "Using paragraph [1], calculate the percentage increase in weekly sales of bubble tea between 2023 and 2025.", ms: ["(260 000 − 200 000)/200 000 × 100 = 30% [A1]"] },
+      { n: "(b)(ii)", marks: 2, diff: 1, numeric: { value: 200, tol: 0.5 }, q: "Using Table 1, calculate the market quantity demanded at a price of $5 per cup (in thousand cups), showing how the market demand is found.", ms: ["Market demand is the horizontal sum of individual demands: 90 + 110 [M1]", "= 200 thousand cups per week [A1]"] },
+      { n: "(b)(iii)", marks: 2, diff: 2, numeric: { value: -40, tol: 0.5 }, q: "Using Table 1, calculate the change in weekly consumer spending on bubble tea if the price rose from $4 to $5 per cup (in $ thousand).", ms: ["At $4: 4 × 260 = $1040 thousand; at $5: 5 × 200 = $1000 thousand [M1]", "Change = −40, i.e. spending falls by $40 thousand per week [A1]"] },
+      { n: "(c)", marks: 4, diff: 2, q: "Using a demand and supply diagram, explain the effect of the rise in household income (paragraph [2]) on the market for bubble tea.", ms: ["Diagram: axes Price and Quantity, demand shifts right from D₁ to D₂ [1]", "New equilibrium shown at a higher price and/or higher quantity (P₂, Q₂) [1]", "Bubble tea is a normal good, so higher income increases demand at every price [1]", "At the original price there is excess demand, which bids the price up and causes an extension of quantity supplied [1]"] },
+      { n: "(d)", marks: 4, diff: 2, q: "Using information from paragraph [3], explain two reasons why the demand for bubble tea has increased.", ms: ["Iced coffee is a substitute: a 12% rise in its price makes bubble tea relatively cheaper [1]", "so consumers switch to bubble tea and demand shifts right [1]", "Delivery is a complement: lower delivery fees reduce the cost of ordering bubble tea [1]", "so demand for bubble tea increases at every price (also accept: change in tastes via social media, more young consumers) [1]"] },
+      { n: "(e)", marks: 4, diff: 2, q: "Using Table 1 and paragraph [4], explain why the market demand curve for bubble tea slopes downward.", ms: ["Law of demand: as price rises from $3 to $6, quantity demanded falls from 320 to 140 thousand cups (inverse relationship), ceteris paribus [1]", "Income effect: a higher price reduces consumers' real income / a cup takes a bigger share of the budget, so fewer are bought [1]", "Substitution effect: bubble tea becomes relatively dearer than substitutes such as fruit juice, so consumers switch [1]", "The market demand curve is the horizontal sum of the students' and office workers' demand curves, so it also slopes downward [1]"] },
+      { n: "(f)", marks: 4, diff: 2, q: "Using information from paragraph [5], explain how the health campaign and expectations of higher future prices could affect the demand for bubble tea.", ms: ["The health campaign changes tastes and preferences against sugary drinks [1]", "so demand decreases and the demand curve shifts left [1]", "If consumers expect prices to rise next year, they may buy more now (current demand shifts right) [1]", "The overall effect on demand depends on which effect is stronger; a shift, not a movement along the curve [1]"] },
+      ext("Using information from the text/data and your knowledge of economics, evaluate the likely effects of the changes in the demand for bubble tea on different stakeholders in Lumeria.", [
+        "Theory: law of demand; movements vs shifts; non-price determinants (income/normal good, tastes, demographics, substitutes, complements, expectations); market demand as a horizontal sum",
+        "Text/data: sales +30% at an unchanged price of $4 [1]; income +10% [2]; coffee +12%, cheaper delivery, more 15-29-year-olds [3]; Table 1 market demand 320 → 140 as P rises $3 → $6; spending falls by $40 thousand if P rises to $5",
+        "Consumers: more choice and enjoyment, but sugar raises health risks; if prices rise, students with small budgets lose most",
+        "Producers and workers: café owners and delivery apps gain revenue and jobs; coffee sellers lose sales to a substitute; rising rents may squeeze profits",
+        "Government/society: health costs of sugar; tax revenue from café sales; campaign may reduce demand",
+        "Evaluation: is the rise permanent (income, demographics) or a fashion (tastes) that may reverse? Expectations may only bring demand forward; the effect depends on how far supply can expand; justified judgement on who gains most",
+      ]),
+    ],
+  },
+  {
+    id: "econ-c2d", topic: "econ-2b", paper: "P2",
+    title: "Text — Rice farming in Sundara",
+    text: `<p><b>[1]</b> Rice is the main food crop of Sundara, a lower-middle-income country. Around 2 million small farms grow rice, and the government publishes a <b>supply</b> schedule for the national market each year (Table 1).</p>
+<p><b>[2]</b> In 2025 the price of fertiliser rose from $500 to $700 per tonne after a rise in world energy prices, and many farm workers left for better-paid jobs in the cities, pushing up wages in rural areas.</p>
+<p><b>[3]</b> A new drought-resistant seed developed by the national university will be available from 2026. The government has also announced a <b>subsidy</b> of $20 for every tonne of rice sold by farmers.</p>
+<p><b>[4]</b> The price of durian, a fruit exported to neighbouring countries, has doubled since 2023. Farmers in the hills are replacing rice fields with durian orchards because they can use the same land and labour to earn more.</p>
+<p><b>[5]</b> Rice traders report that some farmers are storing rice instead of selling it, because they expect prices to rise further. Consumer groups warn that higher rice prices hurt the poorest households most.</p>`,
+    data: [
+      { caption: "Table 1: Supply of rice in Sundara (thousand tonnes per month)", head: ["Price ($ per tonne)", "Quantity supplied 2024", "Quantity supplied 2025"], rows: [["300", "400", "300"], ["350", "500", "400"], ["400", "600", "500"], ["450", "700", "600"], ["500", "800", "700"]] },
+    ],
+    parts: [
+      def("(a)(i)", "supply", 1, ["The quantity of a good that producers are willing and able to offer for sale [1]", "at each possible price over a given time period, ceteris paribus [1]"]),
+      def("(a)(ii)", "subsidy", 3, ["A payment by the government to producers (per unit of output) [1]", "which lowers their costs of production / increases supply [1]"]),
+      { n: "(b)(i)", marks: 1, diff: 1, numeric: { value: 40, tol: 0.05 }, q: "Using paragraph [2], calculate the percentage increase in the price of fertiliser.", ms: ["(700 − 500)/500 × 100 = 40% [A1]"] },
+      { n: "(b)(ii)", marks: 2, diff: 1, numeric: { value: -100, tol: 0.5 }, q: "Using Table 1, calculate the change in the quantity of rice supplied at a price of $400 per tonne between 2024 and 2025 (in thousand tonnes per month).", ms: ["At $400: 600 in 2024 and 500 in 2025 [M1]", "Change = −100 thousand tonnes per month (a decrease in supply) [A1]"] },
+      { n: "(b)(iii)", marks: 2, diff: 2, numeric: { value: 150, tol: 0.5 }, q: "The 2025 supply schedule can be written as Qs = −300 + 2P. Calculate the lowest price at which farmers would supply any rice (in $ per tonne).", ms: ["Set Qs = 0: 0 = −300 + 2P [M1]", "P = $150 per tonne [A1]"] },
+      { n: "(c)", marks: 4, diff: 2, q: "Using a demand and supply diagram, explain the effect of the changes in paragraph [2] on the market for rice.", ms: ["Diagram: axes Price and Quantity, supply shifts left (up) from S₁ to S₂ [1]", "New equilibrium at a higher price and lower quantity, P₂ and Q₂ [1]", "Higher fertiliser prices and higher rural wages raise the costs of production, so farmers supply less at every price [1]", "At the original price there is excess demand, so the price rises and quantity demanded contracts [1]"] },
+      { n: "(d)", marks: 4, diff: 2, q: "Using a diagram, explain how the new seed and the subsidy described in paragraph [3] are likely to affect the supply of rice.", ms: ["Diagram: supply shifts right (down) from S₁ to S₂ [1]", "Drought-resistant seed is an improvement in technology: higher yields lower the cost per tonne [1]", "The subsidy lowers producers' costs, shifting supply down by $20 per tonne [1]", "More rice is supplied at every price; at the original price there is excess supply, so the price falls [1]"] },
+      { n: "(e)", marks: 4, diff: 2, q: "Using information from paragraph [4], explain the effect of the rise in the price of durian on the supply of rice.", ms: ["Rice and durian are in competitive supply: they use the same land and labour [1]", "A higher durian price makes durian more profitable relative to rice [1]", "Farmers move resources from rice to durian [1]", "so the supply of rice decreases at every price (shifts left) - not a movement along the rice supply curve [1]"] },
+      { n: "(f)", marks: 4, diff: 2, q: "Using Table 1, explain why the supply curve for rice slopes upward.", ms: ["Law of supply: in 2024, as price rises from $300 to $500, quantity supplied rises from 400 to 800 thousand tonnes, ceteris paribus [1]", "A higher price raises profitability, giving existing farmers an incentive to produce more and attracting new producers [1]", "Increasing marginal costs: with land fixed, extra output requires more costly inputs (diminishing marginal returns) [1]", "so farmers will only supply more if the price rises to cover the higher marginal cost [1]"] },
+      ext("Using information from the text/data and your knowledge of economics, evaluate the impact of the changes in the conditions of supply described in the text on rice farmers and consumers in Sundara.", [
+        "Theory: law of supply; movements vs shifts; non-price determinants (costs of factors, technology, subsidies, competitive supply, expectations); equilibrium price and quantity",
+        "Text/data: fertiliser +40% and higher rural wages [2]; supply falls by 100 thousand tonnes at $400 [Table 1]; new seed and $20 per tonne subsidy [3]; durian price doubled [4]; storing rice [5]",
+        "Consumers: in the short run higher rice prices reduce real incomes, especially for the poorest households (rice is a large share of spending)",
+        "Farmers: higher costs cut profits unless prices rise; farmers who switch to durian gain; farmers who store rice may gain from higher prices",
+        "Policy: the seed and subsidy shift supply right from 2026 and may offset the cost rise; the subsidy has an opportunity cost for the government",
+        "Evaluation: short run vs long run (seed only from 2026; energy prices may fall); the size of the price change depends on the elasticity of demand for a staple food; expectations and storage may make shortages worse; justified judgement",
       ]),
     ],
   },
@@ -259,7 +321,7 @@
   },
   /* ---------------- econ-5 ---------------- */
   {
-    id: "econ-c5b", topic: "econ-5", paper: "P2",
+    id: "econ-c5b", topic: "econ-5b", paper: "P2",
     title: "Text J — Tea, incomes and elasticity in Nyasso",
     text: `<p><b>[1]</b> Nyasso is a low-income economy where tea makes up 35% of exports. Like many <b>primary commodities</b>, tea is subject to large price swings on world markets.</p>
 <p><b>[2]</b> In 2025 the world price of tea rose from $2.50 to $3.00 per kg after floods in a rival exporting country. Nyasso's tea output only rose from 500 to 520 thousand tonnes, because new bushes take about four years to produce leaves and land suitable for tea is limited.</p>
@@ -286,6 +348,68 @@
         "Problems: volatile export earnings and farmer incomes; cannot respond quickly to high prices; falling share of world spending as incomes grow; import demand (YED 1.5) rises faster than export demand - trade pressure",
         "Mitigating factors: higher prices raise revenue in the short run because quantity barely changes; PES rises in the long run; buffer stocks, insurance, value-added processing; diversification into higher-YED goods",
         "Evaluation: short run vs long run; dependence on one commodity is the core issue; stakeholders (farmers, government, consumers); the size of the problem depends on world conditions",
+      ]),
+    ],
+  },
+  {
+    id: "econ-c5c", topic: "econ-5", paper: "P2",
+    title: "Text — Flights, petrol and incomes in Kovia",
+    text: `<p><b>[1]</b> Kovia's national airline cut the price of a domestic return flight from $120 to $96 in 2025. The number of passengers rose from 50 000 to 65 000 per month, and the airline's managers said the fare cut had been "a revenue success".</p>
+<p><b>[2]</b> In the same year the government raised the excise tax on petrol, and the price rose from $1.50 to $1.80 per litre. Weekly petrol sales fell only from 10.0 to 9.6 million litres. Officials explained that most drivers have no real alternative and that petrol is a small part of the cost of owning a car. <b>Price elasticity of demand</b> was central to their choice.</p>
+<p><b>[3]</b> Average real household income grew by 5% in 2025. Spending surveys show that demand for restaurant meals rose by 9%, while demand for rice fell by 1%. Economists use <b>income elasticity of demand</b> to predict how the structure of the economy will change as incomes grow.</p>
+<p><b>[4]</b> Rice farmers' incomes have fallen behind those of other workers, and the share of agriculture in Kovia's GDP has dropped from 18% to 12% in ten years. The services sector, including restaurants, tourism and air travel, is growing fastest.</p>
+<p><b>[5]</b> The city bus company is now considering a fare increase. Its managers estimate that demand for bus travel is price inelastic in the short run but more elastic in the long run, as people buy cars or bicycles.</p>`,
+    data: [
+      { caption: "Table 1: Selected markets in Kovia, 2024-2025", head: ["Market", "Price 2024", "Price 2025", "Quantity 2024", "Quantity 2025"], rows: [["Domestic flights (per month)", "$120", "$96", "50 000", "65 000"], ["Petrol (million litres per week)", "$1.50", "$1.80", "10.0", "9.6"], ["Restaurant meals (index)", "-", "-", "100", "109"], ["Rice (index)", "-", "-", "100", "99"]] },
+    ],
+    parts: [
+      def("(a)(i)", "price elasticity of demand", 2, ["A measure of the responsiveness of quantity demanded [1]", "to a change in the good's own price [1]"]),
+      def("(a)(ii)", "income elasticity of demand", 3, ["A measure of the responsiveness of demand for a good [1]", "to a change in consumers' income [1]"]),
+      { n: "(b)(i)", marks: 1, diff: 1, numeric: { value: -20, tol: 0.05 }, q: "Using Table 1, calculate the percentage change in the price of a domestic flight.", ms: ["(96 − 120)/120 × 100 = −20% [A1]"] },
+      { n: "(b)(ii)", marks: 2, diff: 2, numeric: { value: -1.5, tol: 0.02 }, q: "Using Table 1, calculate the price elasticity of demand for domestic flights.", ms: ["%ΔQd = (65 000 − 50 000)/50 000 × 100 = +30%; %ΔP = −20% [M1]", "PED = 30/−20 = −1.5 (price elastic; accept 1.5) [A1]"] },
+      { n: "(b)(iii)", marks: 2, diff: 2, numeric: { value: 1.8, tol: 0.02 }, q: "Using paragraph [3], calculate the income elasticity of demand for restaurant meals.", ms: ["YED = %ΔQd ÷ %ΔY = 9/5 [M1]", "= 1.8 (a normal, income-elastic / luxury good) [A1]"] },
+      { n: "(c)", marks: 4, diff: 2, q: "Using a diagram, explain why the airline's total revenue rose after it cut its fare (paragraph [1]).", ms: ["Diagram: demand curve with price falling from P₁ ($120) to P₂ ($96) and quantity rising from Q₁ to Q₂; revenue rectangles shown [1]", "Demand for flights is price elastic (PED = −1.5): the % rise in quantity demanded (30%) is greater than the % fall in price (20%) [1]", "Revenue gained from extra passengers (area of new rectangle) exceeds revenue lost on existing passengers [1]", "TR rises from $6.0 million to $6.24 million per month [1]"] },
+      { n: "(d)", marks: 4, diff: 2, q: "Using information from paragraph [2], explain why the government chose to raise the tax on petrol.", ms: ["Petrol sales fell by only 4% when the price rose by 20%, so PED ≈ −0.2: demand is price inelastic [1]", "Few close substitutes / necessity for drivers / small share of the total cost of motoring [1]", "Because quantity falls little, the tax base remains large [1]", "so the tax raises a large and predictable revenue for the government (although it does little to cut consumption) [1]"] },
+      { n: "(e)", marks: 4, diff: 2, q: "Using information from paragraphs [3] and [4], explain the significance of income elasticity of demand for rice farmers and restaurants in Kovia.", ms: ["Restaurant meals have YED of 1.8 (income elastic): as incomes grow, demand grows faster than income [1]", "so restaurants and other services expand and attract resources [1]", "Rice has YED of −0.2 (an inferior good): demand falls as incomes rise [1]", "so farmers' incomes lag behind and the share of agriculture in GDP falls (18% to 12%), as Engel's law predicts [1]"] },
+      { n: "(f)", marks: 4, diff: 2, q: "Using information from the text, explain two determinants of price elasticity of demand that help explain why demand for petrol is inelastic but demand for flights is elastic.", ms: ["Availability of substitutes: drivers have no real alternative to petrol, whereas domestic travellers can use buses, trains or holidays at home [1]", "so demand for petrol is less responsive to price [1]", "Necessity vs luxury / proportion of income: petrol is a necessity and a small part of motoring costs, whereas a $120 flight is a larger, more discretionary purchase [1]", "Time period: in the long run consumers can switch (e.g. bus users buying cars, paragraph [5]), so demand becomes more elastic [1]"] },
+      ext("Using information from the text/data and your knowledge of economics, evaluate the usefulness of price and income elasticities of demand for firms and the government in Kovia.", [
+        "Theory: PED and YED formulas and ranges; PED and total revenue; determinants of PED; tax revenue and incidence; Engel's law and structural change",
+        "Text/data: flights PED −1.5 and TR up from $6.0m to $6.24m [1]; petrol PED ≈ −0.2 with sales down 4% [2]; restaurant YED 1.8 and rice YED −0.2 [3]; agriculture's share 18% → 12% [4]; bus fares [5]",
+        "Firms: PED guides pricing (airline cut, bus company rise); YED guides investment (restaurants expand, rice farmers diversify)",
+        "Government: inelastic goods give reliable tax revenue; elastic goods better if the aim is to cut consumption; YED predicts structural change and the need for retraining/support for farmers",
+        "Limitations: estimates are based on past data and ceteris paribus; elasticity changes along a demand curve and over time (short vs long run, paragraph [5]); competitors' reactions; incomes may fall in a recession",
+        "Justified judgement: elasticities are valuable guides but must be used with up-to-date data and other information",
+      ]),
+    ],
+  },
+  {
+    id: "econ-c5d", topic: "econ-5b", paper: "P2",
+    title: "Text — Homes and furniture in Marenga",
+    text: `<p><b>[1]</b> The population of Marenga's capital has grown quickly as young people move from rural areas for work. Between 2024 and 2025 average house prices rose by 25%, but the number of new homes completed rose only from 8000 to 8400.</p>
+<p><b>[2]</b> Developers say that suitable land is scarce, that planning permission takes about two years, and that there is a shortage of skilled construction workers. As a result, the <b>price elasticity of supply</b> of housing is very low in the short run.</p>
+<p><b>[3]</b> The furniture industry reacted very differently. When furniture prices rose by 10%, factories increased output from 40 000 to 52 000 units per month. Most factories had <b>spare capacity</b>, held stocks of finished furniture and could easily hire extra semi-skilled workers.</p>
+<p><b>[4]</b> The government plans to cut the time needed for planning approval to six months, release public land for building and fund training courses for 5000 builders.</p>
+<p><b>[5]</b> Tenants' groups say that rents are rising faster than wages and that many young workers now spend over 40% of their income on rent. They want a rent ceiling.</p>`,
+    data: [
+      { caption: "Table 1: Housing and furniture in Marenga", head: ["Market", "Price change 2024-2025", "Quantity supplied 2024", "Quantity supplied 2025"], rows: [["New homes (completed per year)", "+25%", "8 000", "8 400"], ["Furniture (units per month)", "+10%", "40 000", "52 000"]] },
+    ],
+    parts: [
+      def("(a)(i)", "price elasticity of supply", 2, ["A measure of the responsiveness of quantity supplied [1]", "to a change in the good's own price [1]"]),
+      def("(a)(ii)", "spare capacity", 3, ["Unused productive capacity: firms could produce more with their existing factors of production [1]", "so output can be increased quickly / without large extra costs [1]"]),
+      { n: "(b)(i)", marks: 1, diff: 1, numeric: { value: 5, tol: 0.05 }, q: "Using Table 1, calculate the percentage increase in the number of new homes completed.", ms: ["(8400 − 8000)/8000 × 100 = 5% [A1]"] },
+      { n: "(b)(ii)", marks: 2, diff: 2, numeric: { value: 0.2, tol: 0.01 }, q: "Using Table 1, calculate the price elasticity of supply of new homes.", ms: ["PES = %ΔQs ÷ %ΔP = 5/25 [M1]", "= 0.2 (price inelastic) [A1]"] },
+      { n: "(b)(iii)", marks: 2, diff: 2, numeric: { value: 3, tol: 0.02 }, q: "Using Table 1, calculate the price elasticity of supply of furniture.", ms: ["%ΔQs = (52 000 − 40 000)/40 000 × 100 = 30%; %ΔP = 10% [M1]", "PES = 30/10 = 3 (price elastic) [A1]"] },
+      { n: "(c)", marks: 4, diff: 2, q: "Using a diagram, explain why the rise in demand for housing in the capital led mainly to higher prices (paragraph [1]).", ms: ["Diagram: steep (inelastic) supply curve, demand shifts right D₁ → D₂ [1]", "Large rise in price P₁ → P₂ and small rise in quantity Q₁ → Q₂ [1]", "Population growth increases demand for housing [1]", "Because supply is price inelastic (PES = 0.2), builders cannot quickly respond, so the adjustment is mainly through price [1]"] },
+      { n: "(d)", marks: 4, diff: 2, q: "Using information from paragraph [2], explain two reasons why the price elasticity of supply of housing is low.", ms: ["Time period: planning permission and construction take about two years, so supply cannot respond quickly to a price rise [1]", "so in the short run quantity supplied hardly changes [1]", "Immobility / shortage of factors: land is scarce and skilled construction workers are in short supply [1]", "so firms cannot easily obtain the extra resources needed to raise output [1]"] },
+      { n: "(e)", marks: 4, diff: 2, q: "Using information from paragraph [3], explain why the supply of furniture is price elastic.", ms: ["PES = 3: quantity supplied rose by a larger % than price [1]", "Spare capacity allows factories to raise output quickly without new investment [1]", "Stocks of finished furniture can be released onto the market when the price rises [1]", "Semi-skilled workers are easy to hire (mobile factors of production), so output responds strongly [1]"] },
+      { n: "(f)", marks: 4, diff: 2, q: "Using a diagram, explain how the government's plans in paragraph [4] could affect the market for housing in the long run.", ms: ["Diagram: housing supply becomes flatter (more elastic) and/or shifts right [1]", "Faster planning approval shortens the time lag, so builders can respond to higher prices more quickly [1]", "Public land and training more builders increase the availability and mobility of factors [1]", "Future increases in demand would then raise quantity more and prices less, improving affordability [1]"] },
+      ext("Using information from the text/data and your knowledge of economics, evaluate the view that increasing the price elasticity of supply of housing is the best way to make housing more affordable in Marenga.", [
+        "Theory: PES and its determinants (time, factor mobility, spare capacity, stocks); effect of a demand increase with elastic vs inelastic supply (diagram); maximum price (rent ceiling) and shortages",
+        "Text/data: house prices +25% but completions +5% (PES 0.2) vs furniture PES 3 [Table 1]; scarce land, two-year planning, few builders [2]; policies in [4]; rent over 40% of income [5]",
+        "For: a more elastic supply means demand growth raises output rather than prices; long-run solution; also creates construction jobs",
+        "Against: policies take years (training, building); land is finite in the city centre; demand may keep rising; environmental and congestion costs of building",
+        "Alternatives: rent ceiling (quick help for tenants but creates shortages and lowers quality), subsidised social housing, better transport to suburbs, rural development to reduce migration",
+        "Judgement: raising PES is the most sustainable long-run answer but needs short-run help for low-income tenants; depends on speed of implementation",
       ]),
     ],
   },

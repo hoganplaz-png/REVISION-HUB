@@ -15,7 +15,7 @@ IB.extend("econ", {
 
 IB.addTopics("econ", [
   {
-    id: "econ-h1", code: "2.5 AHL", after: "econ-5", unit: "Unit 2: Microeconomics (HL)", title: "Theory of the firm: costs, revenues and profit",
+    id: "econ-h1", code: "2.5 AHL", after: "econ-5b", unit: "Unit 2: Microeconomics (HL)", title: "Theory of the firm: costs, revenues and profit",
     summary: "Short-run and long-run costs, the law of diminishing marginal returns, economies of scale, revenue curves, profit maximisation (MC = MR) and alternative business goals.",
     concepts: [
       { h: "Short-run costs and diminishing returns", b: "<p>In the short run at least one factor is fixed. As more of a variable factor is added to a fixed factor, <strong>marginal product eventually falls</strong> (law of diminishing marginal returns), so <strong>marginal cost (MC) eventually rises</strong>. MC cuts AVC and ATC at their minimum points.</p><ul><li>TC = TFC + TVC; ATC = TC/Q; AVC = TVC/Q; MC = ΔTC/ΔQ</li></ul>", yue: "短期有固定生產要素，不斷加可變要素，邊際產量最終會下跌，所以邊際成本 MC 最終上升。MC 一定喺 ATC 同 AVC 最低點穿過。" },
@@ -80,7 +80,7 @@ IB.addTopics("econ", [
     ],
   },
   {
-    id: "econ-h3", code: "3.2-3.6 AHL", after: "econ-13", unit: "Unit 3: Macroeconomics (HL)", title: "HL macro: multiplier, Phillips curve and money creation",
+    id: "econ-h3", code: "3.2-3.6 AHL", after: "econ-13b", unit: "Unit 3: Macroeconomics (HL)", title: "HL macro: multiplier, Phillips curve and money creation",
     summary: "The Keynesian multiplier, MPC/MPS/MPT/MPM, Keynesian vs monetarist/new classical AS, short- and long-run Phillips curves, natural rate of unemployment and fractional-reserve money creation.",
     concepts: [
       { h: "The multiplier", b: "<p>An injection (G, I, X) causes a larger final change in real GDP because spending becomes someone else's income. \\(k = \\frac{1}{1 - MPC} = \\frac{1}{MPS + MPT + MPM}\\). ΔY = k × Δinjection.</p>", yue: "乘數效應：政府用一蚊，變成人哋收入，再用一部份，最後 GDP 增加多過一蚊。k = 1/(1−MPC)。" },
@@ -109,7 +109,7 @@ IB.addTopics("econ", [
     ],
   },
   {
-    id: "econ-h4", code: "4.1-4.7 AHL", after: "econ-17", unit: "Unit 4: The global economy (HL)", title: "HL international: comparative advantage, terms of trade, Marshall-Lerner",
+    id: "econ-h4", code: "4.1-4.7 AHL", after: "econ-17b", unit: "Unit 4: The global economy (HL)", title: "HL international: comparative advantage, terms of trade, Marshall-Lerner",
     summary: "Absolute and comparative advantage with opportunity cost calculations, tariff welfare calculations, terms of trade, Marshall-Lerner condition and J-curve, and current account calculations.",
     concepts: [
       { h: "Comparative advantage", b: "<p>A country has a comparative advantage if it produces a good at a <strong>lower opportunity cost</strong> than another. Specialisation and trade according to comparative advantage increase total output and allow consumption beyond the PPC.</p>", yue: "比較優勢睇機會成本，邊個機會成本低就專門生產嗰樣，再貿易，大家都得益。" },
