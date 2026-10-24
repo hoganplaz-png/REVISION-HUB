@@ -532,6 +532,17 @@
         const d = 3 * a * x0 * x0 + 2 * b * x0 + c;
         return { paper: "P1", marks: 2, diff: 1, q: `Let \\(f(x) = ${poly([[a, "x^3"], [b, "x^2"], [c, "x"]])}\\). Find the gradient of the curve at x = ${x0}.`, numeric: { value: d, tol: 0.001 }, ms: [`\\(f'(x) = ${poly([[3 * a, "x^2"], [2 * b, "x"], [c, ""]])}\\) [A1]`, `\\(f'(${x0}) = ${d}\\) [A1]`] };
       },
+    ],
+    "math-12c": [
+      () => {
+        const a = R(1, 5), p = R(2, 4), b = P([-6, -4, -3, -2, 2, 3, 4, 6]), x0 = P([1, 2, 3]);
+        const xp = (n) => (n === 1 ? "x" : `x^{${n}}`), co = (c) => (c === 1 ? "" : String(c));
+        const num = a * p * x0 ** (p - 1) * x0 * x0 - b, den = x0 * x0;
+        return { paper: "P1", marks: 3, diff: 2, q: `Let \\(f(x) = ${co(a)}${xp(p)} ${b < 0 ? "-" : "+"} \\frac{${Math.abs(b)}}{x}\\), \\(x \\neq 0\\). Find \\(f'(${x0})\\).`, numeric: { value: dp(num / den, 4), tol: 0.002 },
+          ms: [`rewrite: \\(f(x) = ${co(a)}${xp(p)} ${b < 0 ? "-" : "+"} ${Math.abs(b)}x^{-1}\\) [M1]`, `\\(f'(x) = ${a * p}${xp(p - 1)} ${b < 0 ? "+" : "-"} ${Math.abs(b)}x^{-2}\\) [A1]`, `\\(f'(${x0}) = ${fracTex(num, den)}\\) [A1]`] };
+      },
+    ],
+    "math-12g": [
       () => {
         // f'(x) = 3(x - p)(x - q) with p + q even, so every coefficient is an integer
         const p = R(-4, 1), q = p + 2 * R(1, 3);
@@ -542,6 +553,15 @@
       },
     ],
     "math-13": [
+      () => {
+        const a = R(1, 3), b = R(-3, 3), c = R(-5, 5), x0 = R(0, 2), x1 = x0 + R(1, 2), y0 = R(-5, 8);
+        const F = (x) => a * x ** 3 + b * x * x + c * x;
+        const C = y0 - F(x0), v = F(x1) + C;
+        return { paper: "P1", marks: 4, diff: 2, q: `The gradient of a curve is \\(f'(x) = ${poly([[3 * a, "x^2"], [2 * b, "x"], [c, ""]])}\\) and the curve passes through \\((${x0}, ${y0})\\). Find \\(f(${x1})\\).`, numeric: { value: v, tol: 0.001 },
+          ms: [`\\(f(x) = ${poly([[a, "x^3"], [b, "x^2"], [c, "x"]])} + C\\) [A1]`, `\\(f(${x0}) = ${y0} \\Rightarrow C = ${C}\\) [M1]`, `\\(f(x) = ${poly([[a, "x^3"], [b, "x^2"], [c, "x"], [C, ""]])}\\) [A1]`, `\\(f(${x1}) = ${v}\\) [A1]`] };
+      },
+    ],
+    "math-13c": [
       () => {
         const a = R(1, 4), b = R(-5, 5) || 2, lo = R(0, 2), hi = lo + R(1, 3);
         const F6 = (x) => 2 * a * x ** 3 + 3 * b * x * x; // 6 × antiderivative

@@ -2588,8 +2588,8 @@ IB.addFast({
     ],
   },
   "math-12": {
-    title: "Derivative rules · Tangents & normals · Stationary points · Optimisation",
-    intro: "Differentiation 微分：f′(x) = 斜率 = 變化率。核心係識揀 chain / product / quotient，同埋 f′ = 0 再用 f″ 判斷。",
+    title: "Limits · Gradient function · Rate of change",
+    intro: "5.1 微分入門：f′(x) 係斜率函數，亦係變化率。Chord 斜率喺 h → 0 嘅極限 = 切線斜率。呢張 sheet 講清楚 limit 嘅意思、點樣讀 dy/dx，同埋 context 題點答。",
     parts: [
       {
         h: "Big picture 微分三件事",
@@ -2601,25 +2601,268 @@ IB.addFast({
         ],
       },
       {
-        h: "口訣 + 導數表",
+        h: "Limit 極限：chord → tangent",
+        min: 3,
+        blocks: [
+          ["key", "<b>Gradient of a curve at P = gradient of the tangent at P.</b> 喺曲線上面再揀一點 Q，chord PQ 嘅斜率 = \\(\\frac{f(a+h)-f(a)}{h}\\)。Q 越嚟越近 P（h → 0），chord 就變成 tangent：<br>\\(f'(a)=\\lim_{h\\to0}\\dfrac{f(a+h)-f(a)}{h}\\)"],
+          ["rhyme", "口訣", "先約 h，後令 h 趨零", "直接代 h = 0 會得 0/0；一定要先化簡、約走分母個 h，再睇 h → 0 時趨向幾多。"],
+          ["table", ["Q", "h", "gradient of chord PQ on y = x², P(1, 1)"], [
+            ["(2, 4)", "1", "3"],
+            ["(1.5, 2.25)", "0.5", "2.5"],
+            ["(1.1, 1.21)", "0.1", "2.1"],
+            ["(1.01, 1.0201)", "0.01", "2.01"],
+            ["h → 0", "→ 0", "→ <b>2 = f′(1)</b>"],
+          ]],
+          ["eg", "<b>P1 · 3 marks</b>　Let f(x) = x². Find the gradient of the chord joining (3, 9) and (3 + h, (3 + h)²), and hence the gradient of the curve at x = 3.", [
+            "Chord gradient = ((3 + h)² − 9) ÷ h = (6h + h²) ÷ h [M1]",
+            "= <b>6 + h</b> [A1]",
+            "h → 0：gradient at x = 3 is <b>6</b> [A1] ✅（同 f′(x) = 2x 一致）",
+          ]],
+          ["eg", "<b>P1 · 2 marks</b>　The tangent to y = f(x) at (2, 5) passes through (4, 11). Write down f′(2).", [
+            "Tangent gradient = (11 − 5) ÷ (4 − 2) = 3",
+            "<b>f′(2) = 3</b> ✅（f′(2) 就係喺 x = 2 嘅切線斜率）",
+          ]],
+          ["trap", ["h = 0 直接代入 → 0/0，要先約。", "f′(a) 係斜率（一個數），f(a) 係高度，唔好搞亂。", "Gradient function f′(x) 係 function；gradient at a point 係數字。"]],
+        ],
+      },
+      {
+        h: "Rate of change 變化率",
+        min: 3,
+        blocks: [
+          ["grid", [
+            ["5.1", "f′(a) = 喺 x = a 嘅切線斜率", "Gradient of tangent at x = a"],
+          ]],
+          ["key", "\\(\\frac{dy}{dx}\\) = rate of change of y with respect to x。單位 = (y 嘅單位) per (x 嘅單位)，例如 litres per minute、m s⁻¹、°C per minute。<b>正數</b> = 嗰一刻增加緊；<b>負數</b> = 減少緊。"],
+          ["eg", "<b>P2 · 3 marks</b>　T(t) = 20 + 70e^(−0.05t) °C is the temperature of tea after t minutes. Find the rate of change of T when t = 10 and interpret it.", [
+            "T′(t) = −3.5e^(−0.05t)（或 GDC dy/dx at t = 10）[M1]",
+            "T′(10) = <b>−2.12 °C per minute</b> [A1]",
+            "Interpret：t = 10 嗰一刻，溫度以每分鐘 2.12 °C <b>下降緊</b> [R1] ✅",
+          ]],
+          ["eg", "<b>P1 · 2 marks</b>　V = (4/3)πr³. Find dV/dr when r = 3 cm.", [
+            "dV/dr = 4πr² [M1]",
+            "= 36π ≈ <b>113 cm³ per cm</b> [A1] ✅",
+          ]],
+          ["table", ["If the question says…", "Do this"], [
+            ["“Find the gradient at x = a”", "f′(a)"],
+            ["“Rate of change”", "f′ with units (e.g. m s⁻¹)"],
+            ["“Show that”", "Every algebra line, final line = given result"],
+            ["“Hence”", "Use the previous result"],
+            ["“Determine the nature”", "f″ test or sign diagram, then state max/min"],
+            ["“Justify”", "One clear reason, e.g. f″ &gt; 0"],
+            ["“Increasing / decreasing”", "Solve f′ &gt; 0 / f′ &lt; 0 for an interval"],
+          ]],
+          ["trap", ["變化率答案冇單位或者冇講增加 / 減少 → 失 R1。", "P′(5) 係「人口嘅變化率」，唔係人口數目。", "Paper 2 用 GDC 求 dy/dx 都要寫低求緊乜（例如 T′(10)）。"]],
+        ],
+      },
+    ],
+    summary: [
+      "f′(a) = 喺 x = a 嘅切線斜率",
+      "Chord 斜率 (f(a+h) − f(a))/h，h → 0 就係 f′(a)",
+      "先約 h，後令 h 趨零（唔好 0/0）",
+      "dy/dx = 變化率：單位係 y per x",
+      "正數 = 增加緊；負數 = 減少緊",
+      "Gradient = k：解 f′(x) = k，再代返 f 搵 y",
+    ],
+    practice: [
+      { q: "S5.1 The gradient of the chord joining P(1, 1) and Q(1 + h, (1 + h)²) on y = x² is", o: ["A. 2 + h", "B. 2h + h²", "C. 2", "D. 1 + h"], m: 1, a: "<b>A</b>. ((1 + h)² − 1) ÷ h = (2h + h²) ÷ h = 2 + h." },
+      { q: "S5.1 For y = x³, the gradient of the curve at x = 2 is", o: ["A. 8", "B. 12", "C. 6", "D. 4"], m: 1, a: "<b>B</b>. dy/dx = 3x² = 12（8 係 y 值）." },
+      { q: "Let f(x) = x² + 1. Show that the gradient of the chord from x = 2 to x = 2 + h is 4 + h, and hence find the gradient of the curve at x = 2.", m: 4, a: "((2 + h)² + 1 − 5) ÷ h [M1] = (4h + h²) ÷ h = 4 + h [A1]; as h → 0 [M1] gradient → <b>4</b> [A1]." },
+      { q: "The population of a town is P(t) = 12000e^(0.02t), t years after 2020. Find P′(5) and interpret it.", m: 3, a: "P′(t) = 240e^(0.02t) [M1]; P′(5) = <b>265</b> [A1]; in 2025 the population is increasing at about 265 people per year [R1]." },
+    ],
+  },
+  "math-12b": {
+    title: "Increasing & decreasing functions · Sign of f′",
+    intro: "5.2：f′(x) 嘅正負話你知 f 升定跌。解 f′ = 0 搵分界點，再用符號圖 (sign diagram) 寫區間；識由 f′ 嘅圖讀返 f 喺邊度升、邊度跌。",
+    parts: [
+      {
+        h: "Sign of f′ 升定跌",
+        min: 3,
+        blocks: [
+          ["key", "<b>f′(x) &gt; 0 ⇒ f increasing</b>（由左至右上升）；<b>f′(x) &lt; 0 ⇒ f decreasing</b>；f′(x) = 0 ⇒ 水平切線（stationary）。"],
+          ["rhyme", "口訣", "正升負跌，零點分界", "解 f′(x) = 0 搵 critical values，喺數線上標出，每段代一個數試正負。"],
+          ["flow", [["① 微分", "f′(x)，盡量因式分解"], ["② 分界", "f′(x) = 0 → critical values"], ["③ 試號", "每段代一個 x，或者畫 f′ 嘅草圖"], ["④ 寫答案", "Inequality：−2 &lt; x &lt; 2；x &lt; 1 or x &gt; 3"]]],
+          ["eg", "<b>P1 · 4 marks</b>　Find the values of x for which f(x) = x³ − 6x² + 9x is increasing.", [
+            "f′(x) = 3x² − 12x + 9 = 3(x − 1)(x − 3)",
+            "Increasing when f′ &gt; 0：parabola opens up → <b>x &lt; 1 or x &gt; 3</b> ✅",
+          ]],
+          ["eg", "<b>P1 · 4 marks</b>　Let f(x) = 2x³ − 9x² + 12x. Find the set of values of x for which f is decreasing.", [
+            "f′(x) = 6x² − 18x + 12 = 6(x − 1)(x − 2) [A1][M1]",
+            "Critical values x = 1, 2 [A1]",
+            "U 形 f′ 喺兩根中間係負 → <b>1 &lt; x &lt; 2</b> [A1] ✅",
+          ]],
+          ["eg", "<b>P2 · 4 marks</b>　Let f(x) = x²e^(−x). Find the interval on which f is increasing.", [
+            "f′(x) = 2xe^(−x) − x²e^(−x) = x(2 − x)e^(−x) [M1][A1]",
+            "e^(−x) &gt; 0 永遠正，所以只睇 x(2 − x) [M1]",
+            "<b>0 &lt; x &lt; 2</b> [A1] ✅",
+          ]],
+        ],
+      },
+      {
+        h: "For all x + graph of f′ 讀圖",
         min: 2.5,
         blocks: [
+          ["eg", "<b>P1 · 2 marks</b>　Show that f(x) = x³ + 3x − 2 is increasing for all x.", [
+            "f′(x) = 3x² + 3 [A1]",
+            "x² ≥ 0 ⇒ f′(x) ≥ 3 &gt; 0 for all x ⇒ increasing [R1] ✅",
+          ]],
+          ["note", "<b>「For all x」嘅理由</b>：x² ≥ 0、eˣ &gt; 0、或者二次 f′ 嘅判別式 &lt; 0 而且 leading coefficient &gt; 0。代幾個數入去<b>唔算</b>證明。<br><b>讀 f′ 嘅圖</b>：f′ 喺 x 軸<b>上面</b> ⇒ f 升；喺 x 軸<b>下面</b> ⇒ f 跌；f′ 穿過 x 軸 ⇒ f 有 stationary point。"],
+          ["trap", ["淨係解 f′ = 0 就停，冇試正負。", "寫 x &lt; ±2：要寫 −2 &lt; x &lt; 2。", "睇 f′ 條線升定跌（嗰個係 concavity），唔係睇 f′ 嘅正負。"]],
+        ],
+      },
+    ],
+    summary: [
+      "f′ &gt; 0 升；f′ &lt; 0 跌；f′ = 0 分界",
+      "因式分解 f′，數線試號",
+      "U 形 f′：兩根中間負，外面正",
+      "eˣ 永遠正，只睇其他因子",
+      "For all x：x² ≥ 0 或判別式 &lt; 0",
+      "f′ 圖喺 x 軸上面 = f 升",
+    ],
+    practice: [
+      { q: "Find the set of values of x for which f(x) = x³ − 6x² + 9x is increasing.", m: 4, a: "f′ = 3x² − 12x + 9 = 3(x − 1)(x − 3) [M1][A1]; f′ &gt; 0 [M1] → <b>x &lt; 1 or x &gt; 3</b> [A1]." },
+      { q: "S5.2 Given f′(x) = (x − 1)(x − 4), f is decreasing for", o: ["A. x &lt; 1", "B. 1 &lt; x &lt; 4", "C. x &gt; 4", "D. x &lt; 1 or x &gt; 4"], m: 1, a: "<b>B</b>. U 形 f′ 喺兩根中間係負." },
+      { q: "Let f(x) = ln x − x, x &gt; 0. Find the values of x for which f is decreasing.", m: 3, a: "f′(x) = 1/x − 1 [A1]; 1/x − 1 &lt; 0 [M1] ⇒ <b>x &gt; 1</b> [A1]." },
+      { q: "Let f(x) = x³ − 3x² + kx. Find the values of k for which f is increasing for all x.", m: 4, a: "f′(x) = 3x² − 6x + k [A1]; discriminant ≤ 0 [M1]: 36 − 12k ≤ 0 [A1] ⇒ <b>k ≥ 3</b> [A1]." },
+    ],
+  },
+  "math-12c": {
+    title: "Power rule · Derivatives of polynomials",
+    intro: "5.3：ax^n 嘅導數係 anx^(n−1)，n 可以係負數或分數。秘訣係先改寫做 xⁿ、先展開、先拆分數，再逐項微分。",
+    parts: [
+      {
+        h: "口訣 Power rule",
+        min: 2,
+        blocks: [
+          ["key", "\\(\\dfrac{d}{dx}\\left(ax^n\\right) = anx^{n-1}\\)（n ∈ ℚ）。常數導數 = 0；和差逐項微分：\\((f \\pm g)' = f' \\pm g'\\)，\\((kf)' = kf'\\)。"],
           ["grid", [
             ["5.3", "指數落前面，指數減一", "d/dx(xⁿ) = n xⁿ⁻¹"],
             ["5.3", "常數導數零", "d/dx(c) = 0"],
             ["5.3", "先改寫：√x = x^½，1/x² = x⁻²", "Rewrite before differentiating"],
+            ["5.3", "負指數減一，越減越負", "x⁻¹ → −x⁻², x⁻² → −2x⁻³"],
+            ["5.3", "分數指數照減一", "x^(1/2) → ½x^(−1/2)"],
+          ]],
+          ["table", ["Rewrite", "Index form", "Derivative"], [
+            ["\\(\\sqrt{x}\\)", "\\(x^{1/2}\\)", "\\(\\frac{1}{2}x^{-1/2} = \\frac{1}{2\\sqrt{x}}\\)"],
+            ["\\(\\frac{1}{x}\\)", "\\(x^{-1}\\)", "\\(-x^{-2} = -\\frac{1}{x^2}\\)"],
+            ["\\(\\frac{3}{x^2}\\)", "\\(3x^{-2}\\)", "\\(-6x^{-3} = -\\frac{6}{x^3}\\)"],
+            ["\\(\\frac{4}{\\sqrt{x}}\\)", "\\(4x^{-1/2}\\)", "\\(-2x^{-3/2}\\)"],
+            ["\\(x\\sqrt{x}\\)", "\\(x^{3/2}\\)", "\\(\\frac{3}{2}x^{1/2}\\)"],
+          ]],
+        ],
+      },
+      {
+        h: "Rewrite → differentiate 改寫再微",
+        min: 3.5,
+        blocks: [
+          ["eg", "<b>P1 · 3 marks</b>　Differentiate (a) f(x) = 3x⁴ − 2x² + 5x − 7, (b) y = 4/x² + √x.", [
+            "(a) f′(x) = <b>12x³ − 4x + 5</b>",
+            "(b) rewrite y = 4x⁻² + x^½ → dy/dx = <b>−8x⁻³ + ½x^(−½)</b> = −8/x³ + 1/(2√x) ✅",
+          ]],
+          ["eg", "<b>P1 · 3 marks</b>　Let f(x) = (x³ − 4x)/x², x ≠ 0. Find f′(x).", [
+            "逐項除：f(x) = x − 4x⁻¹ [M1]",
+            "f′(x) = 1 + 4x⁻² = <b>1 + 4/x²</b> [A1][A1] ✅",
+          ]],
+          ["eg", "<b>P1 · 2 marks</b>　Differentiate y = (2x + 1)².", [
+            "先展開：y = 4x² + 4x + 1 [A1]",
+            "dy/dx = <b>8x + 4</b> [A1] ✅",
+          ]],
+          ["eg", "<b>P1 · 4 marks</b>　f(x) = ax³ + bx, f′(1) = 7 and f′(2) = 25. Find a and b.", [
+            "f′(x) = 3ax² + b [A1]",
+            "3a + b = 7，12a + b = 25 [M1]",
+            "相減：9a = 18 → <b>a = 2</b>，<b>b = 1</b> [A1][A1] ✅",
+          ]],
+          ["trap", ["負指數：d/dx(x⁻¹) = −x⁻²，唔係 −x⁰。", "分數唔可以「上面微分 ÷ 下面微分」，要先逐項除。", "括號相乘唔可以「導數乘導數」，要先展開。", "Gradient = 7 係 f′ = 7，唔係 f = 7。"]],
+        ],
+      },
+    ],
+    summary: [
+      "指數落前面，指數減一",
+      "常數導數零",
+      "√x = x^½，1/x² = x⁻²：先改寫",
+      "分數先逐項除，括號先展開",
+      "畀斜率求常數：f′(a) = 已知值",
+    ],
+    practice: [
+      { q: "S5.3 If f(x) = 5x³ − 2x + 1, then f′(x) =", o: ["A. 15x² − 2", "B. 15x² − 2x", "C. 5x² − 2", "D. 15x² + 1"], m: 1, a: "<b>A</b>. 5 · 3x² − 2 + 0." },
+      { q: "S5.3 If f(x) = 3/x², then f′(x) =", o: ["A. −6/x³", "B. 6/x³", "C. −3/x", "D. 3/(2x)"], m: 1, a: "<b>A</b>. 3x⁻² → −6x⁻³." },
+      { q: "Differentiate y = 4x³ − 6/x + 2√x.", m: 3, a: "y = 4x³ − 6x⁻¹ + 2x^½ [M1]; dy/dx = 12x² + 6x⁻² [A1] + x^(−½) [A1] = 12x² + 6/x² + 1/√x." },
+      { q: "Let f(x) = ax² + bx + 3. The gradient of the graph is 1 at x = 1 and 7 at x = 2. Find a and b.", m: 4, a: "f′(x) = 2ax + b [A1]; 2a + b = 1, 4a + b = 7 [M1]; <b>a = 3</b> [A1]; <b>b = −5</b> [A1]." },
+    ],
+  },
+  "math-12d": {
+    title: "Tangents & normals · Given gradients",
+    intro: "5.4：切線同法線方程。三步：搵點 (a, f(a))、搵斜率 f′(a)、寫 y − y₁ = m(x − x₁)；法線斜率 = −1/m。仲有「parallel to」同「已知切線求常數」兩款常考題。",
+    parts: [
+      {
+        h: "Tangent & normal 切線同法線",
+        min: 3.5,
+        blocks: [
+          ["flow", [["① 搵點", "y-coordinate: f(a)"], ["② 搵斜率", "m = f′(a)"], ["③ 寫線", "y − f(a) = m(x − a)"], ["④ 法線", "m_normal = −1 ÷ m"]]],
+          ["eg", "<b>P1 · 5 marks</b>　Find the equations of the tangent and the normal to f(x) = x³ − 2x + 1 at x = 2.", [
+            "f(2) = 8 − 4 + 1 = 5 → point (2, 5) [A1]",
+            "f′(x) = 3x² − 2 → f′(2) = 10 [M1][A1]",
+            "Tangent：y − 5 = 10(x − 2) → <b>y = 10x − 15</b> [A1]",
+            "Normal：gradient −1/10：y − 5 = −0.1(x − 2) → <b>y = −0.1x + 5.2</b> (x + 10y = 52) [A1] ✅",
+          ]],
+          ["eg", "<b>P1 · 4 marks</b>　The tangent to y = x² − 4x + 7 is parallel to the line y = 2x + 1. Find the equation of the tangent.", [
+            "Parallel ⇒ gradient 2：dy/dx = 2x − 4 = 2 → <b>x = 3</b> [M1][A1]",
+            "y = 9 − 12 + 7 = 4 → point (3, 4) [A1]",
+            "y − 4 = 2(x − 3) → <b>y = 2x − 2</b> [A1] ✅",
+          ]],
+          ["eg", "<b>P1 · 3 marks</b>　The tangent at x = 2 to y = x² + kx has gradient 7. Find k.", [
+            "dy/dx = 2x + k；at x = 2: 4 + k = 7 → <b>k = 3</b> ✅",
+          ]],
+          ["eg", "<b>P1 · 4 marks</b>　Find the tangent to y = ln x at x = e, and the normal at x = 1.", [
+            "At x = e: y = 1, gradient 1/e → y − 1 = (1/e)(x − e) → <b>y = x/e</b>",
+            "At x = 1: y = 0, gradient 1 → normal gradient −1 → <b>y = −x + 1</b> ✅",
+          ]],
+          ["note", "<b>GDC tips</b>：<b>TI-84</b> graph Y₁, 2nd TRACE (CALC) → 6:dy/dx → type the x value to see the gradient; CALC → minimum / maximum for stationary points. <b>Casio</b> G-Solv → d/dx, Min, Max. Paper 2 may allow a GDC gradient, but write the exact method if “show that”. Tangent: a line can also be found with “Tangent” in the Casio G-Solv / TI-84 DRAW → 5:Tangent(. Write answers to 3 s.f. unless exact."],
+          ["trap", ["法線斜率要 −1/m，唔係 −m 或者 1/m。", "切線要用點 (a, f(a))，唔好用 f′(a) 做 y 值。", "「Parallel to y = 2x + 1」→ 斜率 2。"]],
+        ],
+      },
+      {
+        h: "Unknown constants 已知切線求常數",
+        min: 2,
+        blocks: [
+          ["grid", [
+            ["5.4", "切線 y − y₁ = m(x − x₁)；法線 m 反轉再變號", "Normal gradient = −1 ÷ m"],
+          ]],
+          ["key", "如果直線 y = mx + c 係曲線喺 x = a 嘅切線，就有<b>兩個</b>條件：① 同一點：f(a) = ma + c；② 同一斜率：f′(a) = m。兩條方程解兩個未知數。"],
+          ["eg", "<b>P1 · 4 marks</b>　The line y = 4x − 3 is a tangent to y = ax² + b at x = 1. Find a and b.", [
+            "同斜率：2a(1) = 4 → <b>a = 2</b> [M1][A1]",
+            "同一點：x = 1 時 y = 4 − 3 = 1，所以 a + b = 1 → <b>b = −1</b> [M1][A1] ✅",
+          ]],
+          ["trap", ["只用咗一個條件（淨係斜率或者淨係點）。", "切線方程入面唔可以有 x²：斜率係一個數字 f′(a)。"]],
+        ],
+      },
+    ],
+    summary: [
+      "切線：點 (a, f(a)) + 斜率 f′(a)",
+      "y − y₁ = m(x − x₁)",
+      "法線斜率 = −1 ÷ m",
+      "Parallel = 斜率一樣：解 f′(x) = m",
+      "已知切線：同一點 + 同斜率 = 兩條方程",
+    ],
+    practice: [
+      { q: "S5.4 What is the gradient of the normal to y = x² at x = 3?", o: ["A. 6", "B. −6", "C. 1/6", "D. −1/6"], m: 1, a: "<b>D</b>. Tangent gradient 2x = 6; normal = −1/6." },
+      { q: "Find the equations of the tangent and normal to f(x) = 2x² − 3x + 1 at x = 2.", m: 5, a: "f(2) = 3 [A1]; f′(x) = 4x − 3 → f′(2) = 5 [M1][A1]; tangent y − 3 = 5(x − 2) → <b>y = 5x − 7</b> [A1]; normal gradient −1/5: <b>y = −0.2x + 3.4</b> (x + 5y = 17) [A1]." },
+      { q: "The tangent to y = x² + kx at x = 2 has gradient 7. Find k and the equation of the tangent.", m: 4, a: "dy/dx = 2x + k [A1]; 4 + k = 7 → <b>k = 3</b> [A1]; y(2) = 4 + 6 = 10 [A1]; y − 10 = 7(x − 2) → <b>y = 7x − 4</b> [A1]." },
+    ],
+  },
+  "math-12e": {
+    title: "Standard derivatives · Chain · Product · Quotient",
+    intro: "5.6：背熟 xⁿ、sin x、cos x、eˣ、ln x 嘅導數，再識揀 chain / product / quotient rule。Formula booklet 有，但要識用、識化簡。",
+    parts: [
+      {
+        h: "口訣 + 導數表",
+        min: 2.5,
+        blocks: [
+          ["grid", [
             ["5.6", "鏈：外層導數 × 內層導數", "Chain: f′(g(x)) · g′(x)"],
             ["5.6", "積：導一乘二，加一乘導二", "Product: u′v + uv′"],
             ["5.6", "商：導上乘下，減上乘導下，除下平方", "Quotient: (u′v − uv′) ÷ v²"],
-            ["5.1", "f′(a) = 喺 x = a 嘅切線斜率", "Gradient of tangent at x = a"],
-            ["5.4", "切線 y − y₁ = m(x − x₁)；法線 m 反轉再變號", "Normal gradient = −1 ÷ m"],
-            ["5.3", "f′ &gt; 0 升，f′ &lt; 0 跌", "Increasing / decreasing"],
-            ["5.8", "f′ = 0 就係 stationary，唔一定係 max/min", "Could be inflexion"],
-            ["5.7", "f″ &gt; 0 凹向上（min），f″ &lt; 0 凹向下（max）", "Second derivative test"],
-            ["5.7", "inflexion：f″ = 0 而且符號轉變", "Concavity changes"],
-            ["5.8", "最值題：寫式、求導、令零、驗證", "Optimisation steps"],
-            ["5.8", "圖上 f′ 穿過 x 軸 = f 嘅轉向點", "f′ + to − = max; − to + = min"],
-            ["5.8", "f′ 嘅最高/最低點 = f 嘅 inflexion", "f″ = 0 where f′ turns"],
+            ["5.6", "sin → cos → −sin → −cos", "Derivative cycle of sin and cos"],
+            ["5.6", "ln 入面有乘除，先用 log 法則拆", "ln(3x) = ln 3 + ln x → 1/x"],
           ]],
           ["table", ["f(x)", "f′(x)", "Chain version f(g(x))"], [
             ["xⁿ", "n xⁿ⁻¹", "n g(x)ⁿ⁻¹ · g′(x)"],
@@ -2629,22 +2872,6 @@ IB.addFast({
             ["ln x", "1/x", "g′(x) ÷ g(x)"],
           ]],
           ["note", "<b>Formula booklet</b> (SL): derivatives of xⁿ, sin x, cos x, eˣ, ln x; chain, product, quotient rules; tangent/normal not given (learn y − y₁ = m(x − x₁)). tan x is HL — not needed for SL. Definition: \\(f'(x)=\\lim_{h\\to0}\\dfrac{f(x+h)-f(x)}{h}\\)."],
-        ],
-      },
-      {
-        h: "Definitions 定義",
-        min: 2,
-        blocks: [
-          ["note", "<b>Definitions (word-for-word)</b><br><b>Derivative f′(x):</b> the gradient function of f; it gives the instantaneous rate of change of f with respect to x, and the gradient of the tangent to the curve at x. <b>Increasing function at x = a:</b> f′(a) &gt; 0. <b>Decreasing:</b> f′(a) &lt; 0. <b>Tangent:</b> a straight line that touches the curve at a point and has the same gradient as the curve there. <b>Normal:</b> the line perpendicular to the tangent at that point. <b>Stationary point:</b> a point where f′(x) = 0. <b>Local maximum / minimum:</b> a stationary point where f′ changes from positive to negative / negative to positive. <b>Point of inflexion:</b> a point where the concavity of the curve changes (f″ changes sign). <b>Concave up:</b> f″(x) &gt; 0. <b>Concave down:</b> f″(x) &lt; 0. <b>Second derivative f″(x):</b> the derivative of f′(x)."],
-          ["table", ["Test", "Result"], [
-            ["f′(x) = 0 and f″(x) &gt; 0", "local minimum"],
-            ["f′(x) = 0 and f″(x) &lt; 0", "local maximum"],
-            ["f′(x) = 0 and f″(x) = 0", "inconclusive → use sign of f′ either side"],
-            ["f″(x) = 0 and f″ changes sign", "point of inflexion (non-stationary unless f′ = 0 too)"],
-            ["f′ changes + to − at x = a", "local maximum"],
-            ["f′ changes − to + at x = a", "local minimum"],
-            ["f′ does not change sign and f′(a) = 0", "stationary (horizontal) point of inflexion"],
-          ]],
         ],
       },
       {
@@ -2679,35 +2906,117 @@ IB.addFast({
         ],
       },
       {
-        h: "Tangent & normal 切線同法線",
-        min: 3.5,
+        h: "失分位 + 自我檢查",
+        min: 1,
         blocks: [
-          ["flow", [["① 搵點", "y-coordinate: f(a)"], ["② 搵斜率", "m = f′(a)"], ["③ 寫線", "y − f(a) = m(x − a)"], ["④ 法線", "m_normal = −1 ÷ m"]]],
-          ["eg", "<b>P1 · 5 marks</b>　Find the equations of the tangent and the normal to f(x) = x³ − 2x + 1 at x = 2.", [
-            "f(2) = 8 − 4 + 1 = 5 → point (2, 5) [A1]",
-            "f′(x) = 3x² − 2 → f′(2) = 10 [M1][A1]",
-            "Tangent：y − 5 = 10(x − 2) → <b>y = 10x − 15</b> [A1]",
-            "Normal：gradient −1/10：y − 5 = −0.1(x − 2) → <b>y = −0.1x + 5.2</b> (x + 10y = 52) [A1] ✅",
+          ["table", ["Mistake 錯", "Fix 啱"], [
+            ["Forget the chain-rule factor", "Differentiate the inside and multiply"],
+            ["d/dx ln(3x) = 1/(3x)", "= 1/x"],
+            ["Product rule written as u′v′", "u′v + uv′"],
+            ["Quotient: uv′ − u′v", "u′v − uv′ over v²"],
+            ["Degrees mode with sin/cos calculus", "Calculus needs radians"],
           ]],
-          ["eg", "<b>P1 · 4 marks</b>　The tangent to y = x² − 4x + 7 is parallel to the line y = 2x + 1. Find the equation of the tangent.", [
-            "Parallel ⇒ gradient 2：dy/dx = 2x − 4 = 2 → <b>x = 3</b> [M1][A1]",
-            "y = 9 − 12 + 7 = 4 → point (3, 4) [A1]",
-            "y − 4 = 2(x − 3) → <b>y = 2x − 2</b> [A1] ✅",
+          ["check", ["I can differentiate xⁿ, sin, cos, eˣ, ln", "I can apply chain, product, quotient rules without notes", "I simplify with log laws before differentiating", "I know calculus in sin/cos needs radian mode"]],
+        ],
+      },
+    ],
+    summary: [
+      "sin → cos，cos → −sin，eˣ → eˣ，ln x → 1/x",
+      "Chain：外層導數 × 內層導數",
+      "Product：u′v + uv′",
+      "Quotient：(u′v − uv′) ÷ v²",
+      "ln 先拆：ln(3x) 導數 = 1/x",
+      "sin/cos 微分一定用弧度 (radians)",
+    ],
+    practice: [
+      { q: "S5.6 The derivative of ln(3x²) is:", o: ["A. 1/(3x²)", "B. 2/x", "C. 6x", "D. 1/x"], m: 1, a: "<b>B</b>. g′/g = 6x ÷ 3x² = 2/x (or 2 ln x + ln 3 → 2/x)." },
+      { q: "Differentiate (a) y = (2x − 5)⁴, (b) y = x e^(2x), (c) y = eˣ/(x + 1).", m: 6, a: "(a) 4(2x − 5)³ × 2 = <b>8(2x − 5)³</b> [M1][A1]. (b) e^(2x) + 2x e^(2x) = <b>e^(2x)(1 + 2x)</b> [M1][A1]. (c) (eˣ(x + 1) − eˣ) ÷ (x + 1)² = <b>x eˣ/(x + 1)²</b> [M1][A1]." },
+      { q: "Let f(x) = x²e^(−2x). Show that f′(x) = 2x(1 − x)e^(−2x).", m: 4, a: "Product rule with u = x², v = e^(−2x) [M1]; u′ = 2x, v′ = −2e^(−2x) [A1]; f′ = 2xe^(−2x) − 2x²e^(−2x) [A1] = 2x(1 − x)e^(−2x) [A1] (AG)." },
+    ],
+  },
+  "math-12f": {
+    title: "Second derivative · Concavity · Graphs of f, f′, f″",
+    intro: "5.7：f″ = f′ 再微分一次，話你知斜率點變。f″ &gt; 0 凹向上，f″ &lt; 0 凹向下；仲要識由 f 嘅圖講 f′，由 f′ 嘅圖講 f。",
+    parts: [
+      {
+        h: "f″ + concavity 凹向",
+        min: 3,
+        blocks: [
+          ["grid", [
+            ["5.7", "f″ &gt; 0 凹向上（min），f″ &lt; 0 凹向下（max）", "Second derivative test"],
+            ["5.7", "inflexion：f″ = 0 而且符號轉變", "Concavity changes"],
+            ["5.7", "f′ 升 ⇔ f″ &gt; 0 ⇔ 凹向上", "Gradient increasing = concave up"],
           ]],
-          ["eg", "<b>P1 · 3 marks</b>　The tangent at x = 2 to y = x² + kx has gradient 7. Find k.", [
-            "dy/dx = 2x + k；at x = 2: 4 + k = 7 → <b>k = 3</b> ✅",
+          ["eg", "<b>P1 · 3 marks</b>　Let f(x) = x³ − 3x² + 2. Find the set of values of x for which the graph is concave down.", [
+            "f′(x) = 3x² − 6x，f″(x) = 6x − 6 [A1]",
+            "Concave down：f″(x) &lt; 0 [M1]",
+            "<b>x &lt; 1</b> [A1] ✅",
           ]],
-          ["eg", "<b>P1 · 4 marks</b>　Find the tangent to y = ln x at x = e, and the normal at x = 1.", [
-            "At x = e: y = 1, gradient 1/e → y − 1 = (1/e)(x − e) → <b>y = x/e</b>",
-            "At x = 1: y = 0, gradient 1 → normal gradient −1 → <b>y = −x + 1</b> ✅",
+          ["eg", "<b>P1 · 3 marks</b>　Show that f(x) = x³ − 6x² + 9x + 1 has a point of inflexion at x = 2.", [
+            "f″(x) = 6x − 12 = 0 → x = 2 [A1]",
+            "f″(1.9) = −0.6 &lt; 0 and f″(2.1) = 0.6 &gt; 0 → <b>concavity changes</b> [R1]",
+            "f(2) = 8 − 24 + 18 + 1 = 3 → inflexion at (2, 3) [A1] ✅",
           ]],
-          ["note", "<b>GDC tips</b>：<b>TI-84</b> graph Y₁, 2nd TRACE (CALC) → 6:dy/dx → type the x value to see the gradient; CALC → minimum / maximum for stationary points. <b>Casio</b> G-Solv → d/dx, Min, Max. Paper 2 may allow a GDC gradient, but write the exact method if “show that”. Tangent: a line can also be found with “Tangent” in the Casio G-Solv / TI-84 DRAW → 5:Tangent(. Write answers to 3 s.f. unless exact."],
-          ["trap", ["法線斜率要 −1/m，唔係 −m 或者 1/m。", "切線要用點 (a, f(a))，唔好用 f′(a) 做 y 值。", "「Parallel to y = 2x + 1」→ 斜率 2。"]],
+        ],
+      },
+      {
+        h: "f, f′, f″ 圖 graph links",
+        min: 3,
+        blocks: [
+          ["note", "<b>f(x) + f′(x) + f″(x) graph links</b>：f′ crosses the x-axis ⇒ f has a stationary point；f′ is positive ⇒ f increasing；f′ has a local max/min ⇒ f has an inflexion (f″ = 0)；f″ &gt; 0 ⇒ f concave up. Given the graph of f′ → say what f does; do not read f′ as f."],
+          ["grid", [
+            ["5.8", "圖上 f′ 穿過 x 軸 = f 嘅轉向點", "f′ + to − = max; − to + = min"],
+            ["5.8", "f′ 嘅最高/最低點 = f 嘅 inflexion", "f″ = 0 where f′ turns"],
+          ]],
+          ["eg", "<b>P1 · 4 marks</b>　The graph of f′ is a parabola crossing the x-axis at x = −1 and x = 3 and opening upward, with minimum at x = 1. (a) State where f has stationary points and their nature. (b) State where f is decreasing. (c) Find the x-coordinate of the point of inflexion of f.", [
+            "(a) f′ = 0 at x = −1 (f′: + to −) → <b>local maximum</b>；at x = 3 (− to +) → <b>local minimum</b>",
+            "(b) f′ &lt; 0 for <b>−1 &lt; x &lt; 3</b>",
+            "(c) f′ has its minimum at x = 1, so f″(1) = 0 with sign change → <b>inflexion at x = 1</b> ✅",
+          ]],
+          ["trap", ["f′ 跌緊 (concave down) ≠ f 跌緊 (f′ &lt; 0)。", "f′ 嘅最低點唔係 f 嘅 minimum，係 f 嘅 inflexion。", "先講清楚你睇緊邊條圖（f、f′ 定 f″）。"]],
+        ],
+      },
+    ],
+    summary: [
+      "f″ = f′ 再微一次",
+      "f″ &gt; 0 凹向上；f″ &lt; 0 凹向下",
+      "f′ 穿過 x 軸 = f 嘅駐點",
+      "f′ 嘅轉向點 = f 嘅 inflexion",
+      "f′ 喺 x 軸上面 = f 升",
+    ],
+    practice: [
+      { q: "Show that f(x) = x³ − 6x² + 9x + 1 has a point of inflexion at x = 2 and find its coordinates.", m: 4, a: "f″ = 6x − 12 [A1]; = 0 → x = 2 [A1]; f″ changes sign (− for x &lt; 2, + for x &gt; 2) [R1]; f(2) = 3 → <b>(2, 3)</b> [A1]." },
+      { q: "The graph of f′ is an upward parabola crossing the x-axis at x = −1 and x = 3, with its minimum at x = 1. (a) Find the x-coordinates of the stationary points of f and state their nature. (b) State where f is decreasing. (c) Find the x-coordinate of the point of inflexion of f.", m: 5, a: "(a) x = −1: f′ changes + to − → <b>maximum</b> [A1]; x = 3: − to + → <b>minimum</b> [A1][A1 for both x-values]. (b) f′ &lt; 0: <b>−1 &lt; x &lt; 3</b> [A1]. (c) f′ has its minimum at x = 1 so f″(1) = 0 with a sign change → <b>x = 1</b> [A1] (5 total: lose no mark for combined phrasing)." },
+      { q: "S5.7 If y = e^(3x), then d²y/dx² =", o: ["A. 3e^(3x)", "B. 9e^(3x)", "C. e^(3x)", "D. 6e^(3x)"], m: 1, a: "<b>B</b>. 微分兩次：3 × 3 = 9." },
+    ],
+  },
+  "math-12g": {
+    title: "Stationary points · Max / min tests · Optimisation · Inflexion",
+    intro: "5.8：f′ = 0 搵駐點，用 f″ 或 f′ 前後正負判斷極大 / 極小；最值題四步走；拐點要 f″ 轉號（有 zero 同 non-zero gradient 兩種）。",
+    parts: [
+      {
+        h: "Definitions + tests 定義同判斷法",
+        min: 2,
+        blocks: [
+          ["note", "<b>Definitions (word-for-word)</b><br><b>Derivative f′(x):</b> the gradient function of f; it gives the instantaneous rate of change of f with respect to x, and the gradient of the tangent to the curve at x. <b>Increasing function at x = a:</b> f′(a) &gt; 0. <b>Decreasing:</b> f′(a) &lt; 0. <b>Tangent:</b> a straight line that touches the curve at a point and has the same gradient as the curve there. <b>Normal:</b> the line perpendicular to the tangent at that point. <b>Stationary point:</b> a point where f′(x) = 0. <b>Local maximum / minimum:</b> a stationary point where f′ changes from positive to negative / negative to positive. <b>Point of inflexion:</b> a point where the concavity of the curve changes (f″ changes sign). <b>Concave up:</b> f″(x) &gt; 0. <b>Concave down:</b> f″(x) &lt; 0. <b>Second derivative f″(x):</b> the derivative of f′(x)."],
+          ["table", ["Test", "Result"], [
+            ["f′(x) = 0 and f″(x) &gt; 0", "local minimum"],
+            ["f′(x) = 0 and f″(x) &lt; 0", "local maximum"],
+            ["f′(x) = 0 and f″(x) = 0", "inconclusive → use sign of f′ either side"],
+            ["f″(x) = 0 and f″ changes sign", "point of inflexion (non-stationary unless f′ = 0 too)"],
+            ["f′ changes + to − at x = a", "local maximum"],
+            ["f′ changes − to + at x = a", "local minimum"],
+            ["f′ does not change sign and f′(a) = 0", "stationary (horizontal) point of inflexion"],
+          ]],
+          ["grid", [
+            ["5.8", "f′ = 0 就係 stationary，唔一定係 max/min", "Could be inflexion"],
+            ["5.8", "最值題：寫式、求導、令零、驗證", "Optimisation steps"],
+          ]],
         ],
       },
       {
         h: "Stationary points & inflexion 轉向點",
-        min: 4,
+        min: 3.5,
         blocks: [
           ["eg", "<b>P1 · 6 marks</b>　Find the coordinates of the stationary points of f(x) = 2x³ − 9x² + 12x + 1 and determine their nature.", [
             "f′(x) = 6x² − 18x + 12 = 6(x − 1)(x − 2) = 0 → x = 1 or 2 [M1][A1]",
@@ -2717,10 +3026,6 @@ IB.addFast({
             "f″(2) = 6 &gt; 0 → <b>local minimum at (2, 5)</b> [A1] ✅",
             "Increasing for x &lt; 1 and x &gt; 2；decreasing for 1 &lt; x &lt; 2 (f′ sign: + − +)",
           ]],
-          ["eg", "<b>P1 · 4 marks</b>　Find the values of x for which f(x) = x³ − 6x² + 9x is increasing.", [
-            "f′(x) = 3x² − 12x + 9 = 3(x − 1)(x − 3)",
-            "Increasing when f′ &gt; 0：parabola opens up → <b>x &lt; 1 or x &gt; 3</b> ✅",
-          ]],
           ["eg", "<b>P1 · 6 marks</b>　f(x) = x⁴ − 4x³. Find the stationary points and the points of inflexion.", [
             "f′(x) = 4x³ − 12x² = 4x²(x − 3) = 0 → x = 0, x = 3",
             "f″(x) = 12x² − 24x = 12x(x − 2)",
@@ -2728,12 +3033,6 @@ IB.addFast({
             "x = 0：f″(0) = 0 → inconclusive. f′(−1) = −16 &lt; 0 and f′(1) = −8 &lt; 0: <b>no sign change</b> → horizontal point of inflexion at (0, 0)",
             "f″ = 0 at x = 0 and x = 2；f″ is + (x &lt; 0), − (0 &lt; x &lt; 2), + (x &gt; 2) → sign changes at both → <b>inflexions at (0, 0) and (2, −16)</b> ✅",
           ]],
-          ["eg", "<b>P1 · 3 marks</b>　Show that f(x) = x³ − 6x² + 9x + 1 has a point of inflexion at x = 2.", [
-            "f″(x) = 6x − 12 = 0 → x = 2 [A1]",
-            "f″(1.9) = −0.6 &lt; 0 and f″(2.1) = 0.6 &gt; 0 → <b>concavity changes</b> [R1]",
-            "f(2) = 8 − 24 + 18 + 1 = 3 → inflexion at (2, 3) [A1] ✅",
-          ]],
-          ["note", "<b>f(x) + f′(x) + f″(x) graph links</b>：f′ crosses the x-axis ⇒ f has a stationary point；f′ is positive ⇒ f increasing；f′ has a local max/min ⇒ f has an inflexion (f″ = 0)；f″ &gt; 0 ⇒ f concave up. Given the graph of f′ → say what f does; do not read f′ as f."],
           ["trap", ["「f′ = 0」只係 stationary，要用 f″ 或符號變化判斷 max/min。", "f″ = 0 唔夠證明 inflexion，要寫出 concavity / f″ 符號轉變。", "要答 x <b>同</b> y 坐標（coordinates），題目問 coordinates 就要兩個。"]],
         ],
       },
@@ -2766,7 +3065,7 @@ IB.addFast({
       },
       {
         h: "Long question 拆題法",
-        min: 2.5,
+        min: 2,
         blocks: [
           ["eg", "<b>P2 · 9 marks (long)</b>　The curve y = x³ − 3x² − 9x + 2 has stationary points A and B. (a) Find dy/dx. (b) Find the coordinates of A and B and the nature of each. (c) Find the equation of the tangent at x = 0. (d) Find the range of x for which the curve is decreasing. (e) Find the x-coordinate of the inflexion point.", [
             "(a) dy/dx = <b>3x² − 6x − 9</b> = 3(x − 3)(x + 1)",
@@ -2774,20 +3073,6 @@ IB.addFast({
             "(c) at x = 0: y = 2, gradient −9 → <b>y = −9x + 2</b>",
             "(d) dy/dx &lt; 0 → <b>−1 &lt; x &lt; 3</b>",
             "(e) d²y/dx² = 6x − 6 = 0 → <b>x = 1</b> (sign changes) ✅ at (1, −9)",
-          ]],
-          ["eg", "<b>P1 · 4 marks</b>　The graph of f′ is a parabola crossing the x-axis at x = −1 and x = 3 and opening upward, with minimum at x = 1. (a) State where f has stationary points and their nature. (b) State where f is decreasing. (c) Find the x-coordinate of the point of inflexion of f.", [
-            "(a) f′ = 0 at x = −1 (f′: + to −) → <b>local maximum</b>；at x = 3 (− to +) → <b>local minimum</b>",
-            "(b) f′ &lt; 0 for <b>−1 &lt; x &lt; 3</b>",
-            "(c) f′ has its minimum at x = 1, so f″(1) = 0 with sign change → <b>inflexion at x = 1</b> ✅",
-          ]],
-          ["table", ["If the question says…", "Do this"], [
-            ["“Find the gradient at x = a”", "f′(a)"],
-            ["“Rate of change”", "f′ with units (e.g. m s⁻¹)"],
-            ["“Show that”", "Every algebra line, final line = given result"],
-            ["“Hence”", "Use the previous result"],
-            ["“Determine the nature”", "f″ test or sign diagram, then state max/min"],
-            ["“Justify”", "One clear reason, e.g. f″ &gt; 0"],
-            ["“Increasing / decreasing”", "Solve f′ &gt; 0 / f′ &lt; 0 for an interval"],
           ]],
         ],
       },
@@ -2837,34 +3122,22 @@ IB.addFast({
       },
     ],
     summary: [
-      "f′ = 斜率；f′ = 0 = stationary；f″ 判斷",
-      "Chain：外層導數 × 內層導數",
-      "Product：u′v + uv′；Quotient：(u′v − uv′) ÷ v²",
-      "切線 y − y₁ = m(x − x₁)；法線斜率 −1/m",
-      "f″ &gt; 0 min；f″ &lt; 0 max；inflexion 要符號轉變",
+      "f′ = 0 = stationary；要寫 (x, y)",
+      "f″ &gt; 0 min；f″ &lt; 0 max；f″ = 0 睇 f′ 前後",
+      "inflexion 要 f″ 轉號；f′ = 0 嘅係水平拐點",
       "最值題：一個變數、求導令零、寫驗證",
+      "答返題目問嘅嘢：max value 係 y",
       "Show that：每一行都要寫出",
-      "圖上 f′ 穿過 x 軸 = f 轉向；f′ 轉向 = f 嘅 inflexion",
-      "sin/cos 微分一定用弧度 (radians)",
     ],
     practice: [
-      { q: "S5.3 If f(x) = 5x³ − 2x + 1, then f′(x) =", o: ["A. 15x² − 2", "B. 15x² − 2x", "C. 5x² − 2", "D. 15x² + 1"], m: 1, a: "<b>A</b>. 5 · 3x² − 2 + 0." },
-      { q: "S5.6 The derivative of ln(3x²) is:", o: ["A. 1/(3x²)", "B. 2/x", "C. 6x", "D. 1/x"], m: 1, a: "<b>B</b>. g′/g = 6x ÷ 3x² = 2/x (or 2 ln x + ln 3 → 2/x)." },
-      { q: "S5.4 What is the gradient of the normal to y = x² at x = 3?", o: ["A. 6", "B. −6", "C. 1/6", "D. −1/6"], m: 1, a: "<b>D</b>. Tangent gradient 2x = 6; normal = −1/6." },
       { q: "S5.8 At x = 2, f′(2) = 0 and f″(2) = −4. What does f have at x = 2?", o: ["A. local minimum", "B. local maximum", "C. point of inflexion", "D. cannot tell"], m: 1, a: "<b>B</b>. f″ &lt; 0 → concave down → local maximum." },
-      { q: "Differentiate (a) y = (2x − 5)⁴, (b) y = x e^(2x), (c) y = eˣ/(x + 1).", m: 6, a: "(a) 4(2x − 5)³ × 2 = <b>8(2x − 5)³</b> [M1][A1]. (b) e^(2x) + 2x e^(2x) = <b>e^(2x)(1 + 2x)</b> [M1][A1]. (c) (eˣ(x + 1) − eˣ) ÷ (x + 1)² = <b>x eˣ/(x + 1)²</b> [M1][A1]." },
-      { q: "Find the equations of the tangent and normal to f(x) = 2x² − 3x + 1 at x = 2.", m: 5, a: "f(2) = 3 [A1]; f′(x) = 4x − 3 → f′(2) = 5 [M1][A1]; tangent y − 3 = 5(x − 2) → <b>y = 5x − 7</b> [A1]; normal gradient −1/5: <b>y = −0.2x + 3.4</b> (x + 5y = 17) [A1]." },
       { q: "Find the stationary points of f(x) = x³ − 12x + 5 and determine their nature.", m: 6, a: "f′ = 3x² − 12 = 0 → x = ±2 [M1][A1]; f(2) = −11, f(−2) = 21 [A1]; f″ = 6x [A1]; f″(2) = 12 &gt; 0 → <b>minimum (2, −11)</b> [A1]; f″(−2) = −12 &lt; 0 → <b>maximum (−2, 21)</b> [A1]." },
-      { q: "Show that f(x) = x³ − 6x² + 9x + 1 has a point of inflexion at x = 2 and find its coordinates.", m: 4, a: "f″ = 6x − 12 [A1]; = 0 → x = 2 [A1]; f″ changes sign (− for x &lt; 2, + for x &gt; 2) [R1]; f(2) = 3 → <b>(2, 3)</b> [A1]." },
       { q: "An open box with square base of side x cm and height h cm has volume 500 cm³. (a) Show that its surface area is S = x² + 2000/x. (b) Find the value of x for which S is a minimum, and the minimum area. (c) Justify that it is a minimum.", m: 7, a: "(a) h = 500/x² [M1]; S = x² + 4xh [M1]; = x² + 2000/x [A1] (shown). (b) S′ = 2x − 2000/x² = 0 [M1] → x³ = 1000 → <b>x = 10</b> [A1]; S = <b>300 cm²</b> [A1]. (c) S″ = 2 + 4000/x³ = 6 &gt; 0 → minimum [R1]." },
-      { q: "The tangent to y = x² + kx at x = 2 has gradient 7. Find k and the equation of the tangent.", m: 4, a: "dy/dx = 2x + k [A1]; 4 + k = 7 → <b>k = 3</b> [A1]; y(2) = 4 + 6 = 10 [A1]; y − 10 = 7(x − 2) → <b>y = 7x − 4</b> [A1]." },
-      { q: "Find the set of values of x for which f(x) = x³ − 6x² + 9x is increasing.", m: 4, a: "f′ = 3x² − 12x + 9 = 3(x − 1)(x − 3) [M1][A1]; f′ &gt; 0 [M1] → <b>x &lt; 1 or x &gt; 3</b> [A1]." },
-      { q: "The graph of f′ is an upward parabola crossing the x-axis at x = −1 and x = 3, with its minimum at x = 1. (a) Find the x-coordinates of the stationary points of f and state their nature. (b) State where f is decreasing. (c) Find the x-coordinate of the point of inflexion of f.", m: 5, a: "(a) x = −1: f′ changes + to − → <b>maximum</b> [A1]; x = 3: − to + → <b>minimum</b> [A1][A1 for both x-values]. (b) f′ &lt; 0: <b>−1 &lt; x &lt; 3</b> [A1]. (c) f′ has its minimum at x = 1 so f″(1) = 0 with a sign change → <b>x = 1</b> [A1] (5 total: lose no mark for combined phrasing)." },
     ],
   },
   "math-13": {
-    title: "Indefinite integrals · Inspection · Definite integrals · Area between curves",
-    intro: "Integration = 微分倒轉做。成條 topic 得兩個動作：搵 antiderivative（記得 + C），同埋用 \\(\\int_a^b\\) 計面積（x 軸上下要分開）。呢張 sheet 包晒 P1 手算 + P2 GDC 嘅做法。",
+    title: "Anti-differentiation · Finding C · Area under a curve (GDC)",
+    intro: "5.5 積分入門：積分 = 微分倒轉做。ax^n 積分（加一除新次 + C）、用一點搵 C、曲線喺 x 軸上面嘅面積 = 定積分，Paper 2 用 GDC 計。",
     parts: [
       {
         h: "Big picture 大圖 + 口訣",
@@ -2874,26 +3147,108 @@ IB.addFast({
           ["flow", [["① 認題型", "Find \\(\\int\\)… (indefinite) / evaluate \\(\\int_a^b\\) (definite) / find area / find f given f′ and a point"], ["② 揀方法", "Power rule / linear (ax + b) / inspection (inside derivative outside) / expand first"], ["③ 寫答案", "Indefinite: + C. Definite: [F(x)] with limits, upper − lower. Area: sketch, split, positive"], ["④ 驗算", "Differentiate your answer back. P2: GDC to check the number"]]],
           ["grid", [
             ["5.10", "加一除新次，記得 + C", "Power rule: raise power by 1, divide by new power, add C"],
+            ["5.5", "定積分：上限減下限", "\\(\\int_a^b f = F(b) - F(a)\\); the +C cancels"],
+            ["5.5", "有 point 就搵 C", "Given f(a) = b: sub in, solve C"],
+            ["P2", "寫出 integral + limits 先 GDC", "M1 is for the integral set-up, A1 for the value"],
+            ["P2", "交點存入 A、B", "Store intersections, use them as exact limits"],
+          ]],
+          ["note", "<b>常考 (frequent IB types):</b> P1 · 1 mark MCQ on standard integrals / inspection; P1 · 3-5 marks \"find f(x)\" with a point, or evaluate \\(\\int_a^b\\) exactly (command terms: find, evaluate, show that); P2 · 4-6 marks area between curve and x-axis or between two curves with GDC limits (\"find the area of the region\"); a \"hence\" or \"find k\" part is a favourite."],
+          ["rhyme", "解難口訣", "識別、揀法、積、代限、睇符號", "Identify the type → choose method → integrate → substitute limits → check sign/units of area."],
+        ],
+      },
+      {
+        h: "Power rule 積分 ax^n",
+        min: 2.5,
+        blocks: [
+          ["key", "Rules: \\(\\int k f = k\\int f\\); \\(\\int (f \\pm g) = \\int f \\pm \\int g\\). Rewrite roots and fractions as powers first: \\(\\sqrt x = x^{1/2}\\), \\(\\frac1{x^3} = x^{-3}\\), \\(\\frac{1}{\\sqrt x} = x^{-1/2}\\). There is NO product or quotient rule for integrals: <b>expand or split first</b>."],
+          ["eg", "Find \\(\\int (6x^2 - 4x + 5)\\,dx\\).", [
+            "Each term: \\(\\frac{6x^3}{3} - \\frac{4x^2}{2} + 5x\\)",
+            "<b>\\(2x^3 - 2x^2 + 5x + C\\)</b> ✅"
+          ]],
+          ["eg", "Find \\(\\int \\left(\\frac{3}{x^2} + \\sqrt x\\right)dx\\).", [
+            "Rewrite: \\(3x^{-2} + x^{1/2}\\)",
+            "\\(\\frac{3x^{-1}}{-1} + \\frac{x^{3/2}}{3/2}\\)",
+            "<b>\\(-\\frac3x + \\frac23 x^{3/2} + C\\)</b> ✅"
+          ]],
+          ["trap", ["漏 + C = 失 A1（indefinite 一定要有）。", "積分係「除」新指數，唔係「乘」（乘係微分）。", "\\(\\int \\frac{1}{x^2}dx = -\\frac1x + C\\)，唔係 ln。"]],
+        ],
+      },
+      {
+        h: "Finding f from f′ 搵返原函數 (+ C)",
+        min: 2,
+        blocks: [
+          ["flow", [["① 積分", "\\(f(x) = \\int f'(x)dx\\) (write + C)"], ["② 代點", "Sub the given point (a, b): f(a) = b → solve C"], ["③ 寫完整答案", "f(x) = … with the number C filled in"]]],
+          ["rhyme", "口訣 3", "有點就搵 C，冇點就留 + C", "Every \"find f(x)\" question gives a point. Show the substitution line for the M1."],
+          ["eg", "<b>P1 · 3 marks</b> Given \\(f'(x) = 3x^2 - 2x\\) and f(2) = 1, find f(x).", [
+            "\\(f(x) = x^3 - x^2 + C\\) [A1]",
+            "f(2) = 8 − 4 + C = 1 [M1]",
+            "C = −3 → <b>\\(f(x) = x^3 - x^2 - 3\\)</b> [A1] ✅"
+          ]],
+          ["eg", "The gradient of a curve is \\(\\frac{dy}{dx} = e^{2x} + 1\\) and it passes through (0, 2). Find y.", [
+            "\\(y = \\frac12 e^{2x} + x + C\\)",
+            "At (0, 2): \\(\\frac12 + 0 + C = 2\\) → C = 1.5",
+            "<b>\\(y = \\frac12 e^{2x} + x + 1.5\\)</b> ✅"
+          ]],
+          ["note", "Same idea is used in kinematics: a → v → s, with initial conditions. (See the kinematics sheet.) Also: if the question gives f″(x), integrate twice and you need two conditions."]
+        ],
+      },
+      {
+        h: "Area under a curve + GDC 面積",
+        min: 3,
+        blocks: [
+          ["key", "如果 f(x) &gt; 0 喺 [a, b]，曲線、x 軸、x = a、x = b 圍住嘅面積 = \\(\\int_a^b f(x)\\,dx\\)。冇畀 limits 就自己解 f(x) = 0 搵交 x 軸嘅點。"],
+          ["eg", "<b>P1 · 4 marks</b> Find the area of the region enclosed by \\(y = 4x - x^2\\) and the x-axis.", [
+            "Roots: x(4 − x) = 0 → x = 0, 4 [A1]",
+            "Curve is above axis between 0 and 4 → \\(\\int_0^4 (4x - x^2)dx\\) [M1]",
+            "\\(\\left[2x^2 - \\frac{x^3}{3}\\right]_0^4 = 32 - \\frac{64}{3}\\) [M1]",
+            "Area = <b>\\(\\frac{32}{3}\\)</b> (≈ 10.7) [A1] ✅"
+          ]],
+          ["key", "On Paper 2 you may use the GDC, but <b>method marks need the set-up written down</b>: write \\(\\int_a^b \\ldots dx\\) with limits, then give the value (3 s.f. unless told otherwise)."],
+          ["table", ["Task", "GDC route (most models)", "Write down"], [
+            ["Definite integral value", "TI-84: MATH → 9 fnInt(f(x), x, a, b).  Casio: OPTN → CALC → ∫dx.  Nspire: ∫ template (menu → Calculus → Numerical Integral)", "\\(\\int_a^b f(x)dx = \\) value"],
+            ["Area under |f|", "Type abs( ) around the function inside the integral", "\\(\\int_a^b |f(x)|dx\\)"],
+            ["Intersection limits", "Graph both → intersect (TI: 2nd CALC 5; Casio: G-Solve ISCT; Nspire: Analyze Graph → Intersection)", "x = value (store as A, B for accuracy)"],
+            ["Roots of f", "Graph → zero / root, or solver", "x = value"],
+            ["Area between curves", "Find intersection x-values A, B → fnInt(top − bottom, x, A, B)", "\\(\\int_A^B (f - g)dx\\)"],
+            ["Check your hand-calc", "Graph shows shaded integral value", "—"],
+          ]],
+          ["eg", "<b>P2 · 2 marks</b>　Water flows into a tank at r(t) = 30e^(−0.2t) litres per minute. Find the volume that flows in during the first 5 minutes.", [
+            "Volume = \\(\\int_0^5 30e^{-0.2t}\\,dt\\) [M1]",
+            "= <b>94.8 litres</b>（GDC）[A1] ✅（rate 積分 = 總量）",
+          ]],
+          ["note", "<b>Accuracy rule:</b> don't use rounded limits (1.07). Store the exact calculator value (1.0737…) as A and type A. Rounding too early can change the 3rd s.f. and lose A1.<br>Radian mode for anything with sin / cos. Use brackets around the whole integrand: fnInt((4−x)−e^x, …)."],
+        ],
+      },
+    ],
+    summary: [
+      "加一除新次，記得 + C",
+      "有點就搵 C，冇點就留 + C",
+      "f(x) &gt; 0：面積 = \\(\\int_a^b f\\,dx\\)",
+      "Rate 積分 = 總量",
+      "GDC：寫 integral + limits，存精確 limits",
+    ],
+    practice: [
+      { q: "\\(\\int (6x^2 - 4)\\,dx =\\)", m: 1, o: ["\\(12x + C\\)", "\\(2x^3 - 4x + C\\)", "\\(3x^3 - 4x + C\\)", "\\(2x^3 + C\\)"], a: "<b>B</b> [1]: \\(\\frac{6x^3}{3} - 4x + C = 2x^3 - 4x + C\\)." },
+      { q: "Given \\(f'(x) = 3x^2 - 2x\\) and f(2) = 1, find f(x).", m: 3, a: "\\(f(x) = x^3 - x^2 + C\\) [A1]<br>8 − 4 + C = 1 [M1]<br><b>\\(f(x) = x^3 - x^2 - 3\\)</b> [A1]" },
+      { q: "Find the area of the region enclosed by the graph of \\(y = 4x - x^2\\) and the x-axis.", m: 4, a: "Roots x = 0, 4 [A1]<br>\\(\\int_0^4 (4x - x^2)dx\\) [M1]<br>\\(\\left[2x^2 - \\frac{x^3}{3}\\right]_0^4 = 32 - \\frac{64}{3}\\) [M1]<br>Area = <b>\\(\\frac{32}{3}\\)</b> [A1]" },
+    ],
+  },
+  "math-13b": {
+    title: "Standard integrals · Linear composites · Inspection & substitution",
+    intro: "5.10：xⁿ、1/x、eˣ、sin x、cos x 嘅積分，入面係 ax + b 就除以 a；見到入面嘅導數喺出面，就用 inspection 或 substitution（reverse chain rule）。",
+    parts: [
+      {
+        h: "Standard integrals 標準積分 (Formula booklet)",
+        min: 3.5,
+        blocks: [
+          ["grid", [
+            ["5.10", "加一除新次，記得 + C", "Power rule: raise power by 1, divide by new power, add C"],
             ["5.10", "入面 ax + b，外面除 a", "Linear inside: \\(\\int f(ax+b)dx = \\frac1a F(ax+b)\\)"],
             ["5.10", "1/x 變 ln，1/x² 唔係 ln", "\\(\\int x^{-1} = \\ln|x|\\), but \\(\\int x^{-2} = -x^{-1}\\)"],
             ["5.10", "sin 積出負 cos", "\\(\\int \\sin x = -\\cos x + C\\)"],
             ["5.10", "見到入面嘅微分喺出面，就當佢一粒", "Inspection: \\(\\int f(g(x))g'(x)dx = F(g(x)) + C\\)"],
             ["5.10", "分數先拆、括號先展", "Expand / split the fraction before integrating"],
-            ["5.5", "定積分：上限減下限", "\\(\\int_a^b f = F(b) - F(a)\\); the +C cancels"],
-            ["5.5", "有 point 就搵 C", "Given f(a) = b: sub in, solve C"],
-            ["5.11", "x 軸下面係負，分段取絕對值", "Area = \\(\\int |f|\\); split at roots"],
-            ["5.11", "上減下，交點做上下限", "Area between curves = \\(\\int (\\text{top} - \\text{bottom})dx\\)"],
-            ["P2", "寫出 integral + limits 先 GDC", "M1 is for the integral set-up, A1 for the value"],
-            ["P2", "交點存入 A、B", "Store intersections, use them as exact limits"],
           ]],
-          ["note", "<b>常考 (frequent IB types):</b> P1 · 1 mark MCQ on standard integrals / inspection; P1 · 3-5 marks \"find f(x)\" with a point, or evaluate \\(\\int_a^b\\) exactly (command terms: find, evaluate, show that); P2 · 4-6 marks area between curve and x-axis or between two curves with GDC limits (\"find the area of the region\"); a \"hence\" or \"find k\" part is a favourite."],
-          ["rhyme", "解難口訣", "識別、揀法、積、代限、睇符號", "Identify the type → choose method → integrate → substitute limits → check sign/units of area."]
-        ],
-      },
-      {
-        h: "Standard integrals 標準積分 (Formula booklet)",
-        min: 3,
-        blocks: [
           ["table", ["f(x)", "\\(\\int f(x)\\,dx\\)", "Note"], [
             ["\\(x^n\\) (n ≠ −1)", "\\(\\frac{x^{n+1}}{n+1} + C\\)", "works for fractions and negatives too"],
             ["\\(\\frac1x\\)", "\\(\\ln|x| + C\\)", "the ONLY case where power rule fails"],
@@ -2905,16 +3260,6 @@ IB.addFast({
             ["\\(\\sin(ax+b)\\)", "\\(-\\frac1a\\cos(ax+b) + C\\)", "linear inside"],
             ["\\(\\cos(ax+b)\\)", "\\(\\frac1a\\sin(ax+b) + C\\)", "linear inside"],
             ["\\((ax+b)^n\\)", "\\(\\frac{(ax+b)^{n+1}}{a(n+1)} + C\\)", "divide by a AND (n+1)"],
-          ]],
-          ["key", "Rules: \\(\\int k f = k\\int f\\); \\(\\int (f \\pm g) = \\int f \\pm \\int g\\). Rewrite roots and fractions as powers first: \\(\\sqrt x = x^{1/2}\\), \\(\\frac1{x^3} = x^{-3}\\), \\(\\frac{1}{\\sqrt x} = x^{-1/2}\\). There is NO product or quotient rule for integrals: <b>expand or split first</b>."],
-          ["eg", "Find \\(\\int (6x^2 - 4x + 5)\\,dx\\).", [
-            "Each term: \\(\\frac{6x^3}{3} - \\frac{4x^2}{2} + 5x\\)",
-            "<b>\\(2x^3 - 2x^2 + 5x + C\\)</b> ✅"
-          ]],
-          ["eg", "Find \\(\\int \\left(\\frac{3}{x^2} + \\sqrt x\\right)dx\\).", [
-            "Rewrite: \\(3x^{-2} + x^{1/2}\\)",
-            "\\(\\frac{3x^{-1}}{-1} + \\frac{x^{3/2}}{3/2}\\)",
-            "<b>\\(-\\frac3x + \\frac23 x^{3/2} + C\\)</b> ✅"
           ]],
           ["eg", "Find \\(\\int \\frac{(x+1)^2}{x}\\,dx\\).", [
             "Expand top: \\(\\frac{x^2 + 2x + 1}{x} = x + 2 + \\frac1x\\)",
@@ -2931,7 +3276,7 @@ IB.addFast({
             "\\(\\frac12\\sin\\frac\\pi2 + C = 3\\) → \\(\\frac12 + C = 3\\) [M1]",
             "C = 2.5 → <b>\\(f(x) = \\frac12\\sin 2x + 2.5\\)</b> [A1] ✅"
           ]],
-          ["trap", ["漏 + C = 失 A1（indefinite 一定要有）。", "\\(\\int \\frac{1}{x^2}dx = -\\frac1x + C\\)，唔係 ln。ln 只係 \\(\\frac1x\\)。", "\\(\\int \\sin x\\,dx = -\\cos x\\)：負號喺積分嗰邊（\\(\\frac{d}{dx}\\cos x = -\\sin x\\)）。", "\\(\\int (3x-1)^4\\) 要除 3 同除 5，唔好淨係除 5。"]]
+          ["trap", ["漏 + C = 失 A1（indefinite 一定要有）。", "\\(\\int \\frac{1}{x^2}dx = -\\frac1x + C\\)，唔係 ln。ln 只係 \\(\\frac1x\\)。", "\\(\\int \\sin x\\,dx = -\\cos x\\)：負號喺積分嗰邊（\\(\\frac{d}{dx}\\cos x = -\\sin x\\)）。", "\\(\\int (3x-1)^4\\) 要除 3 同除 5，唔好淨係除 5。"]],
         ],
       },
       {
@@ -2967,6 +3312,25 @@ IB.addFast({
           ["trap", ["補常數時要乘「倒數」：缺 2 就乘 ½，唔係乘 2。", "Inside 唔係 linear 就唔可以淨係除 a（\\(\\int (x^2+1)^3dx \\neq \\frac{(x^2+1)^4}{4}\\)，因為冇 2x）。這種要先展開。", "\\(\\int \\frac{g'}{g}\\) 係 ln，但 \\(\\int \\frac{1}{g^2}\\) 唔係。"]]
         ],
       },
+    ],
+    summary: [
+      "1/x 變 ln；1/x² 係 −1/x",
+      "sin 積出 −cos；cos 積出 sin",
+      "入面 ax + b，外面除 a",
+      "見到入面嘅微分喺出面，就當佢一粒",
+      "g′ 喺 g 上面 → ln|g|",
+      "積完微分返檢查",
+    ],
+    practice: [
+      { q: "\\(\\int e^{3x}\\,dx =\\)", m: 1, o: ["\\(3e^{3x} + C\\)", "\\(\\frac13 e^{3x} + C\\)", "\\(e^{3x} + C\\)", "\\(\\frac{e^{3x+1}}{3x+1} + C\\)"], a: "<b>B</b> [1]: linear inside, divide by 3." },
+      { q: "\\(\\int \\frac{2x}{x^2+4}\\,dx =\\)", m: 1, o: ["\\(\\ln(x^2+4) + C\\)", "\\(\\frac{1}{x^2+4} + C\\)", "\\(2\\ln(x^2+4) + C\\)", "\\(x^2 \\ln(x^2+4) + C\\)"], a: "<b>A</b> [1]: numerator is the derivative of the denominator, so \\(\\ln(x^2+4)\\)." },
+      { q: "Find \\(\\int x(x^2 + 3)^5\\,dx\\).", m: 3, a: "Inside \\(x^2 + 3\\), derivative 2x; need factor ½ [M1]<br>\\(\\frac12 \\times \\frac{(x^2+3)^6}{6}\\) [A1]<br><b>\\(\\frac{(x^2+3)^6}{12} + C\\)</b> [A1]" },
+    ],
+  },
+  "math-13c": {
+    title: "Definite integrals · Areas below the axis · Area between curves",
+    intro: "5.11：定積分 F(b) − F(a) 要識手計 exact value；曲線喺 x 軸下面積分係負，面積要分段取絕對值；兩條曲線之間係上減下，交點做上下限。",
+    parts: [
       {
         h: "Definite integrals 定積分",
         min: 3,
@@ -3006,28 +3370,13 @@ IB.addFast({
         ],
       },
       {
-        h: "Finding f from f′ 搵返原函數 (+ C)",
-        min: 2,
-        blocks: [
-          ["flow", [["① 積分", "\\(f(x) = \\int f'(x)dx\\) (write + C)"], ["② 代點", "Sub the given point (a, b): f(a) = b → solve C"], ["③ 寫完整答案", "f(x) = … with the number C filled in"]]],
-          ["rhyme", "口訣 3", "有點就搵 C，冇點就留 + C", "Every \"find f(x)\" question gives a point. Show the substitution line for the M1."],
-          ["eg", "<b>P1 · 3 marks</b> Given \\(f'(x) = 3x^2 - 2x\\) and f(2) = 1, find f(x).", [
-            "\\(f(x) = x^3 - x^2 + C\\) [A1]",
-            "f(2) = 8 − 4 + C = 1 [M1]",
-            "C = −3 → <b>\\(f(x) = x^3 - x^2 - 3\\)</b> [A1] ✅"
-          ]],
-          ["eg", "The gradient of a curve is \\(\\frac{dy}{dx} = e^{2x} + 1\\) and it passes through (0, 2). Find y.", [
-            "\\(y = \\frac12 e^{2x} + x + C\\)",
-            "At (0, 2): \\(\\frac12 + 0 + C = 2\\) → C = 1.5",
-            "<b>\\(y = \\frac12 e^{2x} + x + 1.5\\)</b> ✅"
-          ]],
-          ["note", "Same idea is used in kinematics: a → v → s, with initial conditions. (See the kinematics sheet.) Also: if the question gives f″(x), integrate twice and you need two conditions."]
-        ],
-      },
-      {
-        h: "Area under a curve 面積",
+        h: "Area 面積：below the axis + between curves",
         min: 4,
         blocks: [
+          ["grid", [
+            ["5.11", "x 軸下面係負，分段取絕對值", "Area = \\(\\int |f|\\); split at roots"],
+            ["5.11", "上減下，交點做上下限", "Area between curves = \\(\\int (\\text{top} - \\text{bottom})dx\\)"],
+          ]],
           ["key", "<b>Area between curve and x-axis</b> = \\(\\int_a^b |f(x)|\\,dx\\). Where f < 0 the integral is negative, so split at every root, integrate each piece, take the <b>absolute value</b> of each and add.<br><b>Area between two curves</b> = \\(\\int_a^b (f(x) - g(x))\\,dx\\) where f ≥ g on [a, b]; limits are the x-coordinates of intersections."],
           ["table", ["Question says", "What to do"], [
             ["\\(\\int_a^b f\\,dx\\) (evaluate)", "signed answer, can be negative"],
@@ -3036,12 +3385,6 @@ IB.addFast({
             ["area enclosed by two curves", "solve f = g for limits; top − bottom"],
             ["curves cross inside the region", "split at crossing; swap top/bottom each side"],
             ["from a graph with regions A (above) and B (below)", "\\(\\int f = A - B\\), but area = A + B"],
-          ]],
-          ["eg", "<b>P1 · 4 marks</b> Find the area of the region enclosed by \\(y = 4x - x^2\\) and the x-axis.", [
-            "Roots: x(4 − x) = 0 → x = 0, 4 [A1]",
-            "Curve is above axis between 0 and 4 → \\(\\int_0^4 (4x - x^2)dx\\) [M1]",
-            "\\(\\left[2x^2 - \\frac{x^3}{3}\\right]_0^4 = 32 - \\frac{64}{3}\\) [M1]",
-            "Area = <b>\\(\\frac{32}{3}\\)</b> (≈ 10.7) [A1] ✅"
           ]],
           ["eg", "Find the area between \\(y = x^2 - 4\\), the x-axis, x = 0 and x = 3.", [
             "Root at x = 2 inside [0, 3] → split [M1]",
@@ -3062,30 +3405,20 @@ IB.addFast({
             "\\(\\int_0^1 (x - x^3)dx = \\frac12 - \\frac14 = \\frac14\\)",
             "Total = <b>\\(\\frac12\\)</b> ✅ (by symmetry, double one side)"
           ]],
-          ["trap", ["Curve 穿過 x 軸，一氣呵成積分會正負抵銷：面積題必須分段。", "Area 永遠正數；積分值（signed）可以負。", "Between curves：top − bottom，唔係 right − left，亦唔係減錯次序（會變負）。", "兩條 curve 喺 region 中間交叉，要分開兩段。", "Region 由 limits (vertical lines) 俾你，就唔好自己用 roots 做 limits（反之亦然）。"]]
+          ["trap", ["Curve 穿過 x 軸，一氣呵成積分會正負抵銷：面積題必須分段。", "Area 永遠正數；積分值（signed）可以負。", "Between curves：top − bottom，唔係 right − left，亦唔係減錯次序（會變負）。", "兩條 curve 喺 region 中間交叉，要分開兩段。", "Region 由 limits (vertical lines) 俾你，就唔好自己用 roots 做 limits（反之亦然）。"]],
         ],
       },
       {
-        h: "Paper 2 GDC 計算機貼士",
-        min: 3,
+        h: "Paper 2 GDC：area between curves",
+        min: 1.5,
         blocks: [
-          ["key", "On Paper 2 you may use the GDC, but <b>method marks need the set-up written down</b>: write \\(\\int_a^b \\ldots dx\\) with limits, then give the value (3 s.f. unless told otherwise)."],
-          ["table", ["Task", "GDC route (most models)", "Write down"], [
-            ["Definite integral value", "TI-84: MATH → 9 fnInt(f(x), x, a, b).  Casio: OPTN → CALC → ∫dx.  Nspire: ∫ template (menu → Calculus → Numerical Integral)", "\\(\\int_a^b f(x)dx = \\) value"],
-            ["Area under |f|", "Type abs( ) around the function inside the integral", "\\(\\int_a^b |f(x)|dx\\)"],
-            ["Intersection limits", "Graph both → intersect (TI: 2nd CALC 5; Casio: G-Solve ISCT; Nspire: Analyze Graph → Intersection)", "x = value (store as A, B for accuracy)"],
-            ["Roots of f", "Graph → zero / root, or solver", "x = value"],
-            ["Area between curves", "Find intersection x-values A, B → fnInt(top − bottom, x, A, B)", "\\(\\int_A^B (f - g)dx\\)"],
-            ["Check your hand-calc", "Graph shows shaded integral value", "—"],
-          ]],
           ["eg", "<b>P2 · 4 marks</b> (GDC) Find the area of the region bounded by \\(y = e^x\\), \\(y = 4 - x\\) and the y-axis.", [
             "Sketch: at x = 0, \\(4 - x = 4\\) is above \\(e^0 = 1\\) → top is 4 − x [R1]",
             "Intersection of \\(e^x = 4 - x\\) by GDC: x = 1.0737… (store as A) [A1]",
             "\\(\\text{Area} = \\int_0^{A} (4 - x - e^x)\\,dx\\) [M1]",
             "= <b>1.79</b> (3 s.f.) [A1] ✅"
           ]],
-          ["note", "<b>Accuracy rule:</b> don't use rounded limits (1.07). Store the exact calculator value (1.0737…) as A and type A. Rounding too early can change the 3rd s.f. and lose A1.<br>Radian mode for anything with sin / cos. Use brackets around the whole integrand: fnInt((4−x)−e^x, …)."],
-          ["trap", ["Calculator 喺 degree mode = trig 積分全錯。", "冇寫 integral set-up，只寫答案：最多得 A 分，M 分冇。", "用咗四捨五入嘅 limits 去計，答案多數差喺第 3 位有效數字。", "「Find exact value」題用 GDC 俾 decimal = 冇分（要手算）。"]]
+          ["trap", ["Calculator 喺 degree mode = trig 積分全錯。", "冇寫 integral set-up，只寫答案：最多得 A 分，M 分冇。", "用咗四捨五入嘅 limits 去計，答案多數差喺第 3 位有效數字。", "「Find exact value」題用 GDC 俾 decimal = 冇分（要手算）。"]],
         ],
       },
       {
@@ -3158,29 +3491,19 @@ IB.addFast({
       },
     ],
     summary: [
-      "加一除新次，記得 + C",
-      "入面 ax + b，外面除 a",
-      "1/x 變 ln；1/x² 係 −1/x",
-      "見到入面嘅微分喺出面，就當佢一粒",
-      "g′ 喺 g 上面 → ln|g|",
       "定積分：上限減下限，冇 C",
+      "Exact value：保留 ln、e、π、√",
       "x 軸下面係負，分段取絕對值",
       "上減下，交點做上下限",
-      "GDC：寫 integral + limits，存精確 limits"
+      "曲線中間交叉要分段",
     ],
     practice: [
-      { q: "\\(\\int (6x^2 - 4)\\,dx =\\)", m: 1, o: ["\\(12x + C\\)", "\\(2x^3 - 4x + C\\)", "\\(3x^3 - 4x + C\\)", "\\(2x^3 + C\\)"], a: "<b>B</b> [1]: \\(\\frac{6x^3}{3} - 4x + C = 2x^3 - 4x + C\\)." },
-      { q: "\\(\\int e^{3x}\\,dx =\\)", m: 1, o: ["\\(3e^{3x} + C\\)", "\\(\\frac13 e^{3x} + C\\)", "\\(e^{3x} + C\\)", "\\(\\frac{e^{3x+1}}{3x+1} + C\\)"], a: "<b>B</b> [1]: linear inside, divide by 3." },
-      { q: "\\(\\int \\frac{2x}{x^2+4}\\,dx =\\)", m: 1, o: ["\\(\\ln(x^2+4) + C\\)", "\\(\\frac{1}{x^2+4} + C\\)", "\\(2\\ln(x^2+4) + C\\)", "\\(x^2 \\ln(x^2+4) + C\\)"], a: "<b>A</b> [1]: numerator is the derivative of the denominator, so \\(\\ln(x^2+4)\\)." },
       { q: "\\(\\int_1^4 \\frac{1}{\\sqrt x}\\,dx =\\)", m: 1, o: ["1.5", "2", "3", "4"], a: "<b>B</b> [1]: \\([2\\sqrt x]_1^4 = 4 - 2 = 2\\)." },
       { q: "\\(\\int_1^3 f(x)dx = 5\\) and \\(\\int_1^4 f(x)dx = 2\\). Then \\(\\int_3^4 f(x)dx =\\)", m: 1, o: ["7", "3", "−3", "−7"], a: "<b>C</b> [1]: 2 − 5 = −3." },
-      { q: "Given \\(f'(x) = 3x^2 - 2x\\) and f(2) = 1, find f(x).", m: 3, a: "\\(f(x) = x^3 - x^2 + C\\) [A1]<br>8 − 4 + C = 1 [M1]<br><b>\\(f(x) = x^3 - x^2 - 3\\)</b> [A1]" },
-      { q: "Find \\(\\int x(x^2 + 3)^5\\,dx\\).", m: 3, a: "Inside \\(x^2 + 3\\), derivative 2x; need factor ½ [M1]<br>\\(\\frac12 \\times \\frac{(x^2+3)^6}{6}\\) [A1]<br><b>\\(\\frac{(x^2+3)^6}{12} + C\\)</b> [A1]" },
       { q: "Find the exact value of \\(\\int_0^{\\pi/4}\\sin 2x\\,dx\\).", m: 3, a: "\\(\\left[-\\frac12\\cos 2x\\right]_0^{\\pi/4}\\) [A1]<br>\\(-\\frac12\\cos\\frac\\pi2 + \\frac12\\cos 0\\) [M1]<br>= 0 + ½ = <b>\\(\\frac12\\)</b> [A1]" },
-      { q: "Find the area of the region enclosed by the graph of \\(y = 4x - x^2\\) and the x-axis.", m: 4, a: "Roots x = 0, 4 [A1]<br>\\(\\int_0^4 (4x - x^2)dx\\) [M1]<br>\\(\\left[2x^2 - \\frac{x^3}{3}\\right]_0^4 = 32 - \\frac{64}{3}\\) [M1]<br>Area = <b>\\(\\frac{32}{3}\\)</b> [A1]" },
       { q: "Find the total area between the curve \\(y = x^2 - 4\\), the x-axis, x = 0 and x = 3.", m: 5, a: "Root x = 2 inside [0, 3], so split [M1 A1]<br>\\(\\int_0^2 = -\\frac{16}{3}\\) → area \\(\\frac{16}{3}\\) [A1]<br>\\(\\int_2^3 = \\frac73\\) [A1]<br>Total = <b>\\(\\frac{23}{3}\\)</b> [A1]" },
       { q: "Given that k > 0 and \\(\\int_0^k (2x + 1)\\,dx = 12\\), find the value of k.", m: 4, a: "\\([x^2 + x]_0^k = k^2 + k\\) [M1 A1]<br>\\(k^2 + k - 12 = 0\\) → (k + 4)(k − 3) = 0 [M1]<br>k = 3 (reject −4 since k > 0) [A1]" },
-      { q: "Use your GDC to find the area of the region bounded by \\(y = e^x\\), \\(y = 4 - x\\) and the y-axis. Give your answer to 3 s.f.", m: 4, a: "Intersection \\(e^x = 4 - x\\) at x = 1.0737… [A1]<br>4 − x is above \\(e^x\\) for 0 ≤ x ≤ 1.07 [R1]<br>\\(\\int_0^{1.0737}(4 - x - e^x)dx\\) [M1]<br>= <b>1.79</b> [A1]" }
+      { q: "Use your GDC to find the area of the region bounded by \\(y = e^x\\), \\(y = 4 - x\\) and the y-axis. Give your answer to 3 s.f.", m: 4, a: "Intersection \\(e^x = 4 - x\\) at x = 1.0737… [A1]<br>4 − x is above \\(e^x\\) for 0 ≤ x ≤ 1.07 [R1]<br>\\(\\int_0^{1.0737}(4 - x - e^x)dx\\) [M1]<br>= <b>1.79</b> [A1]" },
     ],
   },
   "math-14": {
