@@ -322,7 +322,7 @@
     ],
 
     // ===================== CHEMISTRY =====================
-    "chem-1": [
+    "chem-1b": [
       () => {
         const els = [["Cl", 35, 37, 75.8], ["B", 10, 11, 19.9], ["Cu", 63, 65, 69.2], ["Ga", 69, 71, 60.1], ["Br", 79, 81, 50.7], ["Ag", 107, 109, 51.8]];
         const [s, m1, m2, a] = P(els);
@@ -342,14 +342,16 @@
         return { paper: "P2", marks: 2, diff: 1, q: `${n} mol of solute is dissolved in water to make ${v} cm³ of solution. Calculate the concentration in mol dm⁻³.`, numeric: { value: Number(sig(c)), tol: c * 0.006 }, ms: [`V = ${v / 1000} dm³ [M1]`, `c = ${sig(c)} mol dm⁻³ [A1]`] };
       },
       () => {
-        const n = dp(R(5, 60) / 100, 2), T = R(273, 373), p = R(80, 250);
-        const V = ((n * 8.31 * T) / (p * 1000)) * 1000;
-        return { paper: "P2", marks: 2, diff: 2, q: `Calculate the volume, in dm³, occupied by ${n} mol of an ideal gas at ${T} K and ${p} kPa. (R = 8.31 J K⁻¹ mol⁻¹)`, numeric: { value: Number(sig(V)), tol: V * 0.006 }, ms: [`V = nRT/p = ${n} × 8.31 × ${T}/${p * 1000} m³ [M1]`, `= ${sig(V)} dm³ [A1]`] };
-      },
-      () => {
         const c1 = P([1.0, 2.0, 0.5, 0.25]), c2 = P([0.1, 0.05, 0.2]), v2 = P([100, 250, 500]);
         const v1 = (c2 * v2) / c1;
         return { paper: "P2", marks: 2, diff: 1, q: `What volume, in cm³, of ${c1} mol dm⁻³ stock solution is needed to prepare ${v2} cm³ of ${c2} mol dm⁻³ solution?`, numeric: { value: dp(v1, 2), tol: 0.02 }, ms: [`c₁V₁ = c₂V₂ → V₁ = ${c2} × ${v2}/${c1} [M1]`, `= ${dp(v1, 2)} cm³ [A1]`] };
+      },
+    ],
+    "chem-3b": [
+      () => {
+        const n = dp(R(5, 60) / 100, 2), T = R(273, 373), p = R(80, 250);
+        const V = ((n * 8.31 * T) / (p * 1000)) * 1000;
+        return { paper: "P2", marks: 2, diff: 2, q: `Calculate the volume, in dm³, occupied by ${n} mol of an ideal gas at ${T} K and ${p} kPa. (R = 8.31 J K⁻¹ mol⁻¹)`, numeric: { value: Number(sig(V)), tol: V * 0.006 }, ms: [`V = nRT/p = ${n} × 8.31 × ${T}/${p * 1000} m³ [M1]`, `= ${sig(V)} dm³ [A1]`] };
       },
     ],
     "chem-7": [

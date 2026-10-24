@@ -502,6 +502,21 @@
             `<rect x="10" y="10" width="400" height="44" rx="6" fill="var(--fig-fill)"/>` + t(20, 28, "Initiation", "start", 'font-weight="bold" fill="var(--fig-a)"') + t(20, 46, "Cl₂ → 2Cl•   (UV light, homolytic fission)", "start") +
             `<rect x="10" y="62" width="400" height="60" rx="6" fill="var(--fig-fill)"/>` + t(20, 80, "Propagation", "start", 'font-weight="bold" fill="var(--fig-a)"') + t(20, 98, "CH₄ + Cl• → CH₃• + HCl", "start") + t(20, 115, "CH₃• + Cl₂ → CH₃Cl + Cl•", "start") +
             `<rect x="10" y="130" width="400" height="56" rx="6" fill="var(--fig-fill)"/>` + t(20, 148, "Termination", "start", 'font-weight="bold" fill="var(--fig-a)"') + t(20, 166, "Cl• + Cl• → Cl₂;   CH₃• + Cl• → CH₃Cl;", "start") + t(20, 182, "CH₃• + CH₃• → C₂H₆", "start")) },
+      ],
+      frames: [
+        { id: "chem-13-q25", title: "Draw fish-hook arrows for homolytic fission", paper: "P2", where: "Paper 2 · 2 marks",
+          q: "Using appropriate curly arrows, show the homolytic fission of a chlorine molecule and state the condition needed.",
+          marks: ["__two half-headed (fish-hook)__ arrows, each from the Cl–Cl bond to one Cl atom", "condition: __UV light__ (or high temperature); products 2Cl• shown with a dot"],
+          svg: S("0 0 260 100", "Homolytic fission of chlorine", mk("ar-ch13-f1", "var(--fig-d)", true),
+            t(40, 60, "Cl", "middle", 'font-size="14"') + ln(52, 55, 92, 55) + t(104, 60, "Cl", "middle", 'font-size="14"') + cv("M72 52 Q58 22 42 44", "ar-ch13-f1") + cv("M72 52 Q86 22 102 44", "ar-ch13-f1") +
+            t(130, 60, "→ Cl• + Cl•", "start", 'font-size="14"') + t(130, 90, "UV light", "start")),
+          model: "Cl–Cl → 2Cl•: one fish-hook arrow from the bond to each chlorine atom; each atom takes one electron of the bonding pair. Requires UV light.",
+          accept: "'sunlight'", reject: "full-headed arrows (these show heterolytic fission); ions as products",
+          tip: "一個電子 = 半箭咀 (魚鈎)；兩個電子 = 全箭咀。" },
+      ],
+    },
+    "chem-13b": {
+      figures: [
         { title: "Nucleophilic substitution: OH⁻ + bromoethane", caption: "The nucleophile's lone pair attacks the δ+ carbon; the C–Br bond pair moves to Br, which leaves as Br⁻. Arrows start at a lone pair or a bond and end at an atom.",
           svg: S("0 0 460 140", "Curly arrows for hydroxide attacking bromoethane", mk("ar-ch13-3", "var(--fig-d)"),
             t(40, 74, "HO", "middle", 'font-size="14"') + t(56, 66, "⁻", "middle") + `<circle cx="50" cy="58" r="1.6"/><circle cx="56" cy="58" r="1.6"/>` +
@@ -518,17 +533,6 @@
             t(215, 114, "H₂C", "middle", 'font-size="14"') + ln(231, 109, 265, 109) + t(283, 114, "CH₂", "middle", 'font-size="14"') + t(299, 102, "+", "middle", 'font-size="14"') + ln(215, 100, 215, 82) + t(215, 76, "Br", "middle", 'font-size="14"') +
             t(300, 54, "Br", "middle", 'font-size="14"') + t(311, 50, "⁻", "middle") + `<circle cx="296" cy="62" r="1.6"/><circle cx="302" cy="62" r="1.6"/>` + cv("M297 66 Q290 80 286 98", "ar-ch13-4") +
             t(250, 150, "carbocation + Br⁻") + t(340, 114, "→ BrCH₂CH₂Br", "start", 'font-size="13"')) },
-      ],
-      frames: [
-        { title: "Draw fish-hook arrows for homolytic fission", paper: "P2", where: "Paper 2 · 2 marks",
-          q: "Using appropriate curly arrows, show the homolytic fission of a chlorine molecule and state the condition needed.",
-          marks: ["__two half-headed (fish-hook)__ arrows, each from the Cl–Cl bond to one Cl atom", "condition: __UV light__ (or high temperature); products 2Cl• shown with a dot"],
-          svg: S("0 0 260 100", "Homolytic fission of chlorine", mk("ar-ch13-f1", "var(--fig-d)", true),
-            t(40, 60, "Cl", "middle", 'font-size="14"') + ln(52, 55, 92, 55) + t(104, 60, "Cl", "middle", 'font-size="14"') + cv("M72 52 Q58 22 42 44", "ar-ch13-f1") + cv("M72 52 Q86 22 102 44", "ar-ch13-f1") +
-            t(130, 60, "→ Cl• + Cl•", "start", 'font-size="14"') + t(130, 90, "UV light", "start")),
-          model: "Cl–Cl → 2Cl•: one fish-hook arrow from the bond to each chlorine atom; each atom takes one electron of the bonding pair. Requires UV light.",
-          accept: "'sunlight'", reject: "full-headed arrows (these show heterolytic fission); ions as products",
-          tip: "一個電子 = 半箭咀 (魚鈎)；兩個電子 = 全箭咀。" },
       ],
     },
 
