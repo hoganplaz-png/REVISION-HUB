@@ -142,7 +142,8 @@
 
   // Topic drills (js/data/drill/<subject>.js): IB-style structured and essay questions, each with an explicit
   // marking rule ("[1] factor + [1] development, twice") and alternative creditworthy points tagged [1].
-  // { units: { a: "Sub-topic name", ... }, qs: [{ u, s: "A" | "C", m: "2+2", t, data?, rule, pts, numeric?, paper?, diff? }] }
+  // { units: { a: "Sub-topic name", ... }, qs: [{ id?, u, s: "A" | "C", m: "2+2", t, data?, rule, pts, numeric?, paper?, diff? }] }
+  // id is optional: set it when a question moves to another topic so saved progress and mistakes still find it.
   IB.addDrill = function (subjectId, byTopic) {
     const s = IB.subjects[subjectId];
     if (!s) return;
@@ -156,7 +157,7 @@
         const marks = String(x.m).split("+").reduce((a, b) => a + Number(b), 0);
         const table = x.data ? `<div class="table-wrap"><table class="data" style="width:auto">${x.data.map((r, ri) => `<tr>${r.map((c) => (ri ? `<td>${c}</td>` : `<th>${c}</th>`)).join("")}</tr>`).join("")}</table></div>` : "";
         const q = {
-          id: `${t.id}-d${base + i + 1}`, subject: s.id, topic: t.id, sec: "drill", paper: x.paper || d.paper || "P2",
+          id: x.id || `${t.id}-d${base + i + 1}`, subject: s.id, topic: t.id, sec: "drill", paper: x.paper || d.paper || "P2",
           type: x.options ? "mcq" : x.s === "C" ? "extended" : "short", marks, diff: x.diff || (x.s === "C" ? 3 : marks <= 2 ? 1 : 2),
           q: (x.html ? x.t : esc(x.t)) + table, ms: x.pts, rule: x.rule, unit: x.u, unitName: t.units[x.u] || x.u, part: x.s,
           alt: x.s !== "C" && !x.numeric && !x.options,
