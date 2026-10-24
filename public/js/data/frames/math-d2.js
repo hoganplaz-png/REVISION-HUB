@@ -414,29 +414,80 @@
     ],
   },
 
-  // ======================= 5.1-5.3, 5.6-5.8 Differentiation =======================
+  // ======================= 5.1 Introduction to differential calculus =======================
   "math-12": {
     diagrams: [
       { title: "Secants PQ approach the tangent at P(1, 1) on y = x²: gradient → f′(1) = 2", x: [-0.5, 2.6], y: [-1.2, 5], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: (x) => x * x, domain: [-0.5, 2.2], color: "a" }, { f: (x) => 2 * x - 1, domain: [-0.1, 2.5], color: "b", label: "tangent", labelX: 2.3 }, { f: (x) => 3 * x - 2, domain: [0.2, 2.3], color: "muted", dash: true }, { f: (x) => 2.5 * x - 1.5, domain: [0.1, 2.4], color: "muted", dash: true }],
         points: [{ at: [1, 1], label: "P" }, { at: [2, 4], label: "Q₁ (m = 3)" }, { at: [1.5, 2.25], label: "Q₂ (m = 2.5)" }] },
+    ],
+  },
+
+  // ======================= 5.2 Increasing and decreasing functions =======================
+  "math-12b": {
+    diagrams: [
       { title: "f(x) = x³ − 3x (accent) and f′(x) = 3x² − 3 (blue): f′ = 0 at the turning points, f′ < 0 where f decreases", x: [-2.6, 2.6], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f", labelX: 2.15 }, { f: (x) => 3 * x * x - 3, color: "b", label: "f′", labelX: 1.6 }], vlines: [{ x: -1 }, { x: 1 }], points: [{ at: [-1, 2], label: "max" }, { at: [1, -2], label: "min" }, { at: [-1, 0] }, { at: [1, 0] }] },
-      { title: "f(x) = x³ − 3x and f″(x) = 6x (green): f″ = 0 and changes sign at the point of inflexion (0, 0)", x: [-2.6, 2.6], y: [-6, 6], xLabel: "x", yLabel: "y", grid: false,
-        curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f", labelX: 2.2 }, { f: (x) => 6 * x, domain: [-1, 1], color: "c", label: "f″", labelX: 0.7 }],
-        points: [{ at: [0, 0], label: "inflexion" }], texts: [{ at: [-2.3, -5], text: "concave down (f″ < 0)" }, { at: [0.3, 5], text: "concave up (f″ > 0)" }] },
+    ],
+    figures: [
+      { title: "Sign diagram for f′(x) = (x + 1)(x − 3)", caption: "Put the zeros of f′ in order; test the sign of each factor in each interval. + then − gives a maximum, − then + a minimum.",
+        svg: signTable(390, "Sign table for derivative", ["x < −1", "−1", "−1 < x < 3", "3", "x > 3"], [["x + 1", "−", "0", "+", "+", "+"], ["x − 3", "−", "−", "−", "0", "+"], ["f′(x)", "+", "0", "−", "0", "+"], ["f(x)", "↗", "max", "↘", "min", "↗"]], 64, 62) },
+    ],
+  },
+
+  // ======================= 5.4 Tangents and normals =======================
+  "math-12d": {
+    diagrams: [
       { title: "Tangent and normal to y = x² at (1, 1): tangent y = 2x − 1, normal y = −x/2 + 3/2 (gradients multiply to −1)", x: [-1, 3], y: [-0.3, 2.4], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: (x) => x * x, domain: [-1, 1.55], color: "a" }, { f: (x) => 2 * x - 1, domain: [0.4, 1.7], color: "b", label: "tangent", labelX: 1.45 }, { f: (x) => -x / 2 + 1.5, domain: [-0.8, 2.8], color: "c", label: "normal", labelX: 2.3 }], points: [{ at: [1, 1] }] },
-      { title: "Stationary point of inflexion: y = x³ at O has f′(0) = 0 but f′ does not change sign (f′ = 3x² ≥ 0)", x: [-2, 2], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false,
-        curves: [{ f: (x) => x ** 3, color: "a", label: "x³", labelX: 1.5 }, { f: (x) => 3 * x * x, domain: [-1.4, 1.4], color: "b", dash: true, label: "f′ = 3x²", labelX: 0.75 }], points: [{ at: [0, 0] }] },
+    ],
+  },
+
+  // ======================= 5.6 Differentiation rules =======================
+  "math-12e": {
+    diagrams: [
       { title: "d/dx sin x = cos x: the gradient of sin x (accent) at each x equals the value of cos x (blue)", x: [-0.3, 6.6], y: [-1.5, 1.5], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: Math.sin, color: "a", label: "sin x", labelX: 1.2 }, { f: Math.cos, color: "b", label: "cos x", labelX: 5.6 }], vlines: [{ x: PI / 2, label: "π/2" }, { x: 1.5 * PI, label: "3π/2" }] },
       { title: "d/dx ln x = 1/x: ln x (accent) is increasing with decreasing gradient; d/dx eˣ = eˣ (blue)", x: [-2, 4], y: [-2.5, 5], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: Math.log, domain: [0.05, 4], color: "a", label: "ln x", labelX: 3.2 }, { f: (x) => 1 / x, domain: [0.2, 4], color: "a", dash: true, label: "1/x", labelX: 3.3 }, { f: Math.exp, domain: [-2, 1.6], color: "b", label: "eˣ", labelX: 1.3 }], points: [{ at: [1, 0] }, { at: [0, 1] }] },
     ],
+  },
+
+  // ======================= 5.7 The second derivative =======================
+  "math-12f": {
+    diagrams: [
+      { title: "f(x) = x³ − 3x and f″(x) = 6x (green): f″ = 0 and changes sign at the point of inflexion (0, 0)", x: [-2.6, 2.6], y: [-6, 6], xLabel: "x", yLabel: "y", grid: false,
+        curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f", labelX: 2.2 }, { f: (x) => 6 * x, domain: [-1, 1], color: "c", label: "f″", labelX: 0.7 }],
+        points: [{ at: [0, 0], label: "inflexion" }], texts: [{ at: [-2.3, -5], text: "concave down (f″ < 0)" }, { at: [0.3, 5], text: "concave up (f″ > 0)" }] },
+    ],
+    frames: [
+      { id: "math-12-q23", title: "Sketch the graph of f′ from the graph of f", star: true, paper: "P1", where: "Paper 1 · 3–4 marks · graph of f given",
+        q: "The graph of f(x) = x³ − 3x has a local maximum at (−1, 2), a local minimum at (1, −2) and a point of inflexion at (0, 0). On the same axes sketch the graph of y = f′(x).",
+        marks: [["A1", "f′ crosses the x-axis at x = −1 and x = 1 (the __stationary points__ of f)"], ["A1", "f′ < 0 for −1 < x < 1 and f′ > 0 outside"], ["A1", "minimum of f′ at x = 0 (the __inflexion__ of f)"], ["A1", "parabola shape, symmetric about x = 0"]],
+        diagram: { title: "f (accent) and f′ (blue): zeros of f′ at the turning points of f; minimum of f′ at the inflexion", x: [-2.6, 2.6], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false, curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f" , labelX: 2.15 }, { f: (x) => 3 * x * x - 3, color: "b", label: "f′", labelX: 1.6 }], points: [{ at: [-1, 0] }, { at: [1, 0] }, { at: [0, -3], label: "(0, −3)" }] },
+        model: "Stationary points of f at x = ±1 become the x-intercepts of f′. f decreases between them, so f′ is negative there; f increases outside, so f′ is positive. The inflexion of f at x = 0 is where the gradient is least, so f′ has its minimum there (f′(0) = −3). f′ is a quadratic opening upwards.",
+        accept: "minimum value not labelled if the shape and x-position are correct", reject: "f′ with turning points at x = ±1; f′ crossing the axis at x = 0",
+        tip: "f 嘅「轉向點」→ f′ 嘅「零點」；f 嘅「拐點」→ f′ 嘅「轉向點」；f 上升嘅地方 f′ 喺 x 軸上面。" },
+      { id: "math-12-q24", title: "Sketch a curve from given derivative information", paper: "P1", where: "Paper 1 · 4 marks",
+        q: "A cubic f satisfies f′(1) = f′(5) = 0, f′(x) > 0 for x < 1 and x > 5, f′(x) < 0 for 1 < x < 5, f″(3) = 0, f(1) = 6, f(5) = −2 and f(0) = 4.25. Sketch y = f(x), labelling the turning points and the point of inflexion.",
+        marks: [["A1", "local maximum at (1, 6) and local minimum at (5, −2)"], ["A1", "increasing before 1 and after 5, decreasing between"], ["A1", "point of inflexion at x = 3 (at (3, 2), midway for a cubic) where concavity changes"], ["A1", "y-intercept 4.25"]],
+        diagram: { title: "f(x) = x³/4 − 9x²/4 + 15x/4 + 17/4: max (1, 6), inflexion (3, 2), min (5, −2)", x: [-1, 7], y: [-5, 9], xLabel: "x", yLabel: "y", grid: false, curves: [{ f: (x) => x ** 3 / 4 - (9 * x * x) / 4 + (15 * x) / 4 + 17 / 4, domain: [-0.8, 6.8], color: "a" }], points: [{ at: [1, 6], label: "max (1, 6)" }, { at: [3, 2], label: "inflexion (3, 2)" }, { at: [5, -2], label: "min (5, −2)" }, { at: [0, 4.25], label: "4.25" }] },
+        model: "f′ changes from + to − at x = 1 (maximum (1, 6)) and from − to + at x = 5 (minimum (5, −2)). f″(3) = 0 with concave down for x < 3 and concave up for x > 3, giving the inflexion at x = 3. The curve passes through (0, 4.25).",
+        accept: "inflexion at x = 3 shown without its y-value", reject: "a smooth curve with corners at the turning points; the maximum lower than the minimum",
+        tip: "由導數資料畫圖：先標 turning points，再用 f′ 正負決定升跌，用 f″ 決定彎向 (concave up/down)。" },
+    ],
+    concepts: [
+      { h: "Reading f, f′ and f″ from each other's graphs", b: "<p>Stationary points of f ↔ zeros of f′. f increasing ↔ f′ &gt; 0 (graph of f′ above the x-axis). Points of inflexion of f ↔ turning points of f′ ↔ zeros of f″ where f″ changes sign. <strong>Concave up</strong> (f″ &gt; 0): gradient increasing, curve lies above its tangents. <strong>Concave down</strong> (f″ &lt; 0): gradient decreasing. A stationary point of inflexion has f′ = 0 with no change of sign of f′ (e.g. y = x³ at O). f″ = 0 alone does not prove an inflexion (e.g. y = x⁴ at O is a minimum).</p>" },
+    ],
+  },
+
+  // ======================= 5.8 Maxima, minima and optimisation =======================
+  "math-12g": {
+    diagrams: [
+      { title: "Stationary point of inflexion: y = x³ at O has f′(0) = 0 but f′ does not change sign (f′ = 3x² ≥ 0)", x: [-2, 2], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false,
+        curves: [{ f: (x) => x ** 3, color: "a", label: "x³", labelX: 1.5 }, { f: (x) => 3 * x * x, domain: [-1.4, 1.4], color: "b", dash: true, label: "f′ = 3x²", labelX: 0.75 }], points: [{ at: [0, 0] }] },
+    ],
     figures: [
-      { title: "Sign diagram for f′(x) = (x + 1)(x − 3)", caption: "Put the zeros of f′ in order; test the sign of each factor in each interval. + then − gives a maximum, − then + a minimum.",
-        svg: signTable(390, "Sign table for derivative", ["x < −1", "−1", "−1 < x < 3", "3", "x > 3"], [["x + 1", "−", "0", "+", "+", "+"], ["x − 3", "−", "−", "−", "0", "+"], ["f′(x)", "+", "0", "−", "0", "+"], ["f(x)", "↗", "max", "↘", "min", "↗"]], 64, 62) },
       { title: "First-derivative test: nature of a stationary point", caption: "A stationary point of inflexion has f′ = 0 with NO change of sign. Second-derivative test: f″ < 0 max, f″ > 0 min, f″ = 0 inconclusive.",
         svg: open(390, 125, "Four types of stationary point") + [[0, "M10 70Q45 5 80 70", "local max", "+ 0 −"], [97, "M10 25Q45 90 80 25", "local min", "− 0 +"], [194, "M10 80C25 45 35 45 45 45C55 45 65 45 80 10", "inflexion (rising)", "+ 0 +"], [291, "M10 10C25 45 35 45 45 45C55 45 65 45 80 80", "inflexion (falling)", "− 0 −"]].map(([ox, d, t, sg]) =>
           `<g transform="translate(${ox + 5} 4)"><path d="${d}" fill="none" stroke="var(--fig-a)" stroke-width="2.2"/><circle cx="45" cy="${t === "local max" ? 37.5 : t === "local min" ? 57.5 : 45}" r="3"/></g>` + tx(ox + 50, 104, t, { a: "middle", s: 11 }) + tx(ox + 50, 119, "f′: " + sg, { a: "middle", s: 11 })).join("") + "</svg>" },
@@ -450,28 +501,9 @@
           ln(90, 35, 143, 35, { c: "a", w: 1.6 }) + tx(116, 30, "r", { a: "middle", i: true, c: "a" }) + ln(160, 37, 160, 133, { w: 1, ar: "ar-m12-2" }) + ln(160, 133, 160, 37, { w: 1, ar: "ar-m12-2" }) + tx(168, 90, "h", { i: true, c: "a" }) +
           tx(185, 60, "V = πr²h", { s: 13 }) + tx(185, 85, "A = 2πr² + 2πrh", { s: 12 }) + tx(185, 108, "(open top: πr² + 2πrh)", { s: 11 }) + "</svg>" },
     ],
-    frames: [
-      { title: "Sketch the graph of f′ from the graph of f", star: true, paper: "P1", where: "Paper 1 · 3–4 marks · graph of f given",
-        q: "The graph of f(x) = x³ − 3x has a local maximum at (−1, 2), a local minimum at (1, −2) and a point of inflexion at (0, 0). On the same axes sketch the graph of y = f′(x).",
-        marks: [["A1", "f′ crosses the x-axis at x = −1 and x = 1 (the __stationary points__ of f)"], ["A1", "f′ < 0 for −1 < x < 1 and f′ > 0 outside"], ["A1", "minimum of f′ at x = 0 (the __inflexion__ of f)"], ["A1", "parabola shape, symmetric about x = 0"]],
-        diagram: { title: "f (accent) and f′ (blue): zeros of f′ at the turning points of f; minimum of f′ at the inflexion", x: [-2.6, 2.6], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false, curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f" , labelX: 2.15 }, { f: (x) => 3 * x * x - 3, color: "b", label: "f′", labelX: 1.6 }], points: [{ at: [-1, 0] }, { at: [1, 0] }, { at: [0, -3], label: "(0, −3)" }] },
-        model: "Stationary points of f at x = ±1 become the x-intercepts of f′. f decreases between them, so f′ is negative there; f increases outside, so f′ is positive. The inflexion of f at x = 0 is where the gradient is least, so f′ has its minimum there (f′(0) = −3). f′ is a quadratic opening upwards.",
-        accept: "minimum value not labelled if the shape and x-position are correct", reject: "f′ with turning points at x = ±1; f′ crossing the axis at x = 0",
-        tip: "f 嘅「轉向點」→ f′ 嘅「零點」；f 嘅「拐點」→ f′ 嘅「轉向點」；f 上升嘅地方 f′ 喺 x 軸上面。" },
-      { title: "Sketch a curve from given derivative information", paper: "P1", where: "Paper 1 · 4 marks",
-        q: "A cubic f satisfies f′(1) = f′(5) = 0, f′(x) > 0 for x < 1 and x > 5, f′(x) < 0 for 1 < x < 5, f″(3) = 0, f(1) = 6, f(5) = −2 and f(0) = 4.25. Sketch y = f(x), labelling the turning points and the point of inflexion.",
-        marks: [["A1", "local maximum at (1, 6) and local minimum at (5, −2)"], ["A1", "increasing before 1 and after 5, decreasing between"], ["A1", "point of inflexion at x = 3 (at (3, 2), midway for a cubic) where concavity changes"], ["A1", "y-intercept 4.25"]],
-        diagram: { title: "f(x) = x³/4 − 9x²/4 + 15x/4 + 17/4: max (1, 6), inflexion (3, 2), min (5, −2)", x: [-1, 7], y: [-5, 9], xLabel: "x", yLabel: "y", grid: false, curves: [{ f: (x) => x ** 3 / 4 - (9 * x * x) / 4 + (15 * x) / 4 + 17 / 4, domain: [-0.8, 6.8], color: "a" }], points: [{ at: [1, 6], label: "max (1, 6)" }, { at: [3, 2], label: "inflexion (3, 2)" }, { at: [5, -2], label: "min (5, −2)" }, { at: [0, 4.25], label: "4.25" }] },
-        model: "f′ changes from + to − at x = 1 (maximum (1, 6)) and from − to + at x = 5 (minimum (5, −2)). f″(3) = 0 with concave down for x < 3 and concave up for x > 3, giving the inflexion at x = 3. The curve passes through (0, 4.25).",
-        accept: "inflexion at x = 3 shown without its y-value", reject: "a smooth curve with corners at the turning points; the maximum lower than the minimum",
-        tip: "由導數資料畫圖：先標 turning points，再用 f′ 正負決定升跌，用 f″ 決定彎向 (concave up/down)。" },
-    ],
-    concepts: [
-      { h: "Reading f, f′ and f″ from each other's graphs", b: "<p>Stationary points of f ↔ zeros of f′. f increasing ↔ f′ &gt; 0 (graph of f′ above the x-axis). Points of inflexion of f ↔ turning points of f′ ↔ zeros of f″ where f″ changes sign. <strong>Concave up</strong> (f″ &gt; 0): gradient increasing, curve lies above its tangents. <strong>Concave down</strong> (f″ &lt; 0): gradient decreasing. A stationary point of inflexion has f′ = 0 with no change of sign of f′ (e.g. y = x³ at O). f″ = 0 alone does not prove an inflexion (e.g. y = x⁴ at O is a minimum).</p>" },
-    ],
   },
 
-  // ======================= 5.4-5.5, 5.10-5.11 Integration =======================
+  // ======================= 5.5 Introduction to integration =======================
   "math-13": {
     diagrams: [
       { title: "Family of antiderivatives F(x) + C: ∫2x dx = x² + C - same gradient at each x, shifted vertically", x: [-2.6, 2.6], y: [-3, 7], xLabel: "x", yLabel: "y", grid: false,
@@ -480,6 +512,15 @@
     figures: [
       { title: "Definite integral = area between the curve and the x-axis (curve above the axis)", caption: "Area = ∫ₐᵇ f(x) dx = F(b) − F(a) when f(x) ≥ 0 on [a, b]. Here ∫₀⁴ (4x − x²) dx = 32/3.",
         svg: G({ label: "Area under a curve", x: [-0.5, 5], y: [-0.8, 5], xl: "x", yl: "y", curves: [{ f: (x) => 4 * x - x * x, d: [-0.3, 4.4], c: "a" }], fills: [{ f: (x) => 4 * x - x * x, d: [0, 4], c: "a", op: 0.28 }], xt: [[4, "4"]], texts: [{ p: [2, 1.6], t: "A = 32/3", a: "middle" }, { p: [3.3, 4.2], t: "y = 4x − x²", c: "a" }] }) },
+      { title: "Area as the limit of a sum of rectangles", caption: "Left-endpoint rectangles under an increasing curve underestimate the area; as the width → 0 the sum → ∫ₐᵇ f(x) dx.",
+        svg: G({ label: "Rectangles under a curve", x: [-0.3, 4.6], y: [-0.4, 9.5], xl: "x", yl: "y", curves: [{ f: (x) => 0.5 * x * x + 1, d: [0, 4.1], c: "a" }],
+          polys: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5].map((a) => ({ pts: [[a, 0], [a, 0.5 * a * a + 1], [a + 0.5, 0.5 * a * a + 1], [a + 0.5, 0]], close: true, c: "b", fc: "b", op: 0.18, w: 1 })), xt: [[4, "b"]], texts: [{ p: [1.6, 6.5], t: "y = f(x)", c: "a" }] }) },
+    ],
+  },
+
+  // ======================= 5.11 Definite integrals and areas =======================
+  "math-13c": {
+    figures: [
       { title: "Region below the x-axis gives a negative integral", caption: "f(x) = x(x − 1)(x − 3): ∫₀¹ f = 5/12 (above), ∫₁³ f = −8/3 (below). Area = 5/12 + 8/3 = 37/12, but ∫₀³ f = −9/4. On a GDC use ∫|f(x)| dx.",
         svg: G({ label: "Region above and below the axis", x: [-0.4, 3.5], y: [-2.4, 1.4], xl: "x", yl: "y", curves: [{ f: (x) => x * (x - 1) * (x - 3), d: [-0.25, 3.35], c: "a" }], fills: [{ f: (x) => x * (x - 1) * (x - 3), d: [0, 1], c: "c" }, { f: (x) => x * (x - 1) * (x - 3), d: [1, 3], c: "d" }], xt: [[1, "1"], [3, "3"]],
           texts: [{ p: [0.5, 0.25], t: "+", a: "middle", s: 14 }, { p: [2, -0.8], t: "− (negative integral)", a: "middle" }] }) },
@@ -489,19 +530,16 @@
       { title: "Curves that cross: split at each intersection (or integrate |f − g|)", caption: "sin x and cos x cross at π/4: area from 0 to π/2 = ∫₀^(π/4)(cos x − sin x) dx + ∫_(π/4)^(π/2)(sin x − cos x) dx = 2√2 − 2.",
         svg: G({ label: "Crossing curves", x: [-0.2, 2], y: [-0.3, 1.25], xl: "x", yl: "y", curves: [{ f: Math.sin, d: [0, 1.9], c: "a" }, { f: Math.cos, d: [0, 1.9], c: "b" }], fills: [{ f: Math.cos, g: Math.sin, d: [0, PI / 4], c: "b", op: 0.25 }, { f: Math.sin, g: Math.cos, d: [PI / 4, PI / 2], c: "a", op: 0.25 }],
           vl: [{ x: PI / 2, from: 0, to: 1 }], xt: [[PI / 4, "π/4"], [PI / 2, "π/2"]], texts: [{ p: [1.62, 1.04], t: "sin x", c: "a" }, { p: [1.62, 0.18], t: "cos x", c: "b" }] }) },
-      { title: "Area as the limit of a sum of rectangles", caption: "Left-endpoint rectangles under an increasing curve underestimate the area; as the width → 0 the sum → ∫ₐᵇ f(x) dx.",
-        svg: G({ label: "Rectangles under a curve", x: [-0.3, 4.6], y: [-0.4, 9.5], xl: "x", yl: "y", curves: [{ f: (x) => 0.5 * x * x + 1, d: [0, 4.1], c: "a" }],
-          polys: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5].map((a) => ({ pts: [[a, 0], [a, 0.5 * a * a + 1], [a + 0.5, 0.5 * a * a + 1], [a + 0.5, 0]], close: true, c: "b", fc: "b", op: 0.18, w: 1 })), xt: [[4, "b"]], texts: [{ p: [1.6, 6.5], t: "y = f(x)", c: "a" }] }) },
     ],
     frames: [
-      { title: "Shade the region and find its area when part is below the axis", star: true, paper: "P1", where: "Paper 1 · 6–7 marks",
+      { id: "math-13-q22", title: "Shade the region and find its area when part is below the axis", star: true, paper: "P1", where: "Paper 1 · 6–7 marks",
         q: "Let f(x) = x³ − 4x² + 3x. (a) Find the x-intercepts. (b) Sketch y = f(x) for 0 ≤ x ≤ 3 and shade the region enclosed by the curve and the x-axis. (c) Find the total area of the shaded region.",
         marks: [["A1", "x(x − 1)(x − 3) = 0 ⇒ x = 0, 1, 3"], ["A1", "cubic sketch, above the axis on (0, 1) and below on (1, 3)"], ["M1", "splitting the integral at x = 1"], ["A1", "∫₀¹ f dx = 5/12"], ["A1", "∫₁³ f dx = −8/3"], ["A1", "area = 5/12 + 8/3 = 37/12"]],
         svg: G({ label: "Shaded regions of a cubic", x: [-0.4, 3.5], y: [-2.4, 1.4], xl: "x", yl: "y", curves: [{ f: (x) => x * (x - 1) * (x - 3), d: [-0.25, 3.35], c: "a" }], fills: [{ f: (x) => x * (x - 1) * (x - 3), d: [0, 1], c: "c" }, { f: (x) => x * (x - 1) * (x - 3), d: [1, 3], c: "d" }], xt: [[1, "1"], [3, "3"]], texts: [{ p: [0.5, 0.2], t: "5/12", a: "middle" }, { p: [2, -0.8], t: "8/3", a: "middle" }] }),
         model: "(a) f(x) = x(x − 1)(x − 3), so x = 0, 1, 3. (c) F(x) = x⁴/4 − 4x³/3 + 3x²/2. ∫₀¹ f = 1/4 − 4/3 + 3/2 = 5/12. ∫₁³ f = F(3) − F(1) = −9/4 − 5/12 = −8/3. Total area = 5/12 + 8/3 = 37/12 (≈ 3.08).",
         accept: "37/12 ≈ 3.08; −∫₁³ f dx written as the area", reject: "∫₀³ f dx = −9/4 given as the area; a negative area",
         tip: "面積一定係正數！曲線過 x 軸就要喺交點斬開，x 軸下面嗰part 取絕對值再加。" },
-      { title: "Area enclosed between two curves (find the limits first)", paper: "P1", where: "Paper 1 · 5–6 marks",
+      { id: "math-13-q23", title: "Area enclosed between two curves (find the limits first)", paper: "P1", where: "Paper 1 · 5–6 marks",
         q: "The curves y = 4 − x² and y = x + 2 intersect at A and B. (a) Find the x-coordinates of A and B. (b) Write down an integral for the area enclosed between the curves and evaluate it.",
         marks: [["M1", "4 − x² = x + 2 ⇒ x² + x − 2 = 0"], ["A1", "x = −2, x = 1"], ["M1", "∫₋₂¹ [(4 − x²) − (x + 2)] dx (upper − lower)"], ["A1", "[2x − x²/2 − x³/3] from −2 to 1"], ["A1", "area = 9/2"]],
         svg: G({ label: "Region between parabola and line", x: [-3, 2.3], y: [-1.5, 5], xl: "x", yl: "y", curves: [{ f: (x) => 4 - x * x, d: [-2.4, 2.2], c: "a" }, { f: (x) => x + 2, d: [-2.9, 2], c: "b" }], fills: [{ f: (x) => 4 - x * x, g: (x) => x + 2, d: [-2, 1], c: "a", op: 0.3 }], dots: [{ p: [-2, 0] }, { p: [1, 3] }], texts: [{ p: [-2, 0], t: "A", dx: -12, dy: -4 }, { p: [1, 3], t: "B", dx: 6, dy: -6 }] }),

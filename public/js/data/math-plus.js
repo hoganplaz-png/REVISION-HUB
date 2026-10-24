@@ -175,21 +175,85 @@ IB.extend("math", {
       diagrams: [{ title: "Normal curve: ~68% within 1σ, ~95% within 2σ", x: [-3.5, 3.5], y: [-0.05, 0.5], grid: false, shade: { from: -1, to: 1 }, curves: [{ f: (x) => Math.exp(-x * x / 2) / Math.sqrt(2 * Math.PI) }], texts: [{ at: [0, 0.15], text: "68%", anchor: "middle" }, { at: [3.3, -0.03], text: "z", anchor: "end" }] }],
     },
     "math-12": {
-      formulas: ["\\(\\frac{d}{dx}x^n = nx^{n-1}\\)", "chain: \\(\\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx}\\)", "product: \\((uv)' = u'v + uv'\\)", "quotient: \\(\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}\\)"],
-      methods: ["<strong>Tangent at x = a:</strong> find f(a) and f'(a), then \\(y - f(a) = f'(a)(x - a)\\). Normal gradient = \\(-1/f'(a)\\).", "<strong>Stationary points:</strong> f'(x) = 0, then classify with f''(x) (> 0 min, < 0 max).", "<strong>Optimisation:</strong> write one-variable function → differentiate → set = 0 → justify max/min → answer the question asked.", "<strong>Rewrite before differentiating:</strong> \\(\\frac{1}{\\sqrt{x}} = x^{-1/2}\\)."],
-      traps: ["Point of inflexion needs f'' to <strong>change sign</strong>, not just f'' = 0.", "Giving the x-value when the question asks for the maximum value (y).", "Forgetting the chain rule on \\(e^{3x}\\) or \\(\\sin 2x\\)."],
+      formulas: ["\\(f'(x) = \\lim_{h \\to 0} \\frac{f(x + h) - f(x)}{h}\\)", "gradient of chord \\(= \\frac{f(a + h) - f(a)}{h}\\)", "\\(\\frac{dy}{dx}\\) = rate of change of y with respect to x"],
+      methods: ["<strong>Gradient at a point:</strong> find f′(x), then substitute x = a. The answer is a number, not a function.", "<strong>Where is the gradient k?</strong> Solve f′(x) = k, then find y from the original function.", "<strong>Chord → tangent:</strong> write the chord gradient in terms of h, simplify, then let h → 0.", "<strong>Rate of change in context:</strong> differentiate, substitute, give units (… per …) and say whether the quantity is increasing or decreasing."],
+      traps: ["Substituting into f(x) instead of f′(x) when the gradient is asked.", "Leaving out the units or the sign when interpreting a rate of change.", "Letting h → 0 before cancelling the h in the denominator."],
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["For \\(f(x) = x^4\\), \\(f''(0) = 0\\), so the origin is a point of inflexion.", "Asked for the maximum value of f, the answer given is the x-coordinate of the maximum point.", "\\(\\frac{d}{dx}e^{3x} = e^{3x}\\)"],
+      mistakes: ["For \\(f(x) = x^2\\), the gradient at x = 3 is f(3) = 9.", "\\(V'(3) = -22.3\\), so the volume is 22.3 litres.", "\\(\\frac{(1 + h)^2 - 1}{h}\\) with h = 0 gives \\(\\frac{0}{0}\\), so the gradient at x = 1 does not exist."],
+      tips: ["\"Interpret\" a rate of change: give the number, the units, and whether the quantity is increasing or decreasing at that instant."],
+    },
+    "math-12b": {
+      formulas: ["f increasing \\(\\Leftrightarrow f'(x) > 0\\)", "f decreasing \\(\\Leftrightarrow f'(x) < 0\\)", "stationary \\(\\Leftrightarrow f'(x) = 0\\)"],
+      methods: ["<strong>Intervals:</strong> differentiate → factorise f′ → find its zeros → test the sign in each interval → write the inequality.", "<strong>Quadratic f′:</strong> sketch the parabola of f′; a U-shape is negative between its roots and positive outside.", "<strong>For all x:</strong> show f′(x) > 0 using \\(x^2 \\ge 0\\), \\(e^x > 0\\) or a negative discriminant."],
+      traps: ["Solving f′(x) = 0 and stopping, without testing the sign either side.", "Reading the graph of f′ as if it were the graph of f.", "Writing \\(x < \\pm 2\\) instead of \\(-2 < x < 2\\)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(f'(x) = 3x^2 - 12 = 0\\) gives x = ±2, so f is decreasing for x < 2.", "The graph of f′ is falling for 0 < x < 3, so f is decreasing there.", "\\(f'(x) = x^2 - 4 < 0\\) gives \\(x < \\pm 2\\)."],
+      tips: ["Draw a quick sign diagram of f′ with its zeros marked: it gives the intervals and the nature of the stationary points in one go."],
+    },
+    "math-12c": {
+      formulas: ["\\(\\frac{d}{dx}x^n = nx^{n-1}\\)", "\\(\\frac{d}{dx}(ax^n) = anx^{n-1}\\)", "\\(\\frac{d}{dx}(c) = 0\\)", "\\(\\frac{d}{dx}(f + g) = f' + g'\\)"],
+      methods: ["<strong>Rewrite before differentiating:</strong> \\(\\frac{1}{\\sqrt{x}} = x^{-1/2}\\), \\(\\frac{5}{x} = 5x^{-1}\\).", "<strong>Expand and split:</strong> multiply out brackets and divide each term by the denominator before using the power rule.", "<strong>Unknown coefficients:</strong> differentiate with the letters in, then turn each given gradient into an equation."],
+      traps: ["\\(\\frac{d}{dx}x^{-1} = -x^{-2}\\), not \\(-x^{0}\\) or \\(x^{-2}\\): subtract 1 from a negative power carefully.", "Differentiating a quotient of polynomials term by term (top over bottom).", "Forgetting that the derivative of a constant is zero."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(\\frac{d}{dx}\\left(\\frac{3}{x^2}\\right) = \\frac{3}{2x}\\)", "\\(\\frac{d}{dx}\\left(\\frac{x^3 + 1}{x}\\right) = \\frac{3x^2}{1}\\)", "\\(\\frac{d}{dx}(5x^2 + 7) = 10x + 7\\)"],
+      tips: ["Write the index form as a separate line: it earns the M1 and makes the A1s easy."],
+    },
+    "math-12d": {
+      formulas: ["tangent: \\(y - f(a) = f'(a)(x - a)\\)", "normal gradient \\(= -\\frac{1}{f'(a)}\\)", "perpendicular: \\(m_1 m_2 = -1\\)"],
+      methods: ["<strong>Tangent at x = a:</strong> find f(a) and f'(a), then \\(y - f(a) = f'(a)(x - a)\\). Normal gradient = \\(-1/f'(a)\\).", "<strong>Parallel to a line:</strong> set f′(x) equal to that line's gradient and solve for the point(s).", "<strong>Given tangent line:</strong> use both 'same point' and 'same gradient' to get two equations."],
+      traps: ["Normal gradient written as −m or 1/m instead of −1/m.", "Using f′(a) as the y-coordinate of the point.", "Not giving the equation in the requested form (ax + by + c = 0 with integers)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The tangent to \\(y = x^2\\) at x = 3 has gradient 6, so the normal has gradient −6.", "At x = 2 the gradient is 4, so the tangent is y − 4 = 4(x − 2), using the point (2, 4) for the curve y = x³ − 2x² + 1.", "The tangent at x = 1 is \\(y = 2x\\) because \\(f'(x) = 2x\\)."],
+      tips: ["Write the point (a, f(a)) and the gradient on separate lines before the equation: each earns a mark."],
+    },
+    "math-12e": {
+      formulas: ["\\(\\frac{d}{dx}\\sin x = \\cos x\\), \\(\\frac{d}{dx}\\cos x = -\\sin x\\)", "\\(\\frac{d}{dx}e^x = e^x\\), \\(\\frac{d}{dx}\\ln x = \\frac1x\\)", "chain: \\(\\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx}\\)", "product: \\((uv)' = u'v + uv'\\)", "quotient: \\(\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}\\)"],
+      methods: ["<strong>Chain rule:</strong> derivative of the outside × derivative of the inside: \\(\\frac{d}{dx}\\sin(3x^2) = 6x\\cos(3x^2)\\).", "<strong>Product/quotient:</strong> write u, v, u′, v′ in a small table first, then substitute into the rule.", "<strong>Log laws first:</strong> \\(\\ln(x^2) = 2\\ln x\\), \\(\\ln(5x) = \\ln 5 + \\ln x\\) make differentiation quicker.", "<strong>Simplify:</strong> factorise common factors such as \\(e^{2x}\\) at the end."],
+      traps: ["Forgetting the chain rule on \\(e^{3x}\\) or \\(\\sin 2x\\).", "Quotient rule in the wrong order (uv′ − u′v).", "Writing \\(\\frac{d}{dx}\\ln(3x) = \\frac{1}{3x}\\)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(\\frac{d}{dx}e^{3x} = e^{3x}\\)", "\\(\\frac{d}{dx}(x^2\\sin x) = 2x\\cos x\\)", "\\(\\frac{d}{dx}\\ln(3x) = \\frac{1}{3x}\\)"],
       tips: ["\"Show that\" derivatives: write every step; the final line must match exactly."],
+    },
+    "math-12f": {
+      formulas: ["\\(f''(x) = \\frac{d^2y}{dx^2} = \\frac{d}{dx}\\left(f'(x)\\right)\\)", "concave up: \\(f''(x) > 0\\)", "concave down: \\(f''(x) < 0\\)"],
+      methods: ["<strong>Second derivative:</strong> simplify f′(x) fully, then differentiate again.", "<strong>Concavity intervals:</strong> solve f″(x) > 0 or f″(x) < 0 like any inequality.", "<strong>Graph links:</strong> zeros of f′ = stationary points of f; turning points of f′ = inflexions of f; f′ above the axis = f increasing."],
+      traps: ["Confusing 'f′ is decreasing' (concave down) with 'f is decreasing' (f′ < 0).", "Reading a turning point of the graph of f′ as a maximum of f.", "Differentiating only once when f″ is asked."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The graph of f′ has a minimum at x = 1, so f has a minimum at x = 1.", "f″(x) < 0 for x < 1, so f is decreasing for x < 1.", "For \\(f(x) = x^3\\), \\(f''(x) = 3x^2\\)."],
+      tips: ["When a graph is given, write which function it shows (f, f′ or f″) at the top of your working before reading anything from it."],
+    },
+    "math-12g": {
+      formulas: ["stationary: \\(f'(x) = 0\\)", "\\(f''(x) > 0\\): local minimum; \\(f''(x) < 0\\): local maximum", "inflexion: \\(f''(x) = 0\\) and f″ changes sign"],
+      methods: ["<strong>Stationary points:</strong> f'(x) = 0, then classify with f''(x) (> 0 min, < 0 max) or a sign diagram of f′.", "<strong>Optimisation:</strong> write one-variable function → differentiate → set = 0 → justify max/min → answer the question asked.", "<strong>Inflexion:</strong> solve f″ = 0 and show that f″ changes sign; check f′ there to see whether it is stationary."],
+      traps: ["Point of inflexion needs f'' to <strong>change sign</strong>, not just f'' = 0.", "Giving the x-value when the question asks for the maximum value (y).", "Not rejecting solutions outside the domain (e.g. x = 15 for a box from a 30 cm sheet)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["For \\(f(x) = x^4\\), \\(f''(0) = 0\\), so the origin is a point of inflexion.", "Asked for the maximum value of f, the answer given is the x-coordinate of the maximum point.", "f′(2) = 0, so (2, f(2)) is a local maximum."],
+      tips: ["Optimisation: write a sentence answer with units at the end (\"the maximum volume is 2000 cm³\")."],
       diagrams: [{ title: "\\(y = x^3 - 3x^2 - 9x + 2\\): max (−1, 7), min (3, −25)", x: [-3, 5], y: [-30, 12], curves: [{ f: (x) => x ** 3 - 3 * x * x - 9 * x + 2 }], points: [{ at: [-1, 7], label: "max (−1, 7)" }, { at: [3, -25], label: "min (3, −25)" }] }],
     },
     "math-13": {
-      formulas: ["\\(\\int x^n dx = \\frac{x^{n+1}}{n+1} + C\\)", "\\(\\int \\frac{1}{x}dx = \\ln|x| + C\\)", "\\(\\int e^{ax}dx = \\frac{1}{a}e^{ax} + C\\)", "Area = \\(\\int_a^b (f - g)\\,dx\\)"],
-      methods: ["<strong>Reverse chain rule by inspection:</strong> \\(\\int 2x(x^2+1)^3dx = \\frac{(x^2+1)^4}{4} + C\\) - differentiate your answer to check.", "<strong>Find C</strong> using a given point straight away.", "<strong>Area between curves:</strong> find intersections, then integrate (top − bottom)."],
-      traps: ["Forgetting + C on indefinite integrals.", "Area below the x-axis gives a negative integral - split at the roots and take absolute values.", "\\(\\int \\frac{1}{x^2}dx \\neq \\ln x^2\\)."],
+      formulas: ["\\(\\int ax^n dx = \\frac{ax^{n+1}}{n+1} + C\\ (n \\neq -1)\\)", "area \\(= \\int_a^b f(x)\\,dx\\) when \\(f(x) > 0\\)", "\\(\\int_a^b f(x)\\,dx = F(b) - F(a)\\)"],
+      methods: ["<strong>Integrate term by term:</strong> add 1 to the power, divide by the new power, add one + C.", "<strong>Find C</strong> using a given point straight away, and write f(x) in full.", "<strong>Area under a curve (Paper 2):</strong> find the limits (roots or given lines), write \\(\\int_a^b f(x)\\,dx\\), then use the GDC."],
+      traps: ["Forgetting + C on indefinite integrals.", "Multiplying by the power instead of dividing (differentiating by mistake).", "Writing only the GDC value with no integral and limits."],
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["\\(\\int 2x\\,dx = x^2\\)", "The area between \\(y = x^2 - 3x\\) and the x-axis for \\(0 \\le x \\le 4\\) is \\(\\left|\\int_0^4 (x^2 - 3x)\\,dx\\right| = \\frac{8}{3}\\).", "\\(\\int \\frac{1}{x^2}\\,dx = \\ln x^2 + c\\)"],
+      mistakes: ["\\(\\int 2x\\,dx = x^2\\)", "\\(\\int 3x^2\\,dx = 6x + C\\)", "Given f′(x) = 2x and f(1) = 4, f(x) = x² + 4."],
       tips: ["Paper 2: write the integral with limits, then give the GDC value - the written integral earns the method mark."],
+    },
+    "math-13b": {
+      formulas: ["\\(\\int \\frac{1}{x}dx = \\ln|x| + C\\)", "\\(\\int e^{ax+b}dx = \\frac{1}{a}e^{ax+b} + C\\)", "\\(\\int \\sin(ax+b)dx = -\\frac1a\\cos(ax+b) + C\\)", "\\(\\int \\frac{g'(x)}{g(x)}dx = \\ln|g(x)| + C\\)"],
+      methods: ["<strong>Reverse chain rule by inspection:</strong> \\(\\int 2x(x^2+1)^3dx = \\frac{(x^2+1)^4}{4} + C\\) - differentiate your answer to check.", "<strong>Linear inside:</strong> integrate the outside function and divide by a, the coefficient of x.", "<strong>Substitution:</strong> u = inside function, replace g′(x) dx by du, integrate, substitute back."],
+      traps: ["\\(\\int \\frac{1}{x^2}dx \\neq \\ln x^2\\).", "Multiplying by a instead of dividing for \\(\\int f(ax + b)\\,dx\\).", "\\(\\int \\sin x\\,dx = \\cos x\\) (the minus sign is missing)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(\\int \\frac{1}{x^2}\\,dx = \\ln x^2 + c\\)", "\\(\\int e^{4x}\\,dx = 4e^{4x} + c\\)", "\\(\\int (x^2 + 1)^3\\,dx = \\frac{(x^2 + 1)^4}{4} + c\\)"],
+      tips: ["If the derivative of the inside is missing (not just a constant factor), inspection does not work: expand first."],
+    },
+    "math-13c": {
+      formulas: ["\\(\\int_a^b f(x)dx = F(b) - F(a)\\)", "\\(\\int_b^a f = -\\int_a^b f\\)", "area \\(= \\int_a^b |f(x)|\\,dx\\)", "Area = \\(\\int_a^b (f - g)\\,dx\\)"],
+      methods: ["<strong>Exact value:</strong> \\([F(x)]_a^b\\), substitute upper minus lower, simplify with ln/e/π rules.", "<strong>Area below the axis:</strong> find the roots, split the integral, add absolute values.", "<strong>Area between curves:</strong> find intersections, then integrate (top − bottom)."],
+      traps: ["Area below the x-axis gives a negative integral - split at the roots and take absolute values.", "Integrating across a root in one go, so areas cancel.", "Using bottom − top and reporting a negative area."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The area between \\(y = x^2 - 3x\\) and the x-axis for \\(0 \\le x \\le 4\\) is \\(\\left|\\int_0^4 (x^2 - 3x)\\,dx\\right| = \\frac{8}{3}\\).", "\\(\\int_1^3 (f(x) + 3)\\,dx = \\int_1^3 f(x)\\,dx + 3\\)", "\\(\\int_3^1 f(x)\\,dx = \\int_1^3 f(x)\\,dx\\)"],
+      tips: ["Sketch the region first and shade it: it shows where to split and which curve is on top."],
       diagrams: [{ title: "Area between \\(y = 2x\\) and \\(y = x^2\\) is \\(\\frac{4}{3}\\)", x: [-1, 3], y: [-1, 6], shade: { from: 0, to: 2, color: "a" }, curves: [{ f: (x) => 2 * x, color: "b", label: "y = 2x", labelX: 2.4 }, { f: (x) => x * x, label: "y = x²", labelX: 2.2 }], points: [{ at: [2, 4], label: "(2, 4)" }] }],
     },
     "math-14": {

@@ -91,7 +91,7 @@ IB.addTopics("math", [
     ],
   },
   {
-    id: "math-h4", code: "5.12-5.19 AHL", after: "math-13", unit: "Topic 5: Calculus (HL)", title: "Further calculus: limits, integration techniques, ODEs and Maclaurin series",
+    id: "math-h4", code: "5.12-5.19 AHL", after: "math-13c", unit: "Topic 5: Calculus (HL)", title: "Further calculus: limits, integration techniques, ODEs and Maclaurin series",
     summary: "Continuity and differentiability, limits and L'Hôpital's rule, implicit differentiation, related rates, derivatives of inverse and reciprocal trig, integration by substitution and parts, volumes of revolution, first-order differential equations (separable, homogeneous, integrating factor, Euler's method) and Maclaurin series.",
     concepts: [
       { h: "L'Hôpital's rule", b: "<p>If \\(\\lim \\frac{f(x)}{g(x)}\\) gives 0/0 or ∞/∞, then it equals \\(\\lim \\frac{f'(x)}{g'(x)}\\) (repeat if needed).</p>" },
