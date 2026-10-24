@@ -20,7 +20,7 @@
   const T = {
     /* ---------------- foundations ---------------- */
     ppc: {
-      name: "Production possibilities curve (PPC)", topics: ["econ-1", "econ-8", "econ-11", "econ-18"],
+      name: "Production possibilities curve (PPC)", topics: ["econ-1", "econ-8", "econ-11", "econ-18", "econ-18b"],
       kw: [/\bppc\b|production possibilit/i, /opportunity cost/i, /actual (and|vs\.?) potential|potential output|capital goods|consumer goods/i],
       items: [
         { t: "Axes labelled with two goods (or capital goods / consumer goods)" },
