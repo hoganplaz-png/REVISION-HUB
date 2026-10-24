@@ -15,7 +15,7 @@ IB.extend("geo", {
 
 IB.addTopics("geo", [
   {
-    id: "geo-h1", code: "HL Core 1", after: "geo-7", unit: "HL core: Geographic perspectives - global interactions", title: "Power, places and networks",
+    id: "geo-h1", code: "HL Core 1", after: "geo-7c", unit: "HL core: Geographic perspectives - global interactions", title: "Power, places and networks",
     summary: "Global interactions and global power, global networks and flows (trade, FDI, aid, remittances, data), and human and physical influences on global interactions (supranational bodies, technology, protectionism).",
     concepts: [
       { h: "Measuring global interactions", b: "<p>KOF Globalization Index (economic, social, political dimensions). Global superpowers and emerging powers (G7, G20, BRICS) shape interactions through hard power (military, economic) and soft power (culture, diplomacy).</p>", yue: "全球化可以用 KOF 指數量度；大國用硬實力（軍事、經濟）同軟實力（文化、外交）影響世界。" },

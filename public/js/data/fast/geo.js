@@ -1,5 +1,5 @@
 /* ⏱ 10-minute fast notes · Geography SL (format: see js/fastnotes.js).
-   Core = Paper 2 (geo-1 … geo-7), options = Paper 1 (geo-8 … geo-11, geo-h4), skills = geo-12.
+   Core = Paper 2 (geo-1 … geo-7c), options = Paper 1 (geo-8 … geo-11, geo-h4), skills = geo-12.
    Case-study numbers are rounded, quotable figures; check your teacher's preferred sources. */
 IB.addFast({
   "geo-1": {
@@ -1391,16 +1391,16 @@ IB.addFast({
   },
 
   "geo-7": {
-    title: "Resource consumption · Footprints · Malthus vs Boserup · Water-food-energy nexus · Stewardship",
-    intro: "Paper 2 core，常有 infographic / data-response。高分 = 引兩個數據 + 識解釋 nexus 連結 + 識用 sustainability 準則評價。",
+    title: "Global trends in consumption · Middle class · Ecological footprint · Water, food and energy trends",
+    intro: "Paper 2 core，常有 infographic / data-response。高分 = 引兩個數據 + 識計 footprint / per capita + 講清楚消費點解上升。",
     parts: [
       {
-        h: "Master idea 總橋：Demand vs Supply vs Security",
+        h: "Master idea 總橋：Population × Income → Consumption",
         min: 2,
         blocks: [
-          ["key", "<b>Population × income (consumption per person) → demand for water, food, energy → pressure on supply → security or insecurity</b><br>解法有兩條路：增加 supply（technology, Boserup）定減少 demand + waste（circular economy, stewardship）。"],
-          ["flow", [["①", "Demand<br>pop + middle class"], ["②", "Measure<br>footprint, per capita"], ["③", "Supply limits<br>physical / economic"], ["④", "Nexus<br>links + trade-offs"], ["⑤", "Stewardship<br>circular · SDGs"]]],
-          ["note", "<b>Definitions</b><br><b>Ecological footprint</b>: the area of biologically productive land and water required to produce the resources a population consumes and to absorb its wastes.<br><b>Biocapacity</b>: the productive area available to provide resources and absorb wastes.<br><b>Resource security</b>: reliable access to sufficient, affordable resources of acceptable quality.<br><b>Water-food-energy nexus</b>: the interdependence of water, food and energy, so actions affecting one affect the others.<br><b>Circular economy</b>: an economic system that aims to eliminate waste and keep resources in use through reuse, repair, remanufacture and recycling."],
+          ["key", "<b>Population × consumption per person (income) → demand for water, food, energy → measured by footprint vs biocapacity</b><br>人口增長之外，更大推力係中產階級擴大：人均消耗升得快過人口。"],
+          ["flow", [["①", "Poverty falls<br>since 1990"], ["②", "Middle class<br>3.5-4 bn"], ["③", "Demand<br>meat, energy, goods"], ["④", "Measure<br>footprint, per capita"], ["⑤", "Patterns<br>water · food · energy"]]],
+          ["note", "<b>Definitions</b><br><b>Ecological footprint</b>: the area of biologically productive land and water required to produce the resources a population consumes and to absorb its wastes.<br><b>Biocapacity</b>: the productive area available to provide resources and absorb wastes.<br><b>Global middle class</b>: people with income to spend beyond basic needs (roughly $10-100 per person per day).<br><b>Energy mix</b>: the share of each energy source in total energy supply."],
         ],
       },
       {
@@ -1410,11 +1410,8 @@ IB.addFast({
           ["grid", [
             ["Footprint", "足跡 > 土地 = 透支", "footprint > biocapacity = ecological deficit"],
             ["Falkenmark", "一七壓力、一千缺、五百絕", "1700 stress · 1000 scarcity · 500 absolute (m³/person/yr)"],
-            ["Malthus", "人口幾何、糧食算術", "geometric vs arithmetic → checks"],
-            ["Boserup", "壓力生發明", "necessity is the mother of invention"],
-            ["Nexus", "水糧能，牽一髮動全身", "water ↔ food ↔ energy"],
-            ["Circular", "唔再 take-make-dispose", "reuse · repair · recycle"],
-            ["Security", "夠、買得起、安全、穩定", "availability · access · utilisation · stability"],
+            ["Middle class", "有錢就多肉、多車、多冷氣", "income → meat, cars, air-conditioning"],
+            ["Energy mix", "化石仍佔八成", "fossil fuels ~80% of primary energy"],
           ]],
           ["table", ["Fact", "Value"], [
             ["Humanity's footprint", "about 1.7 Earths per year (Earth Overshoot Day around late July/early August)"],
@@ -1422,10 +1419,8 @@ IB.addFast({
             ["Falkenmark thresholds (m³ per person per year)", "&lt;1700 water stress; &lt;1000 water scarcity; &lt;500 absolute scarcity"],
             ["Agriculture share of global freshwater withdrawals", "about 70%"],
             ["Fossil fuel share of global primary energy", "about 80%"],
-            ["Food wasted globally", "about one third of food produced"],
+            ["Global energy use", "about 155 EJ (1965) → about 620 EJ (2023)"],
             ["Extreme poverty line", "$2.15/day (2017 prices); World Bank updated to $3.00/day (2021 prices) in 2025"],
-            ["SDGs", "17 goals agreed 2015, target year 2030; SDG 6 water, SDG 7 energy, SDG 12 consumption/production"],
-            ["Malthus / Boserup / Limits to Growth", "1798 / 1965 / 1972 (Club of Rome)"],
           ]],
         ],
       },
@@ -1436,6 +1431,7 @@ IB.addFast({
           ["table", ["Trend", "Why", "Impact"], [
             ["Rising middle class", "incomes rise in China, India, SE Asia", "more meat, cars, appliances, energy; higher footprint"],
             ["Falling extreme poverty", "mostly East Asia since 1990", "more people consuming; positive for development"],
+            ["Changing diets", "nutrition transition as incomes rise", "more meat and dairy → more land and water per calorie"],
             ["Urbanisation", "city lifestyles use more energy and goods", "higher per capita demand"],
             ["Energy mix shift", "solar and wind growing fastest; fossil still about 80%", "emissions still high; nuclear debated"],
             ["Unequal consumption", "HIC footprint far above LIC", "fairness, resource justice"],
@@ -1450,41 +1446,8 @@ IB.addFast({
         ],
       },
       {
-        h: "Theories + security + nexus",
-        min: 3,
-        blocks: [
-          ["table", ["", "Malthus (1798)", "Boserup (1965)"], [
-            ["Claim", "population grows geometrically (1,2,4,8), food arithmetically (1,2,3,4)", "population pressure stimulates agricultural innovation"],
-            ["Outcome", "positive checks: famine, disease, war", "intensification, new technology (Green Revolution)"],
-            ["Support", "Sahel famines, Malthusian traps in some LICs", "Green Revolution; world food output outpaced population"],
-            ["Criticism", "ignored technology and fertility decline", "environmental limits, soil and water degradation, unequal access"],
-            ["Modern version", "neo-Malthusian: Limits to Growth (1972)", "resource optimists, e.g. Julian Simon"],
-          ]],
-          ["table", ["Security", "Four dimensions / key idea", "Threat example"], [
-            ["Water", "availability, access, quality, reliability; Falkenmark thresholds", "Middle East and North Africa physical scarcity; economic scarcity in sub-Saharan Africa"],
-            ["Food", "availability, access, utilisation, stability", "droughts, price spikes, conflict"],
-            ["Energy", "reliable, affordable supply and diversity of sources", "Europe's gas dependence on Russia before 2022"],
-          ]],
-          ["note", "<b>Nexus links:</b> agriculture uses about 70% of freshwater withdrawals; energy is needed to pump groundwater and desalinate; thermal power stations and hydropower need water; biofuels use farmland (food vs fuel); fertiliser production uses energy. <b>Trade-off example:</b> subsidised electricity for pumps in India raises food output but lowers water tables and raises coal demand."],
-        ],
-      },
-      {
-        h: "Stewardship 資源管理",
-        min: 2,
-        blocks: [
-          ["table", ["Approach", "Idea", "Example", "Evaluation"], [
-            ["Circular economy", "design out waste, keep materials in use", "Netherlands aims for circular economy by 2050; EU right to repair", "reduces demand and waste; not all materials recyclable; needs energy; slow uptake in LICs"],
-            ["Water recycling", "treat wastewater to drinking standard", "Singapore NEWater", "reliable supply; energy and cost, public acceptance"],
-            ["Food waste reduction", "cut waste in supply chain and homes", "date-label reform, redistribution schemes", "cheap; behavioural change needed"],
-            ["Renewable energy", "replace fossil fuels", "solar in India, wind in Denmark", "low carbon; intermittent, land use"],
-            ["SDGs / international targets", "shared goals and monitoring", "SDG 6, 7, 12", "voluntary; uneven progress"],
-          ]],
-          ["rhyme", "口訣", "少用、重用、再用，仲有轉換能源", "Reduce · reuse · recycle + renew。Sustainable = meets present needs without compromising future generations."],
-        ],
-      },
-      {
         h: "Worked examples 歷屆題型",
-        min: 6,
+        min: 4,
         blocks: [
           ["eg", "<b>P2 · 2 marks</b> Define the term ecological footprint. 常考：area + consumption + waste 三個關鍵詞。", [
             "The area of biologically productive land and water [1]",
@@ -1499,16 +1462,191 @@ IB.addFast({
             "× 365 = 214.7 → day 215 [1]",
             "Day 215 = 3 August (212 days to end of July) [1]",
           ]],
+          ["eg", "<b>P2 · 4 marks (infographic)</b> An infographic shows energy demand rising from 12,000 to 15,600 Mtoe between 2000 and 2020 with solar and wind rising fastest. (a) Calculate % change. (b) Suggest one reason for the rise. 常考：infographic = 引用 data + 一個 reason。", [
+            "(a) (15,600 − 12,000) ÷ 12,000 × 100 = <b>+30%</b> [1+1]",
+            "(b) Growth of middle class in emerging economies (more cars, appliances, air conditioning) [1] or population growth/industrialisation [1]",
+          ]],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["trap", [
+            "Falkenmark 數字記反：stress 1700、scarcity 1000、absolute 500。",
+            "Footprint 寫成 'carbon footprint'：ecological footprint 係土地面積。",
+            "Overshoot day 計算用 footprint ÷ biocapacity：要反轉（biocapacity ÷ footprint）。",
+            "Calculation 唔寫 units，或 % change 分母用錯（除以舊值）。",
+            "Infographic 只描述，冇引用 data。",
+            "以為 renewables 已經主導：化石燃料仍約 80%。",
+          ]],
+          ["check", [
+            "我識逐字 define footprint, biocapacity, middle class, energy mix。",
+            "我識背 Falkenmark 三個 threshold 並做 per capita 計算。",
+            "我識解釋中產階級擴大點樣改變飲食同能源需求。",
+            "我識計 % change、需要幾多個地球同 Overshoot Day。",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "貧窮減少 → 中產擴大 → 人均消耗上升",
+      "足跡 > 土地 = 透支（約 1.7 Earths）",
+      "一七壓力、一千缺、五百絕（m³/人/年）",
+      "農業用約 70% 淡水；有錢多食肉",
+      "化石燃料仍約 80% 一次能源",
+    ],
+    practice: [
+      { q: "Approximately what share of global freshwater withdrawals is used by agriculture?", m: 1, o: ["A. 10%", "B. 30%", "C. 50%", "D. 70%"], a: "<b>D</b> [1]." },
+      { q: "A country has less than 1,000 m³ of renewable water per person per year. Which Falkenmark category is this?", m: 1, o: ["A. Adequate supply", "B. Water stress", "C. Water scarcity", "D. Absolute scarcity only if below 100"], a: "<b>C</b> [1]. Scarcity &lt; 1,000; absolute scarcity &lt; 500." },
+      { q: "State two reasons why global energy demand is rising.", m: 2, a: "Population growth [1]; rising incomes/middle class in emerging economies, industrialisation, urbanisation [1]." },
+      { q: "A country's water supply is 3 billion m³/yr and its population is 4 million. Calculate water per person and state the category.", m: 3, a: "3 × 10⁹ ÷ 4 × 10⁶ = 750 m³ per person per year [1+1]; below 1,000 → water scarcity [1]." },
+      { q: "Explain two reasons why the ecological footprint per person differs between countries.", m: 4, a: "Income level: higher incomes mean greater consumption of meat, energy, goods, so larger footprint (USA vs India) [1+1]; energy source/lifestyle: fossil-fuel reliance and car-based urban form increase footprint, while efficient public transport and renewables reduce it [1+1]." },
+    ],
+  },
+
+  "geo-7b": {
+    title: "Impacts of changing consumption · Water, food and energy security · Nexus · Virtual water · Waste",
+    intro: "Paper 2 core。高分 = nexus 一定要講連結（A → B）+ 有地方例子 + 分清 physical / economic scarcity。",
+    parts: [
+      {
+        h: "Master idea 總橋：Security + Nexus",
+        min: 2,
+        blocks: [
+          ["key", "<b>More consumption → pressure on water, food and energy → insecurity; the three are linked, so pressure on one spreads to the others</b><br>氣候變化同貿易（虛擬水、廢物出口）令影響跨越國界。"],
+          ["flow", [["①", "Demand rises"], ["②", "Security<br>water · food · energy"], ["③", "Nexus<br>links + trade-offs"], ["④", "Climate change<br>drought, heat"], ["⑤", "Waste<br>e-waste, recycling"]]],
+          ["note", "<b>Definitions</b><br><b>Resource security</b>: reliable access to sufficient, affordable resources of acceptable quality.<br><b>Water-food-energy nexus</b>: the interdependence of water, food and energy, so actions affecting one affect the others.<br><b>Virtual water</b>: the water used to produce a good, effectively traded when the good is exported.<br><b>Energy security</b>: uninterrupted availability of energy at an affordable price."],
+          ["rhyme", "口訣", "水糧能，牽一髮動全身", "Water ↔ food ↔ energy: always write the arrow and the example."],
+        ],
+      },
+      {
+        h: "Security + nexus",
+        min: 3,
+        blocks: [
+          ["table", ["Security", "Four dimensions / key idea", "Threat example"], [
+            ["Water", "availability, access, quality, reliability; physical vs economic scarcity", "Middle East and North Africa physical scarcity; economic scarcity in sub-Saharan Africa"],
+            ["Food", "availability, access, utilisation, stability", "droughts, price spikes, conflict"],
+            ["Energy", "reliable, affordable supply and diversity of sources", "Europe's gas dependence on Russia before 2022"],
+          ]],
+          ["note", "<b>Nexus links:</b> agriculture uses about 70% of freshwater withdrawals; energy is needed to pump groundwater and desalinate; thermal power stations and hydropower need water; biofuels use farmland (food vs fuel); fertiliser production uses energy. <b>Trade-off example:</b> subsidised electricity for pumps in India raises food output but lowers water tables and raises coal demand."],
+          ["table", ["Climate change link", "Example"], [
+            ["Drought cuts crops and hydropower together", "Lake Kariba, Zambia and Zimbabwe power cuts (2024)"],
+            ["Heatwaves raise power demand but limit cooling water", "France cut nuclear output in the 2022 heatwave"],
+            ["Glacier retreat threatens irrigation water", "Indus and Ganges basins"],
+          ]],
+        ],
+      },
+      {
+        h: "Virtual water + waste",
+        min: 2,
+        blocks: [
+          ["table", ["Issue", "Key fact", "Impact"], [
+            ["Virtual water", "about 15 000 litres per kg of beef", "water-scarce importers (Saudi Arabia, Egypt) save local water but depend on world markets"],
+            ["E-waste", "about 62 million tonnes in 2022; about 22% formally recycled", "informal dismantling in Agbogbloshie (Ghana): toxic smoke, polluted soil and water"],
+            ["Plastic waste trade", "China banned imports in 2018", "flows diverted to South-East Asia"],
+            ["Recycling rates", "vary with income, laws, infrastructure", "landfill taxes and deposit-return schemes raise rates"],
+          ]],
+          ["trap", ["Virtual water 唔係雲入面嘅水，係生產貨品用咗嘅水。", "E-waste 出口唔止環境問題，仲有健康同經濟影響。"]],
+        ],
+      },
+      {
+        h: "Worked examples 歷屆題型",
+        min: 3,
+        blocks: [
           ["eg", "<b>P2 · 4 marks</b> Explain one link within the water-food-energy nexus and one resulting trade-off. 常考：nexus 一定問兩個 element 的連結。", [
             "Irrigation needs pumps powered by electricity/diesel (food needs energy and water) [1]",
             "Cheap electricity encourages over-pumping, lowering the water table [1]",
             "Trade-off: more food production now but groundwater depletion threatens future water and food security [1]",
             "Coal-fired power for pumps raises emissions and cooling-water demand (energy needs water) [1]",
           ]],
-          ["eg", "<b>P2 · 4 marks (infographic)</b> An infographic shows energy demand rising from 12,000 to 15,600 Mtoe between 2000 and 2020 with solar and wind rising fastest. (a) Calculate % change. (b) Suggest one reason for the rise. 常考：infographic = 引用 data + 一個 reason。", [
-            "(a) (15,600 − 12,000) ÷ 12,000 × 100 = <b>+30%</b> [1+1]",
-            "(b) Growth of middle class in emerging economies (more cars, appliances, air conditioning) [1] or population growth/industrialisation [1]",
+          ["eg", "<b>P2 · 2 marks (calculation)</b> A country consumes 250 Mtoe of energy and produces 90 Mtoe. Calculate the percentage imported. 常考：import dependence。", [
+            "(250 − 90) ÷ 250 × 100 [1]",
+            "= <b>64%</b> imported [1]",
           ]],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["trap", [
+            "Nexus 只講一個 resource，冇講連結。",
+            "Physical 同 economic scarcity 混淆。",
+            "Food security 只講產量：access（貧窮、價格）先係最常見問題。",
+            "Energy security 冇例子：EU 同俄羅斯天然氣（2022）。",
+          ]],
+          ["check", [
+            "我識 define resource security, nexus, virtual water, energy security。",
+            "我識講三個 nexus 連結同一個 trade-off。",
+            "我識用一個例子講氣候變化點樣影響 nexus。",
+            "我識講 e-waste 出口嘅兩個影響。",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "水糧能，牽一髮動全身（農業用約 70% 淡水）",
+      "Physical 缺水 = 冇水；economic 缺水 = 冇錢冇基建",
+      "Food security 四柱：availability · access · utilisation · stability",
+      "旱災同時打擊糧食同水力發電（Kariba 2024）",
+      "E-waste 約 62 Mt，只有約 22% 正式回收",
+    ],
+    practice: [
+      { q: "Much of sub-Saharan Africa has rivers and aquifers but limited piped supply. This is:", m: 1, o: ["A. physical water scarcity", "B. economic water scarcity", "C. water surplus", "D. virtual water"], a: "<b>B</b> [1]. Lack of investment, not lack of water." },
+      { q: "With reference to a named example, explain one way a state has improved water security through water recycling.", m: 3, a: "Singapore's NEWater treats used water with membranes and UV to drinking standard [1]; reduces dependence on imports from Malaysia/rainfall [1]; supplies industry and top-up of reservoirs, increasing reliability [1]." },
+      { q: "Outline the concept of virtual water.", m: 2, a: "The water used to produce a good, effectively traded when the good is exported [1]; e.g. about 15 000 litres for 1 kg of beef, so water-scarce countries import cereals instead of growing them [1]." },
+      { q: "Explain how a drought can threaten both food security and energy security.", m: 4, a: "Lower rainfall reduces soil moisture and irrigation water, cutting crop yields and raising food prices [1+1]; lower river and reservoir levels reduce hydropower output, e.g. power cuts in Zambia when Lake Kariba fell in 2024 [1+1]." },
+    ],
+  },
+
+  "geo-7c": {
+    title: "Resource stewardship · Malthus vs Boserup · Circular economy · SDGs",
+    intro: "Paper 2 core，多數係 10 分 discuss / evaluate 題。高分 = 比較觀點 + 用 sustainability 準則評價策略 + 有條件嘅結論。",
+    parts: [
+      {
+        h: "Master idea 總橋：Pessimists vs Optimists → Strategies",
+        min: 2,
+        blocks: [
+          ["key", "<b>Will resources run out? Malthus / neo-Malthusians say yes unless growth stops; Boserup / optimists say innovation responds</b><br>解法有兩條路：增加 supply（technology, Boserup）定減少 demand + waste（circular economy, SDGs, stewardship）。"],
+          ["note", "<b>Definitions</b><br><b>Resource stewardship</b>: the responsible use and protection of resources for present and future generations.<br><b>Circular economy</b>: an economic system that aims to eliminate waste and keep resources in use through reuse, repair, remanufacture and recycling.<br><b>Rebound effect</b>: efficiency savings cancelled out by higher consumption."],
+          ["grid", [
+            ["Malthus", "人口幾何、糧食算術", "geometric vs arithmetic → checks"],
+            ["Boserup", "壓力生發明", "necessity is the mother of invention"],
+            ["Circular", "唔再 take-make-dispose", "reuse · repair · recycle"],
+          ]],
+        ],
+      },
+      {
+        h: "Theories 觀點",
+        min: 3,
+        blocks: [
+          ["table", ["", "Malthus (1798)", "Boserup (1965)"], [
+            ["Claim", "population grows geometrically (1,2,4,8), food arithmetically (1,2,3,4)", "population pressure stimulates agricultural innovation"],
+            ["Outcome", "positive checks: famine, disease, war", "intensification, new technology (Green Revolution)"],
+            ["Support", "Sahel famines, Malthusian traps in some LICs", "Green Revolution; world food output outpaced population"],
+            ["Criticism", "ignored technology and fertility decline", "environmental limits, soil and water degradation, unequal access"],
+            ["Modern version", "neo-Malthusian: Limits to Growth (1972)", "resource optimists, e.g. Julian Simon"],
+          ]],
+          ["note", "<b>Technocentric</b>: technology and markets will solve shortages. <b>Ecocentric</b>: consumption must fall to stay within natural limits."],
+        ],
+      },
+      {
+        h: "Stewardship 資源管理",
+        min: 2,
+        blocks: [
+          ["table", ["Approach", "Idea", "Example", "Evaluation"], [
+            ["Circular economy", "design out waste, keep materials in use", "Netherlands aims for circular economy by 2050; EU right to repair", "reduces demand and waste; not all materials recyclable; needs energy; slow uptake in LICs"],
+            ["Food waste reduction", "cut waste in supply chain and homes", "date-label reform, redistribution schemes", "cheap; behavioural change needed"],
+            ["Renewable energy", "replace fossil fuels", "solar in India, wind in Denmark", "low carbon; intermittent, land use"],
+            ["SDGs / international targets", "shared goals and monitoring", "SDG 2, 6, 7, 12", "voluntary; uneven progress"],
+          ]],
+          ["rhyme", "口訣", "少用、重用、再用，仲有轉換能源", "Reduce · reuse · recycle + renew。Sustainable = meets present needs without compromising future generations."],
+        ],
+      },
+      {
+        h: "Worked examples 歷屆題型",
+        min: 3,
+        blocks: [
           ["eg", "<b>P2 · 10 marks</b> Discuss the view that a circular economy is the most effective way to achieve resource security. 常考：discuss = 兩邊 + 例子 + 判斷。", [
             "Define circular economy and resource security [1-2]",
             "For [3]: less raw material demand, less waste and emissions; Netherlands 2050 aim, EU right to repair, Singapore NEWater",
@@ -1524,47 +1662,30 @@ IB.addFast({
         blocks: [
           ["trap", [
             "Malthus 同 Boserup 倒轉：Malthus 悲觀（checks），Boserup 樂觀（innovation）。",
-            "Falkenmark 數字記反：stress 1700、scarcity 1000、absolute 500。",
-            "Footprint 寫成 'carbon footprint'：ecological footprint 係土地面積。",
-            "Overshoot day 計算用 footprint ÷ biocapacity：要反轉（biocapacity ÷ footprint）。",
-            "Nexus 只講一個 resource，冇講連結。",
-            "Physical 同 economic scarcity 混淆。",
-            "Calculation 唔寫 units，或 % change 分母用錯（除以舊值）。",
-            "Infographic 只描述，冇引用 data。",
             "Circular economy 只講 recycling（仲有 reduce, reuse, repair）。",
             "Evaluation 冇 sustainability criteria（environmental, social, economic）。",
+            "SDGs 只列目標，冇講進展同限制。",
           ]],
           ["check", [
-            "我識逐字 define footprint, resource security, nexus, circular economy。",
-            "我識背 Falkenmark 三個 threshold 並做 per capita 計算。",
             "我識比較 Malthus vs Boserup（claim · outcome · evidence · criticism）。",
-            "我識講三個 nexus 連結同一個 trade-off。",
             "我有 circular economy、NEWater、SDG 嘅 named example。",
-            "我識計 % change 同 Overshoot Day。",
+            "我識分 technocentric 同 ecocentric。",
+            "我識寫有條件嘅結論（視乎 scale、cost、equity）。",
           ]],
         ],
       },
     ],
     summary: [
-      "足跡 > 土地 = 透支（約 1.7 Earths）",
-      "一七壓力、一千缺、五百絕（m³/人/年）",
       "Malthus 悲觀：人口幾何、糧食算術",
       "Boserup 樂觀：壓力生發明",
-      "水糧能，牽一髮動全身（農業用約 70% 淡水）",
-      "化石燃料仍約 80% 一次能源",
       "Circular：少用、重用、修理、再造",
+      "SDGs：有目標，冇約束力，進展不均",
       "Discuss：兩邊 + 例 + 判斷",
     ],
     practice: [
       { q: "Boserup argued that population growth:", m: 1, o: ["A. inevitably leads to famine", "B. stimulates agricultural innovation", "C. has no effect on food supply", "D. is limited only by disease"], a: "<b>B</b> [1]." },
-      { q: "Approximately what share of global freshwater withdrawals is used by agriculture?", m: 1, o: ["A. 10%", "B. 30%", "C. 50%", "D. 70%"], a: "<b>D</b> [1]." },
-      { q: "A country has less than 1,000 m³ of renewable water per person per year. Which Falkenmark category is this?", m: 1, o: ["A. Adequate supply", "B. Water stress", "C. Water scarcity", "D. Absolute scarcity only if below 100"], a: "<b>C</b> [1]. Scarcity &lt; 1,000; absolute scarcity &lt; 500." },
       { q: "Define the term circular economy.", m: 2, a: "An economic system that aims to eliminate waste [1] by keeping resources in use through reuse, repair, remanufacture and recycling instead of take-make-dispose [1]." },
-      { q: "State two reasons why global energy demand is rising.", m: 2, a: "Population growth [1]; rising incomes/middle class in emerging economies, industrialisation, urbanisation [1]." },
-      { q: "A country's water supply is 3 billion m³/yr and its population is 4 million. Calculate water per person and state the category.", m: 3, a: "3 × 10⁹ ÷ 4 × 10⁶ = 750 m³ per person per year [1+1]; below 1,000 → water scarcity [1]." },
-      { q: "Explain two reasons why the ecological footprint per person differs between countries.", m: 4, a: "Income level: higher incomes mean greater consumption of meat, energy, goods, so larger footprint (USA vs India) [1+1]; energy source/lifestyle: fossil-fuel reliance and car-based urban form increase footprint, while efficient public transport and renewables reduce it [1+1]." },
       { q: "Outline two criticisms of Malthus's theory.", m: 3, a: "Technological advances such as the Green Revolution have raised food output faster than population [1]; fertility fell as incomes rose, slowing population growth [1]; food insecurity is more about distribution/poverty than total supply [1]. (Any two, developed.)" },
-      { q: "With reference to a named example, explain one way a state has improved water security through water recycling.", m: 3, a: "Singapore's NEWater treats used water with membranes and UV to drinking standard [1]; reduces dependence on imports from Malaysia/rainfall [1]; supplies industry and top-up of reservoirs, increasing reliability [1]." },
       { q: "Discuss the view that a circular economy is the most effective way to achieve resource security.", m: 10, a: "<b>Level 5 (9–10):</b> definitions; balanced for/against with examples (Netherlands 2050, EU right to repair, NEWater; limits such as non-recyclable materials, energy use, rebound effect, LICs); alternatives (technology, renewables, demand reduction, trade); sustained evaluation and justified conclusion. <b>Levels 3–4:</b> some balance and examples. <b>Level 1–2:</b> generic recycling description." },
     ],
   },

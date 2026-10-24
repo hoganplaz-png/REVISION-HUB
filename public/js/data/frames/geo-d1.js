@@ -724,31 +724,39 @@
     },
     "geo-7": {
       diagrams: [
-        G({ title: "Boserup: population pressure triggers innovation, so food supply steps up ahead", x: [0, 10], y: [0, 10], xLabel: "Time", yLabel: "Amount",
-          curves: [{ f: (x) => 1.5 * Math.exp(0.17 * x), color: "a", label: "population", labelX: 8.4 }, { f: (x) => 2.4 + 1.6 * Math.floor((x + 0.6) / 2), color: "c", label: "food supply", labelX: 8.2 }],
-          texts: [{ at: [0.3, 9.4], text: "each step = innovation" }, { at: [0.3, 8.8], text: "(irrigation, Green Revolution)" }] }),
-        G({ title: "Limits to Growth (1972): overshoot and collapse", x: [0, 10], y: [0, 10], xLabel: "Time", yLabel: "Level",
-          curves: [{ f: (x) => 1 + 7 * Math.exp(-((x - 5.5) ** 2) / 4), color: "a", label: "population", labelX: 6 }, { f: (x) => 9.5 - 8 * sig(x, 4.5, 1), color: "b", dash: true, label: "resources", labelX: 2.2 }],
-          hlines: [{ y: 5, label: "carrying capacity" }] }),
         G({ title: "Hubbert curve: production of a finite resource peaks then declines", x: [0, 10], y: [0, 10], xLabel: "Time", yLabel: "Production",
           curves: [{ f: (x) => 0.2 + 8.5 * Math.exp(-((x - 5) ** 2) / 3.5) }], vlines: [{ x: 5, label: "peak (≈ half extracted)" }] }),
         G({ title: "Environmental Kuznets curve: pollution first rises, then falls with income", x: [0, 10], y: [0, 10], xLabel: "GDP per capita", yLabel: "Pollution per person",
           curves: [{ f: (x) => 1 + 7.5 * Math.exp(-((x - 4.5) ** 2) / 5) }], texts: [{ at: [0.4, 9.3], text: "industrialisation" }, { at: [6.4, 9.3], text: "services, regulation" }] }),
       ],
+      concepts: [
+        { h: "Environmental Kuznets curve and resource peaks", b: "<p>The <strong>environmental Kuznets curve</strong> suggests pollution per person rises during industrialisation, then falls as incomes rise (cleaner technology, service economies, regulation, public pressure). It fits local pollutants (SO₂ smog) better than CO₂, and rich countries partly 'export' pollution by importing manufactured goods. A <strong>Hubbert curve</strong> shows production of a finite resource rising to a peak (when about half is extracted) and then declining; new technology (e.g. US shale oil from fracking after ~2008) can shift the peak.</p>" },
+      ],
+    },
+    "geo-7b": {
       figures: [
         F("Water-food-energy nexus", "Using more of one resource affects the security of the other two", nexus),
-        F("Linear vs circular economy", "Circular systems keep products and materials in use (e.g. EU right-to-repair rules)", circular),
       ],
       frames: [
-        { title: "Draw and annotate the water-food-energy nexus", star: true, paper: "P2", where: "Paper 2 · 4 marks · annotated diagram",
+        { id: "geo-7-q26", title: "Draw and annotate the water-food-energy nexus", star: true, paper: "P2", where: "Paper 2 · 4 marks · annotated diagram",
           q: "Using an annotated diagram, explain the interactions within the water-food-energy nexus.",
           marks: ["three resources linked by two-way arrows", "water ↔ energy annotated (cooling, hydropower; pumping, desalination)", "water ↔ food annotated (irrigation ~70% of freshwater withdrawals; fertiliser pollution)", "energy ↔ food annotated (fuel, fertiliser; __biofuels__ competing for land), with one named example"],
           svg: nexus,
           model: "Food production needs water for irrigation (~70% of withdrawals) and energy for machinery and fertiliser. Energy needs water for cooling and hydropower, while water supply needs energy for pumping and desalination. Biofuels turn food crops into energy - e.g. ~40% of US maize goes to ethanol - so pressure on one resource spreads to the others.",
           tip: "三條雙向箭咀，每條兩邊都要寫例子。" },
       ],
-      concepts: [
-        { h: "Environmental Kuznets curve and resource peaks", b: "<p>The <strong>environmental Kuznets curve</strong> suggests pollution per person rises during industrialisation, then falls as incomes rise (cleaner technology, service economies, regulation, public pressure). It fits local pollutants (SO₂ smog) better than CO₂, and rich countries partly 'export' pollution by importing manufactured goods. A <strong>Hubbert curve</strong> shows production of a finite resource rising to a peak (when about half is extracted) and then declining; new technology (e.g. US shale oil from fracking after ~2008) can shift the peak.</p>" },
+    },
+    "geo-7c": {
+      diagrams: [
+        G({ title: "Boserup: population pressure triggers innovation, so food supply steps up ahead", x: [0, 10], y: [0, 10], xLabel: "Time", yLabel: "Amount",
+          curves: [{ f: (x) => 1.5 * Math.exp(0.17 * x), color: "a", label: "population", labelX: 8.4 }, { f: (x) => 2.4 + 1.6 * Math.floor((x + 0.6) / 2), color: "c", label: "food supply", labelX: 8.2 }],
+          texts: [{ at: [0.3, 9.4], text: "each step = innovation" }, { at: [0.3, 8.8], text: "(irrigation, Green Revolution)" }] }),
+        G({ title: "Limits to Growth (1972): overshoot and collapse", x: [0, 10], y: [0, 10], xLabel: "Time", yLabel: "Level",
+          curves: [{ f: (x) => 1 + 7 * Math.exp(-((x - 5.5) ** 2) / 4), color: "a", label: "population", labelX: 6 }, { f: (x) => 9.5 - 8 * sig(x, 4.5, 1), color: "b", dash: true, label: "resources", labelX: 2.2 }],
+          hlines: [{ y: 5, label: "carrying capacity" }] }),
+      ],
+      figures: [
+        F("Linear vs circular economy", "Circular systems keep products and materials in use (e.g. EU right-to-repair rules)", circular),
       ],
     },
 
