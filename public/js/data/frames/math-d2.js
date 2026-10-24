@@ -209,16 +209,8 @@
   },
 
   // ======================= 4.1-4.4, 4.10 Statistics =======================
-  "math-9": {
+  "math-9b": {
     diagrams: [
-      { title: "Strong positive linear correlation (r close to +1)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
-        points: [[1, 1.6], [1.8, 2.1], [2.5, 3.2], [3.1, 3.0], [3.9, 4.5], [4.6, 4.4], [5.2, 5.9], [6.0, 5.8], [6.8, 7.1], [7.5, 7.0], [8.3, 8.4], [9.1, 8.9]].map((p) => ({ at: p })) },
-      { title: "Strong negative linear correlation (r close to −1)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
-        points: [[1, 9.2], [1.7, 8.4], [2.6, 8.1], [3.2, 7.0], [4.0, 6.6], [4.8, 5.5], [5.5, 5.3], [6.1, 4.2], [7.0, 3.8], [7.7, 2.9], [8.4, 2.5], [9.2, 1.4]].map((p) => ({ at: p })) },
-      { title: "No correlation (r close to 0)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
-        points: [[1, 5.2], [1.6, 8.3], [2.4, 2.1], [3.1, 6.7], [3.7, 3.9], [4.5, 9.0], [5.2, 1.6], [5.8, 5.9], [6.6, 7.8], [7.2, 3.1], [8.1, 6.2], [8.8, 2.6], [9.4, 8.6]].map((p) => ({ at: p })) },
-      { title: "Clear non-linear relationship but r ≈ 0: r only measures LINEAR correlation", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
-        points: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => ({ at: [x, 9.6 - 0.45 * (x - 5) ** 2 + (x % 2 ? 0.3 : -0.3)] })) },
       { title: "Frequency histogram (equal class widths, no gaps, continuous scale)", x: [0, 55], y: [0, 17], xLabel: "t (min)", yLabel: "frequency", grid: true,
         lines: [[0, 10, 4], [10, 20, 9], [20, 30, 15], [30, 40, 8], [40, 50, 4]].flatMap(([a, b, f]) => [{ from: [a, 0], to: [a, f] }, { from: [a, f], to: [b, f] }, { from: [b, f], to: [b, 0] }]) },
       { title: "Cumulative frequency curve (n = 80): read Q₁, median, Q₃ at n/4, n/2, 3n/4", x: [0, 105], y: [0, 88], xLabel: "x", yLabel: "cf", grid: false,
@@ -240,14 +232,9 @@
           skewPanel(5, (u) => Math.exp(-(((u - 0.5) / 0.15) ** 2) / 2), [0.1, 0.4, 0.5, 0.6, 0.9], ["symmetric", "mean ≈ median"]) +
           skewPanel(132, (u) => (u / 0.22) * Math.exp(1 - u / 0.22), [0.04, 0.17, 0.29, 0.46, 0.95], ["positive skew", "mean > median"]) +
           skewPanel(259, (u) => ((1 - u) / 0.22) * Math.exp(1 - (1 - u) / 0.22), [0.05, 0.54, 0.71, 0.83, 0.96], ["negative skew", "mean < median"]) + "</svg>" },
-      { title: "Regression line passes through the mean point (x̄, ȳ)", caption: "Use y on x to predict y from x and x on y to predict x from y; both lines pass through (x̄, ȳ). Only interpolate.",
-        svg: G({ label: "Scatter with regression line through mean point", x: [0, 10], y: [0, 10], xl: "x", yl: "y", O: true,
-          dots: [[1, 2.2], [2, 2.6], [3, 4.1], [4, 4.0], [5, 5.6], [6, 5.9], [7, 7.3], [8, 7.6], [9, 9.0]].map((p) => ({ p, c: "b" })).concat([{ p: [5, 5.37], c: "d" }]),
-          curves: [{ f: (x) => 0.85 * x + 1.12, d: [0.5, 9.6], c: "a" }], vl: [{ x: 5, from: 0, to: 5.37 }], hl: [{ y: 5.37, from: 0, to: 5 }],
-          texts: [{ p: [5, 5.37], t: "(x̄, ȳ)", dx: 6, dy: 14, c: "d" }, { p: [7.6, 8.2], t: "y = ax + b", c: "a", dx: -40 }, { p: [9.6, 0.4], t: "interpolate within 1 ≤ x ≤ 9", a: "end" }] }) },
     ],
     frames: [
-      { title: "Draw a cumulative frequency graph from a grouped table", star: true, paper: "P1", where: "Paper 1 / 2 · 4–5 marks · graph paper given",
+      { id: "math-9-q24", title: "Draw a cumulative frequency graph from a grouped table", star: true, paper: "P1", where: "Paper 1 / 2 · 4–5 marks · graph paper given",
         q: "The heights, h cm, of 60 plants are: 140 < h ≤ 150: 6; 150 < h ≤ 160: 14; 160 < h ≤ 170: 22; 170 < h ≤ 180: 13; 180 < h ≤ 190: 5. (a) Write down the cumulative frequencies. (b) Draw the cumulative frequency graph. (c) Use it to estimate the median height.",
         marks: [["A1", "cumulative frequencies 6, 20, 42, 55, 60"], ["A1", "points plotted at the __upper class boundaries__ (150, 6), (160, 20), (170, 42), (180, 55), (190, 60)"], ["A1", "curve (or line segments) starting at (140, 0), axes labelled with scale"], ["(M1)", "reading across from 30"], ["A1", "median ≈ 164.5 cm"]],
         diagram: { title: "Cumulative frequency of 60 plant heights; median read at 30", x: [135, 195], y: [0, 65], xLabel: "h (cm)", yLabel: "cf", grid: true,
@@ -257,7 +244,7 @@
         accept: "a smooth curve or straight line segments; median 163–166 if read from a curve",
         reject: "points plotted at mid-interval values (155, 165, …); curve not starting at (140, 0); bar chart",
         tip: "累積頻數一定畫喺每組嘅「上限」(upper boundary)，同埋要由第一組下限、頻數 0 開始。" },
-      { title: "Compare two distributions using parallel box plots", star: true, paper: "P2", where: "Paper 2 · 4–5 marks",
+      { id: "math-9-q25", title: "Compare two distributions using parallel box plots", star: true, paper: "P2", where: "Paper 2 · 4–5 marks",
         q: "Test scores: Class A has min 32, Q₁ 45, median 58, Q₃ 66, max 80; Class B has min 40, Q₁ 52, median 61, Q₃ 70, max 92. (a) Draw both box plots on the same scale. (b) Compare the two distributions.",
         marks: [["A1", "both boxes and whiskers correct on one common scale"], ["A1", "medians marked at 58 and 61"], ["R1", "Class B has the __higher median__ (61 > 58), so B generally scored higher"], ["R1", "Class A has the larger __IQR__ (21 vs 18), so A's middle 50% is more spread out"]],
         svg: open(380, 150, "Parallel box plots of two classes") +
@@ -267,7 +254,7 @@
         accept: "comparison of range as well as IQR; any valid comparison of a measure of centre AND a measure of spread, in context",
         reject: "listing values without comparing; \"B is better\" with no statistic quoted; comparing only maxima",
         tip: "比較兩組數據：一句講中心 (median)、一句講分佈 (IQR)，每句都要有數字同埋 context（例如「分數」）。" },
-      { title: "Draw a frequency histogram", paper: "P1", where: "Paper 1 · 2–3 marks",
+      { id: "math-9-q26", title: "Draw a frequency histogram", paper: "P1", where: "Paper 1 · 2–3 marks",
         q: "The times, t minutes, of 40 runners are: 0 ≤ t < 10: 4; 10 ≤ t < 20: 9; 20 ≤ t < 30: 15; 30 ≤ t < 40: 8; 40 ≤ t < 50: 4. Draw a frequency histogram.",
         marks: [["A1", "continuous horizontal scale with labelled axes (t, frequency)"], ["A1", "five bars of equal width touching each other (__no gaps__)"], ["A1", "heights 4, 9, 15, 8, 4"]],
         diagram: { title: "Histogram of 40 running times", x: [0, 55], y: [0, 17], xLabel: "t (min)", yLabel: "frequency", grid: true, lines: [[0, 10, 4], [10, 20, 9], [20, 30, 15], [30, 40, 8], [40, 50, 4]].flatMap(([a, b, f]) => [{ from: [a, 0], to: [a, f] }, { from: [a, f], to: [b, f] }, { from: [b, f], to: [b, 0] }]) },
@@ -279,9 +266,35 @@
       { h: "Reading shape from graphs: histograms, box plots and skew", b: "<p>Histograms are for continuous data: adjacent bars, no gaps (AA uses equal class widths, so height = frequency). A <strong>positively skewed</strong> distribution has a long tail to the right: on the box plot the median is nearer Q₁ and the right whisker is longer, and usually mean &gt; median. Negative skew is the reverse. For skewed data or data with outliers, the median and IQR are better summaries than the mean and standard deviation. Box plots drawn on the same scale are used to compare data sets: compare a centre (median) and a spread (IQR or range), in context.</p>" },
     ],
   },
+  "math-9d": {
+    diagrams: [
+      { title: "Strong positive linear correlation (r close to +1)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
+        points: [[1, 1.6], [1.8, 2.1], [2.5, 3.2], [3.1, 3.0], [3.9, 4.5], [4.6, 4.4], [5.2, 5.9], [6.0, 5.8], [6.8, 7.1], [7.5, 7.0], [8.3, 8.4], [9.1, 8.9]].map((p) => ({ at: p })) },
+      { title: "Strong negative linear correlation (r close to −1)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
+        points: [[1, 9.2], [1.7, 8.4], [2.6, 8.1], [3.2, 7.0], [4.0, 6.6], [4.8, 5.5], [5.5, 5.3], [6.1, 4.2], [7.0, 3.8], [7.7, 2.9], [8.4, 2.5], [9.2, 1.4]].map((p) => ({ at: p })) },
+      { title: "No correlation (r close to 0)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
+        points: [[1, 5.2], [1.6, 8.3], [2.4, 2.1], [3.1, 6.7], [3.7, 3.9], [4.5, 9.0], [5.2, 1.6], [5.8, 5.9], [6.6, 7.8], [7.2, 3.1], [8.1, 6.2], [8.8, 2.6], [9.4, 8.6]].map((p) => ({ at: p })) },
+      { title: "Clear non-linear relationship but r ≈ 0: r only measures LINEAR correlation", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
+        points: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => ({ at: [x, 9.6 - 0.45 * (x - 5) ** 2 + (x % 2 ? 0.3 : -0.3)] })) },
+    ],
+    figures: [
+      { title: "Regression line passes through the mean point (x̄, ȳ)", caption: "Use y on x to predict y from x and x on y to predict x from y; both lines pass through (x̄, ȳ). Only interpolate.",
+        svg: G({ label: "Scatter with regression line through mean point", x: [0, 10], y: [0, 10], xl: "x", yl: "y", O: true,
+          dots: [[1, 2.2], [2, 2.6], [3, 4.1], [4, 4.0], [5, 5.6], [6, 5.9], [7, 7.3], [8, 7.6], [9, 9.0]].map((p) => ({ p, c: "b" })).concat([{ p: [5, 5.37], c: "d" }]),
+          curves: [{ f: (x) => 0.85 * x + 1.12, d: [0.5, 9.6], c: "a" }], vl: [{ x: 5, from: 0, to: 5.37 }], hl: [{ y: 5.37, from: 0, to: 5 }],
+          texts: [{ p: [5, 5.37], t: "(x̄, ȳ)", dx: 6, dy: 14, c: "d" }, { p: [7.6, 8.2], t: "y = ax + b", c: "a", dx: -40 }, { p: [9.6, 0.4], t: "interpolate within 1 ≤ x ≤ 9", a: "end" }] }) },
+    ],
+  },
 
   // ======================= 4.5-4.6, 4.11 Probability =======================
   "math-10": {
+    figures: [
+      { title: "Sample space diagram: total of two fair dice", caption: "36 equally likely outcomes. P(total = 7) = 6/36 = 1/6 (shaded diagonal).",
+        svg: open(250, 240, "Sample space for two dice") + (() => { let s = ""; for (let r = 0; r < 6; r++) for (let c = 0; c < 6; c++) { const v = r + c + 2; s += `<rect x="${40 + c * 32}" y="${40 + r * 30}" width="32" height="30" fill="${v === 7 ? "var(--fig-a)" : "none"}" fill-opacity=".3" stroke="currentColor" stroke-width=".8"/>` + tx(56 + c * 32, 60 + r * 30, v, { a: "middle" }); }
+          for (let i = 0; i < 6; i++) s += tx(56 + i * 32, 32, i + 1, { a: "middle", b: true }) + tx(26, 60 + i * 30, i + 1, { a: "middle", b: true }); return s; })() + tx(136, 14, "die 2", { a: "middle", s: 11 }) + tx(8, 238, "die 1 (rows)", { s: 11 }) + "</svg>" },
+    ],
+  },
+  "math-10b": {
     figures: [
       { title: "Two-set Venn diagram: the four regions", caption: "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) and P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Fill the overlap first.",
         svg: (() => { const P = vennPaths(95, 165, 85, 55); return open(260, 165, "Two set Venn diagram regions") + `<path d="${P.lens}" fill="var(--fig-a)" fill-opacity=".25"/>` + `<rect x="10" y="10" width="240" height="145" fill="none" stroke="currentColor"/><circle cx="95" cy="85" r="55" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="165" cy="85" r="55" fill="none" stroke="currentColor" stroke-width="1.5"/>` +
@@ -305,12 +318,9 @@
         svg: tree(420, 190, [[22, 95], [140, 50, "A"], [140, 140, "A′"], [262, 25, "B"], [262, 75, "B′"], [262, 115, "B"], [262, 165, "B′"]],
           [[0, 1, "P(A)"], [0, 2, "1 − P(A)"], [1, 3, "P(B | A)"], [1, 4, "P(B′ | A)"], [2, 5, "P(B | A′)"], [2, 6, "P(B′ | A′)"]], "", "Tree diagram",
           tx(282, 29, "P(A ∩ B) = P(A)P(B | A)", { s: 11 }) + tx(282, 79, "P(A ∩ B′)", { s: 11 }) + tx(282, 119, "P(A′ ∩ B)", { s: 11 }) + tx(282, 169, "P(A′ ∩ B′)", { s: 11 }) + `<circle cx="22" cy="95" r="3"/>`) },
-      { title: "Sample space diagram: total of two fair dice", caption: "36 equally likely outcomes. P(total = 7) = 6/36 = 1/6 (shaded diagonal).",
-        svg: open(250, 240, "Sample space for two dice") + (() => { let s = ""; for (let r = 0; r < 6; r++) for (let c = 0; c < 6; c++) { const v = r + c + 2; s += `<rect x="${40 + c * 32}" y="${40 + r * 30}" width="32" height="30" fill="${v === 7 ? "var(--fig-a)" : "none"}" fill-opacity=".3" stroke="currentColor" stroke-width=".8"/>` + tx(56 + c * 32, 60 + r * 30, v, { a: "middle" }); }
-          for (let i = 0; i < 6; i++) s += tx(56 + i * 32, 32, i + 1, { a: "middle", b: true }) + tx(26, 60 + i * 30, i + 1, { a: "middle", b: true }); return s; })() + tx(136, 14, "die 2", { a: "middle", s: 11 }) + tx(8, 238, "die 1 (rows)", { s: 11 }) + "</svg>" },
     ],
     frames: [
-      { title: "Complete a three-set Venn diagram from given totals", star: true, paper: "P1", where: "Paper 1 / 2 · 5–6 marks",
+      { id: "math-10-q19", title: "Complete a three-set Venn diagram from given totals", star: true, paper: "P1", where: "Paper 1 / 2 · 5–6 marks",
         q: "In a group of 50 students, 22 study Biology (B), 25 Chemistry (C) and 20 Physics (P). 8 study B and C, 7 study B and P, 9 study C and P, and 3 study all three. (a) Complete a Venn diagram. (b) Find the number who study none. (c) Find P(exactly one subject). (d) Find P(P | C).",
         marks: [["(M1)", "starting with 3 in the centre and subtracting it from each pair: 5, 4, 6"], ["A1", "one-subject regions 10 (B), 11 (C), 7 (P)"], ["A1", "none = 50 − 46 = 4"], ["A1", "P(exactly one) = 28/50 = 14/25"], ["M1", "denominator n(C) = 25"], ["A1", "P(P | C) = 9/25"]],
         svg: open(300, 235, "Completed three set Venn diagram") + `<rect x="8" y="8" width="284" height="220" fill="none" stroke="currentColor"/><circle cx="120" cy="96" r="62" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="180" cy="96" r="62" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="150" cy="148" r="62" fill="none" stroke="currentColor" stroke-width="1.5"/>` +
@@ -319,14 +329,21 @@
         model: "Centre 3. B∩C only = 8 − 3 = 5, B∩P only = 7 − 3 = 4, C∩P only = 9 − 3 = 6. B only = 22 − 5 − 4 − 3 = 10, C only = 25 − 5 − 6 − 3 = 11, P only = 20 − 4 − 6 − 3 = 7. Total in at least one = 46, so none = 4. (c) 10 + 11 + 7 = 28, so 28/50 = 14/25. (d) Of the 25 Chemistry students, 6 + 3 = 9 also do Physics: 9/25.",
         accept: "0.56 and 0.36", reject: "putting 8, 7, 9 in the pair regions without subtracting the centre; denominator 50 in (d)",
         tip: "三圈 Venn：由中間開始填，每個「兩科」區要減走中間嗰個數，最後先計外面。條件概率分母係「已知」嗰個圈嘅總數。" },
-      { title: "Shade a region described in set notation", paper: "P1", where: "Paper 1 · 1–2 marks",
+      { id: "math-10-q20", title: "Shade a region described in set notation", paper: "P1", where: "Paper 1 · 1–2 marks",
         q: "On a Venn diagram showing events A and B in U, shade the region A ∪ B′.",
         marks: [["A1", "all of circle A shaded"], ["A1", "the region outside both circles shaded; B-only region left unshaded"]],
         svg: open(160, 115, "Shaded A union B complement") + vennPanel(10, 8, 140, 85, "A∪B′", "A ∪ B′") + "</svg>",
         model: "B′ is everything outside B; its union with A adds the overlap A ∩ B. So shade everything except the region 'B only' (A′ ∩ B).",
         accept: "any clear shading/hatching", reject: "shading only A ∩ B′; leaving the outside region unshaded",
         tip: "唔肯定就逐個區（4 個）問：呢區喺唔喺 A？喺唔喺 B′？用 ∪ 就係「其中一個成立」就塗。" },
-      { title: "Tree diagram without replacement, then a reverse conditional", star: true, paper: "P1", where: "Paper 1 · 5–6 marks",
+    ],
+    concepts: [
+      { h: "Venn diagrams with three sets", b: "<p>A three-set Venn diagram has 8 regions. Always fill from the centre: n(A ∩ B ∩ C), then each pair-only region n(A ∩ B) − n(A ∩ B ∩ C), then each single-set region, then the outside (total minus everything inside). Check with n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A∩B) − n(A∩C) − n(B∩C) + n(A∩B∩C). For P(X | Y) the denominator is the total of the region Y only.</p>" },
+    ],
+  },
+  "math-10c": {
+    frames: [
+      { id: "math-10-q21", title: "Tree diagram without replacement, then a reverse conditional", star: true, paper: "P1", where: "Paper 1 · 5–6 marks",
         q: "A bag has 5 red and 3 blue counters. Two are taken at random without replacement. (a) Draw a tree diagram. (b) Find P(both the same colour). (c) Given that both are the same colour, find the probability that both are red.",
         marks: [["A1", "first-stage branches 5/8 and 3/8"], ["A1", "second-stage branches 4/7, 3/7 and 5/7, 2/7"], ["M1", "(5/8)(4/7) + (3/8)(2/7)"], ["A1", "26/56 = 13/28"], ["M1", "(20/56) ÷ (26/56)"], ["A1", "10/13"]],
         svg: tree(400, 190, [[22, 95], [140, 50, "R"], [140, 140, "B"], [262, 25, "R"], [262, 75, "B"], [262, 115, "R"], [262, 165, "B"]], [[0, 1, "5/8"], [0, 2, "3/8"], [1, 3, "4/7"], [1, 4, "3/7"], [2, 5, "5/7"], [2, 6, "2/7"]], "", "Tree without replacement",
@@ -335,13 +352,16 @@
         accept: "0.464, 0.769", reject: "second-stage 5/8 and 3/8 again (that is with replacement)",
         tip: "Without replacement：第二層分母減 1，抽走嗰種顏色分子都減 1。反向條件 = 想要嗰條路 ÷ 所有符合條件嘅路。" },
     ],
-    concepts: [
-      { h: "Venn diagrams with three sets", b: "<p>A three-set Venn diagram has 8 regions. Always fill from the centre: n(A ∩ B ∩ C), then each pair-only region n(A ∩ B) − n(A ∩ B ∩ C), then each single-set region, then the outside (total minus everything inside). Check with n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A∩B) − n(A∩C) − n(B∩C) + n(A∩B∩C). For P(X | Y) the denominator is the total of the region Y only.</p>" },
-    ],
   },
 
   // ======================= 4.7-4.9, 4.12 Distributions =======================
-  "math-11": {
+  "math-11b": {
+    diagrams: [
+      { title: "Binomial B(10, 0.2): positively skewed, mode 2, E(X) = np = 2", x: [-0.8, 10.8], y: [0, 0.36], xLabel: "x", yLabel: "P(X = x)", grid: false, origin: false, lines: bars(bin(10, 0.2)), texts: [0, 2, 4, 6, 8, 10].map((k) => ({ at: [k, -0.025], text: String(k), anchor: "middle" })) },
+      { title: "Binomial B(10, 0.5): symmetric about E(X) = 5", x: [-0.8, 10.8], y: [0, 0.3], xLabel: "x", yLabel: "P(X = x)", grid: false, origin: false, lines: bars(bin(10, 0.5), "b"), texts: [0, 2, 4, 6, 8, 10].map((k) => ({ at: [k, -0.02], text: String(k), anchor: "middle" })) },
+    ],
+  },
+  "math-11c": {
     diagrams: [
       { title: "Normal curve X ~ N(μ, σ²): symmetric about μ; about 68%, 95%, 99.7% within 1, 2, 3 σ", x: [-3.6, 3.6], y: [0, 0.48], xLabel: "x", yLabel: "", grid: false, origin: false, shade: { from: -1, to: 1 },
         curves: [{ f: npdf(0, 1), domain: [-3.6, 3.6], color: "a" }], vlines: [{ x: -2 }, { x: -1 }, { x: 0, label: "μ" }, { x: 1 }, { x: 2 }],
@@ -350,10 +370,6 @@
         curves: [{ f: npdf(0, 1), color: "a", label: "σ = 1", labelX: 0.9 }, { f: npdf(0, 2), color: "b", label: "σ = 2", labelX: 2.8 }], vlines: [{ x: 0, label: "μ" }] },
       { title: "Same σ, different means: the curve is translated horizontally", x: [-4, 9], y: [0, 0.45], xLabel: "x", yLabel: "", grid: false, origin: false,
         curves: [{ f: npdf(0, 1), color: "a", label: "μ = 0", labelX: 0.9 }, { f: npdf(5, 1), color: "b", label: "μ = 5", labelX: 5.9 }] },
-      { title: "Standard normal Z ~ N(0, 1): P(Z < z) is the area to the LEFT of z (shaded: z = 1.2, area 0.885)", x: [-3.6, 3.6], y: [0, 0.45], xLabel: "z", yLabel: "", grid: false, origin: false, shade: { from: -3.6, to: 1.2 },
-        curves: [{ f: npdf(0, 1), color: "a" }], vlines: [{ x: 1.2, label: "z = 1.2" }] },
-      { title: "Binomial B(10, 0.2): positively skewed, mode 2, E(X) = np = 2", x: [-0.8, 10.8], y: [0, 0.36], xLabel: "x", yLabel: "P(X = x)", grid: false, origin: false, lines: bars(bin(10, 0.2)), texts: [0, 2, 4, 6, 8, 10].map((k) => ({ at: [k, -0.025], text: String(k), anchor: "middle" })) },
-      { title: "Binomial B(10, 0.5): symmetric about E(X) = 5", x: [-0.8, 10.8], y: [0, 0.3], xLabel: "x", yLabel: "P(X = x)", grid: false, origin: false, lines: bars(bin(10, 0.5), "b"), texts: [0, 2, 4, 6, 8, 10].map((k) => ({ at: [k, -0.02], text: String(k), anchor: "middle" })) },
     ],
     figures: [
       { title: "Normal areas: left tail, right tail, between - and inverse normal", caption: "Draw the curve, mark μ and the value(s), shade the region. Inverse normal: give the area to the LEFT (or set the tail on the GDC).",
@@ -366,13 +382,19 @@
         }).join("") + "</svg>" },
     ],
     frames: [
-      { title: "Sketch a normal curve, shade the region, then find a probability and an inverse-normal value", star: true, paper: "P2", where: "Paper 2 · 4–5 marks",
+      { id: "math-11-q23", title: "Sketch a normal curve, shade the region, then find a probability and an inverse-normal value", star: true, paper: "P2", where: "Paper 2 · 4–5 marks",
         q: "The masses of eggs are X ~ N(70, 8²) grams. (a) Sketch the distribution and shade the region representing P(X > 82). (b) Find P(X > 82). (c) Find k such that P(X < k) = 0.9.",
         marks: [["A1", "bell-shaped curve symmetric about a labelled mean 70"], ["A1", "82 marked to the right of 70 and the __right tail__ shaded"], ["A1", "P(X > 82) = 0.0668"], ["(M1)", "inverse normal with area 0.9 to the left"], ["A1", "k = 80.3 g"]],
         svg: G({ label: "N(70, 8²) with P(X > 82) shaded", x: [42, 98], y: [0, 0.056], xl: "mass (g)", yl: "", ax: 42, O: false, curves: [{ f: npdf(70, 8), c: "a" }], fills: [{ f: npdf(70, 8), d: [82, 98], c: "a", op: 0.4 }], vl: [{ x: 70, to: npdf(70, 8)(70) }, { x: 82, to: npdf(70, 8)(82) }], xt: [[70, "70"], [82, "82"]], texts: [{ p: [88, 0.012], t: "0.0668", c: "a" }] }),
         model: "(b) P(X > 82) = 0.0668 (GDC normalcdf with lower 82, upper 10⁹⁹, μ = 70, σ = 8). (c) invNorm(0.9, 70, 8) = 80.25…, k ≈ 80.3 g.",
         accept: "0.0668072…; k = 80.25", reject: "shading the left side; standard deviation 64 entered into the GDC",
         tip: "Sketch 要有：鐘形、μ 喺中間、數值標喺正確嗰邊、塗啱區域。Inverse normal 要諗清楚畀嘅係「左邊」定「右邊」面積。" },
+    ],
+  },
+  "math-11d": {
+    diagrams: [
+      { title: "Standard normal Z ~ N(0, 1): P(Z < z) is the area to the LEFT of z (shaded: z = 1.2, area 0.885)", x: [-3.6, 3.6], y: [0, 0.45], xLabel: "z", yLabel: "", grid: false, origin: false, shade: { from: -3.6, to: 1.2 },
+        curves: [{ f: npdf(0, 1), color: "a" }], vlines: [{ x: 1.2, label: "z = 1.2" }] },
     ],
   },
 
