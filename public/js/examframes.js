@@ -40,6 +40,7 @@
         if (!f.q || f.bank === false) return;
         const r = rows(f);
         const q = {
+          id: f.id, // set when a frame moves topic, so its question keeps its id
           sec: "frames", fromFrame: true, paper: f.paper, diff: f.diff || 2,
           type: f.type || (total(f) >= 8 ? "extended" : "short"),
           marks: total(f), q: f.q,
@@ -51,7 +52,7 @@
       });
       (add.mc || []).forEach((m) => {
         if (!m.q) return;
-        qs.push({ sec: "frames", fromFrame: true, paper: m.paper || s.mcPaper || Object.keys(s.allPapers)[0], diff: m.diff || 2, marks: 1, q: m.q, options: m.options, answer: m.answer, ms: [`${"ABCD"[m.answer]} - ${m.why || ""}`.trim()], hl: m.hl });
+        qs.push({ id: m.id, sec: "frames", fromFrame: true, paper: m.paper || s.mcPaper || Object.keys(s.allPapers)[0], diff: m.diff || 2, marks: 1, q: m.q, options: m.options, answer: m.answer, ms: [`${"ABCD"[m.answer]} - ${m.why || ""}`.trim()], hl: m.hl });
       });
       if (qs.length) IB.addQuestions(subjectId, { [id]: qs });
     });
