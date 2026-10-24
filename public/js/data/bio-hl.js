@@ -36,7 +36,7 @@ IB.addTopics("bio", [
     ],
   },
   {
-    id: "bio-h2", code: "C1.2-1.3 AHL", after: "bio-10", unit: "Theme C: Interaction and interdependence (HL)", title: "Respiration and photosynthesis in detail",
+    id: "bio-h2", code: "C1.2-1.3 AHL", after: "bio-10b", unit: "Theme C: Interaction and interdependence (HL)", title: "Respiration and photosynthesis in detail",
     summary: "Glycolysis, link reaction, Krebs cycle, electron transport chain and chemiosmosis; light-dependent reactions, photosystems, Calvin cycle and limiting factors.",
     concepts: [
       { h: "Aerobic respiration stages", b: "<p><strong>Glycolysis</strong> (cytoplasm): glucose → 2 pyruvate, net 2 ATP, 2 NADH. <strong>Link reaction</strong> (matrix): pyruvate → acetyl-CoA + CO₂ + NADH. <strong>Krebs cycle</strong>: per acetyl group 2 CO₂, 3 NADH, 1 FADH₂, 1 ATP. <strong>ETC</strong> (cristae): electrons pass along carriers, protons pumped into the intermembrane space; O₂ is the final electron acceptor forming water.</p>", yue: "糖解 → 連接反應 → 克氏循環 → 電子傳遞鏈。氧係最後嘅電子接受者，冇氧就停。" },
@@ -63,7 +63,7 @@ IB.addTopics("bio", [
     ],
   },
   {
-    id: "bio-h3", code: "D1.2-1.3, D2.2 AHL", after: "bio-14", unit: "Theme D: Continuity and change (HL)", title: "Gene expression, epigenetics and post-transcriptional modification",
+    id: "bio-h3", code: "D1.2-1.3, D2.2 AHL", after: "bio-14c", unit: "Theme D: Continuity and change (HL)", title: "Gene expression, epigenetics and post-transcriptional modification",
     summary: "Directionality of nucleic acids, Okazaki fragments, mRNA splicing, regulation of gene expression (promoters, transcription factors), epigenetics (methylation, histone modification) and mutation consequences.",
     concepts: [
       { h: "Replication details", b: "<p>DNA polymerase III adds nucleotides only to the 3' end; leading strand continuous, lagging strand in <strong>Okazaki fragments</strong> joined by ligase. Primase adds RNA primers; DNA polymerase I replaces them.</p>", yue: "DNA 聚合酶只可以由 5' 去 3' 方向加核苷酸，所以後隨股要分段（岡崎片段）。" },
@@ -86,7 +86,7 @@ IB.addTopics("bio", [
     ],
   },
   {
-    id: "bio-h4", code: "D3.2 AHL", after: "bio-15", unit: "Theme D: Continuity and change (HL)", title: "Dihybrid crosses, linkage and chi-squared",
+    id: "bio-h4", code: "D3.2 AHL", after: "bio-15c", unit: "Theme D: Continuity and change (HL)", title: "Dihybrid crosses, linkage and chi-squared",
     summary: "Dihybrid crosses and 9:3:3:1 ratios, autosomal gene linkage and recombinants, and the chi-squared test for goodness of fit.",
     concepts: [
       { h: "Dihybrid crosses", b: "<p>Two genes on different chromosomes assort independently: AaBb × AaBb → 9:3:3:1. Test cross AaBb × aabb → 1:1:1:1.</p>", yue: "雙因子雜交：兩對基因喺唔同染色體，自由組合，比例 9:3:3:1。" },
@@ -109,7 +109,7 @@ IB.addTopics("bio", [
     ],
   },
   {
-    id: "bio-h5", code: "B3.3, C2.1, D3.3 AHL", after: "bio-16", unit: "Theme B-D: Form, function and homeostasis (HL)", title: "Muscle contraction, chemical signalling and the kidney",
+    id: "bio-h5", code: "B3.3, C2.1, D3.3 AHL", after: "bio-16b", unit: "Theme B-D: Form, function and homeostasis (HL)", title: "Muscle contraction, chemical signalling and the kidney",
     summary: "Sliding filament model, joints and antagonistic muscles, receptors and signal transduction (G-proteins, tyrosine kinase), and kidney structure, ultrafiltration, selective reabsorption and osmoregulation with ADH.",
     concepts: [
       { h: "Muscle contraction", b: "<p>Ca²⁺ released from the sarcoplasmic reticulum binds troponin, moving tropomyosin to expose binding sites. Myosin heads form cross-bridges, power stroke (ADP + Pi released), ATP binds to detach, hydrolysis re-cocks the head. Sarcomere shortens; actin and myosin lengths unchanged.</p>", yue: "肌肉收縮：鈣離子令結合位點露出，肌球蛋白頭拉動肌動蛋白，用 ATP 分離同重新上膛。" },
