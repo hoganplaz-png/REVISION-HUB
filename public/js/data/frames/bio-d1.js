@@ -792,6 +792,29 @@
   concepts["bio-10"] = [{ h: "Diagrams to know: ATP, respiration and photosynthesis", b: "<p>Be ready to draw ATP as adenine + ribose + three phosphates, a flow chart of glycolysis → aerobic/anaerobic pathways (with locations and relative ATP yields), and the link between the light-dependent reactions (thylakoids: photolysis, ATP, reduced NADP, O₂) and the Calvin cycle (stroma: CO₂ fixation using ATP and reduced NADP). Limiting-factor graphs: the factor on the x-axis limits on the rising section; another factor limits on the plateau.</p>" }];
   concepts["bio-9"] = [{ h: "Enzyme graphs to sketch", b: "<p>Rate vs [enzyme] (substrate in excess): straight line through the origin. Product vs time: steep start, tangent at t = 0 gives the initial rate, plateau when substrate is used up. At high temperature product formation starts fast then stops early because the enzyme denatures. Competitive inhibition: same maximum rate reached at high [S]; non-competitive: lower maximum (AHL).</p>" }];
 
+  // ---------- one chapter per syllabus sub-topic: move each item to its sub-topic's chapter ----------
+  const moveTo = (o, from, to, idx) => {
+    o[to] = (o[to] || []).concat(o[from].filter((_, i) => idx.includes(i)));
+    o[from] = o[from].filter((_, i) => !idx.includes(i));
+    if (!o[from].length) delete o[from];
+  };
+  moveTo(fig, "bio-1", "bio-1b", [2, 3, 4, 5, 6, 7]); // A1.2 nucleic acids
+  moveTo(frames, "bio-1", "bio-1b", [0]);
+  moveTo(fig, "bio-3", "bio-3b", [2, 3, 4]); // A4.1 evolution and speciation
+  moveTo(frames, "bio-3", "bio-3b", [1]);
+  moveTo(diagrams, "bio-4", "bio-4b", [0, 1, 2]); // C4.1 populations and communities
+  moveTo(fig, "bio-4", "bio-4b", [0, 1, 2, 3, 4]);
+  moveTo(frames, "bio-4", "bio-4b", [0, 1]);
+  moveTo(fig, "bio-5", "bio-5b", [7, 8, 9]); // B1.2 proteins
+  moveTo(frames, "bio-5", "bio-5b", [1]);
+  moveTo(diagrams, "bio-6", "bio-6c", [2]); // B2.3 cell specialisation (SA:V)
+  moveTo(fig, "bio-6", "bio-6b", [4, 5]); // B2.2 organelles
+  moveTo(frames, "bio-6", "bio-6b", [0, 1]);
+  moveTo(diagrams, "bio-7", "bio-7b", [2, 3]); // B3.2 transport
+  moveTo(fig, "bio-7", "bio-7b", [0, 3, 4, 6, 8]);
+  moveTo(frames, "bio-7", "bio-7b", [0, 1]);
+  moveTo(diagrams, "bio-8", "bio-8b", [1]); // B4.2 ecological niches
+
   // ---------- register ----------
   const topics = {};
   new Set([...Object.keys(fig), ...Object.keys(frames), ...Object.keys(diagrams), ...Object.keys(concepts)]).forEach((id) => {
