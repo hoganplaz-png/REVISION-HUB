@@ -51,12 +51,16 @@
       { paper: "P2", type: "extended", marks: 10, diff: 3, q: "Evaluate the effectiveness of global agreements in responding to climate change. [10]", ms: essay(["Kyoto (binding for HICs only; US did not ratify), Paris 2015 (NDCs, voluntary)", "Successes: near-universal participation, renewables growth, finance pledges", "Weaknesses: current pledges lead to ~2.5-3 °C; not legally binding; finance gaps", "Evaluation: important framework but local/national/corporate action and technology also matter"]) },
     ],
     "geo-7": [
-      { paper: "P2", marks: 1, diff: 1, q: "Which is a renewable energy source?", options: ["Natural gas", "Uranium", "Geothermal", "Coal"], answer: 2, ms: ["C."] },
-      { paper: "P2", marks: 1, diff: 2, q: "Virtual water refers to:", options: ["water in clouds", "the water used to produce goods and services that are traded", "desalinated water", "groundwater"], answer: 1, ms: ["B."] },
-      { paper: "P2", marks: 2, diff: 1, q: "Define <strong>energy security</strong>.", ms: ["Uninterrupted availability of energy sources [1]", "At an affordable price [1]"] },
-      { paper: "P2", marks: 4, diff: 2, q: "Explain two reasons why global resource consumption is increasing.", ms: ["Population growth [1] - more people need food, water, energy [1]", "Rising affluence / growing middle class, e.g. in India and China [1] - higher per-capita consumption of meat, energy, goods [1]"] },
-      { paper: "P2", marks: 4, diff: 2, q: "Explain how the circular economy can reduce pressure on resources.", ms: ["Resources kept in use for as long as possible [1]", "Reuse, repair, remanufacture and recycle [1]", "Reduces extraction of raw materials and waste [1]", "Example, e.g. Philips lighting as a service / EU right-to-repair [1]"] },
-      { paper: "P2", type: "extended", marks: 10, diff: 3, q: "\"Technology is the best solution to resource insecurity.\" Discuss. [10]", ms: essay(["Boserup optimism vs Malthus/neo-Malthusian views", "Technology: renewables, desalination, GM crops, efficiency", "Limits: cost, access in LICs, rebound effect, environmental side effects", "Other solutions: policy, behaviour change, redistribution", "Evaluation: necessary but not sufficient; depends on governance and equity"]) },
+      { id: "geo-7-q6", paper: "P2", marks: 1, diff: 1, q: "Which is a renewable energy source?", options: ["Natural gas", "Uranium", "Geothermal", "Coal"], answer: 2, ms: ["C."] },
+      { id: "geo-7-q9", paper: "P2", marks: 4, diff: 2, q: "Explain two reasons why global resource consumption is increasing.", ms: ["Population growth [1] - more people need food, water, energy [1]", "Rising affluence / growing middle class, e.g. in India and China [1] - higher per-capita consumption of meat, energy, goods [1]"] },
+    ],
+    "geo-7b": [
+      { id: "geo-7-q7", paper: "P2", marks: 1, diff: 2, q: "Virtual water refers to:", options: ["water in clouds", "the water used to produce goods and services that are traded", "desalinated water", "groundwater"], answer: 1, ms: ["B."] },
+      { id: "geo-7-q8", paper: "P2", marks: 2, diff: 1, q: "Define <strong>energy security</strong>.", ms: ["Uninterrupted availability of energy sources [1]", "At an affordable price [1]"] },
+    ],
+    "geo-7c": [
+      { id: "geo-7-q10", paper: "P2", marks: 4, diff: 2, q: "Explain how the circular economy can reduce pressure on resources.", ms: ["Resources kept in use for as long as possible [1]", "Reuse, repair, remanufacture and recycle [1]", "Reduces extraction of raw materials and waste [1]", "Example, e.g. Philips lighting as a service / EU right-to-repair [1]"] },
+      { id: "geo-7-q11", paper: "P2", type: "extended", marks: 10, diff: 3, q: "\"Technology is the best solution to resource insecurity.\" Discuss. [10]", ms: essay(["Boserup optimism vs Malthus/neo-Malthusian views", "Technology: renewables, desalination, GM crops, efficiency", "Limits: cost, access in LICs, rebound effect, environmental side effects", "Other solutions: policy, behaviour change, redistribution", "Evaluation: necessary but not sufficient; depends on governance and equity"]) },
     ],
     "geo-8": [
       { paper: "P1", marks: 1, diff: 1, q: "The area of land drained by a river and its tributaries is the:", options: ["watershed", "drainage basin", "floodplain", "confluence"], answer: 1, ms: ["B."] },
