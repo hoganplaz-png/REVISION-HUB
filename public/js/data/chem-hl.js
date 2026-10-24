@@ -13,7 +13,7 @@ IB.extend("chem", {
 
 IB.addTopics("chem", [
   {
-    id: "chem-h1", code: "S1.3, S2.2 AHL", after: "chem-4", unit: "Structure 1-2 (HL)", title: "Ionisation energies, hybridisation and expanded octets",
+    id: "chem-h1", code: "S1.3, S2.2 AHL", after: "chem-4c", unit: "Structure 1-2 (HL)", title: "Ionisation energies, hybridisation and expanded octets",
     summary: "Successive ionisation energies, formal charge, sigma and pi bonds, hybridisation (sp, sp², sp³), VSEPR with 5 and 6 electron domains, and delocalisation.",
     concepts: [
       { h: "Successive ionisation energies", b: "<p>Each successive IE is larger (removing an electron from an increasingly positive ion). A <strong>large jump</strong> shows an electron being removed from a new, inner shell - this identifies the group. Limit of convergence in the emission spectrum gives the first IE: \\(\\Delta E = h\\nu\\).</p>", yue: "連續電離能每一個都大過上一個；突然大跳一下，代表開始拎內層電子，可以用嚟判斷元素屬於邊族。" },
@@ -69,7 +69,7 @@ IB.addTopics("chem", [
     ],
   },
   {
-    id: "chem-h3", code: "R1.2-1.4 AHL", after: "chem-7", unit: "Reactivity 1 (HL)", title: "Born-Haber cycles, entropy and Gibbs energy",
+    id: "chem-h3", code: "R1.2-1.4 AHL", after: "chem-7c", unit: "Reactivity 1 (HL)", title: "Born-Haber cycles, entropy and Gibbs energy",
     summary: "Lattice enthalpy and Born-Haber cycles, entropy changes, Gibbs energy and spontaneity.",
     concepts: [
       { h: "Born-Haber cycles", b: "<p>An energy cycle for forming an ionic solid. Lattice enthalpy (endothermic, solid → gaseous ions) depends on ion charge and radius: higher charge and smaller ions → larger lattice enthalpy.</p>" },
@@ -139,7 +139,7 @@ IB.addTopics("chem", [
     ],
   },
   {
-    id: "chem-h6", code: "R3.4 AHL", after: "chem-13", unit: "Reactivity 3 (HL)", title: "Organic mechanisms: SN1, SN2, electrophilic addition and substitution",
+    id: "chem-h6", code: "R3.4 AHL", after: "chem-13b", unit: "Reactivity 3 (HL)", title: "Organic mechanisms: SN1, SN2, electrophilic addition and substitution",
     summary: "Nucleophilic substitution mechanisms (SN1/SN2), electrophilic addition to alkenes and Markovnikov's rule, electrophilic substitution of benzene, and Lewis acids and bases.",
     concepts: [
       { h: "SN1 vs SN2", b: "<p>SN2: one step, backside attack, inversion of configuration, rate = k[RX][Nu⁻], favoured by primary halogenoalkanes and aprotic solvents. SN1: two steps via a carbocation, rate = k[RX], favoured by tertiary halogenoalkanes and protic solvents.</p>", yue: "SN2 一步完成，由背面攻擊；SN1 兩步，先形成碳正離子。叔鹵烷行 SN1，伯鹵烷行 SN2。" },

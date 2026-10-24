@@ -26,11 +26,28 @@ IB.register({
   topics: [
     // ---------------- STRUCTURE 1 ----------------
     {
-      id: "chem-1", code: "S1.1-1.2", unit: "Structure 1: Models of the particulate nature of matter", title: "Particulate nature of matter & the nuclear atom",
-      summary: "Elements, compounds and mixtures, states of matter, kinetic theory, subatomic particles, isotopes and relative atomic mass.",
+      id: "chem-1", code: "S1.1", unit: "Structure 1: Models of the particulate nature of matter", title: "Introduction to the particulate nature of matter",
+      summary: "Elements, compounds and mixtures, separation techniques, states of matter, kinetic molecular theory and changes of state.",
       concepts: [
         { h: "Elements, compounds and mixtures", b: "<p>Elements contain one type of atom; compounds contain two or more elements chemically combined in a fixed ratio; mixtures contain substances physically combined in variable proportions. <strong>Homogeneous</strong> mixtures have uniform composition (solutions, alloys); <strong>heterogeneous</strong> do not. Separation: filtration, crystallisation, evaporation, distillation, chromatography, solvation.</p>" },
         { h: "Kinetic molecular theory", b: "<p>Temperature (K) is proportional to the <strong>average kinetic energy</strong> of particles. \\(T(K) = T(°C) + 273\\). Changes of state: melting, freezing, vaporisation (boiling/evaporation), condensation, sublimation, deposition. During a change of state, temperature is constant because energy is used to overcome (or is released by forming) intermolecular forces.</p>" },
+      ],
+      terms: [
+        ["Absolute zero", "0 K (−273 °C), the temperature at which particles have minimum kinetic energy."],
+      ],
+      skills: [
+        
+      ],
+      examples: [],
+      questions: [
+        { id: "chem-1-q4", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What happens to the average kinetic energy of the particles when ice melts at 0 °C?", options: ["Increases", "Decreases", "Stays the same", "Becomes zero"], answer: 2, ms: ["Temperature is constant during a change of state, so average KE is unchanged."] },
+        { id: "chem-1-q6", type: "short", paper: "P2", marks: 3, diff: 2, q: "Explain, in terms of particles, why the temperature of water remains constant while it boils.", ms: ["Energy supplied is used to overcome intermolecular forces (hydrogen bonds)", "rather than to increase the kinetic energy of the particles", "so the average kinetic energy and therefore temperature stays constant"] },
+      ],
+    },
+    {
+      id: "chem-1b", code: "S1.2", unit: "Structure 1: Models of the particulate nature of matter", title: "The nuclear atom",
+      summary: "Subatomic particles, atomic and mass numbers, ions, isotopes, relative atomic mass and mass spectra.",
+      concepts: [
         { h: "The nuclear atom", b: "<table><tr><th>Particle</th><th>Relative mass</th><th>Relative charge</th><th>Location</th></tr><tr><td>Proton</td><td>1</td><td>+1</td><td>nucleus</td></tr><tr><td>Neutron</td><td>1</td><td>0</td><td>nucleus</td></tr><tr><td>Electron</td><td>0.0005</td><td>−1</td><td>shells/orbitals</td></tr></table><p>Nuclear symbol \\(^{A}_{Z}X\\): A = mass number (p + n), Z = atomic number (p). <strong>Isotopes</strong>: same Z, different number of neutrons - same chemical properties, different physical properties (mass, density, rate of diffusion).</p>" },
         { h: "Relative atomic mass and mass spectra", b: "<p>\\(A_r\\) = weighted mean mass of the isotopes relative to 1/12 of a carbon-12 atom: $$A_r = \\frac{\\sum (\\text{isotope mass} \\times \\%\\text{abundance})}{100}$$ Mass spectra show peaks at m/z values with heights proportional to abundance.</p>" },
       ],
@@ -38,21 +55,20 @@ IB.register({
         ["Isotopes", "Atoms of the same element with the same number of protons but different numbers of neutrons."],
         ["Mass number", "The total number of protons and neutrons in the nucleus."],
         ["Relative atomic mass", "The weighted average mass of an atom of an element relative to 1/12 of the mass of a carbon-12 atom."],
-        ["Absolute zero", "0 K (−273 °C), the temperature at which particles have minimum kinetic energy."],
       ],
       skills: [
         { h: "Ar calculations", b: "Multiply each isotopic mass by its % abundance, add, divide by 100. Give 2 d.p. If one abundance is unknown, let it be x and (100 − x)." },
         { h: "Counting subatomic particles in ions", b: "Electrons = Z − charge. For S²⁻: Z = 16, electrons = 18." },
       ],
-      examples: [{ q: "Copper consists of 69.2% ⁶³Cu and 30.8% ⁶⁵Cu. Calculate Ar.", a: "Ar = (63 × 69.2 + 65 × 30.8)/100 = (4359.6 + 2002)/100 = 63.62 → 63.62." }],
+      examples: [
+        { q: "Copper consists of 69.2% ⁶³Cu and 30.8% ⁶⁵Cu. Calculate Ar.", a: "Ar = (63 × 69.2 + 65 × 30.8)/100 = (4359.6 + 2002)/100 = 63.62 → 63.62." },
+      ],
       questions: [
-        { type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "How many neutrons are in one atom of \\(^{56}_{26}\\text{Fe}\\)?", options: ["26", "30", "56", "82"], answer: 1, ms: ["56 − 26 = 30."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "Which species has 18 electrons?", options: ["Ar⁺", "K⁺", "Na⁺", "Ca"], answer: 1, ms: ["K has 19 electrons; K⁺ has 18."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which property differs between isotopes of the same element?", options: ["Number of protons", "Chemical reactivity", "Electron configuration", "Density"], answer: 3, ms: ["Different mass → different physical properties such as density."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What happens to the average kinetic energy of the particles when ice melts at 0 °C?", options: ["Increases", "Decreases", "Stays the same", "Becomes zero"], answer: 2, ms: ["Temperature is constant during a change of state, so average KE is unchanged."] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: 10.8, tol: 0.02 }, q: "Boron has two isotopes: ¹⁰B (19.9%) and ¹¹B (80.1%). Calculate the relative atomic mass of boron to two decimal places.", ms: ["(10 × 19.9 + 11 × 80.1)/100 [M1]", "= 10.80 (accept 10.80-10.81) [A1]"] },
-        { type: "short", paper: "P2", marks: 3, diff: 2, q: "Explain, in terms of particles, why the temperature of water remains constant while it boils.", ms: ["Energy supplied is used to overcome intermolecular forces (hydrogen bonds)", "rather than to increase the kinetic energy of the particles", "so the average kinetic energy and therefore temperature stays constant"] },
-        { type: "short", paper: "P1B", marks: 3, diff: 3, q: "A sample of chlorine gives mass spectrum peaks at m/z = 35 and m/z = 37 with relative heights 3 : 1. Determine the relative atomic mass of chlorine and state the identity of the particles responsible for the peaks.", ms: ["Ar = (35×3 + 37×1)/4", "= 35.5", "Peaks due to ³⁵Cl⁺ and ³⁷Cl⁺ ions (isotopes)"] },
+        { id: "chem-1-q1", type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "How many neutrons are in one atom of \\(^{56}_{26}\\text{Fe}\\)?", options: ["26", "30", "56", "82"], answer: 1, ms: ["56 − 26 = 30."] },
+        { id: "chem-1-q2", type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "Which species has 18 electrons?", options: ["Ar⁺", "K⁺", "Na⁺", "Ca"], answer: 1, ms: ["K has 19 electrons; K⁺ has 18."] },
+        { id: "chem-1-q3", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which property differs between isotopes of the same element?", options: ["Number of protons", "Chemical reactivity", "Electron configuration", "Density"], answer: 3, ms: ["Different mass → different physical properties such as density."] },
+        { id: "chem-1-q5", type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: 10.8, tol: 0.02 }, q: "Boron has two isotopes: ¹⁰B (19.9%) and ¹¹B (80.1%). Calculate the relative atomic mass of boron to two decimal places.", ms: ["(10 × 19.9 + 11 × 80.1)/100 [M1]", "= 10.80 (accept 10.80-10.81) [A1]"] },
+        { id: "chem-1-q7", type: "short", paper: "P1B", marks: 3, diff: 3, q: "A sample of chlorine gives mass spectrum peaks at m/z = 35 and m/z = 37 with relative heights 3 : 1. Determine the relative atomic mass of chlorine and state the identity of the particles responsible for the peaks.", ms: ["Ar = (35×3 + 37×1)/4", "= 35.5", "Peaks due to ³⁵Cl⁺ and ³⁷Cl⁺ ions (isotopes)"] },
       ],
     },
     {
@@ -85,80 +101,134 @@ IB.register({
       ],
     },
     {
-      id: "chem-3", code: "S1.4-1.5", unit: "Structure 1: Models of the particulate nature of matter", title: "The mole and ideal gases",
-      summary: "Avogadro's constant, molar mass, empirical and molecular formulae, concentration, molar volume and the ideal gas equation.",
+      id: "chem-3", code: "S1.4", unit: "Structure 1: Models of the particulate nature of matter", title: "Counting particles by mass: the mole",
+      summary: "Avogadro's constant, molar mass, empirical and molecular formulae, concentration of solutions and Avogadro's law.",
       concepts: [
         { h: "The mole", b: "<p>One mole contains \\(6.02 \\times 10^{23}\\) particles (Avogadro constant, \\(N_A\\)). $$n = \\frac{m}{M} \\qquad N = n \\times N_A$$ Molar mass M (g mol⁻¹) = sum of Ar values.</p>" },
         { h: "Empirical and molecular formulae", b: "<p><strong>Empirical formula</strong>: simplest whole-number ratio of atoms. Method: mass (or %) → ÷ Ar → ÷ smallest → whole numbers. <strong>Molecular formula</strong> = (empirical formula)ₙ, where n = M ÷ M(empirical).</p>" },
         { h: "Solutions", b: "<p>$$c = \\frac{n}{V}$$ with c in mol dm⁻³ and V in dm³ (cm³ ÷ 1000). Also g dm⁻³. Standard solution = known concentration. Dilution: \\(c_1V_1 = c_2V_2\\).</p>" },
-        { h: "Ideal gases", b: "<p>Ideal gas assumptions: negligible particle volume, no intermolecular forces, elastic collisions, random motion. Real gases deviate at <strong>high pressure</strong> and <strong>low temperature</strong>. Avogadro's law: equal volumes of gases at the same T and p contain equal numbers of particles. Molar volume at STP (273 K, 100 kPa) = 22.7 dm³ mol⁻¹.</p><p>$$pV = nRT$$ with p in Pa, V in m³, T in K, R = 8.31 J K⁻¹ mol⁻¹. Combined gas law: \\(\\frac{p_1V_1}{T_1} = \\frac{p_2V_2}{T_2}\\).</p>" },
-        { h: "The named gas laws", b: "<p>For a fixed amount of an ideal gas (temperatures always in <strong>kelvin</strong>):</p><table><tr><th>Law</th><th>Constant</th><th>Relationship</th><th>Graph</th></tr><tr><td><strong>Boyle's law</strong></td><td>T</td><td>$$P_1V_1 = P_2V_2$$ (P ∝ 1/V)</td><td>P vs 1/V: straight line through origin</td></tr><tr><td><strong>Charles's law</strong></td><td>P</td><td>$$\\frac{V_1}{T_1} = \\frac{V_2}{T_2}$$ (V ∝ T)</td><td>V vs T(K): straight line through origin; V vs T(°C) meets the axis at −273 °C</td></tr><tr><td><strong>Gay-Lussac's (pressure) law</strong></td><td>V</td><td>$$\\frac{P_1}{T_1} = \\frac{P_2}{T_2}$$ (P ∝ T)</td><td>P vs T(K): straight line through origin</td></tr></table><p>Combined: $$\\frac{P_1V_1}{T_1} = \\frac{P_2V_2}{T_2}$$ Units cancel, so any pressure or volume unit works as long as both sides match - but T must be in K.</p>" },
       ],
       terms: [
         ["Mole", "The amount of substance containing 6.02 × 10²³ elementary entities."],
         ["Molar mass", "The mass of one mole of a substance, in g mol⁻¹."],
         ["Empirical formula", "The simplest whole-number ratio of atoms of each element in a compound."],
         ["Concentration", "Amount of solute per unit volume of solution (mol dm⁻³)."],
-        ["Ideal gas", "A theoretical gas that obeys pV = nRT exactly at all conditions."],
       ],
       skills: [
-        { h: "Unit conversions in pV = nRT", b: "kPa × 1000 → Pa; dm³ ÷ 1000 → m³; cm³ ÷ 10⁶ → m³; °C + 273 → K." },
         { h: "Significant figures", b: "Give answers to the same number of s.f. as the least precise data given (usually 3)." },
       ],
       examples: [
         { q: "A compound contains 40.0% C, 6.7% H, 53.3% O and has M = 180 g mol⁻¹. Find its molecular formula.", a: "C: 40.0/12.01 = 3.33; H: 6.7/1.01 = 6.63; O: 53.3/16.00 = 3.33. Ratio 1 : 2 : 1 → CH₂O (M = 30.03). n = 180/30 = 6 → C₆H₁₂O₆." },
+      ],
+      questions: [
+        { id: "chem-3-q1", type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "How many moles are in 9.00 g of water? (M = 18.02 g mol⁻¹)", options: ["0.250", "0.499", "2.00", "162"], answer: 1, ms: ["9.00/18.02 = 0.499 mol."] },
+        { id: "chem-3-q3", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What is the empirical formula of a hydrocarbon containing 85.7% carbon by mass?", options: ["CH", "CH₂", "CH₃", "C₂H₅"], answer: 1, ms: ["C 7.14, H 14.3 → 1 : 2."] },
+        { id: "chem-3-q4", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What volume of 2.00 mol dm⁻³ HCl is needed to make 500 cm³ of 0.100 mol dm⁻³ HCl?", options: ["10.0 cm³", "25.0 cm³", "50.0 cm³", "100 cm³"], answer: 1, ms: ["c₁V₁ = c₂V₂: V₁ = 0.100 × 500 / 2.00 = 25.0 cm³."] },
+        { id: "chem-3-q5", type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: 0.125, tol: 0.001 }, q: "Calculate the concentration, in mol dm⁻³, of a solution made by dissolving 5.00 g of NaOH (M = 40.00 g mol⁻¹) in water to make 1.00 dm³ of solution.", ms: ["n = 5.00/40.00 = 0.125 mol [M1]", "c = 0.125 mol dm⁻³ [A1]"] },
+      ],
+    },
+    {
+      id: "chem-3b", code: "S1.5", unit: "Structure 1: Models of the particulate nature of matter", title: "Ideal gases",
+      summary: "The ideal gas model, deviation of real gases, molar volume, the gas laws and the ideal gas equation pV = nRT.",
+      concepts: [
+        { h: "Ideal gases", b: "<p>Ideal gas assumptions: negligible particle volume, no intermolecular forces, elastic collisions, random motion. Real gases deviate at <strong>high pressure</strong> and <strong>low temperature</strong>. Avogadro's law: equal volumes of gases at the same T and p contain equal numbers of particles. Molar volume at STP (273 K, 100 kPa) = 22.7 dm³ mol⁻¹.</p><p>$$pV = nRT$$ with p in Pa, V in m³, T in K, R = 8.31 J K⁻¹ mol⁻¹. Combined gas law: \\(\\frac{p_1V_1}{T_1} = \\frac{p_2V_2}{T_2}\\).</p>" },
+        { h: "The named gas laws", b: "<p>For a fixed amount of an ideal gas (temperatures always in <strong>kelvin</strong>):</p><table><tr><th>Law</th><th>Constant</th><th>Relationship</th><th>Graph</th></tr><tr><td><strong>Boyle's law</strong></td><td>T</td><td>$$P_1V_1 = P_2V_2$$ (P ∝ 1/V)</td><td>P vs 1/V: straight line through origin</td></tr><tr><td><strong>Charles's law</strong></td><td>P</td><td>$$\\frac{V_1}{T_1} = \\frac{V_2}{T_2}$$ (V ∝ T)</td><td>V vs T(K): straight line through origin; V vs T(°C) meets the axis at −273 °C</td></tr><tr><td><strong>Gay-Lussac's (pressure) law</strong></td><td>V</td><td>$$\\frac{P_1}{T_1} = \\frac{P_2}{T_2}$$ (P ∝ T)</td><td>P vs T(K): straight line through origin</td></tr></table><p>Combined: $$\\frac{P_1V_1}{T_1} = \\frac{P_2V_2}{T_2}$$ Units cancel, so any pressure or volume unit works as long as both sides match - but T must be in K.</p>" },
+      ],
+      terms: [
+        ["Ideal gas", "A theoretical gas that obeys pV = nRT exactly at all conditions."],
+      ],
+      skills: [
+        { h: "Unit conversions in pV = nRT", b: "kPa × 1000 → Pa; dm³ ÷ 1000 → m³; cm³ ÷ 10⁶ → m³; °C + 273 → K." },
+      ],
+      examples: [
         { q: "Calculate the volume of 0.200 mol of gas at 300 K and 150 kPa.", a: "V = nRT/p = 0.200 × 8.31 × 300 / 150 000 = 3.32 × 10⁻³ m³ = 3.32 dm³." },
       ],
       questions: [
-        { type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "How many moles are in 9.00 g of water? (M = 18.02 g mol⁻¹)", options: ["0.250", "0.499", "2.00", "162"], answer: 1, ms: ["9.00/18.02 = 0.499 mol."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Under which conditions does a real gas behave most like an ideal gas?", options: ["High pressure, low temperature", "Low pressure, high temperature", "High pressure, high temperature", "Low pressure, low temperature"], answer: 1, ms: ["Particles far apart and fast-moving - intermolecular forces and particle volume negligible."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What is the empirical formula of a hydrocarbon containing 85.7% carbon by mass?", options: ["CH", "CH₂", "CH₃", "C₂H₅"], answer: 1, ms: ["C 7.14, H 14.3 → 1 : 2."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What volume of 2.00 mol dm⁻³ HCl is needed to make 500 cm³ of 0.100 mol dm⁻³ HCl?", options: ["10.0 cm³", "25.0 cm³", "50.0 cm³", "100 cm³"], answer: 1, ms: ["c₁V₁ = c₂V₂: V₁ = 0.100 × 500 / 2.00 = 25.0 cm³."] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, numeric: { value: 0.125, tol: 0.001 }, q: "Calculate the concentration, in mol dm⁻³, of a solution made by dissolving 5.00 g of NaOH (M = 40.00 g mol⁻¹) in water to make 1.00 dm³ of solution.", ms: ["n = 5.00/40.00 = 0.125 mol [M1]", "c = 0.125 mol dm⁻³ [A1]"] },
-        { type: "short", paper: "P2", marks: 3, diff: 3, numeric: { value: 44.0, tol: 0.5 }, q: "0.500 g of a gas occupies 2.83 × 10⁻⁴ m³ at 100 kPa and 300 K. Calculate the molar mass of the gas.", ms: ["n = pV/RT = (100 000 × 2.83 × 10⁻⁴)/(8.31 × 300) [M1]", "n = 0.01135 mol [M1]", "M = 0.500/0.01135 = 44.0 g mol⁻¹ [A1]"] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, q: "State two assumptions of the kinetic theory of ideal gases.", ms: ["Particles have negligible volume (compared to the container)", "No intermolecular forces / collisions are perfectly elastic / random motion"] },
+        { id: "chem-3-q2", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Under which conditions does a real gas behave most like an ideal gas?", options: ["High pressure, low temperature", "Low pressure, high temperature", "High pressure, high temperature", "Low pressure, low temperature"], answer: 1, ms: ["Particles far apart and fast-moving - intermolecular forces and particle volume negligible."] },
+        { id: "chem-3-q6", type: "short", paper: "P2", marks: 3, diff: 3, numeric: { value: 44.0, tol: 0.5 }, q: "0.500 g of a gas occupies 2.83 × 10⁻⁴ m³ at 100 kPa and 300 K. Calculate the molar mass of the gas.", ms: ["n = pV/RT = (100 000 × 2.83 × 10⁻⁴)/(8.31 × 300) [M1]", "n = 0.01135 mol [M1]", "M = 0.500/0.01135 = 44.0 g mol⁻¹ [A1]"] },
+        { id: "chem-3-q7", type: "short", paper: "P2", marks: 2, diff: 2, q: "State two assumptions of the kinetic theory of ideal gases.", ms: ["Particles have negligible volume (compared to the container)", "No intermolecular forces / collisions are perfectly elastic / random motion"] },
       ],
     },
     // ---------------- STRUCTURE 2 ----------------
     {
-      id: "chem-4", code: "S2.1-2.3", unit: "Structure 2: Models of bonding and structure", title: "Ionic, covalent and metallic bonding",
-      summary: "Ionic lattices, Lewis structures, VSEPR shapes, polarity, intermolecular forces, giant covalent and metallic structures.",
+      id: "chem-4", code: "S2.1", unit: "Structure 2: Models of bonding and structure", title: "The ionic model",
+      summary: "Ion formation, formulae of ionic compounds, ionic lattices, lattice enthalpy and the properties of ionic compounds.",
       concepts: [
         { h: "Ionic model", b: "<p>Electrostatic attraction between oppositely charged ions in a <strong>lattice</strong>. Formed by electron transfer, usually metal + non-metal (Δχ &gt; 1.8 approx). Lattice enthalpy increases with higher charge and smaller ionic radius. Properties: high melting points, brittle, conduct when molten or aqueous (mobile ions), often soluble in water.</p><p>Polyatomic ions to know: NH₄⁺, OH⁻, NO₃⁻, HCO₃⁻, CO₃²⁻, SO₄²⁻, PO₄³⁻.</p>" },
-        { h: "Covalent model", b: "<p>A covalent bond is the electrostatic attraction between a shared pair of electrons and the positively charged nuclei. Single, double, triple bonds: more shared pairs → shorter and stronger. <strong>Coordination bonds</strong>: both electrons from one atom (e.g. NH₄⁺, CO, H₃O⁺). Octet rule exceptions: BF₃ (incomplete octet).</p><p><strong>VSEPR</strong>: electron domains repel to maximise separation; lone pairs repel more than bonding pairs.</p><table><tr><th>Domains</th><th>Lone pairs</th><th>Shape</th><th>Angle</th><th>Example</th></tr><tr><td>2</td><td>0</td><td>linear</td><td>180°</td><td>CO₂</td></tr><tr><td>3</td><td>0</td><td>trigonal planar</td><td>120°</td><td>BF₃</td></tr><tr><td>3</td><td>1</td><td>bent</td><td>~117°</td><td>SO₂</td></tr><tr><td>4</td><td>0</td><td>tetrahedral</td><td>109.5°</td><td>CH₄</td></tr><tr><td>4</td><td>1</td><td>trigonal pyramidal</td><td>107°</td><td>NH₃</td></tr><tr><td>4</td><td>2</td><td>bent</td><td>104.5°</td><td>H₂O</td></tr></table>" },
-        { h: "Polarity and intermolecular forces", b: "<p>Bond polarity arises from electronegativity difference; molecular polarity depends on shape (symmetrical molecules like CO₂, CCl₄ are non-polar). Intermolecular forces (increasing strength): <strong>London (dispersion)</strong> forces (all molecules; increase with number of electrons) &lt; <strong>dipole-induced dipole</strong> &lt; <strong>dipole-dipole</strong> &lt; <strong>hydrogen bonding</strong> (H bonded to N, O or F). Stronger IMFs → higher boiling point, lower volatility. Solubility: 'like dissolves like'.</p><p><strong>Chromatography</strong> (S2.2): components of a mixture separate according to their relative attractions (intermolecular forces) to the <strong>stationary phase</strong> (e.g. water held in paper, or silica in TLC) and the <strong>mobile phase</strong> (solvent). \\(R_f = \\frac{\\text{distance moved by component}}{\\text{distance moved by solvent front}}\\) (0-1, no units); compare Rf values with standards run under the same conditions. Draw the baseline in pencil, above the solvent level.</p><p>Covalent network structures: diamond (each C bonded to 4, very hard), graphite (layers, delocalised electrons, conducts), graphene, fullerene C₆₀, silicon dioxide.</p>" },
-        { h: "Metallic model", b: "<p>Electrostatic attraction between a lattice of cations and a 'sea' of delocalised electrons. Strength increases with charge of cation and smaller radius (more delocalised electrons). Properties: conduct electricity and heat, malleable and ductile, high melting points. <strong>Alloys</strong>: mixtures of a metal with other elements - different sized atoms disrupt layers, increasing hardness.</p>" },
       ],
       terms: [
         ["Ionic bond", "Electrostatic attraction between oppositely charged ions."],
+      ],
+      skills: [
+        
+      ],
+      examples: [],
+      questions: [
+        { id: "chem-4-q4", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which has the highest melting point?", options: ["NaCl", "MgO", "KBr", "CsI"], answer: 1, ms: ["Mg²⁺ and O²⁻ have high charges and small radii - strongest lattice."] },
+        { id: "chem-4-q9", type: "short", paper: "P2", marks: 2, diff: 1, q: "State why solid sodium chloride does not conduct electricity but molten sodium chloride does.", ms: ["In the solid, ions are fixed in the lattice / cannot move", "When molten, ions are free to move and carry charge"] },
+      ],
+    },
+    {
+      id: "chem-4b", code: "S2.2", unit: "Structure 2: Models of bonding and structure", title: "The covalent model",
+      summary: "Lewis structures, coordination bonds, VSEPR shapes, bond and molecular polarity, giant covalent structures, intermolecular forces and chromatography.",
+      concepts: [
+        { h: "Covalent model", b: "<p>A covalent bond is the electrostatic attraction between a shared pair of electrons and the positively charged nuclei. Single, double, triple bonds: more shared pairs → shorter and stronger. <strong>Coordination bonds</strong>: both electrons from one atom (e.g. NH₄⁺, CO, H₃O⁺). Octet rule exceptions: BF₃ (incomplete octet).</p><p><strong>VSEPR</strong>: electron domains repel to maximise separation; lone pairs repel more than bonding pairs.</p><table><tr><th>Domains</th><th>Lone pairs</th><th>Shape</th><th>Angle</th><th>Example</th></tr><tr><td>2</td><td>0</td><td>linear</td><td>180°</td><td>CO₂</td></tr><tr><td>3</td><td>0</td><td>trigonal planar</td><td>120°</td><td>BF₃</td></tr><tr><td>3</td><td>1</td><td>bent</td><td>~117°</td><td>SO₂</td></tr><tr><td>4</td><td>0</td><td>tetrahedral</td><td>109.5°</td><td>CH₄</td></tr><tr><td>4</td><td>1</td><td>trigonal pyramidal</td><td>107°</td><td>NH₃</td></tr><tr><td>4</td><td>2</td><td>bent</td><td>104.5°</td><td>H₂O</td></tr></table>" },
+        { h: "Polarity and intermolecular forces", b: "<p>Bond polarity arises from electronegativity difference; molecular polarity depends on shape (symmetrical molecules like CO₂, CCl₄ are non-polar). Intermolecular forces (increasing strength): <strong>London (dispersion)</strong> forces (all molecules; increase with number of electrons) &lt; <strong>dipole-induced dipole</strong> &lt; <strong>dipole-dipole</strong> &lt; <strong>hydrogen bonding</strong> (H bonded to N, O or F). Stronger IMFs → higher boiling point, lower volatility. Solubility: 'like dissolves like'.</p><p><strong>Chromatography</strong> (S2.2): components of a mixture separate according to their relative attractions (intermolecular forces) to the <strong>stationary phase</strong> (e.g. water held in paper, or silica in TLC) and the <strong>mobile phase</strong> (solvent). \\(R_f = \\frac{\\text{distance moved by component}}{\\text{distance moved by solvent front}}\\) (0-1, no units); compare Rf values with standards run under the same conditions. Draw the baseline in pencil, above the solvent level.</p><p>Covalent network structures: diamond (each C bonded to 4, very hard), graphite (layers, delocalised electrons, conducts), graphene, fullerene C₆₀, silicon dioxide.</p>" },
+      ],
+      terms: [
         ["Covalent bond", "Electrostatic attraction between a shared pair of electrons and the positively charged nuclei."],
         ["Electronegativity", "The ability of an atom to attract a shared pair of electrons in a covalent bond."],
         ["Hydrogen bond", "An intermolecular attraction between H bonded to N, O or F and a lone pair on N, O or F of another molecule."],
-        ["Metallic bond", "Electrostatic attraction between a lattice of positive ions and delocalised electrons."],
         ["Retardation factor (Rf)", "Distance moved by a component divided by distance moved by the solvent front in chromatography."],
       ],
       skills: [
         { h: "Shape questions", b: "1. Draw Lewis structure. 2. Count electron domains (double bond = 1 domain). 3. State electron domain geometry and molecular geometry. 4. Give angle." },
         { h: "Boiling point explanations", b: "Identify the IMF type in each substance, compare strengths, and link 'more energy needed to overcome' → higher boiling point. Never say 'covalent bonds break' on boiling a molecular substance." },
       ],
-      examples: [{ q: "Explain why H₂O (M = 18) boils at 100 °C while H₂S (M = 34) boils at −60 °C.", a: "H₂O molecules form hydrogen bonds (H bonded to highly electronegative O with lone pairs), which are much stronger than the dipole-dipole and London forces between H₂S molecules. More energy is needed to separate H₂O molecules despite its smaller number of electrons." }],
+      examples: [
+        { q: "Explain why H₂O (M = 18) boils at 100 °C while H₂S (M = 34) boils at −60 °C.", a: "H₂O molecules form hydrogen bonds (H bonded to highly electronegative O with lone pairs), which are much stronger than the dipole-dipole and London forces between H₂S molecules. More energy is needed to separate H₂O molecules despite its smaller number of electrons." },
+      ],
       questions: [
-        { type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "What is the shape of the NH₃ molecule?", options: ["Trigonal planar", "Tetrahedral", "Trigonal pyramidal", "Bent"], answer: 2, ms: ["4 electron domains, 1 lone pair."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which molecule is non-polar but contains polar bonds?", options: ["H₂O", "NH₃", "CO₂", "HCl"], answer: 2, ms: ["Linear symmetry cancels the bond dipoles."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which substance has hydrogen bonding between its molecules?", options: ["CH₄", "CH₃OCH₃", "CH₃CH₂OH", "CH₃Cl"], answer: 2, ms: ["Ethanol has an O-H group."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which has the highest melting point?", options: ["NaCl", "MgO", "KBr", "CsI"], answer: 1, ms: ["Mg²⁺ and O²⁻ have high charges and small radii - strongest lattice."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "Why does graphite conduct electricity?", options: ["It contains ions", "It has delocalised electrons between layers", "It has weak London forces", "Each carbon forms four covalent bonds"], answer: 1, ms: ["One electron per C atom is delocalised."] },
-        { type: "short", paper: "P2", marks: 3, diff: 2, q: "Describe the Lewis structure of SO₂, then deduce its molecular geometry and estimate the O-S-O bond angle. (Describe the structure in words.)", ms: ["Lewis structure with S central, two S=O (or one S=O and one coordinate S→O), one lone pair on S", "Bent / V-shaped", "~117° (accept 115-119°)"] },
-        { type: "short", paper: "P2", marks: 3, diff: 2, q: "Explain why magnesium has a higher melting point than sodium.", ms: ["Mg²⁺ has greater charge than Na⁺ / smaller ionic radius", "Mg contributes two delocalised electrons per atom vs one for Na", "Stronger electrostatic attraction between cations and delocalised electrons in Mg"] },
-        { type: "short", paper: "P1B", marks: 3, diff: 2, numeric: { value: 0.35, tol: 0.01 }, q: "In paper chromatography of a food dye, a spot moved 2.8 cm from the baseline while the solvent front moved 8.0 cm. Calculate the Rf value and explain why two dyes in the mixture separate.", ms: ["Rf = 2.8/8.0 = 0.35 [A1]", "Dyes have different relative attractions (intermolecular forces) to the stationary and mobile phases [1]", "so they travel different distances in the same time [1]"] },
-        { type: "short", paper: "P2", marks: 2, diff: 1, q: "State why solid sodium chloride does not conduct electricity but molten sodium chloride does.", ms: ["In the solid, ions are fixed in the lattice / cannot move", "When molten, ions are free to move and carry charge"] },
+        { id: "chem-4-q1", type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "What is the shape of the NH₃ molecule?", options: ["Trigonal planar", "Tetrahedral", "Trigonal pyramidal", "Bent"], answer: 2, ms: ["4 electron domains, 1 lone pair."] },
+        { id: "chem-4-q2", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which molecule is non-polar but contains polar bonds?", options: ["H₂O", "NH₃", "CO₂", "HCl"], answer: 2, ms: ["Linear symmetry cancels the bond dipoles."] },
+        { id: "chem-4-q3", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which substance has hydrogen bonding between its molecules?", options: ["CH₄", "CH₃OCH₃", "CH₃CH₂OH", "CH₃Cl"], answer: 2, ms: ["Ethanol has an O-H group."] },
+        { id: "chem-4-q5", type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "Why does graphite conduct electricity?", options: ["It contains ions", "It has delocalised electrons between layers", "It has weak London forces", "Each carbon forms four covalent bonds"], answer: 1, ms: ["One electron per C atom is delocalised."] },
+        { id: "chem-4-q6", type: "short", paper: "P2", marks: 3, diff: 2, q: "Describe the Lewis structure of SO₂, then deduce its molecular geometry and estimate the O-S-O bond angle. (Describe the structure in words.)", ms: ["Lewis structure with S central, two S=O (or one S=O and one coordinate S→O), one lone pair on S", "Bent / V-shaped", "~117° (accept 115-119°)"] },
+        { id: "chem-4-q8", type: "short", paper: "P1B", marks: 3, diff: 2, numeric: { value: 0.35, tol: 0.01 }, q: "In paper chromatography of a food dye, a spot moved 2.8 cm from the baseline while the solvent front moved 8.0 cm. Calculate the Rf value and explain why two dyes in the mixture separate.", ms: ["Rf = 2.8/8.0 = 0.35 [A1]", "Dyes have different relative attractions (intermolecular forces) to the stationary and mobile phases [1]", "so they travel different distances in the same time [1]"] },
       ],
     },
     {
-      id: "chem-5", code: "S2.4, S3.1", unit: "Structure 2-3: Materials & the periodic table", title: "Materials and periodic trends",
-      summary: "Bonding triangle, alloys and polymers; periodic table organisation and periodic trends in radius, IE, electronegativity, oxides.",
+      id: "chem-4c", code: "S2.3", unit: "Structure 2: Models of bonding and structure", title: "The metallic model",
+      summary: "Metallic bonding as cations in a sea of delocalized electrons, the strength of metallic bonds and the properties of metals.",
+      concepts: [
+        { h: "Metallic model", b: "<p>Electrostatic attraction between a lattice of cations and a 'sea' of delocalised electrons. Strength increases with charge of cation and smaller radius (more delocalised electrons). Properties: conduct electricity and heat, malleable and ductile, high melting points. <strong>Alloys</strong>: mixtures of a metal with other elements - different sized atoms disrupt layers, increasing hardness.</p>" },
+      ],
+      terms: [
+        ["Metallic bond", "Electrostatic attraction between a lattice of positive ions and delocalised electrons."],
+      ],
+      questions: [
+        { id: "chem-4-q7", type: "short", paper: "P2", marks: 3, diff: 2, q: "Explain why magnesium has a higher melting point than sodium.", ms: ["Mg²⁺ has greater charge than Na⁺ / smaller ionic radius", "Mg contributes two delocalised electrons per atom vs one for Na", "Stronger electrostatic attraction between cations and delocalised electrons in Mg"] },
+      ],
+    },
+    {
+      id: "chem-5", code: "S2.4", unit: "Structure 2: Models of bonding and structure", title: "From models to materials",
+      summary: "The bonding triangle, bonding continuum, alloys, addition polymers and choosing materials from their bonding.",
       concepts: [
         { h: "From models to materials", b: "<p>The <strong>bonding triangle</strong> (van Arkel-Ketelaar) uses average electronegativity and electronegativity difference to classify bonding as ionic, covalent or metallic (most substances are intermediate). <strong>Polymers</strong> are made of repeating units (monomers). <strong>Addition polymers</strong> form from alkenes (e.g. polyethene, PVC) - draw the repeating unit with brackets and continuation bonds. Plastics are durable but non-biodegradable (environmental concerns).</p>" },
+      ],
+      terms: [
+        ["Addition polymer", "A polymer formed when monomers containing C=C double bonds join without loss of any atoms."],
+      ],
+      skills: [],
+      examples: [],
+      questions: [
+        { id: "chem-5-q7", type: "short", paper: "P2", marks: 2, diff: 2, q: "Give the repeating unit of poly(chloroethene) formed from CH₂=CHCl.", ms: ["-[CH₂-CHCl]- two carbon backbone with single bond", "Brackets with continuation bonds (n subscript)"] },
+      ],
+    },
+    {
+      id: "chem-5b", code: "S3.1", unit: "Structure 3: Classification of matter", title: "The periodic table: classification of elements",
+      summary: "Periods, groups and blocks; periodic trends in radius, ionization energy and electronegativity; group 1 and 17; oxides and oxidation states.",
+      concepts: [
         { h: "Periodic table organisation", b: "<p>Periods (rows) = number of occupied energy levels; groups (columns) = valence electrons. Blocks: s, p, d, f. Metals, metalloids (B, Si, Ge, As, Sb, Te), non-metals.</p>" },
         { h: "Periodic trends", b: "<table><tr><th>Property</th><th>Across a period →</th><th>Down a group ↓</th></tr><tr><td>Atomic radius</td><td>decreases (more protons, same shielding)</td><td>increases (more shells)</td></tr><tr><td>Ionic radius</td><td>cations small; anions larger; within each set decreases</td><td>increases</td></tr><tr><td>First IE</td><td>increases</td><td>decreases</td></tr><tr><td>Electron affinity</td><td>generally more exothermic</td><td>less exothermic</td></tr><tr><td>Electronegativity</td><td>increases</td><td>decreases</td></tr></table><p>Group 1: reactivity increases down group (lower IE); react with water to form hydroxide + H₂. Group 17: reactivity decreases down group; more reactive halogen displaces less reactive halide from solution.</p>" },
         { h: "Oxides and oxidation states", b: "<p>Metal oxides are <strong>basic</strong> (Na₂O + H₂O → 2NaOH); non-metal oxides are <strong>acidic</strong> (SO₃ + H₂O → H₂SO₄; NO₂ forms HNO₃/HNO₂; CO₂ forms H₂CO₃); Al₂O₃ is <strong>amphoteric</strong>. Acid deposition and ocean acidification relate to these reactions. Oxidation states: elements = 0; sum in compound = 0; O usually −2; H usually +1. Transition elements show variable oxidation states.</p>" },
@@ -167,18 +237,20 @@ IB.register({
         ["Periodicity", "Repeating patterns of physical and chemical properties across periods."],
         ["Electron affinity", "Energy change when one mole of electrons is added to one mole of gaseous atoms."],
         ["Amphoteric", "Able to react as both an acid and a base."],
-        ["Addition polymer", "A polymer formed when monomers containing C=C double bonds join without loss of any atoms."],
       ],
-      skills: [{ h: "Trend explanations", b: "Always use: nuclear charge, distance/number of shells, and shielding. Link to attraction between nucleus and outer electrons." }],
-      examples: [{ q: "Write an equation for the reaction of sulfur trioxide with water and state the acid-base nature of the oxide.", a: "SO₃(g) + H₂O(l) → H₂SO₄(aq). SO₃ is an acidic oxide (non-metal oxide)." }],
+      skills: [
+        { h: "Trend explanations", b: "Always use: nuclear charge, distance/number of shells, and shielding. Link to attraction between nucleus and outer electrons." },
+      ],
+      examples: [
+        { q: "Write an equation for the reaction of sulfur trioxide with water and state the acid-base nature of the oxide.", a: "SO₃(g) + H₂O(l) → H₂SO₄(aq). SO₃ is an acidic oxide (non-metal oxide)." },
+      ],
       questions: [
-        { type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "Which element has the largest atomic radius?", options: ["Na", "Mg", "Cl", "Ar"], answer: 0, ms: ["Radius decreases across period 3."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which oxide forms an acidic solution in water?", options: ["Na₂O", "MgO", "SO₂", "CaO"], answer: 2, ms: ["Non-metal oxide → H₂SO₃."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which reaction would occur?", options: ["I₂ + 2KBr → 2KI + Br₂", "Br₂ + 2KCl → 2KBr + Cl₂", "Cl₂ + 2KI → 2KCl + I₂", "I₂ + 2KCl → 2KI + Cl₂"], answer: 2, ms: ["A more reactive halogen displaces a less reactive halide."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What is the oxidation state of manganese in KMnO₄?", options: ["+2", "+4", "+6", "+7"], answer: 3, ms: ["+1 + Mn + 4(−2) = 0 → Mn = +7."] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, q: "Explain why the ionic radius of Cl⁻ is larger than the atomic radius of Cl.", ms: ["Cl⁻ has one more electron but the same nuclear charge", "Increased electron-electron repulsion / lower attraction per electron → electron cloud expands"] },
-        { type: "short", paper: "P2", marks: 3, diff: 2, q: "Explain why reactivity of group 1 metals increases down the group.", ms: ["Atomic radius increases / more electron shells", "Increased shielding; weaker attraction of nucleus for outer electron", "Lower ionisation energy so the outer electron is lost more easily"] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, q: "Give the repeating unit of poly(chloroethene) formed from CH₂=CHCl.", ms: ["-[CH₂-CHCl]- two carbon backbone with single bond", "Brackets with continuation bonds (n subscript)"] },
+        { id: "chem-5-q1", type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "Which element has the largest atomic radius?", options: ["Na", "Mg", "Cl", "Ar"], answer: 0, ms: ["Radius decreases across period 3."] },
+        { id: "chem-5-q2", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which oxide forms an acidic solution in water?", options: ["Na₂O", "MgO", "SO₂", "CaO"], answer: 2, ms: ["Non-metal oxide → H₂SO₃."] },
+        { id: "chem-5-q3", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which reaction would occur?", options: ["I₂ + 2KBr → 2KI + Br₂", "Br₂ + 2KCl → 2KBr + Cl₂", "Cl₂ + 2KI → 2KCl + I₂", "I₂ + 2KCl → 2KI + Cl₂"], answer: 2, ms: ["A more reactive halogen displaces a less reactive halide."] },
+        { id: "chem-5-q4", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What is the oxidation state of manganese in KMnO₄?", options: ["+2", "+4", "+6", "+7"], answer: 3, ms: ["+1 + Mn + 4(−2) = 0 → Mn = +7."] },
+        { id: "chem-5-q5", type: "short", paper: "P2", marks: 2, diff: 2, q: "Explain why the ionic radius of Cl⁻ is larger than the atomic radius of Cl.", ms: ["Cl⁻ has one more electron but the same nuclear charge", "Increased electron-electron repulsion / lower attraction per electron → electron cloud expands"] },
+        { id: "chem-5-q6", type: "short", paper: "P2", marks: 3, diff: 2, q: "Explain why reactivity of group 1 metals increases down the group.", ms: ["Atomic radius increases / more electron shells", "Increased shielding; weaker attraction of nucleus for outer electron", "Lower ionisation energy so the outer electron is lost more easily"] },
       ],
     },
     {
@@ -215,19 +287,14 @@ IB.register({
 
     // ---------------- REACTIVITY 1 ----------------
     {
-      id: "chem-7", code: "R1.1-1.3", unit: "Reactivity 1: What drives chemical reactions?", title: "Energetics: enthalpy, Hess's law and fuels",
-      summary: "Exothermic and endothermic reactions, calorimetry, bond enthalpies, Hess's law cycles, combustion and fuels.",
+      id: "chem-7", code: "R1.1", unit: "Reactivity 1: What drives chemical reactions?", title: "Measuring enthalpy changes",
+      summary: "Exothermic and endothermic reactions, energy profiles, standard enthalpy changes and calorimetry (q = mcΔT, ΔH = −q/n).",
       concepts: [
         { h: "Enthalpy changes", b: "<p><strong>Exothermic</strong>: heat released to surroundings, ΔH negative, products more stable. <strong>Endothermic</strong>: heat absorbed, ΔH positive. Energy profile diagrams show reactants, products, ΔH and activation energy.</p><p>Standard enthalpy change ΔH⦵ measured at 100 kPa and a specified temperature (usually 298 K).</p>" },
         { h: "Calorimetry", b: "<p>$$q = mc\\Delta T \\qquad \\Delta H = -\\frac{q}{n}$$ m = mass of water/solution (g), c = 4.18 J g⁻¹ K⁻¹. Convert J → kJ. Sources of error: heat loss to surroundings (results less exothermic than literature), incomplete combustion, heat capacity of calorimeter. Extrapolate a temperature-time graph to correct for heat loss.</p>" },
-        { h: "Bond enthalpies and Hess's law", b: "<p>Bond breaking is endothermic; bond forming is exothermic. $$\\Delta H = \\sum(\\text{bonds broken}) - \\sum(\\text{bonds formed})$$ Average bond enthalpies apply to gaseous species, so values are approximate.</p><p><strong>Hess's law</strong>: the enthalpy change for a reaction is independent of the route taken. Use cycles or combine equations (reverse → change sign; multiply → multiply ΔH). With formation data (HL/SL extension): ΔH = ΣΔHf(products) − ΣΔHf(reactants); with combustion data: ΔH = ΣΔHc(reactants) − ΣΔHc(products).</p>" },
-        { h: "Energy from fuels", b: "<p>Complete combustion of hydrocarbons → CO₂ + H₂O; incomplete → CO and/or C (soot) + H₂O. Fossil fuels: high specific energy, but non-renewable and produce CO₂ (greenhouse gas). Biofuels (e.g. ethanol from fermentation, biodiesel) - renewable, 'carbon neutral' in theory. Fuel cells convert chemical energy directly into electricity (H₂/O₂ → H₂O). Specific energy (kJ g⁻¹) and energy density (kJ cm⁻³).</p>" },
       ],
       terms: [
         ["Enthalpy change", "The heat energy exchanged with the surroundings at constant pressure."],
-        ["Standard enthalpy of combustion", "Enthalpy change when one mole of a substance is completely burned in oxygen under standard conditions."],
-        ["Average bond enthalpy", "The energy needed to break one mole of a bond in a gaseous molecule averaged over similar compounds."],
-        ["Hess's law", "The total enthalpy change of a reaction is independent of the pathway."],
       ],
       skills: [
         { h: "Calorimetry calculations", b: "Use the mass of water (not of fuel) in q = mcΔT. Find moles of the limiting reactant. Add the sign: temperature rise → exothermic → ΔH negative." },
@@ -235,16 +302,43 @@ IB.register({
       ],
       examples: [
         { q: "Burning 0.500 g of ethanol (M = 46.08) heats 200 g of water from 21.0 °C to 35.5 °C. Calculate ΔHc.", a: "q = 200 × 4.18 × 14.5 = 12 122 J = 12.1 kJ. n = 0.500/46.08 = 0.01085 mol. ΔHc = −12.1/0.01085 = −1117 kJ mol⁻¹ ≈ −1.12 × 10³ kJ mol⁻¹ (less exothermic than the literature value −1367 due to heat losses)." },
+      ],
+      questions: [
+        { id: "chem-7-q1", type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "Which statement about an exothermic reaction is correct?", options: ["ΔH is positive and the surroundings cool", "ΔH is negative and the surroundings warm", "Products have more enthalpy than reactants", "Bonds formed are weaker than bonds broken"], answer: 1, ms: ["Heat is released to the surroundings."] },
+        { id: "chem-7-q4", type: "short", paper: "P2", marks: 3, diff: 2, numeric: { value: -56.8, tol: 0.6 }, q: "50.0 cm³ of 1.00 mol dm⁻³ HCl is mixed with 50.0 cm³ of 1.00 mol dm⁻³ NaOH. The temperature rises by 6.8 °C. Calculate the enthalpy change of neutralisation in kJ mol⁻¹. (Assume density 1.00 g cm⁻³ and c = 4.18 J g⁻¹ K⁻¹.)", ms: ["q = 100.0 × 4.18 × 6.8 = 2842 J [M1]", "n(H₂O) = 0.0500 mol [M1]", "ΔH = −2.842/0.0500 = −56.8 kJ mol⁻¹ (negative sign required) [A1]"] },
+        { id: "chem-7-q6", type: "short", paper: "P2", marks: 2, diff: 2, q: "Suggest two reasons why the experimental enthalpy of combustion of ethanol obtained using a spirit burner and calorimeter is less exothermic than the literature value.", ms: ["Heat loss to surroundings (not all heat transferred to water)", "Incomplete combustion / evaporation of ethanol / heat absorbed by the calorimeter"] },
+      ],
+    },
+    {
+      id: "chem-7b", code: "R1.2", unit: "Reactivity 1: What drives chemical reactions?", title: "Energy cycles in reactions",
+      summary: "Bond breaking and bond forming, average bond enthalpies and Hess's law energy cycles.",
+      concepts: [
+        { h: "Bond enthalpies and Hess's law", b: "<p>Bond breaking is endothermic; bond forming is exothermic. $$\\Delta H = \\sum(\\text{bonds broken}) - \\sum(\\text{bonds formed})$$ Average bond enthalpies apply to gaseous species, so values are approximate.</p><p><strong>Hess's law</strong>: the enthalpy change for a reaction is independent of the route taken. Use cycles or combine equations (reverse → change sign; multiply → multiply ΔH). With formation data (HL/SL extension): ΔH = ΣΔHf(products) − ΣΔHf(reactants); with combustion data: ΔH = ΣΔHc(reactants) − ΣΔHc(products).</p>" },
+      ],
+      terms: [
+        ["Average bond enthalpy", "The energy needed to break one mole of a bond in a gaseous molecule averaged over similar compounds."],
+        ["Hess's law", "The total enthalpy change of a reaction is independent of the pathway."],
+      ],
+      examples: [
         { q: "Using bond enthalpies (C-H 414, O=O 498, C=O 804, O-H 463 kJ mol⁻¹), calculate ΔH for CH₄ + 2O₂ → CO₂ + 2H₂O.", a: "Broken: 4(414) + 2(498) = 2652. Formed: 2(804) + 4(463) = 3460. ΔH = 2652 − 3460 = −808 kJ mol⁻¹." },
       ],
       questions: [
-        { type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "Which statement about an exothermic reaction is correct?", options: ["ΔH is positive and the surroundings cool", "ΔH is negative and the surroundings warm", "Products have more enthalpy than reactants", "Bonds formed are weaker than bonds broken"], answer: 1, ms: ["Heat is released to the surroundings."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Why do enthalpy changes calculated from average bond enthalpies differ from experimental values?", options: ["Bond enthalpies are for liquids", "Average values do not account for the specific molecular environment", "Bond breaking is exothermic", "Experimental values ignore heat loss"], answer: 1, ms: ["Bond enthalpies are averages across many compounds."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Given A → B ΔH = +50 kJ and B → C ΔH = −120 kJ, what is ΔH for C → A?", options: ["−70 kJ", "+70 kJ", "+170 kJ", "−170 kJ"], answer: 1, ms: ["A → C = −70 kJ, so C → A = +70 kJ."] },
-        { type: "short", paper: "P2", marks: 3, diff: 2, numeric: { value: -56.8, tol: 0.6 }, q: "50.0 cm³ of 1.00 mol dm⁻³ HCl is mixed with 50.0 cm³ of 1.00 mol dm⁻³ NaOH. The temperature rises by 6.8 °C. Calculate the enthalpy change of neutralisation in kJ mol⁻¹. (Assume density 1.00 g cm⁻³ and c = 4.18 J g⁻¹ K⁻¹.)", ms: ["q = 100.0 × 4.18 × 6.8 = 2842 J [M1]", "n(H₂O) = 0.0500 mol [M1]", "ΔH = −2.842/0.0500 = −56.8 kJ mol⁻¹ (negative sign required) [A1]"] },
-        { type: "short", paper: "P2", marks: 3, diff: 3, numeric: { value: -124, tol: 2 }, q: "Use the bond enthalpies (C=C 614, C-C 346, C-H 414, H-H 436 kJ mol⁻¹) to calculate the enthalpy change for the hydrogenation of ethene: C₂H₄(g) + H₂(g) → C₂H₆(g).", ms: ["Bonds broken: C=C + H-H = 614 + 436 = 1050 kJ [M1]", "Bonds formed: C-C + 2 C-H = 346 + 828 = 1174 kJ [M1]", "ΔH = 1050 − 1174 = −124 kJ mol⁻¹ [A1]"] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, q: "Suggest two reasons why the experimental enthalpy of combustion of ethanol obtained using a spirit burner and calorimeter is less exothermic than the literature value.", ms: ["Heat loss to surroundings (not all heat transferred to water)", "Incomplete combustion / evaporation of ethanol / heat absorbed by the calorimeter"] },
-        { type: "short", paper: "P2", marks: 3, diff: 2, q: "Compare the advantages and disadvantages of using biofuels instead of fossil fuels.", ms: ["Advantage: renewable / 'carbon neutral' because CO₂ absorbed during photosynthesis", "Disadvantage: competes with food crops for land / deforestation / lower specific energy", "Disadvantage/advantage: CO₂ still released during combustion and in production (fertilisers, transport)"] },
+        { id: "chem-7-q2", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Why do enthalpy changes calculated from average bond enthalpies differ from experimental values?", options: ["Bond enthalpies are for liquids", "Average values do not account for the specific molecular environment", "Bond breaking is exothermic", "Experimental values ignore heat loss"], answer: 1, ms: ["Bond enthalpies are averages across many compounds."] },
+        { id: "chem-7-q3", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Given A → B ΔH = +50 kJ and B → C ΔH = −120 kJ, what is ΔH for C → A?", options: ["−70 kJ", "+70 kJ", "+170 kJ", "−170 kJ"], answer: 1, ms: ["A → C = −70 kJ, so C → A = +70 kJ."] },
+        { id: "chem-7-q5", type: "short", paper: "P2", marks: 3, diff: 3, numeric: { value: -124, tol: 2 }, q: "Use the bond enthalpies (C=C 614, C-C 346, C-H 414, H-H 436 kJ mol⁻¹) to calculate the enthalpy change for the hydrogenation of ethene: C₂H₄(g) + H₂(g) → C₂H₆(g).", ms: ["Bonds broken: C=C + H-H = 614 + 436 = 1050 kJ [M1]", "Bonds formed: C-C + 2 C-H = 346 + 828 = 1174 kJ [M1]", "ΔH = 1050 − 1174 = −124 kJ mol⁻¹ [A1]"] },
+      ],
+    },
+    {
+      id: "chem-7c", code: "R1.3", unit: "Reactivity 1: What drives chemical reactions?", title: "Energy from fuels",
+      summary: "Complete and incomplete combustion, fossil fuels and biofuels, specific energy and hydrogen fuel cells.",
+      concepts: [
+        { h: "Energy from fuels", b: "<p>Complete combustion of hydrocarbons → CO₂ + H₂O; incomplete → CO and/or C (soot) + H₂O. Fossil fuels: high specific energy, but non-renewable and produce CO₂ (greenhouse gas). Biofuels (e.g. ethanol from fermentation, biodiesel) - renewable, 'carbon neutral' in theory. Fuel cells convert chemical energy directly into electricity (H₂/O₂ → H₂O). Specific energy (kJ g⁻¹) and energy density (kJ cm⁻³).</p>" },
+      ],
+      terms: [
+        ["Standard enthalpy of combustion", "Enthalpy change when one mole of a substance is completely burned in oxygen under standard conditions."],
+      ],
+      questions: [
+        { id: "chem-7-q7", type: "short", paper: "P2", marks: 3, diff: 2, q: "Compare the advantages and disadvantages of using biofuels instead of fossil fuels.", ms: ["Advantage: renewable / 'carbon neutral' because CO₂ absorbed during photosynthesis", "Disadvantage: competes with food crops for land / deforestation / lower specific energy", "Disadvantage/advantage: CO₂ still released during combustion and in production (fertilisers, transport)"] },
       ],
     },
 
@@ -388,28 +482,44 @@ IB.register({
       ],
     },
     {
-      id: "chem-13", code: "R3.3-3.4", unit: "Reactivity 3: What are the mechanisms of chemical change?", title: "Radicals, nucleophiles and electrophiles",
-      summary: "Homolytic fission and radical substitution of alkanes, nucleophilic substitution of halogenoalkanes, electrophilic addition to alkenes.",
+      id: "chem-13", code: "R3.3", unit: "Reactivity 3: What are the mechanisms of chemical change?", title: "Electron sharing reactions: radicals",
+      summary: "Radicals, homolytic fission of covalent bonds by UV light, and the radical substitution of alkanes (initiation, propagation, termination).",
       concepts: [
         { h: "Radical reactions (electron sharing)", b: "<p><strong>Homolytic fission</strong>: a bond breaks with each atom taking one electron, forming radicals (species with an unpaired electron). Alkanes react with halogens in UV light by <strong>radical substitution</strong>:</p><ul><li>Initiation: Cl₂ → 2Cl•</li><li>Propagation: CH₄ + Cl• → •CH₃ + HCl; •CH₃ + Cl₂ → CH₃Cl + Cl•</li><li>Termination: Cl• + Cl• → Cl₂; •CH₃ + Cl• → CH₃Cl; •CH₃ + •CH₃ → C₂H₆</li></ul><p>Radicals and ozone depletion: CFCs release Cl• in UV light, catalysing O₃ breakdown.</p>" },
-        { h: "Nucleophiles and electrophiles (electron-pair sharing)", b: "<p>A <strong>nucleophile</strong> is an electron-rich species that donates a lone pair (OH⁻, H₂O, NH₃, CN⁻). An <strong>electrophile</strong> is electron-deficient and accepts an electron pair (H⁺, Br⁺ / polarised Br₂, NO₂⁺). Heterolytic fission: both electrons go to one atom.</p><ul><li><strong>Nucleophilic substitution</strong>: halogenoalkane + OH⁻(aq) → alcohol + X⁻ (C-X bond polar, δ+ carbon attacked).</li><li><strong>Electrophilic addition</strong> to alkenes: with H₂, X₂ (bromine water decolourises - test for C=C), HX, H₂O (steam, acid catalyst).</li></ul><p>Lewis acids accept an electron pair; Lewis bases donate one. Coordination bonds form in complex ions.</p>" },
       ],
       terms: [
         ["Radical", "A species with an unpaired electron."],
         ["Homolytic fission", "Breaking of a covalent bond where each atom receives one electron."],
+      ],
+      skills: [],
+      examples: [],
+      questions: [
+        { id: "chem-13-q3", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which is a propagation step in the reaction of methane with chlorine?", options: ["Cl₂ → 2Cl•", "Cl• + CH₄ → •CH₃ + HCl", "Cl• + Cl• → Cl₂", "•CH₃ + •CH₃ → C₂H₆"], answer: 1, ms: ["A radical reacts to form another radical."] },
+        { id: "chem-13-q5", type: "short", paper: "P2", marks: 3, diff: 2, q: "Write equations for the initiation, one propagation and one termination step in the reaction of ethane with chlorine in UV light.", ms: ["Initiation: Cl₂ → 2Cl•", "Propagation: C₂H₆ + Cl• → •C₂H₅ + HCl (or •C₂H₅ + Cl₂ → C₂H₅Cl + Cl•)", "Termination: e.g. •C₂H₅ + Cl• → C₂H₅Cl / 2Cl• → Cl₂ / 2•C₂H₅ → C₄H₁₀"] },
+      ],
+    },
+    {
+      id: "chem-13b", code: "R3.4", unit: "Reactivity 3: What are the mechanisms of chemical change?", title: "Electron-pair sharing reactions",
+      summary: "Nucleophiles and electrophiles, heterolytic fission, nucleophilic substitution of halogenoalkanes, electrophilic addition to alkenes, and Lewis acids and bases.",
+      concepts: [
+        { h: "Nucleophiles and electrophiles (electron-pair sharing)", b: "<p>A <strong>nucleophile</strong> is an electron-rich species that donates a lone pair (OH⁻, H₂O, NH₃, CN⁻). An <strong>electrophile</strong> is electron-deficient and accepts an electron pair (H⁺, Br⁺ / polarised Br₂, NO₂⁺). Heterolytic fission: both electrons go to one atom.</p><ul><li><strong>Nucleophilic substitution</strong>: halogenoalkane + OH⁻(aq) → alcohol + X⁻ (C-X bond polar, δ+ carbon attacked).</li><li><strong>Electrophilic addition</strong> to alkenes: with H₂, X₂ (bromine water decolourises - test for C=C), HX, H₂O (steam, acid catalyst).</li></ul><p>Lewis acids accept an electron pair; Lewis bases donate one. Coordination bonds form in complex ions.</p>" },
+      ],
+      terms: [
         ["Nucleophile", "An electron-rich species that donates a pair of electrons to form a covalent bond."],
         ["Electrophile", "An electron-deficient species that accepts a pair of electrons."],
       ],
-      skills: [{ h: "Curly arrows", b: "Arrows start from a lone pair or bond and point to where the electron pair goes. Show δ+/δ− on polar bonds. Half-headed (fishhook) arrows show single electron movement in radical mechanisms." }],
-      examples: [{ q: "Describe a test to distinguish hexane from hex-1-ene.", a: "Add bromine water and shake. Hex-1-ene decolourises it (orange → colourless) by electrophilic addition across C=C; hexane does not react (in the dark), so the solution stays orange." }],
+      skills: [
+        { h: "Curly arrows", b: "Arrows start from a lone pair or bond and point to where the electron pair goes. Show δ+/δ− on polar bonds. Half-headed (fishhook) arrows show single electron movement in radical mechanisms." },
+      ],
+      examples: [
+        { q: "Describe a test to distinguish hexane from hex-1-ene.", a: "Add bromine water and shake. Hex-1-ene decolourises it (orange → colourless) by electrophilic addition across C=C; hexane does not react (in the dark), so the solution stays orange." },
+      ],
       questions: [
-        { type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "What is observed when bromine water is added to an alkene?", options: ["Colourless to orange", "Orange to colourless", "Purple to colourless", "Orange to green"], answer: 1, ms: ["Bromine adds across the C=C bond."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which species is a nucleophile?", options: ["H⁺", "NO₂⁺", "CH₃⁺", "NH₃"], answer: 3, ms: ["NH₃ has a lone pair to donate."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which is a propagation step in the reaction of methane with chlorine?", options: ["Cl₂ → 2Cl•", "Cl• + CH₄ → •CH₃ + HCl", "Cl• + Cl• → Cl₂", "•CH₃ + •CH₃ → C₂H₆"], answer: 1, ms: ["A radical reacts to form another radical."] },
-        { type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What type of reaction occurs between bromoethane and aqueous sodium hydroxide?", options: ["Electrophilic addition", "Radical substitution", "Nucleophilic substitution", "Elimination only"], answer: 2, ms: ["OH⁻ replaces Br⁻."] },
-        { type: "short", paper: "P2", marks: 3, diff: 2, q: "Write equations for the initiation, one propagation and one termination step in the reaction of ethane with chlorine in UV light.", ms: ["Initiation: Cl₂ → 2Cl•", "Propagation: C₂H₆ + Cl• → •C₂H₅ + HCl (or •C₂H₅ + Cl₂ → C₂H₅Cl + Cl•)", "Termination: e.g. •C₂H₅ + Cl• → C₂H₅Cl / 2Cl• → Cl₂ / 2•C₂H₅ → C₄H₁₀"] },
-        { type: "short", paper: "P2", marks: 2, diff: 2, q: "State the product and the reaction type when ethene reacts with hydrogen bromide.", ms: ["Bromoethane, CH₃CH₂Br", "Electrophilic addition"] },
-        { type: "short", paper: "P2", marks: 2, diff: 1, q: "Define the term <em>electrophile</em>.", ms: ["An electron-deficient species", "that accepts a pair of electrons (to form a covalent bond)"] },
+        { id: "chem-13-q1", type: "mcq", paper: "P1A", marks: 1, diff: 1, q: "What is observed when bromine water is added to an alkene?", options: ["Colourless to orange", "Orange to colourless", "Purple to colourless", "Orange to green"], answer: 1, ms: ["Bromine adds across the C=C bond."] },
+        { id: "chem-13-q2", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "Which species is a nucleophile?", options: ["H⁺", "NO₂⁺", "CH₃⁺", "NH₃"], answer: 3, ms: ["NH₃ has a lone pair to donate."] },
+        { id: "chem-13-q4", type: "mcq", paper: "P1A", marks: 1, diff: 2, q: "What type of reaction occurs between bromoethane and aqueous sodium hydroxide?", options: ["Electrophilic addition", "Radical substitution", "Nucleophilic substitution", "Elimination only"], answer: 2, ms: ["OH⁻ replaces Br⁻."] },
+        { id: "chem-13-q6", type: "short", paper: "P2", marks: 2, diff: 2, q: "State the product and the reaction type when ethene reacts with hydrogen bromide.", ms: ["Bromoethane, CH₃CH₂Br", "Electrophilic addition"] },
+        { id: "chem-13-q7", type: "short", paper: "P2", marks: 2, diff: 1, q: "Define the term <em>electrophile</em>.", ms: ["An electron-deficient species", "that accepts a pair of electrons (to form a covalent bond)"] },
       ],
     },
   ],

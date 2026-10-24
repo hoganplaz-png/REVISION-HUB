@@ -1033,7 +1033,7 @@
       // =====================================================================
       "chem-13": {
         frames: [
-          { title: "Describe the radical substitution mechanism of an alkane", star: true,
+          { id: "chem-13-q15", title: "Describe the radical substitution mechanism of an alkane", star: true,
             paper: "P2", where: "Paper 2 · 3–4 marks",
             q: "Methane reacts with bromine in the presence of UV light. Write equations for the initiation step, two propagation steps and one termination step.",
             marks: [
@@ -1046,7 +1046,7 @@
             accept: "radical dot in any position on the radical",
             reject: "H• formed in propagation (CH₄ + Br• → CH₃Br + H•); missing radical dots",
             tip: "Propagation：一粒自由基入，一粒自由基出；termination：兩粒自由基合埋。" },
-          { title: "Distinguish homolytic and heterolytic fission", paper: "P2", where: "Paper 1A / 2 · 2 marks",
+          { id: "chem-13-q16", title: "Distinguish homolytic and heterolytic fission", paper: "P2", where: "Paper 1A / 2 · 2 marks",
             q: "Distinguish between homolytic fission and heterolytic fission of a covalent bond.",
             marks: [
               "homolytic: each atom takes __one electron__ from the bond, forming two __radicals__",
@@ -1056,7 +1056,7 @@
             accept: "\"free radicals\"",
             reject: "\"homolytic = same atoms\"",
             tip: "Homo = 平分（各拎一粒）→ 自由基；hetero = 一個拎晒 → 離子。" },
-          { title: "Explain the role of UV light and why a mixture of products forms", paper: "P2", where: "Paper 2 · 2 marks",
+          { id: "chem-13-q17", title: "Explain the role of UV light and why a mixture of products forms", paper: "P2", where: "Paper 2 · 2 marks",
             q: "Explain why UV light is needed for the reaction of ethane with chlorine, and why a mixture of halogenated products is obtained.",
             marks: [
               "UV light provides the energy to break the Cl–Cl bond by __homolytic fission__ (initiation)",
@@ -1066,7 +1066,18 @@
             accept: "excess ethane reduces further substitution",
             reject: "\"UV heats the mixture\"; \"UV breaks C–H bonds\"",
             tip: "UV 係用嚟拆 Cl–Cl，唔係拆 C–H。" },
-          { title: "Nucleophilic substitution of a halogenoalkane", star: true, paper: "P2", where: "Paper 2 · 3 marks",
+        ],
+        mc: [
+          { id: "chem-13-q22", skill: "<strong>Count radicals:</strong> initiation 0 → 2; propagation 1 → 1; termination 2 → 0.",
+            q: "Which equation represents a propagation step?", options: ["Cl₂ → 2Cl•", "•C₂H₅ + Cl₂ → C₂H₅Cl + Cl•", "•C₂H₅ + Cl• → C₂H₅Cl", "2•C₂H₅ → C₄H₁₀"], answer: 1, why: "One radical in, one radical out." },
+          { skill: "<strong>Arrow types:</strong> half-headed (fish-hook) arrows = one electron (radicals); full arrows = electron pairs (nucleophiles/electrophiles)." },
+          { id: "chem-13-m1", skill: "<strong>Radical substitution products:</strong> each propagation cycle swaps one H for a halogen, so excess halogen gives further substitution (CH₂Cl₂, CHCl₃, CCl₄); excess alkane favours the mono-substituted product.",
+          q: "Which product can form only in a termination step when methane reacts with chlorine in UV light?", options: ["HCl", "CH₃Cl", "C₂H₆", "Cl•"], answer: 2, why: "Two •CH₃ radicals combine: •CH₃ + •CH₃ → C₂H₆." },
+        ],
+      },
+      "chem-13b": {
+        frames: [
+          { id: "chem-13-q18", title: "Nucleophilic substitution of a halogenoalkane", star: true, paper: "P2", where: "Paper 2 · 3 marks",
             q: "Bromoethane reacts with warm aqueous sodium hydroxide. Write the equation and describe the movement of electron pairs in the reaction.",
             marks: [
               "equation: bromoethane + hydroxide ion → ethanol + bromide ion, __CH₃CH₂Br + OH⁻ → CH₃CH₂OH + Br⁻__",
@@ -1077,7 +1088,7 @@
             accept: "NaOH in the equation with NaBr as a product",
             reject: "arrow starting from the H of OH⁻ or from the negative charge sign; Br• radical",
             tip: "Curly arrow 一定由孤對電子或者鍵出發，指去 δ+ 碳。" },
-          { title: "Electrophilic addition of bromine to ethene (mechanism)", star: true, paper: "P2", where: "Paper 2 · 3–4 marks",
+          { id: "chem-13-q19", title: "Electrophilic addition of bromine to ethene (mechanism)", star: true, paper: "P2", where: "Paper 2 · 3–4 marks",
             q: "Describe the mechanism of the reaction between ethene and bromine, showing the movement of electron pairs.",
             marks: [
               "Br₂ is __polarised__ by the high electron density of the C=C bond (Brδ+–Brδ−)",
@@ -1089,7 +1100,7 @@
             accept: "bromonium-ion intermediate",
             reject: "radical mechanism; arrow from Br to the C=C",
             tip: "電子豐富嘅 C=C 主動攻擊 Brδ+，所以箭咀由雙鍵出發。" },
-          { title: "Classify nucleophiles and electrophiles", paper: "P2", where: "Paper 1A / 2 · 2 marks",
+          { id: "chem-13-q20", title: "Classify nucleophiles and electrophiles", paper: "P2", where: "Paper 1A / 2 · 2 marks",
             q: "Classify H₂O and NO₂⁺ as a nucleophile or an electrophile, giving a reason for each.",
             marks: [
               "H₂O is a __nucleophile__: it has a __lone pair__ of electrons to donate",
@@ -1099,7 +1110,7 @@
             accept: "\"electron-pair donor\" / \"electron-pair acceptor\"",
             reject: "\"H₂O is neutral so it cannot be a nucleophile\"",
             tip: "Nucleophile = 有孤對電子、鍾意正電荷；electrophile = 缺電子、鍾意負電荷。" },
-          { title: "Predict products of electrophilic addition to alkenes", paper: "P2", where: "Paper 1A / 2 · 3 marks",
+          { id: "chem-13-q21", title: "Predict products of electrophilic addition to alkenes", paper: "P2", where: "Paper 1A / 2 · 3 marks",
             q: "But-2-ene undergoes electrophilic addition. Deduce the organic product with (a) hydrogen bromide, (b) steam with an acid catalyst and (c) bromine water, and state the observation in (c).",
             marks: [
               "(a) __2-bromobutane__",
@@ -1112,13 +1123,10 @@
             tip: "「clear」唔等於「colourless」！溴水由橙色變無色。" },
         ],
         mc: [
-          { skill: "<strong>Count radicals:</strong> initiation 0 → 2; propagation 1 → 1; termination 2 → 0.",
-            q: "Which equation represents a propagation step?", options: ["Cl₂ → 2Cl•", "•C₂H₅ + Cl₂ → C₂H₅Cl + Cl•", "•C₂H₅ + Cl• → C₂H₅Cl", "2•C₂H₅ → C₄H₁₀"], answer: 1, why: "One radical in, one radical out." },
-          { skill: "<strong>Electrophile = positive or δ+ and electron-poor; nucleophile = lone pair.</strong> Neutral NH₃ and H₂O are nucleophiles.",
+          { id: "chem-13-q23", skill: "<strong>Electrophile = positive or δ+ and electron-poor; nucleophile = lone pair.</strong> Neutral NH₃ and H₂O are nucleophiles.",
             q: "Which species can act as an electrophile?", options: ["NH₃", "CN⁻", "H₂O", "Br⁺"], answer: 3, why: "Br⁺ is electron-deficient; the others donate lone pairs." },
-          { skill: "<strong>Reagent → reaction type:</strong> alkane + halogen/UV → radical substitution; halogenoalkane + OH⁻(aq) → nucleophilic substitution; alkene + X₂ / HX / H₂O → electrophilic addition.",
+          { id: "chem-13-q24", skill: "<strong>Reagent → reaction type:</strong> alkane + halogen/UV → radical substitution; halogenoalkane + OH⁻(aq) → nucleophilic substitution; alkene + X₂ / HX / H₂O → electrophilic addition.",
             q: "What is the main organic product when ethene reacts with steam in the presence of an acid catalyst?", options: ["Ethane", "Ethanol", "Ethanal", "Ethanoic acid"], answer: 1, why: "Addition of H₂O across C=C." },
-          { skill: "<strong>Arrow types:</strong> half-headed (fish-hook) arrows = one electron (radicals); full arrows = electron pairs (nucleophiles/electrophiles)." },
           { skill: "<strong>Addition = one product, substitution = two.</strong> If an option shows a by-product for an alkene + Br₂ reaction, eliminate it." },
         ],
       },

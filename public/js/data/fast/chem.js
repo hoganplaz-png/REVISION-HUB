@@ -1,14 +1,14 @@
 /* ⏱ 10-minute fast notes · Chemistry SL, 2025 guide (format: see js/fastnotes.js). */
 IB.addFast({
   "chem-1": {
-    title: "States of matter · Separation · Nuclear atom · Isotopes & Ar",
-    intro: "S1.1 + S1.2：粒子模型一條線貫穿——溫度 = 平均 KE、變態 = 拆 IMF、Ar = 加權平均。每個 part 有時間建議，最後有總口訣同練習。",
+    title: "Elements & mixtures · Separation · States of matter · Kinetic theory",
+    intro: "S1.1：粒子模型一條線貫穿——物質分類、分離方法、溫度 = 平均 KE、變態 = 拆 IMF。每個 part 有時間建議，最後有口訣同練習。",
     parts: [
       {
         h: "口訣 + 數據一頁",
         min: 1.5,
         blocks: [
-          ["rhyme", "總綱", "溫度睇動能，變態拆 IMF，質子定身份，中子定重量", "T(K) ∝ average KE；change of state 期間 T 不變（能量用嚟 overcome IMF）；proton number 決定元素；neutron 數目決定 isotope 質量。"],
+          ["rhyme", "總綱", "溫度睇動能，變態拆 IMF", "T(K) ∝ average KE；change of state 期間 T 不變（能量用嚟 overcome IMF）。"],
           ["grid", [
             ["S1.1", "元素一種、化合物鍵結、混合物物理", "Element = one type of atom；compound = chemically combined, fixed ratio；mixture = physically combined, variable ratio"],
             ["S1.1", "均勻睇唔到界，唔均勻睇到界", "Homogeneous (one phase) vs heterogeneous (visible different phases)"],
@@ -18,19 +18,10 @@ IB.addFast({
             ["S1.1", "熔、蒸、升華要吸熱；凝、凍、凝華放熱", "Endothermic: melting, vaporisation, sublimation；exothermic: the reverse"],
             ["S1.1", "沸騰成鑊滾，蒸發淨係面層", "Boiling: throughout liquid at b.p.；evaporation: surface only, any temperature"],
             ["S1.1", "唔溶就隔、溶咗就蒸、b.p. 差就蒸餾", "Filtration / evaporation or crystallisation / distillation"],
-            ["S1.2", "A = p + n；Z = p", "Neutrons = A − Z"],
-            ["S1.2", "離子電子 = Z − 電荷", "Cl⁻: 17 + 1 = 18；Mg²⁺: 12 − 2 = 10"],
-            ["S1.2", "同質子唔同中子 = isotope", "Same chemical, different physical properties"],
-            ["S1.2", "Ar = Σ(質量 × %) ÷ 100", "Weighted mean relative to 1/12 of ¹²C"],
-            ["S1.2", "畀比例就除總份數，唔係 100", "Peak ratio 3 : 1 → ÷ 4"],
-            ["S1.2", "未知設 x，其餘 100 − x", "Two-isotope unknown abundance"],
           ]],
           ["table", ["Constant / fact", "Value", "Use it when…"], [
             ["Kelvin conversion", "T(K) = T(°C) + 273", "any link between temperature and KE or gas laws"],
             ["Absolute zero", "0 K = −273 °C", "particles have minimum kinetic energy"],
-            ["Proton / neutron relative mass", "1 each", "mass number A = p + n"],
-            ["Electron relative mass", "5 × 10⁻⁴ (about 1/1840 of a proton)", "“electrons contribute negligible mass”"],
-            ["Relative charges", "proton +1 · neutron 0 · electron −1", "counting ions"],
             ["Melting / boiling point of water", "0 °C / 100 °C (273 K / 373 K) at 1 atm", "heating-curve questions"],
           ]],
         ],
@@ -111,6 +102,48 @@ IB.addFast({
           ["trap", ["Salt solution 用 filtration 分 ✗（ions 太細，穿過 filter paper）→ evaporation / crystallisation。", "Ethanol + water 用 simple distillation ✗ → b.p. 太近，要 fractional。", "Chromatography 基線用 ink pen ✗ → pencil。"]],
         ],
       },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["#", "Trap", "Fix"], [
+            ["1", "“Temperature increases” during melting / boiling", "Temperature constant; energy overcomes IMF"],
+            ["2", "Boiling breaks covalent bonds", "Only intermolecular forces (molecular substances)"],
+            ["3", "Element = compound for O₂, Cl₂", "Same atoms → element"],
+            ["4", "Air / brass called compounds", "Homogeneous mixtures"],
+            ["5", "Salt solution filtered", "Evaporate / crystallise"],
+            ["6", "Ethanol + water by simple distillation", "Fractional distillation (close b.p.)"],
+            ["7", "°C used for KE comparison", "Use K: K = °C + 273"],
+          ]],
+          ["check", [
+            "Define element, compound, mixture, homogeneous, heterogeneous",
+            "Describe solid / liquid / gas in terms of particle arrangement, movement and forces",
+            "Name all six changes of state and say which are endothermic",
+            "Explain a heating curve and why temperature is constant during a change of state",
+            "Explain boiling vs evaporation",
+            "Choose and describe filtration, evaporation / crystallisation, distillation, fractional distillation, chromatography",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "元素一種原子、化合物固定比例、混合物物理混合",
+      "變態唔升溫，能量用嚟拆 IMF；熔、蒸、升華吸熱",
+      "T(K) ∝ 平均 KE；K = °C + 273",
+      "唔溶就隔，溶咗就蒸，b.p. 差就蒸餾",
+    ],
+    practice: [
+      { q: "S1.1 Which is a heterogeneous mixture?", o: ["A. brass", "B. air", "C. sand and water", "D. sodium chloride solution"], m: 1, a: "<b>C</b>. Visible separate phases. A, B and D are homogeneous." },
+      { q: "S1.1 Which method separates a mixture of ethanol and water?", o: ["A. filtration", "B. fractional distillation", "C. evaporation to dryness", "D. simple distillation"], m: 1, a: "<b>B</b>. Miscible liquids with different but fairly close boiling points (78 °C and 100 °C)." },
+      { q: "S1.1 What happens to the particles while a solid melts at its melting point?", o: ["A. their average kinetic energy increases", "B. the temperature rises", "C. energy is used to overcome forces between particles", "D. particles stop moving"], m: 1, a: "<b>C</b>. Temperature and average KE stay constant during melting." },
+      { q: "Explain why the temperature of a pure substance stays constant while it boils, even though heat is still supplied.", m: 3, a: "Energy supplied is used to overcome the intermolecular forces between particles [1]; it does not increase the average kinetic energy of the particles [1]; temperature is proportional to average KE, so temperature is constant [1]." },
+      { q: "Describe how you would obtain a sample of dry salt from a mixture of salt and sand.", m: 3, a: "Add water and stir to dissolve the salt (solvation) [1]; filter, sand stays as the residue [1]; evaporate the filtrate (crystallise) and dry the crystals [1]." },
+    ],
+  },
+  "chem-1b": {
+    title: "Nuclear atom · Ions · Isotopes · Ar & mass spectra",
+    intro: "S1.2：質子定身份，中子定重量，電子定化學。數粒子、計 Ar、讀 mass spectrum 係必考。每個 part 有時間建議，最後有口訣同練習。",
+    parts: [
       {
         h: "Nuclear atom & ions 原子結構",
         min: 3,
@@ -210,30 +243,19 @@ IB.addFast({
         ],
       },
       {
-        h: "失分位 + 自我檢查",
-        min: 2,
+        h: "S1.2 口訣 + 失分位",
+        min: 1.5,
         blocks: [
+          ["rhyme", "總綱", "質子定身份，中子定重量，電子定化學", "Proton number identifies the element；neutrons change the mass (isotopes)；electrons decide the chemistry."],
           ["table", ["#", "Trap", "Fix"], [
-            ["1", "“Temperature increases” during melting / boiling", "Temperature constant; energy overcomes IMF"],
-            ["2", "Boiling breaks covalent bonds", "Only intermolecular forces (molecular substances)"],
-            ["3", "Cl⁻ has 16 electrons", "Anion gains: 17 + 1 = 18"],
-            ["4", "neutrons = Ar − Z", "Use mass number: A − Z"],
-            ["5", "Isotopes have different chemical properties", "Same electrons → same chemistry"],
-            ["6", "Ar given units g mol⁻¹", "Ar has no units"],
-            ["7", "Divide by 100 when given a ratio", "Divide by the sum of ratio parts"],
-            ["8", "Element = compound for O₂, Cl₂", "Same atoms → element"],
-            ["9", "Air / brass called compounds", "Homogeneous mixtures"],
-            ["10", "Salt solution filtered", "Evaporate / crystallise"],
-            ["11", "Ethanol + water by simple distillation", "Fractional distillation (close b.p.)"],
-            ["12", "°C used for KE comparison", "Use K: K = °C + 273"],
+            ["1", "Cl⁻ has 16 electrons", "Anion gains: 17 + 1 = 18"],
+            ["2", "neutrons = Ar − Z", "Use mass number: A − Z"],
+            ["3", "Isotopes have different chemical properties", "Same electrons → same chemistry"],
+            ["4", "Ar given units g mol⁻¹", "Ar has no units"],
+            ["5", "Divide by 100 when given a ratio", "Divide by the sum of ratio parts"],
           ]],
           ["check", [
-            "Define element, compound, mixture, homogeneous, heterogeneous, isotope, A<sub>r</sub>",
-            "Describe solid / liquid / gas in terms of particle arrangement, movement and forces",
-            "Name all six changes of state and say which are endothermic",
-            "Explain a heating curve and why temperature is constant during a change of state",
-            "Explain boiling vs evaporation",
-            "Choose and describe filtration, evaporation / crystallisation, distillation, fractional distillation, chromatography",
+            "Define isotope, mass number and A<sub>r</sub>",
             "Count p, n, e in atoms and ions; spot isoelectronic species",
             "Calculate A<sub>r</sub> from abundances or a mass spectrum, including ratios and unknown x",
           ]],
@@ -241,10 +263,6 @@ IB.addFast({
       },
     ],
     summary: [
-      "元素一種原子、化合物固定比例、混合物物理混合",
-      "變態唔升溫，能量用嚟拆 IMF；熔、蒸、升華吸熱",
-      "T(K) ∝ 平均 KE；K = °C + 273",
-      "唔溶就隔，溶咗就蒸，b.p. 差就蒸餾",
       "A = p + n；中子 = A − Z；離子電子 = Z − 電荷",
       "Isotopes：化學一樣（電子），物理唔同（質量）",
       "Ar = Σ(質量 × %) ÷ 100；畀比例除總份數；未知設 x",
@@ -253,18 +271,13 @@ IB.addFast({
     practice: [
       { q: "S1.2 How many electrons are in one ion of \\(^{59}_{27}\\mathrm{Co}^{2+}\\)?", o: ["A. 25", "B. 27", "C. 29", "D. 32"], m: 1, a: "<b>A</b>. 27 − 2 = 25 electrons (neutrons would be 59 − 27 = 32)." },
       { q: "S1.2 Which species has the same number of electrons as an argon atom?", o: ["A. Cl⁻", "B. Na⁺", "C. O²⁻", "D. Mg²⁺"], m: 1, a: "<b>A</b>. Ar = 18; Cl⁻ = 17 + 1 = 18. (Na⁺, O²⁻, Mg²⁺ all have 10.)" },
-      { q: "S1.1 Which is a heterogeneous mixture?", o: ["A. brass", "B. air", "C. sand and water", "D. sodium chloride solution"], m: 1, a: "<b>C</b>. Visible separate phases. A, B and D are homogeneous." },
-      { q: "S1.1 Which method separates a mixture of ethanol and water?", o: ["A. filtration", "B. fractional distillation", "C. evaporation to dryness", "D. simple distillation"], m: 1, a: "<b>B</b>. Miscible liquids with different but fairly close boiling points (78 °C and 100 °C)." },
-      { q: "S1.1 What happens to the particles while a solid melts at its melting point?", o: ["A. their average kinetic energy increases", "B. the temperature rises", "C. energy is used to overcome forces between particles", "D. particles stop moving"], m: 1, a: "<b>C</b>. Temperature and average KE stay constant during melting." },
       { q: "S1.2 An element has two isotopes of mass 10 and 12 and A<sub>r</sub> = 10.8. What is the % abundance of the lighter isotope?", o: ["A. 20", "B. 40", "C. 60", "D. 80"], m: 1, a: "<b>C</b>. 10x + 12(100 − x) = 1080 → 1200 − 2x = 1080 → x = 60." },
       { q: "State the number of protons, neutrons and electrons in \\(^{79}_{35}\\mathrm{Br}^{-}\\).", m: 2, a: "35 protons and 44 neutrons [1]; 36 electrons [1]." },
       { q: "Define relative atomic mass.", m: 2, a: "The weighted average / mean mass of an atom of an element [1] relative to 1/12 of the mass of an atom of carbon-12 [1]." },
       { q: "A sample of copper contains 69.2 % ⁶³Cu and 30.8 % ⁶⁵Cu. Calculate its relative atomic mass to 2 d.p.", m: 2, a: "(63 × 69.2 + 65 × 30.8) ÷ 100 [1] = (4359.6 + 2002) ÷ 100 = 63.62 [1]." },
       { q: "A mass spectrum of an element shows peaks at m/z 24, 25 and 26 with heights 79, 10 and 11. Calculate A<sub>r</sub> and state which isotope is most abundant.", m: 3, a: "(24 × 79 + 25 × 10 + 26 × 11) ÷ 100 [1] = 24.32 [1]; ²⁴Mg / m/z 24 is most abundant (tallest peak) [1]." },
       { q: "Gallium has two isotopes, ⁶⁹Ga and ⁷¹Ga, and A<sub>r</sub> = 69.72. Determine the percentage abundance of ⁶⁹Ga.", m: 3, a: "Let ⁶⁹Ga = x: 69x + 71(100 − x) = 6972 [1]; 7100 − 2x = 6972 [1]; x = 64 % (⁷¹Ga = 36 %) [1]." },
-      { q: "Explain why the temperature of a pure substance stays constant while it boils, even though heat is still supplied.", m: 3, a: "Energy supplied is used to overcome the intermolecular forces between particles [1]; it does not increase the average kinetic energy of the particles [1]; temperature is proportional to average KE, so temperature is constant [1]." },
       { q: "Explain why ³⁵Cl and ³⁷Cl have the same chemical properties but different physical properties such as density.", m: 2, a: "Same number of electrons / same electron configuration, so the same chemical properties [1]; different numbers of neutrons, so different mass and hence different density [1]." },
-      { q: "Describe how you would obtain a sample of dry salt from a mixture of salt and sand.", m: 3, a: "Add water and stir to dissolve the salt (solvation) [1]; filter, sand stays as the residue [1]; evaporate the filtrate (crystallise) and dry the crystals [1]." },
     ],
   },
 
@@ -504,8 +517,8 @@ IB.addFast({
   },
 
   "chem-3": {
-    title: "The mole · Formulae · Solutions · Ideal gases",
-    intro: "Mole 一條橋過晒所有計算題：每個 part 有時間建議，最後有總口訣同 IB-style 練習。",
+    title: "The mole · Formulae · Solutions · Avogadro's law",
+    intro: "S1.4：Mole 一條橋過晒所有計算題。每個 part 有時間建議，最後有總口訣同 IB-style 練習。",
     parts: [
       {
         h: "Mole bridge 摩爾橋",
@@ -531,20 +544,11 @@ IB.addFast({
             ["S1.4", "c = n ÷ V，cm³ 除千", "V must be in dm³"],
             ["S1.4", "加水唔加 mol", "Dilution: c₁V₁ = c₂V₂"],
             ["S1.4", "氣對氣，體積比 = mol 比", "Avogadro: same T & P → use volumes directly"],
-            ["S1.5", "細、冇、彈、亂、溫", "5 ideal-gas assumptions"],
-            ["S1.5", "高溫低壓最理想；低溫高壓唔理想", "When real gases deviate"],
-            ["S1.5", "零度一百 kPa，22.7 記實佢", "STP: 273 K, 100 kPa → 22.7 dm³ mol⁻¹"],
-            ["S1.5", "kPa 夾 dm³，Pa 夾 m³，溫度永遠 K", "pV = nRT unit pairing"],
-            ["S1.5", "前後一樣 pV/T", "p₁V₁/T₁ = p₂V₂/T₂ (°C + 273)"],
           ]],
           ["rhyme", "解難口訣", "圈數、寫式、過橋、查單位", "Circle data & convert units → write balanced equation → cross the mole bridge → check units & sig figs."],
           ["table", ["Constant / rule", "Value", "Use it when…"], [
             ["Avogadro constant N<sub>A</sub>", "6.02 × 10²³ mol⁻¹", "particles ↔ moles"],
-            ["Molar volume at STP", "22.7 dm³ mol⁻¹ (273 K, 100 kPa)", "gas at STP only"],
-            ["Gas constant R", "8.31 J K⁻¹ mol⁻¹", "gas NOT at STP → pV = nRT"],
-            ["Kelvin", "T(K) = T(°C) + 273", "every gas law"],
             ["cm³ → dm³ / dm³ → m³", "÷ 1000 / ÷ 1000 (1 dm³ = 1 L = 10⁻³ m³)", "every volume"],
-            ["kPa → Pa", "× 1000", "pV = nRT in SI"],
             ["g dm⁻³ ↔ mol dm⁻³", "c × M = g dm⁻³", "concentration"],
           ]],
           ["note", "<b>Speed tip</b>：memorise these M values (use data-booklet A<sub>r</sub> in real answers): H₂O 18.02 · CO₂ 44.01 · O₂ 32.00 · N₂ 28.02 · CH₄ 16.05 · NH₃ 17.04 · HCl 36.46 · NaOH 40.00 · NaCl 58.44 · H₂SO₄ 98.09 · CaCO₃ 100.09 · C₆H₁₂O₆ 180.18 · Cl₂ 70.90"],
@@ -610,6 +614,80 @@ IB.addFast({
         ],
       },
       {
+        h: "Long questions 拆解法",
+        min: 2.5,
+        blocks: [
+          ["table", ["Move", "What to do"], [
+            ["① 圈數", "Circle every number with its unit and substance. Convert units NOW (cm³ → dm³, °C → K). Underline: excess, limiting, STP, anhydrous, to constant mass."],
+            ["② 寫式", "Write / check the balanced equation. Write coefficients large above each formula."],
+            ["③ 過橋", "Which substance do I know completely (m & M, or c & V, or p, V & T)? Get its moles → ratio → target moles → convert."],
+            ["④ 查單位", "Units on the answer, sig figs = fewest in the data, does the size make sense?"],
+          ]],
+          ["table", ["If the question says…", "It is…", "Go to"], [
+            ["% by mass, or masses of CO₂ and H₂O", "Empirical formula", "empirical / combustion"],
+            ["“·xH₂O”, “heated to constant mass”", "Water of crystallisation", "hydrates"],
+            ["“made up to”, “diluted”", "c₁V₁ = c₂V₂", "dilution"],
+            ["Amounts of two reactants / “excess” / % yield / titration", "see R2.1 Stoichiometry", "next topic sheet"],
+          ]],
+          ["note", "<b>Sig figs & working</b>：final answer to the fewest significant figures in the data (usually 3)。Keep full calculator values in between — round only at the end。Always write the unit（M → g mol⁻¹；M<sub>r</sub> and A<sub>r</sub> → no unit；c → mol dm⁻³）。Show each step — “calculate” questions give method marks even if the final number is wrong (error carried forward, ECF)。"],
+        ],
+      },
+      {
+        h: "IB 考試位：command terms + 常見題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["Command term", "Needs for full marks"], [["Define","Mole: amount containing 6.02 × 10²³ (N<sub>A</sub>) particles; molar mass: mass per mole."],["Calculate","Formula, substitution, answer with correct s.f. and unit. Method mark (ECF) is given even if the number is wrong."],["Determine","Empirical formula: ÷ M<sub>r</sub>, then smallest ratio; molecular = empirical × (M ÷ M<sub>e</sub>)."],["Deduce","Use data (combustion masses, % composition) to reach a formula."],["Suggest","Reasonable source of error or a sensible conclusion from the data."]]],
+          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Empirical formula from % or masses","mass ÷ A<sub>r</sub> → ÷ smallest → whole numbers (×2 or ×3 if x.5 / x.33)."],["Concentration / dilution","n = cV (V in dm³); c₁V₁ = c₂V₂."],["Reacting gas volumes","Same T and p: volume ratio = coefficient ratio (Avogadro's law)."],["Hydrate X·nH₂O","Mass loss = water; mol H₂O ÷ mol salt = n."]]],
+          ["note", "Data booklet: N<sub>A</sub> = 6.02 × 10²³ 同埋 A<sub>r</sub> 值。最後答案跟題目數據用相同 s.f.，寫單位；中間步驟唔好過早 round。"],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["#", "Trap", "Fix"], [
+            ["1", "Using cm³ in c = n/V", "÷ 1000 → dm³"],
+            ["2", "Rounding 1.33 → 1 in empirical formula", "× 3 (1.5 → × 2, 1.25 → × 4)"],
+            ["3", "Molecules vs atoms", "× atoms per formula"],
+            ["4", "Cl₂, O₂, H₂, N₂ with single-atom mass", "Diatomic — double the A<sub>r</sub>"],
+            ["5", "Dilution: V₂ = water added", "V₂ = final total volume"],
+            ["6", "Rounding in the middle of a calculation", "Keep calculator memory; round at the end"],
+            ["7", "No units / wrong sig figs", "Unit + s.f. on every final answer"],
+          ]],
+          ["check", [
+            "Define mole, A<sub>r</sub>, M<sub>r</sub>, molar mass, empirical & molecular formula, Avogadro's law",
+            "Convert between m, n, N, c, V (gas and solution) using the mole bridge",
+            "Empirical formula from % and from combustion data; molecular formula from M<sub>r</sub>",
+            "Water of crystallisation (x in ·xH₂O)",
+            "Concentration in mol dm⁻³, g dm⁻³ and ppm; dilution; standard solution method",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "見數先轉 mol，mol 係唯一嘅橋",
+      "n = m ÷ M ；N = n × N<sub>A</sub> ；問原子記得乘原子數",
+      "百變克、除原子量、除最細、湊整數（1.5 乘 2，1.33 乘 3）",
+      "碳睇 CO₂、氫睇水、氧靠減；水除鹽 = x",
+      "c = n ÷ V，cm³ 除千；加水唔加 mol",
+      "圈數、寫式、過橋、查單位",
+    ],
+    practice: [
+      { q: "S1.4 Which contains the greatest number of atoms?", o: ["A. 1.0 g H₂", "B. 1.0 g He", "C. 1.0 g CH₄", "D. 1.0 g H₂O"], m: 1, a: "<b>A</b>. H₂: 0.50 mol × 2 = 1.0 mol atoms; He 0.25; CH₄ 0.062 × 5 = 0.31; H₂O 0.056 × 3 = 0.17." },
+      { q: "S1.4 A compound contains 2.4 g C and 0.6 g H. Its empirical formula is:", o: ["A. CH", "B. CH₂", "C. CH₃", "D. C₂H₆"], m: 1, a: "<b>C</b>. C: 2.4/12 = 0.2; H: 0.6/1 = 0.6 → 1 : 3 → CH₃ (C₂H₆ is a molecular formula, not empirical)." },
+      { q: "S1.4 What volume of 0.500 mol dm⁻³ solution contains 0.0250 mol of solute?", o: ["A. 5.00 cm³", "B. 12.5 cm³", "C. 50.0 cm³", "D. 20.0 cm³"], m: 1, a: "<b>C</b>. V = n/c = 0.0250/0.500 = 0.0500 dm³ = 50.0 cm³." },
+      { q: "S1.4 Which has the same number of molecules as 2.0 g of H₂?", o: ["A. 2.0 g O₂", "B. 16 g O₂", "C. 32 g O₂", "D. 64 g O₂"], m: 1, a: "<b>C</b>. 2.0 g H₂ = 1 mol → need 1 mol O₂ = 32 g." },
+      { q: "Calculate the number of atoms in 9.00 g of water.", m: 3, a: "n = 9.00/18.02 = 0.4994 mol [1]; × 6.02 × 10²³ = 3.01 × 10²³ molecules [1]; × 3 = 9.02 × 10²³ atoms [1]." },
+      { q: "0.230 g of a compound (C, H, O) gives 0.440 g CO₂ and 0.270 g H₂O on complete combustion. Find its empirical formula.", m: 4, a: "n(C) = 0.0100 mol (0.120 g) [1]; n(H) = 2 × 0.01498 = 0.0300 mol (0.0303 g) [1]; O = (0.230 − 0.120 − 0.0303)/16.00 = 0.00498 mol [1]; ratio 2 : 6 : 1 → C₂H₆O [1]." },
+      { q: "2.50 g CuSO₄·xH₂O is heated to constant mass, leaving 1.60 g. Find x.", m: 3, a: "H₂O 0.90/18.02 = 0.0499 mol [1]; CuSO₄ 1.60/159.62 = 0.01002 mol [1]; ratio 4.98 → x = 5 [1]." },
+      { q: "25.0 cm³ of 2.00 mol dm⁻³ HCl is diluted to 500 cm³. Find the new concentration.", m: 2, a: "c₁V₁ = c₂V₂ [1]; c₂ = 2.00 × 25.0/500 = 0.100 mol dm⁻³ [1]." },
+    ],
+  },
+  "chem-3b": {
+    title: "Ideal gases · Gas laws · pV = nRT",
+    intro: "S1.5：理想氣體五個假設、真實氣體幾時偏離、三條 gas laws 同 pV = nRT。單位係最大失分位：溫度永遠 K。",
+    parts: [
+      {
         h: "Ideal gases 理想氣體",
         min: 5,
         blocks: [
@@ -654,57 +732,27 @@ IB.addFast({
         ],
       },
       {
-        h: "Long questions 拆解法",
+        h: "S1.5 口訣 + 失分位",
         min: 2.5,
         blocks: [
-          ["table", ["Move", "What to do"], [
-            ["① 圈數", "Circle every number with its unit and substance. Convert units NOW (cm³ → dm³, °C → K). Underline: excess, limiting, STP, anhydrous, to constant mass."],
-            ["② 寫式", "Write / check the balanced equation. Write coefficients large above each formula."],
-            ["③ 過橋", "Which substance do I know completely (m & M, or c & V, or p, V & T)? Get its moles → ratio → target moles → convert."],
-            ["④ 查單位", "Units on the answer, sig figs = fewest in the data, does the size make sense?"],
+          ["grid", [
+            ["S1.5", "細、冇、彈、亂、溫", "5 ideal-gas assumptions"],
+            ["S1.5", "高溫低壓最理想；低溫高壓唔理想", "When real gases deviate"],
+            ["S1.5", "零度一百 kPa，22.7 記實佢", "STP: 273 K, 100 kPa → 22.7 dm³ mol⁻¹"],
+            ["S1.5", "kPa 夾 dm³，Pa 夾 m³，溫度永遠 K", "pV = nRT unit pairing"],
+            ["S1.5", "前後一樣 pV/T", "p₁V₁/T₁ = p₂V₂/T₂ (°C + 273)"],
           ]],
-          ["table", ["If the question says…", "It is…", "Go to"], [
-            ["% by mass, or masses of CO₂ and H₂O", "Empirical formula", "empirical / combustion"],
-            ["“·xH₂O”, “heated to constant mass”", "Water of crystallisation", "hydrates"],
+          ["table", ["If the question says…", "It is…", "Do this"], [
             ["mass + p + V + T of a gas", "M = mRT ÷ pV", "pV = nRT"],
             ["Conditions before / after", "p₁V₁/T₁ = p₂V₂/T₂", "combined gas law"],
-            ["“made up to”, “diluted”", "c₁V₁ = c₂V₂", "dilution"],
-            ["Amounts of two reactants / “excess” / % yield / titration", "see R2.1 Stoichiometry", "next topic sheet"],
+            ["Gas at STP", "molar volume", "V = n × 22.7 dm³ mol⁻¹ (273 K, 100 kPa)"],
           ]],
-          ["note", "<b>Sig figs & working</b>：final answer to the fewest significant figures in the data (usually 3)。Keep full calculator values in between — round only at the end。Always write the unit（M → g mol⁻¹；M<sub>r</sub> and A<sub>r</sub> → no unit；c → mol dm⁻³）。Show each step — “calculate” questions give method marks even if the final number is wrong (error carried forward, ECF)。"],
-        ],
-      },
-      {
-        h: "IB 考試位：command terms + 常見題型",
-        min: 2.5,
-        blocks: [
-          ["table", ["Command term", "Needs for full marks"], [["Define","Mole: amount containing 6.02 × 10²³ (N<sub>A</sub>) particles; molar mass: mass per mole."],["Calculate","Formula, substitution, answer with correct s.f. and unit. Method mark (ECF) is given even if the number is wrong."],["Determine","Empirical formula: ÷ M<sub>r</sub>, then smallest ratio; molecular = empirical × (M ÷ M<sub>e</sub>)."],["Deduce","Use data (combustion masses, % composition) to reach a formula."],["Suggest","Reasonable source of error or a sensible conclusion from the data."]]],
-          ["table", ["常見題型", "Model answer pattern (1 line)"], [["Empirical formula from % or masses","mass ÷ A<sub>r</sub> → ÷ smallest → whole numbers (×2 or ×3 if x.5 / x.33)."],["Concentration / dilution","n = cV (V in dm³); c₁V₁ = c₂V₂."],["Ideal gas","PV = nRT: P kPa with V dm³, or Pa with m³; T in K; R = 8.31 (data booklet)."],["Gas at STP","V = n × 22.7 dm³ mol⁻¹ (STP 273 K, 100 kPa; given in booklet)."],["Hydrate X·nH₂O","Mass loss = water; mol H₂O ÷ mol salt = n."]]],
-          ["note", "Data booklet: N<sub>A</sub> = 6.02 × 10²³、R = 8.31 J K⁻¹ mol⁻¹、molar volume 22.7 dm³ mol⁻¹ at STP。最後答案跟題目數據用相同 s.f.，寫單位；中間步驟唔好過早 round。"],
-        ],
-      },
-      {
-        h: "失分位 + 自我檢查",
-        min: 2,
-        blocks: [
           ["table", ["#", "Trap", "Fix"], [
-            ["1", "Using cm³ in c = n/V or pV = nRT", "÷ 1000 → dm³"],
-            ["2", "Using °C in gas laws", "+ 273 → K, always"],
-            ["3", "Pa with dm³ in pV = nRT", "kPa + dm³ or Pa + m³"],
-            ["4", "Rounding 1.33 → 1 in empirical formula", "× 3 (1.5 → × 2, 1.25 → × 4)"],
-            ["5", "Molecules vs atoms", "× atoms per formula"],
-            ["6", "Cl₂, O₂, H₂, N₂ with single-atom mass", "Diatomic — double the A<sub>r</sub>"],
-            ["7", "22.4 or 22.7 used when NOT at STP", "22.7 at 273 K & 100 kPa only"],
-            ["8", "Dilution: V₂ = water added", "V₂ = final total volume"],
-            ["9", "Rounding in the middle of a calculation", "Keep calculator memory; round at the end"],
-            ["10", "No units / wrong sig figs", "Unit + s.f. on every final answer"],
+            ["1", "Using °C in gas laws", "+ 273 → K, always"],
+            ["2", "Pa with dm³ in pV = nRT", "kPa + dm³ or Pa + m³"],
+            ["3", "22.4 or 22.7 used when NOT at STP", "22.7 at 273 K & 100 kPa only"],
           ]],
           ["check", [
-            "Define mole, A<sub>r</sub>, M<sub>r</sub>, molar mass, empirical & molecular formula, Avogadro's law",
-            "Convert between m, n, N, c, V (gas and solution) using the mole bridge",
-            "Empirical formula from % and from combustion data; molecular formula from M<sub>r</sub>",
-            "Water of crystallisation (x in ·xH₂O)",
-            "Concentration in mol dm⁻³, g dm⁻³ and ppm; dilution; standard solution method",
             "State 5 ideal-gas assumptions; explain when and why real gases deviate",
             "Sketch / interpret p–V, p–1/V, V–T graphs; explain with particles",
             "Use 22.7, pV = nRT, p₁V₁/T₁ = p₂V₂/T₂, M = mRT/pV",
@@ -713,61 +761,34 @@ IB.addFast({
       },
     ],
     summary: [
-      "見數先轉 mol，mol 係唯一嘅橋",
-      "n = m ÷ M ；N = n × N<sub>A</sub> ；問原子記得乘原子數",
-      "百變克、除原子量、除最細、湊整數（1.5 乘 2，1.33 乘 3）",
-      "碳睇 CO₂、氫睇水、氧靠減；水除鹽 = x",
-      "c = n ÷ V，cm³ 除千；加水唔加 mol",
       "細、冇、彈、亂、溫；高溫低壓最理想",
       "kPa 夾 dm³，Pa 夾 m³，溫度永遠 K；STP 用 22.7",
-      "圈數、寫式、過橋、查單位",
+      "Boyle p ∝ 1/V，Charles V ∝ T，Gay-Lussac p ∝ T（全部用 K）",
     ],
     practice: [
-      { q: "S1.4 Which contains the greatest number of atoms?", o: ["A. 1.0 g H₂", "B. 1.0 g He", "C. 1.0 g CH₄", "D. 1.0 g H₂O"], m: 1, a: "<b>A</b>. H₂: 0.50 mol × 2 = 1.0 mol atoms; He 0.25; CH₄ 0.062 × 5 = 0.31; H₂O 0.056 × 3 = 0.17." },
-      { q: "S1.4 A compound contains 2.4 g C and 0.6 g H. Its empirical formula is:", o: ["A. CH", "B. CH₂", "C. CH₃", "D. C₂H₆"], m: 1, a: "<b>C</b>. C: 2.4/12 = 0.2; H: 0.6/1 = 0.6 → 1 : 3 → CH₃ (C₂H₆ is a molecular formula, not empirical)." },
-      { q: "S1.4 What volume of 0.500 mol dm⁻³ solution contains 0.0250 mol of solute?", o: ["A. 5.00 cm³", "B. 12.5 cm³", "C. 50.0 cm³", "D. 20.0 cm³"], m: 1, a: "<b>C</b>. V = n/c = 0.0250/0.500 = 0.0500 dm³ = 50.0 cm³." },
-      { q: "S1.4 Which has the same number of molecules as 2.0 g of H₂?", o: ["A. 2.0 g O₂", "B. 16 g O₂", "C. 32 g O₂", "D. 64 g O₂"], m: 1, a: "<b>C</b>. 2.0 g H₂ = 1 mol → need 1 mol O₂ = 32 g." },
       { q: "S1.5 A fixed mass of gas at constant pressure is heated from 200 K to 400 K. Its volume:", o: ["A. halves", "B. stays the same", "C. doubles", "D. quadruples"], m: 1, a: "<b>C</b>. V ∝ T(K): 200 → 400 K doubles." },
       { q: "S1.5 Under which conditions does a real gas behave most like an ideal gas?", o: ["A. high T, high p", "B. high T, low p", "C. low T, high p", "D. low T, low p"], m: 1, a: "<b>B</b>. 「高溫低壓最理想」" },
-      { q: "Calculate the number of atoms in 9.00 g of water.", m: 3, a: "n = 9.00/18.02 = 0.4994 mol [1]; × 6.02 × 10²³ = 3.01 × 10²³ molecules [1]; × 3 = 9.02 × 10²³ atoms [1]." },
-      { q: "0.230 g of a compound (C, H, O) gives 0.440 g CO₂ and 0.270 g H₂O on complete combustion. Find its empirical formula.", m: 4, a: "n(C) = 0.0100 mol (0.120 g) [1]; n(H) = 2 × 0.01498 = 0.0300 mol (0.0303 g) [1]; O = (0.230 − 0.120 − 0.0303)/16.00 = 0.00498 mol [1]; ratio 2 : 6 : 1 → C₂H₆O [1]." },
-      { q: "2.50 g CuSO₄·xH₂O is heated to constant mass, leaving 1.60 g. Find x.", m: 3, a: "H₂O 0.90/18.02 = 0.0499 mol [1]; CuSO₄ 1.60/159.62 = 0.01002 mol [1]; ratio 4.98 → x = 5 [1]." },
       { q: "0.882 g of a gas occupies 500 cm³ at 100 kPa and 300 K. Calculate its molar mass.", m: 3, a: "M = mRT/pV [1] = 0.882 × 8.31 × 300 / (100 × 0.500) [1] = 44.0 g mol⁻¹ [1]." },
       { q: "200 cm³ of gas at 25 °C and 100 kPa is changed to 100 °C and 150 kPa. Calculate the new volume.", m: 3, a: "T in K: 298 and 373 [1]; V₂ = 200 × (100/150) × (373/298) [1] = 167 cm³ [1]." },
-      { q: "25.0 cm³ of 2.00 mol dm⁻³ HCl is diluted to 500 cm³. Find the new concentration.", m: 2, a: "c₁V₁ = c₂V₂ [1]; c₂ = 2.00 × 25.0/500 = 0.100 mol dm⁻³ [1]." },
     ],
   },
 
   "chem-4": {
-    title: "Ionic · Covalent · VSEPR · IMF · Metallic · Chromatography",
-    intro: "S2.1–2.3：三種 bonding model 一樣思路——邊啲粒子、靠咩力、點解性質咁。解釋題永遠係「結構 → 力 → 能量 → 性質」。",
+    title: "Ions · Ionic lattices · Lattice enthalpy · Properties",
+    intro: "S2.1：離子鍵 = 相反電荷互吸。解釋題永遠係「結構 → 力 → 能量 → 性質」：電荷大、半徑細，晶格就實。",
     parts: [
       {
         h: "口訣 + 數據一頁",
         min: 1.5,
         blocks: [
-          ["rhyme", "總綱", "結構 → 力 → 要幾多能量 → 性質", "Every property question: (1) what particles, (2) what force between them, (3) how much energy to overcome, (4) so property (m.p., conductivity…)."],
+          ["rhyme", "總綱", "結構 → 力 → 要幾多能量 → 性質", "Every property question: (1) what particles (ions), (2) what force between them (electrostatic attraction), (3) how much energy to overcome, (4) so property (m.p., conductivity, brittleness)."],
           ["grid", [
             ["S2.1", "離子晶格靠相反電荷互吸", "Ionic bond: electrostatic attraction between oppositely charged ions"],
             ["S2.1", "電荷大、半徑細，晶格就實", "Lattice enthalpy ↑ with charge ↑, radius ↓"],
             ["S2.1", "固體 ions 郁唔到，熔咗溶咗先導電", "Conducts only molten / aqueous"],
             ["S2.1", "離子脆，因為層錯位同電荷相斥", "Brittle: ion layers shift, like charges repel"],
-            ["S2.2", "共價 = 共用電子對同兩個核互吸", "Covalent bond definition"],
-            ["S2.2", "雙鍵三鍵：更短更強", "Bond length: C–C 154 &gt; C=C 134 &gt; C≡C 120 pm"],
-            ["S2.2", "孤對電子由同一原子出 = 配位鍵", "Coordination bond: NH₄⁺, H₃O⁺, CO"],
-            ["S2.2", "雙鍵當一個域，孤對推更多", "VSEPR domain counting"],
-            ["S2.2", "2 線、3 平、4 四面；孤對減角度", "Linear 180, planar 120, tetrahedral 109.5"],
-            ["S2.2", "鍵極性睇 χ 差；分子極性睇形狀", "Symmetry cancels dipoles"],
-            ["S2.2", "London &lt; 偶極 &lt; 氫鍵", "IMF strength order"],
-            ["S2.2", "沸騰拆 IMF，唔拆共價鍵", "Simple molecular substances"],
-            ["S2.2", "Rf = 點行咗幾遠 ÷ 溶劑行咗幾遠", "0 &lt; Rf &lt; 1, no units"],
-            ["S2.3", "金屬 = 正離子海 + 自由電子", "Strength ↑ with charge, ↓ radius"],
           ]],
           ["table", ["Fact", "Value", "Use it when…"], [
-            ["Bond lengths", "C–C 154 pm · C=C 134 pm · C≡C 120 pm", "bond order and length"],
-            ["Bond enthalpies", "C–C 346 · C=C 614 · C≡C 839 kJ mol⁻¹", "bond order and strength"],
-            ["Electronegativity (Pauling)", "H 2.2 · C 2.6 · N 3.0 · O 3.4 · F 4.0 · Cl 3.2 · Na 0.9 · Mg 1.3", "bond polarity, δ+ / δ−"],
-            ["VSEPR ideal angles", "180° · 120° · 109.5° ; lone pairs reduce angle (107°, 104.5°)", "shape questions"],
             ["Ion charges by group", "1+ · 2+ · 3+ · 3− (N, P) · 2− (O, S) · 1− (halogens)", "formulae of ionic compounds"],
             ["Polyatomic ions", "NH₄⁺ · OH⁻ · NO₃⁻ · HCO₃⁻ · CO₃²⁻ · SO₄²⁻ · PO₄³⁻", "formulae and charge balance"],
           ]],
@@ -803,6 +824,22 @@ IB.addFast({
           ["trap", ["Solid 唔導電係因為 ions <b>fixed</b>，唔係「冇電子」。", "Molten salt 導電靠 <b>ions</b>；metal 靠 <b>electrons</b>。", "Ionic compound 嘅 formula 係 empirical ratio，唔係 molecule：NaCl 冇「NaCl molecule」。", "「Mg 比 Na 強因為更多 mass」✗——係 charge 同 radius。"]],
         ],
       },
+    ],
+    summary: [
+      "電荷大、半徑細，晶格同金屬鍵就實",
+      "Ionic 固體 ions 郁唔到，熔咗溶咗先導電",
+      "離子脆：層錯位，同性電荷相斥就裂",
+    ],
+    practice: [
+      { q: "S2.1 Which has the highest melting point?", o: ["A. NaCl", "B. MgO", "C. KBr", "D. CsI"], m: 1, a: "<b>B</b>. Highest charges (2+/2−) and small radii give the strongest lattice." },
+      { q: "State why solid sodium chloride does not conduct electricity but molten sodium chloride does.", m: 2, a: "Solid: ions fixed in the lattice, cannot move [1]; molten: ions free to move and carry charge [1]." },
+      { q: "Explain why magnesium oxide has a higher melting point than sodium chloride.", m: 2, a: "Mg²⁺ and O²⁻ have greater charges and smaller radii [1]; stronger electrostatic attraction, more energy needed to separate ions [1]." },
+    ],
+  },
+  "chem-4b": {
+    title: "Covalent · Lewis · VSEPR · Polarity · IMF · Chromatography",
+    intro: "S2.2：共用電子對、Lewis structure、VSEPR 形狀、極性、IMF 同 giant covalent。解釋題永遠係「結構 → 力 → 能量 → 性質」。",
+    parts: [
       {
         h: "Covalent bonding & Lewis 共價",
         min: 3,
@@ -889,8 +926,8 @@ IB.addFast({
         ],
       },
       {
-        h: "Giant covalent · metallic · alloys",
-        min: 3,
+        h: "Giant covalent structures 巨型共價",
+        min: 2.5,
         blocks: [
           ["table", ["Structure", "Bonding", "Properties and explanation"], [
             ["Diamond", "each C bonded to 4 C (tetrahedral); 3D network", "very hard, very high m.p. (many strong covalent bonds), no conduction (no free electrons)"],
@@ -900,23 +937,11 @@ IB.addFast({
             ["Silicon dioxide SiO₂", "each Si bonded to 4 O, each O to 2 Si", "hard, very high m.p., does not conduct"],
             ["Fullerene C₆₀", "discrete molecules (12 pentagons, 20 hexagons) with London forces between", "soft, low m.p. compared with network solids ; poor conductor"],
           ]],
-          ["key", "<b>Metallic bond</b>: the electrostatic attraction between a lattice of positive metal ions (cations) and delocalised electrons.<br>Strength ↑ with higher charge on cation, smaller radius, more delocalised electrons per atom (Mg &gt; Na)."],
-          ["table", ["Property", "Explanation"], [
-            ["Conducts electricity and heat", "delocalised electrons are free to move"],
-            ["Malleable and ductile", "layers of cations slide over one another without breaking the metallic bond (delocalised electrons still hold lattice)"],
-            ["High m.p.", "strong attraction between cations and delocalised electrons"],
-            ["Alloys are harder than pure metals", "different-sized atoms disrupt the regular layers, so layers cannot slide easily"],
-          ]],
-          ["eg", "<b>P2 · Explain · 3 marks</b>　Explain why magnesium has a higher melting point than sodium.", [
-            "Mg²⁺ has a higher charge and smaller ionic radius than Na⁺ [1]",
-            "Mg contributes two delocalised electrons per atom, Na one [1]",
-            "Stronger attraction between cations and delocalised electrons in Mg, so more energy needed [1] ✅",
-          ]],
           ["eg", "<b>P2 · Explain · 2 marks</b>　Explain why graphite conducts electricity but diamond does not.", [
             "Graphite: each C uses 3 valence electrons in bonds; the fourth is delocalised and free to move between layers [1]",
             "Diamond: all four valence electrons are in localised covalent bonds, no mobile charge carriers [1] ✅",
           ]],
-          ["trap", ["Graphite 導電唔係因為 ions；係 delocalised <b>electrons</b>。", "Diamond 硬 + 高 m.p. 係因為 covalent bonds 要斷；graphite 層間係 London forces 所以滑。", "Metals 熔咗仲導電（electrons），ionic 熔咗導電（ions）。"]],
+          ["trap", ["Graphite 導電唔係因為 ions；係 delocalised <b>electrons</b>。", "Diamond 硬 + 高 m.p. 係因為 covalent bonds 要斷；graphite 層間係 London forces 所以滑。"]],
         ],
       },
       {
@@ -989,8 +1014,6 @@ IB.addFast({
       },
     ],
     summary: [
-      "電荷大、半徑細，晶格同金屬鍵就實",
-      "Ionic 固體 ions 郁唔到，熔咗溶咗先導電",
       "共價 = 共用電子對同核互吸；鍵數越多越短越強",
       "雙鍵當一個域，孤對推更多：109.5° → 107° → 104.5°",
       "鍵極性睇 χ，分子極性睇形狀對稱",
@@ -1002,55 +1025,73 @@ IB.addFast({
       { q: "S2.2 What is the shape of the NH₃ molecule?", o: ["A. trigonal planar", "B. tetrahedral", "C. trigonal pyramidal", "D. bent"], m: 1, a: "<b>C</b>. 4 electron domains with 1 lone pair." },
       { q: "S2.2 Which molecule is non-polar but contains polar bonds?", o: ["A. H₂O", "B. NH₃", "C. CO₂", "D. HCl"], m: 1, a: "<b>C</b>. Linear and symmetrical, so bond dipoles cancel." },
       { q: "S2.2 Which compound has hydrogen bonding between its molecules?", o: ["A. CH₄", "B. CH₃OCH₃", "C. CH₃CH₂OH", "D. CH₃Cl"], m: 1, a: "<b>C</b>. Ethanol has O–H. In B the O has no H attached." },
-      { q: "S2.1 Which has the highest melting point?", o: ["A. NaCl", "B. MgO", "C. KBr", "D. CsI"], m: 1, a: "<b>B</b>. Highest charges (2+/2−) and small radii give the strongest lattice." },
       { q: "S2.2 Which species has a bond angle of 109.5°?", o: ["A. H₂O", "B. NH₃", "C. NH₄⁺", "D. SO₂"], m: 1, a: "<b>C</b>. 4 bonding pairs, no lone pair → tetrahedral." },
       { q: "S2.2 Which order of bond length is correct?", o: ["A. C≡C &gt; C=C &gt; C–C", "B. C–C &gt; C=C &gt; C≡C", "C. C=C &gt; C–C &gt; C≡C", "D. C–C &gt; C≡C &gt; C=C"], m: 1, a: "<b>B</b>. 154 &gt; 134 &gt; 120 pm; more bonds = shorter." },
       { q: "S2.2 State the meaning of the term coordination (dative covalent) bond.", m: 1, a: "A covalent bond in which both electrons of the shared pair come from the same atom [1]." },
-      { q: "State why solid sodium chloride does not conduct electricity but molten sodium chloride does.", m: 2, a: "Solid: ions fixed in the lattice, cannot move [1]; molten: ions free to move and carry charge [1]." },
       { q: "Deduce the shape and bond angle of PCl₃.", m: 2, a: "Trigonal pyramidal [1]; ~107° (accept 100–108°) [1]." },
       { q: "Explain why CCl₄ is non-polar although the C–Cl bonds are polar.", m: 2, a: "Tetrahedral / symmetrical shape [1]; bond dipoles cancel, no net dipole [1]." },
-      { q: "Explain why magnesium oxide has a higher melting point than sodium chloride.", m: 2, a: "Mg²⁺ and O²⁻ have greater charges and smaller radii [1]; stronger electrostatic attraction, more energy needed to separate ions [1]." },
       { q: "Explain why ethanol (b.p. 78 °C) has a higher boiling point than ethanal (b.p. 20 °C) of similar M<sub>r</sub>.", m: 2, a: "Ethanol forms hydrogen bonds between molecules (O–H … O) [1]; ethanal has only dipole–dipole + London forces, weaker, so less energy to overcome [1]." },
       { q: "Explain why graphite conducts electricity but diamond does not.", m: 2, a: "Graphite: each C bonded to three others, one delocalised electron per atom free to move [1]; diamond: all four electrons in bonds, no mobile electrons [1]." },
       { q: "In paper chromatography a dye moved 2.7 cm while the solvent front moved 9.0 cm. Calculate R<sub>f</sub> and outline why two dyes separate.", m: 3, a: "R<sub>f</sub> = 2.7/9.0 = 0.30 [1]; dyes have different relative attractions to the stationary and mobile phases [1]; so travel different distances [1]." },
+    ],
+  },
+  "chem-4c": {
+    title: "Metallic bonding · Properties of metals",
+    intro: "S2.3：金屬 = 正離子晶格 + delocalised electrons 海。強度睇電荷、半徑同每粒原子貢獻幾多 electrons。",
+    parts: [
+      {
+        h: "Metallic model 金屬鍵",
+        min: 3,
+        blocks: [
+          ["key", "<b>Metallic bond</b>: the electrostatic attraction between a lattice of positive metal ions (cations) and delocalised electrons.<br>Strength ↑ with higher charge on cation, smaller radius, more delocalised electrons per atom (Mg &gt; Na)."],
+          ["table", ["Property", "Explanation"], [
+            ["Conducts electricity and heat", "delocalised electrons are free to move"],
+            ["Malleable and ductile", "layers of cations slide over one another without breaking the metallic bond (delocalised electrons still hold lattice)"],
+            ["High m.p.", "strong attraction between cations and delocalised electrons"],
+            ["Alloys are harder than pure metals", "different-sized atoms disrupt the regular layers, so layers cannot slide easily"],
+          ]],
+          ["eg", "<b>P2 · Explain · 3 marks</b>　Explain why magnesium has a higher melting point than sodium.", [
+            "Mg²⁺ has a higher charge and smaller ionic radius than Na⁺ [1]",
+            "Mg contributes two delocalised electrons per atom, Na one [1]",
+            "Stronger attraction between cations and delocalised electrons in Mg, so more energy needed [1] ✅",
+          ]],
+          ["trap", ["Metals 熔咗仲導電（electrons），ionic 熔咗導電（ions）。", "Metal conducts because electrons flow，唔係 ions flow。"]],
+        ],
+      },
+      {
+        h: "S2.3 題型 + 自我檢查",
+        min: 1.5,
+        blocks: [
+          ["rhyme", "口訣", "金屬 = 正離子海 + 自由電子", "Strength ↑ with cation charge, ↓ with radius, ↑ with delocalised electrons per atom."],
+          ["table", ["If the question says…", "Answer frame"], [
+            ["“Describe metallic bonding”", "electrostatic attraction + lattice of cations + delocalised electrons"],
+            ["“Explain why metal X has a higher m.p. than Y”", "charge, radius, number of delocalised electrons → stronger attraction → more energy"],
+            ["“Explain why metals conduct / are malleable”", "delocalised electrons move / layers slide, electrons keep holding the lattice"],
+          ]],
+          ["check", [
+            "Define the metallic bond",
+            "Explain conductivity, malleability and high melting points of metals",
+            "Compare melting points of Na, Mg and Al; explain why melting points fall down group 1",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "金屬 = 正離子海 + delocalised electrons",
+      "電荷大、半徑細、電子多：金屬鍵就實（Al &gt; Mg &gt; Na）",
+      "導電靠 electrons 郁；層可以滑所以 malleable",
+    ],
+    practice: [
       { q: "Explain why alloys are usually harder than the pure metal.", m: 2, a: "Atoms of a different size disrupt the regular arrangement of cations / layers [1]; layers cannot slide over each other easily [1]." },
+      { q: "S2.3 Which property of metals is explained by layers of cations sliding over each other?", o: ["A. electrical conductivity", "B. malleability", "C. high density", "D. thermal conductivity"], m: 1, a: "<b>B</b>. Layers slide while the delocalised electrons keep holding the lattice together." },
+      { q: "Explain why the melting point of potassium is lower than that of sodium.", m: 2, a: "K⁺ has a larger ionic radius than Na⁺ (same charge) [1]; weaker electrostatic attraction between the cations and the delocalised electrons, so less energy is needed to overcome it [1]." },
     ],
   },
 
   "chem-5": {
-    title: "Bonding triangle · Alloys · Polymers · Periodic trends · Oxides",
-    intro: "S2.4 + S3.1：物料由 bonding model 決定；週期表所有 trend 用「核電荷、層數、屏蔽」三寶解釋；氧化物酸鹼 + oxidation state 係計算位。",
+    title: "Bonding triangle · Alloys · Polymers",
+    intro: "S2.4：物料性質由 bonding model 決定——用 bonding triangle 定類型，再講 alloys 同 addition polymers。",
     parts: [
-      {
-        h: "口訣 + 數據一頁",
-        min: 1.5,
-        blocks: [
-          ["rhyme", "總綱", "核電荷、層數、屏蔽；金屬氧化物鹼、非金屬酸", "Every periodic trend = nuclear charge + number of shells (distance) + shielding → attraction on the outer electron. Metal oxides basic, non-metal oxides acidic, Al₂O₃ amphoteric."],
-          ["grid", [
-            ["S2.4", "橫軸平均 χ，縱軸 Δχ", "Bonding triangle axes"],
-            ["S2.4", "左下金屬、右下共價、頂部離子", "Corners: metallic / covalent / ionic"],
-            ["S2.4", "雙鍵打開手拖手", "Addition polymerisation of alkenes"],
-            ["S2.4", "兩碳主鏈加括號加 n", "Repeating unit with continuation bonds"],
-            ["S2.4", "唔同大小原子阻層滑", "Alloys harder than pure metals"],
-            ["S3.1", "Period = shells，group = 價電子", "Group 13–18: valence e⁻ = group − 10"],
-            ["S3.1", "橫過 period：核電荷升、半徑細", "Across: radius ↓, IE ↑, χ ↑"],
-            ["S3.1", "落 group：層數多、屏蔽大", "Down: radius ↑, IE ↓, χ ↓"],
-            ["S3.1", "Cation 細過原子，anion 大過原子", "Ionic radius"],
-            ["S3.1", "Group 1 越落越勁；Group 17 越落越弱", "Opposite directions"],
-            ["S3.1", "強 halogen 趕走弱 halide", "Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂"],
-            ["S3.1", "金屬氧化物鹼，非金屬酸，Al₂O₃ 兩邊", "Amphoteric Al₂O₃"],
-            ["S3.1", "元素零，總和平，O −2，H +1", "Oxidation state rules"],
-            ["S3.1", "氧化態寫 +7，離子電荷寫 7+", "Notation"],
-          ]],
-          ["table", ["Fact", "Value", "Use it when…"], [
-            ["Pauling χ (data booklet)", "Li 1.0 · Na 0.9 · K 0.8 · Mg 1.3 · Al 1.6 · Si 1.9 · P 2.2 · S 2.6 · H 2.2 · C 2.6 · N 3.0 · Cl 3.2 · O 3.4 · F 4.0", "bonding triangle, polarity"],
-            ["Bonding type guide", "low average χ → metallic ; high average χ, small Δχ → covalent ; large Δχ (&gt; ~1.8) → ionic", "classifying compounds"],
-            ["Blocks", "s: groups 1–2 (+He) · p: 13–18 · d: 3–12 · f: lanthanoids / actinoids", "locating elements"],
-            ["Metalloids", "B, Si, Ge, As, Sb, Te", "semi-metals"],
-            ["Normal rain pH", "≈ 5.6 (dissolved CO₂) ; acid rain pH &lt; 5.6", "acid deposition"],
-          ]],
-        ],
-      },
       {
         h: "Bonding triangle 鍵三角",
         min: 3,
@@ -1105,6 +1146,64 @@ IB.addFast({
           ]],
           ["note", "<b>Waste strategies</b>: reduce, reuse, recycle (mechanical sorting by resin code), energy recovery by incineration, biodegradable or bio-based alternatives. A balanced answer gives a benefit AND a limitation of each."],
           ["trap", ["Poly(propene) 寫成 –CH₂–CH₂–CH₂– ✗ → CH₃ 係側鏈。", "Repeating unit 漏 brackets / continuation bonds / n。", "Addition polymer 要 C=C，冇原子流失（唔係 condensation）。", "Alloy 好處：「mixture」唔係「compound」。"]],
+        ],
+      },
+      {
+        h: "S2.4 口訣 + 數據",
+        min: 1.5,
+        blocks: [
+          ["rhyme", "總綱", "Bonding model 決定物料性質", "Locate the substance on the bonding triangle → name the bonding → explain the properties (m.p., conductivity, hardness)."],
+          ["grid", [
+            ["S2.4", "橫軸平均 χ，縱軸 Δχ", "Bonding triangle axes"],
+            ["S2.4", "左下金屬、右下共價、頂部離子", "Corners: metallic / covalent / ionic"],
+            ["S2.4", "雙鍵打開手拖手", "Addition polymerisation of alkenes"],
+            ["S2.4", "兩碳主鏈加括號加 n", "Repeating unit with continuation bonds"],
+            ["S2.4", "唔同大小原子阻層滑", "Alloys harder than pure metals"],
+          ]],
+          ["table", ["Fact", "Value", "Use it when…"], [
+            ["Pauling χ (data booklet)", "Na 0.9 · Mg 1.3 · Al 1.6 · Si 1.9 · P 2.2 · S 2.6 · C 2.6 · N 3.0 · Cl 3.2 · O 3.4 · F 4.0", "bonding triangle"],
+            ["Bonding type guide", "low average χ → metallic ; high average χ, small Δχ → covalent ; large Δχ (&gt; ~1.8) → ionic", "classifying compounds"],
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "Triangle：x 平均 χ，y Δχ；左下金屬、右下共價、頂離子",
+      "雙鍵打開手拖手，兩碳主鏈加括號加 n",
+      "合金：唔同大小原子阻層滑",
+    ],
+    practice: [
+      { q: "S2.4 What is the monomer of the polymer with repeating unit –[CH₂–CHCl]–?", o: ["A. CH₃CH₂Cl", "B. CH₂=CHCl", "C. CHCl=CHCl", "D. CH₂Cl–CH₂Cl"], m: 1, a: "<b>B</b>. Restore the C=C between the backbone carbons." },
+      { q: "Draw the repeating unit of the polymer formed from propene, CH₂=CHCH₃.", m: 2, a: "–[CH₂–CH(CH₃)]– with two-carbon backbone and CH₃ side group [1]; brackets with continuation bonds / n [1]." },
+      { q: "Using χ(Al) = 1.6 and χ(Cl) = 3.2, calculate Δχ and the average χ for AlCl₃ and state what these imply.", m: 3, a: "Δχ = 3.2 − 1.6 = 1.6 [1]; average = 2.4 [1]; intermediate between ionic and polar covalent bonding [1]." },
+    ],
+  },
+  "chem-5b": {
+    title: "Periodic table · Periodic trends · Groups 1 & 17 · Oxides",
+    intro: "S3.1：週期表所有 trend 用「核電荷、層數、屏蔽」三寶解釋；氧化物酸鹼 + oxidation state 係計算位。",
+    parts: [
+      {
+        h: "口訣 + 數據一頁",
+        min: 1.5,
+        blocks: [
+          ["rhyme", "總綱", "核電荷、層數、屏蔽；金屬氧化物鹼、非金屬酸", "Every periodic trend = nuclear charge + number of shells (distance) + shielding → attraction on the outer electron. Metal oxides basic, non-metal oxides acidic, Al₂O₃ amphoteric."],
+          ["grid", [
+            ["S3.1", "Period = shells，group = 價電子", "Group 13–18: valence e⁻ = group − 10"],
+            ["S3.1", "橫過 period：核電荷升、半徑細", "Across: radius ↓, IE ↑, χ ↑"],
+            ["S3.1", "落 group：層數多、屏蔽大", "Down: radius ↑, IE ↓, χ ↓"],
+            ["S3.1", "Cation 細過原子，anion 大過原子", "Ionic radius"],
+            ["S3.1", "Group 1 越落越勁；Group 17 越落越弱", "Opposite directions"],
+            ["S3.1", "強 halogen 趕走弱 halide", "Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂"],
+            ["S3.1", "金屬氧化物鹼，非金屬酸，Al₂O₃ 兩邊", "Amphoteric Al₂O₃"],
+            ["S3.1", "元素零，總和平，O −2，H +1", "Oxidation state rules"],
+            ["S3.1", "氧化態寫 +7，離子電荷寫 7+", "Notation"],
+          ]],
+          ["table", ["Fact", "Value", "Use it when…"], [
+            ["Pauling χ (data booklet)", "Li 1.0 · Na 0.9 · K 0.8 · Mg 1.3 · Al 1.6 · Si 1.9 · P 2.2 · S 2.6 · H 2.2 · C 2.6 · N 3.0 · Cl 3.2 · O 3.4 · F 4.0", "bonding triangle, polarity"],
+            ["Blocks", "s: groups 1–2 (+He) · p: 13–18 · d: 3–12 · f: lanthanoids / actinoids", "locating elements"],
+            ["Metalloids", "B, Si, Ge, As, Sb, Te", "semi-metals"],
+            ["Normal rain pH", "≈ 5.6 (dissolved CO₂) ; acid rain pH &lt; 5.6", "acid deposition"],
+          ]],
         ],
       },
       {
@@ -1269,9 +1368,6 @@ IB.addFast({
       },
     ],
     summary: [
-      "Triangle：x 平均 χ，y Δχ；左下金屬、右下共價、頂離子",
-      "雙鍵打開手拖手，兩碳主鏈加括號加 n",
-      "合金：唔同大小原子阻層滑",
       "核電荷、層數、屏蔽解釋所有 trend",
       "Cation 細，anion 大；isoelectronic 核電荷越大越細",
       "Group 1 越落越勁，Group 17 越落越弱；強鹵素趕走弱 halide",
@@ -1284,15 +1380,12 @@ IB.addFast({
       { q: "S3.1 Which reaction occurs?", o: ["A. I₂ + 2KBr → 2KI + Br₂", "B. Br₂ + 2KCl → 2KBr + Cl₂", "C. Cl₂ + 2KI → 2KCl + I₂", "D. I₂ + 2KCl → 2KI + Cl₂"], m: 1, a: "<b>C</b>. A more reactive halogen displaces a less reactive halide." },
       { q: "S3.1 What is the oxidation state of manganese in KMnO₄?", o: ["A. +2", "B. +4", "C. +6", "D. +7"], m: 1, a: "<b>D</b>. +1 + x + 4(−2) = 0 → +7." },
       { q: "S3.1 Which has the largest radius?", o: ["A. F⁻", "B. Na⁺", "C. Mg²⁺", "D. Al³⁺"], m: 1, a: "<b>A</b>. Isoelectronic; fewest protons = largest radius." },
-      { q: "S2.4 What is the monomer of the polymer with repeating unit –[CH₂–CHCl]–?", o: ["A. CH₃CH₂Cl", "B. CH₂=CHCl", "C. CHCl=CHCl", "D. CH₂Cl–CH₂Cl"], m: 1, a: "<b>B</b>. Restore the C=C between the backbone carbons." },
       { q: "S3.1 Define the term amphoteric.", m: 1, a: "Able to react as both an acid and a base [1]." },
-      { q: "Draw the repeating unit of the polymer formed from propene, CH₂=CHCH₃.", m: 2, a: "–[CH₂–CH(CH₃)]– with two-carbon backbone and CH₃ side group [1]; brackets with continuation bonds / n [1]." },
       { q: "Explain why atomic radius decreases across period 3.", m: 2, a: "Nuclear charge increases while electrons are added to the same shell / shielding similar [1]; greater attraction pulls outer electrons closer [1]." },
       { q: "Explain why the ionic radius of Cl⁻ is larger than the atomic radius of Cl.", m: 2, a: "Same nuclear charge but one more electron [1]; increased electron–electron repulsion expands the cloud [1]." },
       { q: "Explain why the reactivity of group 1 metals increases down the group.", m: 3, a: "Atomic radius increases / more shells [1]; more shielding, weaker attraction for the outer electron [1]; lower ionisation energy so electron lost more easily [1]." },
       { q: "Write an equation for the reaction of sodium oxide with water and state the nature of the oxide.", m: 2, a: "Na₂O + H₂O → 2NaOH [1]; basic oxide [1]." },
       { q: "Deduce the oxidation state of sulfur in Na₂S₂O₃.", m: 1, a: "+2 : 2(+1) + 2x + 3(−2) = 0 [1]." },
-      { q: "Using χ(Al) = 1.6 and χ(Cl) = 3.2, calculate Δχ and the average χ for AlCl₃ and state what these imply.", m: 3, a: "Δχ = 3.2 − 1.6 = 1.6 [1]; average = 2.4 [1]; intermediate between ionic and polar covalent bonding [1]." },
       { q: "Explain how acid deposition forms and give one effect.", m: 3, a: "Combustion of sulfur-containing fuels gives SO₂ (or NOₓ from engines at high temperature) [1]; these acidic oxides react with water in the atmosphere to form H₂SO₃/H₂SO₄ or HNO₃ [1]; effect e.g. damages limestone buildings / kills aquatic life [1]." },
     ],
   },
@@ -1619,8 +1712,8 @@ IB.addFast({
   },
 
   "chem-7": {
-    title: "Enthalpy · Calorimetry · Bond enthalpies · Hess's law · Fuels",
-    intro: "能量題 = 認 sign、識 q = mcΔT、識三條路（bond enthalpy / ΔHf / ΔHc）計 ΔH、再講 fuels。每個 part 有時間建議，最後有總口訣同 IB-style 練習。",
+    title: "Enthalpy changes · Energy profiles · Calorimetry",
+    intro: "R1.1：能量題第一步 = 認 sign，第二步 = q = mcΔT 再 ÷ mol。每個 part 有時間建議，最後有口訣同 IB-style 練習。",
     parts: [
       {
         h: "Enthalpy changes & energy profiles 焓變",
@@ -1685,6 +1778,47 @@ IB.addFast({
         ],
       },
       {
+        h: "Command-term exam patterns 題型",
+        min: 2.5,
+        blocks: [
+          ["table", ["If the question says…", "Do this", "Marks"], [
+            ["Calculate ΔH from calorimetry", "q = mcΔT → n → ΔH = −q/n; sign, unit, s.f.", "3"],
+            ["Sketch energy profile", "axes, reactants, products, E<sub>a</sub>, ΔH arrow, exo/endo shape", "2–3"],
+            ["Explain why experimental value ≠ literature", "heat loss + incomplete combustion/evaporation + heat absorbed by the calorimeter", "2"],
+            ["Suggest improvement", "insulate, lid, draught shield, stir, graph extrapolation", "1–2"],
+            ["State the meaning of exothermic / standard enthalpy change", "word-for-word (see key boxes)", "1–2"],
+          ]],
+          ["eg", "<b>P2 · Sketch + explain · 3 marks</b> Sketch an energy profile for an exothermic reaction and show the effect of a catalyst.", [
+            "y-axis labelled enthalpy, x-axis reaction coordinate; reactants higher than products [1]",
+            "Peak above reactants with E<sub>a</sub> arrow; ΔH arrow downwards from reactants to products [1]",
+            "Second, lower peak for catalysed path with smaller E<sub>a</sub>; same reactant and product levels (ΔH unchanged) [1]",
+          ]],
+          ["check", [
+            "Define exothermic / endothermic, standard conditions, standard enthalpy change, activation energy",
+            "Sketch both energy profiles with E<sub>a</sub> and ΔH",
+            "Calorimetry calculation (q → n → ΔH) incl. sign, unit, s.f.",
+            "Calorimetry uncertainty in ΔT and % uncertainty; list 4 improvements",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "放熱減、吸熱加；溫度睇 surroundings",
+      "q = mcΔT（用水），ΔH = −q ÷ n，J 轉 kJ",
+      "Exo：surroundings 變熱、ΔH 負；Endo：變凍、ΔH 正",
+    ],
+    practice: [
+      { q: "R1.1 Which statement about an exothermic reaction is correct?", o: ["A. ΔH is positive and the surroundings cool", "B. ΔH is negative and the surroundings warm", "C. Products have a higher enthalpy than reactants", "D. Bond-forming releases less energy than bond-breaking requires"], m: 1, a: "<b>B</b>. Heat is released to the surroundings, so ΔH < 0 and the surroundings warm up." },
+      { q: "R1.1 In a calorimetry experiment, 100 g of water is heated by 5.0 °C. What is q? (c = 4.18 J g⁻¹ K⁻¹)", o: ["A. 2.09 J", "B. 20.9 J", "C. 2090 J", "D. 41 800 J"], m: 1, a: "<b>C</b>. q = 100 × 4.18 × 5.0 = 2090 J." },
+      { q: "50.0 cm³ of 1.00 mol dm⁻³ HCl is mixed with 50.0 cm³ of 1.00 mol dm⁻³ NaOH. The temperature rises by 6.8 °C. Calculate the enthalpy change of neutralisation in kJ mol⁻¹. (Density 1.00 g cm⁻³, c = 4.18 J g⁻¹ K⁻¹.)", m: 3, a: "q = 100.0 × 4.18 × 6.8 = 2842 J [1]; n(H₂O) = 0.0500 mol [1]; ΔH = −2.842/0.0500 = −56.8 kJ mol⁻¹ [1]." },
+      { q: "Suggest two reasons why the experimental ΔH<sub>c</sub> of ethanol, obtained by heating water in a calorimeter, is less exothermic than the literature value, and one improvement.", m: 3, a: "Heat loss to surroundings / not all heat transferred to water [1]; incomplete combustion / evaporation of ethanol / heat absorbed by calorimeter [1]; improvement: draught shield / lid / insulation / stirring [1]." },
+    ],
+  },
+  "chem-7b": {
+    title: "Bond enthalpies · Hess's law · Energy cycles",
+    intro: "R1.2：ΔH 有兩條路計——斷鍵減成鍵（bond enthalpy）同埋 Hess's law 砌方程式。每個 part 有時間建議，最後有口訣同練習。",
+    parts: [
+      {
         h: "Bond enthalpies 鍵焓",
         min: 3,
         blocks: [
@@ -1740,6 +1874,44 @@ IB.addFast({
         ],
       },
       {
+        h: "R1.2 題型 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["If the question says…", "Do this", "Marks"], [
+            ["Calculate ΔH using bond enthalpies", "list broken/formed → broken − formed", "2–3"],
+            ["Calculate ΔH using ΔHf / ΔHc", "correct formula; multiply by coefficients; elements = 0", "2–3"],
+            ["Determine ΔH using given equations", "reverse/multiply/add; show equation manipulation", "2–3"],
+            ["Explain why bond-enthalpy ΔH ≠ experimental", "average values from many compounds + apply to gases only", "2"],
+            ["State Hess's law / define bond enthalpy", "word-for-word (see key boxes)", "1"],
+          ]],
+          ["check", [
+            "Define average bond enthalpy and state Hess's law",
+            "Bond-enthalpy calculation with a Lewis structure (count every bond)",
+            "ΔH from ΔH<sub>f</sub> and from ΔH<sub>c</sub> (and which formula is which)",
+            "Hess's law from given equations: reverse → change sign, multiply → multiply ΔH",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "斷鍵減成鍵：ΔH = Σbroken − Σformed（要 gaseous）",
+      "Formation：產物減反應物；Combustion：反應物減產物",
+      "Elements ΔH<sub>f</sub> = 0；reverse 變 sign；multiply 乘 ΔH",
+      "Hess：路線唔同、ΔH 一樣",
+    ],
+    practice: [
+      { q: "R1.2 A → B ΔH = +50 kJ and B → C ΔH = −120 kJ. What is ΔH for C → A?", o: ["A. −70 kJ", "B. +70 kJ", "C. +170 kJ", "D. −170 kJ"], m: 1, a: "<b>B</b>. A → C = −70 kJ; reversing gives +70 kJ." },
+      { q: "R1.2 Which is the standard enthalpy of formation of CO₂ (ΔH<sub>f</sub> = −394 kJ mol⁻¹)?", o: ["A. CO(g) + ½O₂(g) → CO₂(g)", "B. C(s) + O₂(g) → CO₂(g)", "C. C(g) + 2O(g) → CO₂(g)", "D. 2C(s) + 2O₂(g) → 2CO₂(g)"], m: 1, a: "<b>B</b>. One mole of compound from elements in standard states (graphite and O₂ gas)." },
+      { q: "R1.2 Use the bond enthalpies (C–H 414, O=O 498, C=O 804, O–H 463 kJ mol⁻¹) to calculate ΔH for CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g).", m: 3, a: "Broken 4(414) + 2(498) = 2652 kJ [1]; formed 2(804) + 4(463) = 3460 kJ [1]; ΔH = −808 kJ mol⁻¹ [1]." },
+      { q: "Calculate ΔH for C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(l) using ΔH<sub>f</sub>: C₃H₈ −104, CO₂ −394, H₂O(l) −286 kJ mol⁻¹.", m: 3, a: "Products 3(−394) + 4(−286) = −2326 [1]; reactants −104 [1]; ΔH = −2326 − (−104) = −2222 kJ mol⁻¹ [1]." },
+      { q: "Outline why bond enthalpy calculations give approximate values of ΔH.", m: 2, a: "Bond enthalpies are average values from many compounds, not specific to the molecules involved [1]; they apply to gaseous species so any liquid or solid states are not accounted for [1]." },
+    ],
+  },
+  "chem-7c": {
+    title: "Combustion · Fossil fuels · Biofuels · Fuel cells",
+    intro: "R1.3：燃料題 = 寫平衡燃燒方程式、計 specific energy、比較 fossil fuel 同 biofuel、識 fuel cell half-equations。",
+    parts: [
+      {
         h: "Energy from fuels 燃料",
         min: 3.5,
         blocks: [
@@ -1773,34 +1945,18 @@ IB.addFast({
         ],
       },
       {
-        h: "Command-term exam patterns 題型",
-        min: 2.5,
+        h: "R1.3 題型 + 自我檢查",
+        min: 2,
         blocks: [
           ["table", ["If the question says…", "Do this", "Marks"], [
-            ["Calculate ΔH from calorimetry", "q = mcΔT → n → ΔH = −q/n; sign, unit, s.f.", "3"],
-            ["Calculate ΔH using bond enthalpies", "list broken/formed → broken − formed", "2–3"],
-            ["Calculate ΔH using ΔHf / ΔHc", "correct formula; multiply by coefficients; elements = 0", "2–3"],
-            ["Determine ΔH using given equations", "reverse/multiply/add; show equation manipulation", "2–3"],
-            ["Sketch energy profile", "axes, reactants, products, E<sub>a</sub>, ΔH arrow, exo/endo shape", "2–3"],
-            ["Explain why experimental value ≠ literature", "heat loss + incomplete combustion/evaporation; (bond enthalpies: averages + gas phase)", "2"],
-            ["Suggest improvement", "insulate, lid, draught shield, stir, graph extrapolation", "1–2"],
-            ["Compare fuels", "renewability + CO₂ + energy density + land use (advantage AND disadvantage)", "3"],
-            ["State the definition of ΔH<sub>c</sub> / ΔH<sub>f</sub> / bond enthalpy", "word-for-word (see key boxes)", "1–2"],
-          ]],
-          ["eg", "<b>P2 · Sketch + explain · 3 marks</b> Sketch an energy profile for an exothermic reaction and show the effect of a catalyst.", [
-            "y-axis labelled enthalpy, x-axis reaction coordinate; reactants higher than products [1]",
-            "Peak above reactants with E<sub>a</sub> arrow; ΔH arrow downwards from reactants to products [1]",
-            "Second, lower peak for catalysed path with smaller E<sub>a</sub>; same reactant and product levels (ΔH unchanged) [1]",
+            ["Write an equation for complete / incomplete combustion", "balance C → H → O; incomplete gives CO and/or C", "1–2"],
+            ["Calculate specific energy / energy density", "|ΔH<sub>c</sub>| ÷ M; × density for energy density", "2"],
+            ["Compare / evaluate fuels", "renewability + CO₂ + specific energy + land use (advantage AND disadvantage)", "3"],
+            ["Fuel cell half-equations", "anode oxidation H₂; cathode reduction O₂; balance charge", "2"],
           ]],
           ["check", [
-            "Define exothermic / endothermic, standard conditions, ΔH<sub>c</sub>, ΔH<sub>f</sub>, bond enthalpy, Hess's law, activation energy",
-            "Sketch both energy profiles with E<sub>a</sub> and ΔH",
-            "Calorimetry calculation (q → n → ΔH) incl. sign, unit, s.f.",
-            "Calorimetry uncertainty in ΔT and % uncertainty; list 4 improvements",
-            "Bond-enthalpy calculation with a Lewis structure",
-            "ΔH from ΔH<sub>f</sub> and from ΔH<sub>c</sub> (and which formula is which)",
-            "Hess's law from given equations",
-            "Write complete and incomplete combustion equations",
+            "Write complete and incomplete combustion equations for an alkane and an alcohol",
+            "State one problem each of CO₂, CO and soot",
             "Specific energy and energy density calculation",
             "H₂/O₂ fuel cell half-equations; biofuel vs fossil fuel evaluation",
           ]],
@@ -1808,28 +1964,13 @@ IB.addFast({
       },
     ],
     summary: [
-      "放熱減、吸熱加；溫度睇 surroundings",
-      "q = mcΔT（用水），ΔH = −q ÷ n，J 轉 kJ",
-      "斷鍵減成鍵：ΔH = Σbroken − Σformed（要 gaseous）",
-      "Formation：產物減反應物；Combustion：反應物減產物",
-      "Elements ΔH<sub>f</sub> = 0；reverse 變 sign；multiply 乘 ΔH",
-      "Hess：路線唔同、ΔH 一樣",
       "夠氧 CO₂ + H₂O；唔夠氧 CO / C + H₂O",
       "Specific energy = 每克；energy density = 每 cm³",
       "Biofuel：renewable、理論 carbon neutral，但佔地同仍有排放",
     ],
     practice: [
-      { q: "R1.1 Which statement about an exothermic reaction is correct?", o: ["A. ΔH is positive and the surroundings cool", "B. ΔH is negative and the surroundings warm", "C. Products have a higher enthalpy than reactants", "D. Bond-forming releases less energy than bond-breaking requires"], m: 1, a: "<b>B</b>. Heat is released to the surroundings, so ΔH < 0 and the surroundings warm up." },
-      { q: "R1.2 A → B ΔH = +50 kJ and B → C ΔH = −120 kJ. What is ΔH for C → A?", o: ["A. −70 kJ", "B. +70 kJ", "C. +170 kJ", "D. −170 kJ"], m: 1, a: "<b>B</b>. A → C = −70 kJ; reversing gives +70 kJ." },
-      { q: "R1.2 Which is the standard enthalpy of formation of CO₂ (ΔH<sub>f</sub> = −394 kJ mol⁻¹)?", o: ["A. CO(g) + ½O₂(g) → CO₂(g)", "B. C(s) + O₂(g) → CO₂(g)", "C. C(g) + 2O(g) → CO₂(g)", "D. 2C(s) + 2O₂(g) → 2CO₂(g)"], m: 1, a: "<b>B</b>. One mole of compound from elements in standard states (graphite and O₂ gas)." },
-      { q: "R1.1 In a calorimetry experiment, 100 g of water is heated by 5.0 °C. What is q? (c = 4.18 J g⁻¹ K⁻¹)", o: ["A. 2.09 J", "B. 20.9 J", "C. 2090 J", "D. 41 800 J"], m: 1, a: "<b>C</b>. q = 100 × 4.18 × 5.0 = 2090 J." },
       { q: "R1.3 Which is a product of incomplete combustion of a hydrocarbon?", o: ["A. CO₂ only", "B. H₂ only", "C. CO", "D. SO₂"], m: 1, a: "<b>C</b>. CO (and/or C soot) forms when oxygen is limited." },
-      { q: "R1.2 Use the bond enthalpies (C–H 414, O=O 498, C=O 804, O–H 463 kJ mol⁻¹) to calculate ΔH for CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g).", m: 3, a: "Broken 4(414) + 2(498) = 2652 kJ [1]; formed 2(804) + 4(463) = 3460 kJ [1]; ΔH = −808 kJ mol⁻¹ [1]." },
-      { q: "50.0 cm³ of 1.00 mol dm⁻³ HCl is mixed with 50.0 cm³ of 1.00 mol dm⁻³ NaOH. The temperature rises by 6.8 °C. Calculate the enthalpy change of neutralisation in kJ mol⁻¹. (Density 1.00 g cm⁻³, c = 4.18 J g⁻¹ K⁻¹.)", m: 3, a: "q = 100.0 × 4.18 × 6.8 = 2842 J [1]; n(H₂O) = 0.0500 mol [1]; ΔH = −2.842/0.0500 = −56.8 kJ mol⁻¹ [1]." },
-      { q: "Calculate ΔH for C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(l) using ΔH<sub>f</sub>: C₃H₈ −104, CO₂ −394, H₂O(l) −286 kJ mol⁻¹.", m: 3, a: "Products 3(−394) + 4(−286) = −2326 [1]; reactants −104 [1]; ΔH = −2326 − (−104) = −2222 kJ mol⁻¹ [1]." },
-      { q: "Suggest two reasons why the experimental ΔH<sub>c</sub> of ethanol, obtained by heating water in a calorimeter, is less exothermic than the literature value, and one improvement.", m: 3, a: "Heat loss to surroundings / not all heat transferred to water [1]; incomplete combustion / evaporation of ethanol / heat absorbed by calorimeter [1]; improvement: draught shield / lid / insulation / stirring [1]." },
       { q: "State two advantages and one disadvantage of using bioethanol instead of petrol.", m: 3, a: "Renewable [1]; near carbon-neutral because CO₂ absorbed during growth of crops [1]; disadvantage: uses land that could grow food / lower energy density / production emissions [1]." },
-      { q: "Outline why bond enthalpy calculations give approximate values of ΔH.", m: 2, a: "Bond enthalpies are average values from many compounds, not specific to the molecules involved [1]; they apply to gaseous species so any liquid or solid states are not accounted for [1]." },
       { q: "Calculate the specific energy (in kJ g⁻¹) of ethanol, ΔH<sub>c</sub> = −1367 kJ mol⁻¹, M = 46.07 g mol⁻¹.", m: 2, a: "1367/46.07 [1] = 29.7 kJ g⁻¹ [1]." },
       { q: "State the half-equations at the anode and cathode of a hydrogen–oxygen fuel cell with an acidic electrolyte.", m: 2, a: "Anode: H₂ → 2H⁺ + 2e⁻ [1]; cathode: O₂ + 4H⁺ + 4e⁻ → 2H₂O [1]." },
     ],
@@ -2946,8 +3087,8 @@ IB.addFast({
   },
 
   "chem-13": {
-    title: "Radicals · Nucleophiles & electrophiles · Halogenoalkanes · Alkenes · Lewis acids",
-    intro: "R3.3 + R3.4：鍵點斷（homolytic / heterolytic）決定反應類型。識分 radical、nucleophile、electrophile，就識答晒呢個 topic。最後有失分位同 12 題練習。",
+    title: "Radicals · Homolytic fission · Radical substitution",
+    intro: "R3.3：鍵點斷決定反應類型——homolytic fission 一人一粒電子，整出 radicals。識寫 initiation、propagation、termination，就答晒呢個 topic。",
     parts: [
       {
         h: "Bond fission 斷鍵 · species 定義",
@@ -3019,6 +3160,22 @@ IB.addFast({
           ["trap", ["Propagation 寫成 CH₄ + Cl• → CH₃Cl + H• ✗（正確：→ •CH₃ + HCl）。", "漏寫 UV light 條件。", "Radical 冇寫 •（Cl 同 Cl• 唔同）。", "Termination 入面仲有 radical 出（應該 0 radical 出）。", "寫 Cl₂ → Cl⁻ + Cl⁺（heterolytic）✗。"]],
         ],
       },
+    ],
+    summary: [
+      "Radical = 單電子；homolytic 一人一粒",
+      "光開頭，一換一，二合一",
+      "多取代 = mixture；excess alkane 做 mono",
+    ],
+    practice: [
+      { q: "Which step is a propagation step in the chlorination of methane?", o: ["A. Cl₂ → 2Cl•", "B. CH₄ + Cl• → •CH₃ + HCl", "C. •CH₃ + Cl• → CH₃Cl", "D. 2Cl• → Cl₂"], m: 1, a: "B [1]. A radical in, a radical out." },
+      { q: "Write equations for the initiation and two propagation steps in the reaction of methane with bromine in UV light.", m: 3, a: "Br₂ → 2Br• [1]; CH₄ + Br• → •CH₃ + HBr [1]; •CH₃ + Br₂ → CH₃Br + Br• [1]." },
+      { q: "Explain why a mixture of halogenated products is formed when ethane reacts with excess chlorine.", m: 2, a: "Chlorine radicals can continue to substitute further hydrogen atoms [1]; giving C₂H₄Cl₂, C₂H₃Cl₃ etc. (multiple substitution) [1]." },
+    ],
+  },
+  "chem-13b": {
+    title: "Nucleophiles & electrophiles · Halogenoalkanes · Alkenes · Lewis acids",
+    intro: "R3.4：heterolytic fission 一方攞晒電子對。識分 nucleophile、electrophile、Lewis acid / base，識畫 curly arrows。最後有失分位同練習。",
+    parts: [
       {
         h: "Lewis acids & bases · coordination bond",
         min: 3,
@@ -3164,9 +3321,6 @@ IB.addFast({
       },
     ],
     summary: [
-      "Radical = 單電子；homolytic 一人一粒",
-      "光開頭，一換一，二合一",
-      "多取代 = mixture；excess alkane 做 mono",
       "Nucleophile 畀電子對，electrophile 收電子對",
       "Lewis acid 收、Lewis base 畀 → coordination bond",
       "鹵代烷 + OH⁻(aq) 回流 = nucleophilic substitution",
@@ -3175,12 +3329,9 @@ IB.addFast({
     ],
     practice: [
       { q: "Which species is a nucleophile?", o: ["A. H⁺", "B. NO₂⁺", "C. NH₃", "D. BF₃"], m: 1, a: "C [1]. NH₃ has a lone pair to donate." },
-      { q: "Which step is a propagation step in the chlorination of methane?", o: ["A. Cl₂ → 2Cl•", "B. CH₄ + Cl• → •CH₃ + HCl", "C. •CH₃ + Cl• → CH₃Cl", "D. 2Cl• → Cl₂"], m: 1, a: "B [1]. A radical in, a radical out." },
       { q: "What type of reaction occurs between CH₃CH₂Br and aqueous NaOH?", o: ["A. Electrophilic addition", "B. Radical substitution", "C. Nucleophilic substitution", "D. Elimination"], m: 1, a: "C [1]." },
       { q: "Which observation is made when ethene is bubbled through bromine water?", o: ["A. Colourless to orange", "B. Orange to colourless", "C. Orange to green", "D. No change"], m: 1, a: "B [1]." },
       { q: "Define the term nucleophile and give one example.", m: 2, a: "Species that donates a pair of electrons to form a covalent bond / electron-rich [1]; e.g. OH⁻, NH₃, H₂O, CN⁻ [1]." },
-      { q: "Write equations for the initiation and two propagation steps in the reaction of methane with bromine in UV light.", m: 3, a: "Br₂ → 2Br• [1]; CH₄ + Br• → •CH₃ + HBr [1]; •CH₃ + Br₂ → CH₃Br + Br• [1]." },
-      { q: "Explain why a mixture of halogenated products is formed when ethane reacts with excess chlorine.", m: 2, a: "Chlorine radicals can continue to substitute further hydrogen atoms [1]; giving C₂H₄Cl₂, C₂H₃Cl₃ etc. (multiple substitution) [1]." },
       { q: "Identify the Lewis acid and Lewis base in BF₃ + NH₃ → F₃B–NH₃, explaining your answer.", m: 3, a: "NH₃ is the Lewis base – donates its lone pair [1]; BF₃ is the Lewis acid – accepts the electron pair (incomplete octet) [1]; a coordination bond forms with both electrons from N [1]." },
       { q: "State the reagent and conditions to convert bromoethane to ethanol and name the type of reaction.", m: 3, a: "Aqueous sodium hydroxide [1]; heat under reflux [1]; nucleophilic substitution [1]." },
       { q: "Explain why the rate of hydrolysis of RX with aqueous OH⁻ increases in the order RCl &lt; RBr &lt; RI.", m: 3, a: "Rate depends on C–X bond breaking [1]; C–Cl 324 &gt; C–Br 285 &gt; C–I 228 kJ mol⁻¹ (bond weakens down the group) [1]; weaker bond is broken more easily so faster [1]." },
