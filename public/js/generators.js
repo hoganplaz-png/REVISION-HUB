@@ -429,7 +429,7 @@
 
     // ===================== MATHEMATICS =====================
     // Paper 1 (no GDC) answers are exact (integers, fractions); Paper 2 answers are exact or 3 s.f., as in IB markschemes.
-    "math-1": [
+    "math-1b": [
       () => {
         const a = R(-10, 20), d = R(-5, 9) || 3, n = R(8, 30);
         const un = a + (n - 1) * d;
@@ -440,11 +440,15 @@
         const s = (n / 2) * (2 * a + (n - 1) * d);
         return { paper: "P1", marks: 3, diff: 2, q: `Find the sum of the first ${n} terms of the arithmetic series ${a} + ${a + d} + ${a + 2 * d} + …`, numeric: { value: s, tol: 0.001 }, ms: [`\\(d = ${d}\\) [A1]`, `\\(S_{${n}} = \\frac{${n}}{2}\\left(2(${a}) + (${n} - 1)(${d})\\right)\\) [M1]`, `\\(S_{${n}} = ${s}\\) [A1]`] };
       },
+    ],
+    "math-1e": [
       () => {
         const a = P([12, 18, 24, 30, 40, 60, 81, 100]), r = P([[1, 2], [1, 3], [2, 3], [3, 4], [1, 4], [-1, 2]]);
         const rv = r[0] / r[1], s = a / (1 - rv), rt = fracTex(r[0], r[1]), st = fracTex(a * r[1], r[1] - r[0]);
         return { paper: "P1", marks: 3, diff: 2, q: `Find the sum to infinity of the geometric series with first term ${a} and common ratio \\(${rt}\\).`, numeric: { value: dp(s, 4), tol: 0.005 }, ms: [`\\(|r| < 1\\), so the sum to infinity exists [R1]`, `\\(S_\\infty = \\frac{${a}}{1 - \\left(${rt}\\right)}\\) [M1]`, `\\(S_\\infty = ${st}\\) [A1]`] };
       },
+    ],
+    "math-1d": [
       () => {
         const pv = R(10, 200) * 100, rate = P([2, 2.5, 3, 4, 4.5, 5, 6]), k = P([1, 4, 12]), n = R(3, 20);
         const fv = pv * Math.pow(1 + rate / (100 * k), k * n);
@@ -457,13 +461,15 @@
         const v = Math.pow(b, e), arg = e < 0 ? `\\frac{1}{${Math.pow(b, -e)}}` : v;
         return { paper: "P1", marks: 1, diff: 1, q: `Write down the value of \\(\\log_{${b}} ${arg}\\).`, numeric: { value: e, tol: 0.001 }, ms: [`\\(${b}^{${e}} = ${arg}\\), so \\(\\log_{${b}} ${arg} = ${e}\\) [A1]`] };
       },
+    ],
+    "math-2c": [
       () => {
         const n0 = R(50, 500), k = P([0.05, 0.08, 0.1, 0.12, 0.2, 0.25]), mult = P([2, 3, 5, 10]);
         const t = Math.log(mult) / k;
         return { paper: "P2", marks: 3, diff: 2, q: `A quantity grows according to \\(N = ${n0}e^{${k}t}\\). Find the time taken for N to reach ${n0 * mult}.`, numeric: { value: Number(s3(t)), tol: t * 0.004 }, ms: [`\\(${n0 * mult} = ${n0}e^{${k}t}\\) (or a GDC graph/solver) [M1]`, `\\(t = \\frac{\\ln ${mult}}{${k}}\\) [A1]`, `\\(t = ${s3(t)}\\) [A1]`] };
       },
     ],
-    "math-3": [
+    "math-3b": [
       () => {
         const n = R(4, 8), a = R(1, 3), b = R(1, 3) * P([1, -1]), r = R(1, n - 1);
         const nCr = (n, r) => { let x = 1; for (let i = 1; i <= r; i++) x = (x * (n - r + i)) / i; return Math.round(x); };
@@ -473,12 +479,14 @@
           ms: [`\\(\\binom{${n}}{${r}}(${a})^{${n - r}}(${bx})^{${r}}\\) (accept \\(\\binom{${n}}{${n - r}}\\)) [M1]`, `\\(${nCr(n, r)} \\times ${Math.pow(a, n - r)} \\times ${br < 0 ? `(${br})` : br}\\) [A1]`, `\\(${coef}\\) [A1]`] };
       },
     ],
-    "math-5": [
+    "math-5b": [
       () => {
         const c = P([4, 9, 16, 25, 36, 49]), a = P([1, 1, 4]);
         const k = 2 * Math.sqrt(a * c);
         return { paper: "P1", marks: 3, diff: 2, q: `Find the positive value of k for which \\(${a === 1 ? "" : a}x^2 + kx + ${c} = 0\\) has two equal real roots.`, numeric: { value: k, tol: 0.001 }, ms: [`\\(\\Delta = k^2 - 4(${a})(${c}) = 0\\) [M1]`, `\\(k^2 = ${4 * a * c}\\) [A1]`, `\\(k = ${k}\\) (reject \\(k = -${k}\\)) [A1]`] };
       },
+    ],
+    "math-5": [
       () => {
         const h = R(-6, 6), k = R(-9, 9), a = P([1, 2, -1, 3]);
         const b = -2 * a * h, c = a * h * h + k;
