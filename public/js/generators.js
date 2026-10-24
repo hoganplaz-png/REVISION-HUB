@@ -493,7 +493,7 @@
         return { paper: "P1", marks: 2, diff: 2, q: `Find the y-coordinate of the vertex of \\(y = ${poly([[a, "x^2"], [b, "x"], [c, ""]])}\\).`, numeric: { value: k, tol: 0.001 }, ms: [`\\(x = -\\frac{b}{2a} = ${h}\\) (or completing the square) [M1]`, `\\(y = ${k}\\) [A1]`] };
       },
     ],
-    "math-7": [
+    "math-7b": [
       () => {
         const a = R(4, 15), b = R(4, 15), C = R(25, 140);
         const c = Math.sqrt(a * a + b * b - 2 * a * b * Math.cos((C * Math.PI) / 180));
@@ -504,12 +504,14 @@
         const A = 0.5 * a * b * Math.sin((C * Math.PI) / 180);
         return { paper: "P2", marks: 2, diff: 1, q: `Find the area of a triangle with sides ${a} cm and ${b} cm enclosing an angle of ${C}°.`, numeric: { value: Number(s3(A)), tol: A * 0.005 }, ms: [`\\(\\frac{1}{2}(${a})(${b})\\sin ${C}°\\) [M1]`, `${s3(A)} cm² [A1]`] };
       },
+    ],
+    "math-7d": [
       () => {
         const r = R(3, 20), th = dp(R(3, 30) / 10, 1);
         return { paper: "P2", marks: 2, diff: 1, q: `A sector has radius ${r} cm and angle ${th} radians. Find its area.`, numeric: { value: dp(0.5 * r * r * th, 2), tol: 0.02 }, ms: [`\\(\\frac{1}{2}(${r})^2(${th})\\) [M1]`, `${dp(0.5 * r * r * th, 2)} cm² [A1]`] };
       },
     ],
-    "math-10": [
+    "math-10b": [
       () => {
         const pa = dp(R(2, 6) / 10, 1), pb = dp(R(2, 6) / 10, 1), indep = Math.random() < 0.5;
         const pab = indep ? dp(pa * pb, 2) : dp(Math.min(pa, pb) * P([0.3, 0.5]), 2);
@@ -522,7 +524,7 @@
         return { paper: "P1", marks: 3, diff: 2, q: `A bag contains ${r} red and ${b} blue counters. Two are taken without replacement. Find the probability that both are red.`, numeric: { value: dp(p, 4), tol: 0.0006 }, ms: [`\\(\\frac{${r}}{${t}} \\times \\frac{${r - 1}}{${t - 1}}\\) (multiplying along the branches, second denominator reduced) [M1][A1]`, `\\(${fracTex(r * (r - 1), t * (t - 1))}\\) [A1]`] };
       },
     ],
-    "math-11": [
+    "math-11b": [
       () => {
         const n = R(5, 20), p = P([0.1, 0.2, 0.25, 0.3, 0.4, 0.5]), k = R(1, Math.min(6, n - 1));
         let c = 1; for (let i = 1; i <= k; i++) c = (c * (n - k + i)) / i;

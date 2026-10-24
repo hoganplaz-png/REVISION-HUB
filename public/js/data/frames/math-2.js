@@ -4,21 +4,30 @@ IB.addExamFrames("math", {
     // ======================= 4.1-4.4, 4.10 Statistics and regression =======================
     "math-9": {
       frames: [
-        { title: "Estimate the mean and standard deviation from grouped data", star: true,
-          paper: "P2", where: "Paper 2 · 4 marks · grouped frequency table given",
-          q: "The times, t minutes, that 50 students spent on homework are summarised: 0 < t ≤ 10: 5; 10 < t ≤ 20: 12; 20 < t ≤ 30: 18; 30 < t ≤ 40: 10; 40 < t ≤ 50: 5. (a) Write down the modal class. (b) Use the mid-interval values to find an estimate of the mean. (c) Find an estimate of the standard deviation.",
+        { id: "math-9-q18", title: "Identify a sampling technique and find a stratified sample", paper: "P1", where: "Paper 1 / 2 · 2–3 marks",
+          q: "A school has 420 students in Year 11 and 280 students in Year 12. A stratified sample of 50 students is to be chosen. (a) Find the number of Year 11 students in the sample. (b) State one reason why a stratified sample may be preferred to a convenience sample.",
           marks: [
-            ["A1", "modal class is 20 < t ≤ 30"],
-            ["(M1)", "use of __mid-interval values__ 5, 15, 25, 35, 45 with the frequencies"],
-            ["A1", "estimated mean = 24.6 minutes"],
-            ["A1", "estimated standard deviation = 11.1 minutes"],
+            ["M1", "420 ÷ 700 × 50"],
+            ["A1", "30 Year 11 students (and 20 Year 12)"],
+            ["R1", "each group (stratum) is represented __in proportion__ to its size, so the sample is __less biased__ / more representative"],
           ],
-          model: "(a) 20 < t ≤ 30. (b) Using mid-interval values 5, 15, 25, 35, 45 with frequencies 5, 12, 18, 10, 5 in the GDC: mean ≈ 1230/50 = 24.6 minutes. (c) σ ≈ 11.1 minutes (11.1283…).",
-          accept: "11.13; σ from the GDC 1-Var Stats with the frequency list; \"estimate\" values only (they are estimates because the raw data is grouped)",
-          reject: "using class boundaries (10, 20, …) instead of mid-points; sₓ (sample sd, 11.2) - IB uses σₓ; the frequency 18 as the modal class",
-          tip: "分組數據一定用組中點（mid-interval）入 GDC 1-Var Stats：L1 放中點，L2 放頻數；標準差抄 σx 唔好抄 Sx。" },
-
-        { title: "Show that a value is an outlier and draw a box-and-whisker diagram", star: true,
+          model: "(a) Year 11: 420/700 × 50 = 30 students (Year 12: 280/700 × 50 = 20). (b) A stratified sample represents each year group in proportion to its size, so it is more representative and less biased than a convenience sample.",
+          accept: "\"representative of the population\"; convenience sample \"may be biased\"",
+          reject: "\"more accurate\" with no reason; 25 from each year (equal, not proportional)",
+          tip: "分層抽樣 = 按比例：組人數 ÷ 總人數 × 樣本大小。記得五種方法：simple random、convenience、systematic、quota、stratified。" },
+        { id: "math-9-f1", title: "Discrete or continuous? Population or sample?", paper: "P1", where: "Paper 1 · 3 marks · definitions in context", q: "A biologist catches 40 fish from a lake and records, for each fish, its length and the number of spots on its back. (a) State the population. (b) Classify each variable as discrete or continuous.", marks: [["A1", "population: all the fish in the lake"], ["A1", "length is continuous (it is measured)"], ["A1", "number of spots is discrete (it is counted)"]], model: "The population is every fish in the lake; the 40 fish caught are the sample. Length is measured, so continuous; the number of spots is counted, so discrete.", accept: "\"the fish in the lake\"", reject: "the 40 fish as the population", tip: "Population = 全部；sample = 抽咗出嚟嗰啲。數得 = discrete，量度 = continuous。" },
+        { id: "math-9-f2", title: "Describe how to take a systematic sample", paper: "P1", where: "Paper 1 · 3 marks · describe a method", q: "A school has a numbered list of 840 students. Describe how to select a systematic sample of 30 students.", marks: [["M1", "sampling interval k = 840 ÷ 30 = 28"], ["A1", "choose a random starting number from 1 to 28"], ["A1", "then take every 28th student on the list after it"]], model: "k = 840/30 = 28. Pick a random number r from 1 to 28, then select students r, r + 28, r + 56, … until 30 students are chosen.", accept: "a random start then every 28th", reject: "always starting at student 1 (no random element)", tip: "Systematic：k = N ÷ n，隨機起點，之後每 k 個揀一個。" },
+        { id: "math-9-f3", title: "Explain why a sample is biased", paper: "P1", where: "Paper 1 · 2 marks · reasoning in context", q: "To estimate the number of hours of television that adults in a city watch each week, a researcher telephones households between 10 am and 12 noon on weekdays. Explain why this sample is likely to be biased.", marks: [["R1", "people who work during the day are unlikely to answer, so they are under-represented"], ["R1", "people at home at that time (e.g. retired people) may watch more television, so the estimate is likely to be too high"]], model: "Only people at home on weekday mornings can be reached, so working adults are under-represented. Those who are at home may watch more television than average, so the sample will tend to overestimate the mean.", accept: "any group excluded with its effect on the estimate", reject: "\"the sample is too small\" with no reference to the method", tip: "Bias 題：講邊啲人被排除 + 對結果有咩影響。" },
+      ],
+      mc: [
+        { id: "math-9-m1", skill: "<strong>Stratified in 10 seconds:</strong> fraction of the population × sample size, for each group.", q: "A club has 60 men and 40 women. A stratified sample of 20 contains how many women?", options: ["8", "10", "12", "4"], answer: 0, why: "40/100 × 20 = 8." },
+        { id: "math-9-m2", skill: "<strong>Random or not?</strong> Simple random, systematic (random start) and stratified samples use chance; quota and convenience samples do not - that is usually the \"disadvantage\" mark.", q: "Which sampling technique does NOT select members at random?", options: ["Quota", "Simple random", "Stratified", "Systematic with a random start"], answer: 0, why: "A quota sample fills each group non-randomly." },
+        { id: "math-9-m3", skill: "<strong>Counted → discrete, measured → continuous</strong>, even when the measurement is rounded.", q: "Which of these is continuous data?", options: ["The time taken to run 100 m", "The number of goals in a match", "The number of siblings", "The number of pages in a book"], answer: 0, why: "Time is measured on a continuous scale." },
+      ],
+    },
+    "math-9b": {
+      frames: [
+        { id: "math-9-q13", title: "Show that a value is an outlier and draw a box-and-whisker diagram", star: true,
           paper: "P1", where: "Paper 1 / 2 · 4–5 marks · five-number summary given",
           q: "The lengths, in cm, of a sample of fish have minimum 12, lower quartile 20, median 26, upper quartile 31 and maximum 49. The largest length that is not an outlier is 41 cm. (a) Show that 49 cm is an outlier. (b) Draw a box-and-whisker diagram for the data, indicating any outliers.",
           marks: [
@@ -35,8 +44,7 @@ IB.addExamFrames("math", {
           accept: "upper whisker to 41 with 49 shown as a dot or cross; a diagram drawn on a labelled scale",
           reject: "whisker drawn to 49 when the outlier is shown; using 1.5 × IQR without adding it to Q₃; \"49 is far from the median\" (no comparison with the fence)",
           tip: "Show that 題要寫出 fence 嘅數同埋「49 > 47.5」呢個比較，先攞到 R1。有 outlier 嘅話，鬚只畫到最大嘅非 outlier。" },
-
-        { title: "Use a cumulative frequency graph: median, IQR, percentiles and \"how many\"", star: true,
+        { id: "math-9-q14", title: "Use a cumulative frequency graph: median, IQR, percentiles and \"how many\"", star: true,
           paper: "P1", where: "Paper 1 / 2 · 3–5 marks · cumulative frequency curve given",
           q: "The cumulative frequency graph for the masses, m grams, of 80 apples passes through (100, 0), (120, 8), (140, 30), (160, 58), (180, 74) and (200, 80). Use the graph to estimate (a) the median mass, (b) the interquartile range, (c) the number of apples with mass greater than 170 g.",
           marks: [
@@ -55,8 +63,57 @@ IB.addExamFrames("math", {
           accept: "values read consistently from the graph within half a small square (e.g. median 145–149, IQR 30–33)",
           reject: "giving 66 for part (c) (that is the number LESS than 170 g); reading Q₁ at 25% of the mass axis instead of the frequency axis",
           tip: "「多過」某個值 = 總數 − 讀到嘅累積頻數。中位數喺 n/2，Q₁ 喺 n/4，第 90 百分位喺 0.9n，全部由 y 軸橫讀過去。" },
-
-        { title: "Find r and the regression line of y on x, then predict", star: true,
+      ],
+      mc: [
+        { id: "math-9-q22", skill: "<strong>Outlier fences in 15 s:</strong> Q₁ − 1.5 IQR and Q₃ + 1.5 IQR. Halve IQR, add it to IQR, then add/subtract from the quartile.",
+          q: "Q₁ = 40, Q₃ = 60. Which value is an outlier?", options: ["12", "35", "88", "92"], answer: 3, why: "IQR = 20, 1.5 × IQR = 30, so the fences are 10 and 90. Only 92 lies outside them." },
+        { skill: "<strong>Spot the word \"estimate\":</strong> grouped data, cumulative frequency graphs and regression predictions are always estimates - write \"approximately\" / give 3 s.f." },
+        { id: "math-9b-m1", skill: "<strong>Percentile on a cf graph:</strong> the pth percentile is read at p% of n on the cumulative frequency axis.", q: "For 80 values, the 90th percentile is read at a cumulative frequency of:", options: ["72", "90", "8", "40"], answer: 0, why: "0.9 × 80 = 72." },
+      ],
+      concepts: [
+        { h: "Histograms, cumulative frequency and percentiles", b: "<p>A <strong>histogram</strong> for continuous data has no gaps between bars (equal class widths in AA). A <strong>cumulative frequency graph</strong> is plotted at the <em>upper class boundaries</em>; read the median at n/2, Q₁ at n/4, Q₃ at 3n/4 and the k-th percentile at k% of n. \"Number greater than a\" = n − cf(a).</p>" },
+      ],
+    },
+    "math-9c": {
+      frames: [
+        { id: "math-9-q12", title: "Estimate the mean and standard deviation from grouped data", star: true,
+          paper: "P2", where: "Paper 2 · 4 marks · grouped frequency table given",
+          q: "The times, t minutes, that 50 students spent on homework are summarised: 0 < t ≤ 10: 5; 10 < t ≤ 20: 12; 20 < t ≤ 30: 18; 30 < t ≤ 40: 10; 40 < t ≤ 50: 5. (a) Write down the modal class. (b) Use the mid-interval values to find an estimate of the mean. (c) Find an estimate of the standard deviation.",
+          marks: [
+            ["A1", "modal class is 20 < t ≤ 30"],
+            ["(M1)", "use of __mid-interval values__ 5, 15, 25, 35, 45 with the frequencies"],
+            ["A1", "estimated mean = 24.6 minutes"],
+            ["A1", "estimated standard deviation = 11.1 minutes"],
+          ],
+          model: "(a) 20 < t ≤ 30. (b) Using mid-interval values 5, 15, 25, 35, 45 with frequencies 5, 12, 18, 10, 5 in the GDC: mean ≈ 1230/50 = 24.6 minutes. (c) σ ≈ 11.1 minutes (11.1283…).",
+          accept: "11.13; σ from the GDC 1-Var Stats with the frequency list; \"estimate\" values only (they are estimates because the raw data is grouped)",
+          reject: "using class boundaries (10, 20, …) instead of mid-points; sₓ (sample sd, 11.2) - IB uses σₓ; the frequency 18 as the modal class",
+          tip: "分組數據一定用組中點（mid-interval）入 GDC 1-Var Stats：L1 放中點，L2 放頻數；標準差抄 σx 唔好抄 Sx。" },
+        { id: "math-9-q19", title: "Effect of a linear change on mean, standard deviation and variance", paper: "P1", where: "Paper 1 · 2–3 marks",
+          q: "The monthly salaries of a company's employees have mean $3000 and standard deviation $400. Every salary is increased by 5% and then a bonus of $200 is added. Find the new mean, the new standard deviation and the new variance.",
+          marks: [
+            ["A1", "new mean = 1.05 × 3000 + 200 = $3350"],
+            ["A1", "new standard deviation = 1.05 × 400 = $420 (__adding 200 does not change the spread__)"],
+            ["A1", "new variance = 420² = 176 400"],
+          ],
+          model: "New mean = 1.05(3000) + 200 = $3350. Multiplying by 1.05 multiplies the standard deviation by 1.05, adding 200 does not affect it: new sd = $420. New variance = 420² = 176 400.",
+          accept: "variance = 1.05² × 400²",
+          reject: "sd = 620 (adding 200 to the sd); variance = 1.05 × 160 000",
+          tip: "加減常數：平均數郁，標準差唔郁。乘常數：兩樣都乘；方差就乘個常數嘅平方。" },
+        { id: "math-9c-f1", title: "Mean of two combined groups", paper: "P1", where: "Paper 1 · 3 marks · totals", q: "In a class, 12 boys have a mean test score of 64 and 18 girls have a mean test score of 71. Find the mean score of the whole class.", marks: [["M1", "totals: 12 × 64 = 768 and 18 × 71 = 1278"], ["M1", "\\(\\frac{768 + 1278}{30}\\)"], ["A1", "68.2"]], numeric: { value: 68.2, tol: 0.01 }, model: "Total of all scores = 768 + 1278 = 2046, so the mean is 2046/30 = 68.2.", accept: "68.2 exactly", reject: "(64 + 71)/2 = 67.5 (groups of different sizes)", tip: "合併平均：先計總和，再除總人數，唔可以直接平均兩個平均數。" },
+        { id: "math-9c-f2", title: "Median and IQR of discrete data", paper: "P1", where: "Paper 1 · 3 marks · ordered list", q: "For the data 4, 7, 8, 10, 11, 13, 15, 18, 21, 24, find the median and the interquartile range.", marks: [["A1", "median = (11 + 13)/2 = 12"], ["M1", "Q₁ = 8 and Q₃ = 18 (medians of the lower and upper halves)"], ["A1", "IQR = 10"]], numeric: { value: 10, tol: 0.001 }, model: "n = 10, so the median is the mean of the 5th and 6th values: 12. Lower half 4, 7, 8, 10, 11 gives Q₁ = 8; upper half 13, 15, 18, 21, 24 gives Q₃ = 18. IQR = 18 − 8 = 10.", accept: "GDC 1-Var Stats values", reject: "IQR = 24 − 4 (that is the range)", tip: "Discrete data：上下半各自搵 median 就係 Q₁、Q₃。" },
+      ],
+      mc: [
+        { id: "math-9-q20", skill: "<strong>Which average / spread?</strong> Outliers or skew → median and IQR; symmetric data → mean and standard deviation. Range and σ are pulled by outliers, IQR is not.",
+          q: "A data set contains one extreme outlier. Which pair of measures best describes it?", options: ["mean and standard deviation", "median and interquartile range", "mean and range", "mode and standard deviation"], answer: 1, why: "Median and IQR depend only on the middle of the data, so the outlier does not affect them." },
+        { id: "math-9-q23", skill: "<strong>GDC sd:</strong> always copy σₓ (population). Sₓ is slightly larger and is wrong for IB AA answers.",
+          paper: "P2", q: "For 2, 4, 4, 4, 5, 5, 7, 9, which value is σ (the IB standard deviation)?", options: ["2", "2.14", "4", "5"], answer: 0, why: "Mean 5, Σ(x − 5)² = 32, σ² = 32/8 = 4, σ = 2. (2.14 is Sₓ.)" },
+        { id: "math-9c-m1", skill: "<strong>Linear change shortcut:</strong> y = ax + b gives ȳ = ax̄ + b and σ_y = |a|σ_x; the + b never touches the spread.", q: "Data have mean 20 and standard deviation 5. Each value is halved and then 3 is subtracted. The new standard deviation is:", options: ["2.5", "−0.5", "5", "7"], answer: 0, why: "Halving halves σ; subtracting 3 does not change it." },
+      ],
+    },
+    "math-9d": {
+      frames: [
+        { id: "math-9-q15", title: "Find r and the regression line of y on x, then predict", star: true,
           paper: "P2", where: "Paper 2 · 4–6 marks · bivariate table given",
           q: "The number of hours of revision, x, and the test score, y, of six students are: x: 2, 4, 5, 7, 8, 10; y: 45, 52, 60, 66, 71, 80. (a) Write down the value of Pearson's product-moment correlation coefficient, r. (b) Write down the equation of the regression line of y on x. (c) Use your equation to estimate the score of a student who revised for 6 hours.",
           marks: [
@@ -72,8 +129,7 @@ IB.addExamFrames("math", {
           accept: "a = 4.381, b = 36.05; answer 62.3 or 62 marks",
           reject: "r = 0.991 (that is r², or copying the wrong GDC line); writing the line as x = …; equation without \"y =\" (loses a mark)",
           tip: "LinReg(ax+b) 出 a、b、r：寫答案要寫晒「y = 4.38x + 36.0」成條方程，3 位有效數字。x = 6 啱啱係 x̄，所以估計值就係 ȳ。" },
-
-        { title: "Interpret r, the gradient a and the intercept b; comment on reliability", star: true,
+        { id: "math-9-q16", title: "Interpret r, the gradient a and the intercept b; comment on reliability", star: true,
           paper: "P2", where: "Paper 2 · 1–3 marks · after a regression line",
           q: "For the data on revision hours x and test score y, r = 0.996 and the regression line of y on x is y = 4.38x + 36.0, for 2 ≤ x ≤ 10. (a) Describe the correlation. (b) Interpret the value 4.38 in context. (c) Explain whether it would be appropriate to use the line to estimate the score of a student who revised for 20 hours.",
           marks: [
@@ -85,8 +141,22 @@ IB.addExamFrames("math", {
           accept: "\"very strong positive\"; b = 36.0 interpreted as the predicted score with no revision (only if asked, and with a caveat)",
           reject: "\"positive correlation\" without strength; \"revision causes higher scores\" (correlation does not imply causation); \"not reliable because r is not 1\"",
           tip: "r 嘅描述要有三樣：強／弱、正／負、linear。解釋斜率一定要用題目情境同單位：「每多一個鐘，分數平均多 4.38」。" },
-
-        { title: "Choose the correct regression line: x on y", paper: "P2", where: "Paper 2 · 2–3 marks · HL and SL (4.10)",
+        { id: "math-9d-f1", title: "Describe the correlation from r in context", paper: "P2", where: "Paper 2 · 2 marks · interpret", q: "For bivariate data on the age of a car, x years, and its value, y dollars, Pearson's correlation coefficient is r = −0.88. Interpret this value in context.", marks: [["A1", "strong negative linear correlation"], ["A1", "older cars tend to have lower values"]], model: "r = −0.88 shows a strong negative linear correlation: as the age of a car increases, its value tends to decrease.", accept: "\"as x increases y tends to decrease\" in context", reject: "\"age causes the value to fall\"", tip: "r：強弱 + 正負 + linear + 情境，四樣齊晒。" },
+        { id: "math-9d-f2", title: "Regression line through the mean point", paper: "P1", where: "Paper 1 · 3 marks · no GDC", q: "For a set of data x̄ = 8 and ȳ = 30. The regression line of y on x is y = 2.5x + b. (a) Find b. (b) Estimate y when x = 10, given that the x-values range from 4 to 14.", marks: [["M1", "the line passes through (8, 30): 30 = 2.5(8) + b"], ["A1", "b = 10"], ["A1", "y = 2.5(10) + 10 = 35"]], numeric: { value: 35, tol: 0.001 }, model: "The regression line passes through the mean point, so 30 = 20 + b and b = 10. Then y = 25 + 10 = 35 (x = 10 is inside the data, so this is interpolation).", accept: "35 with b found", reject: "b = 30 (intercept read from ȳ)", tip: "Regression line 一定經過 (x̄, ȳ)。" },
+      ],
+      mc: [
+        { id: "math-9-q21", skill: "<strong>Mean point trick:</strong> the regression line of y on x always passes through (x̄, ȳ). If x̄ is given, the predicted y is ȳ - no GDC needed.",
+          q: "The regression line of y on x is y = 2x + 3 and x̄ = 4. What is ȳ?", options: ["8", "11", "7", "4"], answer: 1, why: "ȳ = 2(4) + 3 = 11 because the line passes through the mean point." },
+        { id: "math-9d-m1", skill: "<strong>r in one glance:</strong> the sign gives the direction, the size the strength; r ≈ 0 means no LINEAR correlation (there may still be a curve).", q: "Which value of r shows the strongest linear correlation?", options: ["−0.91", "0.85", "0.10", "−0.40"], answer: 0, why: "|−0.91| is the largest." },
+        { id: "math-9d-m2", skill: "<strong>Extrapolation check:</strong> compare the x you are given with the data range first - outside the range the prediction is unreliable however large r is.", q: "A regression line was found from data with 20 ≤ x ≤ 50 and r = 0.97. A prediction is reliable for:", options: ["x = 35", "x = 5", "x = 80", "x = 0"], answer: 0, why: "Only x = 35 lies inside the data range." },
+      ],
+      concepts: [
+        { h: "Line of best fit and the parameters", b: "<p>A line of best fit drawn by eye should pass through the <strong>mean point</strong> (x̄, ȳ). In y = ax + b, <strong>a</strong> is the change in y for each unit increase in x and <strong>b</strong> is the value of y when x = 0 (interpret only if x = 0 is meaningful and inside the data range).</p>" },
+      ],
+    },
+    "math-9e": {
+      frames: [
+        { id: "math-9-q17", title: "Choose the correct regression line: x on y", paper: "P2", where: "Paper 2 · 2–3 marks · HL and SL (4.10)",
           q: "For the revision data, the regression line of x on y is x = 0.226y − 8.10. A student scored 70 marks. Use an appropriate regression line to estimate how many hours the student revised, and justify your choice of line.",
           marks: [
             ["R1", "use x on y because we are estimating __x from a given y__"],
@@ -98,52 +168,71 @@ IB.addExamFrames("math", {
           accept: "7.72–7.74 from unrounded coefficients",
           reject: "rearranging y = 4.38x + 36.0 to give x = 7.75 (wrong line, loses the R1 and the A1)",
           tip: "由 y 估 x 就用 x on y 條線，唔可以將 y on x 條線移項！GDC 將 L1、L2 對調再做 LinReg。" },
-
-        { title: "Identify a sampling technique and find a stratified sample", paper: "P1", where: "Paper 1 / 2 · 2–3 marks",
-          q: "A school has 420 students in Year 11 and 280 students in Year 12. A stratified sample of 50 students is to be chosen. (a) Find the number of Year 11 students in the sample. (b) State one reason why a stratified sample may be preferred to a convenience sample.",
-          marks: [
-            ["M1", "420 ÷ 700 × 50"],
-            ["A1", "30 Year 11 students (and 20 Year 12)"],
-            ["R1", "each group (stratum) is represented __in proportion__ to its size, so the sample is __less biased__ / more representative"],
-          ],
-          model: "(a) Year 11: 420/700 × 50 = 30 students (Year 12: 280/700 × 50 = 20). (b) A stratified sample represents each year group in proportion to its size, so it is more representative and less biased than a convenience sample.",
-          accept: "\"representative of the population\"; convenience sample \"may be biased\"",
-          reject: "\"more accurate\" with no reason; 25 from each year (equal, not proportional)",
-          tip: "分層抽樣 = 按比例：組人數 ÷ 總人數 × 樣本大小。記得五種方法：simple random、convenience、systematic、quota、stratified。" },
-
-        { title: "Effect of a linear change on mean, standard deviation and variance", paper: "P1", where: "Paper 1 · 2–3 marks",
-          q: "The monthly salaries of a company's employees have mean $3000 and standard deviation $400. Every salary is increased by 5% and then a bonus of $200 is added. Find the new mean, the new standard deviation and the new variance.",
-          marks: [
-            ["A1", "new mean = 1.05 × 3000 + 200 = $3350"],
-            ["A1", "new standard deviation = 1.05 × 400 = $420 (__adding 200 does not change the spread__)"],
-            ["A1", "new variance = 420² = 176 400"],
-          ],
-          model: "New mean = 1.05(3000) + 200 = $3350. Multiplying by 1.05 multiplies the standard deviation by 1.05, adding 200 does not affect it: new sd = $420. New variance = 420² = 176 400.",
-          accept: "variance = 1.05² × 400²",
-          reject: "sd = 620 (adding 200 to the sd); variance = 1.05 × 160 000",
-          tip: "加減常數：平均數郁，標準差唔郁。乘常數：兩樣都乘；方差就乘個常數嘅平方。" },
+        { id: "math-9e-f1", title: "Find the regression line of x on y and predict", star: true, paper: "P2", where: "Paper 2 · 4 marks · GDC", q: "The table shows x: 1, 3, 4, 6, 8 and y: 10, 14, 17, 20, 26. (a) Find the equation of the regression line of x on y. (b) Hence estimate x when y = 22.", marks: [["M1", "y-values as the independent list, x-values as the dependent list"], ["A1", "x = 0.443y − 3.31"], ["M1", "x = 0.443(22) − 3.31"], ["A1", "x = 6.44"]], numeric: { value: 6.44, tol: 0.01 }, model: "From the GDC with y as the independent variable, x = 0.443y − 3.31. When y = 22, x = 6.44.", accept: "x = 0.4429y − 3.307", reject: "rearranging the line of y on x (y = 2.15x + 7.94)", tip: "估 x：Xlist 放 y，Ylist 放 x。" },
+        { id: "math-9e-f2", title: "Mean point from the two regression lines", paper: "P1", where: "Paper 1 · 3 marks · simultaneous equations", q: "The regression line of y on x is y = 0.5x + 5 and the regression line of x on y is x = 1.2y − 4. Find x̄ and ȳ.", marks: [["M1", "both lines pass through (x̄, ȳ): x = 1.2(0.5x + 5) − 4"], ["A1", "x̄ = 5"], ["A1", "ȳ = 7.5"]], model: "x = 0.6x + 6 − 4, so 0.4x = 2 and x̄ = 5; then ȳ = 0.5(5) + 5 = 7.5.", accept: "elimination in any order", reject: "setting the two right-hand sides equal", tip: "兩條 regression line 嘅交點就係 (x̄, ȳ)。" },
+        { id: "math-9e-f3", title: "Choose the regression line and justify", paper: "P2", where: "Paper 2 · 2 marks · reasoning", q: "A scientist has the regression line of y on x, y = 4.2x + 15, and the regression line of x on y, x = 0.21y − 2.6, for data with 10 ≤ x ≤ 30. She wants to estimate x when y = 80. State which line she should use, and find the estimate.", marks: [["R1", "x on y, because x is being predicted from a given value of y"], ["A1", "x = 0.21(80) − 2.6 = 14.2"]], numeric: { value: 14.2, tol: 0.01 }, model: "Use x on y since x is the variable being predicted: x = 16.8 − 2.6 = 14.2, which is inside the data range.", accept: "14.2 with the reason", reject: "(80 − 15)/4.2 = 15.5", tip: "估邊個，邊個擺左邊。" },
       ],
       mc: [
-        { skill: "<strong>Which average / spread?</strong> Outliers or skew → median and IQR; symmetric data → mean and standard deviation. Range and σ are pulled by outliers, IQR is not.",
-          q: "A data set contains one extreme outlier. Which pair of measures best describes it?", options: ["mean and standard deviation", "median and interquartile range", "mean and range", "mode and standard deviation"], answer: 1, why: "Median and IQR depend only on the middle of the data, so the outlier does not affect them." },
-        { skill: "<strong>Mean point trick:</strong> the regression line of y on x always passes through (x̄, ȳ). If x̄ is given, the predicted y is ȳ - no GDC needed.",
-          q: "The regression line of y on x is y = 2x + 3 and x̄ = 4. What is ȳ?", options: ["8", "11", "7", "4"], answer: 1, why: "ȳ = 2(4) + 3 = 11 because the line passes through the mean point." },
-        { skill: "<strong>Outlier fences in 15 s:</strong> Q₁ − 1.5 IQR and Q₃ + 1.5 IQR. Halve IQR, add it to IQR, then add/subtract from the quartile.",
-          q: "Q₁ = 40, Q₃ = 60. Which value is an outlier?", options: ["12", "35", "88", "92"], answer: 3, why: "IQR = 20, 1.5 × IQR = 30, so the fences are 10 and 90. Only 92 lies outside them." },
-        { skill: "<strong>Spot the word \"estimate\":</strong> grouped data, cumulative frequency graphs and regression predictions are always estimates - write \"approximately\" / give 3 s.f." },
-        { skill: "<strong>GDC sd:</strong> always copy σₓ (population). Sₓ is slightly larger and is wrong for IB AA answers.",
-          paper: "P2", q: "For 2, 4, 4, 4, 5, 5, 7, 9, which value is σ (the IB standard deviation)?", options: ["2", "2.14", "4", "5"], answer: 0, why: "Mean 5, Σ(x − 5)² = 32, σ² = 32/8 = 4, σ = 2. (2.14 is Sₓ.)" },
-      ],
-      concepts: [
-        { h: "Histograms, cumulative frequency and percentiles", b: "<p>A <strong>histogram</strong> for continuous data has no gaps between bars (equal class widths in AA). A <strong>cumulative frequency graph</strong> is plotted at the <em>upper class boundaries</em>; read the median at n/2, Q₁ at n/4, Q₃ at 3n/4 and the k-th percentile at k% of n. \"Number greater than a\" = n − cf(a).</p>" },
-        { h: "Line of best fit and the parameters", b: "<p>A line of best fit drawn by eye should pass through the <strong>mean point</strong> (x̄, ȳ). In y = ax + b, <strong>a</strong> is the change in y for each unit increase in x and <strong>b</strong> is the value of y when x = 0 (interpret only if x = 0 is meaningful and inside the data range).</p>" },
+        { id: "math-9e-m1", skill: "<strong>Left-hand side = what you predict:</strong> x on y is written x = cy + d and gives x.", q: "To estimate a student's revision time x from her score y, use:", options: ["the regression line of x on y", "the regression line of y on x, rearranged", "the mean of x", "a line through the origin"], answer: 0, why: "x is being predicted from y." },
+        { id: "math-9e-m2", skill: "<strong>Both lines meet at (x̄, ȳ):</strong> substitute one equation into the other to find the mean point.", q: "The regression lines y = 3x − 2 and x = 0.3y + 1 meet at:", options: ["(4, 10)", "(10, 4)", "(−2, 1)", "(1, 1)"], answer: 0, why: "x = 0.3(3x − 2) + 1 gives 0.1x = 0.4, so x = 4 and y = 10." },
+        { id: "math-9e-m3", skill: "<strong>r = ±1 shortcut:</strong> only then are the two regression lines the same; otherwise never rearrange one to get the other.", q: "For which value of r are the regression lines of y on x and of x on y identical?", options: ["r = −1", "r = 0", "r = 0.5", "r = 0.99"], answer: 0, why: "The lines coincide only for perfect correlation." },
       ],
     },
 
     // ======================= 4.5-4.6, 4.11 Probability =======================
     "math-10": {
       frames: [
-        { title: "Complete a Venn diagram and find probabilities from it", star: true,
+        { id: "math-10-q13", title: "Sample space diagram for two dice / spinners", paper: "P1", where: "Paper 1 · 3–5 marks",
+          q: "Two fair four-sided dice, each numbered 1 to 4, are rolled and the scores are added. (a) Find the probability that the sum is 5. (b) Given that at least one die shows a 4, find the probability that the sum is greater than 5.",
+          marks: [
+            ["(M1)", "sample space diagram with __16__ equally likely outcomes"],
+            ["A1", "P(sum = 5) = 4/16 = 1/4"],
+            ["A1", "7 outcomes have at least one 4"],
+            ["A1", "5 of these have sum greater than 5, so P = 5/7"],
+          ],
+          model: "There are 16 equally likely outcomes. Sum 5: (1,4), (2,3), (3,2), (4,1), so P = 4/16 = 1/4. At least one 4: 7 outcomes; of these (4,2), (4,3), (4,4), (2,4), (3,4) have sum > 5, so P = 5/7.",
+          accept: "a correct table or list of outcomes",
+          reject: "8 outcomes with a 4 (counting (4,4) twice); 5/16 for part (b)",
+          tip: "兩粒骰一定畫 4×4（或 6×6）表格，數格仔最穩陣。條件概率：只喺符合條件嗰幾格入面數。" },
+        { id: "math-10-q14", title: "Relative frequency and expected number of occurrences", paper: "P1", where: "Paper 1 · 2–3 marks",
+          q: "A biased coin is thrown 200 times and lands on heads 74 times. (a) Find the relative frequency of heads. (b) Hence find the expected number of heads when the coin is thrown 500 times.",
+          marks: [
+            ["A1", "relative frequency = 74/200 = 0.37"],
+            ["M1", "expected number = n × p = 500 × 0.37"],
+            ["A1", "185 heads"],
+          ],
+          model: "Relative frequency = 74/200 = 0.37. Expected number of heads = 500 × 0.37 = 185.",
+          accept: "37/100",
+          reject: "rounding 185 to a different integer; 74 × 2.5 without the probability idea (still correct numerically, but show np)",
+          tip: "期望次數 = np，可以唔係整數（例如 18.5 都照寫），唔好自己四捨五入。" },
+        { id: "math-10-q15", title: "\"At least one\" and finding the least number of trials", paper: "P2", where: "Paper 2 · 4 marks",
+          q: "A fair six-sided die is rolled n times. Find the least value of n such that the probability of obtaining at least one six is greater than 0.9.",
+          marks: [
+            ["M1", "P(at least one six) = __1 − P(no sixes)__ = 1 − (5/6)ⁿ"],
+            ["M1", "1 − (5/6)ⁿ > 0.9, i.e. (5/6)ⁿ < 0.1"],
+            ["A1", "n > 12.6 (from logs or GDC table)"],
+            ["A1", "least n = 13"],
+          ],
+          numeric: { value: 13, tol: 0 },
+          model: "P(at least one six) = 1 − (5/6)ⁿ > 0.9, so (5/6)ⁿ < 0.1 and n > ln 0.1 / ln(5/6) = 12.63. The least value is n = 13.",
+          accept: "a GDC table showing n = 12 gives 0.888 and n = 13 gives 0.907",
+          reject: "n = 12.6 or n = 12 (must round up to the next integer)",
+          tip: "「至少一次」= 1 − 一次都冇。求最少 n 一定向上取整數，可以用 GDC table 檢查 n = 12 同 13。" },
+        { id: "math-10-f1", title: "List a sample space and find a probability", paper: "P1", where: "Paper 1 · 3 marks · equally likely outcomes", q: "A fair coin is tossed and a fair six-sided die is rolled. (a) Write down the number of outcomes in the sample space. (b) Find the probability of a tail and a number greater than 4.", marks: [["A1", "12 outcomes"], ["M1", "favourable outcomes (T, 5) and (T, 6)"], ["A1", "\\(\\frac{2}{12} = \\frac{1}{6}\\)"]], model: "2 × 6 = 12 equally likely outcomes. Two of them, (T, 5) and (T, 6), are favourable, so the probability is 2/12 = 1/6.", accept: "\\(\\frac{1}{2} \\times \\frac{2}{6}\\)", reject: "1/2 + 1/3 (adding instead of multiplying)", tip: "Sample space：列晒所有 equally likely outcomes 再數。" },
+      ],
+      mc: [
+        { id: "math-10-q18", skill: "<strong>Complement first:</strong> \"at least one\", \"not all the same\" and \"different\" are usually quicker as 1 − P(opposite).",
+          q: "Three fair coins are tossed. P(at least one head) =", options: ["1/8", "3/8", "1/2", "7/8"], answer: 3, why: "1 − P(TTT) = 1 − 1/8 = 7/8." },
+        { id: "math-10-m1", skill: "<strong>Expected number = np</strong> - no rounding: 0.3 × 25 = 7.5 is fine.", q: "The probability that a seed grows is 0.85. In a tray of 60 seeds, the expected number that grow is:", options: ["51", "9", "0.85", "60"], answer: 0, why: "60 × 0.85 = 51." },
+        { id: "math-10-m2", skill: "<strong>Two-dice totals:</strong> 7 is most likely (6/36); totals 2 and 12 are least likely (1/36 each); P(double) = 1/6.", q: "Two fair dice are rolled. P(total = 10) =", options: ["\\(\\frac{1}{12}\\)", "\\(\\frac{1}{11}\\)", "\\(\\frac{1}{6}\\)", "\\(\\frac{5}{36}\\)"], answer: 0, why: "(4, 6), (5, 5), (6, 4): 3/36 = 1/12." },
+      ],
+      concepts: [
+        { h: "Relative frequency and equally likely outcomes", b: "<p>Relative frequency = (number of times the event occurs) ÷ (number of trials); it estimates P(A) and improves as the number of trials increases. P(A) = n(A)/n(U) only when outcomes are <strong>equally likely</strong>. Expected number of occurrences = np.</p>" },
+      ],
+    },
+    "math-10b": {
+      frames: [
+        { id: "math-10-q9", title: "Complete a Venn diagram and find probabilities from it", star: true,
           paper: "P1", where: "Paper 1 · 4–6 marks · numbers in a group given",
           q: "In a class of 30 students, 18 study French (F), 14 study Spanish (S) and 5 study neither. (a) Find the number of students who study both languages. (b) Find the probability that a randomly chosen student studies French only. (c) Given that a student studies French, find the probability that the student also studies Spanish.",
           marks: [
@@ -157,8 +246,27 @@ IB.addExamFrames("math", {
           accept: "unsimplified fractions; decimals to 3 s.f. (0.367, 0.389)",
           reject: "P(S | F) = 7/30 (that is P(F ∩ S)); 7/14",
           tip: "Venn 圖先填中間交集，再填外面。「Given that」= 縮細樣本空間，分母變做條件嗰組人數。" },
-
-        { title: "Tree diagram with conditional probability (reverse the condition)", star: true,
+        { id: "math-10-q12", title: "State, with reason, whether events are mutually exclusive", paper: "P1", where: "Paper 1 · 1–2 marks",
+          q: "For events A and B, P(A) = 0.4, P(B) = 0.35 and P(A ∩ B) = 0.14. State, with a reason, whether A and B are mutually exclusive.",
+          marks: [
+            ["A1", "__not__ mutually exclusive"],
+            ["R1", "because P(A ∩ B) is greater than zero, so both events can __occur together__"],
+          ],
+          model: "A and B are not mutually exclusive, because P(A ∩ B) = 0.14 ≠ 0, so both events can happen at the same time.",
+          accept: "P(A ∪ B) ≠ P(A) + P(B)",
+          reject: "\"not mutually exclusive because they are independent\" (no numerical reason)",
+          tip: "互斥 = 唔可以同時發生 = P(A∩B) = 0。答案要先寫 A1 結論，再寫 R1 原因。" },
+      ],
+      mc: [
+        { id: "math-10-q16", skill: "<strong>Mutually exclusive vs independent:</strong> ME → P(A ∩ B) = 0, add. Independent → P(A ∩ B) = P(A)P(B), multiply. Two events with non-zero probability cannot be both.",
+          q: "P(A) = 0.5, P(B) = 0.2 and A, B are independent. P(A ∪ B) =", options: ["0.7", "0.6", "0.1", "0.8"], answer: 1, why: "0.5 + 0.2 − 0.5 × 0.2 = 0.6." },
+        { skill: "<strong>Fill the Venn from the middle:</strong> write the intersection first, then subtract outwards; the four regions must add to 1 (or n)." },
+        { skill: "<strong>Without replacement:</strong> both numerator and denominator drop by 1 on the second branch. Check that each pair of branches sums to 1." },
+      ],
+    },
+    "math-10c": {
+      frames: [
+        { id: "math-10-q10", title: "Tree diagram with conditional probability (reverse the condition)", star: true,
           paper: "P1", where: "Paper 1 / 2 · 5–6 marks",
           q: "The probability that it rains on a given day is 0.3. If it rains, the probability that Ana is late for school is 0.6; if it does not rain, the probability that she is late is 0.15. (a) Find the probability that Ana is late on a given day. (b) Given that Ana is late, find the probability that it rained.",
           marks: [
@@ -173,8 +281,7 @@ IB.addExamFrames("math", {
           accept: "12/19; 0.63157…",
           reject: "0.6 (that is P(late | rain)); 0.18 as the final answer",
           tip: "條件反轉咗（已知遲到問落雨）就用 P(A∩B)/P(B)：分子係一條 branch，分母係所有遲到 branch 加埋。" },
-
-        { title: "Test whether two events are independent", star: true,
+        { id: "math-10-q11", title: "Test whether two events are independent", star: true,
           paper: "P1", where: "Paper 1 · 3–4 marks · \"Determine whether…\"",
           q: "Events A and B are such that P(A) = 0.4, P(B) = 0.35 and P(A ∪ B) = 0.61. (a) Find P(A ∩ B). (b) Determine whether A and B are independent.",
           marks: [
@@ -187,76 +294,20 @@ IB.addExamFrames("math", {
           accept: "showing P(A | B) = 0.14/0.35 = 0.4 = P(A)",
           reject: "\"independent because they do not affect each other\" with no numerical comparison; \"independent because P(A ∩ B) ≠ 0\"",
           tip: "獨立要用數字證明：計 P(A)P(B)，同 P(A∩B) 比較，寫埋結論句。互斥（P(A∩B)=0）同獨立係兩回事！" },
-
-        { title: "State, with reason, whether events are mutually exclusive", paper: "P1", where: "Paper 1 · 1–2 marks",
-          q: "For events A and B, P(A) = 0.4, P(B) = 0.35 and P(A ∩ B) = 0.14. State, with a reason, whether A and B are mutually exclusive.",
-          marks: [
-            ["A1", "__not__ mutually exclusive"],
-            ["R1", "because P(A ∩ B) is greater than zero, so both events can __occur together__"],
-          ],
-          model: "A and B are not mutually exclusive, because P(A ∩ B) = 0.14 ≠ 0, so both events can happen at the same time.",
-          accept: "P(A ∪ B) ≠ P(A) + P(B)",
-          reject: "\"not mutually exclusive because they are independent\" (no numerical reason)",
-          tip: "互斥 = 唔可以同時發生 = P(A∩B) = 0。答案要先寫 A1 結論，再寫 R1 原因。" },
-
-        { title: "Sample space diagram for two dice / spinners", paper: "P1", where: "Paper 1 · 3–5 marks",
-          q: "Two fair four-sided dice, each numbered 1 to 4, are rolled and the scores are added. (a) Find the probability that the sum is 5. (b) Given that at least one die shows a 4, find the probability that the sum is greater than 5.",
-          marks: [
-            ["(M1)", "sample space diagram with __16__ equally likely outcomes"],
-            ["A1", "P(sum = 5) = 4/16 = 1/4"],
-            ["A1", "7 outcomes have at least one 4"],
-            ["A1", "5 of these have sum greater than 5, so P = 5/7"],
-          ],
-          model: "There are 16 equally likely outcomes. Sum 5: (1,4), (2,3), (3,2), (4,1), so P = 4/16 = 1/4. At least one 4: 7 outcomes; of these (4,2), (4,3), (4,4), (2,4), (3,4) have sum > 5, so P = 5/7.",
-          accept: "a correct table or list of outcomes",
-          reject: "8 outcomes with a 4 (counting (4,4) twice); 5/16 for part (b)",
-          tip: "兩粒骰一定畫 4×4（或 6×6）表格，數格仔最穩陣。條件概率：只喺符合條件嗰幾格入面數。" },
-
-        { title: "Relative frequency and expected number of occurrences", paper: "P1", where: "Paper 1 · 2–3 marks",
-          q: "A biased coin is thrown 200 times and lands on heads 74 times. (a) Find the relative frequency of heads. (b) Hence find the expected number of heads when the coin is thrown 500 times.",
-          marks: [
-            ["A1", "relative frequency = 74/200 = 0.37"],
-            ["M1", "expected number = n × p = 500 × 0.37"],
-            ["A1", "185 heads"],
-          ],
-          model: "Relative frequency = 74/200 = 0.37. Expected number of heads = 500 × 0.37 = 185.",
-          accept: "37/100",
-          reject: "rounding 185 to a different integer; 74 × 2.5 without the probability idea (still correct numerically, but show np)",
-          tip: "期望次數 = np，可以唔係整數（例如 18.5 都照寫），唔好自己四捨五入。" },
-
-        { title: "\"At least one\" and finding the least number of trials", paper: "P2", where: "Paper 2 · 4 marks",
-          q: "A fair six-sided die is rolled n times. Find the least value of n such that the probability of obtaining at least one six is greater than 0.9.",
-          marks: [
-            ["M1", "P(at least one six) = __1 − P(no sixes)__ = 1 − (5/6)ⁿ"],
-            ["M1", "1 − (5/6)ⁿ > 0.9, i.e. (5/6)ⁿ < 0.1"],
-            ["A1", "n > 12.6 (from logs or GDC table)"],
-            ["A1", "least n = 13"],
-          ],
-          numeric: { value: 13, tol: 0 },
-          model: "P(at least one six) = 1 − (5/6)ⁿ > 0.9, so (5/6)ⁿ < 0.1 and n > ln 0.1 / ln(5/6) = 12.63. The least value is n = 13.",
-          accept: "a GDC table showing n = 12 gives 0.888 and n = 13 gives 0.907",
-          reject: "n = 12.6 or n = 12 (must round up to the next integer)",
-          tip: "「至少一次」= 1 − 一次都冇。求最少 n 一定向上取整數，可以用 GDC table 檢查 n = 12 同 13。" },
+        { id: "math-10c-f1", title: "Conditional probability from a two-way table", paper: "P1", where: "Paper 1 · 3 marks · table of outcomes", q: "120 students were asked whether they own a bicycle. Of the 70 boys, 42 own a bicycle; of the 50 girls, 18 own a bicycle. A student who owns a bicycle is chosen at random. Find the probability that the student is a girl.", marks: [["A1", "number who own a bicycle = 42 + 18 = 60"], ["M1", "\\(P(\\text{girl} | \\text{bicycle}) = \\frac{18}{60}\\)"], ["A1", "\\(= \\frac{3}{10}\\)"]], model: "The condition \"owns a bicycle\" restricts the sample space to 60 students, of whom 18 are girls, so the probability is 18/60 = 3/10.", accept: "0.3", reject: "18/50 or 18/120 (wrong denominator)", tip: "Given 嗰個條件 = 新分母：只數擁有單車嘅 60 人。" },
       ],
       mc: [
-        { skill: "<strong>Mutually exclusive vs independent:</strong> ME → P(A ∩ B) = 0, add. Independent → P(A ∩ B) = P(A)P(B), multiply. Two events with non-zero probability cannot be both.",
-          q: "P(A) = 0.5, P(B) = 0.2 and A, B are independent. P(A ∪ B) =", options: ["0.7", "0.6", "0.1", "0.8"], answer: 1, why: "0.5 + 0.2 − 0.5 × 0.2 = 0.6." },
-        { skill: "<strong>Fill the Venn from the middle:</strong> write the intersection first, then subtract outwards; the four regions must add to 1 (or n)." },
-        { skill: "<strong>\"Given that\" = new denominator.</strong> Circle the condition, then count only inside it.",
+        { id: "math-10-q17", skill: "<strong>\"Given that\" = new denominator.</strong> Circle the condition, then count only inside it.",
           q: "In a group, 12 of the 20 girls and 9 of the 25 boys wear glasses. A student who wears glasses is chosen. P(girl) =", options: ["12/20", "12/45", "12/21", "21/45"], answer: 2, why: "Condition: wears glasses (21 students); 12 of them are girls." },
-        { skill: "<strong>Without replacement:</strong> both numerator and denominator drop by 1 on the second branch. Check that each pair of branches sums to 1." },
-        { skill: "<strong>Complement first:</strong> \"at least one\", \"not all the same\" and \"different\" are usually quicker as 1 − P(opposite).",
-          q: "Three fair coins are tossed. P(at least one head) =", options: ["1/8", "3/8", "1/2", "7/8"], answer: 3, why: "1 − P(TTT) = 1 − 1/8 = 7/8." },
-      ],
-      concepts: [
-        { h: "Relative frequency and equally likely outcomes", b: "<p>Relative frequency = (number of times the event occurs) ÷ (number of trials); it estimates P(A) and improves as the number of trials increases. P(A) = n(A)/n(U) only when outcomes are <strong>equally likely</strong>. Expected number of occurrences = np.</p>" },
+        { id: "math-10c-m1", skill: "<strong>P(A|B) from P(A∩B) and P(B):</strong> divide - never multiply.", q: "P(A ∩ B) = 0.15 and P(B) = 0.6. P(A | B) =", options: ["0.25", "0.09", "0.75", "0.4"], answer: 0, why: "0.15 ÷ 0.6 = 0.25." },
+        { id: "math-10c-m2", skill: "<strong>Independence in one line:</strong> if P(A|B) = P(A), knowing B does not change the probability of A - the events are independent.", q: "P(A) = 0.3 and P(A | B) = 0.3. Which statement is true?", options: ["A and B are independent", "A and B are mutually exclusive", "P(A ∩ B) = 0", "P(B) = 0.3"], answer: 0, why: "P(A|B) = P(A) is the definition of independence." },
       ],
     },
 
     // ======================= 4.7-4.9, 4.12 Distributions =======================
     "math-11": {
       frames: [
-        { title: "Discrete probability distribution: find k and E(X)", star: true,
+        { id: "math-11-q12", title: "Discrete probability distribution: find k and E(X)", star: true,
           paper: "P1", where: "Paper 1 · 4–5 marks · table or formula for P(X = x)",
           q: "The probability distribution of a discrete random variable X is given by P(X = x) = kx² for x = 1, 2, 3. (a) Find the exact value of k. (b) Find E(X).",
           marks: [
@@ -270,8 +321,7 @@ IB.addExamFrames("math", {
           accept: "2.57; unsimplified 36/14",
           reject: "k = 1/3; E(X) = 2 (the middle value, not weighted)",
           tip: "未知數 k → 第一句一定係「概率總和 = 1」。E(X) 係 x 乘概率再加埋，唔係平均咗幾個 x 值。" },
-
-        { title: "Fair game: expected gain = 0", star: true,
+        { id: "math-11-q13", title: "Fair game: expected gain = 0", star: true,
           paper: "P1", where: "Paper 1 / 2 · 3–4 marks",
           q: "In a game, a player pays $k to roll a fair six-sided die. The player wins $10 for a 6, $3 for a 4 or a 5 and nothing otherwise. Find the value of k for which the game is fair.",
           marks: [
@@ -285,8 +335,18 @@ IB.addExamFrames("math", {
           accept: "$2.67; gain table with values 10 − k, 3 − k, −k",
           reject: "k = 13/3 (adding the prizes and averaging); stating \"fair\" with no expectation",
           tip: "Fair game = 期望淨收益 E(gain) = 0。如果用淨收益（獎金 − 入場費）列表，記住冇贏都要計 −k。" },
-
-        { title: "Binomial: state the distribution, P(X = r), P(X ≥ r), E(X)", star: true,
+        { id: "math-11-f1", title: "Build a probability distribution, then find E(X)", paper: "P1", where: "Paper 1 · 5 marks · sample space", q: "A fair spinner has four equal sections numbered 1, 1, 2 and 3. It is spun twice and X is the sum of the two scores. (a) Find the probability distribution of X. (b) Find E(X).", marks: [["M1", "listing the outcomes (a 4 × 4 grid)"], ["A1", "P(X = 2) = 1/4, P(X = 3) = 1/4"], ["A1", "P(X = 4) = 5/16, P(X = 5) = 1/8, P(X = 6) = 1/16"], ["M1", "\\(E(X) = \\sum x P(X = x)\\)"], ["A1", "E(X) = 3.5"]], numeric: { value: 3.5, tol: 0.001 }, model: "Each spin gives 1 with probability 1/2 and 2, 3 with probability 1/4 each. Sums: P(2) = 4/16, P(3) = 4/16, P(4) = 5/16, P(5) = 2/16, P(6) = 1/16. E(X) = (8 + 12 + 20 + 10 + 6)/16 = 56/16 = 3.5.", accept: "E(X) = 2 × 1.75", reject: "treating the totals 2 to 6 as equally likely", tip: "先列 sample space，檢查概率加埋等於 1，再計 E(X)。" },
+        { id: "math-11-f2", title: "Expected gain over many games", paper: "P1", where: "Paper 1 · 3 marks · interpret E(X)", q: "In a game the gain, X dollars, of a player has E(X) = −0.40. (a) State, with a reason, whether the game is fair. (b) Find the expected total gain of a player who plays 50 games.", marks: [["R1", "not fair, because E(X) ≠ 0"], ["M1", "50 × (−0.40)"], ["A1", "an expected loss of $20"]], model: "A fair game has E(gain) = 0; here E(X) = −0.40, so the player loses 40 cents per game on average. Over 50 games the expected gain is 50 × (−0.40) = −$20.", accept: "\"expected gain −$20\"", reject: "\"fair because the amount is small\"", tip: "Fair = E(gain) 剛好等於 0；n 局 = n × E(X)。" },
+      ],
+      mc: [
+        { id: "math-11-m1", skill: "<strong>Missing probability:</strong> 1 minus the others - then check it lies between 0 and 1.", q: "P(X = 0) = 0.2, P(X = 1) = 0.45 and P(X = 2) = k. k =", options: ["0.35", "0.65", "0.25", "0.55"], answer: 0, why: "1 − 0.2 − 0.45 = 0.35." },
+        { id: "math-11-m2", skill: "<strong>E(X) as a balance point:</strong> for a symmetric distribution E(X) is the middle value - no calculation needed.", q: "X takes the values 1, 2, 3 with probabilities 0.25, 0.5, 0.25. E(X) =", options: ["2", "1.5", "2.5", "1"], answer: 0, why: "The distribution is symmetric about 2." },
+        { id: "math-11-m3", skill: "<strong>Fair price:</strong> the fair cost to play equals the expected prize E(W).", q: "A game pays $12 with probability 0.25 and nothing otherwise. The cost that makes it fair is:", options: ["$3", "$12", "$4", "$9"], answer: 0, why: "E(W) = 12 × 0.25 = $3." },
+      ],
+    },
+    "math-11b": {
+      frames: [
+        { id: "math-11-q14", title: "Binomial: state the distribution, P(X = r), P(X ≥ r), E(X)", star: true,
           paper: "P2", where: "Paper 2 · 5–7 marks",
           q: "A test has 20 multiple-choice questions, each with 4 options. A student guesses every answer. Let X be the number of correct answers. (a) State the distribution of X, including its parameters. (b) Find P(X = 6). (c) Find P(X ≥ 8). (d) Find E(X).",
           marks: [
@@ -301,8 +361,7 @@ IB.addExamFrames("math", {
           accept: "0.16861; 0.10181; binomcdf(20, 0.25, 8, 20) on some GDCs",
           reject: "P(X ≥ 8) = 1 − P(X ≤ 8) = 0.0409; Bin(0.25, 20) with parameters swapped",
           tip: "≥ 8 就係 1 − P(X ≤ 7)！寫 X ~ B(20, 0.25) 常常有一分，一定要寫埋參數。" },
-
-        { title: "Two-stage problem: normal probability feeds a binomial", star: true,
+        { id: "math-11-q15", title: "Two-stage problem: normal probability feeds a binomial", star: true,
           paper: "P2", where: "Paper 2 · 4–6 marks · very common in Section B",
           q: "The volume of drink in a bottle is normally distributed with mean 500 ml and standard deviation 4 ml. (a) Find the probability that a bottle contains less than 495 ml. (b) A pack has 12 bottles. Find the probability that more than 2 bottles in the pack contain less than 495 ml.",
           marks: [
@@ -315,8 +374,20 @@ IB.addExamFrames("math", {
           accept: "0.1257; using 0.106 giving 0.126",
           reject: "1 − P(Y ≤ 3); using the normal distribution again in part (b)",
           tip: "第一部份個概率就係第二部份二項分佈嘅 p。用 GDC 未四捨五入嘅值（存入 A）先代入，避免 early rounding 失分。" },
-
-        { title: "Normal probabilities and inverse normal", star: true,
+        { id: "math-11b-f1", title: "State the binomial assumptions in context", paper: "P1", where: "Paper 1 · 2 marks · assumptions", q: "A basketball player takes 15 free throws and X is the number she scores. State two assumptions needed to model X with a binomial distribution.", marks: [["R1", "the probability of scoring is the same for every throw"], ["R1", "the throws are independent of each other"]], model: "The number of throws is fixed (15) and each is a score or a miss. We must assume that each throw has the same probability of scoring and that the outcome of one throw does not affect another.", accept: "\"constant p\" and \"independent trials\" in context", reject: "\"there are 15 throws\" (given, not an assumption)", tip: "Assumption 題：p 不變 + 獨立，要用情境字眼。" },
+        { id: "math-11b-f2", title: "Find n and p from the mean and variance", paper: "P1", where: "Paper 1 · 3 marks · E(X) and Var(X)", q: "X ~ B(n, p) with E(X) = 8 and Var(X) = 4.8. Find n and p.", marks: [["M1", "\\(\\frac{np(1-p)}{np} = 1 - p = \\frac{4.8}{8}\\)"], ["A1", "p = 0.4"], ["A1", "n = 20"]], numeric: { value: 20, tol: 0.001 }, model: "Dividing, 1 − p = 0.6, so p = 0.4, and then n = 8/0.4 = 20.", accept: "substitution from np = 8", reject: "p = 0.6 (1 − p and p swapped)", tip: "Var ÷ E = 1 − p。" },
+      ],
+      mc: [
+        { skill: "<strong>Binomial checklist (BINS):</strong> Binary outcomes, Independent trials, fixed Number, Same p. If drawing without replacement from a small group, it is NOT binomial." },
+        { id: "math-11-q20", skill: "<strong>Inequality translation:</strong> \"more than 3\" → 1 − P(X ≤ 3); \"at least 3\" → 1 − P(X ≤ 2); \"fewer than 3\" → P(X ≤ 2).",
+          paper: "P2", q: "X ~ B(10, 0.4). Which expression gives P(X ≥ 4)?", options: ["1 − P(X ≤ 4)", "1 − P(X ≤ 3)", "P(X ≤ 4)", "1 − P(X = 4)"], answer: 1, why: "X ≥ 4 is the complement of X ≤ 3." },
+        { id: "math-11-q22", skill: "<strong>E(X) for binomial = np, Var = np(1 − p):</strong> no table needed.",
+          q: "X ~ B(30, 0.2). Var(X) =", options: ["6", "4.8", "2.19", "24"], answer: 1, why: "30 × 0.2 × 0.8 = 4.8." },
+      ],
+    },
+    "math-11c": {
+      frames: [
+        { id: "math-11-q16", title: "Normal probabilities and inverse normal", star: true,
           paper: "P2", where: "Paper 2 · 3–5 marks · sketch often requested",
           q: "The masses of bags of rice are normally distributed with mean 250 g and standard deviation 6 g. (a) Find the probability that a bag has mass between 240 g and 260 g. (b) 10% of bags have a mass greater than m grams. Find m.",
           marks: [
@@ -331,23 +402,7 @@ IB.addExamFrames("math", {
           accept: "257.7; 0.90442",
           reject: "invNorm(0.1, 250, 6) = 242 (wrong tail - unless the GDC tail is set to RIGHT); using variance 36 as σ",
           tip: "invNorm 預設係左尾面積：「大過 m 嘅有 10%」就要入 0.9。先畫條鐘形曲線塗陰影，確認答案喺平均數嗰邊。" },
-
-        { title: "Find an unknown mean and/or standard deviation using z-scores", star: true,
-          paper: "P2", where: "Paper 2 · 5–6 marks · 4.12",
-          q: "A random variable X ~ N(μ, σ²) satisfies P(X < 30) = 0.2 and P(X > 50) = 0.1. Find the value of μ and the value of σ.",
-          marks: [
-            ["(M1)", "z-values: invNorm(0.2) = −0.8416 and invNorm(0.9) = 1.2816"],
-            ["M1", "setting up __(30 − μ)/σ = −0.8416__ and (50 − μ)/σ = 1.2816"],
-            ["A1", "simultaneous equations μ − 0.8416σ = 30, μ + 1.2816σ = 50"],
-            ["A1", "σ = 9.42"],
-            ["A1", "μ = 37.9"],
-          ],
-          model: "invNorm(0.2) = −0.84162 and invNorm(0.9) = 1.28155. So (30 − μ)/σ = −0.84162 and (50 − μ)/σ = 1.28155, i.e. μ − 0.84162σ = 30 and μ + 1.28155σ = 50. Solving: σ = 9.42 and μ = 37.9.",
-          accept: "σ = 9.4199, μ = 37.928",
-          reject: "invNorm(0.1) used for P(X > 50) = 0.1 (wrong sign of z); answers from rounded z-values like 0.84 and 1.28 if they change the 3 s.f. answer",
-          tip: "μ、σ 唔知 → 一定要標準化：z = (x − μ)/σ，用 invNorm(面積, 0, 1) 搵 z，再解聯立方程。右尾 0.1 對應左尾 0.9！" },
-
-        { title: "Use symmetry of the normal curve (no calculator)", paper: "P1", where: "Paper 1 · 2–3 marks",
+        { id: "math-11-q18", title: "Use symmetry of the normal curve (no calculator)", paper: "P1", where: "Paper 1 · 2–3 marks",
           q: "X ~ N(20, σ²) and P(X < 17) = 0.15. Find P(17 < X < 23).",
           marks: [
             ["(M1)", "by __symmetry__ about μ = 20, P(X > 23) = 0.15"],
@@ -361,8 +416,7 @@ IB.addExamFrames("math", {
           accept: "0.70",
           reject: "0.85; 0.35",
           tip: "Paper 1 冇計數機嘅正態題 = 對稱性：兩邊離 μ 一樣遠，尾巴面積一樣。畫圖一定唔會錯。" },
-
-        { title: "Conditional probability with a normal distribution", paper: "P2", where: "Paper 2 · 3–4 marks",
+        { id: "math-11-q19", title: "Conditional probability with a normal distribution", paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "The time, T minutes, for a bus journey satisfies T ~ N(55, 8²). Given that a journey takes more than 50 minutes, find the probability that it takes more than 60 minutes.",
           marks: [
             ["M1", "P(T > 60 | T > 50) = P(T > 60) / P(T > 50) (since T > 60 is __inside__ T > 50)"],
@@ -376,14 +430,36 @@ IB.addExamFrames("math", {
           tip: "條件概率配正態：分子係兩個條件嘅重疊（通常就係較細嗰個範圍），分母係條件。" },
       ],
       mc: [
-        { skill: "<strong>Binomial checklist (BINS):</strong> Binary outcomes, Independent trials, fixed Number, Same p. If drawing without replacement from a small group, it is NOT binomial." },
-        { skill: "<strong>Inequality translation:</strong> \"more than 3\" → 1 − P(X ≤ 3); \"at least 3\" → 1 − P(X ≤ 2); \"fewer than 3\" → P(X ≤ 2).",
-          paper: "P2", q: "X ~ B(10, 0.4). Which expression gives P(X ≥ 4)?", options: ["1 − P(X ≤ 4)", "1 − P(X ≤ 3)", "P(X ≤ 4)", "1 − P(X = 4)"], answer: 1, why: "X ≥ 4 is the complement of X ≤ 3." },
-        { skill: "<strong>Variance vs sd:</strong> N(μ, σ²) - the second number is the VARIANCE. N(50, 16) means σ = 4.",
+        { id: "math-11-q21", skill: "<strong>Variance vs sd:</strong> N(μ, σ²) - the second number is the VARIANCE. N(50, 16) means σ = 4.",
           q: "X ~ N(50, 16). Approximately 95% of values lie between", options: ["34 and 66", "42 and 58", "46 and 54", "18 and 82"], answer: 1, why: "σ = 4, so μ ± 2σ = 42 to 58." },
         { skill: "<strong>68–95–99.7:</strong> use it to check GDC answers and for Paper 1 estimates. P(X > μ) = 0.5 always." },
-        { skill: "<strong>E(X) for binomial = np, Var = np(1 − p):</strong> no table needed.",
-          q: "X ~ B(30, 0.2). Var(X) =", options: ["6", "4.8", "2.19", "24"], answer: 1, why: "30 × 0.2 × 0.8 = 4.8." },
+        { id: "math-11c-m1", skill: "<strong>Half on each side:</strong> P(X < μ) = 0.5, so P(X > μ + a) = 0.5 − P(μ < X < μ + a).", q: "X ~ N(30, 4²) and P(30 < X < 34) = 0.341. P(X > 34) =", options: ["0.159", "0.341", "0.659", "0.841"], answer: 0, why: "0.5 − 0.341 = 0.159." },
+      ],
+    },
+    "math-11d": {
+      frames: [
+        { id: "math-11-q17", title: "Find an unknown mean and/or standard deviation using z-scores", star: true,
+          paper: "P2", where: "Paper 2 · 5–6 marks · 4.12",
+          q: "A random variable X ~ N(μ, σ²) satisfies P(X < 30) = 0.2 and P(X > 50) = 0.1. Find the value of μ and the value of σ.",
+          marks: [
+            ["(M1)", "z-values: invNorm(0.2) = −0.8416 and invNorm(0.9) = 1.2816"],
+            ["M1", "setting up __(30 − μ)/σ = −0.8416__ and (50 − μ)/σ = 1.2816"],
+            ["A1", "simultaneous equations μ − 0.8416σ = 30, μ + 1.2816σ = 50"],
+            ["A1", "σ = 9.42"],
+            ["A1", "μ = 37.9"],
+          ],
+          model: "invNorm(0.2) = −0.84162 and invNorm(0.9) = 1.28155. So (30 − μ)/σ = −0.84162 and (50 − μ)/σ = 1.28155, i.e. μ − 0.84162σ = 30 and μ + 1.28155σ = 50. Solving: σ = 9.42 and μ = 37.9.",
+          accept: "σ = 9.4199, μ = 37.928",
+          reject: "invNorm(0.1) used for P(X > 50) = 0.1 (wrong sign of z); answers from rounded z-values like 0.84 and 1.28 if they change the 3 s.f. answer",
+          tip: "μ、σ 唔知 → 一定要標準化：z = (x − μ)/σ，用 invNorm(面積, 0, 1) 搵 z，再解聯立方程。右尾 0.1 對應左尾 0.9！" },
+        { id: "math-11d-f1", title: "Find an unknown standard deviation", paper: "P2", where: "Paper 2 · 3 marks · invNorm with 0 and 1", q: "X ~ N(60, σ²) and P(X > 70) = 0.05. Find σ.", marks: [["M1", "z = invNorm(0.95, 0, 1) = 1.645"], ["M1", "\\(\\frac{70 - 60}{\\sigma} = 1.645\\)"], ["A1", "σ = 6.08"]], numeric: { value: 6.08, tol: 0.01 }, model: "The area to the left of 70 is 0.95, so z = 1.645. Then 10/σ = 1.645 and σ = 6.08.", accept: "6.079…", reject: "invNorm(0.05, 0, 1) used with a positive sign", tip: "P(X > 70) = 0.05 → 左面積 0.95。" },
+        { id: "math-11d-f2", title: "Compare two results using z-scores", paper: "P2", where: "Paper 2 · 3 marks · standardise and compare", q: "Ben scored 64 in History (mean 55, standard deviation 6) and 71 in Biology (mean 62, standard deviation 8). In which subject did he perform better relative to the other students? Justify your answer.", marks: [["A1", "History: z = (64 − 55)/6 = 1.5"], ["A1", "Biology: z = (71 − 62)/8 = 1.125"], ["R1", "History, because its z-score is larger"]], model: "Both scores are 9 marks above the mean, but History has the smaller standard deviation, so z = 1.5 for History and 1.125 for Biology: Ben did better in History.", accept: "1.13 for Biology", reject: "comparing the raw scores 64 and 71", tip: "比較唔同測驗：比較 z，唔好比較分數。" },
+        { id: "math-11d-f3", title: "Unknown mean from a percentage", paper: "P2", where: "Paper 2 · 3 marks · one unknown", q: "The heights of a type of plant are normally distributed with standard deviation 4.5 cm. 20% of the plants are taller than 38 cm. Find the mean height.", marks: [["M1", "z = invNorm(0.8, 0, 1) = 0.842"], ["M1", "\\(\\frac{38 - \\mu}{4.5} = 0.842\\)"], ["A1", "μ = 34.2 cm"]], numeric: { value: 34.2, tol: 0.05 }, model: "20% are above 38, so 80% are below: z = 0.8416. Then 38 − μ = 0.8416 × 4.5 = 3.79, so μ = 34.2 cm.", accept: "34.21", reject: "z = −0.842 with 38 above the mean", tip: "高過 38 嘅只有 20% → 38 喺平均之上，z 正數。" },
+      ],
+      mc: [
+        { id: "math-11d-m1", skill: "<strong>z in your head:</strong> z = (x − μ)/σ; a value one σ above the mean has z = 1.", q: "X ~ N(50, 4²). The z-value of x = 44 is:", options: ["−1.5", "1.5", "−6", "−0.375"], answer: 0, why: "(44 − 50)/4 = −1.5." },
+        { id: "math-11d-m2", skill: "<strong>invNorm with 0 and 1:</strong> when μ or σ is unknown, find z from the standard normal, not from X.", q: "To find z when P(X < a) = 0.3 and μ is unknown, use:", options: ["invNorm(0.3, 0, 1)", "invNorm(0.7, 0, 1)", "normalcdf(0.3, 0, 1)", "invNorm(0.3, μ, σ)"], answer: 0, why: "The standard normal needs mean 0 and standard deviation 1, with the area to the left." },
+        { id: "math-11d-m3", skill: "<strong>Sign check:</strong> if less than half the area lies to the left of x, then x is below the mean and z < 0.", q: "X ~ N(μ, σ²) and P(X < k) = 0.1. Which is true?", options: ["k < μ", "k > μ", "k = μ", "k = σ"], answer: 0, why: "Only 10% lies below k, so k is below the mean." },
       ],
     },
 

@@ -67,7 +67,7 @@ IB.addTopics("math", [
     ],
   },
   {
-    id: "math-h3", code: "3.9-3.19 AHL", after: "math-8", unit: "Topic 3: Geometry and trigonometry (HL)", title: "Further trigonometry and vectors, lines and planes",
+    id: "math-h3", code: "3.9-3.19 AHL", after: "math-8d", unit: "Topic 3: Geometry and trigonometry (HL)", title: "Further trigonometry and vectors, lines and planes",
     summary: "Reciprocal and inverse trig functions, compound and double angle identities, vectors, scalar and vector products, vector equations of lines and planes, intersections and angles.",
     concepts: [
       { h: "Further trigonometry", b: "<p>sec, cosec, cot; \\(1 + \\tan^2\\theta = \\sec^2\\theta\\), \\(1 + \\cot^2\\theta = \\csc^2\\theta\\). Compound angle: \\(\\sin(A \\pm B)\\), \\(\\cos(A \\pm B)\\), \\(\\tan(A \\pm B)\\).</p>" },
@@ -121,7 +121,7 @@ IB.addTopics("math", [
     ],
   },
   {
-    id: "math-h5", code: "4.13-4.14 AHL", after: "math-11", unit: "Topic 4: Statistics and probability (HL)", title: "Bayes' theorem and continuous random variables",
+    id: "math-h5", code: "4.13-4.14 AHL", after: "math-11d", unit: "Topic 4: Statistics and probability (HL)", title: "Bayes' theorem and continuous random variables",
     summary: "Bayes' theorem for two or three events, probability density functions, mode, median, mean and variance of continuous distributions, and linear transformations of random variables.",
     concepts: [
       { h: "Bayes' theorem", b: "<p>\\(P(B\\mid A) = \\frac{P(B)P(A\\mid B)}{P(B)P(A\\mid B) + P(B')P(A\\mid B')}\\). Draw a tree diagram first.</p>", yue: "貝氏定理：先畫樹狀圖，再用『想要嗰條路徑 ÷ 所有可以去到 A 嘅路徑』。" },

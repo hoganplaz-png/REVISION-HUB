@@ -760,15 +760,10 @@
         { title: "Cuboid: angle between a line and a plane", caption: "project the line onto the plane (AG → AC) and use the right-angled triangle AGC", svg: figCuboid },
         { title: "Right pyramid: height, slant height and the two base angles", caption: "the apex is directly above the centre M of the base", svg: figPyramid },
         { title: "Cone and sphere", caption: "l² = r² + h²; formulas are in the booklet but you must identify r, h and l", svg: figConeSphere },
-        { title: "Triangle notation and formulas", caption: "use the sine rule for a side–angle pair, the cosine rule for SAS or SSS", svg: figTriangle },
-        { title: "Ambiguous case of the sine rule", caption: "when finding an angle with the sine rule, check whether 180° − B also fits (angle sum < 180°)", svg: figAmbig },
-        { title: "Arc, sector and segment", caption: "θ in radians: l = rθ, A = ½r²θ; segment = sector − triangle", svg: figSector },
-        { title: "Angles of elevation and depression", caption: "both measured from the horizontal; they are equal (alternate angles)", svg: figElev },
-        { title: "Bearings", caption: "clockwise from North, three figures; back bearing = bearing ± 180°", svg: figBearing },
         { title: "3D coordinates and distance", caption: "distance and midpoint formulas extend to three coordinates", svg: fig3D },
       ],
       frames: [
-        { title: "Draw a 3D diagram: angle between an edge (or face) and the base of a pyramid", paper: "P1", where: "Paper 1/2 · 5 marks · labelled diagram",
+        { id: "math-7-q25", title: "Draw a 3D diagram: angle between an edge (or face) and the base of a pyramid", paper: "P1", where: "Paper 1/2 · 5 marks · labelled diagram",
           q: "A right pyramid VABCD has a square base of side 6 cm and height 4 cm. M is the centre of the base and N is the midpoint of BC. (a) Find the angle between VA and the base. (b) Find the angle between the face VBC and the base.",
           marks: [
             ["M1", "AC = 6√2, so __AM = 3√2__ (half the diagonal)"],
@@ -780,7 +775,20 @@
           svg: frPyr, svgCaption: "the right angle is at M in both triangles",
           model: "The apex is above M. AM is half the diagonal: ½ × 6√2 = 3√2 ≈ 4.243. In triangle VMA, tan θ = 4 / 4.243, θ ≈ 43.3°. For the face VBC, use the line VN to the midpoint of BC: MN = 3, tan φ = 4/3, φ ≈ 53.1°.",
           tip: "先畫出有直角嘅三角形（VMA、VMN），標好已知邊。Edge 用對角線一半，face 用中點 N。" },
-        { title: "Bearings: draw the diagram, find the distance and the bearing", paper: "P2", where: "Paper 2 · 6 marks",
+      ],
+    },
+    "math-7b": {
+      figures: [
+        { title: "Triangle notation and formulas", caption: "use the sine rule for a side–angle pair, the cosine rule for SAS or SSS", svg: figTriangle },
+      ],
+    },
+    "math-7c": {
+      figures: [
+        { title: "Angles of elevation and depression", caption: "both measured from the horizontal; they are equal (alternate angles)", svg: figElev },
+        { title: "Bearings", caption: "clockwise from North, three figures; back bearing = bearing ± 180°", svg: figBearing },
+      ],
+      frames: [
+        { id: "math-7-q26", title: "Bearings: draw the diagram, find the distance and the bearing", paper: "P2", where: "Paper 2 · 6 marks",
           q: "A ship sails 12 km from P on a bearing of 040° to Q, then 9 km on a bearing of 130° to R. (a) Show that angle PQR = 90°. (b) Find PR. (c) Find the bearing of R from P.",
           marks: [
             ["A1", "diagram with North lines at P and Q, 40° and 130° marked"],
@@ -792,7 +800,26 @@
           svg: frBearing, svgCaption: "back bearing at Q: 040° + 180° = 220°",
           model: "The back bearing from Q to P is 220°. The angle between QP (220°) and QR (130°) is 90°. So PR = √(144 + 81) = 15 km. ∠QPR = arctan(9/12) = 36.87°, and the bearing of R from P is 040° + 36.9° = 076.9° ≈ 077°.",
           tip: "Bearing 一定由 North 順時針、寫三位數。畫 North 線喺每個轉向點，角度先唔會計錯。" },
-        { title: "Ambiguous case: find both possible triangles", paper: "P2", where: "Paper 2 · 5 marks",
+      ],
+    },
+    "math-7d": {
+      figures: [
+        { title: "Arc, sector and segment", caption: "θ in radians: l = rθ, A = ½r²θ; segment = sector − triangle", svg: figSector },
+      ],
+      concepts: [
+        { h: "Area of a segment", b: "<p>Segment = sector − triangle: \\(A = \\frac12 r^2\\theta - \\frac12 r^2\\sin\\theta = \\frac12 r^2(\\theta - \\sin\\theta)\\), θ in radians. Perimeter of a segment = arc + chord, where chord \\(= 2r\\sin\\frac{\\theta}{2}\\) (or use the cosine rule).</p>" },
+      ],
+    },
+
+    "math-8": {
+      figures: [
+        { title: "Ambiguous case of the sine rule", caption: "when finding an angle with the sine rule, check whether 180° − B also fits (angle sum < 180°)", svg: figAmbig },
+        { title: "Unit circle exact values (first quadrant)", caption: "cos θ is the x-coordinate, sin θ the y-coordinate", svg: figUnit },
+        { title: "Quadrant signs and related angles", caption: "'All Students Take Calculus': which ratios are positive; use symmetry to find all solutions", svg: figCAST },
+        { title: "Exact-value triangles", caption: "draw these to recall sin, cos, tan of 30°, 45°, 60° (π/6, π/4, π/3) in Paper 1", svg: figExactTri },
+      ],
+      frames: [
+        { id: "math-7-q27", title: "Ambiguous case: find both possible triangles", paper: "P2", where: "Paper 2 · 5 marks",
           q: "In triangle ABC, A = 40°, a = 7 cm and b = 10 cm. Find the two possible values of angle B and the corresponding lengths of c.",
           marks: [
             ["M1", "sine rule: sin B = 10 sin 40° / 7 = 0.918…"],
@@ -805,12 +832,14 @@
           model: "sin B = 10 sin 40° / 7 = 0.9183, so B = 66.7° or 113.3°. Both are valid because 40° + 113.3° < 180°. Then C = 73.3° giving c = 7 sin 73.3° / sin 40° = 10.4 cm, or C = 26.7° giving c = 4.89 cm.",
           tip: "用 sine rule 搵角，一定要問自己：180° − B 得唔得？b sin A < a < b 就有兩個答案。" },
       ],
-      concepts: [
-        { h: "Area of a segment", b: "<p>Segment = sector − triangle: \\(A = \\frac12 r^2\\theta - \\frac12 r^2\\sin\\theta = \\frac12 r^2(\\theta - \\sin\\theta)\\), θ in radians. Perimeter of a segment = arc + chord, where chord \\(= 2r\\sin\\frac{\\theta}{2}\\) (or use the cosine rule).</p>" },
+    },
+    "math-8b": {
+      diagrams: [
+        { title: "Double-angle identity in pictures: cos 2x = 1 − 2sin²x (the two graphs coincide)", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [
+          { f: (x) => Math.cos(2 * x), label: "cos 2x", labelX: 3.3 }, { f: (x) => 1 - 2 * Math.sin(x) ** 2, color: "b", dash: true }] },
       ],
     },
-
-    "math-8": {
+    "math-8c": {
       diagrams: [
         { title: "y = sin x, 0 ≤ x ≤ 2π: amplitude 1, period 2π", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [{ f: Math.sin }],
           points: [{ at: [Math.PI / 2, 1], label: "(π/2, 1)" }, { at: [Math.PI, 0], label: "π" }, { at: [1.5 * Math.PI, -1], label: "(3π/2, −1)" }, { at: [2 * Math.PI, 0], label: "2π" }] },
@@ -821,22 +850,11 @@
         { title: "y = 2 sin(2(x − π/4)) + 1: amplitude 2, period π, phase shift π/4 right, principal axis y = 1", x: [0, 6.6], y: [-2, 3.6], grid: false,
           curves: [{ f: (x) => 2 * Math.sin(2 * (x - Math.PI / 4)) + 1 }, { f: Math.sin, color: "muted", dash: true }],
           hlines: [{ y: 1, label: "y = 1 (axis)" }, { y: 3, label: "max 3" }, { y: -1, label: "min −1" }], points: [{ at: [Math.PI / 2, 3], label: "(π/2, 3)" }, { at: [Math.PI / 4, 1], label: "(π/4, 1)" }] },
-        { title: "sin x = ½ for 0 ≤ x ≤ 2π: two solutions, x = π/6 and 5π/6", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [{ f: Math.sin }],
-          hlines: [{ y: 0.5, label: "y = ½" }], points: [{ at: [Math.PI / 6, 0.5], label: "π/6" }, { at: [5 * Math.PI / 6, 0.5], label: "5π/6" }] },
-        { title: "sin x and cos x meet at x = π/4 and 5π/4 (tan x = 1); cos x = sin(x + π/2)", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [
-          { f: Math.sin, label: "sin", labelX: 2.6 }, { f: Math.cos, color: "b", label: "cos", labelX: 5.6 }], points: [{ at: [Math.PI / 4, Math.SQRT1_2], label: "π/4" }, { at: [1.25 * Math.PI, -Math.SQRT1_2], label: "5π/4" }] },
         { title: "Period changes: sin 2x (period π) vs sin(x/2) (period 4π)", x: [0, 12.6], y: [-1.5, 1.5], grid: false, curves: [
           { f: (x) => Math.sin(2 * x), label: "sin 2x", labelX: 0.5 }, { f: (x) => Math.sin(x / 2), color: "b", label: "sin(x/2)", labelX: 10.5 }] },
-        { title: "Double-angle identity in pictures: cos 2x = 1 − 2sin²x (the two graphs coincide)", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [
-          { f: (x) => Math.cos(2 * x), label: "cos 2x", labelX: 3.3 }, { f: (x) => 1 - 2 * Math.sin(x) ** 2, color: "b", dash: true }] },
-      ],
-      figures: [
-        { title: "Unit circle exact values (first quadrant)", caption: "cos θ is the x-coordinate, sin θ the y-coordinate", svg: figUnit },
-        { title: "Quadrant signs and related angles", caption: "'All Students Take Calculus': which ratios are positive; use symmetry to find all solutions", svg: figCAST },
-        { title: "Exact-value triangles", caption: "draw these to recall sin, cos, tan of 30°, 45°, 60° (π/6, π/4, π/3) in Paper 1", svg: figExactTri },
       ],
       frames: [
-        { title: "Sketch a transformed tangent graph with its asymptote", paper: "P1", where: "Paper 1 · 4 marks",
+        { id: "math-8-q24", title: "Sketch a transformed tangent graph with its asymptote", paper: "P1", where: "Paper 1 · 4 marks",
           q: "Sketch the graph of \\(y = \\tan\\left(x - \\frac{\\pi}{4}\\right)\\) for \\(0 \\le x \\le \\pi\\), showing any asymptotes and axis intercepts.",
           marks: [
             ["A1", "y-intercept __(0, −1)__ since tan(−π/4) = −1"],
@@ -848,7 +866,17 @@
             vlines: [{ x: 0.75 * Math.PI, label: "x = 3π/4" }], points: [{ at: [0, -1], label: "(0, −1)" }, { at: [Math.PI / 4, 0], label: "(π/4, 0)" }, { at: [Math.PI, -1], label: "(π, −1)" }] },
           model: "This is y = tan x translated π/4 to the right. At x = 0, y = tan(−π/4) = −1. It crosses the x-axis at x = π/4. The asymptote of tan x at π/2 moves to x = 3π/4. The curve increases from (0, −1) through (π/4, 0) towards +∞ at 3π/4, then from −∞ rises to (π, −1).",
           tip: "tan 嘅漸近線喺入面 = π/2 嘅位置；畫虛線同埋寫埋方程 x = 3π/4。" },
-        { title: "Use the graph to find the number of solutions of a trig equation", paper: "P1", where: "Paper 1 · 3 marks",
+      ],
+    },
+    "math-8d": {
+      diagrams: [
+        { title: "sin x = ½ for 0 ≤ x ≤ 2π: two solutions, x = π/6 and 5π/6", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [{ f: Math.sin }],
+          hlines: [{ y: 0.5, label: "y = ½" }], points: [{ at: [Math.PI / 6, 0.5], label: "π/6" }, { at: [5 * Math.PI / 6, 0.5], label: "5π/6" }] },
+        { title: "sin x and cos x meet at x = π/4 and 5π/4 (tan x = 1); cos x = sin(x + π/2)", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [
+          { f: Math.sin, label: "sin", labelX: 2.6 }, { f: Math.cos, color: "b", label: "cos", labelX: 5.6 }], points: [{ at: [Math.PI / 4, Math.SQRT1_2], label: "π/4" }, { at: [1.25 * Math.PI, -Math.SQRT1_2], label: "5π/4" }] },
+      ],
+      frames: [
+        { id: "math-8-q25", title: "Use the graph to find the number of solutions of a trig equation", paper: "P1", where: "Paper 1 · 3 marks",
           q: "Find the number of solutions of \\(\\sin 2x = 0.3\\) for \\(0 \\le x \\le 2\\pi\\), justifying your answer with a sketch.",
           marks: [
             ["M1", "sketch y = sin 2x over [0, 2π]: period π, so __two full cycles__"],

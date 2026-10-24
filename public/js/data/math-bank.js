@@ -65,38 +65,58 @@ IB.addQuestions("math", {
     { id: "math-6-q10", paper: "P2", marks: 3, diff: 2, q: "Describe a sequence of transformations mapping \\(y = \\ln x\\) onto \\(y = 2\\ln(x + 1)\\).", ms: ["Translation 1 unit to the left, vector \\(\\begin{pmatrix}-1\\\\0\\end{pmatrix}\\) [A1]", "Vertical stretch [A1]", "with scale factor 2 (either order: a horizontal translation and a vertical stretch do not affect each other) [A1]"] },
   ],
   "math-7": [
-    { paper: "P1", marks: 1, diff: 1, q: "Convert \\(\\frac{2\\pi}{3}\\) radians to degrees.", options: ["60°", "120°", "135°", "150°"], answer: 1, ms: ["B - \\(\\frac{2\\pi}{3} \\times \\frac{180°}{\\pi} = 120°\\)."] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 12.6, tol: 0.05 }, q: "A sector of a circle of radius 6 cm has angle 0.7 radians. Find the area of the sector, to 3 s.f.", ms: ["\\(A = \\frac{1}{2}r^2\\theta\\) [M1]", "\\(= \\frac{1}{2}(36)(0.7)\\) [A1]", "\\(= 12.6\\) cm² [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 9.17, tol: 0.02 }, q: "In triangle ABC, AB = 8 cm, AC = 11 cm and angle A = 55°. Find BC to 3 s.f.", ms: ["\\(BC^2 = 8^2 + 11^2 - 2(8)(11)\\cos 55°\\) [M1]", "\\(BC^2 = 84.05...\\) [A1]", "\\(BC = 9.17\\) cm [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 36.0, tol: 0.1 }, q: "Find the area of a triangle with sides 9 cm and 10 cm and included angle 53.1°, to 3 s.f.", ms: ["\\(\\frac{1}{2}(9)(10)\\sin 53.1°\\) [M1][A1]", "\\(= 36.0\\) cm² [A1]"] },
-    { paper: "P2", marks: 4, diff: 3, numeric: { value: 26.6, tol: 0.1 }, q: "A cuboid has base 6 cm by 8 cm and height 5 cm. Find the angle between the space diagonal and the base, to 3 s.f.", ms: ["Base diagonal \\(= \\sqrt{36 + 64} = 10\\) [M1][A1]", "\\(\\tan\\theta = \\frac{5}{10}\\) [M1]", "\\(\\theta = 26.6°\\) [A1]"] },
+    { id: "math-7-q10", paper: "P2", marks: 4, diff: 3, numeric: { value: 26.6, tol: 0.1 }, q: "A cuboid has base 6 cm by 8 cm and height 5 cm. Find the angle between the space diagonal and the base, to 3 s.f.", ms: ["Base diagonal \\(= \\sqrt{36 + 64} = 10\\) [M1][A1]", "\\(\\tan\\theta = \\frac{5}{10}\\) [M1]", "\\(\\theta = 26.6°\\) [A1]"] },
+  ],
+  "math-7b": [
+    { id: "math-7-q8", paper: "P2", marks: 3, diff: 2, numeric: { value: 9.17, tol: 0.02 }, q: "In triangle ABC, AB = 8 cm, AC = 11 cm and angle A = 55°. Find BC to 3 s.f.", ms: ["\\(BC^2 = 8^2 + 11^2 - 2(8)(11)\\cos 55°\\) [M1]", "\\(BC^2 = 84.05...\\) [A1]", "\\(BC = 9.17\\) cm [A1]"] },
+    { id: "math-7-q9", paper: "P2", marks: 3, diff: 2, numeric: { value: 36.0, tol: 0.1 }, q: "Find the area of a triangle with sides 9 cm and 10 cm and included angle 53.1°, to 3 s.f.", ms: ["\\(\\frac{1}{2}(9)(10)\\sin 53.1°\\) [M1][A1]", "\\(= 36.0\\) cm² [A1]"] },
+  ],
+  "math-7d": [
+    { id: "math-7-q6", paper: "P1", marks: 1, diff: 1, q: "Convert \\(\\frac{2\\pi}{3}\\) radians to degrees.", options: ["60°", "120°", "135°", "150°"], answer: 1, ms: ["B - \\(\\frac{2\\pi}{3} \\times \\frac{180°}{\\pi} = 120°\\)."] },
+    { id: "math-7-q7", paper: "P2", marks: 3, diff: 2, numeric: { value: 12.6, tol: 0.05 }, q: "A sector of a circle of radius 6 cm has angle 0.7 radians. Find the area of the sector, to 3 s.f.", ms: ["\\(A = \\frac{1}{2}r^2\\theta\\) [M1]", "\\(= \\frac{1}{2}(36)(0.7)\\) [A1]", "\\(= 12.6\\) cm² [A1]"] },
   ],
   "math-8": [
-    { paper: "P1", marks: 1, diff: 1, q: "What is the exact value of \\(\\cos\\frac{\\pi}{3}\\)?", options: ["\\(\\frac{1}{2}\\)", "\\(\\frac{\\sqrt{3}}{2}\\)", "\\(\\frac{\\sqrt{2}}{2}\\)", "1"], answer: 0, ms: ["A - \\(\\cos\\frac{\\pi}{3} = \\cos 60° = \\frac{1}{2}\\)."] },
-    { paper: "P1", marks: 1, diff: 2, q: "The period of \\(y = 3\\sin(2x)\\) is:", options: ["\\(\\pi\\)", "\\(2\\pi\\)", "\\(\\frac{\\pi}{2}\\)", "3"], answer: 0, ms: ["A - period \\(= \\frac{2\\pi}{b} = \\frac{2\\pi}{2} = \\pi\\); the 3 changes the amplitude, not the period."] },
-    { paper: "P1", marks: 4, diff: 2, q: "Given \\(\\sin\\theta = \\frac{3}{5}\\) and \\(\\frac{\\pi}{2} < \\theta < \\pi\\), find \\(\\cos\\theta\\) and \\(\\sin 2\\theta\\).", ms: ["\\(\\cos\\theta = -\\frac{4}{5}\\) (negative in Q2) [M1][A1]", "\\(\\sin 2\\theta = 2\\sin\\theta\\cos\\theta\\) [M1]", "\\(= -\\frac{24}{25}\\) [A1]"] },
-    { paper: "P1", marks: 5, diff: 3, q: "Solve \\(2\\cos^2 x - \\cos x - 1 = 0\\) for \\(0 \\le x \\le 2\\pi\\).", ms: ["\\((2\\cos x + 1)(\\cos x - 1) = 0\\) [M1][A1]", "\\(\\cos x = -\\frac{1}{2}\\) or \\(\\cos x = 1\\) [A1]", "\\(x = \\frac{2\\pi}{3}, \\frac{4\\pi}{3}\\) [A1]", "\\(x = 0, 2\\pi\\) [A1]"] },
-    { paper: "P2", marks: 4, diff: 2, q: "The height of a Ferris wheel seat is \\(h(t) = 20 - 18\\cos\\left(\\frac{\\pi t}{15}\\right)\\) metres, where t is the time in minutes. Find the maximum height and the time for one revolution.", ms: ["Max when \\(\\cos\\left(\\frac{\\pi t}{15}\\right) = -1\\) [M1]", "\\(h = 38\\) m [A1]", "Period \\(= \\frac{2\\pi}{\\pi/15}\\) [M1]", "\\(= 30\\) minutes [A1]"] },
+    { id: "math-8-q6", paper: "P1", marks: 1, diff: 1, q: "What is the exact value of \\(\\cos\\frac{\\pi}{3}\\)?", options: ["\\(\\frac{1}{2}\\)", "\\(\\frac{\\sqrt{3}}{2}\\)", "\\(\\frac{\\sqrt{2}}{2}\\)", "1"], answer: 0, ms: ["A - \\(\\cos\\frac{\\pi}{3} = \\cos 60° = \\frac{1}{2}\\)."] },
   ],
-  "math-9": [
-    { paper: "P2", marks: 1, diff: 1, q: "Which measure of spread is least affected by outliers?", options: ["Range", "Standard deviation", "Interquartile range", "Variance"], answer: 2, ms: ["C - the IQR uses only the middle 50% of the data, so extreme values do not affect it."] },
-    { paper: "P2", marks: 2, diff: 1, numeric: { value: 7, tol: 0.001 }, q: "Find the mean of 4, 6, 7, 8, 10.", ms: ["\\(\\frac{35}{5}\\) [M1]", "\\(= 7\\) [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, q: "For a data set \\(Q_1 = 12\\) and \\(Q_3 = 20\\). Determine whether 33 is an outlier.", ms: ["IQR = 8 [A1]", "Upper fence \\(= 20 + 1.5(8) = 32\\) [M1]", "33 > 32 so 33 is an outlier [R1]"] },
-    { paper: "P2", marks: 3, diff: 2, q: "The regression line of y on x is \\(y = 2.4x + 5.1\\) with \\(r = 0.93\\), for \\(10 \\le x \\le 40\\). Comment on using it to estimate y when x = 25 and when x = 70.", ms: ["Strong positive linear correlation (r = 0.93) [R1]", "x = 25 is interpolation - reliable: \\(y = 65.1\\) [A1]", "x = 70 is extrapolation outside the data range - unreliable [R1]"] },
-    { paper: "P2", marks: 2, diff: 2, q: "Each value in a data set is multiplied by 3 and then 5 is added. The original mean was 10 and standard deviation 2. State the new mean and standard deviation.", ms: ["Mean = 35 [A1]", "SD = 6 [A1]"] },
+  "math-8b": [
+    { id: "math-8-q8", paper: "P1", marks: 4, diff: 2, q: "Given \\(\\sin\\theta = \\frac{3}{5}\\) and \\(\\frac{\\pi}{2} < \\theta < \\pi\\), find \\(\\cos\\theta\\) and \\(\\sin 2\\theta\\).", ms: ["\\(\\cos\\theta = -\\frac{4}{5}\\) (negative in Q2) [M1][A1]", "\\(\\sin 2\\theta = 2\\sin\\theta\\cos\\theta\\) [M1]", "\\(= -\\frac{24}{25}\\) [A1]"] },
   ],
-  "math-10": [
-    { paper: "P1", marks: 1, diff: 1, q: "Events A and B are mutually exclusive with P(A) = 0.3 and P(B) = 0.4. P(A ∪ B) =", options: ["0.12", "0.58", "0.7", "1"], answer: 2, ms: ["C - mutually exclusive, so P(A ∩ B) = 0 and P(A ∪ B) = 0.3 + 0.4 = 0.7."] },
-    { paper: "P1", marks: 3, diff: 2, numeric: { value: 0.58, tol: 0.001 }, q: "A and B are independent, P(A) = 0.3, P(B) = 0.4. Find P(A ∪ B).", ms: ["\\(P(A \\cap B) = 0.12\\) [M1]", "\\(0.3 + 0.4 - 0.12\\) [M1]", "\\(= 0.58\\) [A1]"] },
-    { paper: "P1", marks: 4, diff: 2, q: "A bag has 5 red and 3 blue counters. Two are taken without replacement. Find the probability that they are different colours.", ms: ["\\(\\frac{5}{8} \\times \\frac{3}{7}\\) [M1]", "\\(\\times 2\\) (either order) [M1]", "\\(\\frac{30}{56}\\) [A1]", "\\(= \\frac{15}{28}\\) [A1]"] },
-    { paper: "P1", marks: 3, diff: 3, numeric: { value: 0.5, tol: 0.001 }, q: "P(A) = 0.5, P(B) = 0.6 and P(A ∪ B) = 0.8. Find \\(P(A \\mid B)\\).", ms: ["\\(P(A \\cap B) = 0.5 + 0.6 - 0.8 = 0.3\\) [M1][A1]", "\\(P(A | B) = \\frac{0.3}{0.6} = 0.5\\) [A1]"] },
+  "math-8c": [
+    { id: "math-8-q7", paper: "P1", marks: 1, diff: 2, q: "The period of \\(y = 3\\sin(2x)\\) is:", options: ["\\(\\pi\\)", "\\(2\\pi\\)", "\\(\\frac{\\pi}{2}\\)", "3"], answer: 0, ms: ["A - period \\(= \\frac{2\\pi}{b} = \\frac{2\\pi}{2} = \\pi\\); the 3 changes the amplitude, not the period."] },
+    { id: "math-8-q10", paper: "P2", marks: 4, diff: 2, q: "The height of a Ferris wheel seat is \\(h(t) = 20 - 18\\cos\\left(\\frac{\\pi t}{15}\\right)\\) metres, where t is the time in minutes. Find the maximum height and the time for one revolution.", ms: ["Max when \\(\\cos\\left(\\frac{\\pi t}{15}\\right) = -1\\) [M1]", "\\(h = 38\\) m [A1]", "Period \\(= \\frac{2\\pi}{\\pi/15}\\) [M1]", "\\(= 30\\) minutes [A1]"] },
+  ],
+  "math-8d": [
+    { id: "math-8-q9", paper: "P1", marks: 5, diff: 3, q: "Solve \\(2\\cos^2 x - \\cos x - 1 = 0\\) for \\(0 \\le x \\le 2\\pi\\).", ms: ["\\((2\\cos x + 1)(\\cos x - 1) = 0\\) [M1][A1]", "\\(\\cos x = -\\frac{1}{2}\\) or \\(\\cos x = 1\\) [A1]", "\\(x = \\frac{2\\pi}{3}, \\frac{4\\pi}{3}\\) [A1]", "\\(x = 0, 2\\pi\\) [A1]"] },
+  ],
+  "math-9b": [
+    { id: "math-9-q6", paper: "P2", marks: 1, diff: 1, q: "Which measure of spread is least affected by outliers?", options: ["Range", "Standard deviation", "Interquartile range", "Variance"], answer: 2, ms: ["C - the IQR uses only the middle 50% of the data, so extreme values do not affect it."] },
+    { id: "math-9-q8", paper: "P2", marks: 3, diff: 2, q: "For a data set \\(Q_1 = 12\\) and \\(Q_3 = 20\\). Determine whether 33 is an outlier.", ms: ["IQR = 8 [A1]", "Upper fence \\(= 20 + 1.5(8) = 32\\) [M1]", "33 > 32 so 33 is an outlier [R1]"] },
+  ],
+  "math-9c": [
+    { id: "math-9-q7", paper: "P2", marks: 2, diff: 1, numeric: { value: 7, tol: 0.001 }, q: "Find the mean of 4, 6, 7, 8, 10.", ms: ["\\(\\frac{35}{5}\\) [M1]", "\\(= 7\\) [A1]"] },
+    { id: "math-9-q10", paper: "P2", marks: 2, diff: 2, q: "Each value in a data set is multiplied by 3 and then 5 is added. The original mean was 10 and standard deviation 2. State the new mean and standard deviation.", ms: ["Mean = 35 [A1]", "SD = 6 [A1]"] },
+  ],
+  "math-9d": [
+    { id: "math-9-q9", paper: "P2", marks: 3, diff: 2, q: "The regression line of y on x is \\(y = 2.4x + 5.1\\) with \\(r = 0.93\\), for \\(10 \\le x \\le 40\\). Comment on using it to estimate y when x = 25 and when x = 70.", ms: ["Strong positive linear correlation (r = 0.93) [R1]", "x = 25 is interpolation - reliable: \\(y = 65.1\\) [A1]", "x = 70 is extrapolation outside the data range - unreliable [R1]"] },
+  ],
+  "math-10b": [
+    { id: "math-10-q5", paper: "P1", marks: 1, diff: 1, q: "Events A and B are mutually exclusive with P(A) = 0.3 and P(B) = 0.4. P(A ∪ B) =", options: ["0.12", "0.58", "0.7", "1"], answer: 2, ms: ["C - mutually exclusive, so P(A ∩ B) = 0 and P(A ∪ B) = 0.3 + 0.4 = 0.7."] },
+    { id: "math-10-q6", paper: "P1", marks: 3, diff: 2, numeric: { value: 0.58, tol: 0.001 }, q: "A and B are independent, P(A) = 0.3, P(B) = 0.4. Find P(A ∪ B).", ms: ["\\(P(A \\cap B) = 0.12\\) [M1]", "\\(0.3 + 0.4 - 0.12\\) [M1]", "\\(= 0.58\\) [A1]"] },
+    { id: "math-10-q7", paper: "P1", marks: 4, diff: 2, q: "A bag has 5 red and 3 blue counters. Two are taken without replacement. Find the probability that they are different colours.", ms: ["\\(\\frac{5}{8} \\times \\frac{3}{7}\\) [M1]", "\\(\\times 2\\) (either order) [M1]", "\\(\\frac{30}{56}\\) [A1]", "\\(= \\frac{15}{28}\\) [A1]"] },
+  ],
+  "math-10c": [
+    { id: "math-10-q8", paper: "P1", marks: 3, diff: 3, numeric: { value: 0.5, tol: 0.001 }, q: "P(A) = 0.5, P(B) = 0.6 and P(A ∪ B) = 0.8. Find \\(P(A \\mid B)\\).", ms: ["\\(P(A \\cap B) = 0.5 + 0.6 - 0.8 = 0.3\\) [M1][A1]", "\\(P(A | B) = \\frac{0.3}{0.6} = 0.5\\) [A1]"] },
   ],
   "math-11": [
-    { paper: "P2", marks: 1, diff: 1, q: "For \\(X \\sim B(10, 0.3)\\), E(X) =", options: ["0.3", "2.1", "3", "7"], answer: 2, ms: ["C - E(X) = np = 10 × 0.3 = 3."] },
-    { paper: "P2", marks: 2, diff: 2, numeric: { value: 0.267, tol: 0.002 }, q: "\\(X \\sim B(10, 0.3)\\). Find \\(P(X = 3)\\) to 3 s.f.", ms: ["\\(\\binom{10}{3}(0.3)^3(0.7)^7\\) [M1]", "\\(= 0.267\\) [A1]"] },
-    { paper: "P2", marks: 2, diff: 2, numeric: { value: 0.841, tol: 0.002 }, q: "\\(X \\sim N(50, 4^2)\\). Find \\(P(X < 54)\\) to 3 s.f.", ms: ["z = 1 / GDC normalcdf [M1]", "\\(= 0.841\\) [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 1.3, tol: 0.001 }, q: "A discrete random variable takes values 0, 1, 2, 3 with probabilities 0.2, 0.4, 0.3, k. Find k and E(X). Give E(X).", ms: ["k = 0.1 [A1]", "\\(E(X) = 0(0.2) + 1(0.4) + 2(0.3) + 3(0.1)\\) [M1]", "\\(= 1.3\\) [A1]"] },
-    { paper: "P2", marks: 3, diff: 3, numeric: { value: 68.2, tol: 0.1 }, q: "Heights are \\(N(60, 5^2)\\). Find the height exceeded by the tallest 5%, to 3 s.f.", ms: ["\\(P(H > h) = 0.05\\) [M1]", "invNorm(0.95, 60, 5) [M1]", "\\(h = 68.2\\) [A1]"] },
+    { id: "math-11-q10", paper: "P2", marks: 3, diff: 2, numeric: { value: 1.3, tol: 0.001 }, q: "A discrete random variable takes values 0, 1, 2, 3 with probabilities 0.2, 0.4, 0.3, k. Find k and E(X). Give E(X).", ms: ["k = 0.1 [A1]", "\\(E(X) = 0(0.2) + 1(0.4) + 2(0.3) + 3(0.1)\\) [M1]", "\\(= 1.3\\) [A1]"] },
+  ],
+  "math-11b": [
+    { id: "math-11-q7", paper: "P2", marks: 1, diff: 1, q: "For \\(X \\sim B(10, 0.3)\\), E(X) =", options: ["0.3", "2.1", "3", "7"], answer: 2, ms: ["C - E(X) = np = 10 × 0.3 = 3."] },
+    { id: "math-11-q8", paper: "P2", marks: 2, diff: 2, numeric: { value: 0.267, tol: 0.002 }, q: "\\(X \\sim B(10, 0.3)\\). Find \\(P(X = 3)\\) to 3 s.f.", ms: ["\\(\\binom{10}{3}(0.3)^3(0.7)^7\\) [M1]", "\\(= 0.267\\) [A1]"] },
+  ],
+  "math-11c": [
+    { id: "math-11-q9", paper: "P2", marks: 2, diff: 2, numeric: { value: 0.841, tol: 0.002 }, q: "\\(X \\sim N(50, 4^2)\\). Find \\(P(X < 54)\\) to 3 s.f.", ms: ["z = 1 / GDC normalcdf [M1]", "\\(= 0.841\\) [A1]"] },
+    { id: "math-11-q11", paper: "P2", marks: 3, diff: 3, numeric: { value: 68.2, tol: 0.1 }, q: "Heights are \\(N(60, 5^2)\\). Find the height exceeded by the tallest 5%, to 3 s.f.", ms: ["\\(P(H > h) = 0.05\\) [M1]", "invNorm(0.95, 60, 5) [M1]", "\\(h = 68.2\\) [A1]"] },
   ],
   "math-12": [
     { id: "math-12-n1", paper: "P1", marks: 1, diff: 1, q: "The points P(1, 1) and Q(1 + h, (1 + h)²) lie on \\(y = x^2\\). The gradient of the chord PQ is", options: ["\\(2 + h\\)", "\\(2h + h^2\\)", "\\(2\\)", "\\(1 + h\\)"], answer: 0, ms: ["A - \\(\\frac{(1 + h)^2 - 1}{h} = \\frac{2h + h^2}{h} = 2 + h\\)."] },
@@ -169,11 +189,11 @@ IB.addQuestions("math", {
   "math-1": [
     { id: "math-1-q14", type: "short", paper: "P1", marks: 3, diff: 1, q: "Let \\(a = 6 \\times 10^5\\) and \\(b = 4 \\times 10^{-2}\\). Find \\(ab\\) and \\(\\frac{a}{b}\\), giving your answers in the form \\(k \\times 10^n\\), where \\(1 \\le k < 10\\) and \\(n \\in \\mathbb{Z}\\).", ms: ["\\(ab = 24 \\times 10^3\\) [M1]", "\\(= 2.4 \\times 10^4\\) [A1]", "\\(\\frac{a}{b} = 1.5 \\times 10^7\\) [A1]"] },
   ],
-  "math-7": [
-    { type: "short", paper: "P2", marks: 5, diff: 2, numeric: { value: 13.6, tol: 0.05 }, q: "A ship leaves port P and sails 8 km on a bearing of 040° to point A, then 11 km on a bearing of 130° to point B. (a) Show that angle PAB = 90°. (b) Find the distance PB.", ms: ["(a) Back bearing of P from A is 220°; 220° − 130° = 90° [M1][A1] AG", "(b) \\(PB^2 = 8^2 + 11^2\\) [M1]", "\\(PB = \\sqrt{185}\\) [A1]", "= 13.6 km [A1]"] },
-    { type: "short", paper: "P2", marks: 3, diff: 2, numeric: { value: 23.1, tol: 0.05 }, q: "From the top of a cliff 40 m high, the angle of depression of a boat is 60°. Find the horizontal distance from the foot of the cliff to the boat.", ms: ["Angle of elevation from boat = 60° (alternate angles) [R1]", "\\(\\tan 60° = \\frac{40}{d}\\) [M1]", "d = 23.1 m [A1]"] },
+  "math-7c": [
+    { id: "math-7-q11", type: "short", paper: "P2", marks: 5, diff: 2, numeric: { value: 13.6, tol: 0.05 }, q: "A ship leaves port P and sails 8 km on a bearing of 040° to point A, then 11 km on a bearing of 130° to point B. (a) Show that angle PAB = 90°. (b) Find the distance PB.", ms: ["(a) Back bearing of P from A is 220°; 220° − 130° = 90° [M1][A1] AG", "(b) \\(PB^2 = 8^2 + 11^2\\) [M1]", "\\(PB = \\sqrt{185}\\) [A1]", "= 13.6 km [A1]"] },
+    { id: "math-7-q12", type: "short", paper: "P2", marks: 3, diff: 2, numeric: { value: 23.1, tol: 0.05 }, q: "From the top of a cliff 40 m high, the angle of depression of a boat is 60°. Find the horizontal distance from the foot of the cliff to the boat.", ms: ["Angle of elevation from boat = 60° (alternate angles) [R1]", "\\(\\tan 60° = \\frac{40}{d}\\) [M1]", "d = 23.1 m [A1]"] },
   ],
-  "math-9": [
-    { type: "short", paper: "P2", marks: 4, diff: 2, numeric: { value: 24.5, tol: 0.05 }, q: "The heights, h cm, of 40 plants are grouped: 0 < h ≤ 10: 4; 10 < h ≤ 20: 10; 20 < h ≤ 30: 14; 30 < h ≤ 40: 8; 40 < h ≤ 50: 4. (a) Write down the modal class. (b) Use mid-interval values to estimate the mean height.", ms: ["(a) 20 < h ≤ 30 [A1]", "(b) mid-points 5, 15, 25, 35, 45 used [M1]", "\\(\\frac{20 + 150 + 350 + 280 + 180}{40} = \\frac{980}{40}\\) [A1]", "= 24.5 cm [A1]"] },
+  "math-9c": [
+    { id: "math-9-q11", type: "short", paper: "P2", marks: 4, diff: 2, numeric: { value: 24.5, tol: 0.05 }, q: "The heights, h cm, of 40 plants are grouped: 0 < h ≤ 10: 4; 10 < h ≤ 20: 10; 20 < h ≤ 30: 14; 30 < h ≤ 40: 8; 40 < h ≤ 50: 4. (a) Write down the modal class. (b) Use mid-interval values to estimate the mean height.", ms: ["(a) 20 < h ≤ 30 [A1]", "(b) mid-points 5, 15, 25, 35, 45 used [M1]", "\\(\\frac{20 + 150 + 350 + 280 + 180}{40} = \\frac{980}{40}\\) [A1]", "= 24.5 cm [A1]"] },
   ],
 });
