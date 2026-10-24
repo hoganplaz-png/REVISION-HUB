@@ -15,7 +15,7 @@ IB.extend("math", {
 
 IB.addTopics("math", [
   {
-    id: "math-h1", code: "1.10-1.16 AHL", after: "math-3", unit: "Topic 1: Number and algebra (HL)", title: "Counting, complex numbers and proof by induction",
+    id: "math-h1", code: "1.10-1.16 AHL", after: "math-3b", unit: "Topic 1: Number and algebra (HL)", title: "Counting, complex numbers and proof by induction",
     summary: "Permutations and combinations, extension of the binomial theorem, partial fractions, complex numbers (Cartesian, polar, Euler form), De Moivre's theorem, proof by induction, contradiction and counterexample, and systems of linear equations.",
     concepts: [
       { h: "Counting principles", b: "<p>\\(^nP_r = \\frac{n!}{(n-r)!}\\) (order matters), \\(^nC_r = \\frac{n!}{r!(n-r)!}\\) (order does not matter). Restrictions: treat items that must be together as one block; subtract the complement for 'not together'.</p>", yue: "排列講次序，組合唔講次序。要一齊嘅當一舊，唔可以一齊就用總數減。" },
@@ -44,7 +44,7 @@ IB.addTopics("math", [
     ],
   },
   {
-    id: "math-h2", code: "2.12-2.16 AHL", after: "math-6", unit: "Topic 2: Functions (HL)", title: "Polynomials, rational functions and inequalities",
+    id: "math-h2", code: "2.12-2.16 AHL", after: "math-6c", unit: "Topic 2: Functions (HL)", title: "Polynomials, rational functions and inequalities",
     summary: "Factor and remainder theorems, sums and products of roots, rational functions with oblique asymptotes, odd and even functions, self-inverse functions, solving inequalities graphically and analytically, and modulus graphs.",
     concepts: [
       { h: "Factor and remainder theorems", b: "<p>Remainder when P(x) is divided by (x − a) is P(a). If P(a) = 0, (x − a) is a factor. For \\(a_nx^n + … + a_0\\): sum of roots = \\(-\\frac{a_{n-1}}{a_n}\\), product of roots = \\(\\frac{(-1)^na_0}{a_n}\\).</p>", yue: "餘數定理：P(a) 就係除以 (x−a) 嘅餘數；等於零就係因式。" },

@@ -1,48 +1,68 @@
 /* Mathematics AA SL - extra hand-written exam-style questions (IB-style, original). */
 IB.addQuestions("math", {
-  "math-1": [
-    { paper: "P1", marks: 1, diff: 1, q: "The first term of an arithmetic sequence is 7 and the common difference is 4. Which is the 10th term?", options: ["40", "43", "47", "50"], answer: 1, ms: ["B - \\(7 + 9 \\times 4 = 43\\)."] },
-    { paper: "P1", marks: 4, diff: 2, numeric: { value: 590, tol: 0.5 }, q: "An arithmetic series has \\(u_1 = 5\\) and \\(u_{20} = 54\\). Find \\(S_{20}\\).", ms: ["\\(S_{20} = \\frac{20}{2}(u_1 + u_{20})\\) [M1]", "\\(= \\frac{20}{2}(5 + 54)\\) [A1]", "\\(= 590\\) [A1]"] },
-    { paper: "P1", marks: 4, diff: 2, numeric: { value: 32, tol: 0.001 }, q: "A geometric sequence has \\(u_2 = 8\\) and \\(u_5 = 1\\). Find the sum to infinity.", ms: ["\\(r^3 = \\frac{1}{8}\\) so \\(r = \\frac{1}{2}\\) [M1][A1]", "\\(u_1 = 16\\) [A1]", "\\(S_\\infty = \\frac{16}{1 - 0.5} = 32\\) [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 6746.77, tol: 0.5 }, q: "$5000 is invested at 3% per annum compounded monthly. Find the value after 10 years, to the nearest cent.", ms: ["\\(5000\\left(1 + \\frac{0.03}{12}\\right)^{120}\\) or TVM: N = 120, I% = 3, PV = −5000, C/Y = 12 [M1][A1]", "$6746.77 [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 17, tol: 0.001 }, q: "Find the least value of \\(n\\) for which the sum of the geometric series \\(3 + 6 + 12 + \\dots\\) exceeds 300 000.", ms: ["\\(\\frac{3(2^n - 1)}{2 - 1} > 300000\\) [M1]", "\\(2^n > 100001\\) [A1]", "\\(n = 17\\) [A1]"] },
-    { paper: "P1", marks: 3, diff: 2, numeric: { value: 165, tol: 0.001 }, q: "Evaluate \\(\\displaystyle\\sum_{k=1}^{10} 3k\\).", ms: ["\\(3(1 + 2 + \\dots + 10)\\) or \\(\\frac{10}{2}(3 + 30)\\) [M1]", "\\(= 3 \\times 55\\) [A1]", "\\(= 165\\) [A1]"] },
+  "math-1": [],
+  "math-1b": [
+    { id: "math-1-q8", paper: "P1", marks: 1, diff: 1, q: "The first term of an arithmetic sequence is 7 and the common difference is 4. Which is the 10th term?", options: ["40", "43", "47", "50"], answer: 1, ms: ["B - \\(7 + 9 \\times 4 = 43\\)."] },
+    { id: "math-1-q9", paper: "P1", marks: 4, diff: 2, numeric: { value: 590, tol: 0.5 }, q: "An arithmetic series has \\(u_1 = 5\\) and \\(u_{20} = 54\\). Find \\(S_{20}\\).", ms: ["\\(S_{20} = \\frac{20}{2}(u_1 + u_{20})\\) [M1]", "\\(= \\frac{20}{2}(5 + 54)\\) [A1]", "\\(= 590\\) [A1]"] },
+    { id: "math-1-q13", paper: "P1", marks: 3, diff: 2, numeric: { value: 165, tol: 0.001 }, q: "Evaluate \\(\\displaystyle\\sum_{k=1}^{10} 3k\\).", ms: ["\\(3(1 + 2 + \\dots + 10)\\) or \\(\\frac{10}{2}(3 + 30)\\) [M1]", "\\(= 3 \\times 55\\) [A1]", "\\(= 165\\) [A1]"] },
+  ],
+  "math-1c": [
+    { id: "math-1-q12", paper: "P2", marks: 3, diff: 2, numeric: { value: 17, tol: 0.001 }, q: "Find the least value of \\(n\\) for which the sum of the geometric series \\(3 + 6 + 12 + \\dots\\) exceeds 300 000.", ms: ["\\(\\frac{3(2^n - 1)}{2 - 1} > 300000\\) [M1]", "\\(2^n > 100001\\) [A1]", "\\(n = 17\\) [A1]"] },
+  ],
+  "math-1d": [
+    { id: "math-1-q11", paper: "P2", marks: 3, diff: 2, numeric: { value: 6746.77, tol: 0.5 }, q: "$5000 is invested at 3% per annum compounded monthly. Find the value after 10 years, to the nearest cent.", ms: ["\\(5000\\left(1 + \\frac{0.03}{12}\\right)^{120}\\) or TVM: N = 120, I% = 3, PV = −5000, C/Y = 12 [M1][A1]", "$6746.77 [A1]"] },
+  ],
+  "math-1e": [
+    { id: "math-1-q10", paper: "P1", marks: 4, diff: 2, numeric: { value: 32, tol: 0.001 }, q: "A geometric sequence has \\(u_2 = 8\\) and \\(u_5 = 1\\). Find the sum to infinity.", ms: ["\\(r^3 = \\frac{1}{8}\\) so \\(r = \\frac{1}{2}\\) [M1][A1]", "\\(u_1 = 16\\) [A1]", "\\(S_\\infty = \\frac{16}{1 - 0.5} = 32\\) [A1]"] },
   ],
   "math-2": [
-    { paper: "P1", marks: 1, diff: 1, q: "Which is equal to \\(\\log_2 32\\)?", options: ["4", "5", "6", "16"], answer: 1, ms: ["B - \\(2^5 = 32\\)."] },
-    { paper: "P1", marks: 3, diff: 2, numeric: { value: 4, tol: 0.001 }, q: "Solve \\(\\log_3(x + 5) = 2\\).", ms: ["\\(x + 5 = 3^2\\) [M1]", "\\(x + 5 = 9\\) [A1]", "\\(x = 4\\) [A1]"] },
-    { paper: "P1", marks: 4, diff: 2, numeric: { value: 3, tol: 0.001 }, q: "Solve \\(\\log_2 x + \\log_2(x - 2) = \\log_2 3\\).", ms: ["\\(\\log_2 x(x - 2) = \\log_2 3\\) [M1]", "\\(x^2 - 2x - 3 = 0\\) [A1]", "\\((x - 3)(x + 1) = 0\\) [M1]", "\\(x = 3\\) (reject −1 since \\(x > 2\\)) [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 1.43, tol: 0.01 }, q: "Solve \\(5^{x} = 10\\), giving your answer to 3 significant figures.", ms: ["\\(x = \\frac{\\ln 10}{\\ln 5}\\) [M1][A1]", "\\(x = 1.43\\) [A1]"] },
-    { paper: "P1", marks: 3, diff: 2, q: "Write \\(2\\ln 3 + \\ln 4 - \\ln 6\\) as a single logarithm in its simplest form.", ms: ["\\(\\ln 9 + \\ln 4 - \\ln 6\\) [M1]", "\\(\\ln\\frac{36}{6}\\) [M1]", "\\(\\ln 6\\) [A1]"] },
-    { paper: "P2", marks: 4, diff: 3, numeric: { value: 13.9, tol: 0.1 }, q: "A population of bacteria is modelled by \\(P = 200e^{0.05t}\\), \\(t\\) in hours. Find the time for the population to double, to 3 s.f.", ms: ["\\(400 = 200e^{0.05t}\\) [M1]", "\\(e^{0.05t} = 2\\) [A1]", "\\(t = \\frac{\\ln 2}{0.05}\\) [M1]", "\\(t = 13.9\\) hours [A1]"] },
+    { id: "math-2-q7", paper: "P1", marks: 1, diff: 1, q: "Which is equal to \\(\\log_2 32\\)?", options: ["4", "5", "6", "16"], answer: 1, ms: ["B - \\(2^5 = 32\\)."] },
+    { id: "math-2-q8", paper: "P1", marks: 3, diff: 2, numeric: { value: 4, tol: 0.001 }, q: "Solve \\(\\log_3(x + 5) = 2\\).", ms: ["\\(x + 5 = 3^2\\) [M1]", "\\(x + 5 = 9\\) [A1]", "\\(x = 4\\) [A1]"] },
+  ],
+  "math-2b": [
+    { id: "math-2-q9", paper: "P1", marks: 4, diff: 2, numeric: { value: 3, tol: 0.001 }, q: "Solve \\(\\log_2 x + \\log_2(x - 2) = \\log_2 3\\).", ms: ["\\(\\log_2 x(x - 2) = \\log_2 3\\) [M1]", "\\(x^2 - 2x - 3 = 0\\) [A1]", "\\((x - 3)(x + 1) = 0\\) [M1]", "\\(x = 3\\) (reject −1 since \\(x > 2\\)) [A1]"] },
+    { id: "math-2-q10", paper: "P2", marks: 3, diff: 2, numeric: { value: 1.43, tol: 0.01 }, q: "Solve \\(5^{x} = 10\\), giving your answer to 3 significant figures.", ms: ["\\(x = \\frac{\\ln 10}{\\ln 5}\\) [M1][A1]", "\\(x = 1.43\\) [A1]"] },
+    { id: "math-2-q11", paper: "P1", marks: 3, diff: 2, q: "Write \\(2\\ln 3 + \\ln 4 - \\ln 6\\) as a single logarithm in its simplest form.", ms: ["\\(\\ln 9 + \\ln 4 - \\ln 6\\) [M1]", "\\(\\ln\\frac{36}{6}\\) [M1]", "\\(\\ln 6\\) [A1]"] },
+  ],
+  "math-2c": [
+    { id: "math-2-q12", paper: "P2", marks: 4, diff: 3, numeric: { value: 13.9, tol: 0.1 }, q: "A population of bacteria is modelled by \\(P = 200e^{0.05t}\\), \\(t\\) in hours. Find the time for the population to double, to 3 s.f.", ms: ["\\(400 = 200e^{0.05t}\\) [M1]", "\\(e^{0.05t} = 2\\) [A1]", "\\(t = \\frac{\\ln 2}{0.05}\\) [M1]", "\\(t = 13.9\\) hours [A1]"] },
   ],
   "math-3": [
-    { paper: "P1", marks: 1, diff: 1, q: "Which is \\(\\binom{6}{2}\\)?", options: ["12", "15", "30", "36"], answer: 1, ms: ["B - \\(\\frac{6 \\times 5}{2} = 15\\)."] },
-    { paper: "P1", marks: 4, diff: 2, numeric: { value: -160, tol: 0.001 }, q: "Find the constant term in the expansion of \\(\\left(2x - \\frac{1}{x}\\right)^6\\).", ms: ["General term \\(\\binom{6}{r}(2x)^{6-r}\\left(-\\frac{1}{x}\\right)^r\\) [M1]", "Constant when \\(6 - 2r = 0\\), \\(r = 3\\) [A1]", "\\(\\binom{6}{3}(2)^3(-1)^3\\) [M1]", "\\(= -160\\) [A1]"] },
-    { paper: "P1", marks: 3, diff: 2, q: "Prove that the sum of any three consecutive integers is divisible by 3.", ms: ["Let integers be \\(n, n + 1, n + 2\\) [M1]", "Sum \\(= 3n + 3\\) [A1]", "\\(= 3(n + 1)\\), which is a multiple of 3 [R1]"] },
-    { paper: "P1", marks: 3, diff: 2, q: "Show that \\((n + 3)^2 - (n - 3)^2\\) is always a multiple of 12 for \\(n \\in \\mathbb{Z}\\).", ms: ["Expand: \\(n^2 + 6n + 9 - (n^2 - 6n + 9)\\) [M1]", "\\(= 12n\\) [A1]", "\\(12n\\) is a multiple of 12 [R1]"] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 2160, tol: 0.5 }, q: "Find the coefficient of \\(x^4\\) in the expansion of \\((3 + 2x)^6\\).", ms: ["\\(\\binom{6}{4}3^2(2x)^4\\) [M1]", "\\(15 \\times 9 \\times 16\\) [A1]", "\\(= 2160\\) [A1]"] },
+    { id: "math-3-q8", paper: "P1", marks: 3, diff: 2, q: "Prove that the sum of any three consecutive integers is divisible by 3.", ms: ["Let integers be \\(n, n + 1, n + 2\\) [M1]", "Sum \\(= 3n + 3\\) [A1]", "\\(= 3(n + 1)\\), which is a multiple of 3 [R1]"] },
+    { id: "math-3-q9", paper: "P1", marks: 3, diff: 2, q: "Show that \\((n + 3)^2 - (n - 3)^2\\) is always a multiple of 12 for \\(n \\in \\mathbb{Z}\\).", ms: ["Expand: \\(n^2 + 6n + 9 - (n^2 - 6n + 9)\\) [M1]", "\\(= 12n\\) [A1]", "\\(12n\\) is a multiple of 12 [R1]"] },
   ],
-  "math-4": [
-    { paper: "P1", marks: 1, diff: 1, q: "If \\(f(x) = 2x + 1\\) and \\(g(x) = x^2\\), what is \\((f \\circ g)(3)\\)?", options: ["19", "49", "10", "13"], answer: 0, ms: ["A - \\(f(9) = 19\\)."] },
-    { paper: "P1", marks: 3, diff: 2, q: "Find \\(f^{-1}(x)\\) for \\(f(x) = \\frac{3x - 1}{2}\\).", ms: ["\\(x = \\frac{3y - 1}{2}\\) [M1]", "\\(2x + 1 = 3y\\) [A1]", "\\(f^{-1}(x) = \\frac{2x + 1}{3}\\) [A1]"] },
-    { paper: "P1", marks: 2, diff: 1, q: "State the domain and range of \\(f(x) = \\sqrt{x - 4}\\).", ms: ["Domain \\(x \\ge 4\\) [A1]", "Range \\(f(x) \\ge 0\\) [A1]"] },
-    { paper: "P1", marks: 4, diff: 2, numeric: { value: 2, tol: 0.001 }, q: "Given \\(f(x) = x^2 - 3\\) and \\(g(x) = x + 1\\), solve \\((f \\circ g)(x) = 6\\) for \\(x > 0\\).", ms: ["\\((x + 1)^2 - 3 = 6\\) [M1]", "\\((x + 1)^2 = 9\\) [A1]", "\\(x + 1 = \\pm 3\\) [M1]", "\\(x = 2\\) (reject −4) [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, q: "Explain why \\(f(x) = x^2\\), \\(x \\in \\mathbb{R}\\), has no inverse, and state a domain restriction that allows one.", ms: ["Not one-to-one: e.g. \\(f(2) = f(-2) = 4\\) [R1]", "Fails the horizontal line test [R1]", "Restrict to \\(x \\ge 0\\) (then \\(f^{-1}(x) = \\sqrt{x}\\)) [A1]"] },
+  "math-3b": [
+    { id: "math-3-q6", paper: "P1", marks: 1, diff: 1, q: "Which is \\(\\binom{6}{2}\\)?", options: ["12", "15", "30", "36"], answer: 1, ms: ["B - \\(\\frac{6 \\times 5}{2} = 15\\)."] },
+    { id: "math-3-q7", paper: "P1", marks: 4, diff: 2, numeric: { value: -160, tol: 0.001 }, q: "Find the constant term in the expansion of \\(\\left(2x - \\frac{1}{x}\\right)^6\\).", ms: ["General term \\(\\binom{6}{r}(2x)^{6-r}\\left(-\\frac{1}{x}\\right)^r\\) [M1]", "Constant when \\(6 - 2r = 0\\), \\(r = 3\\) [A1]", "\\(\\binom{6}{3}(2)^3(-1)^3\\) [M1]", "\\(= -160\\) [A1]"] },
+    { id: "math-3-q10", paper: "P2", marks: 3, diff: 2, numeric: { value: 2160, tol: 0.5 }, q: "Find the coefficient of \\(x^4\\) in the expansion of \\((3 + 2x)^6\\).", ms: ["\\(\\binom{6}{4}3^2(2x)^4\\) [M1]", "\\(15 \\times 9 \\times 16\\) [A1]", "\\(= 2160\\) [A1]"] },
+  ],
+  "math-4": [],
+  "math-4b": [
+    { id: "math-4-q8", paper: "P1", marks: 2, diff: 1, q: "State the domain and range of \\(f(x) = \\sqrt{x - 4}\\).", ms: ["Domain \\(x \\ge 4\\) [A1]", "Range \\(f(x) \\ge 0\\) [A1]"] },
+    { id: "math-4-q10", paper: "P2", marks: 3, diff: 2, q: "Explain why \\(f(x) = x^2\\), \\(x \\in \\mathbb{R}\\), has no inverse, and state a domain restriction that allows one.", ms: ["Not one-to-one: e.g. \\(f(2) = f(-2) = 4\\) [R1]", "Fails the horizontal line test [R1]", "Restrict to \\(x \\ge 0\\) (then \\(f^{-1}(x) = \\sqrt{x}\\)) [A1]"] },
+  ],
+  "math-4e": [
+    { id: "math-4-q6", paper: "P1", marks: 1, diff: 1, q: "If \\(f(x) = 2x + 1\\) and \\(g(x) = x^2\\), what is \\((f \\circ g)(3)\\)?", options: ["19", "49", "10", "13"], answer: 0, ms: ["A - \\(f(9) = 19\\)."] },
+    { id: "math-4-q7", paper: "P1", marks: 3, diff: 2, q: "Find \\(f^{-1}(x)\\) for \\(f(x) = \\frac{3x - 1}{2}\\).", ms: ["\\(x = \\frac{3y - 1}{2}\\) [M1]", "\\(2x + 1 = 3y\\) [A1]", "\\(f^{-1}(x) = \\frac{2x + 1}{3}\\) [A1]"] },
+    { id: "math-4-q9", paper: "P1", marks: 4, diff: 2, numeric: { value: 2, tol: 0.001 }, q: "Given \\(f(x) = x^2 - 3\\) and \\(g(x) = x + 1\\), solve \\((f \\circ g)(x) = 6\\) for \\(x > 0\\).", ms: ["\\((x + 1)^2 - 3 = 6\\) [M1]", "\\((x + 1)^2 = 9\\) [A1]", "\\(x + 1 = \\pm 3\\) [M1]", "\\(x = 2\\) (reject −4) [A1]"] },
   ],
   "math-5": [
-    { paper: "P1", marks: 1, diff: 1, q: "The vertex of \\(y = (x - 3)^2 + 5\\) is:", options: ["(−3, 5)", "(3, 5)", "(3, −5)", "(5, 3)"], answer: 1, ms: ["B - in the form \\(a(x - h)^2 + k\\) the vertex is (h, k) = (3, 5)."] },
-    { paper: "P1", marks: 3, diff: 2, numeric: { value: 9, tol: 0.001 }, q: "Find the value of \\(k\\) such that \\(x^2 - 6x + k = 0\\) has exactly one real root.", ms: ["\\(\\Delta = 36 - 4k = 0\\) [M1][A1]", "\\(k = 9\\) [A1]"] },
-    { paper: "P1", marks: 4, diff: 2, q: "Write \\(2x^2 - 12x + 7\\) in the form \\(a(x - h)^2 + k\\) and state the coordinates of the vertex.", ms: ["\\(2(x^2 - 6x) + 7\\) [M1]", "\\(2(x - 3)^2 - 18 + 7\\) [A1]", "\\(2(x - 3)^2 - 11\\) [A1]", "Vertex \\((3, -11)\\) [A1]"] },
-    { paper: "P1", marks: 4, diff: 3, q: "Find the range of values of \\(m\\) for which \\(x^2 + mx + 4 = 0\\) has two distinct real roots.", ms: ["\\(\\Delta = m^2 - 16 > 0\\) [M1][A1]", "Critical values \\(m = \\pm 4\\) [A1]", "\\(m < -4\\) or \\(m > 4\\) [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, numeric: { value: 2.5, tol: 0.001 }, q: "A ball's height is \\(h(t) = -5t^2 + 25t + 2\\). Find the time at which it reaches its maximum height.", ms: ["Axis of symmetry \\(t = -\\frac{b}{2a}\\) [M1]", "\\(= \\frac{-25}{-10}\\) [A1]", "\\(t = 2.5\\) s [A1]"] },
+    { id: "math-5-q6", paper: "P1", marks: 1, diff: 1, q: "The vertex of \\(y = (x - 3)^2 + 5\\) is:", options: ["(−3, 5)", "(3, 5)", "(3, −5)", "(5, 3)"], answer: 1, ms: ["B - in the form \\(a(x - h)^2 + k\\) the vertex is (h, k) = (3, 5)."] },
+    { id: "math-5-q8", paper: "P1", marks: 4, diff: 2, q: "Write \\(2x^2 - 12x + 7\\) in the form \\(a(x - h)^2 + k\\) and state the coordinates of the vertex.", ms: ["\\(2(x^2 - 6x) + 7\\) [M1]", "\\(2(x - 3)^2 - 18 + 7\\) [A1]", "\\(2(x - 3)^2 - 11\\) [A1]", "Vertex \\((3, -11)\\) [A1]"] },
+    { id: "math-5-q10", paper: "P2", marks: 3, diff: 2, numeric: { value: 2.5, tol: 0.001 }, q: "A ball's height is \\(h(t) = -5t^2 + 25t + 2\\). Find the time at which it reaches its maximum height.", ms: ["Axis of symmetry \\(t = -\\frac{b}{2a}\\) [M1]", "\\(= \\frac{-25}{-10}\\) [A1]", "\\(t = 2.5\\) s [A1]"] },
+  ],
+  "math-5b": [
+    { id: "math-5-q7", paper: "P1", marks: 3, diff: 2, numeric: { value: 9, tol: 0.001 }, q: "Find the value of \\(k\\) such that \\(x^2 - 6x + k = 0\\) has exactly one real root.", ms: ["\\(\\Delta = 36 - 4k = 0\\) [M1][A1]", "\\(k = 9\\) [A1]"] },
+    { id: "math-5-q9", paper: "P1", marks: 4, diff: 3, q: "Find the range of values of \\(m\\) for which \\(x^2 + mx + 4 = 0\\) has two distinct real roots.", ms: ["\\(\\Delta = m^2 - 16 > 0\\) [M1][A1]", "Critical values \\(m = \\pm 4\\) [A1]", "\\(m < -4\\) or \\(m > 4\\) [A1]"] },
   ],
   "math-6": [
-    { paper: "P1", marks: 1, diff: 1, q: "The vertical asymptote of \\(y = \\frac{3}{x - 2} + 1\\) is:", options: ["x = 1", "x = 2", "y = 1", "y = 3"], answer: 1, ms: ["B - the denominator is zero when x = 2, so the vertical asymptote is x = 2 (y = 1 is the horizontal asymptote)."] },
-    { paper: "P1", marks: 2, diff: 1, q: "Describe the transformation that maps \\(y = f(x)\\) to \\(y = f(x - 4) + 2\\).", ms: ["Translation by vector \\(\\begin{pmatrix}4\\\\2\\end{pmatrix}\\): 4 units to the right [A1]", "and 2 units up [A1]"] },
-    { paper: "P1", marks: 3, diff: 2, q: "The graph of \\(y = e^x\\) is stretched vertically by factor 3 and then translated 1 unit down. Write the new equation and its horizontal asymptote.", ms: ["\\(y = 3e^x\\) (vertical stretch first) [A1]", "\\(y = 3e^x - 1\\) [A1]", "Asymptote \\(y = -1\\) [A1]"] },
-    { paper: "P1", marks: 4, diff: 2, q: "For \\(f(x) = \\frac{2x + 1}{x - 3}\\), state the equations of the asymptotes and the x-intercept.", ms: ["Vertical \\(x = 3\\) [A1]", "Horizontal \\(y = 2\\) [A1]", "x-intercept: \\(2x + 1 = 0\\) [M1]", "\\(x = -\\frac{1}{2}\\) [A1]"] },
-    { paper: "P2", marks: 3, diff: 2, q: "Describe a sequence of transformations mapping \\(y = \\ln x\\) onto \\(y = 2\\ln(x + 1)\\).", ms: ["Translation 1 unit to the left, vector \\(\\begin{pmatrix}-1\\\\0\\end{pmatrix}\\) [A1]", "Vertical stretch [A1]", "with scale factor 2 (either order: a horizontal translation and a vertical stretch do not affect each other) [A1]"] },
+    { id: "math-6-q6", paper: "P1", marks: 1, diff: 1, q: "The vertical asymptote of \\(y = \\frac{3}{x - 2} + 1\\) is:", options: ["x = 1", "x = 2", "y = 1", "y = 3"], answer: 1, ms: ["B - the denominator is zero when x = 2, so the vertical asymptote is x = 2 (y = 1 is the horizontal asymptote)."] },
+    { id: "math-6-q9", paper: "P1", marks: 4, diff: 2, q: "For \\(f(x) = \\frac{2x + 1}{x - 3}\\), state the equations of the asymptotes and the x-intercept.", ms: ["Vertical \\(x = 3\\) [A1]", "Horizontal \\(y = 2\\) [A1]", "x-intercept: \\(2x + 1 = 0\\) [M1]", "\\(x = -\\frac{1}{2}\\) [A1]"] },
+  ],
+  "math-6c": [
+    { id: "math-6-q7", paper: "P1", marks: 2, diff: 1, q: "Describe the transformation that maps \\(y = f(x)\\) to \\(y = f(x - 4) + 2\\).", ms: ["Translation by vector \\(\\begin{pmatrix}4\\\\2\\end{pmatrix}\\): 4 units to the right [A1]", "and 2 units up [A1]"] },
+    { id: "math-6-q8", paper: "P1", marks: 3, diff: 2, q: "The graph of \\(y = e^x\\) is stretched vertically by factor 3 and then translated 1 unit down. Write the new equation and its horizontal asymptote.", ms: ["\\(y = 3e^x\\) (vertical stretch first) [A1]", "\\(y = 3e^x - 1\\) [A1]", "Asymptote \\(y = -1\\) [A1]"] },
+    { id: "math-6-q10", paper: "P2", marks: 3, diff: 2, q: "Describe a sequence of transformations mapping \\(y = \\ln x\\) onto \\(y = 2\\ln(x + 1)\\).", ms: ["Translation 1 unit to the left, vector \\(\\begin{pmatrix}-1\\\\0\\end{pmatrix}\\) [A1]", "Vertical stretch [A1]", "with scale factor 2 (either order: a horizontal translation and a vertical stretch do not affect each other) [A1]"] },
   ],
   "math-7": [
     { paper: "P1", marks: 1, diff: 1, q: "Convert \\(\\frac{2\\pi}{3}\\) radians to degrees.", options: ["60°", "120°", "135°", "150°"], answer: 1, ms: ["B - \\(\\frac{2\\pi}{3} \\times \\frac{180°}{\\pi} = 120°\\)."] },
@@ -103,7 +123,7 @@ IB.addQuestions("math", {
 /* Syllabus gap fill (review 2026): 1.1 standard form, 3.3 bearings/elevation, 4.2 data presentation. */
 IB.addQuestions("math", {
   "math-1": [
-    { type: "short", paper: "P1", marks: 3, diff: 1, q: "Let \\(a = 6 \\times 10^5\\) and \\(b = 4 \\times 10^{-2}\\). Find \\(ab\\) and \\(\\frac{a}{b}\\), giving your answers in the form \\(k \\times 10^n\\), where \\(1 \\le k < 10\\) and \\(n \\in \\mathbb{Z}\\).", ms: ["\\(ab = 24 \\times 10^3\\) [M1]", "\\(= 2.4 \\times 10^4\\) [A1]", "\\(\\frac{a}{b} = 1.5 \\times 10^7\\) [A1]"] },
+    { id: "math-1-q14", type: "short", paper: "P1", marks: 3, diff: 1, q: "Let \\(a = 6 \\times 10^5\\) and \\(b = 4 \\times 10^{-2}\\). Find \\(ab\\) and \\(\\frac{a}{b}\\), giving your answers in the form \\(k \\times 10^n\\), where \\(1 \\le k < 10\\) and \\(n \\in \\mathbb{Z}\\).", ms: ["\\(ab = 24 \\times 10^3\\) [M1]", "\\(= 2.4 \\times 10^4\\) [A1]", "\\(\\frac{a}{b} = 1.5 \\times 10^7\\) [A1]"] },
   ],
   "math-7": [
     { type: "short", paper: "P2", marks: 5, diff: 2, numeric: { value: 13.6, tol: 0.05 }, q: "A ship leaves port P and sails 8 km on a bearing of 040° to point A, then 11 km on a bearing of 130° to point B. (a) Show that angle PAB = 90°. (b) Find the distance PB.", ms: ["(a) Back bearing of P from A is 220°; 220° − 130° = 90° [M1][A1] AG", "(b) \\(PB^2 = 8^2 + 11^2\\) [M1]", "\\(PB = \\sqrt{185}\\) [A1]", "= 13.6 km [A1]"] },
