@@ -71,6 +71,9 @@
     subject.levels = subject.levels || (/\bHL$/.test(subject.name) ? ["HL"] : /\bSL$/.test(subject.name) && !subject.hlAvailable ? ["SL"] : ["SL", "HL"]);
     subject.baseName = subject.baseName || subject.name.replace(/\s+(SL|HL)$/, "");
     subject.baseShort = subject.baseShort || (subject.short || subject.baseName).replace(/\s+(SL|HL)$/, "");
+    // sortTopics: list chapters in syllabus order of their codes (e.g. "B1.2" < "C4.1", "1.5" < "1.8" < "2.9")
+    const codeKey = (c) => (String(c).match(/^([A-Z]?)(\d+)\.(\d+)$/) || []).slice(1).map((x, i) => (i ? Number(x) : x));
+    if (subject.sortTopics) subject.topics = subject.topics.slice().sort((a, b) => { const [x, y] = [codeKey(a.code), codeKey(b.code)]; return x[0].localeCompare(y[0]) || x[1] - y[1] || x[2] - y[2]; });
     subject.allTopics = subject.topics;
     subject.allPapers = subject.papers || {};
     subject.allTopics.forEach((t) => prepTopic(subject, t));

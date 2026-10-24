@@ -1,6 +1,7 @@
 /* IB Mathematics: Analysis and Approaches SL - original IB-style notes and questions (2021+ guide). */
 IB.register({
   id: "math",
+  sortTopics: true,
   name: "Mathematics AA SL",
   short: "Math AA SL",
   color: "var(--math)",

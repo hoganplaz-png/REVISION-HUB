@@ -1,6 +1,7 @@
 /* IB Biology SL - original IB-style notes and questions (syllabus: first assessment 2025). */
 IB.register({
   id: "bio",
+  sortTopics: true,
   name: "Biology SL",
   short: "Bio SL",
   color: "var(--bio)",
