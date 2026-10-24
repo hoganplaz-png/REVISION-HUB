@@ -1,8 +1,8 @@
 /* ⏱ 10-minute fast notes · Biology SL (2025 guide; format: see js/fastnotes.js). */
 IB.addFast({
   "bio-1": {
-    title: "Water 嘅特性 · DNA & RNA 結構 · Chargaff 計數",
-    intro: "水嘅特性全部由 hydrogen bond 嚟；核酸全部由 nucleotide 同 base pairing 嚟。呢張 sheet 包晒 A1.1 + A1.2 所有定義、表格、計數同答題句式。",
+    title: "Water 嘅特性 · 氫鍵 · 水 vs 空氣",
+    intro: "水嘅特性全部由 hydrogen bond 嚟。呢張 sheet 包晒 A1.1 所有定義、property 表、水嘅起源、水 vs 空氣同答題句式。",
     parts: [
       {
         h: "Water 水：一條鏈式答法",
@@ -49,6 +49,59 @@ IB.addFast({
           ]],
         ],
       },
+      {
+        h: "Water：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["State / Identify", "1 個詞或短句，唔解釋", "“Hydrogen bonds” 或 “Thymine”；寫多無分"],
+            ["Outline", "主要點，唔使深入", "Property → H-bond 原因 → 用處（每步 1 分）"],
+            ["Explain", "因果鏈，要 “because / so”", "Polar → H-bond → cohesion → 連續水柱上 xylem"],
+          ]],
+          ["note","P2 常見題型：①水特性 2–3 分（property → H-bond → 例子）②水 vs 空氣 habitat 3 分 ③Goldilocks zone 2 分。<b>時間</b>：約 1 分 ≈ 1 分鐘。"],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["常見錯誤", "正確做法"], [
+            ["寫 water “has hydrogen bonds inside the molecule”", "H-bond 係分子<b>之間</b>；分子內係 covalent O–H"],
+            ["寫 solvent 但冇講 polar / ionic", "加 “polar molecules and ions dissolve (hydrophilic)”"],
+            ["Specific heat 同 latent heat 混淆", "Specific heat = 升溫要大量熱；latent heat of vaporisation = 蒸發帶走大量熱"],
+            ["只寫 “cohesion” 而冇講 xylem 例子", "加 “continuous water column pulled up xylem”"],
+            ["Distinguish 題淨係描述一邊", "兩邊都寫，用 whereas / but"],
+            ["Goldilocks zone 寫成 “有水嘅行星”", "要寫 distance from star → temperature allows liquid water"],
+          ]],
+          ["check", [
+            "我可以默寫 cohesion、adhesion、solvent、specific heat、latent heat 嘅原因同生物用處。",
+            "我可以講出 ice 浮喺水面嘅原因同好處。",
+            "我可以比較水同空氣嘅 buoyancy / viscosity / thermal conductivity，並舉 ringed seal 同 loon。",
+            "我可以講 water 起源（asteroids, comets）、點解留得低、同 Goldilocks zone 定義。",
+          ]],
+          ["note","<b>常考</b>：P2 “Outline/Explain” 水特性（property → H-bond → 用處，2–3 分）；水 vs 空氣 habitat 3 分；P1 MCQ 考 cohesion、latent heat、specific heat。"],
+        ],
+      },
+    ],
+    summary: [
+      "極性生氫鍵，氫鍵生特性",
+      "Cohesion 拉水柱，adhesion 爬管壁",
+      "Specific heat 穩溫度，latent heat 散熱快",
+      "冰浮面，層絕緣，水底活得住",
+      "撞嚟有引力，留住要適中（Goldilocks）",
+    ],
+    practice: [
+      { q: "P1 MCQ · A1.1 Which property of water is a direct result of hydrogen bonding between water molecules?", o: ["A. Cohesion", "B. Being a non-polar solvent", "C. Low specific heat capacity", "D. Low density of liquid water"], m: 1, a: "<b>A</b>. Cohesion is attraction between water molecules caused by H-bonds. Water is polar (so B wrong), has a high specific heat (C wrong)." },
+      { q: "P1 MCQ · A1.1 Which feature of water explains why sweating cools the body?", o: ["A. High specific heat capacity", "B. High latent heat of vaporisation", "C. Adhesion", "D. Good solvent"], m: 1, a: "<b>B</b>. Evaporation absorbs a lot of heat energy because H-bonds must be broken." },
+      { q: "P2 · 3 marks · Outline how hydrogen bonding gives water its cohesive property and how this is used by plants. [3]", m: 3, a: "Water is polar (δ− oxygen, δ+ hydrogen) [1]; hydrogen bonds form between water molecules = cohesion [1]; allows a continuous column of water to be pulled up the xylem by transpiration (cohesion–tension) [1]" },
+      { q: "P2 · 2 marks · Explain why water is a good transport medium in blood plasma. [2]", m: 2, a: "Water is polar so it forms hydrogen bonds with / attracts ions and polar molecules, i.e. hydrophilic substances dissolve [1]; glucose, amino acids, ions and urea dissolve in plasma and are carried around the body [1]" },
+      { q: "P2 · 3 marks · Compare the properties of water and air as habitats for animals, using named examples. [3]", m: 3, a: "Water has greater buoyancy than air so aquatic animals need less structural support / float [1]; water is more viscous so more drag on movement [1]; water has higher thermal conductivity so aquatic animals lose heat faster (e.g. ringed seal needs blubber) [1]" },
+    ],
+  },
+  "bio-1b": {
+    title: "Nucleotide · DNA & RNA 結構 · Chargaff 計數",
+    intro: "核酸全部由 nucleotide 同 complementary base pairing 嚟。呢張 sheet 包晒 A1.2 所有定義、DNA/RNA 比較表、Chargaff 同 H-bond 計數同答題句式。",
+    parts: [
       {
         h: "Nucleotide 同 DNA 結構",
         min: 3,
@@ -115,17 +168,15 @@ IB.addFast({
         ],
       },
       {
-        h: "Water / DNA：命令詞 + 題型",
+        h: "DNA / RNA：命令詞 + 題型",
         min: 2,
         blocks: [
           ["table", ["Command term","要求","滿分寫法"], [
             ["State / Identify", "1 個詞或短句，唔解釋", "“Hydrogen bonds” 或 “Thymine”；寫多無分"],
-            ["Outline", "主要點，唔使深入", "Property → H-bond 原因 → 用處（每步 1 分）"],
-            ["Explain", "因果鏈，要 “because / so”", "Polar → H-bond → cohesion → 連續水柱上 xylem"],
             ["Compare / Distinguish", "兩邊都寫，每點用 whereas", "DNA vs RNA：deoxyribose / ribose；T / U；double / single strand"],
             ["Calculate", "列式 + 答案 + 單位", "Chargaff：100 − (C+G) ÷ 2；H-bond = 2×(A–T) + 3×(C–G)"],
           ]],
-          ["note", "P2 常見 4 型：①水特性 2–3 分（property→H-bond→例子）②DNA/RNA 比較 2 分 ③Chargaff / H-bond 計數 2–3 分 ④水 vs 空氣 habitat 3 分。<b>時間</b>：約 1 分 ≈ 1 分鐘；計數題寫晒 working 先有 M1。"],
+          ["note","P2 常見題型：①DNA/RNA 比較 2–3 分（成對寫 whereas）②Chargaff / H-bond 計數 2–3 分 ③畫 nucleotide 2 分。<b>時間</b>：約 1 分 ≈ 1 分鐘；計數題寫晒 working 先有 M1。"],
         ],
       },
       {
@@ -133,10 +184,6 @@ IB.addFast({
         min: 2,
         blocks: [
           ["table", ["常見錯誤", "正確做法"], [
-            ["寫 water “has hydrogen bonds inside the molecule”", "H-bond 係分子<b>之間</b>；分子內係 covalent O–H"],
-            ["寫 solvent 但冇講 polar / ionic", "加 “polar molecules and ions dissolve (hydrophilic)”"],
-            ["Specific heat 同 latent heat 混淆", "Specific heat = 升溫要大量熱；latent heat of vaporisation = 蒸發帶走大量熱"],
-            ["只寫 “cohesion” 而冇講 xylem 例子", "加 “continuous water column pulled up xylem”"],
             ["Distinguish 題淨係描述一邊", "兩邊都寫，用 whereas / but"],
             ["Nucleotide 圖冇 label phosphate 位置", "Phosphate 接 C5′；base 接 C1′"],
             ["RNA 寫成有 thymine", "RNA 用 uracil"],
@@ -144,46 +191,31 @@ IB.addFast({
             ["Chargaff 計完忘記 ÷ 2", "C + G = 64% → C = 32%"],
             ["將 base pairs 當 nucleotides", "× 2"],
             ["用 Chargaff 做 RNA", "RNA single-stranded，唔適用"],
-            ["Goldilocks zone 寫成 “有水嘅行星”", "要寫 distance from star → temperature allows liquid water"],
           ]],
-          ["note", "<b>常考</b>：P2 “Outline/Explain” 水特性（property → H-bond → 用處，2–3 分）；Chargaff 計數 2 分；Distinguish DNA/RNA 2–3 分；draw nucleotide 2 分；P1 MCQ 考 cohesion / uracil / 百分比。"],
           ["check", [
-            "我可以默寫 cohesion、adhesion、solvent、specific heat、latent heat 嘅原因同生物用處。",
-            "我可以講出 ice 浮喺水面嘅原因同好處。",
-            "我可以比較水同空氣嘅 buoyancy / viscosity / thermal conductivity，並舉 ringed seal 同 loon。",
-            "我可以講 water 起源（asteroids, comets）、點解留得低、同 Goldilocks zone 定義。",
             "我可以畫同 label 一個 nucleotide。",
             "我可以用表比較 DNA 同 RNA 至少四點。",
             "我可以講 antiparallel、complementary base pairing 同兩種 bond 嘅位置。",
             "我可以做 Chargaff、H-bond 同 nucleotide 數量計算。",
           ]],
+          ["note","<b>常考</b>：Chargaff 計數 2 分；Distinguish DNA/RNA 2–3 分；draw nucleotide 2 分；P1 MCQ 考 uracil、百分比、backbone 嘅 covalent bonds。"],
         ],
       },
     ],
     summary: [
-      "極性生氫鍵，氫鍵生特性",
-      "Cohesion 拉水柱，adhesion 爬管壁",
-      "Specific heat 穩溫度，latent heat 散熱快",
-      "冰浮面，層絕緣，水底活得住",
-      "撞嚟有引力，留住要適中（Goldilocks）",
       "Nucleotide 三件頭：sugar + phosphate + base",
       "A 配 T，C 配 G；RNA 冇 T 用 U 嚟頂",
       "兩條 strand 反方向 = antiparallel；strand 間氫鍵、骨架共價",
       "A 等 T，C 等 G，扣咗一對再分半",
     ],
     practice: [
-      { q: "P1 MCQ · A1.1 Which property of water is a direct result of hydrogen bonding between water molecules?", o: ["A. Cohesion", "B. Being a non-polar solvent", "C. Low specific heat capacity", "D. Low density of liquid water"], m: 1, a: "<b>A</b>. Cohesion is attraction between water molecules caused by H-bonds. Water is polar (so B wrong), has a high specific heat (C wrong)." },
       { q: "P1 MCQ · A1.2 Which base is found in RNA but not in DNA?", o: ["A. Adenine", "B. Thymine", "C. Uracil", "D. Guanine"], m: 1, a: "<b>C</b>. Uracil replaces thymine in RNA." },
       { q: "P1 MCQ · A1.2 A double-stranded DNA sample contains 22% adenine. What is the percentage of cytosine?", o: ["A. 22%", "B. 28%", "C. 44%", "D. 56%"], m: 1, a: "<b>B</b>. A = T = 22% → 44%; C + G = 56%; C = 28%." },
       { q: "P1 MCQ · A1.2 Which bonds hold the two strands of a DNA double helix together?", o: ["A. Covalent bonds between sugar and phosphate", "B. Hydrogen bonds between bases", "C. Ionic bonds between phosphates", "D. Peptide bonds between bases"], m: 1, a: "<b>B</b>. Hydrogen bonds between complementary bases; the covalent bonds are in the backbone within one strand." },
-      { q: "P1 MCQ · A1.1 Which feature of water explains why sweating cools the body?", o: ["A. High specific heat capacity", "B. High latent heat of vaporisation", "C. Adhesion", "D. Good solvent"], m: 1, a: "<b>B</b>. Evaporation absorbs a lot of heat energy because H-bonds must be broken." },
-      { q: "P2 · 3 marks · Outline how hydrogen bonding gives water its cohesive property and how this is used by plants. [3]", m: 3, a: "Water is polar (δ− oxygen, δ+ hydrogen) [1]; hydrogen bonds form between water molecules = cohesion [1]; allows a continuous column of water to be pulled up the xylem by transpiration (cohesion–tension) [1]" },
       { q: "P2 · 2 marks · State two differences between DNA and RNA. [2]", m: 2, a: "Any two: deoxyribose vs ribose [1]; thymine vs uracil [1]; double-stranded vs single-stranded [1]. (Must be comparative.)" },
       { q: "P2 · 2 marks · A DNA sample contains 31% guanine. Calculate the percentage of adenine. [2]", m: 2, a: "C = 31% → C + G = 62% [M1]; A = (100 − 62) ÷ 2 = <b>19%</b> [A1]" },
-      { q: "P2 · 2 marks · Explain why water is a good transport medium in blood plasma. [2]", m: 2, a: "Water is polar so it forms hydrogen bonds with / attracts ions and polar molecules, i.e. hydrophilic substances dissolve [1]; glucose, amino acids, ions and urea dissolve in plasma and are carried around the body [1]" },
       { q: "P2 · 2 marks · Describe how the two strands of a DNA molecule are held together. [2]", m: 2, a: "Hydrogen bonds [1] between complementary bases: A with T (two bonds) and C with G (three bonds), strands running antiparallel [1]" },
       { q: "P2 · 3 marks · A DNA fragment of 25 base pairs has 10 A–T base pairs. Calculate the number of hydrogen bonds in the fragment. [3]", m: 3, a: "A–T: 10 × 2 = 20 [1]; C–G pairs = 25 − 10 = 15, 15 × 3 = 45 [1]; total = 20 + 45 = <b>65</b> [1]" },
-      { q: "P2 · 3 marks · Compare the properties of water and air as habitats for animals, using named examples. [3]", m: 3, a: "Water has greater buoyancy than air so aquatic animals need less structural support / float [1]; water is more viscous so more drag on movement [1]; water has higher thermal conductivity so aquatic animals lose heat faster (e.g. ringed seal needs blubber) [1]" },
     ],
   },
 
@@ -423,8 +455,8 @@ IB.addFast({
   },
 
   "bio-3": {
-    title: "Species · Classification tools · Evidence for evolution · Speciation",
-    intro: "A3.1 + A4.1：species 定義同限制、認物種工具（key、karyotype、DNA barcoding）、五類 evolution 證據、speciation 鏈。每個 part 有 exam 句式。",
+    title: "Species · Binomial · Keys · Karyograms",
+    intro: "A3.1：species 定義同限制、binomial 寫法、認物種工具（dichotomous key、karyotype、genome、DNA barcoding）。每個 part 有 exam 句式。",
     parts: [
       {
         h: "Species 物種 · binomial · 分類",
@@ -472,6 +504,57 @@ IB.addFast({
           ["trap", ["Karyotype 嘅 chromosomes 係按 <b>size 同 centromere 位置</b> 排，唔係按 gene。", "eDNA 唔需要捉到動物。"]],
         ],
       },
+      {
+        h: "Diversity of organisms：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Define", "一句準確定義", "Species = 能 interbreed 產生 fertile offspring 嘅群體"],
+            ["State", "名稱 / 單一事實", "Binomial：Genus 大寫 + species 細寫；斜體或加底線"],
+            ["Discuss", "兩面 / 局限", "Biological species concept 局限：asexual、化石、hybrids、ring species"],
+          ]],
+          ["note","<b>題型</b>：①binomial 寫法 1 分 ②species concept 嘅限制 2 分 ③用 / 整 dichotomous key 2–3 分 ④karyogram 判斷性別同 trisomy 2 分 ⑤DNA barcoding 用處。"],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 3,
+        blocks: [
+          ["table", ["常見錯誤", "正確做法"], [
+            ["Species 定義漏 “fertile”", "interbreed to produce fertile offspring"],
+            ["Binomial 冇斜體", "斜體或底線，屬大楷種細楷"],
+            ["Karyotype 話係睇 gene", "chromosome number、size、centromere、性別、trisomy"],
+            ["Genome 大 = 複雜", "兩者無關"],
+          ]],
+          ["check", [
+            "我可以背 species 定義同兩個限制。",
+            "我可以正確寫 binomial，包括人類同大細楷。",
+            "我可以用 dichotomous key 認 species，同自己整一個。",
+            "我可以講 karyotype、DNA barcoding、eDNA 各自用途。",
+          ]],
+          ["note","<b>常考</b>：use a dichotomous key（1–2 分）；Outline difficulties of the biological species concept（2–3 分）；interpret a karyogram（2 分）；write a binomial correctly（1 分）。"],
+        ],
+      },
+    ],
+    summary: [
+      "Species = interbreed + fertile offspring",
+      "大楷屬名細楷種，斜體或者加底線",
+      "Key 睇得到，karyotype 數染色體",
+      "人 46、猩猩 48 — chromosome 2 融合",
+    ],
+    practice: [
+      { q: "P1 MCQ · A3.1 Which is a limitation of the biological species concept?", o: ["A. It cannot be applied to asexually reproducing organisms", "B. It uses DNA only", "C. It depends on colour", "D. It ignores fertile offspring"], m: 1, a: "<b>A</b>. Asexual organisms and fossils cannot be tested for interbreeding." },
+      { q: "P1 MCQ · A3.1 Which is the correct way to write the scientific name of humans?", o: ["A. homo sapiens", "B. Homo Sapiens", "C. Homo sapiens (italics or underlined)", "D. HOMO SAPIENS"], m: 1, a: "<b>C</b>. Genus capital, species lower case, italics or underlined." },
+      { q: "P1 MCQ · A3.1 A human karyotype shows 47 chromosomes with three copies of chromosome 21. This is:", o: ["A. Turner syndrome", "B. Down syndrome", "C. Klinefelter syndrome", "D. a normal male"], m: 1, a: "<b>B</b>. Trisomy 21 is Down syndrome." },
+      { q: "P2 · 1 marks · Outline one limitation of the biological species concept. [1]", m: 1, a: "Cannot be applied to asexually reproducing organisms / fossils / some species form fertile hybrids [1]" },
+      { q: "P2 · 2 marks · Outline two uses of a karyotype. [2]", m: 2, a: "Determine chromosome number [1]; identify sex (XX / XY) [1]; detect abnormalities such as trisomy 21 / non-disjunction [1] (any two)" },
+      { q: "P2 · 3 marks · Outline how DNA barcoding and eDNA are used to monitor biodiversity. [3]", m: 3, a: "DNA barcoding compares a short standard gene sequence (e.g. COI) with a reference database to identify a species [1]; eDNA is DNA extracted from soil / water samples [1]; allows species present to be identified without seeing or capturing them [1]" },
+    ],
+  },
+  "bio-3b": {
+    title: "Evidence for evolution · Speciation",
+    intro: "A4.1：五類 evolution 證據（molecular、homologous、selective breeding …）同 speciation 鏈：隔離 → 斷流 → 各自選擇 → 唔再配。每個 part 有 exam 句式同長題框架。",
+    parts: [
       {
         h: "Evidence for evolution 進化證據",
         min: 3,
@@ -528,17 +611,14 @@ IB.addFast({
         ],
       },
       {
-        h: "Classification / Evolution：命令詞 + 題型",
+        h: "Evolution：命令詞 + 題型",
         min: 2,
         blocks: [
           ["table", ["Command term","要求","滿分寫法"], [
-            ["Define", "一句準確定義", "Species = 能 interbreed 產生 fertile offspring 嘅群體"],
-            ["State", "名稱 / 單一事實", "Binomial：Genus 大寫 + species 細寫；斜體或加底線"],
             ["Outline", "3–4 個要點", "Allopatric speciation：隔離 → 獨立選擇 → 基因庫分歧 → 不能交配"],
             ["Explain", "因果", "Homologous structures → 共同祖先 + adaptive radiation"],
-            ["Discuss", "兩面 / 局限", "Biological species concept 局限：asexual、化石、hybrids、ring species"],
           ]],
-          ["note", "<b>題型</b>：①binomial 寫法 1 分 ②speciation 步驟 3–4 分 ③進化證據（fossil / homologous / DNA）3 分 ④DNA barcoding 用處。<b>Trap</b>：寫 “evolve because they need to” = 目的論，唔得分；要用 variation + selection。"],
+          ["note","<b>題型</b>：①speciation 步驟 3–4 分 ②進化證據（molecular / homologous / selective breeding）3 分 ③homologous vs analogous 2 分。<b>Trap</b>：唔好寫 “evolve because they need to”。"],
         ],
       },
       {
@@ -556,58 +636,40 @@ IB.addFast({
             "Differences accumulate at a roughly constant rate (molecular clock) so divergence times can be estimated [1]",
           ]],
           ["table", ["常見錯誤", "正確做法"], [
-            ["Species 定義漏 “fertile”", "interbreed to produce fertile offspring"],
-            ["Binomial 冇斜體", "斜體或底線，屬大楷種細楷"],
-            ["Karyotype 話係睇 gene", "chromosome number、size、centromere、性別、trisomy"],
             ["Analogous 同 homologous 倒轉", "homologous 同源；analogous 同功"],
             ["Speciation 只寫 geographical barrier", "加 no gene flow + different selection + divergence"],
             ["Individual 進化", "populations evolve，個體唔會"],
             ["Selective breeding 當 natural selection", "係 artificial；證明 selection 有效"],
-            ["Genome 大 = 複雜", "兩者無關"],
           ]],
-          ["note", "<b>常考</b>：use a dichotomous key（1–2 分）；Distinguish homologous / analogous（2 分）；Outline allopatric speciation（3–4 分）；Explain evidence for evolution（長題 6–7 分）；binomial 書寫（1 分）。"],
           ["check", [
-            "我可以背 species 定義同兩個限制。",
-            "我可以正確寫 binomial，包括人類同大細楷。",
-            "我可以用 dichotomous key 認 species，同自己整一個。",
-            "我可以講 karyotype、DNA barcoding、eDNA 各自用途。",
             "我可以列五類 evolution 證據，每類有 named example。",
             "我可以分 homologous / analogous 同講 convergent evolution。",
             "我可以講 allopatric vs sympatric 同 speciation 四步。",
             "我可以完成 7 分長題：homologous + molecular。",
           ]],
+          ["note","<b>常考</b>：Distinguish homologous / analogous（2 分）；Outline allopatric speciation（3–4 分）；Explain evidence for evolution（7 分長題：homologous + molecular）。"],
         ],
       },
     ],
     summary: [
-      "Species = interbreed + fertile offspring",
-      "大楷屬名細楷種，斜體或者加底線",
-      "Key 睇得到，karyotype 數染色體",
-      "人 46、猩猩 48 — chromosome 2 融合",
       "Sequence 越似，祖先越近",
       "同源同骨唔同用，同功同用唔同宗",
       "選擇育種幾代大變 → 自然選擇夠時間都得",
       "分開、斷流、各自選、唔再配",
     ],
     practice: [
-      { q: "P1 MCQ · A3.1 Which is a limitation of the biological species concept?", o: ["A. It cannot be applied to asexually reproducing organisms", "B. It uses DNA only", "C. It depends on colour", "D. It ignores fertile offspring"], m: 1, a: "<b>A</b>. Asexual organisms and fossils cannot be tested for interbreeding." },
-      { q: "P1 MCQ · A3.1 Which is the correct way to write the scientific name of humans?", o: ["A. homo sapiens", "B. Homo Sapiens", "C. Homo sapiens (italics or underlined)", "D. HOMO SAPIENS"], m: 1, a: "<b>C</b>. Genus capital, species lower case, italics or underlined." },
       { q: "P1 MCQ · A4.1 The bat wing and the insect wing are examples of:", o: ["A. homologous structures", "B. analogous structures", "C. vestigial structures", "D. divergent evolution"], m: 1, a: "<b>B</b>. Same function but different origin: convergent evolution." },
       { q: "P1 MCQ · A4.1 Which is essential for allopatric speciation?", o: ["A. Geographical separation preventing gene flow", "B. A change in chromosome number", "C. Identical selection pressures", "D. Hybridisation"], m: 1, a: "<b>A</b>. A geographical barrier stops gene flow." },
-      { q: "P1 MCQ · A3.1 A human karyotype shows 47 chromosomes with three copies of chromosome 21. This is:", o: ["A. Turner syndrome", "B. Down syndrome", "C. Klinefelter syndrome", "D. a normal male"], m: 1, a: "<b>B</b>. Trisomy 21 is Down syndrome." },
-      { q: "P2 · 1 marks · Outline one limitation of the biological species concept. [1]", m: 1, a: "Cannot be applied to asexually reproducing organisms / fossils / some species form fertile hybrids [1]" },
       { q: "P2 · 2 marks · Distinguish between homologous and analogous structures. [2]", m: 2, a: "Homologous: same basic structure from a common ancestor, may have different functions [1]; analogous: similar function but different structure / origin, from convergent evolution [1]" },
       { q: "P2 · 2 marks · Explain how selective breeding provides evidence for evolution. [2]", m: 2, a: "Humans selected individuals with desired traits to breed over many generations, producing large changes from the wild ancestor [1]; shows that selection can change species, so natural selection over longer time could produce new species [1]" },
       { q: "P2 · 4 marks · Explain how a population separated by a mountain range could become two species. [4]", m: 4, a: "Geographical barrier prevents interbreeding / no gene flow [1]; different environments → different selection pressures [1]; mutations / allele frequencies change independently, populations diverge [1]; eventually reproductively isolated — cannot produce fertile offspring together (allopatric speciation) [1]" },
-      { q: "P2 · 2 marks · Outline two uses of a karyotype. [2]", m: 2, a: "Determine chromosome number [1]; identify sex (XX / XY) [1]; detect abnormalities such as trisomy 21 / non-disjunction [1] (any two)" },
-      { q: "P2 · 3 marks · Outline how DNA barcoding and eDNA are used to monitor biodiversity. [3]", m: 3, a: "DNA barcoding compares a short standard gene sequence (e.g. COI) with a reference database to identify a species [1]; eDNA is DNA extracted from soil / water samples [1]; allows species present to be identified without seeing or capturing them [1]" },
       { q: "P2 · 3 marks · Outline how the Congo River led to the evolution of bonobos and chimpanzees. [3]", m: 3, a: "River separated the ancestral population, preventing gene flow [1]; different environmental conditions on each side → different selection pressures [1]; populations diverged until they became distinct species (geographical isolation) [1]" },
     ],
   },
 
   "bio-4": {
-    title: "Biodiversity crisis · Population sampling · Chi-squared · Interactions",
-    intro: "A4.2 + C4.1：biodiversity 威脅同保育、population 估算（quadrat、Lincoln）、sigmoid curve、chi-squared test for association、community interactions。",
+    title: "Biodiversity crisis · Causes · Conservation",
+    intro: "A4.2：biodiversity 三個 level、crisis 嘅證據同原因（每個配例子）、in situ 同 ex situ 保育。最後有 7 分長題框架。",
     parts: [
       {
         h: "Biodiversity crisis 同保育",
@@ -631,6 +693,57 @@ IB.addFast({
           ["trap", ["Threat 寫咗但冇例子 / 冇講點樣減少 species，只得一半分。", "In situ 唔等於「唔使人手」：reserve 要管理。"]],
         ],
       },
+      {
+        h: "Biodiversity：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Evaluate", "利弊 + 結論", "Ex situ vs in situ conservation 各舉優缺點再下判斷"],
+            ["Outline","要點 + named example","Causes of biodiversity loss：每個威脅配一個例子（e.g. dodo：overhunting + invasive species）"],
+            ["Distinguish","兩邊對比","In situ（nature reserve、rewilding）vs ex situ（zoo、seed bank）"],
+          ]],
+          ["note","<b>題型</b>：①biodiversity 三個 level 1–2 分 ②crisis 原因 + named example 3–4 分 ③in situ vs ex situ 比較 / 評價 3 分 ④Simpson's reciprocal index 計數同解讀。"],
+        ],
+      },
+      {
+        h: "長題框架 + 失分位",
+        min: 3,
+        blocks: [
+          ["eg", "<b>P2 · 7 marks</b>　Outline the causes of the current loss of biodiversity and explain approaches to conservation. [7]", [
+            "Ecosystem / habitat destruction, e.g. rainforest cleared for oil palm [1]",
+            "Overexploitation (overfishing, hunting) [1]",
+            "Pollution, plastics, pesticides [1]",
+            "Invasive species outcompete natives (cane toad) [1]",
+            "Climate change shifts ranges [1]",
+            "In situ: reserves / rewilding protect habitat and whole ecosystems [1]",
+            "Ex situ: zoos, seed banks, captive breeding maintain genetic diversity and allow reintroduction [1]",
+          ]],
+          ["table", ["常見錯誤", "正確做法"], [
+            ["Threat 冇例子", "每個加 named example"],
+            ["Ex situ 講成取代 in situ", "互補；ex situ 只係後備"],
+          ]],
+          ["check", [
+            "我可以講 biodiversity 三個 level 同五大威脅各一例。",
+            "我可以比較 in situ 同 ex situ。",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "三層多樣性：ecosystem、species、genes",
+      "屋、搶、污、侵、熱",
+      "In situ 保生境，ex situ 保基因",
+    ],
+    practice: [
+      { q: "P1 MCQ · A4.2 Which is an example of ex situ conservation?", o: ["A. Nature reserve", "B. Rewilding", "C. Seed bank", "D. Removing invasive species"], m: 1, a: "<b>C</b>. Seed banks store species outside their natural habitat." },
+      { q: "P2 · 3 marks · Compare in situ and ex situ conservation. [3]", m: 3, a: "Both aim to prevent extinction / keep genetic diversity [1]; in situ protects species in natural habitat with whole ecosystem [1]; ex situ outside habitat (zoo, seed bank), smaller gene pool, can be used for reintroduction [1]" },
+      { q: "P2 · 2 marks · Outline two ways invasive species reduce biodiversity. [2]", m: 2, a: "Outcompete native species for resources [1]; no natural predators so population grows quickly / prey on or spread disease to natives [1]" },
+    ],
+  },
+  "bio-4b": {
+    title: "Population sampling · Sigmoid growth · Chi-squared · Interactions",
+    intro: "C4.1：population 估算（quadrat、Lincoln index）、sigmoid curve、chi-squared test for association 同 community interactions。每個 part 有 exam 句式。",
+    parts: [
       {
         h: "Population size 估算",
         min: 3,
@@ -717,45 +830,31 @@ IB.addFast({
         ],
       },
       {
-        h: "Biodiversity / Population：命令詞 + 題型",
+        h: "Populations：命令詞 + 題型",
         min: 2,
         blocks: [
           ["table", ["Command term","要求","滿分寫法"], [
             ["Calculate", "列式 + 單位", "Lincoln index N = (M × n) ÷ m"],
             ["Outline", "列步驟", "Capture–mark–release–recapture：假設 mark 唔影響生存、充分混合"],
-            ["Evaluate", "利弊 + 結論", "Ex situ vs in situ conservation 各舉優缺點再下判斷"],
             ["Explain", "因果", "Sigmoid curve：carrying capacity ← 限制因素 density-dependent"],
             ["State (hypotheses)", "H₀ 無關聯 / H₁ 有關聯", "Chi-squared：df = (行−1)(列−1)；χ² > critical → reject H₀"],
           ]],
-          ["note", "<b>題型</b>：①Lincoln 計數 2 分 ②chi-squared 結論句 2 分（要用 critical value 同 p = 0.05）③sampling 方法（quadrat / transect）④保育策略評價。<b>Data booklet</b>：chi-squared 表同 Lincoln 公式。<b>Trap</b>：df 算錯；漏寫 “reject / fail to reject H₀” 後面嘅 biological 結論。"],
+          ["note","<b>題型</b>：①Lincoln 計數 2 分 ②chi-squared 結論句 2 分（要用 critical value 同 p = 0.05）③sampling 方法（quadrat / transect）④sigmoid curve 解釋。<b>Data booklet</b>：chi-squared critical values 會俾。"],
         ],
       },
       {
-        h: "長題框架 + 失分位",
+        h: "失分位 + 自我檢查",
         min: 3,
         blocks: [
-          ["eg", "<b>P2 · 7 marks</b>　Outline the causes of the current loss of biodiversity and explain approaches to conservation. [7]", [
-            "Ecosystem / habitat destruction, e.g. rainforest cleared for oil palm [1]",
-            "Overexploitation (overfishing, hunting) [1]",
-            "Pollution, plastics, pesticides [1]",
-            "Invasive species outcompete natives (cane toad) [1]",
-            "Climate change shifts ranges [1]",
-            "In situ: reserves / rewilding protect habitat and whole ecosystems [1]",
-            "Ex situ: zoos, seed banks, captive breeding maintain genetic diversity and allow reintroduction [1]",
-          ]],
           ["table", ["常見錯誤", "正確做法"], [
-            ["Threat 冇例子", "每個加 named example"],
             ["Lincoln 公式亂代", "M × n ÷ m"],
             ["Estimate 寫成 exact", "寫 “estimate”"],
             ["Chi-squared 冇寫 df", "(r−1)(c−1) = 1"],
             ["H₀ 寫成 “no difference”", "no association between the species"],
             ["Sigmoid curve 冇 label axes", "x = time，y = population size，標 carrying capacity"],
             ["Carrying capacity 當固定數字", "environment 可持續最大 population，隨環境變"],
-            ["Ex situ 講成取代 in situ", "互補；ex situ 只係後備"],
           ]],
           ["check", [
-            "我可以講 biodiversity 三個 level 同五大威脅各一例。",
-            "我可以比較 in situ 同 ex situ。",
             "我可以做 Lincoln index 同 quadrat 估算，並講 assumptions。",
             "我可以描述 sigmoid curve 三階段同原因。",
             "我可以做 2×2 chi-squared（E、χ²、df、結論）。",
@@ -765,9 +864,6 @@ IB.addFast({
       },
     ],
     summary: [
-      "三層多樣性：ecosystem、species、genes",
-      "屋、搶、污、侵、熱",
-      "In situ 保生境，ex situ 保基因",
       "頭次乘二次，除返重遇嘅",
       "起初爆升，中間減速，頂部平台 = carrying capacity",
       "Expected = 行總 × 列總 ÷ 大總",
@@ -777,22 +873,19 @@ IB.addFast({
     practice: [
       { q: "P1 MCQ · C4.1 60 beetles were marked. In a second sample of 50, 12 were marked. What is the estimated population?", o: ["A. 150", "B. 250", "C. 360", "D. 600"], m: 1, a: "<b>B</b>. 60 × 50 ÷ 12 = 250." },
       { q: "P1 MCQ · C4.1 Which is a density-dependent factor limiting population growth?", o: ["A. Drought", "B. Disease", "C. Fire", "D. Flood"], m: 1, a: "<b>B</b>. Disease spreads more easily at high density; the others are density-independent." },
-      { q: "P1 MCQ · A4.2 Which is an example of ex situ conservation?", o: ["A. Nature reserve", "B. Rewilding", "C. Seed bank", "D. Removing invasive species"], m: 1, a: "<b>C</b>. Seed banks store species outside their natural habitat." },
       { q: "P1 MCQ · C4.1 A chi-squared test of association has 2 × 2 data. How many degrees of freedom?", o: ["A. 1", "B. 2", "C. 3", "D. 4"], m: 1, a: "<b>A</b>. (2−1)(2−1) = 1." },
       { q: "P2 · 3 marks · In a study, 60 beetles were marked. In a second sample of 45, 9 were marked. Estimate the population size and state one assumption. [3]", m: 3, a: "60 × 45 ÷ 9 [M1] = <b>300</b> [A1]; assumption e.g. no migration / births / deaths between samples / marks not lost [1]" },
       { q: "P2 · 1 marks · State the null hypothesis for a chi-squared test of association between two plant species. [1]", m: 1, a: "There is no association between the distributions of the two species (they are distributed independently) [1]" },
       { q: "P2 · 2 marks · A chi-squared value of 2.1 was obtained with 1 degree of freedom (critical value 3.84). State the conclusion. [2]", m: 2, a: "2.1 < 3.84 so accept / fail to reject H₀ [1]; no significant association between the species at p = 0.05 [1]" },
-      { q: "P2 · 3 marks · Compare in situ and ex situ conservation. [3]", m: 3, a: "Both aim to prevent extinction / keep genetic diversity [1]; in situ protects species in natural habitat with whole ecosystem [1]; ex situ outside habitat (zoo, seed bank), smaller gene pool, can be used for reintroduction [1]" },
       { q: "P2 · 2 marks · Explain why a population stops growing when it reaches carrying capacity. [2]", m: 2, a: "Density-dependent factors (competition for resources, predation, disease) increase as population rises [1]; birth rate = death rate, negative feedback keeps size stable [1]" },
       { q: "P2 · 2 marks · In 100 quadrats two species occur together in 30, A only in 30, B only in 10, neither in 30. Calculate the expected value for quadrats with both species. [2]", m: 2, a: "A present = 60; B present = 40 [1]; E = 60 × 40 ÷ 100 = <b>24</b> [1]" },
-      { q: "P2 · 2 marks · Outline two ways invasive species reduce biodiversity. [2]", m: 2, a: "Outcompete native species for resources [1]; no natural predators so population grows quickly / prey on or spread disease to natives [1]" },
       { q: "P2 · 3 marks · Distinguish between mutualism and parasitism, giving an example of each. [3]", m: 3, a: "Mutualism: both species benefit, e.g. coral and zooxanthellae / Rhizobium in root nodules [1]; parasitism: parasite benefits, host harmed, e.g. tapeworm / Plasmodium [1]; comparison of benefit vs harm explicit [1]" },
     ],
   },
 
   "bio-5": {
-    title: "Condensation · Carbohydrates · Lipids · Proteins",
-    intro: "B1.1–1.2：成個 topic 只係一個反應（condensation / hydrolysis）加三類分子。每個 part 有時間建議，最後有口訣同 IB-style 練習。",
+    title: "Condensation · Carbohydrates · Lipids",
+    intro: "B1.1：成個 topic 只係一個反應（condensation / hydrolysis）加兩類分子（carbohydrates、lipids）。每個 part 有時間建議，最後有口訣同 IB-style 練習。",
     parts: [
       {
         h: "Condensation 同 hydrolysis 總綱",
@@ -863,6 +956,77 @@ IB.addFast({
         ],
       },
       {
+        h: "Command-term 答題模式",
+        min: 2.5,
+        blocks: [
+          ["table", ["If the question says…", "It is…", "Write this"], [
+            ["Distinguish between X and Y", "Differences, both sides", "X: … whereas Y: … (use a comparative word each point)"],
+            ["Outline the structure of a phospholipid", "Short description", "Glycerol, 2 fatty acid tails (hydrophobic), phosphate head (hydrophilic)"],
+            ["Explain why cellulose is strong", "Structure → function", "β-glucose; alternate glucose inverted; straight chains; H-bonds between chains; microfibrils; high tensile strength"],
+            ["Explain why fats are used for long-term storage", "Property → advantage", "More energy per gram; lighter; insoluble so no osmotic effect; insulation"],
+            ["Calculate number of water released", "n − 1 pattern", "polypeptide/polysaccharide n − 1; triglyceride 3"],
+            ["Evaluate a health claim on fat", "Data evaluation", "State trend; correlation not causation; sample size; confounders; type of fat; source/bias"],
+          ]],
+          ["eg", "P2 · 3 marks · Explain how the structure of glycogen makes it suitable as a store of glucose in animals. [3]", [
+            "Polymer of α-glucose, compact/coiled → a lot of glucose stored in a small space [1]",
+            "Insoluble → does not change osmotic balance / cannot leave the cell [1]",
+            "Highly branched (1,6 bonds) → many ends so enzymes can hydrolyse quickly to release glucose [1] ✅",
+          ]],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["#", "Trap", "Fix"], [
+            ["1", "“Starch is made of glucose”", "Starch/glycogen = α-glucose; cellulose = β-glucose"],
+            ["2", "Mixing up glycogen (animal) and starch (plant)", "Glycogen = animals and fungi; starch = plants"],
+            ["3", "Saying condensation “uses” water", "Condensation RELEASES water; hydrolysis USES water"],
+            ["4", "Triglyceride has 2 fatty acids", "3 fatty acids, 3 ester bonds, 3 water released"],
+            ["5", "Phospholipid heads are hydrophobic", "Head = hydrophilic (phosphate); tails = hydrophobic"],
+            ["6", "Saying fats give more energy “in total” or “faster”", "More energy per gram; carbs are used faster"],
+            ["7", "Cellulose has branches / is digested by humans", "Unbranched β-glucose chains; humans lack the enzyme"],
+            ["8", "Correlation of trans fat and heart disease shown as proof", "Correlation ≠ causation; mention other factors"],
+            ["9", "cis double bonds are straight", "cis = kink (liquid); trans = straight"],
+          ]],
+          ["check", [
+            "Define condensation, hydrolysis, monomer, polymer, peptide bond, denaturation",
+            "Name the bond in carbohydrates (glycosidic), lipids (ester), proteins (peptide)",
+            "Give monomers and structures of amylose, amylopectin, glycogen, cellulose with function link",
+            "Name the 3 disaccharides and which two sugars each contains",
+            "Compare saturated, unsaturated, cis, trans; link to melting and health",
+            "Explain why lipids are better than carbohydrates for long-term storage (and vice versa)",
+            "Draw/describe amino acid and phospholipid; use n − 1 for water released",
+          ]],
+          ["note","<b>常考 (perennial favourites)</b>: P1 MCQ on which bond / monomer / polysaccharide; P2 3-mark explain on starch vs cellulose, why fats store energy, why phospholipids form bilayers; draw α- and β-glucose."],
+        ],
+      },
+    ],
+    summary: [
+      "砌嘢甩水，拆嘢加水",
+      "α 儲能（starch、glycogen），β 起牆（cellulose）",
+      "麥乳蔗：maltose、lactose、sucrose 都有 glucose",
+      "Glycogen 最多分支，最快放糖；唔溶唔影響滲透",
+      "Triglyceride 三條尾（ester），phospholipid 兩條尾一個頭",
+      "脂肪一克頂兩克糖，又輕又保暖",
+    ],
+    practice: [
+      { q: "P1 MCQ · B1.1 Which polysaccharide has branches and is found in animal liver and muscle?", o: ["A. Cellulose", "B. Amylose", "C. Glycogen", "D. Chitin"], m: 1, a: "<b>C</b>. Glycogen is highly branched α-glucose; cellulose and amylose are unbranched." },
+      { q: "P1 MCQ · B1.1 Which monosaccharides combine to form sucrose?", o: ["A. Glucose + glucose", "B. Glucose + galactose", "C. Glucose + fructose", "D. Galactose + fructose"], m: 1, a: "<b>C</b>. Sucrose = glucose + fructose (maltose = glu + glu; lactose = glu + galactose)." },
+      { q: "P1 MCQ · B1.1 Which feature of an unsaturated fatty acid causes it to be liquid at room temperature?", o: ["A. A phosphate group", "B. Cis double bonds that cause kinks", "C. More ester bonds", "D. A longer carbon chain"], m: 1, a: "<b>B</b>. Cis C=C kinks prevent close packing so melting point is lower." },
+      { q: "P2 · 1 mark · B1.1 State what is released during a condensation reaction.", m: 1, a: "A molecule of water [1]." },
+      { q: "P2 · 2 marks · Distinguish between the structure of amylose and cellulose.", m: 2, a: "Amylose: α-glucose, 1,4 bonds, coils into a helix [1]; cellulose: β-glucose with alternate glucose inverted, straight chains held together by H-bonds into microfibrils [1]." },
+      { q: "P2 · 3 marks · Explain why phospholipids form a bilayer in water.", m: 3, a: "Phosphate head is hydrophilic and fatty acid tails are hydrophobic [1]; heads face the water on both sides [1]; tails face inward away from water [1]." },
+      { q: "P2 · 3 marks · Outline why triglycerides are used for long-term energy storage in animals.", m: 3, a: "About twice the energy per gram as carbohydrate [1]; lighter store / less mass to carry [1]; insoluble so no osmotic effect; adipose also insulates [1]." },
+      { q: "P2 · 3 marks · Compare saturated and unsaturated fatty acids. [3]", m: 3, a: "Saturated: no C=C; unsaturated: one or more C=C [1]; saturated straight, pack closely → solid at room temp; unsaturated kinked (cis) → liquid [1]; saturated mostly animal sources, unsaturated plant/fish oils; trans fats are straight [1]." },
+      { q: "P2 · 3 marks · A study found that people eating more trans fat had more heart disease. Evaluate whether this proves trans fats cause heart disease.", m: 3, a: "Shows correlation/association only [1]; other variables (smoking, exercise, total diet) may be responsible [1]; need larger sample / controlled trial / known mechanism (e.g. higher LDL) to support causation [1]." },
+    ],
+  },
+  "bio-5b": {
+    title: "Amino acids · Peptide bonds · Protein structure",
+    intro: "B1.2：amino acid 經 condensation 砌成 polypeptide；sequence 定形狀，形狀定功能；denaturation 改變形狀。每個 part 有時間建議同 IB-style 練習。",
+    parts: [
+      {
         h: "Proteins 蛋白質",
         min: 4,
         blocks: [
@@ -899,17 +1063,8 @@ IB.addFast({
         blocks: [
           ["table", ["If the question says…", "It is…", "Write this"], [
             ["Distinguish between X and Y", "Differences, both sides", "X: … whereas Y: … (use a comparative word each point)"],
-            ["Outline the structure of a phospholipid", "Short description", "Glycerol, 2 fatty acid tails (hydrophobic), phosphate head (hydrophilic)"],
-            ["Explain why cellulose is strong", "Structure → function", "β-glucose; alternate glucose inverted; straight chains; H-bonds between chains; microfibrils; high tensile strength"],
-            ["Explain why fats are used for long-term storage", "Property → advantage", "More energy per gram; lighter; insoluble so no osmotic effect; insulation"],
             ["Explain the effect of pH/temperature on a protein", "Mechanism chain", "Bonds break → shape changes → active site/binding site altered → function lost"],
             ["Calculate number of water released", "n − 1 pattern", "polypeptide/polysaccharide n − 1; triglyceride 3"],
-            ["Evaluate a health claim on fat", "Data evaluation", "State trend; correlation not causation; sample size; confounders; type of fat; source/bias"],
-          ]],
-          ["eg", "P2 · 3 marks · Explain how the structure of glycogen makes it suitable as a store of glucose in animals. [3]", [
-            "Polymer of α-glucose, compact/coiled → a lot of glucose stored in a small space [1]",
-            "Insoluble → does not change osmotic balance / cannot leave the cell [1]",
-            "Highly branched (1,6 bonds) → many ends so enzymes can hydrolyse quickly to release glucose [1] ✅",
           ]],
           ["eg", "P2 · 3 marks · Explain, using the term hydrogen bond, why the activity of an enzyme decreases at a pH far from its optimum. [3]", [
             "Change in pH alters the charge on R groups / H⁺ concentration [1]",
@@ -922,64 +1077,37 @@ IB.addFast({
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
-          ["note", "<b>常考 (perennial favourites)</b>: P1 MCQ on which bond/monomer/polysaccharide; P2 3-mark explain on phospholipid bilayer, glycogen/cellulose structure-function, or denaturation; 1-mark state n − 1 water; data-response on fat intake vs heart disease (always say correlation is not causation + a confounder)."],
           ["table", ["#", "Trap", "Fix"], [
-            ["1", "“Starch is made of glucose”", "Starch/glycogen = α-glucose; cellulose = β-glucose"],
-            ["2", "Mixing up glycogen (animal) and starch (plant)", "Glycogen = animals and fungi; starch = plants"],
-            ["3", "Saying condensation “uses” water", "Condensation RELEASES water; hydrolysis USES water"],
-            ["4", "n amino acids → n water", "n − 1 peptide bonds and n − 1 water"],
-            ["5", "Triglyceride has 2 fatty acids", "3 fatty acids, 3 ester bonds, 3 water released"],
-            ["6", "Phospholipid heads are hydrophobic", "Head = hydrophilic (phosphate); tails = hydrophobic"],
-            ["7", "Saying fats give more energy “in total” or “faster”", "More energy per gram; carbs are used faster"],
-            ["8", "Denaturation breaks peptide bonds", "Breaks H/ionic/disulfide bonds; primary structure unchanged"],
-            ["9", "Enzymes are “killed” by heat", "Denatured (shape of active site changes)"],
-            ["10", "Cellulose has branches / is digested by humans", "Unbranched β-glucose chains; humans lack the enzyme"],
-            ["11", "Correlation of trans fat and heart disease shown as proof", "Correlation ≠ causation; mention other factors"],
-            ["12", "cis double bonds are straight", "cis = kink (liquid); trans = straight"],
+            ["1", "n amino acids → n water", "n − 1 peptide bonds and n − 1 water"],
+            ["2", "Denaturation breaks peptide bonds", "Breaks H/ionic/disulfide bonds; primary structure unchanged"],
+            ["3", "Enzymes are “killed” by heat", "Denatured (shape of active site changes)"],
           ]],
           ["check", [
             "Define condensation, hydrolysis, monomer, polymer, peptide bond, denaturation",
             "Name the bond in carbohydrates (glycosidic), lipids (ester), proteins (peptide)",
-            "Give monomers and structures of amylose, amylopectin, glycogen, cellulose with function link",
-            "Name the 3 disaccharides and which two sugars each contains",
-            "Compare saturated, unsaturated, cis, trans; link to melting and health",
-            "Explain why lipids are better than carbohydrates for long-term storage (and vice versa)",
             "Draw/describe amino acid and phospholipid; use n − 1 for water released",
             "Describe four protein levels and link sequence → shape → function; give 4 protein examples",
           ]],
+          ["note","<b>常考 (perennial favourites)</b>: P1 MCQ on water released (n − 1) and bonds broken by denaturation; P2 3-mark explain on pH / temperature and protein shape; draw an amino acid and a dipeptide."],
         ],
       },
     ],
     summary: [
-      "砌嘢甩水，拆嘢加水",
-      "α 儲能（starch、glycogen），β 起牆（cellulose）",
-      "麥乳蔗：maltose、lactose、sucrose 都有 glucose",
-      "Glycogen 最多分支，最快放糖；唔溶唔影響滲透",
-      "Triglyceride 三條尾（ester），phospholipid 兩條尾一個頭",
-      "脂肪一克頂兩克糖，又輕又保暖",
       "n 粒氨基酸，n − 1 粒水",
       "序列定形狀，形狀定功能；Denature = 形變 → 功能冇",
+      "Primary 序列 → secondary H-bond → tertiary R-group → quaternary 多條鏈",
     ],
     practice: [
-      { q: "P1 MCQ · B1.1 Which polysaccharide has branches and is found in animal liver and muscle?", o: ["A. Cellulose", "B. Amylose", "C. Glycogen", "D. Chitin"], m: 1, a: "<b>C</b>. Glycogen is highly branched α-glucose; cellulose and amylose are unbranched." },
-      { q: "P1 MCQ · B1.1 Which monosaccharides combine to form sucrose?", o: ["A. Glucose + glucose", "B. Glucose + galactose", "C. Glucose + fructose", "D. Galactose + fructose"], m: 1, a: "<b>C</b>. Sucrose = glucose + fructose (maltose = glu + glu; lactose = glu + galactose)." },
-      { q: "P1 MCQ · B1.1 Which feature of an unsaturated fatty acid causes it to be liquid at room temperature?", o: ["A. A phosphate group", "B. Cis double bonds that cause kinks", "C. More ester bonds", "D. A longer carbon chain"], m: 1, a: "<b>B</b>. Cis C=C kinks prevent close packing so melting point is lower." },
       { q: "P1 MCQ · B1.2 A polypeptide has 120 amino acids. How many water molecules were released when it was formed?", o: ["A. 118", "B. 119", "C. 120", "D. 121"], m: 1, a: "<b>B</b>. n − 1 = 119." },
       { q: "P1 MCQ · B1.2 Which bonds are broken when a protein is denatured by heat?", o: ["A. Peptide bonds", "B. Hydrogen bonds and other interactions maintaining 3D shape", "C. Covalent bonds in the R groups only", "D. Glycosidic bonds"], m: 1, a: "<b>B</b>. Primary structure (peptide bonds) is retained." },
-      { q: "P2 · 1 mark · B1.1 State what is released during a condensation reaction.", m: 1, a: "A molecule of water [1]." },
-      { q: "P2 · 2 marks · Distinguish between the structure of amylose and cellulose.", m: 2, a: "Amylose: α-glucose, 1,4 bonds, coils into a helix [1]; cellulose: β-glucose with alternate glucose inverted, straight chains held together by H-bonds into microfibrils [1]." },
-      { q: "P2 · 3 marks · Explain why phospholipids form a bilayer in water.", m: 3, a: "Phosphate head is hydrophilic and fatty acid tails are hydrophobic [1]; heads face the water on both sides [1]; tails face inward away from water [1]." },
-      { q: "P2 · 3 marks · Outline why triglycerides are used for long-term energy storage in animals.", m: 3, a: "About twice the energy per gram as carbohydrate [1]; lighter store / less mass to carry [1]; insoluble so no osmotic effect; adipose also insulates [1]." },
-      { q: "P2 · 3 marks · Compare saturated and unsaturated fatty acids. [3]", m: 3, a: "Saturated: no C=C; unsaturated: one or more C=C [1]; saturated straight, pack closely → solid at room temp; unsaturated kinked (cis) → liquid [1]; saturated mostly animal sources, unsaturated plant/fish oils; trans fats are straight [1]." },
       { q: "P2 · 3 marks · State the roles of rubisco, insulin and collagen.", m: 3, a: "Rubisco: enzyme catalysing CO₂ fixation [1]; insulin: hormone that reduces blood glucose [1]; collagen: structural, gives tensile strength to skin/tendons [1]." },
       { q: "P2 · 3 marks · Explain how a change in pH can affect the function of a protein.", m: 3, a: "Changes charges on R groups [1]; ionic and hydrogen bonds maintaining the 3D shape break (denaturation) [1]; shape of the active/binding site changes so substrate/ligand cannot bind and function is lost [1]." },
-      { q: "P2 · 3 marks · A study found that people eating more trans fat had more heart disease. Evaluate whether this proves trans fats cause heart disease.", m: 3, a: "Shows correlation/association only [1]; other variables (smoking, exercise, total diet) may be responsible [1]; need larger sample / controlled trial / known mechanism (e.g. higher LDL) to support causation [1]." },
     ],
   },
 
   "bio-6": {
-    title: "Membranes · Transport · Organelles · Specialisation · SA:V",
-    intro: "B2.1–2.3：膜點樣郁嘢入出（transport 比較表係重點）、organelle 分工、stem cells 同 SA:V 計算。每個 part 有時間建議。",
+    title: "Membranes · Transport · Osmosis",
+    intro: "B2.1：fluid mosaic model、膜點樣郁嘢入出（transport 比較表係重點）同 osmosis / tonicity。每個 part 有時間建議。",
     parts: [
       {
         h: "Membrane structure 膜結構",
@@ -1062,6 +1190,62 @@ IB.addFast({
         ],
       },
       {
+        h: "Membranes：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Draw / Label", "清晰線條 + 標籤線指到位", "Phospholipid bilayer：head 向外、tails 向內、protein、cholesterol"],
+            ["Distinguish", "兩邊", "Simple vs facilitated diffusion；facilitated 需要 channel protein"],
+            ["Explain", "結構 → 功能", "Fluid mosaic：phospholipid 流動 → 膜可彎曲、vesicle 融合"],
+            ["Predict", "按 tonicity 推方向", "Hypotonic → water in → animal cell lyse；plant cell turgid"],
+          ]],
+          ["note","<b>題型</b>：①膜運輸比較表 3 分 ②畫 fluid mosaic model 3–4 分 ③osmosis 預測同 % mass change 計數。<b>Trap</b>：osmosis 係水由低溶質濃度去高溶質濃度；唔好寫 solute 移動。"],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["#", "Trap", "Fix"], [
+            ["1", "Osmosis described as solute movement", "Water moves across partially permeable membrane low → high solute concentration"],
+            ["2", "Channel proteins use ATP", "Only pumps (active transport) and vesicle formation use ATP"],
+            ["3", "Facilitated diffusion is active", "Passive; down gradient"],
+            ["4", "Plant cell bursts in hypotonic", "Cell wall prevents bursting; becomes turgid"],
+            ["5", "Hypotonic/hypertonic reversed", "Compare outside solution with the cell"],
+            ["6", "Cholesterol makes membrane “more fluid” only", "Modulates: prevents too rigid in cold, too fluid when hot"],
+            ["7", "Describing membrane as “sandwich”", "Fluid mosaic; proteins embedded (freeze-fracture evidence)"],
+          ]],
+          ["check", [
+            "Draw and label the fluid mosaic model and state function of each component",
+            "Compare simple diffusion, facilitated diffusion, osmosis, active transport in a table",
+            "Describe Na⁺/K⁺ pump (3 out, 2 in), endocytosis and exocytosis",
+            "Predict cell response in hypotonic / isotonic / hypertonic (animal vs plant)",
+          ]],
+          ["note","<b>常考 (perennial favourites)</b>: P2 distinguish facilitated diffusion vs active transport (2–3 marks); draw the fluid mosaic model; osmosis results tables (% change in mass)."],
+        ],
+      },
+    ],
+    summary: [
+      "雙層脂質海上浮蛋白（fluid mosaic）",
+      "順流唔使錢，逆流要 ATP；細同油溶直接過",
+      "水跟鹽走：由淡到濃（osmosis）",
+      "Pump 要 ATP，channel 唔使；Na⁺/K⁺ 泵 3 出 2 入",
+      "囊泡運大嘢：endocytosis 入，exocytosis 出",
+    ],
+    practice: [
+      { q: "P1 MCQ · B2.1 Which transport process requires ATP?", o: ["A. Osmosis", "B. Facilitated diffusion", "C. Active transport", "D. Simple diffusion"], m: 1, a: "<b>C</b>. Pump proteins use ATP to move particles against the gradient." },
+      { q: "P1 MCQ · B2.1 What is the role of cholesterol in an animal cell membrane?", o: ["A. Transport glucose", "B. Regulate membrane fluidity", "C. Produce ATP", "D. Act as a channel"], m: 1, a: "<b>B</b>. Cholesterol limits phospholipid movement and stabilises the membrane." },
+      { q: "P1 MCQ · B2.1 A red blood cell is placed in a hypotonic solution. What happens?", o: ["A. It shrinks", "B. It swells and may burst", "C. No change", "D. It becomes turgid and plasmolysed"], m: 1, a: "<b>B</b>. Water enters by osmosis; no cell wall to prevent lysis." },
+      { q: "P2 · 2 marks · Distinguish between facilitated diffusion and active transport.", m: 2, a: "Facilitated diffusion: passive, down the concentration gradient, no ATP, channel/carrier protein [1]; active transport: against the gradient, uses ATP, pump protein [1]." },
+      { q: "P2 · 3 marks · Explain how the structure of the plasma membrane allows movement of polar molecules and ions.", m: 3, a: "Hydrophobic core of the bilayer blocks polar molecules and ions [1]; channel proteins with hydrophilic pores allow facilitated diffusion [1]; carrier/pump proteins change shape (and use ATP) for active transport [1]." },
+      { q: "P2 · 3 marks · Potato tissue of 3.00 g is placed in a solution and its mass becomes 2.55 g. Calculate the percentage change and state whether the solution is hypotonic or hypertonic to the tissue.", m: 3, a: "(2.55 − 3.00) ÷ 3.00 × 100 [1] = −15.0% [1]; lost water so solution is hypertonic [1]." },
+    ],
+  },
+  "bio-6b": {
+    title: "Organelles · Compartmentalisation",
+    intro: "B2.2：organelle 分工、雙層膜 organelles、protein 分泌路線同 compartmentalisation 嘅好處。每個 part 有時間建議。",
+    parts: [
+      {
         h: "Organelles 細胞器 + compartmentalisation",
         min: 3,
         blocks: [
@@ -1081,6 +1265,49 @@ IB.addFast({
           ["trap", ["Mitochondria 唔「製造」能量，係 release / produce ATP。", "RER 面有 ribosomes 先係 rough；smooth ER 冇。", "Nuclear envelope 係 <b>double</b> membrane。", "Lysosome 唔係 only animals — 但 exam 通常用 animal cell 作例。"]],
         ],
       },
+      {
+        h: "Organelles：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["State","名稱 + 功能","Golgi apparatus：modifies and packages proteins into vesicles"],
+            ["Explain","結構 → 功能","Nuclear envelope 分開 transcription 同 translation → mRNA 先修改再去 ribosome"],
+            ["Outline","每點一分","Compartmentalisation：enzymes 集中、lysosome enzymes 隔開、唔同 pH 環境"],
+          ]],
+          ["note","<b>題型</b>：①separation of nucleus and cytoplasm 嘅好處 3 分 ②畫 mitochondrion / chloroplast 3 分 ③protein 分泌路線 3–4 分 ④compartmentalisation 好處。"],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["#", "Trap", "Fix"], [
+            ["1", "Forgetting double membrane of nucleus/mitochondrion/chloroplast", "Say double membrane"],
+            ["2", "Saying mitochondria “make energy”", "Release energy / produce ATP"],
+          ]],
+          ["check", [
+            "State structure and function of nucleus, mitochondrion, chloroplast, RER, Golgi, lysosome",
+            "List 5 advantages of compartmentalisation",
+          ]],
+          ["note","<b>常考 (perennial favourites)</b>: advantages of separating nucleus and cytoplasm (3 marks); route of a secreted protein; draw and label a mitochondrion or chloroplast."],
+        ],
+      },
+    ],
+    summary: [
+      "分間分房，各自得益（compartmentalisation）",
+      "雙層膜三兄弟：nucleus、mitochondrion、chloroplast",
+      "RER 造、Golgi 包、vesicle 送出門",
+    ],
+    practice: [
+      { q: "P1 MCQ · B2.2 Which organelle modifies and packages proteins into vesicles?", o: ["A. Rough ER", "B. Lysosome", "C. Golgi apparatus", "D. Mitochondrion"], m: 1, a: "<b>C</b>. Golgi apparatus." },
+      { q: "P2 · 3 marks · Outline the advantages of compartmentalisation in eukaryotic cells.", m: 3, a: "Enzymes and substrates concentrated [1]; different optimum conditions such as pH can be maintained (e.g. lysosomes) [1]; harmful enzymes/incompatible reactions kept separate [1]." },
+      { q: "P2 · 4 marks · Describe the path of a protein secreted from a cell, from synthesis to release.", m: 4, a: "Synthesised on ribosomes of RER [1]; transported in vesicle to Golgi [1]; modified and packaged in vesicle [1]; vesicle fuses with plasma membrane — exocytosis [1]." },
+    ],
+  },
+  "bio-6c": {
+    title: "Stem cells · Specialised cells · SA:V",
+    intro: "B2.3：stem cells 同 differentiation、specialised cells（pneumocytes、muscle、sperm、egg）、SA:V 計算。每個 part 有時間建議。",
+    parts: [
       {
         h: "Cell specialisation + stem cells",
         min: 3,
@@ -1131,81 +1358,50 @@ IB.addFast({
         ],
       },
       {
-        h: "Membranes / Cells：命令詞 + 題型",
+        h: "Specialisation：命令詞 + 題型",
         min: 2,
         blocks: [
           ["table", ["Command term","要求","滿分寫法"], [
-            ["Draw / Label", "清晰線條 + 標籤線指到位", "Phospholipid bilayer：head 向外、tails 向內、protein、cholesterol"],
-            ["Distinguish", "兩邊", "Simple vs facilitated diffusion；facilitated 需要 channel protein"],
-            ["Explain", "結構 → 功能", "Fluid mosaic：phospholipid 流動 → 膜可彎曲、vesicle 融合"],
             ["Calculate", "SA = 6l²；V = l³", "SA:V 比：寫成 x : 1；cell 越大比值越細"],
-            ["Predict", "按 tonicity 推方向", "Hypotonic → water in → animal cell lyse；plant cell turgid"],
+            ["Distinguish","兩邊","Totipotent（zygote）vs pluripotent（embryonic）vs multipotent（bone marrow）"],
+            ["Explain","結構 → 功能","Type I pneumocyte 好薄 → 短 diffusion distance；sperm 有好多 mitochondria 供能俾 flagellum"],
           ]],
-          ["note", "<b>題型</b>：①SA:V 計數 2 分 ②膜運輸比較表 3 分 ③osmosis 預測 ④stem cell 應用同倫理。<b>Trap</b>：osmosis 係水由低溶質濃度去高溶質濃度；唔好寫 “water moves to where there is less water”。"],
+          ["note","<b>題型</b>：①SA:V 計數 2 分（x : 1 + working）②stem cell 種類同例子 3 分 ③specialised cell 適應（pneumocytes、sperm、egg）3–4 分 ④stem cell 應用同倫理。"],
         ],
       },
       {
         h: "失分位 + 自我檢查",
         min: 2,
         blocks: [
-          ["note", "<b>常考 (perennial favourites)</b>: P2 SA:V calculation (2 marks, x : 1 + working); distinguish transport types (2–3 marks); % change in mass with hypotonic/hypertonic conclusion (3 marks); magnification/scale-bar calculation (2 marks); outline compartmentalisation advantages (3 marks); P1 MCQ on ATP use and tonicity."],
           ["table", ["#", "Trap", "Fix"], [
-            ["1", "Osmosis described as solute movement", "Water moves across partially permeable membrane low → high solute concentration"],
-            ["2", "Channel proteins use ATP", "Only pumps (active transport) and vesicle formation use ATP"],
-            ["3", "Facilitated diffusion is active", "Passive; down gradient"],
-            ["4", "Plant cell bursts in hypotonic", "Cell wall prevents bursting; becomes turgid"],
-            ["5", "Hypotonic/hypertonic reversed", "Compare outside solution with the cell"],
-            ["6", "Cholesterol makes membrane “more fluid” only", "Modulates: prevents too rigid in cold, too fluid when hot"],
-            ["7", "Describing membrane as “sandwich”", "Fluid mosaic; proteins embedded (freeze-fracture evidence)"],
-            ["8", "Forgetting double membrane of nucleus/mitochondrion/chloroplast", "Say double membrane"],
-            ["9", "Saying mitochondria “make energy”", "Release energy / produce ATP"],
-            ["10", "SA:V decreasing because SA decreases", "Volume increases faster than surface area"],
-            ["11", "No units or x : 1 form in SA:V", "cm², cm³; give x : 1"],
-            ["12", "One-sided ethics answer on stem cells", "Give benefits and objections, then a judgement"],
+            ["1", "SA:V decreasing because SA decreases", "Volume increases faster than surface area"],
+            ["2", "No units or x : 1 form in SA:V", "cm², cm³; give x : 1"],
+            ["3", "One-sided ethics answer on stem cells", "Give benefits and objections, then a judgement"],
           ]],
           ["check", [
-            "Draw and label the fluid mosaic model and state function of each component",
-            "Compare simple diffusion, facilitated diffusion, osmosis, active transport in a table",
-            "Describe Na⁺/K⁺ pump (3 out, 2 in), endocytosis and exocytosis",
-            "Predict cell response in hypotonic / isotonic / hypertonic (animal vs plant)",
-            "State structure and function of nucleus, mitochondrion, chloroplast, RER, Golgi, lysosome",
-            "List 5 advantages of compartmentalisation",
             "Define differentiation, stem cell; compare totipotent, pluripotent, multipotent",
             "Calculate SA:V for cubes, % change in mass, and actual size from magnification",
           ]],
+          ["note","<b>常考 (perennial favourites)</b>: P2 SA:V calculation (2 marks, x : 1 + working); types of stem cell with examples; adaptations of type I / II pneumocytes, sperm and egg."],
         ],
       },
     ],
     summary: [
-      "雙層脂質海上浮蛋白（fluid mosaic）",
-      "順流唔使錢，逆流要 ATP；細同油溶直接過",
-      "水跟鹽走：由淡到濃（osmosis）",
-      "Pump 要 ATP，channel 唔使；Na⁺/K⁺ 泵 3 出 2 入",
-      "囊泡運大嘢：endocytosis 入，exocytosis 出",
-      "分間分房，各自得益（compartmentalisation）",
       "Stem cell 分裂 + 分化；分化 = 開關基因",
       "細胞愈大，SA:V 愈慘：立方 6 ÷ L",
+      "全能 zygote，多能胚胎，專能骨髓",
     ],
     practice: [
-      { q: "P1 MCQ · B2.1 Which transport process requires ATP?", o: ["A. Osmosis", "B. Facilitated diffusion", "C. Active transport", "D. Simple diffusion"], m: 1, a: "<b>C</b>. Pump proteins use ATP to move particles against the gradient." },
-      { q: "P1 MCQ · B2.1 What is the role of cholesterol in an animal cell membrane?", o: ["A. Transport glucose", "B. Regulate membrane fluidity", "C. Produce ATP", "D. Act as a channel"], m: 1, a: "<b>B</b>. Cholesterol limits phospholipid movement and stabilises the membrane." },
-      { q: "P1 MCQ · B2.1 A red blood cell is placed in a hypotonic solution. What happens?", o: ["A. It shrinks", "B. It swells and may burst", "C. No change", "D. It becomes turgid and plasmolysed"], m: 1, a: "<b>B</b>. Water enters by osmosis; no cell wall to prevent lysis." },
-      { q: "P1 MCQ · B2.2 Which organelle modifies and packages proteins into vesicles?", o: ["A. Rough ER", "B. Lysosome", "C. Golgi apparatus", "D. Mitochondrion"], m: 1, a: "<b>C</b>. Golgi apparatus." },
       { q: "P1 MCQ · B2.3 Which statement about differentiation is correct?", o: ["A. Cells lose genes", "B. Different genes are expressed", "C. Only embryonic cells differentiate", "D. Mutations cause differentiation"], m: 1, a: "<b>B</b>. All cells share the same genome; expression differs." },
       { q: "P2 · 2 marks · Calculate the surface area to volume ratio of a cube-shaped cell with sides of 4 μm. Give the answer as x : 1.", m: 2, a: "SA = 6 × 16 = 96 μm²; V = 64 μm³ [1]; 96 ÷ 64 = 1.5 : 1 [1]." },
-      { q: "P2 · 2 marks · Distinguish between facilitated diffusion and active transport.", m: 2, a: "Facilitated diffusion: passive, down the concentration gradient, no ATP, channel/carrier protein [1]; active transport: against the gradient, uses ATP, pump protein [1]." },
-      { q: "P2 · 3 marks · Explain how the structure of the plasma membrane allows movement of polar molecules and ions.", m: 3, a: "Hydrophobic core of the bilayer blocks polar molecules and ions [1]; channel proteins with hydrophilic pores allow facilitated diffusion [1]; carrier/pump proteins change shape (and use ATP) for active transport [1]." },
-      { q: "P2 · 3 marks · Outline the advantages of compartmentalisation in eukaryotic cells.", m: 3, a: "Enzymes and substrates concentrated [1]; different optimum conditions such as pH can be maintained (e.g. lysosomes) [1]; harmful enzymes/incompatible reactions kept separate [1]." },
-      { q: "P2 · 4 marks · Describe the path of a protein secreted from a cell, from synthesis to release.", m: 4, a: "Synthesised on ribosomes of RER [1]; transported in vesicle to Golgi [1]; modified and packaged in vesicle [1]; vesicle fuses with plasma membrane — exocytosis [1]." },
-      { q: "P2 · 3 marks · Potato tissue of 3.00 g is placed in a solution and its mass becomes 2.55 g. Calculate the percentage change and state whether the solution is hypotonic or hypertonic to the tissue.", m: 3, a: "(2.55 − 3.00) ÷ 3.00 × 100 [1] = −15.0% [1]; lost water so solution is hypertonic [1]." },
       { q: "P2 · 2 marks · A micrograph of a cell has a scale bar 20 mm long labelled 10 μm. The cell is 60 mm wide on the image. Calculate its actual width.", m: 2, a: "Magnification = 20 mm ÷ 10 μm = 2 mm per μm (×2000) [1]; actual = 60 ÷ 2 = 30 μm [1]." },
       { q: "P2 · 2 marks · Outline two ethical issues of using embryonic stem cells in treatment.", m: 2, a: "Embryos are destroyed (moral status of the embryo / consent from donors) [1]; risk of tumours or unequal access/cost; benefit versus harm to patients [1]." },
     ],
   },
 
   "bio-7": {
-    title: "Gas exchange · Ventilation · Blood vessels · Heart · Plant transport",
-    intro: "B3.1–3.2：先記 gas exchange surface 四大條件，再逐個 organ 套用（alveoli、leaf），最後 transport（blood、xylem、phloem）。每個 part 有時間建議。",
+    title: "Gas exchange · Ventilation · Lung volumes · Leaves",
+    intro: "B3.1：先記 gas exchange surface 四大條件，再套用落 alveoli 同 leaf；ventilation、spirometer、stomatal density 同 transpiration。每個 part 有時間建議。",
     parts: [
       {
         h: "Gas exchange surfaces 氣體交換",
@@ -1296,6 +1492,63 @@ IB.addFast({
         ],
       },
       {
+        h: "Gas exchange：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Describe", "陳述特徵 / 過程", "Alveolus：單層薄壁、濕潤、毛細血管網"],
+            ["Explain", "因果", "Inhalation：diaphragm 收縮 → 胸腔體積↑ → 壓力↓ → 空氣入"],
+            ["Suggest", "用知識推理，唔係背書", "Transpiration 速率變化：光 / 風 / 濕度 / 溫度"],
+          ]],
+          ["note","<b>題型</b>：①alveolus 適應 3 分 ②ventilation 機制 4 分（muscles → volume → pressure → air）③spirometer / stomatal density 計數 2–3 分 ④transpiration 因素預測。"],
+        ],
+      },
+      {
+        h: "失分位 + 自我檢查",
+        min: 2,
+        blocks: [
+          ["table", ["#", "Trap", "Fix"], [
+            ["1", "“Alveoli are thin” without link", "Thin walls → short diffusion distance → faster diffusion"],
+            ["2", "Inhalation: pressure increases", "Volume increases → pressure falls"],
+            ["3", "Forgetting capillaries maintain gradient", "Blood flow removes O₂ and brings CO₂"],
+            ["4", "Surfactant only keeps alveoli moist", "Also reduces surface tension to prevent collapse"],
+            ["5", "Residual volume included in VC", "VC = TV + IRV + ERV"],
+            ["6", "Stomatal density with diameter not radius", "Area = πr²; r = d ÷ 2"],
+            ["7", "Humidity ↑ increases transpiration", "Humidity ↑ lowers gradient so rate falls"],
+          ]],
+          ["check", [
+            "List 4 features of efficient gas exchange surfaces",
+            "Describe alveolus structure: type I, type II, capillary; explain surfactant",
+            "Explain inhalation and exhalation including pressure and volume",
+            "Read spirometer trace: TV, IRV, ERV, VC; calculate ventilation rate",
+            "Label leaf tissues; calculate stomatal density; explain guard cell opening",
+            "Predict how light, humidity, wind, temperature affect transpiration",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "薄、濕、大、梯度陡（gas exchange surface）",
+      "Type I 薄、Type II 出 surfactant、capillary 帶走氣",
+      "吸氣：肌肉縮、體積大、壓力細、氣入",
+      "VC = TV + IRV + ERV；ventilation = TV × rate",
+      "氣孔密度 = 數量 ÷ πr²",
+    ],
+    practice: [
+      { q: "P1 MCQ · B3.1 Which feature of alveoli speeds up gas exchange?", o: ["A. Thick walls", "B. One-cell-thick walls", "C. Dry surface", "D. Small total area"], m: 1, a: "<b>B</b>. Thin walls give a short diffusion distance." },
+      { q: "P1 MCQ · B3.1 What happens during inhalation?", o: ["A. Diaphragm relaxes", "B. Thoracic volume decreases", "C. Pressure in thorax falls below atmospheric", "D. Ribs move down"], m: 1, a: "<b>C</b>. Diaphragm contracts, volume rises, pressure falls." },
+      { q: "P1 MCQ · B3.1 Which change increases the rate of transpiration?", o: ["A. Higher humidity", "B. Lower temperature", "C. Increased wind speed", "D. Closed stomata"], m: 1, a: "<b>C</b>. Wind removes humid air, steepening the gradient." },
+      { q: "P2 · 2 marks · Outline the function of type II pneumocytes.", m: 2, a: "Secrete surfactant [1]; reduces surface tension so alveoli do not collapse / keeps lining moist [1]." },
+      { q: "P2 · 4 marks · Explain the mechanism of inhalation.", m: 4, a: "External intercostal muscles contract, ribs move up and out [1]; diaphragm contracts and flattens [1]; thoracic volume increases so pressure decreases [1]; air flows in down the pressure gradient [1]." },
+      { q: "P2 · 3 marks · A spirometer shows TV 0.5 dm³, IRV 2.8 dm³, ERV 1.2 dm³. Calculate vital capacity and the ventilation rate at 12 breaths per minute.", m: 3, a: "VC = 0.5 + 2.8 + 1.2 = 4.5 dm³ [1]; ventilation rate = 0.5 × 12 [1] = 6.0 dm³ min⁻¹ [1]." },
+      { q: "P2 · 3 marks · Calculate the stomatal density if 18 stomata are visible in a circular field of view of radius 0.30 mm.", m: 3, a: "Area = π × 0.30² = 0.283 mm² [1]; 18 ÷ 0.283 [1] = 63.7 ≈ 64 mm⁻² [1]." },
+    ],
+  },
+  "bio-7b": {
+    title: "Blood vessels · Heart · Xylem transport",
+    intro: "B3.2：動脈、靜脈、微血管結構對應功能；pulse 同 coronary occlusion；水點樣由根經 xylem 去到葉（cohesion–tension）。每個 part 有時間建議。",
+    parts: [
+      {
         h: "Blood vessels 血管",
         min: 3,
         blocks: [
@@ -1370,17 +1623,14 @@ IB.addFast({
         ],
       },
       {
-        h: "Transport / Gas exchange：命令詞 + 題型",
+        h: "Transport：命令詞 + 題型",
         min: 2,
         blocks: [
           ["table", ["Command term","要求","滿分寫法"], [
-            ["Describe", "陳述特徵 / 過程", "Alveolus：單層薄壁、濕潤、毛細血管網"],
-            ["Explain", "因果", "Inhalation：diaphragm 收縮 → 胸腔體積↑ → 壓力↓ → 空氣入"],
             ["Compare", "比較", "Artery 厚肌肉壁高壓 vs vein 瓣膜低壓"],
             ["Annotate / Label", "圖上加簡短說明", "Heart：房室瓣、半月瓣、血流方向"],
-            ["Suggest", "用知識推理，唔係背書", "Transpiration 速率變化：光 / 風 / 濕度 / 溫度"],
           ]],
-          ["note", "<b>題型</b>：①alveolus 適應 3 分 ②血管比較表 3 分 ③transpiration + xylem 機制 3 分（cohesion–tension）④coronary occlusion 後果。<b>Trap</b>：寫 “air goes in because lungs expand” 倒轉因果；正確係肌肉收縮 → 體積增 → 壓力降。"],
+          ["note","<b>題型</b>：①血管比較表 3 分 ②coronary occlusion 原因同後果 3 分 ③水由根去葉（cohesion–tension）4–7 分 ④xylem 適應 / stem plan diagram。"],
         ],
       },
       {
@@ -1388,26 +1638,13 @@ IB.addFast({
         min: 2,
         blocks: [
           ["table", ["#", "Trap", "Fix"], [
-            ["1", "“Alveoli are thin” without link", "Thin walls → short diffusion distance → faster diffusion"],
-            ["2", "Inhalation: pressure increases", "Volume increases → pressure falls"],
-            ["3", "Forgetting capillaries maintain gradient", "Blood flow removes O₂ and brings CO₂"],
-            ["4", "Surfactant only keeps alveoli moist", "Also reduces surface tension to prevent collapse"],
-            ["5", "Residual volume included in VC", "VC = TV + IRV + ERV"],
-            ["6", "Stomatal density with diameter not radius", "Area = πr²; r = d ÷ 2"],
-            ["7", "Veins have thick walls", "Thin walls, wide lumen, valves"],
-            ["8", "Left/right of heart diagram reversed", "Patient's left is on the viewer's right"],
-            ["9", "Xylem cells alive", "Dead, lignified"],
-            ["10", "Cohesion = water attracted to wall", "Cohesion between water molecules; adhesion to walls"],
-            ["11", "Phloem carries glucose", "Sucrose (source to sink)"],
-            ["12", "Humidity ↑ increases transpiration", "Humidity ↑ lowers gradient so rate falls"],
+            ["1", "Veins have thick walls", "Thin walls, wide lumen, valves"],
+            ["2", "Left/right of heart diagram reversed", "Patient's left is on the viewer's right"],
+            ["3", "Xylem cells alive", "Dead, lignified"],
+            ["4", "Cohesion = water attracted to wall", "Cohesion between water molecules; adhesion to walls"],
+            ["5", "Phloem carries glucose", "Sucrose (source to sink)"],
           ]],
           ["check", [
-            "List 4 features of efficient gas exchange surfaces",
-            "Describe alveolus structure: type I, type II, capillary; explain surfactant",
-            "Explain inhalation and exhalation including pressure and volume",
-            "Read spirometer trace: TV, IRV, ERV, VC; calculate ventilation rate",
-            "Label leaf tissues; calculate stomatal density; explain guard cell opening",
-            "Predict how light, humidity, wind, temperature affect transpiration",
             "Compare artery, vein, capillary; trace blood through heart; explain coronary occlusion and risk factors",
             "Explain cohesion–tension; compare xylem and phloem; define translocation, source, sink"
           ]],
@@ -1415,25 +1652,13 @@ IB.addFast({
       },
     ],
     summary: [
-      "薄、濕、大、梯度陡（gas exchange surface）",
-      "Type I 薄、Type II 出 surfactant、capillary 帶走氣",
-      "吸氣：肌肉縮、體積大、壓力細、氣入",
-      "VC = TV + IRV + ERV；ventilation = TV × rate",
-      "氣孔密度 = 數量 ÷ πr²",
       "動脈厚窄無閥，靜脈薄闊有閥，微血管一個細胞厚",
       "Coronary 塞咗 → 心肌缺氧 → heart attack",
       "水柱靠 cohesion 拉、adhesion 貼，xylem 死、phloem 活運糖",
     ],
     practice: [
-      { q: "P1 MCQ · B3.1 Which feature of alveoli speeds up gas exchange?", o: ["A. Thick walls", "B. One-cell-thick walls", "C. Dry surface", "D. Small total area"], m: 1, a: "<b>B</b>. Thin walls give a short diffusion distance." },
-      { q: "P1 MCQ · B3.1 What happens during inhalation?", o: ["A. Diaphragm relaxes", "B. Thoracic volume decreases", "C. Pressure in thorax falls below atmospheric", "D. Ribs move down"], m: 1, a: "<b>C</b>. Diaphragm contracts, volume rises, pressure falls." },
-      { q: "P1 MCQ · B3.2 Which change increases the rate of transpiration?", o: ["A. Higher humidity", "B. Lower temperature", "C. Increased wind speed", "D. Closed stomata"], m: 1, a: "<b>C</b>. Wind removes humid air, steepening the gradient." },
       { q: "P1 MCQ · B3.2 Which vessel has valves to prevent backflow?", o: ["A. Artery", "B. Arteriole", "C. Capillary", "D. Vein"], m: 1, a: "<b>D</b>." },
       { q: "P1 MCQ · B3.2 Water moves up the xylem mainly because of:", o: ["A. Active transport in xylem", "B. Pumping of the heart", "C. Transpiration pull and cohesion", "D. Pressure from phloem"], m: 1, a: "<b>C</b>." },
-      { q: "P2 · 2 marks · Outline the function of type II pneumocytes.", m: 2, a: "Secrete surfactant [1]; reduces surface tension so alveoli do not collapse / keeps lining moist [1]." },
-      { q: "P2 · 4 marks · Explain the mechanism of inhalation.", m: 4, a: "External intercostal muscles contract, ribs move up and out [1]; diaphragm contracts and flattens [1]; thoracic volume increases so pressure decreases [1]; air flows in down the pressure gradient [1]." },
-      { q: "P2 · 3 marks · A spirometer shows TV 0.5 dm³, IRV 2.8 dm³, ERV 1.2 dm³. Calculate vital capacity and the ventilation rate at 12 breaths per minute.", m: 3, a: "VC = 0.5 + 2.8 + 1.2 = 4.5 dm³ [1]; ventilation rate = 0.5 × 12 [1] = 6.0 dm³ min⁻¹ [1]." },
-      { q: "P2 · 3 marks · Calculate the stomatal density if 18 stomata are visible in a circular field of view of radius 0.30 mm.", m: 3, a: "Area = π × 0.30² = 0.283 mm² [1]; 18 ÷ 0.283 [1] = 63.7 ≈ 64 mm⁻² [1]." },
       { q: "P2 · 3 marks · Compare the structure of arteries and veins.", m: 3, a: "Arteries have thicker walls with more muscle/elastic tissue [1]; arteries narrower lumen, veins wider [1]; veins have valves, arteries do not [1]." },
       { q: "P2 · 3 marks · Outline how coronary occlusion can cause a heart attack and state two risk factors.", m: 3, a: "Coronary artery blocked by plaque/clot [1]; heart muscle lacks oxygen and cells die (myocardial infarction) [1]; risk factors, any two: smoking, high LDL, hypertension, obesity, inactivity [1]." },
       { q: "P2 · 6 marks · Explain how water is moved from the roots to the leaves of a plant.", m: 6, a: "Water enters root hair cells by osmosis [1]; evaporation from mesophyll cell walls and loss through stomata (transpiration) [1]; creates tension / negative pressure in xylem [1]; cohesion — hydrogen bonds between water molecules form a continuous column [1]; adhesion to xylem walls [1]; lignified walls resist collapse / narrow lumen [1]." },
@@ -1442,8 +1667,8 @@ IB.addFast({
   },
 
   "bio-8": {
-    title: "Adaptation · Tolerance · Biomes · Niches · Nutrition",
-    intro: "B4.1–4.2：adaptation 要寫 feature → function；niche 同 nutrition 係 definition + 分類題，背熟分類表就穩陣。每個 part 有時間建議。",
+    title: "Adaptation · Tolerance · Biomes · Coral reefs",
+    intro: "B4.1：adaptation 要寫 feature → function；range of tolerance、transect、xerophytes、climograph 同 biomes、珊瑚礁條件。每個 part 有時間建議。",
     parts: [
       {
         h: "Habitat, adaptation, tolerance 適應",
@@ -1495,6 +1720,79 @@ IB.addFast({
           ["trap", ["Sunken stomata 係 trap humid air，唔係「減少 stomata 數量」。", "CAM plants 夜晚開氣孔，唔係日頭。", "Deciduous 喺 temperate；conifers 喺 boreal，唔好混。"]],
         ],
       },
+      {
+        h: "Coral reefs 珊瑚礁",
+        min: 3,
+        blocks: [
+          ["key", "<b>Reef-building corals</b> (Cnidaria) live in a mutualistic symbiosis with photosynthetic zooxanthellae (algae) in their tissues: algae provide sugars (organic products of photosynthesis); the coral provides shelter, CO₂ and nutrients, and secretes the calcium carbonate skeleton."],
+          ["table", ["Condition for reef-building corals", "Reason"], [
+            ["Warm, stable temperature", "Zooxanthellae and coral enzymes function; heat stress → coral bleaching (algae expelled)"],
+            ["Shallow, clear water with high light", "Zooxanthellae photosynthesise"],
+            ["Clean, low sediment, low nutrient water", "Sediment blocks light; nutrients favour algal overgrowth"],
+            ["Normal salinity and suitable pH (carbonate ions)", "Skeleton formation needs CaCO₃; ocean acidification weakens it"],
+            ["Strong water flow / oxygen", "Brings food, removes waste"],
+          ]],
+          ["eg", "P2 · 3 marks · Outline why coral reefs are found only in warm, shallow, clear water.", [
+            "Zooxanthellae in coral need light for photosynthesis, only available in shallow, clear water [1]",
+            "Warm water within a narrow range needed for enzyme function; too warm causes bleaching [1]",
+            "Corals need dissolved carbonate/ calcium for skeleton; sediment/nutrients harm [1] ✅"
+          ]],
+          ["note","<b>常考</b>: coral reef conditions and the coral–zooxanthellae mutualism (3 marks); bleaching when water is too warm."],
+        ],
+      },
+      {
+        h: "Adaptation：命令詞 + 題型",
+        min: 2,
+        blocks: [
+          ["table", ["Command term","要求","滿分寫法"], [
+            ["Explain", "適應 → 環境", "Xerophyte：厚 cuticle、sunken stomata → 減少 transpiration"],
+            ["Discuss", "兩面", "Coral reef 受 ocean acidification + bleaching 影響"],
+          ]],
+          ["note","<b>題型</b>：①adaptation 配環境 2 分（feature → function）②range of tolerance curve 3 分 ③climograph 判斷 biome ④coral reef 條件同 bleaching。"],
+        ],
+      },
+      {
+        h: "Long questions + 失分位 + 自我檢查",
+        min: 4,
+        blocks: [
+          ["table", ["If the question says…", "It is…", "Write this"], [
+            ["Explain an adaptation of an organism", "Feature + function", "Feature → how it improves survival or reproduction"],
+            ["Identify biome from climograph", "Data reading", "Quote temperature range and rainfall; name biome"],
+            ["Evaluate… ", "Both sides + judgement", "Strength, limitation, then conclusion"],
+          ]],
+          ["table", ["#", "Trap", "Fix"], [
+            ["1", "Naming adaptation without function", "Add 'so that…' / 'which reduces…'"],
+            ["2", "CAM: stomata open in the day", "Open at night"],
+            ["3", "Sunken stomata described as 'fewer stomata'", "Humid air trapped in pit → lower gradient"],
+            ["4", "Biome confused with ecosystem or habitat", "Biome = large-scale group of similar ecosystems"],
+            ["5", "Coral reef: warmer is always better", "Narrow range; heat → bleaching"],
+            ["6", "Mutualism claimed as one-sided", "Both partners benefit (coral + zooxanthellae)"],
+          ]],
+          ["check", [
+            "Define habitat, adaptation, range of tolerance, biome, niche (fundamental/realised), xerophyte",
+            "Give 6 xerophyte adaptations with function",
+            "Match biomes with climate and adaptations; read a climograph",
+            "Outline conditions for reef-building corals and the coral–algae mutualism",
+          ]],
+        ],
+      },
+    ],
+    summary: [
+      "特徵 + 功能 = 一分",
+      "厚、陷、毛、卷、細、夜、深（xerophyte）",
+      "珊瑚靠藻：暖、淺、清；牙齒睇食物",
+    ],
+    practice: [
+      { q: "P1 MCQ · B4.1 Which is an adaptation of a xerophyte?", o: ["A. Large thin leaves", "B. Many stomata on the upper surface", "C. Sunken stomata", "D. Shallow roots only"], m: 1, a: "<b>C</b>. Sunken stomata trap humid air." },
+      { q: "P2 · 3 marks · Outline three adaptations of xerophytes.", m: 3, a: "Any three feature + function: thick cuticle reduces evaporation; sunken stomata trap humid air; rolled leaves/hairs trap humid air; reduced leaves lower transpiration; CAM opens stomata at night; succulent water storage; deep roots. [1 each]" },
+      { q: "P2 · 3 marks · Outline the conditions required for reef-building corals.", m: 3, a: "Warm stable temperature [1]; shallow clear water with light for zooxanthellae [1]; low sediment/nutrients, suitable salinity and pH for calcium carbonate skeleton [1]." },
+      { q: "P2 · 3 marks · A climograph shows low temperatures year-round with a long cold winter and low rainfall, with conifer trees. Identify the biome and give two adaptations.", m: 3, a: "Boreal forest (taiga) [1]; needle leaves reduce water loss [1]; conical shape sheds snow [1]." },
+    ],
+  },
+  "bio-8b": {
+    title: "Niches · Competition · Nutrition · Teeth",
+    intro: "B4.2：niche 同 competitive exclusion、營養方式分類、氧氣需要、hominid 牙齒同食物。背熟分類表就穩陣。每個 part 有時間建議。",
+    parts: [
       {
         h: "Niche + competition 生態位",
         min: 3.5,
@@ -1551,17 +1849,9 @@ IB.addFast({
         ],
       },
       {
-        h: "Coral reefs 同 hominid teeth",
+        h: "Hominid teeth 牙齒同食物",
         min: 3,
         blocks: [
-          ["key", "<b>Reef-building corals</b> (Cnidaria) live in a mutualistic symbiosis with photosynthetic zooxanthellae (algae) in their tissues: algae provide sugars (organic products of photosynthesis); the coral provides shelter, CO₂ and nutrients, and secretes the calcium carbonate skeleton."],
-          ["table", ["Condition for reef-building corals", "Reason"], [
-            ["Warm, stable temperature", "Zooxanthellae and coral enzymes function; heat stress → coral bleaching (algae expelled)"],
-            ["Shallow, clear water with high light", "Zooxanthellae photosynthesise"],
-            ["Clean, low sediment, low nutrient water", "Sediment blocks light; nutrients favour algal overgrowth"],
-            ["Normal salinity and suitable pH (carbonate ions)", "Skeleton formation needs CaCO₃; ocean acidification weakens it"],
-            ["Strong water flow / oxygen", "Brings food, removes waste"],
-          ]],
           ["table", ["Hominid", "Teeth / jaw", "Diet interpretation"], [
             ["<i>Paranthropus robustus</i>", "Very large molars, thick enamel, powerful jaw", "Grinding tough plant material (seeds, roots)"],
             ["<i>Homo floresiensis</i>", "Smaller teeth and jaws", "Mixed/omnivorous diet incl. meat"],
@@ -1570,26 +1860,19 @@ IB.addFast({
           ["table", ["Tooth type", "Function"], [
             ["Incisors", "Cutting/biting"], ["Canines", "Piercing and tearing (large in carnivores)"], ["Premolars & molars", "Crushing and grinding (large in herbivores)"],
           ]],
-          ["eg", "P2 · 3 marks · Outline why coral reefs are found only in warm, shallow, clear water.", [
-            "Zooxanthellae in coral need light for photosynthesis, only available in shallow, clear water [1]",
-            "Warm water within a narrow range needed for enzyme function; too warm causes bleaching [1]",
-            "Corals need dissolved carbonate/ calcium for skeleton; sediment/nutrients harm [1] ✅"
-          ]],
-          ["note", "<b>常考</b>: coral reef conditions and mutualism (3 marks), bleaching, hominid teeth to diet (2–3 marks), dentition comparison."],
+          ["note","<b>常考</b>: hominid teeth to diet (2–3 marks): large molars + thick enamel → grinding tough plant food; smaller teeth → mixed / cooked diet."],
         ],
       },
       {
-        h: "Ecology：命令詞 + 題型",
+        h: "Niches：命令詞 + 題型",
         min: 2,
         blocks: [
           ["table", ["Command term","要求","滿分寫法"], [
             ["Define", "準確定義", "Niche = organism 喺生態系統嘅 role 同 resources 使用"],
             ["Distinguish", "兩邊", "Autotroph vs heterotroph；saprotroph vs detritivore"],
-            ["Explain", "適應 → 環境", "Xerophyte：厚 cuticle、sunken stomata → 減少 transpiration"],
             ["Outline", "要點", "Competitive exclusion principle：兩 species 同 niche 唔能長期共存"],
-            ["Discuss", "兩面", "Coral reef 受 ocean acidification + bleaching 影響"],
           ]],
-          ["note", "<b>題型</b>：①adaptation 配環境 2 分 ②classify nutrition 類型 ③biome 比較 ④coral bleaching / acidification。<b>Trap</b>：adaptation 要連埋 “why it helps survival”；niche 唔等於 habitat。"],
+          ["note","<b>題型</b>：①define niche 2 分 ②classify nutrition 類型 3 分 ③competitive exclusion 3 分 ④hominid teeth 推斷食物。<b>Trap</b>：saprotroph（體外消化）≠ detritivore（食入）。"],
         ],
       },
       {
@@ -1598,62 +1881,44 @@ IB.addFast({
         blocks: [
           ["table", ["If the question says…", "It is…", "Write this"], [
             ["Define / state niche or habitat", "Definition", "Habitat = where; niche = role, resource use and interactions"],
-            ["Explain an adaptation of an organism", "Feature + function", "Feature → how it improves survival or reproduction"],
             ["Distinguish X and Y (nutrition)", "Comparison", "X: … whereas Y: … (one clear difference per mark)"],
-            ["Identify biome from climograph", "Data reading", "Quote temperature range and rainfall; name biome"],
             ["Explain competitive exclusion", "Chain", "Same niche → compete → one outcompetes → excluded or niche shifts"],
             ["Evaluate… ", "Both sides + judgement", "Strength, limitation, then conclusion"],
           ]],
           ["table", ["#", "Trap", "Fix"], [
-            ["1", "Naming adaptation without function", "Add 'so that…' / 'which reduces…'"],
-            ["2", "Habitat and niche treated as the same", "Habitat = location; niche = role"],
-            ["3", "Reversing fundamental and realised niche", "Fundamental = potential; realised = actual after competition"],
-            ["4", "Detritivore = saprotroph", "Internal vs external digestion"],
-            ["5", "CAM: stomata open in the day", "Open at night"],
-            ["6", "Sunken stomata described as 'fewer stomata'", "Humid air trapped in pit → lower gradient"],
-            ["7", "Biome confused with ecosystem or habitat", "Biome = large-scale group of similar ecosystems"],
-            ["8", "Coral reef: warmer is always better", "Narrow range; heat → bleaching"],
-            ["9", "Facultative anaerobe = can't use oxygen", "Uses O₂ if present, else anaerobic"],
-            ["10", "Mutualism claimed as one-sided", "Both partners benefit (coral + zooxanthellae)"],
-            ["11", "Competitive exclusion implies always extinction", "Or niche shift"],
-            ["12", "Hominid teeth listed with no diet", "Link teeth to diet: large molars → plant grinding"],
+            ["1", "Habitat and niche treated as the same", "Habitat = location; niche = role"],
+            ["2", "Reversing fundamental and realised niche", "Fundamental = potential; realised = actual after competition"],
+            ["3", "Detritivore = saprotroph", "Internal vs external digestion"],
+            ["4", "Facultative anaerobe = can't use oxygen", "Uses O₂ if present, else anaerobic"],
+            ["5", "Competitive exclusion implies always extinction", "Or niche shift"],
+            ["6", "Hominid teeth listed with no diet", "Link teeth to diet: large molars → plant grinding"],
           ]],
           ["check", [
             "Define habitat, adaptation, range of tolerance, biome, niche (fundamental/realised), xerophyte",
-            "Give 6 xerophyte adaptations with function",
-            "Match biomes with climate and adaptations; read a climograph",
             "Explain competitive exclusion and Gause’s experiment",
             "Classify photoautotroph, chemoautotroph, holozoic, detritivore, saprotroph, parasite, mixotroph",
             "State examples of obligate aerobe/anaerobe/facultative anaerobe",
-            "Outline conditions for reef-building corals and the coral–algae mutualism",
             "Link hominid teeth to diet"
           ]],
         ],
       },
     ],
     summary: [
-      "特徵 + 功能 = 一分",
       "Habitat 係「住邊」，niche 係「做乜」",
       "Fundamental 大、realised 細（競爭收窄）",
       "同一 niche 撞埋，一個出局（competitive exclusion）",
-      "厚、陷、毛、卷、細、夜、深（xerophyte）",
       "自己造 auto，食人哋 hetero；內消化 detritivore，外消化 saprotroph",
       "Euglena = mixotroph；有氧無氧睇 obligate / facultative",
-      "珊瑚靠藻：暖、淺、清；牙齒睇食物",
     ],
     practice: [
-      { q: "P1 MCQ · B4.1 Which is an adaptation of a xerophyte?", o: ["A. Large thin leaves", "B. Many stomata on the upper surface", "C. Sunken stomata", "D. Shallow roots only"], m: 1, a: "<b>C</b>. Sunken stomata trap humid air." },
       { q: "P1 MCQ · B4.2 A fungus feeds on dead leaves by secreting enzymes. It is a:", o: ["A. Photoautotroph", "B. Saprotroph", "C. Parasite", "D. Holozoic heterotroph"], m: 1, a: "<b>B</b>." },
       { q: "P1 MCQ · B4.2 An organism that can respire with or without oxygen is a:", o: ["A. Obligate aerobe", "B. Obligate anaerobe", "C. Facultative anaerobe", "D. Chemoautotroph"], m: 1, a: "<b>C</b>." },
       { q: "P1 MCQ · B4.2 The realised niche of a species is:", o: ["A. Always larger than the fundamental niche", "B. The part of the fundamental niche actually occupied", "C. Its habitat only", "D. The set of resources it could use alone"], m: 1, a: "<b>B</b>." },
       { q: "P2 · 2 marks · Define ecological niche.", m: 2, a: "The role of a species in its ecosystem/community [1]; including habitat, resource use and interactions with other species [1]." },
       { q: "P2 · 3 marks · Explain the principle of competitive exclusion.", m: 3, a: "Two species using the same limited resources in the same way compete [1]; the better-adapted species outcompetes the other [1]; the other is excluded locally or shifts to a different (realised) niche [1]." },
-      { q: "P2 · 3 marks · Outline three adaptations of xerophytes.", m: 3, a: "Any three feature + function: thick cuticle reduces evaporation; sunken stomata trap humid air; rolled leaves/hairs trap humid air; reduced leaves lower transpiration; CAM opens stomata at night; succulent water storage; deep roots. [1 each]" },
       { q: "P2 · 3 marks · Distinguish between detritivores and saprotrophs.", m: 3, a: "Detritivores ingest dead organic matter [1]; digest it internally [1]; saprotrophs secrete enzymes and digest externally then absorb [1]." },
       { q: "P2 · 2 marks · Distinguish between a photoautotroph and a chemoautotroph.", m: 2, a: "Photoautotroph uses light as the energy source [1]; chemoautotroph uses energy from oxidising inorganic chemicals [1]." },
-      { q: "P2 · 3 marks · Outline the conditions required for reef-building corals.", m: 3, a: "Warm stable temperature [1]; shallow clear water with light for zooxanthellae [1]; low sediment/nutrients, suitable salinity and pH for calcium carbonate skeleton [1]." },
       { q: "P2 · 3 marks · Explain what the teeth of Paranthropus robustus suggest about its diet.", m: 3, a: "Large flat molars with thick enamel [1]; strong jaw muscles [1]; adapted to grinding tough plant material such as seeds and roots [1]." },
-      { q: "P2 · 3 marks · A climograph shows low temperatures year-round with a long cold winter and low rainfall, with conifer trees. Identify the biome and give two adaptations.", m: 3, a: "Boreal forest (taiga) [1]; needle leaves reduce water loss [1]; conical shape sheds snow [1]." },
     ],
   },
 

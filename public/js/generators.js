@@ -565,7 +565,7 @@
       },
     ],
     // ===================== BIOLOGY =====================
-    "bio-1": [
+    "bio-1b": [
       () => {
         const a = R(15, 35), base = P([["thymine", a], ["adenine", a]]), want = P(["guanine", "cytosine"]);
         const v = (100 - 2 * a) / 2;
@@ -581,7 +581,7 @@
           : { paper: "P2", marks: 2, diff: 2, q: `A micrograph at ×${mag} shows a cell ${imgMm} mm long. Calculate the actual length in µm.`, numeric: { value: actual, tol: 0.01 }, ms: [`${imgMm} mm = ${imgMm * 1000} µm; ÷ ${mag} [M1]`, `= ${actual} µm [A1]`] };
       },
     ],
-    "bio-4": [
+    "bio-4b": [
       () => {
         const N = R(8, 60) * 10, M = R(20, 80), n = R(30, 90);
         const m = Math.max(1, Math.round((M * n) / N));
@@ -589,7 +589,7 @@
         return { paper: "P2", marks: 2, diff: 2, q: `${M} animals were captured, marked and released. Later ${n} were captured, of which ${m} were marked. Estimate the population size using the Lincoln index.`, numeric: { value: Math.round(est), tol: 1 }, ms: [`${M} × ${n} ÷ ${m} [M1]`, `≈ ${Math.round(est)} [A1]`] };
       },
     ],
-    "bio-6": [
+    "bio-6c": [
       () => {
         const l = R(1, 10);
         return { paper: "P2", marks: 2, diff: 1, q: `Calculate the surface area to volume ratio of a cube-shaped cell with sides of ${l} µm. Give the answer as x : 1.`, numeric: { value: dp(6 / l, 2), tol: 0.01 }, ms: [`SA = ${6 * l * l} µm², V = ${l ** 3} µm³ [M1]`, `${dp(6 / l, 2)} : 1 [A1]`] };

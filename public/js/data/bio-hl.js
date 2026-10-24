@@ -13,7 +13,7 @@ IB.extend("bio", {
 
 IB.addTopics("bio", [
   {
-    id: "bio-h1", code: "A2.1, A2.3, A3.2 AHL", after: "bio-3", unit: "Theme A: Unity and diversity (HL)", title: "Origins of cells, viruses and cladistics",
+    id: "bio-h1", code: "A2.1, A2.3, A3.2 AHL", after: "bio-3b", unit: "Theme A: Unity and diversity (HL)", title: "Origins of cells, viruses and cladistics",
     summary: "Conditions for the origin of life (Miller-Urey, RNA world, protocells), endosymbiosis, structure and replication of viruses (lytic and lysogenic), and cladistics with cladograms.",
     concepts: [
       { h: "Origin of cells", b: "<p>Steps: synthesis of simple organic molecules (Miller-Urey), assembly into polymers, self-replicating molecules (RNA world - RNA can store information and catalyse), membranes form vesicles (protocells). LUCA = last universal common ancestor.</p>", yue: "生命起源：簡單有機分子 → 聚合物 → 可自我複製嘅 RNA → 有膜包住嘅原始細胞。" },
