@@ -147,7 +147,7 @@ IB.addExamFrames("bio", {
     // ---------------------------------------------------------------- C2.2, C3.1
     "bio-11": {
       frames: [
-        { title: "Explain how the resting potential is maintained", star: true,
+        { id: "bio-11-q11", title: "Explain how the resting potential is maintained", star: true,
           paper: "P2", where: "Paper 2 · 2–3 marks",
           q: "Explain how a resting potential is maintained across the membrane of a neuron.",
           marks: [
@@ -159,7 +159,7 @@ IB.addExamFrames("bio", {
           accept: "Na⁺/K⁺-ATPase; potential difference of −60 to −80 mV",
           reject: "\"the pump moves 3 K⁺ in and 2 Na⁺ out\"; describing the resting potential without explaining how it is maintained",
           tip: "記住數字：3 Na⁺ 出、2 K⁺ 入，用 ATP。膜對 K⁺ 通透性較高。" },
-        { title: "Explain an action potential from an oscilloscope trace", star: true, hl: true,
+        { id: "bio-11-q12", title: "Explain an action potential from an oscilloscope trace", star: true, hl: true,
           paper: "P2", where: "Paper 1B / 2 · 4–5 marks · oscilloscope trace given",
           q: "The oscilloscope trace shows the membrane potential of an axon during an action potential. Explain the changes in membrane potential from the resting potential to the end of the action potential.",
           marks: [
@@ -177,7 +177,7 @@ IB.addExamFrames("bio", {
           accept: "reading values from the trace (e.g. peak +35 mV, duration ≈ 2 ms); undershoot for hyperpolarisation",
           reject: "\"Na⁺ pumped in\" during depolarisation (it is diffusion through channels); \"K⁺ channels open first\"",
           tip: "去極化 = Na⁺ 經通道擴散入；復極化 = K⁺ 擴散出。唔好寫「泵」入，泵係慢慢恢復靜息電位先用。" },
-        { title: "Explain differences in the speed of nerve impulses (myelin and diameter)",
+        { id: "bio-11-q13", title: "Explain differences in the speed of nerve impulses (myelin and diameter)",
           paper: "P1B", where: "Paper 1B / 2 · 3 marks · conduction speed data",
           q: "Conduction speeds were measured in three axons: unmyelinated, 1 µm diameter: 1 m s⁻¹; unmyelinated giant squid axon, 500 µm diameter: 25 m s⁻¹; myelinated, 10 µm diameter: 50 m s⁻¹. Using the data, explain the factors that affect the speed of nerve impulses.",
           marks: [
@@ -189,7 +189,7 @@ IB.addExamFrames("bio", {
           accept: "local currents spread further along a myelinated axon; fewer depolarisations needed",
           reject: "\"the impulse jumps along the myelin\"; \"myelin speeds up the ions\"; not quoting the data",
           tip: "Using the data = 一定要引用數字（例如 50 vs 1 m s⁻¹），唔係淨係背理論。" },
-        { title: "Describe transmission at a cholinergic synapse", star: true,
+        { id: "bio-11-q14", title: "Describe transmission at a cholinergic synapse", star: true,
           paper: "P2", where: "Paper 2 · 4–6 marks",
           q: "Describe how a nerve impulse is transmitted across a cholinergic synapse and how the signal is ended.",
           marks: [
@@ -203,7 +203,7 @@ IB.addExamFrames("bio", {
           accept: "ligand-gated ion channels; neurotransmitter for acetylcholine (but name it once for the cholinergic mark)",
           reject: "\"the impulse jumps across the synapse\"; \"acetylcholine enters the postsynaptic neuron\"",
           tip: "突觸唔係電流跳過去！要寫 Ca²⁺ 入 → 胞吐 → 擴散過間隙 → 結合受體 → 酶分解。" },
-        { title: "Explain the effect of an exogenous chemical (neonicotinoids) on synapses", hl: true,
+        { id: "bio-11-q15", title: "Explain the effect of an exogenous chemical (neonicotinoids) on synapses", hl: true,
           paper: "P2", where: "Paper 2 · 3 marks",
           q: "Neonicotinoid pesticides bind to acetylcholine receptors in insects. Explain why neonicotinoids are toxic to insects but much less toxic to mammals.",
           marks: [
@@ -215,7 +215,7 @@ IB.addExamFrames("bio", {
           accept: "binding is (almost) irreversible; acetylcholine cannot bind",
           reject: "\"neonicotinoids kill neurons\"; \"they stop acetylcholine being made\"",
           tip: "外源化學物質題：講清楚佢結合咩受體、令咩唔可以發生、最後對生物有咩後果。" },
-        { title: "Explain summation and inhibitory neurotransmitters", hl: true,
+        { id: "bio-11-q16", title: "Explain summation and inhibitory neurotransmitters", hl: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Explain how summation at synapses determines whether an action potential is generated in a postsynaptic neuron.",
           marks: [
@@ -228,7 +228,21 @@ IB.addExamFrames("bio", {
           accept: "spatial and temporal summation; Cl⁻ entering / K⁺ leaving for hyperpolarisation",
           reject: "\"inhibitory neurotransmitters destroy the impulse\"; \"summation adds action potentials together\"",
           tip: "興奮性 = 去極化 (EPSP)；抑制性 = 超極化 (IPSP)。加埋夠唔夠閾值決定發唔發放。" },
-        { title: "Outline a reflex arc (pain withdrawal reflex)", star: true,
+      ],
+      mc: [
+        { id: "bio-11-q20", skill: "<strong>Ion directions:</strong> depolarisation = Na⁺ IN through channels; repolarisation = K⁺ OUT; pump = 3 Na⁺ out / 2 K⁺ in (active).",
+          q: "Which event causes repolarisation of an axon membrane?", options: ["Na⁺ diffusing in", "K⁺ diffusing out", "Active transport of Na⁺ out by the pump", "Ca²⁺ diffusing in"], answer: 1, why: "Voltage-gated K⁺ channels open and K⁺ diffuses out." },
+        { id: "bio-11-q21", skill: "<strong>Exogenous chemicals:</strong> ask where they act — receptor (neonicotinoids), reuptake (cocaine blocks dopamine reuptake), enzyme (organophosphates inhibit acetylcholinesterase).", hl: true,
+          q: "Cocaine affects dopamine synapses in the brain by:", options: ["blocking dopamine receptors on the postsynaptic membrane", "blocking the reuptake of dopamine into the presynaptic neuron", "breaking down dopamine in the synaptic cleft", "opening calcium channels in the presynaptic membrane"], answer: 1, why: "Dopamine stays in the cleft and keeps stimulating the postsynaptic neuron." },
+        { skill: "<strong>All-or-nothing:</strong> a stronger stimulus increases the FREQUENCY of action potentials, not their size. Eliminate options that say the peak gets higher." },
+      ],
+      concepts: [
+        { h: "Inhibition, summation, pain and consciousness (AHL)", hl: true, b: "<p>Inhibitory neurotransmitters (e.g. GABA) open Cl⁻ or K⁺ channels, <strong>hyperpolarising</strong> the postsynaptic membrane (IPSP). A postsynaptic neuron integrates many EPSPs and IPSPs: only if <strong>summation</strong> brings it to threshold does it fire. <strong>Pain</strong>: free nerve endings with channels opened by noxious stimuli (heat, acid, chemicals such as capsaicin) send impulses to the brain, where the sensation is perceived. <strong>Consciousness</strong> is an emergent property arising from interactions between many neurons.</p>" },
+      ],
+    },
+    "bio-11b": {
+      frames: [
+        { id: "bio-11-q17", title: "Outline a reflex arc (pain withdrawal reflex)", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks · may give a diagram to label",
           q: "Outline the pathway of a pain withdrawal reflex.",
           marks: [
@@ -241,7 +255,7 @@ IB.addExamFrames("bio", {
           accept: "interneuron / association neuron; dorsal root ganglion; the brain is informed afterwards",
           reject: "\"the brain decides the response\"; \"motor neuron carries the impulse to the spinal cord\"",
           tip: "感受器 → 感覺神經元 → 中間神經元 → 運動神經元 → 效應器，五個字一個都唔好漏。" },
-        { title: "Explain feedback control of heart rate",
+        { id: "bio-11-q18", title: "Explain feedback control of heart rate",
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Explain how heart rate is increased during exercise.",
           marks: [
@@ -254,7 +268,7 @@ IB.addExamFrames("bio", {
           accept: "baroreceptors detecting blood pressure; pacemaker for SA node; less vagus (parasympathetic) stimulation",
           reject: "\"the cerebellum controls heart rate\"; \"the heart decides to beat faster\"",
           tip: "心跳同呼吸嘅控制中心都喺延腦 (medulla)，唔係小腦 (cerebellum)。" },
-        { title: "Explain phototropism in a shoot (auxin)", hl: true,
+        { id: "bio-11-q19", title: "Explain phototropism in a shoot (auxin)", hl: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Explain how a plant shoot grows towards a light source.",
           marks: [
@@ -269,17 +283,12 @@ IB.addExamFrames("bio", {
           tip: "陰暗嗰邊 auxin 多 → 細胞伸長快 → 向光彎。記住係 efflux carriers 搬 auxin。" },
       ],
       mc: [
-        { skill: "<strong>Ion directions:</strong> depolarisation = Na⁺ IN through channels; repolarisation = K⁺ OUT; pump = 3 Na⁺ out / 2 K⁺ in (active).",
-          q: "Which event causes repolarisation of an axon membrane?", options: ["Na⁺ diffusing in", "K⁺ diffusing out", "Active transport of Na⁺ out by the pump", "Ca²⁺ diffusing in"], answer: 1, why: "Voltage-gated K⁺ channels open and K⁺ diffuses out." },
-        { skill: "<strong>Exogenous chemicals:</strong> ask where they act — receptor (neonicotinoids), reuptake (cocaine blocks dopamine reuptake), enzyme (organophosphates inhibit acetylcholinesterase).", hl: true,
-          q: "Cocaine affects dopamine synapses in the brain by:", options: ["blocking dopamine receptors on the postsynaptic membrane", "blocking the reuptake of dopamine into the presynaptic neuron", "breaking down dopamine in the synaptic cleft", "opening calcium channels in the presynaptic membrane"], answer: 1, why: "Dopamine stays in the cleft and keeps stimulating the postsynaptic neuron." },
-        { skill: "<strong>All-or-nothing:</strong> a stronger stimulus increases the FREQUENCY of action potentials, not their size. Eliminate options that say the peak gets higher." },
-        { skill: "<strong>Brain parts:</strong> cerebellum = coordination and balance; medulla = heart rate, ventilation; hypothalamus = links nervous and endocrine systems via the pituitary; pineal gland = melatonin (sleep).",
+        { id: "bio-11-q22", skill: "<strong>Brain parts:</strong> cerebellum = coordination and balance; medulla = heart rate, ventilation; hypothalamus = links nervous and endocrine systems via the pituitary; pineal gland = melatonin (sleep).",
           q: "Which part of the brain controls ventilation rate and heart rate?", options: ["Cerebellum", "Cerebral hemispheres", "Medulla oblongata", "Pituitary gland"], answer: 2, why: "The medulla contains the respiratory and cardiovascular centres." },
         { skill: "<strong>Plant hormones:</strong> auxin = elongation (shaded side); cytokinin + auxin together control root/shoot growth; ethylene = fruit ripening by positive feedback.", hl: true },
+        { skill: "<strong>Reflex arc order:</strong> receptor → sensory neuron → relay neuron (spinal cord) → motor neuron → effector. The brain is not needed for the response.", q: "In a pain withdrawal reflex, which neuron carries impulses into the spinal cord?", options: ["Motor neuron","Relay neuron","Sensory neuron","A neuron of the cerebellum"], answer: 2, why: "Sensory neurons carry impulses from the receptor into the spinal cord." },
       ],
       concepts: [
-        { h: "Inhibition, summation, pain and consciousness (AHL)", hl: true, b: "<p>Inhibitory neurotransmitters (e.g. GABA) open Cl⁻ or K⁺ channels, <strong>hyperpolarising</strong> the postsynaptic membrane (IPSP). A postsynaptic neuron integrates many EPSPs and IPSPs: only if <strong>summation</strong> brings it to threshold does it fire. <strong>Pain</strong>: free nerve endings with channels opened by noxious stimuli (heat, acid, chemicals such as capsaicin) send impulses to the brain, where the sensation is perceived. <strong>Consciousness</strong> is an emergent property arising from interactions between many neurons.</p>" },
         { h: "More examples of integration", b: "<p>The <strong>cerebellum</strong> coordinates skeletal muscle movement and balance. <strong>Melatonin</strong> from the pineal gland is secreted in darkness and controls sleep patterns (circadian rhythm). <strong>Epinephrine</strong> from the adrenal glands prepares the body for vigorous activity. The <strong>hypothalamus</strong> controls the pituitary gland (releasing hormones and nerve signals). Chemoreceptors and baroreceptors feed back to the <strong>medulla</strong>, which adjusts ventilation and heart rate. <strong>Peristalsis</strong> is controlled by the enteric nervous system (involuntary), while swallowing starts voluntarily.</p>" },
         { h: "Plant tropisms and phytohormones (AHL)", hl: true, b: "<p>Plants respond to directional stimuli by <strong>tropisms</strong> (e.g. positive phototropism of shoots). <strong>Auxin</strong> is moved between cells by auxin efflux carriers (PIN proteins), creating concentration gradients; in shoots auxin promotes cell elongation by acidifying cell walls. <strong>Cytokinin</strong> interacts with auxin to control root and shoot growth. <strong>Ethylene</strong> triggers fruit ripening, and ripening fruit release more ethylene: <strong>positive feedback</strong> so that fruit ripen together.</p>" },
       ],
@@ -516,7 +525,7 @@ IB.addExamFrames("bio", {
     // ---------------------------------------------------------------- D1.1-1.3
     "bio-14": {
       frames: [
-        { title: "Explain evidence for semi-conservative replication (Meselson–Stahl)",
+        { id: "bio-14-q11", title: "Explain evidence for semi-conservative replication (Meselson–Stahl)",
           paper: "P1B", where: "Paper 1B / 2 · 3 marks · density gradient results given",
           q: "Bacteria were grown for many generations on ¹⁵N and then transferred to ¹⁴N. DNA was extracted and separated by density gradient centrifugation. Explain how the results after one and two generations support semi-conservative replication.",
           marks: [
@@ -528,7 +537,7 @@ IB.addExamFrames("bio", {
           accept: "hybrid density; ¹⁵N–¹⁴N DNA",
           reject: "\"the DNA is half heavy\" without linking to strands; describing results without stating what they rule out",
           tip: "一代：全部中間密度（排除 conservative）；兩代：一半中間一半輕（排除 dispersive）。" },
-        { title: "Outline the roles of helicase and DNA polymerase", star: true,
+        { id: "bio-14-q12", title: "Outline the roles of helicase and DNA polymerase", star: true,
           paper: "P2", where: "Paper 2 · 2–3 marks",
           q: "Outline the roles of helicase and DNA polymerase in DNA replication.",
           marks: [
@@ -540,7 +549,7 @@ IB.addExamFrames("bio", {
           accept: "unzips; covalent / phosphodiester bonds formed by DNA polymerase",
           reject: "\"helicase breaks covalent bonds\"; \"DNA polymerase separates the strands\"; uracil in DNA",
           tip: "Helicase 拆氫鍵，唔係拆共價鍵。DNA polymerase 跟住鹼基互補配對加核苷酸。" },
-        { title: "Outline the polymerase chain reaction (PCR)", star: true,
+        { id: "bio-14-q13", title: "Outline the polymerase chain reaction (PCR)", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Outline how the polymerase chain reaction (PCR) is used to amplify DNA.",
           marks: [
@@ -553,7 +562,7 @@ IB.addExamFrames("bio", {
           accept: "temperatures within a few degrees; thermostable DNA polymerase",
           reject: "\"helicase separates the strands in PCR\"; \"Taq polymerase is from humans\"",
           tip: "三個溫度：95 °C 分開、55 °C 引子結合、72 °C 延長。每個循環翻一倍。" },
-        { title: "Explain gel electrophoresis and DNA profiling",
+        { id: "bio-14-q14", title: "Explain gel electrophoresis and DNA profiling",
           paper: "P1B", where: "Paper 1B / 2 · 3–4 marks · gel image given",
           q: "Explain how gel electrophoresis separates DNA fragments and how the resulting profiles can be used to identify a suspect from a crime-scene sample.",
           marks: [
@@ -566,7 +575,19 @@ IB.addExamFrames("bio", {
           accept: "anode for positive electrode; STRs / variable number tandem repeats",
           reject: "\"bigger fragments move further\"; \"DNA moves to the negative electrode\"",
           tip: "DNA 帶負電 → 走去正極；細片段走得遠。睇圖要逐條帶對比。" },
-        { title: "Outline transcription", star: true,
+      ],
+      mc: [
+        { id: "bio-14-q21", skill: "<strong>PCR doubling:</strong> copies = starting copies × 2ⁿ after n cycles.",
+          q: "Starting with one double-stranded DNA molecule, how many molecules are present after 10 cycles of PCR?", options: ["20", "100", "512", "1 024"], answer: 3, why: "2¹⁰ = 1 024." },
+        { skill: "<strong>Gels:</strong> wells at the negative end; the band furthest from the wells is the smallest fragment." },
+        { id: "bio-14-q26", skill: "<strong>PCR temperatures:</strong> about 95 °C denatures (hydrogen bonds break), about 55 °C primers anneal, about 72 °C Taq polymerase extends.", q: "At which temperature do primers bind to the separated DNA strands in PCR?", options: ["95 °C","72 °C","55 °C","37 °C"], answer: 2, why: "Cooling to about 55 °C lets the primers anneal by complementary base pairing." },
+      ],
+      concepts: [
+      ],
+    },
+    "bio-14b": {
+      frames: [
+        { id: "bio-14-q15", title: "Outline transcription", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Outline the process of transcription.",
           marks: [
@@ -579,7 +600,7 @@ IB.addExamFrames("bio", {
           accept: "antisense strand for template strand; mRNA is a copy of the coding strand with U for T",
           reject: "\"DNA polymerase\" in transcription; thymine in RNA; \"transcription happens at the ribosome\"",
           tip: "Transcription 用 RNA polymerase，唔使 helicase。RNA 冇 T，用 U。" },
-        { title: "Deduce mRNA and amino acid sequences using the codon table", star: true,
+        { id: "bio-14-q16", title: "Deduce mRNA and amino acid sequences using the codon table", star: true,
           paper: "P2", where: "Paper 1A / 2 · 2 marks · codon table given",
           q: "The template strand of a short gene reads 3'-TAC GGT CAA ATT-5'. Using the codons AUG = Met, CCA = Pro, GUU = Val and UAA = stop, deduce the mRNA sequence and the amino acid sequence.",
           marks: [
@@ -590,7 +611,7 @@ IB.addExamFrames("bio", {
           accept: "methionine–proline–valine",
           reject: "including T in mRNA; adding an amino acid for the stop codon; reading the codon table with DNA bases",
           tip: "先寫 mRNA（互補，用 U），再查表。查表一定要用 mRNA 密碼子，唔係 DNA。" },
-        { title: "Explain features of the genetic code (degenerate and universal)",
+        { id: "bio-14-q17", title: "Explain features of the genetic code (degenerate and universal)",
           paper: "P2", where: "Paper 2 · 2–3 marks",
           q: "Explain what is meant by the genetic code being degenerate and universal, and why degeneracy can reduce the effects of mutations.",
           marks: [
@@ -602,7 +623,20 @@ IB.addExamFrames("bio", {
           accept: "redundant for degenerate",
           reject: "\"degenerate means codons code for more than one amino acid\"",
           tip: "Degenerate = 多個密碼子對一個氨基酸，唔係一個密碼子對多個氨基酸！" },
-        { title: "Compare the effects of substitutions, insertions and deletions", star: true,
+      ],
+      mc: [
+        { id: "bio-14-q22", skill: "<strong>mRNA = coding strand with U for T</strong>; it is complementary to the template strand.",
+          q: "The coding (sense) strand of a gene reads ATG GCA. What is the mRNA sequence?", options: ["UAC CGU", "AUG GCA", "TAC CGT", "AUG CGU"], answer: 1, why: "mRNA has the same sequence as the coding strand, with U for T." },
+        { id: "bio-14-q23", skill: "<strong>Codons ÷ 3, then subtract the stop codon</strong> to count amino acids.",
+          q: "An mRNA has 912 nucleotides from the first base of the start codon to the last base of the stop codon. How many amino acids are in the polypeptide?", options: ["304", "303", "912", "2 736"], answer: 1, why: "912 ÷ 3 = 304 codons, minus the stop codon = 303." },
+        { skill: "<strong>Anticodons</strong> are complementary to the mRNA codon. RNA has U, never T.", q: "An mRNA codon reads GCU. Which tRNA anticodon pairs with it?", options: ["GCU","CGA","CGT","GCA"], answer: 1, why: "G pairs with C, C with G and U with A, so the anticodon is CGA (no T in RNA)." },
+      ],
+      concepts: [
+      ],
+    },
+    "bio-14c": {
+      frames: [
+        { id: "bio-14-q18", title: "Compare the effects of substitutions, insertions and deletions", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Compare the effects of base substitutions and of insertions or deletions on the polypeptide produced from a gene.",
           marks: [
@@ -615,7 +649,7 @@ IB.addExamFrames("bio", {
           accept: "missense / nonsense / silent; reading frame",
           reject: "\"all mutations are harmful\"; \"a substitution changes all the following amino acids\"",
           tip: "插入／缺失一個鹼基 = frameshift，後面全部密碼子都變；替換只改一個。" },
-        { title: "Distinguish germ-line and somatic mutations",
+        { id: "bio-14-q19", title: "Distinguish germ-line and somatic mutations",
           paper: "P2", where: "Paper 2 · 2 marks",
           q: "Distinguish between mutations in germ cells and mutations in somatic cells.",
           marks: [
@@ -626,7 +660,7 @@ IB.addExamFrames("bio", {
           accept: "germ-line mutations are a source of heritable variation for evolution",
           reject: "\"somatic mutations are inherited\"",
           tip: "只有生殖細胞嘅突變先會遺傳俾下一代。" },
-        { title: "Outline gene editing with CRISPR–Cas9", hl: true,
+        { id: "bio-14-q20", title: "Outline gene editing with CRISPR–Cas9", hl: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Outline how the CRISPR–Cas9 system can be used to edit a gene.",
           marks: [
@@ -639,16 +673,12 @@ IB.addExamFrames("bio", {
           accept: "sgRNA; endonuclease for Cas9",
           reject: "\"Cas9 recognises the sequence by itself\"",
           tip: "Guide RNA 負責「搵位」，Cas9 負責「剪」。" },
+        { title: "Explain how a base substitution causes sickle cell anaemia", star: true, paper: "P2", where: "Paper 2 · 4 marks", bank: false, q: "Explain how a base substitution mutation causes sickle cell anaemia.", marks: ["a __base substitution__ in the gene for the β-globin polypeptide of haemoglobin (GAG → GTG on the coding strand)","the mRNA codon changes from GAG to __GUG__","so __glutamic acid is replaced by valine__ (the sixth amino acid)","haemoglobin molecules __stick together into fibres__ at low oxygen concentration, so red blood cells become __sickle-shaped__","sickle cells carry less oxygen and can __block capillaries__"], total: 4, model: "A base substitution in the haemoglobin β-globin gene changes the triplet GAG to GTG, so the mRNA codon becomes GUG instead of GAG. Valine is therefore inserted instead of glutamic acid. The altered haemoglobin forms long fibres when oxygen concentration is low, distorting red blood cells into a sickle shape; these carry less oxygen and can block capillaries.", reject: "\"the gene is deleted\"; \"the red blood cells mutate\"", tip: "GAG → GTG（DNA）→ GUG（mRNA）→ Glu 變 Val。一粒 base 改變 → 一個 amino acid 改變。" },
       ],
       mc: [
-        { skill: "<strong>PCR doubling:</strong> copies = starting copies × 2ⁿ after n cycles.",
-          q: "Starting with one double-stranded DNA molecule, how many molecules are present after 10 cycles of PCR?", options: ["20", "100", "512", "1 024"], answer: 3, why: "2¹⁰ = 1 024." },
-        { skill: "<strong>mRNA = coding strand with U for T</strong>; it is complementary to the template strand.",
-          q: "The coding (sense) strand of a gene reads ATG GCA. What is the mRNA sequence?", options: ["UAC CGU", "AUG GCA", "TAC CGT", "AUG CGU"], answer: 1, why: "mRNA has the same sequence as the coding strand, with U for T." },
-        { skill: "<strong>Codons ÷ 3, then subtract the stop codon</strong> to count amino acids.",
-          q: "An mRNA has 912 nucleotides from the first base of the start codon to the last base of the stop codon. How many amino acids are in the polypeptide?", options: ["304", "303", "912", "2 736"], answer: 1, why: "912 ÷ 3 = 304 codons, minus the stop codon = 303." },
-        { skill: "<strong>Gels:</strong> wells at the negative end; the band furthest from the wells is the smallest fragment." },
         { skill: "<strong>Highly conserved sequences</strong> change very little between species because mutations there are harmful and selected against (or mutation rates there are low).", hl: true },
+        { skill: "<strong>Substitution vs frameshift:</strong> a substitution changes one codon (sometimes no amino acid change, because the code is degenerate); inserting or deleting one or two bases shifts the reading frame for every later codon.", q: "Which mutation is most likely to have the largest effect on a polypeptide?", options: ["Substitution of the third base of one codon","Deletion of one base near the start of the gene","Deletion of three bases near the end of the gene","Substitution in a non-coding region"], answer: 1, why: "A single-base deletion near the start shifts the reading frame for almost every codon." },
+        { skill: "<strong>Germ-line vs somatic:</strong> only mutations in cells that give rise to gametes are inherited; somatic mutations affect only the individual (e.g. cancer).", q: "A mutation caused by UV light in a skin cell:", options: ["is passed on to all offspring","cannot be passed on to offspring","always causes cancer","changes the DNA of every body cell"], answer: 1, why: "Somatic mutations are not in gametes, so they are not inherited." },
       ],
       concepts: [
         { h: "Mutagens, randomness and conserved sequences", b: "<p><strong>Mutagens</strong> increase mutation rate: chemical (e.g. some in tobacco smoke) and radiation (UV, X-rays, gamma rays). Mutations can occur anywhere in the genome by chance, although some sites are more likely to mutate; no natural mechanism makes a specific mutation happen to meet a need. <span class=\"ahl\">AHL:</span> <strong>gene knockout</strong> (making a gene non-functional) is used to investigate a gene's function; <strong>highly conserved sequences</strong> are almost identical across species, either because mutations there are selected against or because the mutation rate there is low.</p>" },
@@ -788,45 +818,7 @@ IB.addExamFrames("bio", {
     // ---------------------------------------------------------------- D2.1, D3.1-3.2
     "bio-15": {
       frames: [
-        { title: "Genetic cross with incomplete dominance or codominance", star: true,
-          paper: "P2", where: "Paper 2 · 3–4 marks · Punnett grid expected",
-          q: "In four o'clock plants (Mirabilis jalapa), plants with genotype CᴿCᴿ have red flowers, CᵂCᵂ white flowers and CᴿCᵂ pink flowers. Two pink-flowered plants are crossed. Using a Punnett grid, deduce the genotypes and phenotypes of the offspring and their expected ratio.",
-          marks: [
-            "parental genotypes CᴿCᵂ × CᴿCᵂ, with __gametes Cᴿ and Cᵂ__ from each parent",
-            "correct __Punnett grid__: CᴿCᴿ, CᴿCᵂ, CᵂCᴿ, CᵂCᵂ",
-            "phenotypes: __red, pink and white__",
-            "ratio __1 red : 2 pink : 1 white__",
-          ],
-          model: "Parental genotypes: CᴿCᵂ × CᴿCᵂ, with gametes Cᴿ and Cᵂ from each parent. Punnett grid: CᴿCᴿ, CᴿCᵂ, CᵂCᴿ, CᵂCᵂ. Phenotypes: red, pink and white, in the ratio 1 red : 2 pink : 1 white.",
-          accept: "25 % red, 50 % pink, 25 % white",
-          reject: "3 : 1 ratio; using capital and lower-case letters (R / r) for alleles that are not dominant/recessive",
-          tip: "Genetic cross 格式：親代表型 → 基因型 → 配子（圈住）→ Punnett grid → 子代基因型、表型、比例。" },
-        { title: "Sex-linked cross (X-linked recessive)", star: true,
-          paper: "P2", where: "Paper 2 · 3–4 marks",
-          q: "Red–green colour blindness is caused by a recessive allele on the X chromosome. A woman with normal vision, whose father was colour-blind, has children with a colour-blind man. Deduce the probability that a daughter of this couple is colour-blind.",
-          marks: [
-            "mother is a __carrier XᴮXᵇ__ (inherited Xᵇ from her father); father is __XᵇY__",
-            "gametes: mother Xᴮ and Xᵇ; father Xᵇ and Y",
-            "daughters: __XᴮXᵇ and XᵇXᵇ__ (sons: XᴮY and XᵇY)",
-            "probability a daughter is colour-blind = __1/2__ (50 %)",
-          ],
-          model: "The mother must be a carrier, XᴮXᵇ, because she received Xᵇ from her colour-blind father. The father is XᵇY. Gametes: Xᴮ, Xᵇ (mother) and Xᵇ, Y (father). Daughters are XᴮXᵇ (carrier, normal vision) or XᵇXᵇ (colour-blind) with equal probability, so the probability that a daughter is colour-blind is 1/2.",
-          accept: "0.5; probability calculated from the grid",
-          reject: "alleles written without X / Y (e.g. Bb); Y chromosome carrying an allele",
-          tip: "性聯遺傳一定要寫 Xᴮ、Xᵇ、Y，Y 上面冇等位基因。留意問「女兒」定「所有子女」。" },
-        { title: "Deduce the pattern of inheritance from a pedigree chart", star: true,
-          paper: "P2", where: "Paper 1B / 2 · 2–3 marks · pedigree chart given",
-          q: "In a pedigree chart, two unaffected parents (I-1 and I-2) have an affected daughter (II-3) and two unaffected sons. Deduce, with reasons, whether the condition is dominant or recessive and whether it is autosomal or X-linked.",
-          marks: [
-            "the condition is __recessive__: an affected child has __two unaffected parents__, so both parents are carriers",
-            "it is __autosomal__: an X-linked recessive condition in a daughter would require her father to be affected, but he is unaffected",
-            "parents are both __heterozygous (Aa)__ and the daughter is aa; probability that another child is affected = 1/4",
-          ],
-          model: "The condition is recessive, because an affected child has two unaffected parents, so both parents must be carriers. It is autosomal: an affected daughter with an X-linked recessive condition would need an affected father, but he is unaffected. The parents are both heterozygous (Aa) and the daughter is aa; the probability that another child is affected is 1/4.",
-          accept: "using the letters given in the question; \"skips a generation\" as supporting evidence only",
-          reject: "\"recessive because few people are affected\"; deciding from counts of males and females alone",
-          tip: "圖例：方 = 男，圓 = 女，塗黑 = 有病。兩個正常父母生出有病仔女 = 隱性；有病女兒而爸爸正常 = 常染色體。" },
-        { title: "Distinguish between mitosis and meiosis", star: true,
+        { id: "bio-15-q15", title: "Distinguish between mitosis and meiosis", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks · often a table",
           q: "Distinguish between mitosis and meiosis.",
           marks: [
@@ -839,7 +831,7 @@ IB.addExamFrames("bio", {
           accept: "reduction division; growth and repair vs gamete production",
           reject: "\"meiosis produces identical cells\"; \"mitosis produces haploid cells\"",
           tip: "Distinguish 題用表格最穩陣，一行一個特徵，兩邊都要寫。" },
-        { title: "Explain non-disjunction and Down syndrome",
+        { id: "bio-15-q16", title: "Explain non-disjunction and Down syndrome",
           paper: "P2", where: "Paper 2 · 2–3 marks · karyotype may be given",
           q: "Explain how non-disjunction can lead to Down syndrome.",
           marks: [
@@ -851,7 +843,7 @@ IB.addExamFrames("bio", {
           accept: "trisomy; 2n + 1",
           reject: "\"Down syndrome is caused by a gene mutation\"; non-disjunction in mitosis of the parent",
           tip: "Down syndrome = 第 21 號染色體有三條，係減數分裂時唔分離。" },
-        { title: "Calculate a mitotic index from a micrograph", hl: true,
+        { id: "bio-15-q17", title: "Calculate a mitotic index from a micrograph", hl: true,
           paper: "P1B", where: "Paper 1B / 2 · 2 marks · root-tip micrograph or counts",
           q: "In a micrograph of an onion root tip, 18 cells are in prophase, 4 in metaphase, 3 in anaphase, 5 in telophase and 170 in interphase. Calculate the mitotic index.",
           marks: [["M1", "(18 + 4 + 3 + 5) ÷ 200 = 30 ÷ 200"], ["A1", "= 0.15"]],
@@ -860,7 +852,20 @@ IB.addExamFrames("bio", {
           accept: "15 % if a percentage is requested",
           reject: "30 ÷ 170 (dividing by interphase cells only)",
           tip: "分母係「全部細胞」（包括間期），唔係淨係間期。癌組織 mitotic index 會高啲。" },
-        { title: "Explain the hormonal control of the menstrual cycle", star: true,
+      ],
+      mc: [
+        { id: "bio-15-q22", skill: "<strong>Chromosome counting:</strong> after meiosis I each cell is already haploid (chromosomes still have two chromatids).",
+          q: "A human cell (2n = 46) completes meiosis I. How many chromosomes does each daughter cell contain?", options: ["46", "23", "92", "12"], answer: 1, why: "Homologous chromosomes separate in meiosis I, halving the number." },
+        { skill: "<strong>Micrograph phases:</strong> chromosomes on the equator = metaphase; V-shapes moving to poles = anaphase; two clusters with a forming membrane = telophase." },
+        { id: "bio-15-q28", skill: "<strong>Meiosis vs mitosis in one line:</strong> mitosis = one division, two identical diploid cells; meiosis = two divisions, four genetically different haploid cells.", q: "Which event happens in meiosis but not in mitosis?", options: ["Separation of sister chromatids","Pairing of homologous chromosomes","Condensation of chromosomes","Formation of a spindle"], answer: 1, why: "Homologous chromosomes pair up in prophase I, allowing crossing over." },
+      ],
+      concepts: [
+        { h: "Cell cycle, cyclins and cancer (AHL)", hl: true, b: "<p>The cell cycle: interphase (G1 growth, S DNA replication, G2 preparation) then mitosis and cytokinesis. <strong>Cyclins</strong> activate cyclin-dependent kinases to move the cell through checkpoints. Mutations in <strong>proto-oncogenes</strong> (becoming oncogenes) or <strong>tumour suppressor genes</strong> can cause uncontrolled division and tumours; benign tumours stay in place, malignant tumours invade tissue and spread (<strong>metastasis</strong>). The <strong>mitotic index</strong> (cells in mitosis ÷ total cells) is higher in rapidly dividing tumours.</p>" },
+      ],
+    },
+    "bio-15b": {
+      frames: [
+        { id: "bio-15-q18", title: "Explain the hormonal control of the menstrual cycle", star: true,
           paper: "P2", where: "Paper 2 · Section B · 5–7 marks · hormone graph often given",
           q: "Explain the roles of FSH, LH, oestradiol and progesterone in the menstrual cycle.",
           marks: [
@@ -883,7 +888,7 @@ IB.addExamFrames("bio", {
           accept: "estrogen / oestrogen for oestradiol; anterior pituitary",
           reject: "\"FSH causes ovulation\"; \"progesterone is made by the pituitary\"; \"oestradiol is made by the corpus luteum only\"",
           tip: "每個荷爾蒙寫三樣：邊度分泌、作用對象、效果。LH 高峰 → 排卵。" },
-        { title: "Outline the procedures used in IVF",
+        { id: "bio-15-q19", title: "Outline the procedures used in IVF",
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Outline the procedures used in in vitro fertilisation (IVF).",
           marks: [
@@ -896,7 +901,7 @@ IB.addExamFrames("bio", {
           accept: "down-regulation; egg retrieval; embryo transfer",
           reject: "\"fertilisation occurs in the uterus\" in IVF",
           tip: "IVF 步驟：停週期 → FSH 多排卵 → 收卵 → 體外受精 → 植入子宮。" },
-        { title: "Explain cross-pollination and self-incompatibility in plants",
+        { id: "bio-15-q20", title: "Explain cross-pollination and self-incompatibility in plants",
           paper: "P2", where: "Paper 2 · 2–3 marks",
           q: "Distinguish between self-pollination and cross-pollination, and explain how self-incompatibility promotes genetic variation.",
           marks: [
@@ -910,21 +915,67 @@ IB.addExamFrames("bio", {
           tip: "自交唔親和 (self-incompatibility) 嘅目的：強迫異花授粉 → 增加遺傳變異。" },
       ],
       mc: [
-        { skill: "<strong>Ratio cheat sheet:</strong> Aa × Aa → 3 : 1; Aa × aa → 1 : 1; codominant / incomplete heterozygotes → 1 : 2 : 1; carrier mother × normal father → 1/2 of sons affected.",
-          q: "A carrier woman (XᴴXʰ) and a man with haemophilia (XʰY) have children. What proportion of all their children are expected to have haemophilia?", options: ["0", "1/4", "1/2", "3/4"], answer: 2, why: "Children: XᴴXʰ, XʰXʰ, XᴴY, XʰY → 2 of 4 affected." },
-        { skill: "<strong>Chromosome counting:</strong> after meiosis I each cell is already haploid (chromosomes still have two chromatids).",
-          q: "A human cell (2n = 46) completes meiosis I. How many chromosomes does each daughter cell contain?", options: ["46", "23", "92", "12"], answer: 1, why: "Homologous chromosomes separate in meiosis I, halving the number." },
-        { skill: "<strong>Pedigree shortcuts:</strong> unaffected parents → affected child = recessive; affected father → all daughters affected suggests X-linked dominant; many more affected males suggests X-linked recessive." },
-        { skill: "<strong>Micrograph phases:</strong> chromosomes on the equator = metaphase; V-shapes moving to poles = anaphase; two clusters with a forming membrane = telophase." },
-        { skill: "<strong>Pregnancy:</strong> hCG from the embryo maintains the corpus luteum; pregnancy tests detect hCG with monoclonal antibodies.", hl: true,
+        { id: "bio-15-q23", skill: "<strong>Pregnancy:</strong> hCG from the embryo maintains the corpus luteum; pregnancy tests detect hCG with monoclonal antibodies.", hl: true,
           q: "Which hormone is detected by a pregnancy test?", options: ["FSH", "LH", "hCG", "Oestradiol"], answer: 2, why: "hCG is secreted by the early embryo / placenta." },
+        { skill: "<strong>Hormone sources:</strong> FSH and LH from the pituitary gland; oestradiol from the developing follicle; progesterone from the corpus luteum.", q: "Which structure secretes progesterone after ovulation?", options: ["Pituitary gland","Developing follicle","Corpus luteum","Endometrium"], answer: 2, why: "The corpus luteum forms from the follicle after ovulation and secretes progesterone." },
+        { skill: "<strong>Flower parts:</strong> anther + filament = stamen (male); stigma + style + ovary = carpel (female). Pollination is anther → stigma; fertilisation happens in the ovule.", q: "Where does fertilisation take place in a flowering plant?", options: ["On the stigma","In the anther","In the ovule inside the ovary","In the style"], answer: 2, why: "The pollen tube grows down the style and a male gamete fuses with the egg cell in the ovule." },
       ],
       concepts: [
         { h: "Hormones of the menstrual cycle", b: "<p><strong>FSH</strong> (pituitary) → follicle development → <strong>oestradiol</strong> (follicle) → endometrium thickens and, at high level, triggers an <strong>LH surge</strong> (positive feedback) → ovulation about day 14 → follicle becomes the <strong>corpus luteum</strong> → <strong>progesterone</strong> maintains the endometrium and, with oestradiol, inhibits FSH and LH (negative feedback). No fertilisation → corpus luteum degenerates → progesterone falls → menstruation, FSH rises again.</p>" },
         { h: "Sexual reproduction in flowering plants", b: "<p>Flowers are adapted for pollination by wind or animals (insect-pollinated: coloured petals, nectar, scent, sticky pollen). <strong>Cross-pollination</strong> promotes variation; <strong>self-incompatibility</strong> mechanisms prevent self-fertilisation. After fertilisation, ovules develop into seeds and the ovary into a fruit; seeds are <strong>dispersed</strong> (wind, animals, water) to reduce competition, and <strong>germinate</strong> when water, oxygen and a suitable temperature are available.</p>" },
-        { h: "Variation and further patterns of inheritance", b: "<p><strong>Incomplete dominance</strong>: heterozygote has an intermediate phenotype (pink four o'clock flowers); <strong>codominance</strong>: both alleles expressed (AB blood group). <strong>Multiple alleles</strong>: ABO gene has Iᴬ, Iᴮ, i. Recessive genetic diseases such as <strong>phenylketonuria (PKU)</strong> need two copies of the allele. <strong>Continuous variation</strong> results from polygenic inheritance and environmental factors (e.g. human height, skin colour); it is shown with histograms or <strong>box-and-whisker plots</strong> (median, quartiles, range, outliers). Sex is determined by the X and Y chromosomes; the SRY gene on Y triggers male development.</p>" },
-        { h: "Cell cycle, cyclins and cancer (AHL)", hl: true, b: "<p>The cell cycle: interphase (G1 growth, S DNA replication, G2 preparation) then mitosis and cytokinesis. <strong>Cyclins</strong> activate cyclin-dependent kinases to move the cell through checkpoints. Mutations in <strong>proto-oncogenes</strong> (becoming oncogenes) or <strong>tumour suppressor genes</strong> can cause uncontrolled division and tumours; benign tumours stay in place, malignant tumours invade tissue and spread (<strong>metastasis</strong>). The <strong>mitotic index</strong> (cells in mitosis ÷ total cells) is higher in rapidly dividing tumours.</p>" },
         { h: "Puberty, pregnancy and birth (AHL)", hl: true, b: "<p>At puberty GnRH from the hypothalamus increases FSH and LH, stimulating testosterone (male) and oestradiol (female) production. The early embryo secretes <strong>hCG</strong>, maintaining the corpus luteum (detected by pregnancy tests). The <strong>placenta</strong> exchanges materials and later secretes progesterone and oestradiol. Childbirth is controlled by <strong>positive feedback</strong>: stretching of the cervix → more <strong>oxytocin</strong> → stronger contractions.</p>" },
+      ],
+    },
+    "bio-15c": {
+      frames: [
+        { id: "bio-15-q12", title: "Genetic cross with incomplete dominance or codominance", star: true,
+          paper: "P2", where: "Paper 2 · 3–4 marks · Punnett grid expected",
+          q: "In four o'clock plants (Mirabilis jalapa), plants with genotype CᴿCᴿ have red flowers, CᵂCᵂ white flowers and CᴿCᵂ pink flowers. Two pink-flowered plants are crossed. Using a Punnett grid, deduce the genotypes and phenotypes of the offspring and their expected ratio.",
+          marks: [
+            "parental genotypes CᴿCᵂ × CᴿCᵂ, with __gametes Cᴿ and Cᵂ__ from each parent",
+            "correct __Punnett grid__: CᴿCᴿ, CᴿCᵂ, CᵂCᴿ, CᵂCᵂ",
+            "phenotypes: __red, pink and white__",
+            "ratio __1 red : 2 pink : 1 white__",
+          ],
+          model: "Parental genotypes: CᴿCᵂ × CᴿCᵂ, with gametes Cᴿ and Cᵂ from each parent. Punnett grid: CᴿCᴿ, CᴿCᵂ, CᵂCᴿ, CᵂCᵂ. Phenotypes: red, pink and white, in the ratio 1 red : 2 pink : 1 white.",
+          accept: "25 % red, 50 % pink, 25 % white",
+          reject: "3 : 1 ratio; using capital and lower-case letters (R / r) for alleles that are not dominant/recessive",
+          tip: "Genetic cross 格式：親代表型 → 基因型 → 配子（圈住）→ Punnett grid → 子代基因型、表型、比例。" },
+        { id: "bio-15-q13", title: "Sex-linked cross (X-linked recessive)", star: true,
+          paper: "P2", where: "Paper 2 · 3–4 marks",
+          q: "Red–green colour blindness is caused by a recessive allele on the X chromosome. A woman with normal vision, whose father was colour-blind, has children with a colour-blind man. Deduce the probability that a daughter of this couple is colour-blind.",
+          marks: [
+            "mother is a __carrier XᴮXᵇ__ (inherited Xᵇ from her father); father is __XᵇY__",
+            "gametes: mother Xᴮ and Xᵇ; father Xᵇ and Y",
+            "daughters: __XᴮXᵇ and XᵇXᵇ__ (sons: XᴮY and XᵇY)",
+            "probability a daughter is colour-blind = __1/2__ (50 %)",
+          ],
+          model: "The mother must be a carrier, XᴮXᵇ, because she received Xᵇ from her colour-blind father. The father is XᵇY. Gametes: Xᴮ, Xᵇ (mother) and Xᵇ, Y (father). Daughters are XᴮXᵇ (carrier, normal vision) or XᵇXᵇ (colour-blind) with equal probability, so the probability that a daughter is colour-blind is 1/2.",
+          accept: "0.5; probability calculated from the grid",
+          reject: "alleles written without X / Y (e.g. Bb); Y chromosome carrying an allele",
+          tip: "性聯遺傳一定要寫 Xᴮ、Xᵇ、Y，Y 上面冇等位基因。留意問「女兒」定「所有子女」。" },
+        { id: "bio-15-q14", title: "Deduce the pattern of inheritance from a pedigree chart", star: true,
+          paper: "P2", where: "Paper 1B / 2 · 2–3 marks · pedigree chart given",
+          q: "In a pedigree chart, two unaffected parents (I-1 and I-2) have an affected daughter (II-3) and two unaffected sons. Deduce, with reasons, whether the condition is dominant or recessive and whether it is autosomal or X-linked.",
+          marks: [
+            "the condition is __recessive__: an affected child has __two unaffected parents__, so both parents are carriers",
+            "it is __autosomal__: an X-linked recessive condition in a daughter would require her father to be affected, but he is unaffected",
+            "parents are both __heterozygous (Aa)__ and the daughter is aa; probability that another child is affected = 1/4",
+          ],
+          model: "The condition is recessive, because an affected child has two unaffected parents, so both parents must be carriers. It is autosomal: an affected daughter with an X-linked recessive condition would need an affected father, but he is unaffected. The parents are both heterozygous (Aa) and the daughter is aa; the probability that another child is affected is 1/4.",
+          accept: "using the letters given in the question; \"skips a generation\" as supporting evidence only",
+          reject: "\"recessive because few people are affected\"; deciding from counts of males and females alone",
+          tip: "圖例：方 = 男，圓 = 女，塗黑 = 有病。兩個正常父母生出有病仔女 = 隱性；有病女兒而爸爸正常 = 常染色體。" },
+        { title: "Deduce genotypes and probabilities for ABO blood groups", star: true, paper: "P2", where: "Paper 2 · 4 marks · multiple alleles", q: "A man with blood group A and a woman with blood group B have a child with blood group O. Deduce the genotypes of the parents and the probability that their next child has blood group AB.", marks: ["the child must be __ii__, so each parent carries the recessive allele __i__","father __Iᴬi__ and mother __Iᴮi__","Punnett grid gives IᴬIᴮ, Iᴬi, Iᴮi and ii in __equal proportions__ (1 : 1 : 1 : 1)","probability of group AB = __1/4 (25%)__; Iᴬ and Iᴮ are __codominant__ so both are expressed"], total: 4, model: "The child with group O has genotype ii, so it received i from each parent. The father (group A) must be Iᴬi and the mother (group B) Iᴮi. Iᴬi × Iᴮi gives IᴬIᴮ (AB), Iᴬi (A), Iᴮi (B) and ii (O) in a 1 : 1 : 1 : 1 ratio, so the probability of an AB child is 1/4 (25%). Iᴬ and Iᴮ are codominant, so a child with both alleles has group AB.", reject: "genotypes written as A, B or O without the I notation; \"AB is a blend of A and B\"", tip: "ABO = multiple alleles：Iᴬ、Iᴮ codominant，i recessive。O 型小朋友 → 父母都帶 i。" },
+      ],
+      mc: [
+        { id: "bio-15-q21", skill: "<strong>Ratio cheat sheet:</strong> Aa × Aa → 3 : 1; Aa × aa → 1 : 1; codominant / incomplete heterozygotes → 1 : 2 : 1; carrier mother × normal father → 1/2 of sons affected.",
+          q: "A carrier woman (XᴴXʰ) and a man with haemophilia (XʰY) have children. What proportion of all their children are expected to have haemophilia?", options: ["0", "1/4", "1/2", "3/4"], answer: 2, why: "Children: XᴴXʰ, XʰXʰ, XᴴY, XʰY → 2 of 4 affected." },
+        { skill: "<strong>Pedigree shortcuts:</strong> unaffected parents → affected child = recessive; affected father → all daughters affected suggests X-linked dominant; many more affected males suggests X-linked recessive." },
+        { skill: "<strong>Test cross:</strong> cross the unknown dominant phenotype with a homozygous recessive; any recessive offspring (about 1 : 1) means the unknown parent was heterozygous.", q: "A tall pea plant crossed with a short (tt) plant produced 52 tall and 48 short offspring. What was the genotype of the tall parent?", options: ["TT","Tt","tt","It cannot be deduced"], answer: 1, why: "A 1 : 1 ratio in a test cross shows the tall parent was heterozygous." },
+      ],
+      concepts: [
+        { h: "Variation and further patterns of inheritance", b: "<p><strong>Incomplete dominance</strong>: heterozygote has an intermediate phenotype (pink four o'clock flowers); <strong>codominance</strong>: both alleles expressed (AB blood group). <strong>Multiple alleles</strong>: ABO gene has Iᴬ, Iᴮ, i. Recessive genetic diseases such as <strong>phenylketonuria (PKU)</strong> need two copies of the allele. <strong>Continuous variation</strong> results from polygenic inheritance and environmental factors (e.g. human height, skin colour); it is shown with histograms or <strong>box-and-whisker plots</strong> (median, quartiles, range, outliers). Sex is determined by the X and Y chromosomes; the SRY gene on Y triggers male development.</p>" },
       ],
     },
 
@@ -1023,7 +1074,7 @@ IB.addExamFrames("bio", {
     // ---------------------------------------------------------------- D2.3, D3.3
     "bio-16": {
       frames: [
-        { title: "Estimate tissue osmolarity from a mass-change graph", star: true,
+        { id: "bio-16-q11", title: "Estimate tissue osmolarity from a mass-change graph", star: true,
           paper: "P1B", where: "Paper 1B / 2 · 2–3 marks · graph of % mass change vs concentration",
           q: "Potato cylinders were placed in sucrose solutions of different concentrations for 24 hours. The percentage change in mass was plotted against sucrose concentration and the line crossed 0 % at 0.30 mol dm⁻³. Estimate the solute concentration of the potato tissue and explain your answer.",
           marks: [
@@ -1038,7 +1089,7 @@ IB.addExamFrames("bio", {
           accept: "0.28–0.32 mol dm⁻³ depending on the line drawn; equal water potential",
           reject: "reading the y-intercept; \"no water moves at all\" (it moves equally both ways)",
           tip: "等滲點 = 線同 x 軸相交嘅位（質量變化 0%）。寫「冇淨移動」(no net movement)。" },
-        { title: "Design and improve an osmosis experiment",
+        { id: "bio-16-q12", title: "Design and improve an osmosis experiment",
           paper: "P1B", where: "Paper 1B · 2–3 marks",
           q: "In an investigation of osmosis using potato cylinders, explain why percentage change in mass is calculated and suggest how the reliability of the results could be improved.",
           marks: [
@@ -1050,7 +1101,7 @@ IB.addExamFrames("bio", {
           accept: "identify and exclude anomalous results; same surface area to volume ratio",
           reject: "\"use more potatoes\" without saying replicates or mean",
           tip: "Improve reliability = 重複 + 計平均 + 控制變量；講具體做法，唔好寫「更小心」。" },
-        { title: "Explain the effects of hypotonic and hypertonic solutions on cells", star: true,
+        { id: "bio-16-q13", title: "Explain the effects of hypotonic and hypertonic solutions on cells", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Explain the effects of placing plant cells and animal cells into hypotonic and hypertonic solutions.",
           marks: [
@@ -1063,7 +1114,7 @@ IB.addExamFrames("bio", {
           accept: "flaccid for plant cells in an isotonic solution; haemolysis",
           reject: "\"plant cells burst\"; \"the cell wall shrinks\"; \"salt moves into the cell\" as the explanation",
           tip: "植物細胞有細胞壁，唔會爆，只會 turgid；動物細胞會爆。講 water 移動，唔好講 solute 移動。" },
-        { title: "Calculate water potential (ψ = ψs + ψp)", hl: true,
+        { id: "bio-16-q14", title: "Calculate water potential (ψ = ψs + ψp)", hl: true,
           paper: "P2", where: "Paper 1B / 2 · 1–2 marks",
           q: "A plant cell has a solute potential of −750 kPa and a pressure potential of +300 kPa. Calculate the water potential of the cell.",
           marks: [["M1", "ψ = ψs + ψp = −750 + 300"], ["A1", "= −450 kPa"]],
@@ -1072,7 +1123,7 @@ IB.addExamFrames("bio", {
           accept: "−0.45 MPa",
           reject: "−1 050 kPa (subtracting ψp); missing the negative sign",
           tip: "ψs 一定係負數，ψp 喺 turgid 細胞係正數。純水 ψ = 0。" },
-        { title: "Explain water movement using water potential", hl: true,
+        { id: "bio-16-q15", title: "Explain water movement using water potential", hl: true,
           paper: "P2", where: "Paper 2 · 2–3 marks",
           q: "A plant cell with a water potential of −450 kPa is placed in a sucrose solution with a water potential of −700 kPa. Explain what happens to the cell.",
           marks: [
@@ -1084,7 +1135,20 @@ IB.addExamFrames("bio", {
           accept: "loss of turgor",
           reject: "\"water moves from −700 to −450\"; \"water moves to the higher water potential\"",
           tip: "水由「較唔負」流去「較負」。−700 比 −450 更負，所以水流出細胞。" },
-        { title: "Explain the control of blood glucose when it falls", star: true,
+      ],
+      mc: [
+        { id: "bio-16-q19", skill: "<strong>Water moves to the more negative ψ.</strong> Compare numbers: −500 is lower than −300.", hl: true,
+          q: "Cell X has ψ = −300 kPa and the neighbouring cell Y has ψ = −500 kPa. Which statement is correct?", options: ["Water moves from X to Y", "Water moves from Y to X", "There is no net water movement", "Water moves into both cells"], answer: 0, why: "Water moves from higher (−300) to lower (−500) water potential." },
+        { skill: "<strong>Isotonic point = x-intercept</strong> of the % mass change graph. Read it from the line of best fit, not from one data point." },
+        { skill: "<strong>Pure water ψ = 0</strong>; adding solutes makes ψ negative; pressure potential is positive in turgid cells and zero in plasmolysed cells.", hl: true },
+      ],
+      concepts: [
+        { h: "Solute and pressure potential (AHL)", hl: true, b: "<p>Water potential <strong>ψ = ψs + ψp</strong> (kPa). Pure water at atmospheric pressure has ψ = 0. <strong>Solute potential</strong> ψs is always negative (solutes reduce ψ). <strong>Pressure potential</strong> ψp is positive when a cell wall presses on the contents (turgid), zero at incipient plasmolysis, and can be negative under tension in xylem. Water moves from higher to lower ψ. When a plant cell takes in water, ψp rises until ψ inside equals ψ outside.</p>" },
+      ],
+    },
+    "bio-16b": {
+      frames: [
+        { id: "bio-16-q16", title: "Explain the control of blood glucose when it falls", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Explain how blood glucose concentration is restored when it falls below the set point.",
           marks: [
@@ -1097,7 +1161,7 @@ IB.addExamFrames("bio", {
           accept: "glycogenolysis; liver releases glucose",
           reject: "\"glucagon is converted into glucose\"; \"glucagon is made in the liver\"",
           tip: "Glucagon ≠ glycogen！胰高血糖素 (glucagon) 叫肝臟分解肝醣 (glycogen)。" },
-        { title: "Explain thermoregulation by negative feedback", star: true,
+        { id: "bio-16-q17", title: "Explain thermoregulation by negative feedback", star: true,
           paper: "P2", where: "Paper 2 · Section B · 5–7 marks",
           q: "Explain how core body temperature is regulated by negative feedback in humans.",
           marks: [
@@ -1112,7 +1176,7 @@ IB.addExamFrames("bio", {
           accept: "thermogenesis; piloerection; vasodilation of arterioles (not capillaries)",
           reject: "\"blood vessels move closer to the skin\"; \"sweat cools the body\" without evaporation; \"capillaries dilate\"",
           tip: "血管唔會「郁埋皮膚」，係小動脈擴張／收縮。汗要「蒸發」先帶走熱。" },
-        { title: "Compare glucose tolerance curves (diabetes data)",
+        { id: "bio-16-q18", title: "Compare glucose tolerance curves (diabetes data)",
           paper: "P1B", where: "Paper 1B / 2 · 2–3 marks · two curves given",
           q: "After a glucose drink, the blood glucose of a non-diabetic person peaked at about 8 mmol dm⁻³ after 40 minutes and was back near 5 mmol dm⁻³ after 2 hours; that of a person with type 2 diabetes peaked at about 12 mmol dm⁻³ after 70 minutes and was still high after 3 hours. Compare and explain the two responses.",
           marks: [
@@ -1132,16 +1196,12 @@ IB.addExamFrames("bio", {
           tip: "Type 1 = 唔製造胰島素（β 細胞被破壞）；type 2 = 細胞對胰島素唔敏感。" },
       ],
       mc: [
-        { skill: "<strong>Water moves to the more negative ψ.</strong> Compare numbers: −500 is lower than −300.", hl: true,
-          q: "Cell X has ψ = −300 kPa and the neighbouring cell Y has ψ = −500 kPa. Which statement is correct?", options: ["Water moves from X to Y", "Water moves from Y to X", "There is no net water movement", "Water moves into both cells"], answer: 0, why: "Water moves from higher (−300) to lower (−500) water potential." },
-        { skill: "<strong>Insulin lowers, glucagon raises.</strong> β cells → insulin; α cells → glucagon (alphabetical trap: glucAgon = Alpha).",
+        { id: "bio-16-q20", skill: "<strong>Insulin lowers, glucagon raises.</strong> β cells → insulin; α cells → glucagon (alphabetical trap: glucAgon = Alpha).",
           q: "Which cells secrete glucagon?", options: ["α cells of the pancreas", "β cells of the pancreas", "Liver cells", "Cells of the hypothalamus"], answer: 0, why: "α cells in the islets of Langerhans secrete glucagon." },
         { skill: "<strong>Type 1 vs type 2:</strong> type 1 = autoimmune destruction of β cells, no insulin; type 2 = insulin resistance, linked to diet, obesity and inactivity." },
-        { skill: "<strong>Isotonic point = x-intercept</strong> of the % mass change graph. Read it from the line of best fit, not from one data point." },
-        { skill: "<strong>Pure water ψ = 0</strong>; adding solutes makes ψ negative; pressure potential is positive in turgid cells and zero in plasmolysed cells.", hl: true },
+        { skill: "<strong>Negative feedback direction:</strong> the response always opposes the change - too hot → lose more heat; too cold → generate and conserve heat.", q: "Which response occurs when core body temperature rises above the set point?", options: ["Shivering","Vasoconstriction of skin arterioles","Vasodilation of skin arterioles","More heat from brown adipose tissue"], answer: 2, why: "Vasodilation increases blood flow near the skin surface, so more heat is lost." },
       ],
       concepts: [
-        { h: "Solute and pressure potential (AHL)", hl: true, b: "<p>Water potential <strong>ψ = ψs + ψp</strong> (kPa). Pure water at atmospheric pressure has ψ = 0. <strong>Solute potential</strong> ψs is always negative (solutes reduce ψ). <strong>Pressure potential</strong> ψp is positive when a cell wall presses on the contents (turgid), zero at incipient plasmolysis, and can be negative under tension in xylem. Water moves from higher to lower ψ. When a plant cell takes in water, ψp rises until ψ inside equals ψ outside.</p>" },
       ],
     },
 
@@ -1295,7 +1355,7 @@ IB.addExamFrames("bio", {
     // ---------------------------------------------------------------- D4.1-4.3
     "bio-17": {
       frames: [
-        { title: "Explain abiotic and density-dependent selection pressures", star: true,
+        { id: "bio-17-q10", title: "Explain abiotic and density-dependent selection pressures", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Explain how competition for limited resources leads to natural selection in a population.",
           marks: [
@@ -1308,7 +1368,7 @@ IB.addExamFrames("bio", {
           accept: "differential survival and reproduction; abiotic factors (e.g. drought, temperature) as selection pressures",
           reject: "\"organisms change because they need to\"; \"individuals evolve\"",
           tip: "族群會進化，個體唔會。唔好寫「為咗生存所以變異」，變異係隨機嘅。" },
-        { title: "Distinguish stabilising, directional and disruptive selection", hl: true, star: true,
+        { id: "bio-17-q11", title: "Distinguish stabilising, directional and disruptive selection", hl: true, star: true,
           paper: "P2", where: "Paper 1B / 2 · 3 marks · distribution graphs",
           q: "Distinguish between stabilising, directional and disruptive selection.",
           marks: [
@@ -1325,7 +1385,7 @@ IB.addExamFrames("bio", {
           accept: "named examples for each type",
           reject: "\"stabilising selection keeps the population the same size\"",
           tip: "三種選擇睇個分布圖：穩定 = 變窄；定向 = 平移；分裂 = 變雙峰。" },
-        { title: "Calculate allele and genotype frequencies (Hardy–Weinberg)", hl: true, star: true,
+        { id: "bio-17-q12", title: "Calculate allele and genotype frequencies (Hardy–Weinberg)", hl: true, star: true,
           paper: "P2", where: "Paper 1B / 2 · 2–3 marks",
           q: "In a population in Hardy–Weinberg equilibrium, 9 % of individuals show a recessive phenotype. Calculate the percentage of individuals that are heterozygous.",
           marks: [["M1", "q² = 0.09, so q = 0.3 and p = 1 − 0.3 = 0.7"], ["M1", "2pq = 2 × 0.7 × 0.3"], ["A1", "= 0.42, i.e. 42 %"]],
@@ -1334,7 +1394,7 @@ IB.addExamFrames("bio", {
           accept: "0.42",
           reject: "q = 0.09 (forgetting the square root); 2pq = 0.21",
           tip: "一定由隱性表型開始：q² → 開方得 q → p = 1 − q → 2pq。" },
-        { title: "State the conditions for Hardy–Weinberg equilibrium", hl: true,
+        { id: "bio-17-q13", title: "State the conditions for Hardy–Weinberg equilibrium", hl: true,
           paper: "P2", where: "Paper 2 · 2–3 marks",
           q: "State the five conditions required for allele frequencies in a population to remain constant according to the Hardy–Weinberg principle.",
           marks: [
@@ -1348,7 +1408,7 @@ IB.addExamFrames("bio", {
           accept: "no gene flow; no sexual selection",
           reject: "\"small population\"; \"no variation\"",
           tip: "記住五個條件：大族群、隨機交配、冇突變、冇遷移、冇天擇。" },
-        { title: "Explain the results of experiments on sexual selection (guppies)",
+        { id: "bio-17-q14", title: "Explain the results of experiments on sexual selection (guppies)",
           paper: "P1B", where: "Paper 1B / 2 · 3–4 marks · Endler-style data",
           q: "Male guppies in streams with many predators are dull, with few coloured spots. When guppies were moved to streams with few predators, the males had more and brighter spots after several generations. Explain these results.",
           marks: [
@@ -1361,7 +1421,20 @@ IB.addExamFrames("bio", {
           accept: "trade-off between predation and mate choice",
           reject: "\"guppies changed colour because there were no predators\"",
           tip: "性擇 vs 天擇係拉鋸：捕食者少 → 鮮豔雄魚多仔。" },
-        { title: "Explain tipping points (Amazon rainforest)", star: true,
+      ],
+      mc: [
+        { skill: "<strong>Selection acts on phenotypes but only heritable variation leads to evolution.</strong> Eliminate options about acquired characteristics." },
+        { id: "bio-17-q22", skill: "<strong>Hardy–Weinberg:</strong> p + q = 1 and p² + 2pq + q² = 1. Start from q² (the recessive phenotype).", hl: true,
+          q: "The frequency of allele A in a population is 0.6. What is the expected frequency of heterozygotes?", options: ["0.24", "0.36", "0.48", "0.16"], answer: 2, why: "q = 0.4; 2pq = 2 × 0.6 × 0.4 = 0.48." },
+        { id: "bio-17-q27", skill: "<strong>Lamarck trap:</strong> characteristics acquired during a lifetime are not inherited; selection acts only on heritable variation from mutation, meiosis and fertilisation.", q: "Which statement about giraffe neck length is consistent with natural selection?", options: ["Giraffes stretched their necks and passed the longer necks to their offspring","Giraffes with alleles for longer necks reached more food, survived and reproduced more","Giraffes grew longer necks because they needed them","All giraffes' necks grew longer at the same rate"], answer: 1, why: "Selection acts on existing heritable variation; individuals do not change in response to need." },
+      ],
+      concepts: [
+        { h: "Gene pools, Hardy–Weinberg and artificial selection (AHL)", hl: true, b: "<p>A <strong>gene pool</strong> is all the alleles in an interbreeding population; evolution is a change in allele frequencies. <strong>Stabilising</strong>, <strong>directional</strong> and <strong>disruptive</strong> selection change distributions in different ways. The <strong>Hardy–Weinberg</strong> equations p + q = 1 and p² + 2pq + q² = 1 predict genotype frequencies if the population is large, mates randomly, and has no mutation, migration or selection; deviation from these frequencies shows that evolution is occurring. <strong>Artificial selection</strong> by humans (crop plants, domestic animals) shows how selection changes species.</p>" },
+      ],
+    },
+    "bio-17b": {
+      frames: [
+        { id: "bio-17-q15", title: "Explain tipping points (Amazon rainforest)", star: true,
           paper: "P2", where: "Paper 2 · 2–3 marks",
           q: "Explain what is meant by a tipping point, with reference to the Amazon rainforest.",
           marks: [
@@ -1373,7 +1446,7 @@ IB.addExamFrames("bio", {
           accept: "about 20–25 % deforestation is often suggested as the threshold",
           reject: "describing deforestation without the idea of a threshold",
           tip: "Tipping point 重點：過咗某個臨界值就好難返轉頭。" },
-        { title: "Design a mesocosm investigation",
+        { id: "bio-17-q16", title: "Design a mesocosm investigation",
           paper: "P1B", where: "Paper 1B · 2–3 marks",
           q: "Outline how a mesocosm could be set up to investigate a factor affecting the stability of an aquatic ecosystem.",
           marks: [
@@ -1385,7 +1458,7 @@ IB.addExamFrames("bio", {
           accept: "terrarium for a terrestrial mesocosm",
           reject: "keeping the mesocosm in the dark; only one container",
           tip: "Mesocosm 要有齊生產者、消費者、分解者，有光、密封，同埋重複組。" },
-        { title: "Explain eutrophication", star: true,
+        { id: "bio-17-q17", title: "Explain eutrophication", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Explain how the leaching of fertiliser into a lake can lead to the death of fish.",
           marks: [
@@ -1398,44 +1471,7 @@ IB.addExamFrames("bio", {
           accept: "BOD; cyanobacteria",
           reject: "\"algae use up the oxygen\" as the main cause; \"fertiliser poisons the fish\"",
           tip: "缺氧嘅主因係分解者呼吸用晒氧，唔係藻類本身。" },
-        { title: "Explain how rising CO₂ threatens coral reefs", star: true,
-          paper: "P2", where: "Paper 2 · 3–4 marks",
-          q: "Explain how rising atmospheric carbon dioxide concentrations threaten coral reefs.",
-          marks: [
-            "higher sea __temperatures__ cause corals to expel their __zooxanthellae__ (coral bleaching)",
-            "the coral loses the sugars from zooxanthellae __photosynthesis__ and may die",
-            "CO₂ dissolves in seawater forming carbonic acid: __ocean acidification__",
-            "fewer __carbonate ions__, so corals deposit calcium carbonate skeletons more slowly",
-          ],
-          model: "Rising CO₂ enhances the greenhouse effect, so higher sea temperatures cause corals to expel their mutualistic zooxanthellae, causing coral bleaching. The coral then loses the sugars from zooxanthellae photosynthesis and may die. CO₂ also dissolves in seawater forming carbonic acid, causing ocean acidification (lower pH). With fewer carbonate ions, corals deposit calcium carbonate skeletons more slowly.",
-          accept: "symbiotic algae for zooxanthellae; calcification",
-          reject: "\"coral bleaching is caused by acid\" alone; \"CO₂ is poisonous to coral\"",
-          tip: "珊瑚兩大威脅：升溫 → 白化（趕走蟲黃藻）；CO₂ 溶解 → 海洋酸化（少咗碳酸根）。" },
-        { title: "Explain positive feedback in climate change (tundra and ice)",
-          paper: "P2", where: "Paper 2 · 2–3 marks",
-          q: "Explain how melting of permafrost can cause positive feedback in global warming.",
-          marks: [
-            "warming thaws __permafrost__, so frozen organic matter is decomposed",
-            "decomposition releases __CO₂ and methane__, so the tundra changes from a carbon sink to a __carbon source__",
-            "more greenhouse gases cause more warming and more thawing: __positive feedback__ (also less ice reduces albedo, increasing heat absorption)",
-          ],
-          model: "As temperatures rise, warming thaws permafrost, so frozen organic matter is decomposed by microorganisms. Decomposition releases CO₂ and methane, so the tundra changes from a carbon sink to a carbon source. More greenhouse gases cause more warming and more thawing: positive feedback. Similarly, less ice reduces albedo, so more heat is absorbed.",
-          accept: "reduced albedo; forest fires as another feedback",
-          reject: "\"negative feedback\"; \"ice melting raises CO₂ directly\"",
-          tip: "Positive feedback = 變化令變化加劇；寫清楚個循環點樣返轉頭加強暖化。" },
-        { title: "Explain disruption of phenology by climate change", hl: true,
-          paper: "P2", where: "Paper 2 · 2–3 marks",
-          q: "Explain how climate change can disrupt the synchrony between interacting species.",
-          marks: [
-            "seasonal events (__phenology__) are triggered by different cues: __temperature__ in some species, __photoperiod__ (day length) in others",
-            "warming makes temperature-triggered events (e.g. budburst, caterpillar emergence) happen __earlier__, while photoperiod-triggered events are unchanged",
-            "this causes a __mismatch__, e.g. great tit chicks hatch after the peak of caterpillar abundance, so survival falls",
-          ],
-          model: "The timing of seasonal events (phenology) is triggered by different cues: temperature in some species and photoperiod (day length) in others. Warming makes temperature-triggered events such as budburst and caterpillar emergence happen earlier, while photoperiod-triggered events are unchanged. This causes a mismatch: for example, great tit chicks hatch after the peak of caterpillar abundance, so there is less food and survival falls.",
-          accept: "other valid examples (pollinators and flowering; caribou calving and plant growth)",
-          reject: "\"all species change their timing equally\"",
-          tip: "物候錯配：一個睇溫度、一個睇日照長度，暖化之後就唔再同步。" },
-        { title: "Distinguish primary and secondary succession", hl: true,
+        { id: "bio-17-q21", title: "Distinguish primary and secondary succession", hl: true,
           paper: "P2", where: "Paper 2 · 2–3 marks",
           q: "Distinguish between primary and secondary succession.",
           marks: [
@@ -1449,18 +1485,63 @@ IB.addExamFrames("bio", {
           tip: "分別在於「有冇泥土」：冇泥 = 初生演替；有泥 = 次生演替。" },
       ],
       mc: [
-        { skill: "<strong>Selection acts on phenotypes but only heritable variation leads to evolution.</strong> Eliminate options about acquired characteristics." },
-        { skill: "<strong>Hardy–Weinberg:</strong> p + q = 1 and p² + 2pq + q² = 1. Start from q² (the recessive phenotype).", hl: true,
-          q: "The frequency of allele A in a population is 0.6. What is the expected frequency of heterozygotes?", options: ["0.24", "0.36", "0.48", "0.16"], answer: 2, why: "q = 0.4; 2pq = 2 × 0.6 × 0.4 = 0.48." },
-        { skill: "<strong>Range shifts are poleward and upslope</strong> as the climate warms.",
-          q: "Which observation is most likely to be a consequence of global warming?", options: ["Species ranges shifting towards the equator", "Species ranges shifting to higher altitudes", "Later budburst in spring", "Increasing area of Arctic sea ice"], answer: 1, why: "Species track their suitable temperature range to higher latitudes and altitudes." },
         { skill: "<strong>Keystone species</strong> have an effect on the community far larger than their abundance (e.g. sea otters, wolves, beavers)." },
         { skill: "<strong>Biomagnification:</strong> concentration increases at each trophic level because the toxin is persistent and fat-soluble; the top predator has the highest concentration." },
+        { skill: "<strong>Eutrophication sequence:</strong> nutrients → algal bloom → algae die → bacteria decompose them (high BOD) → dissolved O₂ falls → fish die.", q: "Why does dissolved oxygen fall in a lake after fertiliser runoff?", options: ["Algae use up oxygen in photosynthesis","Bacteria decomposing dead algae respire aerobically","Nitrates react with oxygen in the water","Fish respire faster in warmer water"], answer: 1, why: "Aerobic decomposers of the dead algae raise the biochemical oxygen demand." },
       ],
       concepts: [
-        { h: "Gene pools, Hardy–Weinberg and artificial selection (AHL)", hl: true, b: "<p>A <strong>gene pool</strong> is all the alleles in an interbreeding population; evolution is a change in allele frequencies. <strong>Stabilising</strong>, <strong>directional</strong> and <strong>disruptive</strong> selection change distributions in different ways. The <strong>Hardy–Weinberg</strong> equations p + q = 1 and p² + 2pq + q² = 1 predict genotype frequencies if the population is large, mates randomly, and has no mutation, migration or selection; deviation from these frequencies shows that evolution is occurring. <strong>Artificial selection</strong> by humans (crop plants, domestic animals) shows how selection changes species.</p>" },
         { h: "Ecological succession (AHL)", hl: true, b: "<p>Succession is a sequence of community changes driven by interactions between organisms and their environment (e.g. soil development, shading). <strong>Primary</strong> succession starts without soil; <strong>secondary</strong> succession follows disturbance where soil remains. Changes include increasing biomass, biodiversity, soil depth and complexity of food webs. Succession ends in a <strong>climax community</strong>, which may be <strong>cyclical</strong> (e.g. heathland). Human activities (grazing, burning) can halt succession at an earlier stage (arrested succession).</p>" },
         { h: "Sustainability, pollution and restoration", b: "<p>Harvesting is sustainable if it does not exceed the rate of replacement (e.g. fishing quotas, timber). Agriculture can be made more sustainable by reducing soil erosion, fertiliser leaching and pesticide use. <strong>Plastic pollution</strong>: macroplastics entangle and are swallowed by animals; microplastics enter food chains. <strong>Rewilding</strong> restores ecosystems by reintroducing species (e.g. wolves in Yellowstone) and removing human management.</p>" },
+      ],
+    },
+    "bio-17c": {
+      frames: [
+        { id: "bio-17-q18", title: "Explain how rising CO₂ threatens coral reefs", star: true,
+          paper: "P2", where: "Paper 2 · 3–4 marks",
+          q: "Explain how rising atmospheric carbon dioxide concentrations threaten coral reefs.",
+          marks: [
+            "higher sea __temperatures__ cause corals to expel their __zooxanthellae__ (coral bleaching)",
+            "the coral loses the sugars from zooxanthellae __photosynthesis__ and may die",
+            "CO₂ dissolves in seawater forming carbonic acid: __ocean acidification__",
+            "fewer __carbonate ions__, so corals deposit calcium carbonate skeletons more slowly",
+          ],
+          model: "Rising CO₂ enhances the greenhouse effect, so higher sea temperatures cause corals to expel their mutualistic zooxanthellae, causing coral bleaching. The coral then loses the sugars from zooxanthellae photosynthesis and may die. CO₂ also dissolves in seawater forming carbonic acid, causing ocean acidification (lower pH). With fewer carbonate ions, corals deposit calcium carbonate skeletons more slowly.",
+          accept: "symbiotic algae for zooxanthellae; calcification",
+          reject: "\"coral bleaching is caused by acid\" alone; \"CO₂ is poisonous to coral\"",
+          tip: "珊瑚兩大威脅：升溫 → 白化（趕走蟲黃藻）；CO₂ 溶解 → 海洋酸化（少咗碳酸根）。" },
+        { id: "bio-17-q19", title: "Explain positive feedback in climate change (tundra and ice)",
+          paper: "P2", where: "Paper 2 · 2–3 marks",
+          q: "Explain how melting of permafrost can cause positive feedback in global warming.",
+          marks: [
+            "warming thaws __permafrost__, so frozen organic matter is decomposed",
+            "decomposition releases __CO₂ and methane__, so the tundra changes from a carbon sink to a __carbon source__",
+            "more greenhouse gases cause more warming and more thawing: __positive feedback__ (also less ice reduces albedo, increasing heat absorption)",
+          ],
+          model: "As temperatures rise, warming thaws permafrost, so frozen organic matter is decomposed by microorganisms. Decomposition releases CO₂ and methane, so the tundra changes from a carbon sink to a carbon source. More greenhouse gases cause more warming and more thawing: positive feedback. Similarly, less ice reduces albedo, so more heat is absorbed.",
+          accept: "reduced albedo; forest fires as another feedback",
+          reject: "\"negative feedback\"; \"ice melting raises CO₂ directly\"",
+          tip: "Positive feedback = 變化令變化加劇；寫清楚個循環點樣返轉頭加強暖化。" },
+        { id: "bio-17-q20", title: "Explain disruption of phenology by climate change", hl: true,
+          paper: "P2", where: "Paper 2 · 2–3 marks",
+          q: "Explain how climate change can disrupt the synchrony between interacting species.",
+          marks: [
+            "seasonal events (__phenology__) are triggered by different cues: __temperature__ in some species, __photoperiod__ (day length) in others",
+            "warming makes temperature-triggered events (e.g. budburst, caterpillar emergence) happen __earlier__, while photoperiod-triggered events are unchanged",
+            "this causes a __mismatch__, e.g. great tit chicks hatch after the peak of caterpillar abundance, so survival falls",
+          ],
+          model: "The timing of seasonal events (phenology) is triggered by different cues: temperature in some species and photoperiod (day length) in others. Warming makes temperature-triggered events such as budburst and caterpillar emergence happen earlier, while photoperiod-triggered events are unchanged. This causes a mismatch: for example, great tit chicks hatch after the peak of caterpillar abundance, so there is less food and survival falls.",
+          accept: "other valid examples (pollinators and flowering; caribou calving and plant growth)",
+          reject: "\"all species change their timing equally\"",
+          tip: "物候錯配：一個睇溫度、一個睇日照長度，暖化之後就唔再同步。" },
+        { title: "Explain the enhanced greenhouse effect", star: true, paper: "P2", where: "Paper 2 · 4 marks", q: "Explain how human activities are increasing the greenhouse effect.", marks: ["short-wave radiation from the Sun passes through the atmosphere and warms the Earth's surface","the surface emits __longer-wave infrared__ radiation","__greenhouse gases__ (CO₂, methane, water vapour) __absorb and re-emit infrared__, so heat is retained in the atmosphere","__burning fossil fuels__ and __deforestation__ increase CO₂; cattle, rice paddies and landfill increase __methane__","higher concentrations retain more heat, so the __global mean temperature rises__"], total: 4, model: "Short-wave radiation from the Sun warms the Earth's surface, which emits longer-wave infrared radiation. Greenhouse gases such as CO₂ and methane absorb and re-emit this infrared, keeping the atmosphere warm. Burning fossil fuels and deforestation have raised CO₂ concentration, and livestock, rice paddies and landfill sites release methane, so more infrared is absorbed and the global mean temperature rises.", reject: "\"the hole in the ozone layer lets in more heat\"; \"greenhouse gases trap the Sun's rays\"", tip: "Greenhouse effect 本身係自然；human activities 令 CO₂ / CH₄ 增加 → enhanced greenhouse effect。唔好扯 ozone hole。" },
+      ],
+      mc: [
+        { id: "bio-17-q23", skill: "<strong>Range shifts are poleward and upslope</strong> as the climate warms.",
+          q: "Which observation is most likely to be a consequence of global warming?", options: ["Species ranges shifting towards the equator", "Species ranges shifting to higher altitudes", "Later budburst in spring", "Increasing area of Arctic sea ice"], answer: 1, why: "Species track their suitable temperature range to higher latitudes and altitudes." },
+        { skill: "<strong>Greenhouse gases:</strong> CO₂ and methane (plus water vapour and nitrous oxide). The ozone hole is a different problem (UV), not the cause of warming.", q: "Which gas released by cattle and flooded rice fields is a powerful greenhouse gas?", options: ["Oxygen","Nitrogen","Methane","Ozone"], answer: 2, why: "Methane from anaerobic microbes absorbs infrared radiation strongly." },
+        { skill: "<strong>Bleaching vs acidification:</strong> warmer water → corals expel zooxanthellae (bleaching); more dissolved CO₂ → lower pH and less carbonate for skeletons.", q: "Coral bleaching is caused mainly by:", options: ["lower ocean pH dissolving the skeleton","corals expelling their zooxanthellae in warm water","overfishing of reef fish","sediment blocking light"], answer: 1, why: "Heat stress makes corals expel the photosynthetic algae that colour them and supply sugars." },
+      ],
+      concepts: [
         { h: "More consequences of climate change", b: "<p>Warming changes <strong>ocean currents</strong>, reducing upwelling of nutrient-rich water and so lowering productivity. Polar habitats shrink as sea ice melts (e.g. polar bears, walrus). Afforestation and peatland restoration can sequester carbon but must be evaluated (e.g. monoculture plantations have low biodiversity). <span class=\"ahl\">AHL:</span> warmer winters allow more generations of insect pests per year (e.g. spruce bark beetle); climate change also drives evolution, e.g. a rise in the proportion of brown (rather than grey) tawny owls as snow cover declines.</p>" },
       ],
     },

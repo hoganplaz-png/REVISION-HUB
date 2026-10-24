@@ -745,12 +745,14 @@
   // bio-10 Cell respiration and photosynthesis
   // =====================================================================================
   diagrams["bio-10"] = [
+    { title: "Respirometer reading: O₂ uptake over time at two temperatures", x: [0, 10], y: [0, 10], origin: false, grid: false, xLabel: "Time / min", yLabel: "Distance moved by drop / mm",
+      curves: [{ f: (t) => 0.9 * t, label: "25 °C", labelX: 8.5 }, { f: (t) => 0.45 * t, color: "b", label: "15 °C", labelX: 8.5 }] },
+  ];
+  diagrams["bio-10b"] = [
     { title: "Limiting factor: CO₂ concentration (light high vs low)", x: [0, 10], y: [0, 10], origin: false, grid: false, xLabel: "CO₂ concentration", yLabel: "Rate of photosynthesis",
       curves: [{ f: (c) => 8.5 * (1 - Math.exp(-c / 2.2)), label: "high light", labelX: 7.5 }, { f: (c) => 4.5 * (1 - Math.exp(-c / 1.6)), color: "b", label: "low light", labelX: 7.5 }] },
     { title: "Effect of temperature on photosynthesis: optimum, then enzymes (RuBisCO) denature", x: [0, 50], y: [0, 10], origin: false, grid: false, xLabel: "Temperature / °C", yLabel: "Rate of photosynthesis",
       curves: [{ f: (T) => (T < 30 ? 8.5 * Math.pow(T / 30, 1.5) : Math.max(0, 8.5 - 0.06 * (T - 30) ** 2)), domain: [0, 42] }], points: [{ at: [30, 8.5], label: "optimum" }] },
-    { title: "Respirometer reading: O₂ uptake over time at two temperatures", x: [0, 10], y: [0, 10], origin: false, grid: false, xLabel: "Time / min", yLabel: "Distance moved by drop / mm",
-      curves: [{ f: (t) => 0.9 * t, label: "25 °C", labelX: 8.5 }, { f: (t) => 0.45 * t, color: "b", label: "15 °C", labelX: 8.5 }] },
   ];
   const chromSvg = svg(420, 220, "Paper chromatogram of photosynthetic pigments", R(60, 10, 70, 200, fill(F)) + dash(50, 180, 140, 180) + Ts(146, 184, "origin (pencil line)", "") + R(60, 196, 70, 14, `fill="${B}" fill-opacity=".25" stroke="none"`) + Ts(146, 207, "solvent", "", B) +
     dash(50, 30, 140, 30, B) + Ts(146, 34, "solvent front", "", B) + E(95, 42, 12, 5, `fill="${A}" fill-opacity=".5" stroke="none"`) + E(95, 70, 12, 5, `fill="${A}" fill-opacity=".3" stroke="none"`) + E(95, 95, 12, 5, `fill="${G}" fill-opacity=".8" stroke="none"`) + E(95, 120, 12, 5, `fill="${G}" fill-opacity=".45" stroke="none"`) +
@@ -766,18 +768,22 @@
       svg: svg(460, 200, "Flow chart of aerobic and anaerobic respiration", mk("ar-bio10-r") + box(170, 8, 120, 30, ["glucose"]) + ar(230, 38, 230, 64, "ar-bio10-r") + Ts(240, 55, "glycolysis (cytoplasm): small ATP yield", "") + box(170, 66, 120, 30, ["2 pyruvate"]) +
         ar(200, 96, 90, 130, "ar-bio10-r", `stroke="${MU}"`) + ar(260, 96, 360, 130, "ar-bio10-r", `stroke="${MU}"`) + Ts(100, 108, "no O₂", "m", MU) + Ts(360, 108, "O₂ present", "m", MU) +
         box(10, 132, 95, 44, ["lactate", "(humans)"]) + box(115, 132, 105, 44, ["ethanol + CO₂", "(yeast)"]) + box(290, 132, 160, 44, ["mitochondrion:", "CO₂ + H₂O, large ATP yield"]) + Ts(115, 194, "anaerobic: only 2 ATP per glucose", "m", MU) + Ts(370, 194, "aerobic: ~30+ ATP per glucose", "m", MU)) },
+    { title: "Simple respirometer", caption: "Germinating seeds or small invertebrates in a sealed tube with soda lime / KOH (absorbs CO₂). O₂ uptake reduces gas volume, so the coloured drop moves towards the organisms; distance per minute = rate of O₂ consumption. Control tube with glass beads of equal volume; keep temperature constant in a water bath.",
+      svg: svg(460, 160, "Respirometer with organisms, soda lime and capillary", mk("ar-bio10-rm") + R(30, 40, 120, 70, `rx="10" ${fill(F)}`) + R(36, 90, 108, 16, `fill="${MU}" fill-opacity=".4" stroke="none"`) + ln(36, 86, 144, 86, 'stroke-dasharray="3 2"') + [55, 75, 95, 115].map((x) => E(x, 70, 7, 5, `fill="${G}" fill-opacity=".5" stroke="${G}"`)).join("") +
+        P("M150 70 H420 M150 78 H420", "") + R(300, 70, 12, 8, `fill="${D}" stroke="none"`) + Array.from({ length: 10 }, (_, i) => ln(200 + i * 22, 84, 200 + i * 22, 90, 'stroke-width="0.8"')).join("") + ar(290, 110, 220, 110, "ar-bio10-rm") +
+        lab(75, 64, 110, 18, "germinating seeds") + lab(60, 98, 110, 140, "soda lime: absorbs CO₂") + lab(306, 70, 330, 40, "coloured liquid drop") + Ts(255, 126, "drop moves towards seeds as O₂ is used", "m") + lab(400, 86, 410, 140, "scale / mm")) },
+  ];
+  fig["bio-10b"] = [
     { title: "Photosynthesis overview", caption: "Light-dependent reactions (thylakoid membranes): light absorbed by chlorophyll; photolysis of water releases O₂ (by-product), and ATP and reduced NADP are produced. Light-independent reactions / Calvin cycle (stroma): CO₂ is fixed and reduced to carbohydrate (triose phosphate → glucose) using ATP and reduced NADP. 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂.",
       svg: svg(460, 190, "Light dependent and light independent reactions linked by ATP and NADPH", mk("ar-bio10-p") + box(20, 50, 150, 70, ["light-dependent", "reactions", "(thylakoids)"], `fill="${G}" fill-opacity=".15" stroke="${G}"`) + box(290, 50, 150, 70, ["Calvin cycle", "(light-independent)", "(stroma)"], `fill="${A}" fill-opacity=".12" stroke="${A}"`) +
         ar(172, 70, 288, 70, "ar-bio10-p") + Ts(230, 64, "ATP + reduced NADP", "m") + ar(288, 102, 172, 102, "ar-bio10-p") + Ts(230, 116, "ADP + Pᵢ + NADP⁺", "m") +
         ar(60, 10, 70, 48, "ar-bio10-p", `stroke="${A}"`) + Ts(60, 12, "light", "e", A) + ar(130, 10, 120, 48, "ar-bio10-p", `stroke="${B}"`) + Ts(134, 14, "H₂O", "", B) + ar(95, 122, 95, 160, "ar-bio10-p", `stroke="${B}"`) + Ts(100, 174, "O₂ released (photolysis)", "", B) +
         ar(365, 12, 365, 48, "ar-bio10-p") + Ts(372, 22, "CO₂", "") + ar(365, 122, 365, 160, "ar-bio10-p", `stroke="${G}"`) + Ts(370, 174, "sugars (glucose)", "", G)) },
     { title: "Chromatography of photosynthetic pigments", caption: "Pigment spot on a pencil origin line above the solvent; the solvent carries pigments different distances according to solubility and attraction to the paper/TLC plate. Rf = distance moved by pigment ÷ distance moved by solvent front (always < 1, no units). Typical order from the top: carotene, xanthophyll, chlorophyll a, chlorophyll b (order varies with solvent).", svg: chromSvg },
-    { title: "Simple respirometer", caption: "Germinating seeds or small invertebrates in a sealed tube with soda lime / KOH (absorbs CO₂). O₂ uptake reduces gas volume, so the coloured drop moves towards the organisms; distance per minute = rate of O₂ consumption. Control tube with glass beads of equal volume; keep temperature constant in a water bath.",
-      svg: svg(460, 160, "Respirometer with organisms, soda lime and capillary", mk("ar-bio10-rm") + R(30, 40, 120, 70, `rx="10" ${fill(F)}`) + R(36, 90, 108, 16, `fill="${MU}" fill-opacity=".4" stroke="none"`) + ln(36, 86, 144, 86, 'stroke-dasharray="3 2"') + [55, 75, 95, 115].map((x) => E(x, 70, 7, 5, `fill="${G}" fill-opacity=".5" stroke="${G}"`)).join("") +
-        P("M150 70 H420 M150 78 H420", "") + R(300, 70, 12, 8, `fill="${D}" stroke="none"`) + Array.from({ length: 10 }, (_, i) => ln(200 + i * 22, 84, 200 + i * 22, 90, 'stroke-width="0.8"')).join("") + ar(290, 110, 220, 110, "ar-bio10-rm") +
-        lab(75, 64, 110, 18, "germinating seeds") + lab(60, 98, 110, 140, "soda lime: absorbs CO₂") + lab(306, 70, 330, 40, "coloured liquid drop") + Ts(255, 126, "drop moves towards seeds as O₂ is used", "m") + lab(400, 86, 410, 140, "scale / mm")) },
   ];
   frames["bio-10"] = [
+  ];
+  frames["bio-10b"] = [
     { title: "Annotate a chromatogram and calculate Rf", paper: "P1B", where: "Paper 1B · 3 marks · practical", bank: false,
       q: "A pigment travelled 4.2 cm and the solvent front 7.0 cm. Annotate a chromatogram to show these distances and calculate the Rf value.",
       marks: ["distances measured from the __origin (start line)__ to the __centre of the pigment spot__ and to the __solvent front__", "Rf = 4.2 ÷ 7.0 = __0.60__ (no units)", "pigment identified by comparison with known Rf values"],
@@ -786,10 +792,11 @@
     { title: "Sketch the effect of temperature on the rate of photosynthesis", paper: "P2", where: "Paper 2 · 3 marks · sketch", bank: false,
       q: "Sketch and explain the effect of temperature on the rate of photosynthesis when light and CO₂ are not limiting.",
       marks: ["rate __increases__ with temperature up to an __optimum__ (more kinetic energy, more enzyme–substrate collisions)", "above the optimum rate __falls steeply__", "because enzymes of the Calvin cycle (e.g. __RuBisCO__) __denature__ / stomata close"],
-      diagram: diagrams["bio-10"][1], model: "The rate rises gradually as temperature increases because molecules have more kinetic energy and collide more often with the enzymes of the light-independent reactions. It reaches a maximum at the optimum (about 25–35 °C for many plants) and then falls steeply because enzymes such as RuBisCO denature.",
+      diagram: diagrams["bio-10b"][1], model: "The rate rises gradually as temperature increases because molecules have more kinetic energy and collide more often with the enzymes of the light-independent reactions. It reaches a maximum at the optimum (about 25–35 °C for many plants) and then falls steeply because enzymes such as RuBisCO denature.",
       accept: "light-dependent reactions are less temperature-sensitive", reject: "enzymes 'killed'", tip: "溫度影響嘅係 Calvin cycle 嘅 enzyme：升到 optimum，之後 denature 急跌。" },
   ];
-  concepts["bio-10"] = [{ h: "Diagrams to know: ATP, respiration and photosynthesis", b: "<p>Be ready to draw ATP as adenine + ribose + three phosphates, a flow chart of glycolysis → aerobic/anaerobic pathways (with locations and relative ATP yields), and the link between the light-dependent reactions (thylakoids: photolysis, ATP, reduced NADP, O₂) and the Calvin cycle (stroma: CO₂ fixation using ATP and reduced NADP). Limiting-factor graphs: the factor on the x-axis limits on the rising section; another factor limits on the plateau.</p>" }];
+  concepts["bio-10"] = [{ h: "Diagrams to know: ATP and respiration", b: "<p>Be ready to draw ATP as adenine + ribose + three phosphates, a flow chart of glycolysis → aerobic/anaerobic pathways (with locations and relative ATP yields), and a simple respirometer with soda lime, a capillary tube and a control tube.</p>" }];
+  concepts["bio-10b"] = [{ h: "Diagrams to know: photosynthesis", b: "<p>Be ready to sketch the link between the light-dependent reactions (thylakoids: photolysis, ATP, reduced NADP, O₂) and the light-independent reactions (stroma: CO₂ fixation using ATP and reduced NADP), a chromatogram with Rf distances, and absorption vs action spectra. Limiting-factor graphs: the factor on the x-axis limits on the rising section; another factor limits on the plateau.</p>" }];
   concepts["bio-9"] = [{ h: "Enzyme graphs to sketch", b: "<p>Rate vs [enzyme] (substrate in excess): straight line through the origin. Product vs time: steep start, tangent at t = 0 gives the initial rate, plateau when substrate is used up. At high temperature product formation starts fast then stops early because the enzyme denatures. Competitive inhibition: same maximum rate reached at high [S]; non-competitive: lower maximum (AHL).</p>" }];
 
   // ---------- register ----------

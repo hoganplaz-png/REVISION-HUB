@@ -593,7 +593,7 @@
         return { paper: "P2", marks: 2, diff: 1, q: `Calculate the surface area to volume ratio of a cube-shaped cell with sides of ${l} µm. Give the answer as x : 1.`, numeric: { value: dp(6 / l, 2), tol: 0.01 }, ms: [`SA = ${6 * l * l} µm², V = ${l ** 3} µm³ [M1]`, `${dp(6 / l, 2)} : 1 [A1]`] };
       },
     ],
-    "bio-10": [
+    "bio-10b": [
       () => {
         const sf = dp(R(60, 100) / 10, 1), rf = dp(R(10, 95) / 100, 2), d = dp(sf * rf, 2);
         return { paper: "P2", marks: 2, diff: 1, q: `In paper chromatography, a pigment moved ${d} cm and the solvent front moved ${sf} cm. Calculate the Rf value.`, numeric: { value: dp(d / sf, 2), tol: 0.011 }, ms: [`${d} ÷ ${sf} [M1]`, `= ${dp(d / sf, 2)} [A1]`] };

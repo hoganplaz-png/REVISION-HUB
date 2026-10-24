@@ -1763,7 +1763,7 @@ IB.addExamFrames("bio", {
     // ===================== C1.2-1.3 Cell respiration and photosynthesis =====================
     "bio-10": {
       frames: [
-        { title: "Outline the role of ATP", star: true,
+        { id: "bio-10-q11", title: "Outline the role of ATP", star: true,
           paper: "P2", where: "Paper 1A / Paper 2 · 3–4 marks",
           q: "Outline the role of ATP in cells.",
           marks: [
@@ -1777,7 +1777,7 @@ IB.addExamFrames("bio", {
           model: "ATP is the energy currency of the cell. When it is hydrolysed to ADP and inorganic phosphate, energy is released and used for processes such as active transport across membranes, synthesis of macromolecules like proteins and DNA, and movement such as muscle contraction. ATP is constantly regenerated from ADP + Pi using energy released in cell respiration.",
           reject: "\"ATP produces energy\"; \"ATP is stored as an energy reserve\"",
           tip: "ATP → ADP + Pi 釋放能量；ADP + Pi → ATP 要能量（來自 respiration）。" },
-        { title: "Distinguish cell respiration and gas exchange", star: true,
+        { id: "bio-10-q12", title: "Distinguish cell respiration and gas exchange", star: true,
           paper: "P2", where: "Paper 1A / Paper 2 · 2–3 marks",
           q: "Distinguish between cell respiration and gas exchange.",
           marks: [
@@ -1790,7 +1790,7 @@ IB.addExamFrames("bio", {
           model: "Cell respiration is a set of enzyme-catalysed reactions in the cytoplasm and mitochondria that release energy from glucose and other organic molecules to make ATP. Gas exchange is the passive diffusion of oxygen and carbon dioxide between the organism and its environment across a surface such as the alveoli; it supplies the oxygen respiration uses and removes the CO₂ it produces.",
           reject: "\"respiration is breathing\"",
           tip: "Respiration ≠ breathing！Respiration 係細胞入面嘅化學反應。" },
-        { title: "Anaerobic respiration in yeast: baking and brewing", star: true,
+        { id: "bio-10-q13", title: "Anaerobic respiration in yeast: baking and brewing", star: true,
           paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "Outline anaerobic respiration in yeast and its uses in baking and brewing.",
           marks: [
@@ -1802,7 +1802,7 @@ IB.addExamFrames("bio", {
           model: "Without oxygen, yeast converts glucose into ethanol and carbon dioxide in the cytoplasm, releasing only a small amount of ATP. In baking, the CO₂ forms bubbles that make bread dough rise, and the ethanol evaporates in the oven. In brewing, the ethanol is the desired product, and the CO₂ may be retained for fizz.",
           reject: "\"yeast produces lactate\"; \"yeast produces oxygen\"",
           tip: "Yeast：ethanol + CO₂；人：淨係 lactate。焗麵包要 CO₂，釀酒要 ethanol。" },
-        { title: "Using a respirometer", star: true,
+        { id: "bio-10-q14", title: "Using a respirometer", star: true,
           paper: "P1B", where: "Paper 1B · 4 marks · experimental",
           q: "Describe how a respirometer can be used to measure the rate of respiration of germinating seeds.",
           marks: [
@@ -1816,7 +1816,7 @@ IB.addExamFrames("bio", {
           model: "Place germinating seeds on a gauze above soda lime in a boiling tube connected to a capillary tube containing coloured liquid. The soda lime absorbs CO₂, so as the seeds take in O₂ the gas volume falls and the liquid moves towards the seeds; record the distance moved per minute. Set up an identical control with glass beads, keep both in a water bath at constant temperature, and repeat.",
           reject: "\"the liquid moves because CO₂ is produced\"",
           tip: "Soda lime 食咗 CO₂，所以液體移動只反映 O₂ 吸收量。" },
-        { title: "Calculate rate of oxygen uptake from a respirometer",
+        { id: "bio-10-q15", title: "Calculate rate of oxygen uptake from a respirometer",
           paper: "P1B", where: "Paper 1B · 2 marks",
           q: "In a respirometer, the liquid in a capillary tube of radius 0.50 mm moved 24 mm in 10 minutes. Calculate the rate of oxygen uptake in mm³ min⁻¹.",
           marks: [["M1", "volume = πr²l = 3.142 × 0.50² × 24 = 18.85 mm³"], ["A1", "rate = 18.85 ÷ 10 = 1.88 mm³ min⁻¹"]],
@@ -1824,7 +1824,21 @@ IB.addExamFrames("bio", {
           model: "Volume of O₂ = π × 0.50² × 24 = 18.85 mm³; rate = 18.85 ÷ 10 = 1.88 mm³ min⁻¹ (≈ 1.9).",
           reject: "2.4 mm min⁻¹ (distance, not volume); using the diameter as the radius",
           tip: "Capillary 入面嘅體積 = πr² × 距離；記住用半徑。" },
-        { title: "Calculate an Rf value from a chromatogram", star: true,
+      ],
+      mc: [
+        { skill: "<strong>Respiration products:</strong> human anaerobic → lactate only; yeast anaerobic → ethanol + CO₂; aerobic → CO₂ + H₂O + much more ATP." },
+        { id: "bio-10-q22", skill: "<strong>Respirometers:</strong> soda lime or KOH absorbs CO₂, so liquid movement = O₂ uptake.",
+          q: "In a respirometer containing KOH, the coloured liquid moves towards the respiring seeds because:", options: ["the seeds take up O₂ and the CO₂ released is absorbed by the KOH", "the seeds release O₂", "the KOH releases a gas", "water evaporates from the seeds"], answer: 0,
+          why: "Gas volume falls as O₂ is used and CO₂ is removed." },
+        { id: "bio-10-q25", skill: "<strong>ATP yield:</strong> aerobic ≈ 30 ATP per glucose (needs mitochondria and O₂); anaerobic = 2 ATP (glycolysis only, in the cytoplasm).", q: "Which process produces the most ATP per molecule of glucose?", options: ["Anaerobic respiration in yeast","Anaerobic respiration in muscle","Aerobic respiration","Glycolysis alone"], answer: 2, why: "Aerobic respiration oxidises glucose completely, giving about 30 ATP; anaerobic respiration gives only 2." },
+      ],
+      concepts: [
+        { h: "Respiration vs gas exchange", b: "<p><strong>Cell respiration</strong> is the controlled release of energy from organic compounds to produce ATP, inside cells; <strong>gas exchange</strong> is the diffusion of O₂ and CO₂ across an exchange surface - they must not be confused. Factors affecting the rate of respiration (temperature, substrate, type of organism) are investigated with respirometers.</p>" },
+      ],
+    },
+    "bio-10b": {
+      frames: [
+        { id: "bio-10-q16", title: "Calculate an Rf value from a chromatogram", star: true,
           paper: "P1B", where: "Paper 1B / Paper 2 · 2 marks",
           q: "In a chromatogram of leaf pigments the solvent front moved 8.5 cm from the origin. Pigment X moved 7.8 cm. Calculate the Rf value of pigment X.",
           marks: [["M1", "Rf = distance moved by pigment ÷ distance moved by solvent front = 7.8 ÷ 8.5"], ["A1", "Rf = 0.92 (no units)"]],
@@ -1832,7 +1846,7 @@ IB.addExamFrames("bio", {
           model: "Rf = 7.8 ÷ 8.5 = 0.92. A pigment with such a high Rf (moving almost with the solvent front) is most likely carotene.",
           reject: "1.09 (inverted); giving Rf units",
           tip: "Rf 一定細過 1，冇單位。量度要由 origin 線度起。" },
-        { title: "Absorption spectrum vs action spectrum", star: true,
+        { id: "bio-10-q17", title: "Absorption spectrum vs action spectrum", star: true,
           paper: "P2", where: "Paper 1B / Paper 2 · 3–4 marks · graphs given",
           q: "Compare and contrast the absorption spectrum of chlorophyll and the action spectrum of photosynthesis.",
           marks: [
@@ -1852,7 +1866,7 @@ IB.addExamFrames("bio", {
           model: "Both spectra peak in the blue and red parts of the spectrum and are lowest in the green. The absorption spectrum shows how much light of each wavelength a pigment absorbs, whereas the action spectrum shows how fast photosynthesis proceeds at each wavelength. The action spectrum is not as low in the green–yellow region because accessory pigments such as carotenoids absorb light there and pass the energy on. The close correspondence shows that the light absorbed by chlorophyll drives photosynthesis.",
           reject: "\"chlorophyll absorbs green light\"; \"no photosynthesis happens in green light\"",
           tip: "Absorption = 色素吸幾多光；action = 光合作用有幾快。綠光區 action spectrum 唔係零。" },
-        { title: "Explain limiting factor curves", star: true,
+        { id: "bio-10-q18", title: "Explain limiting factor curves", star: true,
           paper: "P2", where: "Paper 1B / Paper 2 · 4 marks · graph given",
           q: "The graph shows the rate of photosynthesis against light intensity at a low and a high CO₂ concentration. Explain the shape of the curves.",
           marks: [
@@ -1868,7 +1882,7 @@ IB.addExamFrames("bio", {
           model: "At low light intensities both curves rise together, so light intensity is the limiting factor. As light increases, each curve levels off: light is no longer limiting and another factor is. Because the plateau is higher at the higher CO₂ concentration, CO₂ was the factor limiting the lower curve's plateau; the higher plateau is limited by another factor such as temperature.",
           reject: "\"the plant has enough light so it stops photosynthesising\"",
           tip: "斜坡 = x 軸因素限制；平台 = 另一個因素限制（睇邊條線高啲就知係邊個）。" },
-        { title: "Investigate a limiting factor experimentally",
+        { id: "bio-10-q19", title: "Investigate a limiting factor experimentally",
           paper: "P1B", where: "Paper 1B · 4 marks · Elodea / leaf discs",
           q: "Describe how the effect of light intensity on the rate of photosynthesis of an aquatic plant such as Elodea could be investigated.",
           marks: [
@@ -1882,7 +1896,7 @@ IB.addExamFrames("bio", {
           model: "Place Elodea in sodium hydrogencarbonate solution (to supply a constant CO₂ concentration) in a water bath at constant temperature. Put a lamp at different distances, e.g. 10–50 cm, using an LED to avoid heating. After a few minutes to acclimatise, count bubbles or collect the gas for a fixed time at each distance, repeating three times and calculating means.",
           reject: "\"use a brighter bulb\" without controlling other variables",
           tip: "光強度用距離控制；CO₂ 用 NaHCO₃；溫度用 water bath 或 LED。" },
-        { title: "Evaluate CO₂ enrichment experiments",
+        { id: "bio-10-q20", title: "Evaluate CO₂ enrichment experiments",
           paper: "P2", where: "Paper 2 · 4 marks · evaluate",
           q: "Evaluate the use of CO₂ enrichment experiments to predict future rates of photosynthesis and plant growth.",
           marks: [
@@ -1896,7 +1910,7 @@ IB.addExamFrames("bio", {
           model: "Enclosed or free-air CO₂ enrichment experiments allow scientists to measure directly how plants respond to the higher CO₂ levels predicted for the future, and FACE does so under field conditions. Most show increased photosynthesis and growth, but the increase is often smaller than predicted, because other factors such as nitrogen or water become limiting. They are usually short-term and do not reproduce the higher temperatures and droughts that will accompany rising CO₂, so predictions remain uncertain.",
           reject: "a one-sided answer with only strengths or only limitations",
           tip: "Evaluate = 優點 + 限制 + 結論。FACE = 喺野外直接加 CO₂。" },
-        { title: "Roles of water and CO₂ in photosynthesis",
+        { id: "bio-10-q21", title: "Roles of water and CO₂ in photosynthesis",
           paper: "P2", where: "Paper 1A / Paper 2 · 3 marks",
           q: "Outline the roles of water and carbon dioxide in photosynthesis.",
           marks: [
@@ -1911,20 +1925,16 @@ IB.addExamFrames("bio", {
           tip: "釋出嘅 O₂ 嚟自水（photolysis），唔係嚟自 CO₂。" },
       ],
       mc: [
-        { skill: "<strong>Respiration products:</strong> human anaerobic → lactate only; yeast anaerobic → ethanol + CO₂; aerobic → CO₂ + H₂O + much more ATP." },
-        { skill: "<strong>Respirometers:</strong> soda lime or KOH absorbs CO₂, so liquid movement = O₂ uptake.",
-          q: "In a respirometer containing KOH, the coloured liquid moves towards the respiring seeds because:", options: ["the seeds take up O₂ and the CO₂ released is absorbed by the KOH", "the seeds release O₂", "the KOH releases a gas", "water evaporates from the seeds"], answer: 0,
-          why: "Gas volume falls as O₂ is used and CO₂ is removed." },
-        { skill: "<strong>Rf is always below 1 and has no units.</strong> The highest Rf belongs to the pigment most soluble in the solvent.",
+        { id: "bio-10-q23", skill: "<strong>Rf is always below 1 and has no units.</strong> The highest Rf belongs to the pigment most soluble in the solvent.",
           q: "A pigment moved 3.0 cm and the solvent front moved 7.5 cm. What is the Rf value?", options: ["0.25", "0.40", "2.5", "4.5"], answer: 1,
           why: "3.0 ÷ 7.5 = 0.40." },
         { skill: "<strong>Limiting factors:</strong> on the slope the x-axis factor limits; on the plateau something else does." },
-        { skill: "<strong>Green light:</strong> least absorbed by chlorophyll, but the action spectrum is not zero there because of accessory pigments.",
+        { id: "bio-10-q24", skill: "<strong>Green light:</strong> least absorbed by chlorophyll, but the action spectrum is not zero there because of accessory pigments.",
           q: "Why is the rate of photosynthesis not zero in green light?", options: ["Chlorophyll absorbs green light strongly", "Accessory pigments such as carotenoids absorb some of these wavelengths", "Green light has the most energy", "Plants respire more in green light"], answer: 1,
           why: "Carotenoids absorb some blue-green light and pass energy to chlorophyll." },
       ],
       concepts: [
-        { h: "Respiration vs gas exchange; CO₂ enrichment", b: "<p><strong>Cell respiration</strong> is the controlled release of energy from organic compounds to produce ATP, inside cells; <strong>gas exchange</strong> is the diffusion of O₂ and CO₂ across an exchange surface - they must not be confused. Factors affecting the rate of respiration (temperature, substrate, type of organism) are investigated with respirometers. <strong>CO₂ enrichment experiments</strong>, including free-air CO₂ enrichment (FACE) in natural ecosystems, are used to predict how rising atmospheric CO₂ will affect future rates of photosynthesis and plant growth.</p>" },
+        { h: "CO₂ enrichment experiments", b: "<p><strong>CO₂ enrichment experiments</strong>, in enclosed greenhouses or as free-air CO₂ enrichment (FACE) in natural ecosystems, are used to predict how rising atmospheric CO₂ will affect future rates of photosynthesis and plant growth. Results often show increased growth at first, but other factors (nitrogen, water, temperature) soon become limiting.</p>" },
       ],
     },
     // END TOPICS

@@ -310,11 +310,9 @@
       { title: "Chemical synapse", caption: "Arrival of action potential → Ca²⁺ in → vesicles release neurotransmitter by exocytosis → diffuses across the cleft → binds receptors → Na⁺ in → depolarisation. Neurotransmitter is then broken down (acetylcholinesterase) or reabsorbed.", svg: SYNAPSE },
       { title: "Resting potential", caption: "The Na⁺/K⁺ pump uses ATP to move 3 Na⁺ out for every 2 K⁺ in; K⁺ also leaks out, so the inside is negative (about −70 mV).", svg: RESTING },
       { title: "Saltatory conduction", caption: "Myelin insulates the axon, so depolarisation only occurs at the nodes; local currents jump between nodes, making conduction much faster.", svg: SALT },
-      { title: "Reflex arc (pain withdrawal)", caption: "Receptor → sensory neuron (cell body in dorsal root ganglion) → relay neuron (grey matter) → motor neuron → effector muscle. The brain is not needed, so the response is fast.", svg: REFLEX },
-      { title: "Phototropism (auxin)", hl: true, caption: "Auxin is moved to the shaded side by PIN proteins; it stimulates H⁺ pumping that loosens cell walls, so shaded-side cells elongate more and the shoot bends towards light.", svg: PHOTOTROP },
     ],
     frames: [
-      { title: "Draw and label a motor neuron", star: true,
+      { id: "bio-11-q23", title: "Draw and label a motor neuron", star: true,
         paper: "P2", where: "Paper 2 · 3–4 marks · drawing",
         q: "Draw a labelled diagram of a motor neuron.",
         marks: [
@@ -328,7 +326,7 @@
         accept: "terminal buttons / synaptic knobs / end plates; Schwann cells for myelin",
         reject: "myelin drawn as one continuous sheath with no nodes; nucleus in the axon",
         tip: "Motor neuron：細胞體喺一端，軸突好長，髓鞘一段段，中間係 node of Ranvier。加個箭咀講衝動方向更穩陣。" },
-      { title: "Label a diagram of a synapse", star: true,
+      { id: "bio-11-q24", title: "Label a diagram of a synapse", star: true,
         paper: "P1B", where: "Paper 1B / 2 · 3–4 marks · diagram given",
         q: "Label the presynaptic neuron, synaptic vesicle, synaptic cleft, receptor and postsynaptic membrane on a diagram of a synapse, and state the role of calcium ions.",
         marks: [
@@ -343,7 +341,7 @@
         accept: "acetylcholine for neurotransmitter; ligand-gated ion channel for receptor",
         reject: "receptors on the presynaptic membrane; vesicles in the cleft; \"the impulse jumps the gap\"",
         tip: "囊泡喺突觸前，受體喺突觸後。Ca²⁺ 係「入」突觸前末梢，觸發胞吐。" },
-      { title: "Sketch conduction speed against axon diameter", 
+      { id: "bio-11-q25", title: "Sketch conduction speed against axon diameter", 
         paper: "P1B", where: "Paper 1B · 2–3 marks · graph sketch or data interpretation",
         q: "Sketch graphs to show how the speed of nerve impulses varies with axon diameter in myelinated and unmyelinated axons, and explain the difference.",
         marks: [
@@ -357,20 +355,7 @@
         accept: "\"jumps between nodes\"; lower internal resistance",
         reject: "\"myelin conducts the impulse\"; speed decreasing with diameter",
         tip: "兩條線都升；有髓鞘條線斜好多。解釋要講 saltatory conduction 同大直徑阻力細。" },
-      { title: "Label a reflex arc", 
-        paper: "P1B", where: "Paper 1B · 2–3 marks · diagram of a spinal reflex given",
-        q: "Identify the structures of a pain withdrawal reflex arc on a diagram of the spinal cord and state the role of the relay neuron.",
-        marks: [
-          "__receptor__ (pain receptor in the skin) → __sensory neuron__ entering the spinal cord through the dorsal root",
-          "__relay neuron__ in the __grey matter__ of the spinal cord connects the sensory neuron to the motor neuron",
-          "__motor neuron__ leaves the spinal cord to the __effector__ (muscle), which contracts",
-        ],
-        svg: REFLEX,
-        model: "A pain receptor in the skin stimulates a sensory neuron, which carries impulses into the spinal cord through the dorsal root; its cell body is in the dorsal root ganglion. In the grey matter a relay neuron passes the impulse to a motor neuron. The motor neuron carries the impulse out through the ventral root to the effector muscle, which contracts to withdraw the limb. The brain is not involved, so the response is rapid.",
-        accept: "interneuron for relay neuron; skeletal muscle as effector",
-        reject: "sensory neuron going directly to the effector; relay neuron in the white matter",
-        tip: "次序：receptor → sensory → relay（灰質）→ motor → effector。唔經大腦所以快。" },
-      { title: "Sketch and explain summation of EPSPs", hl: true,
+      { id: "bio-11-q27", title: "Sketch and explain summation of EPSPs", hl: true,
         paper: "P2", where: "Paper 2 · 3 marks · membrane potential graph",
         q: "Sketch a graph of postsynaptic membrane potential to show how summation of excitatory postsynaptic potentials can trigger an action potential.",
         marks: [
@@ -383,6 +368,29 @@
         accept: "\"add up\" for summation; −50 to −55 mV for threshold",
         reject: "a single EPSP drawn reaching +30 mV; threshold drawn above 0 mV",
         tip: "單一個 EPSP 唔夠 threshold，疊加先夠。分 temporal（時間）同 spatial（空間）。" },
+    ],
+  };
+  const T11b = {
+    diagrams: [
+    ],
+    figures: [
+      { title: "Reflex arc (pain withdrawal)", caption: "Receptor → sensory neuron (cell body in dorsal root ganglion) → relay neuron (grey matter) → motor neuron → effector muscle. The brain is not needed, so the response is fast.", svg: REFLEX },
+      { title: "Phototropism (auxin)", hl: true, caption: "Auxin is moved to the shaded side by PIN proteins; it stimulates H⁺ pumping that loosens cell walls, so shaded-side cells elongate more and the shoot bends towards light.", svg: PHOTOTROP },
+    ],
+    frames: [
+      { id: "bio-11-q26", title: "Label a reflex arc", 
+        paper: "P1B", where: "Paper 1B · 2–3 marks · diagram of a spinal reflex given",
+        q: "Identify the structures of a pain withdrawal reflex arc on a diagram of the spinal cord and state the role of the relay neuron.",
+        marks: [
+          "__receptor__ (pain receptor in the skin) → __sensory neuron__ entering the spinal cord through the dorsal root",
+          "__relay neuron__ in the __grey matter__ of the spinal cord connects the sensory neuron to the motor neuron",
+          "__motor neuron__ leaves the spinal cord to the __effector__ (muscle), which contracts",
+        ],
+        svg: REFLEX,
+        model: "A pain receptor in the skin stimulates a sensory neuron, which carries impulses into the spinal cord through the dorsal root; its cell body is in the dorsal root ganglion. In the grey matter a relay neuron passes the impulse to a motor neuron. The motor neuron carries the impulse out through the ventral root to the effector muscle, which contracts to withdraw the limb. The brain is not involved, so the response is rapid.",
+        accept: "interneuron for relay neuron; skeletal muscle as effector",
+        reject: "sensory neuron going directly to the effector; relay neuron in the white matter",
+        tip: "次序：receptor → sensory → relay（灰質）→ motor → effector。唔經大腦所以快。" },
     ],
   };
   // ======================================================== bio-12 (C3.2)
@@ -675,12 +683,32 @@
       { title: "Replication fork", caption: "Helicase unwinds the double helix and breaks hydrogen bonds; DNA polymerase adds free nucleotides by complementary base pairing, always 5′ → 3′. Strands are antiparallel.", svg: REPL },
       { title: "Meselson–Stahl results", caption: "After one generation in ¹⁴N all DNA is hybrid (rules out conservative); after two generations half hybrid, half light (rules out dispersive).", svg: MESELSON },
       { title: "Gel electrophoresis profile", caption: "DNA is negatively charged (phosphate groups) so it moves towards the anode (+); shorter fragments move further. A match needs every band to align.", svg: GEL },
-      { title: "Transcription", caption: "RNA polymerase unwinds DNA and assembles RNA nucleotides complementary to the template strand (U pairs with A), 5′ → 3′. The mRNA has the same sequence as the coding strand, with U for T.", svg: TRANSCR },
-      { title: "Translation", caption: "tRNA anticodons pair with mRNA codons; the ribosome forms a peptide bond between the amino acids; the ribosome moves along mRNA one codon at a time until a stop codon.", svg: TRANSL },
-      { title: "Types of gene mutation", caption: "Substitutions change at most one amino acid (or none, because the code is degenerate); insertions and deletions shift the reading frame and change every codon after them.", svg: MUT },
     ],
     frames: [
-      { title: "Draw a labelled diagram of translation", star: true,
+      { id: "bio-14-q25", title: "Sketch the temperature changes in one cycle of PCR",
+        paper: "P1B", where: "Paper 1B · 3 marks · sketch / interpret a thermocycler trace",
+        q: "Sketch the temperature changes during two cycles of the polymerase chain reaction and state what happens at each temperature.",
+        marks: [
+          "about __95 °C__: hydrogen bonds break and the DNA strands __separate (denature)__",
+          "about __55 °C__: __primers anneal__ (bind) to complementary sequences at each end of the target",
+          "about __72 °C__: __Taq polymerase__ extends the primers, building complementary strands; the cycle then repeats",
+        ],
+        diagram: PCRSPEC,
+        model: "The trace is a repeating step pattern. At about 95 °C the hydrogen bonds between bases break and the DNA strands separate. The temperature is lowered to about 55 °C so that primers anneal to complementary sequences at each end of the target region. It is then raised to about 72 °C, the optimum for Taq polymerase, which extends the primers by adding free nucleotides. The cycle then repeats, doubling the DNA each time.",
+        accept: "90–98 °C; 50–65 °C; 68–75 °C",
+        reject: "\"Taq denatures at 95 °C\"; helicase in PCR; primers anneal at 95 °C",
+        tip: "高→低→中：95（分開）→55（primer 黏）→72（Taq 延長）。Taq 耐熱，所以 95 °C 唔會變性。" },
+    ],
+  };
+  const T14b = {
+    diagrams: [
+    ],
+    figures: [
+      { title: "Transcription", caption: "RNA polymerase unwinds DNA and assembles RNA nucleotides complementary to the template strand (U pairs with A), 5′ → 3′. The mRNA has the same sequence as the coding strand, with U for T.", svg: TRANSCR },
+      { title: "Translation", caption: "tRNA anticodons pair with mRNA codons; the ribosome forms a peptide bond between the amino acids; the ribosome moves along mRNA one codon at a time until a stop codon.", svg: TRANSL },
+    ],
+    frames: [
+      { id: "bio-14-q24", title: "Draw a labelled diagram of translation", star: true,
         paper: "P2", where: "Paper 2 · 4–5 marks · drawing",
         q: "Draw a labelled diagram to show translation at a ribosome.",
         marks: [
@@ -695,19 +723,15 @@
         accept: "triplet for codon; polypeptide chain / protein",
         reject: "anticodons drawn on mRNA; DNA in the ribosome; \"amino acids pair with codons\"",
         tip: "Codon 喺 mRNA，anticodon 喺 tRNA。核糖體有大細兩個 subunit，記得標方向 5′→3′。" },
-      { title: "Sketch the temperature changes in one cycle of PCR",
-        paper: "P1B", where: "Paper 1B · 3 marks · sketch / interpret a thermocycler trace",
-        q: "Sketch the temperature changes during two cycles of the polymerase chain reaction and state what happens at each temperature.",
-        marks: [
-          "about __95 °C__: hydrogen bonds break and the DNA strands __separate (denature)__",
-          "about __55 °C__: __primers anneal__ (bind) to complementary sequences at each end of the target",
-          "about __72 °C__: __Taq polymerase__ extends the primers, building complementary strands; the cycle then repeats",
-        ],
-        diagram: PCRSPEC,
-        model: "The trace is a repeating step pattern. At about 95 °C the hydrogen bonds between bases break and the DNA strands separate. The temperature is lowered to about 55 °C so that primers anneal to complementary sequences at each end of the target region. It is then raised to about 72 °C, the optimum for Taq polymerase, which extends the primers by adding free nucleotides. The cycle then repeats, doubling the DNA each time.",
-        accept: "90–98 °C; 50–65 °C; 68–75 °C",
-        reject: "\"Taq denatures at 95 °C\"; helicase in PCR; primers anneal at 95 °C",
-        tip: "高→低→中：95（分開）→55（primer 黏）→72（Taq 延長）。Taq 耐熱，所以 95 °C 唔會變性。" },
+    ],
+  };
+  const T14c = {
+    diagrams: [
+    ],
+    figures: [
+      { title: "Types of gene mutation", caption: "Substitutions change at most one amino acid (or none, because the code is degenerate); insertions and deletions shift the reading frame and change every codon after them.", svg: MUT },
+    ],
+    frames: [
     ],
   };
   // ======================================================== bio-h3 (D1.2-1.3, D2.2 AHL)
@@ -992,16 +1016,10 @@
       { title: "Stages of mitosis (2n = 4)", caption: "Draw chromosomes as two sister chromatids joined at a centromere until anaphase; spindle microtubules attach at centromeres.", svg: MITOSIS },
       { title: "Meiosis overview", caption: "Meiosis I separates homologous chromosomes (reduction division); meiosis II separates sister chromatids. Colours show maternal and paternal chromosomes.", svg: MEIOSIS },
       { title: "Crossing over", caption: "Non-sister chromatids of a bivalent exchange segments at a chiasma in prophase I, giving new combinations of linked alleles.", svg: CROSSOVER },
-      { title: "Genetics layout: monohybrid cross", caption: "Write every step: parental phenotypes, genotypes, gametes (circled or in the grid), Punnett grid, offspring genotypes and phenotypes with ratio.", svg: MONO },
-      { title: "Sex-linked cross", caption: "Always write sex-linked alleles as superscripts on X; Y carries no allele.", svg: SEXL },
-      { title: "Pedigree chart symbols", caption: "Generations are Roman numerals, individuals numbered left to right.", svg: PEDIGREE },
-      { title: "Female reproductive system", caption: "Ovaries make eggs, oestradiol and progesterone; oviducts carry the egg (fertilisation site); endometrium is where the embryo implants.", svg: FEMALE },
-      { title: "Male reproductive system", caption: "Testes make sperm and testosterone; sperm mature in the epididymis; seminal vesicles and prostate add fluid; sperm duct and urethra carry semen.", svg: MALE },
-      { title: "Half-flower (insect-pollinated)", caption: "Pollen from the anther lands on the stigma; a pollen tube grows down the style to an ovule in the ovary, where fertilisation occurs.", svg: FLOWER },
       { title: "Cell cycle", hl: true, caption: "Interphase (G₁, S, G₂) is the longest part; mitosis and cytokinesis are short. Cyclins control the progression between phases.", svg: CYCLE },
     ],
     frames: [
-      { title: "Draw a cell in anaphase of mitosis", star: true,
+      { id: "bio-15-q24", title: "Draw a cell in anaphase of mitosis", star: true,
         paper: "P2", where: "Paper 2 · 2–3 marks · drawing (diploid number given)",
         q: "Draw a diagram of an animal cell with a diploid number of 4 during anaphase of mitosis.",
         marks: [
@@ -1014,35 +1032,7 @@
         accept: "\"chromosomes\" for separated chromatids; spindle fibres",
         reject: "X-shaped chromosomes in anaphase; homologues (instead of chromatids) separating; different numbers at each pole",
         tip: "Anaphase：每邊 4 條單 chromatid（2n = 4），centromere 行頭向住兩極。X 形 = 未分開，唔啱。" },
-      { title: "Draw and label the female reproductive system", star: true,
-        paper: "P2", where: "Paper 2 · 3–4 marks · drawing",
-        q: "Draw a labelled diagram of the female reproductive system.",
-        marks: [
-          "__ovaries__ shown at the ends of the __oviducts__",
-          "__uterus__ with a thick muscular wall and the __endometrium__ (lining) labelled",
-          "__cervix__ at the base of the uterus leading to the __vagina__",
-          "oviducts entering the upper corners of the uterus (with fimbriae near the ovary)",
-        ],
-        svg: FEMALE,
-        model: "The diagram shows two ovaries, each beside the funnel-shaped end of an oviduct (Fallopian tube) with fimbriae. The oviducts lead into the upper corners of the uterus, which has a thick muscular wall and an inner lining, the endometrium. The narrow cervix at the base of the uterus opens into the vagina.",
-        accept: "Fallopian tube for oviduct; womb for uterus",
-        reject: "ovaries joined directly to the uterus; oviducts drawn opening into the vagina",
-        tip: "最少 5 個標籤：ovary, oviduct, uterus, endometrium, cervix, vagina。" },
-      { title: "Draw and label a half-flower",
-        paper: "P2", where: "Paper 2 · 3–4 marks · drawing",
-        q: "Draw a labelled diagram of a half-view of an insect-pollinated flower.",
-        marks: [
-          "__stamen__: __anther__ on a __filament__",
-          "__carpel__: __stigma__, __style__ and __ovary__ containing __ovules__",
-          "__petals__ (large, coloured) and __sepals__ below them",
-          "parts correctly positioned on the receptacle (carpel central, stamens around it)",
-        ],
-        svg: FLOWER,
-        model: "The half-flower shows a central carpel made of a stigma at the top, a style and an ovary containing ovules. Around it are stamens, each an anther on a filament. Large coloured petals surround the stamens and smaller green sepals lie below them, all attached to the receptacle at the top of the stem.",
-        accept: "pistil for carpel; nectary at the base of the petals",
-        reject: "ovules drawn in the anther; stigma below the anthers labelled as ovary",
-        tip: "雌：stigma–style–ovary（ovule 喺入面）；雄：anther + filament。" },
-      { title: "Sketch DNA content per cell during meiosis",
+      { id: "bio-15-q27", title: "Sketch DNA content per cell during meiosis",
         paper: "P1B", where: "Paper 1B · 2–3 marks · graph",
         q: "Sketch a graph of the DNA content per cell from a diploid cell in G₁ through meiosis to the gametes.",
         marks: [
@@ -1057,10 +1047,64 @@
         tip: "Meiosis 嘅 DNA 圖：升一次（S）、跌兩次（I 同 II）。最後係原本嘅一半。" },
     ],
     concepts: [
-      { h: "Reproductive anatomy (draw and label)", b: "<p><strong>Female:</strong> ovary (eggs, oestradiol, progesterone) → oviduct with fimbriae (site of fertilisation) → uterus (muscular wall; endometrium for implantation) → cervix → vagina. <strong>Male:</strong> testis in scrotum (sperm, testosterone) → epididymis (sperm mature) → sperm duct (vas deferens) → urethra in the penis; seminal vesicles and prostate gland add fluid with nutrients (fructose) and alkali.</p>" },
-      { h: "Flower structure and pollination", b: "<p><strong>Stamen</strong> = anther (makes pollen) + filament. <strong>Carpel</strong> = stigma (receives pollen) + style + ovary (contains ovules). Insect-pollinated flowers have large coloured petals, scent and nectar; sepals protect the bud. Pollination → pollen tube grows down the style → male gamete fertilises the egg in the ovule → seed; ovary → fruit. Self-incompatibility promotes cross-pollination and genetic variation.</p>" },
       { h: "Crossing over and random orientation", b: "<p>In prophase I homologous chromosomes pair as <strong>bivalents</strong>; non-sister chromatids exchange segments at <strong>chiasmata</strong> (crossing over), producing <strong>recombinant</strong> chromatids. In metaphase I bivalents line up with <strong>random orientation</strong>, giving 2ⁿ combinations (2²³ in humans). With random fertilisation these make every gamete genetically different.</p>" },
       { h: "Cell cycle (AHL)", hl: true, b: "<p><strong>Interphase</strong>: G₁ (growth, organelles made), S (DNA replication), G₂ (preparation for division) - a very active phase, not a resting one. Then <strong>mitosis</strong> and <strong>cytokinesis</strong>. Cells may leave to <strong>G₀</strong> (non-dividing, e.g. neurons). Progression is controlled by <strong>cyclins</strong> that activate cyclin-dependent kinases at checkpoints; mutations in proto-oncogenes / tumour-suppressor genes cause uncontrolled division (tumours). Mitotic index = cells in mitosis ÷ total cells.</p>" },
+    ],
+  };
+  const T15b = {
+    diagrams: [
+    ],
+    figures: [
+      { title: "Female reproductive system", caption: "Ovaries make eggs, oestradiol and progesterone; oviducts carry the egg (fertilisation site); endometrium is where the embryo implants.", svg: FEMALE },
+      { title: "Male reproductive system", caption: "Testes make sperm and testosterone; sperm mature in the epididymis; seminal vesicles and prostate add fluid; sperm duct and urethra carry semen.", svg: MALE },
+      { title: "Half-flower (insect-pollinated)", caption: "Pollen from the anther lands on the stigma; a pollen tube grows down the style to an ovule in the ovary, where fertilisation occurs.", svg: FLOWER },
+    ],
+    frames: [
+      { id: "bio-15-q25", title: "Draw and label the female reproductive system", star: true,
+        paper: "P2", where: "Paper 2 · 3–4 marks · drawing",
+        q: "Draw a labelled diagram of the female reproductive system.",
+        marks: [
+          "__ovaries__ shown at the ends of the __oviducts__",
+          "__uterus__ with a thick muscular wall and the __endometrium__ (lining) labelled",
+          "__cervix__ at the base of the uterus leading to the __vagina__",
+          "oviducts entering the upper corners of the uterus (with fimbriae near the ovary)",
+        ],
+        svg: FEMALE,
+        model: "The diagram shows two ovaries, each beside the funnel-shaped end of an oviduct (Fallopian tube) with fimbriae. The oviducts lead into the upper corners of the uterus, which has a thick muscular wall and an inner lining, the endometrium. The narrow cervix at the base of the uterus opens into the vagina.",
+        accept: "Fallopian tube for oviduct; womb for uterus",
+        reject: "ovaries joined directly to the uterus; oviducts drawn opening into the vagina",
+        tip: "最少 5 個標籤：ovary, oviduct, uterus, endometrium, cervix, vagina。" },
+      { id: "bio-15-q26", title: "Draw and label a half-flower",
+        paper: "P2", where: "Paper 2 · 3–4 marks · drawing",
+        q: "Draw a labelled diagram of a half-view of an insect-pollinated flower.",
+        marks: [
+          "__stamen__: __anther__ on a __filament__",
+          "__carpel__: __stigma__, __style__ and __ovary__ containing __ovules__",
+          "__petals__ (large, coloured) and __sepals__ below them",
+          "parts correctly positioned on the receptacle (carpel central, stamens around it)",
+        ],
+        svg: FLOWER,
+        model: "The half-flower shows a central carpel made of a stigma at the top, a style and an ovary containing ovules. Around it are stamens, each an anther on a filament. Large coloured petals surround the stamens and smaller green sepals lie below them, all attached to the receptacle at the top of the stem.",
+        accept: "pistil for carpel; nectary at the base of the petals",
+        reject: "ovules drawn in the anther; stigma below the anthers labelled as ovary",
+        tip: "雌：stigma–style–ovary（ovule 喺入面）；雄：anther + filament。" },
+    ],
+    concepts: [
+      { h: "Reproductive anatomy (draw and label)", b: "<p><strong>Female:</strong> ovary (eggs, oestradiol, progesterone) → oviduct with fimbriae (site of fertilisation) → uterus (muscular wall; endometrium for implantation) → cervix → vagina. <strong>Male:</strong> testis in scrotum (sperm, testosterone) → epididymis (sperm mature) → sperm duct (vas deferens) → urethra in the penis; seminal vesicles and prostate gland add fluid with nutrients (fructose) and alkali.</p>" },
+      { h: "Flower structure and pollination", b: "<p><strong>Stamen</strong> = anther (makes pollen) + filament. <strong>Carpel</strong> = stigma (receives pollen) + style + ovary (contains ovules). Insect-pollinated flowers have large coloured petals, scent and nectar; sepals protect the bud. Pollination → pollen tube grows down the style → male gamete fertilises the egg in the ovule → seed; ovary → fruit. Self-incompatibility promotes cross-pollination and genetic variation.</p>" },
+    ],
+  };
+  const T15c = {
+    diagrams: [
+    ],
+    figures: [
+      { title: "Genetics layout: monohybrid cross", caption: "Write every step: parental phenotypes, genotypes, gametes (circled or in the grid), Punnett grid, offspring genotypes and phenotypes with ratio.", svg: MONO },
+      { title: "Sex-linked cross", caption: "Always write sex-linked alleles as superscripts on X; Y carries no allele.", svg: SEXL },
+      { title: "Pedigree chart symbols", caption: "Generations are Roman numerals, individuals numbered left to right.", svg: PEDIGREE },
+    ],
+    frames: [
+    ],
+    concepts: [
     ],
   };
   // ======================================================== bio-h4 (D3.2 AHL)
@@ -1196,8 +1240,6 @@
 
   const T16 = {
     diagrams: [
-      { title: "Negative feedback: body temperature fluctuates narrowly about the set point", x: [0, 24], y: [35.5, 38.5], xLabel: "Time / h", yLabel: "Core temp / °C", grid: false, origin: false,
-        curves: [{ f: (x) => 37 + 0.35 * Math.sin(x * 1.3) * Math.exp(-0.02 * x), color: "a" }], hlines: [{ y: 37, label: "set point 37 °C" }] },
       { title: "Plant cell (HL): ψ, ψs and ψp against relative cell volume - ψp = 0 at incipient plasmolysis, ψ = 0 at full turgor", hl: true, x: [1, 1.32], y: [-1.4, 1.2], xLabel: "Relative volume", yLabel: "MPa", grid: false,
         curves: [{ f: (v) => -1.2 / v, color: "b", label: "ψs", labelX: 1.24, domain: [1, 1.3] }, { f: (v) => 0.923 * ((v - 1) / 0.3) ** 1.6, color: "muted", label: "ψp", labelX: 1.24, domain: [1, 1.3] }, { f: (v) => -1.2 / v + 0.923 * ((v - 1) / 0.3) ** 1.6, color: "a", label: "ψ", labelX: 1.2, domain: [1, 1.3] }],
         vlines: [{ x: 1.3 }], texts: [{ at: [1.22, 1.1], text: "full turgor →" }] },
@@ -1205,13 +1247,10 @@
     figures: [
       { title: "Plant cells and osmosis", caption: "The cellulose wall stops plant cells bursting: in hypotonic solution they become turgid; in hypertonic solution the protoplast shrinks (plasmolysis).", svg: PLANTCELLS },
       { title: "Animal cells and osmosis", caption: "With no cell wall, animal cells burst in hypotonic and shrink in hypertonic solutions - so tissue fluid and medical solutions (e.g. for organ transport) must be isotonic.", svg: RBC },
-      { title: "Negative feedback loop", caption: "Any homeostasis answer: stimulus → receptor → control centre → effector → response that reverses the change.", svg: NEGFB },
-      { title: "Blood glucose control", caption: "Insulin lowers and glucagon raises blood glucose; both act mainly on the liver. Type 1 diabetes: no insulin made (autoimmune); type 2: target cells less responsive.", svg: GLUCOSE },
-      { title: "Thermoregulation", caption: "Effectors for temperature: skin arterioles, sweat glands, hair erector muscles, skeletal muscle (shivering), brown adipose tissue, thyroxine.", svg: THERMO },
       { title: "Water potential", hl: true, caption: "Solutes make ψs negative; pressure from the wall makes ψp positive. Water always moves towards the more negative water potential.", svg: PSI },
     ],
     frames: [
-      { title: "Draw turgid and plasmolysed plant cells", star: true,
+      { id: "bio-16-q21", title: "Draw turgid and plasmolysed plant cells", star: true,
         paper: "P2", where: "Paper 2 · 3 marks · drawing",
         q: "Draw labelled diagrams of a plant cell placed in a hypotonic solution and in a hypertonic solution.",
         marks: [
@@ -1224,7 +1263,20 @@
         accept: "protoplast for cytoplasm and membrane; \"freely permeable\" wall",
         reject: "the cell wall drawn shrunken; a burst plant cell; gap labelled as air or vacuum",
         tip: "質壁分離：細胞壁唔變，膜同細胞質縮離細胞壁，空位係外面溶液。" },
-      { title: "Construct a flow diagram for blood glucose control", star: true,
+    ],
+  };
+  const T16b = {
+    diagrams: [
+      { title: "Negative feedback: body temperature fluctuates narrowly about the set point", x: [0, 24], y: [35.5, 38.5], xLabel: "Time / h", yLabel: "Core temp / °C", grid: false, origin: false,
+        curves: [{ f: (x) => 37 + 0.35 * Math.sin(x * 1.3) * Math.exp(-0.02 * x), color: "a" }], hlines: [{ y: 37, label: "set point 37 °C" }] },
+    ],
+    figures: [
+      { title: "Negative feedback loop", caption: "Any homeostasis answer: stimulus → receptor → control centre → effector → response that reverses the change.", svg: NEGFB },
+      { title: "Blood glucose control", caption: "Insulin lowers and glucagon raises blood glucose; both act mainly on the liver. Type 1 diabetes: no insulin made (autoimmune); type 2: target cells less responsive.", svg: GLUCOSE },
+      { title: "Thermoregulation", caption: "Effectors for temperature: skin arterioles, sweat glands, hair erector muscles, skeletal muscle (shivering), brown adipose tissue, thyroxine.", svg: THERMO },
+    ],
+    frames: [
+      { id: "bio-16-q22", title: "Construct a flow diagram for blood glucose control", star: true,
         paper: "P2", where: "Paper 2 · 4–6 marks · flow diagram / extended response",
         q: "Construct a flow diagram to show how blood glucose concentration is returned to normal after it rises and after it falls.",
         marks: [
@@ -1437,24 +1489,12 @@
       { title: "Hardy–Weinberg (HL): genotype frequencies p², 2pq, q² against the frequency of allele a (q)", hl: true, x: [0, 1], y: [0, 1], xLabel: "q", yLabel: "Frequency", grid: false,
         curves: [{ f: (q) => (1 - q) ** 2, color: "a", label: "AA (p²)", labelX: 0.08 }, { f: (q) => 2 * q * (1 - q), color: "b", label: "Aa (2pq)", labelX: 0.42 }, { f: (q) => q * q, color: "muted", label: "aa (q²)", labelX: 0.8 }],
         vlines: [{ x: 0.5, label: "2pq max 0.5" }] },
-      { title: "Phenology mismatch: warming moves the caterpillar peak earlier, but chicks still hatch at the old time", x: [0, 60], y: [0, 10], xLabel: "Day of year (from 1 April)", yLabel: "Abundance", grid: false, origin: false,
-        curves: [{ f: (x) => 8 * gauss(x, 28, 5), color: "b", dash: true, label: "food (past)", labelX: 30 }, { f: (x) => 8 * gauss(x, 18, 5), color: "muted", label: "food (now)", labelX: 8 }, { f: (x) => 6 * gauss(x, 30, 4), color: "a", label: "chick demand", labelX: 36 }] },
-      { title: "Succession (HL): biomass, diversity and soil depth increase towards a climax community", hl: true, x: [0, 100], y: [0, 10], xLabel: "Time / years", yLabel: "Amount", grid: false, origin: false,
-        curves: [{ f: (x) => 9 / (1 + Math.exp(-(x - 40) / 9)), color: "a", label: "biomass", labelX: 70 }, { f: (x) => 6 / (1 + Math.exp(-(x - 25) / 8)), color: "b", label: "diversity", labelX: 80 }, { f: (x) => 4 * (1 - Math.exp(-x / 35)), color: "c", label: "soil depth", labelX: 60 }],
-        texts: [{ at: [2, 9.5], text: "pioneers → … → climax" }] },
-      { title: "Downstream of a sewage outfall: dissolved O₂ sags as bacteria decompose organic matter (high BOD)", x: [0, 20], y: [0, 10], xLabel: "Distance downstream / km", yLabel: "Level", grid: false, origin: false,
-        curves: [{ f: (x) => 8.5 - 6 * (x / 4) * Math.exp(1 - x / 4), color: "a", label: "dissolved O₂", labelX: 15 }, { f: (x) => 1 + 7 * Math.exp(-x / 4), color: "b", label: "BOD / bacteria", labelX: 9 }],
-        vlines: [{ x: 0, label: "outfall" }] },
     ],
     figures: [
       { title: "Natural selection", caption: "Use the sequence: variation → overproduction → competition → differential survival and reproduction → inheritance → change in allele frequency.", svg: NATSEL },
-      { title: "Eutrophication", caption: "Leaching of nutrients → algal bloom → death → decomposition → oxygen depletion. Biomagnification is a separate process (toxins concentrating up food chains).", svg: EUTRO },
-      { title: "Greenhouse effect", caption: "Greenhouse gases absorb long-wave radiation re-emitted by the Earth. More CO₂ and CH₄ (combustion, deforestation, cattle, rice) → enhanced greenhouse effect → global warming.", svg: GREEN },
-      { title: "Positive feedback in climate change", caption: "Positive feedback amplifies a change and can push an ecosystem past a tipping point (e.g. Amazon rainforest dieback, Arctic sea ice).", svg: POSFB },
-      { title: "Mesocosm", caption: "Sealed mesocosms test ecosystem sustainability: energy (light) enters, but matter must be recycled. Change one variable (e.g. light, number of consumers) and keep the rest constant.", svg: MESO },
     ],
     frames: [
-      { title: "Sketch stabilising and disruptive selection", hl: true,
+      { id: "bio-17-q24", title: "Sketch stabilising and disruptive selection", hl: true,
         paper: "P2", where: "Paper 2 · 3–4 marks · sketch distributions",
         q: "Sketch frequency distributions before and after (a) stabilising selection and (b) disruptive selection, and explain the difference.",
         marks: [
@@ -1468,22 +1508,7 @@
         accept: "\"variance decreases\"; bimodal distribution",
         reject: "stabilising curve with a shifted mean; disruptive curve with a single peak",
         tip: "三種：stabilising（中間收窄）、directional（平均值移）、disruptive（變兩個峰）。" },
-      { title: "Construct a flow chart for eutrophication", star: true,
-        paper: "P2", where: "Paper 2 · 4–5 marks",
-        q: "Construct a flow chart to explain how fertiliser runoff can lead to the death of fish in a lake.",
-        marks: [
-          "fertiliser adds __nitrates / phosphates__ to the water",
-          "__algal bloom__: algae grow rapidly and block light, so submerged plants die",
-          "dead algae and plants are decomposed by __saprotrophic bacteria__",
-          "bacteria use oxygen in aerobic respiration: __high BOD__",
-          "__dissolved oxygen falls__ and fish / aerobic organisms die",
-        ],
-        svg: EUTRO,
-        model: "Fertiliser runoff adds nitrates and phosphates to the lake. These nutrients cause rapid growth of algae, an algal bloom, which blocks light so that submerged plants cannot photosynthesise and die. The dead algae and plants are decomposed by saprotrophic bacteria, whose numbers rise. The bacteria use oxygen for aerobic respiration, so the biochemical oxygen demand is high and the dissolved oxygen concentration falls, causing fish and other aerobic organisms to die.",
-        accept: "leaching; nutrient enrichment; \"oxygen used by decomposers\"",
-        reject: "\"algae use up all the oxygen\" without decomposition; fish poisoned by fertiliser",
-        tip: "氧氣唔夠係因為「分解者呼吸」，唔係藻類本身。記得寫 BOD。" },
-      { title: "Sketch a Hardy–Weinberg graph", hl: true,
+      { id: "bio-17-q26", title: "Sketch a Hardy–Weinberg graph", hl: true,
         paper: "P1B", where: "Paper 1B · 2–3 marks · graph sketch / reading",
         q: "Sketch how the frequencies of the genotypes AA, Aa and aa vary with the frequency of allele a (q), assuming Hardy–Weinberg equilibrium.",
         marks: [
@@ -1499,20 +1524,75 @@
     ],
     concepts: [
       { h: "Patterns of selection and Hardy–Weinberg (AHL)", hl: true, b: "<p><strong>Stabilising</strong>: extremes selected against, mean unchanged, variation falls (birth mass). <strong>Directional</strong>: one extreme favoured, mean shifts (antibiotic resistance, peppered moth). <strong>Disruptive</strong>: both extremes favoured, may split a population. <strong>Hardy–Weinberg</strong>: p + q = 1 and p² + 2pq + q² = 1; allele frequencies stay constant only with a large population, random mating, no mutation, no migration and no selection. A deviation shows that evolution is happening.</p>" },
+    ],
+  };
+  const T17b = {
+    diagrams: [
+      { title: "Succession (HL): biomass, diversity and soil depth increase towards a climax community", hl: true, x: [0, 100], y: [0, 10], xLabel: "Time / years", yLabel: "Amount", grid: false, origin: false,
+        curves: [{ f: (x) => 9 / (1 + Math.exp(-(x - 40) / 9)), color: "a", label: "biomass", labelX: 70 }, { f: (x) => 6 / (1 + Math.exp(-(x - 25) / 8)), color: "b", label: "diversity", labelX: 80 }, { f: (x) => 4 * (1 - Math.exp(-x / 35)), color: "c", label: "soil depth", labelX: 60 }],
+        texts: [{ at: [2, 9.5], text: "pioneers → … → climax" }] },
+      { title: "Downstream of a sewage outfall: dissolved O₂ sags as bacteria decompose organic matter (high BOD)", x: [0, 20], y: [0, 10], xLabel: "Distance downstream / km", yLabel: "Level", grid: false, origin: false,
+        curves: [{ f: (x) => 8.5 - 6 * (x / 4) * Math.exp(1 - x / 4), color: "a", label: "dissolved O₂", labelX: 15 }, { f: (x) => 1 + 7 * Math.exp(-x / 4), color: "b", label: "BOD / bacteria", labelX: 9 }],
+        vlines: [{ x: 0, label: "outfall" }] },
+    ],
+    figures: [
+      { title: "Eutrophication", caption: "Leaching of nutrients → algal bloom → death → decomposition → oxygen depletion. Biomagnification is a separate process (toxins concentrating up food chains).", svg: EUTRO },
+      { title: "Mesocosm", caption: "Sealed mesocosms test ecosystem sustainability: energy (light) enters, but matter must be recycled. Change one variable (e.g. light, number of consumers) and keep the rest constant.", svg: MESO },
+    ],
+    frames: [
+      { id: "bio-17-q25", title: "Construct a flow chart for eutrophication", star: true,
+        paper: "P2", where: "Paper 2 · 4–5 marks",
+        q: "Construct a flow chart to explain how fertiliser runoff can lead to the death of fish in a lake.",
+        marks: [
+          "fertiliser adds __nitrates / phosphates__ to the water",
+          "__algal bloom__: algae grow rapidly and block light, so submerged plants die",
+          "dead algae and plants are decomposed by __saprotrophic bacteria__",
+          "bacteria use oxygen in aerobic respiration: __high BOD__",
+          "__dissolved oxygen falls__ and fish / aerobic organisms die",
+        ],
+        svg: EUTRO,
+        model: "Fertiliser runoff adds nitrates and phosphates to the lake. These nutrients cause rapid growth of algae, an algal bloom, which blocks light so that submerged plants cannot photosynthesise and die. The dead algae and plants are decomposed by saprotrophic bacteria, whose numbers rise. The bacteria use oxygen for aerobic respiration, so the biochemical oxygen demand is high and the dissolved oxygen concentration falls, causing fish and other aerobic organisms to die.",
+        accept: "leaching; nutrient enrichment; \"oxygen used by decomposers\"",
+        reject: "\"algae use up all the oxygen\" without decomposition; fish poisoned by fertiliser",
+        tip: "氧氣唔夠係因為「分解者呼吸」，唔係藻類本身。記得寫 BOD。" },
+    ],
+    concepts: [
       { h: "Succession (AHL)", hl: true, b: "<p><strong>Primary succession</strong> starts on bare rock with no soil (lava, retreating glacier): pioneers (lichens, mosses) weather rock and build soil. <strong>Secondary succession</strong> starts where soil remains (after fire, abandoned farmland) and is faster. Through the seres, biomass, species diversity, soil depth, humus, water retention and food-web complexity increase until a <strong>climax community</strong> is reached; arrested succession (e.g. grazing) gives a plagioclimax.</p>" },
+    ],
+  };
+  const T17c = {
+    diagrams: [
+      { title: "Phenology mismatch: warming moves the caterpillar peak earlier, but chicks still hatch at the old time", x: [0, 60], y: [0, 10], xLabel: "Day of year (from 1 April)", yLabel: "Abundance", grid: false, origin: false,
+        curves: [{ f: (x) => 8 * gauss(x, 28, 5), color: "b", dash: true, label: "food (past)", labelX: 30 }, { f: (x) => 8 * gauss(x, 18, 5), color: "muted", label: "food (now)", labelX: 8 }, { f: (x) => 6 * gauss(x, 30, 4), color: "a", label: "chick demand", labelX: 36 }] },
+    ],
+    figures: [
+      { title: "Greenhouse effect", caption: "Greenhouse gases absorb long-wave radiation re-emitted by the Earth. More CO₂ and CH₄ (combustion, deforestation, cattle, rice) → enhanced greenhouse effect → global warming.", svg: GREEN },
+      { title: "Positive feedback in climate change", caption: "Positive feedback amplifies a change and can push an ecosystem past a tipping point (e.g. Amazon rainforest dieback, Arctic sea ice).", svg: POSFB },
+    ],
+    frames: [
+    ],
+    concepts: [
     ],
   };
   IB.addExamFrames("bio", { topics: {
     "bio-h2": H2,
     "bio-11": T11,
+    "bio-11b": T11b,
     "bio-12": T12,
     "bio-13": T13,
     "bio-14": T14,
+    "bio-14b": T14b,
+    "bio-14c": T14c,
     "bio-h3": H3,
     "bio-15": T15,
+    "bio-15b": T15b,
+    "bio-15c": T15c,
     "bio-h4": H4,
     "bio-16": T16,
+    "bio-16b": T16b,
     "bio-h5": H5,
     "bio-17": T17,
+    "bio-17b": T17b,
+    "bio-17c": T17c,
   }});
 })();
