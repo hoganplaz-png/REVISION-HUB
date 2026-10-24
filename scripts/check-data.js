@@ -206,6 +206,22 @@ for (const tid of IB.generatorTopics()) {
   for (const [id, ans] of wrong) if (byId[id] && IB.offlineMark(byId[id], ans).score > 1) errors.push(`marker: wrong diagram answer to ${id} scored more than 1`);
 }
 
+// one syllabus sub-topic per SL chapter (e.g. R1.1, R1.2 and R1.3 are separate chapters, never one merged page)
+const SPLIT = ["bio", "chem", "econ", "geo", "math", "phys"];
+for (const s of IB.subjectList()) {
+  if (!SPLIT.includes(s.id)) continue;
+  for (const t of s.allTopics) if (!t.hl && /[-–,+&]|\band\b/.test(String(t.code).replace(/^Option:.*/, ""))) errors.push(`${t.id}: code "${t.code}" covers more than one sub-topic`);
+}
+const topicIds = new Set(IB.subjectList().flatMap((s) => s.allTopics.map((t) => t.id)));
+if (topicIds.size !== IB.subjectList().reduce((n, s) => n + s.allTopics.length, 0)) errors.push("duplicate topic ids");
+
+// question ids are saved in students' progress and mistakes, so a question keeps its id when it moves topic
+const known = JSON.parse(fs.readFileSync(path.join(root, "..", "..", "scripts", "question-ids.json"), "utf8"));
+for (const [sid, list] of Object.entries(known)) {
+  const lost = list.filter((id) => !ids.has(id));
+  if (lost.length) errors.push(`${sid}: ${lost.length} question id(s) disappeared, e.g. ${lost.slice(0, 5).join(", ")} (keep the old id with id: "...")`);
+}
+
 console.log(`${IB.subjectList().length} subjects, ${IB.subjectList().reduce((n, s) => n + s.allTopics.length, 0)} topics, ${total} bank questions, ${IB.generatorTopics().length} generator topics (${gens} samples checked)`);
 for (const s of IB.subjectList()) console.log(`  ${s.name}: ${s.allTopics.length} topics, ${IB.allQuestions(s.id).length} questions`);
 if (errors.length) {
