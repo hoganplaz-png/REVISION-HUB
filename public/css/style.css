@@ -1146,6 +1146,9 @@ body::after {
 .qb-chip.on { background: var(--accent, #3b5bdb); border-color: var(--accent, #3b5bdb); color: #fff; }
 .qb-chip.on em { color: rgba(255, 255, 255, .85); }
 .qb-chip:disabled { opacity: .4; cursor: default; }
+.qb-chip.on::before { content: "✓ "; }
+.qb-chip.qb-clear { background: transparent; border-style: dashed; color: var(--muted); }
+.qb-hint { font-weight: 600; letter-spacing: 0; text-transform: none; margin-left: 6px; }
 .qb-more { margin-top: 16px; }
 .qb-more summary { cursor: pointer; font-weight: 700; color: var(--muted); font-size: .9rem; }
 
