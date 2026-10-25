@@ -16,12 +16,12 @@ IB.page = function () {
       <div class="qb-chips" id="chipsQt"></div>
       <div class="qb-chips" id="chipsPaper"></div>
       <div class="qb-chips" id="chipsUnit"></div>
-      <select id="fUnit" hidden></select><select id="fPaper" hidden></select><select id="fQt" hidden><option value=""></option></select>
+      <select id="fUnit" hidden></select><input type="hidden" id="fPaper"><input type="hidden" id="fQt">
       <details class="qb-more">
         <summary>More filters and sorting</summary>
         <div class="filters" style="margin-top:12px">
-          <label class="field">Sort by<select id="fSort"><option value="unit">Topic and sub-topic</option><option value="paper">Paper</option><option value="qtype">Question type</option><option value="marks">Marks (low to high)</option><option value="marks-desc">Marks (high to low)</option><option value="diff">Difficulty</option></select></label>
-          <label class="field">Format<select id="fType"><option value="">Any format</option><option value="mcq">Multiple choice</option><option value="short">Short / structured</option><option value="extended">Extended response / essay</option><option value="calc">Calculations only</option></select></label>
+          <label class="field">Sort by<select id="fSort"><option value="unit">Topic and sub-topic</option><option value="paper">Paper</option><option value="qtype">Question type (structured, MC, essay)</option><option value="marks">Marks (low to high)</option><option value="marks-desc">Marks (high to low)</option><option value="diff">Difficulty</option></select></label>
+          <label class="field">Calculations<select id="fType"><option value="">Any question</option><option value="calc">Calculations only</option></select></label>
           <label class="field">Difficulty<select id="fDiff"><option value="">Any</option><option value="1">Foundation</option><option value="2">Standard</option><option value="3">Challenging</option></select></label>
           <label class="field">Status<select id="fStatus"><option value="">All questions</option><option value="new">Not attempted</option><option value="weak">Scored under 60%</option><option value="saved">Saved for review</option></select></label>
           <label class="field">Section<select id="fSec"><option value="">All sections</option>${IB.SECTIONS.map(([k, n]) => `<option value="${k}">${n}</option>`).join("")}</select></label>
@@ -70,17 +70,21 @@ IB.page = function () {
   f.sub.value = IB.param("subject") || "";
   f.source.value = IB.param("source") || "";
   f.sec.value = IB.param("sec") || "";
-  f.qt.innerHTML = `<option value=""></option>` + ["mcq", "define", "calc", "diagram", "explain", "essay", "write"].map((k) => `<option value="${k}"></option>`).join("");
-  f.qt.value = IB.param("qt") || "";
+  // question type and paper chips are multi-select: the hidden inputs hold comma-separated keys
+  const vals = (el) => (el.value ? el.value.split(",") : []);
+  // the three ways IB questions are set; old command-term links (qt=define etc.) are dropped
+  const QGROUPS = [
+    ["structured", "Structured questions"],
+    ["mcq", "Multiple choice (MC)"],
+    ["essay", "Essay"],
+  ];
+  const groupOf = (q) => (q.type === "mcq" ? "mcq" : q.type === "extended" ? "essay" : "structured");
+  f.qt.value = vals({ value: IB.param("qt") || "" }).filter((k) => QGROUPS.some((g) => g[0] === k)).join(",");
   f.sort.value = IB.param("sort") || "unit";
 
   function fillTopics() {
     const subs = f.sub.value ? [IB.subjects[f.sub.value]] : IB.subjectList();
     f.topic.innerHTML = `<option value="">All topics</option>` + subs.map((s) => `<optgroup label="${s.name}">${s.topics.map((t) => `<option value="${t.id}">${IB.esc(t.code)} ${IB.esc(t.title)}</option>`).join("")}</optgroup>`).join("");
-    const papers = new Set(IB.allQuestions(f.sub.value || undefined).map(IB.paperOf));
-    const sid = f.sub.value;
-    const ord = (p) => (p === IB.ANY_PAPER ? "zzz" : p);
-    f.paper.innerHTML = `<option value="">Any paper</option>` + Array.from(papers).sort((a, b) => ord(a).localeCompare(ord(b))).map((p) => `<option value="${p}">${IB.esc(sid ? IB.paperLabel(sid, p) : p === IB.ANY_PAPER ? "Any paper (core skills)" : p)}</option>`).join("");
   }
   // sub-topics of the chosen topic (or of every topic in the chosen subject); value is "topicId|unitKey"
   function fillUnits() {
@@ -96,33 +100,26 @@ IB.page = function () {
   }
   fillTopics();
   if (IB.param("topic")) f.topic.value = IB.param("topic");
-  if (IB.param("paper")) f.paper.value = IB.param("paper");
+  f.paper.value = IB.param("paper") || "";
   fillUnits();
   if (IB.param("unit")) { f.unit.value = IB.param("unit"); if (f.unit.selectedIndex < 0) f.unit.value = ""; }
 
-  // the question types students think in, each covering several command terms
-  const QGROUPS = [
-    ["mcq", "Multiple choice", ["mcq"]],
-    ["define", "Define / state", ["define", "state"]],
-    ["calc", "Calculate", ["calc", "show"]],
-    ["diagram", "Diagram / graph", ["diagram"]],
-    ["explain", "Explain / describe", ["describe", "explain", "compare", "suggest"]],
-    ["essay", "Essay / evaluate", ["evaluate"]],
-    ["write", "Writing task", ["write"]],
-  ];
-  const inGroup = (q, g) => { const set = (QGROUPS.find((x) => x[0] === g) || [0, 0, []])[2]; return IB.qtypesOf(q).some((t) => set.includes(t)) || (g === "essay" && q.type === "extended" && !IB.qtypesOf(q).includes("write")); };
+  // a paper label that reads well even with no subject chosen (P1A -> Paper 1A)
+  const paperChip = (p) => (f.sub.value ? IB.paperLabel(f.sub.value, p) : p === IB.ANY_PAPER ? "Any paper" : p === "IO" ? "Individual oral" : p.replace(/^P/, "Paper "));
+  const paperKey = (p) => (p === IB.ANY_PAPER ? "zzz" : p);
 
   function filtered(topicSet, skip) {
     const data = IB.store.get();
     const last = {};
     data.attempts.forEach((a) => (last[a.id] = a.sc / a.mx));
     const term = f.search.value.trim().toLowerCase();
+    const papers = skip === "paper" ? [] : vals(f.paper), groups = skip === "qt" ? [] : vals(f.qt);
     let qs = extra.concat(IB.allQuestions(f.sub.value || undefined)).filter((q) => !f.sub.value || q.subject === f.sub.value);
     return qs.filter((q) => {
       if (topicSet ? !topicSet.has(q.topic) : f.topic.value && q.topic !== f.topic.value) return false;
       if (skip !== "unit" && f.unit.value && `${q.topic}|${IB.unitOf(q)}` !== f.unit.value) return false;
-      if (skip !== "paper" && f.paper.value && IB.paperOf(q) !== f.paper.value) return false;
-      if (skip !== "qt" && f.qt.value && !inGroup(q, f.qt.value)) return false;
+      if (papers.length && !papers.includes(IB.paperOf(q))) return false;
+      if (groups.length && !groups.includes(groupOf(q))) return false;
       if (f.source.value === "mine" && !q.custom) return false;
       if (f.source.value === "site" && q.custom) return false;
       if (f.type.value === "calc" ? !q.numeric : f.type.value && q.type !== f.type.value) return false;
@@ -180,8 +177,8 @@ IB.page = function () {
   function sorted(qs) {
     const ord = topicOrder(), key = f.sort.value;
     const unitIdx = (q) => Object.keys((IB.topic(q.topic) || {}).units || {}).indexOf(IB.unitOf(q));
-    const qtIdx = (q) => IB.QTYPES.findIndex((x) => x[0] === IB.qtypeOf(q));
-    const pk = (q) => { const p = IB.paperOf(q); return p === IB.ANY_PAPER ? "zzz" : p; };
+    const qtIdx = (q) => QGROUPS.findIndex((x) => x[0] === groupOf(q));
+    const pk = (q) => paperKey(IB.paperOf(q));
     const cmp = {
       unit: (a, b) => unitIdx(a) - unitIdx(b),
       paper: (a, b) => pk(a).localeCompare(pk(b)),
@@ -202,21 +199,39 @@ IB.page = function () {
     const chip = (el, label, value, count, sel, onPick, title) => {
       const b = IB.el(`<button type="button" class="qb-chip${sel ? " on" : ""}"${count ? "" : " disabled"}>${IB.esc(label)} <em>${count}</em></button>`);
       if (title) b.title = title;
+      b.setAttribute("aria-pressed", sel ? "true" : "false");
       b.onclick = () => onPick(sel ? "" : value);
       el.appendChild(b);
     };
     const row = (id, title) => { const el = IB.qs(id); el.innerHTML = `<span class="qb-chips-h">${title}</span>`; return el; };
     const pick = (sel, v) => { sel.value = v; sel.dispatchEvent(new Event("change")); };
+    // tap to add or remove one option; any number can be on at once
+    const toggle = (el, v) => {
+      const on = vals(el);
+      el.value = (on.includes(v) ? on.filter((x) => x !== v) : on.concat(v)).join(",");
+      el.dispatchEvent(new Event("input"));
+    };
+    const clearBtn = (el, input) => {
+      if (!input.value) return;
+      const b = IB.el(`<button type="button" class="qb-chip qb-clear">✕ Clear</button>`);
+      b.onclick = () => { input.value = ""; input.dispatchEvent(new Event("input")); };
+      el.appendChild(b);
+    };
 
     let base = filtered(null, "qt");
-    const elQ = row("#chipsQt", "What to practise");
-    QGROUPS.forEach(([k, name]) => { const n = base.filter((q) => inGroup(q, k)).length; if (n || f.qt.value === k) chip(elQ, name, k, n, f.qt.value === k, (v) => pick(f.qt, v)); });
+    const elQ = row("#chipsQt", `Question type <span class="qb-hint">pick one or more</span>`);
+    const qOn = vals(f.qt);
+    QGROUPS.forEach(([k, name]) => { const n = base.filter((q) => groupOf(q) === k).length; if (n || qOn.includes(k)) chip(elQ, name, k, n, qOn.includes(k), () => toggle(f.qt, k)); });
+    clearBtn(elQ, f.qt);
 
     base = filtered(null, "paper");
     const counts = {};
     base.forEach((q) => { const p = IB.paperOf(q); counts[p] = (counts[p] || 0) + 1; });
-    const elP = row("#chipsPaper", "Paper");
-    Object.keys(counts).sort((a, b) => (a === IB.ANY_PAPER ? "zzz" : a).localeCompare(b === IB.ANY_PAPER ? "zzz" : b)).forEach((p) => chip(elP, f.sub.value ? IB.paperLabel(f.sub.value, p) : p === IB.ANY_PAPER ? "Any paper" : p, p, counts[p], f.paper.value === p, (v) => pick(f.paper, v)));
+    const pOn = vals(f.paper);
+    pOn.forEach((p) => (counts[p] = counts[p] || 0));
+    const elP = row("#chipsPaper", `Paper <span class="qb-hint">pick one or more</span>`);
+    Object.keys(counts).sort((a, b) => paperKey(a).localeCompare(paperKey(b))).forEach((p) => chip(elP, paperChip(p), p, counts[p], pOn.includes(p), () => toggle(f.paper, p)));
+    clearBtn(elP, f.paper);
     elP.hidden = Object.keys(counts).length < 2 && !f.paper.value;
 
     const elU = IB.qs("#chipsUnit");
@@ -243,7 +258,7 @@ IB.page = function () {
     const headOf = (q) => {
       const k = f.sort.value;
       if (k === "paper") return IB.paperLabel(q.subject, IB.paperOf(q));
-      if (k === "qtype") return IB.qtypeLabel(IB.qtypeOf(q));
+      if (k === "qtype") return (QGROUPS.find((x) => x[0] === groupOf(q)) || [])[1];
       if (k === "unit") { const t = IB.topic(q.topic); return t ? `${t.code} ${t.title}${q.unitName ? " › " + q.unitName : ""}` : ""; }
       return "";
     };
@@ -364,7 +379,7 @@ IB.page = function () {
     ts.sort((a, b) => ord[a.id] - ord[b.id]);
     if (ts.length === 1) return `${ts[0].code} ${ts[0].title}`;
     if (ts.length > 1) return ts.length <= 4 ? `Topics ${ts.map((t) => t.code).join(", ")}` : `Topics ${ts.slice(0, 3).map((t) => t.code).join(", ")} + ${ts.length - 3} more`;
-    return f.paper.value ? IB.paperName(sub, f.paper.value) : "Practice paper";
+    return vals(f.paper).length === 1 ? IB.paperName(sub, f.paper.value) : "Practice paper";
   }
 
   pTopicList.addEventListener("change", (e) => {
@@ -396,7 +411,7 @@ IB.page = function () {
     b.disabled = true;
     IB.paperPdf({
       title: IB.qs("#pTitle").value.trim() || exportTitle(sub),
-      subject: sub, questions: qs, markscheme: IB.qs("#pMs").checked, showTopics: IB.qs("#pTopics").checked, paper: f.paper.value,
+      subject: sub, questions: qs, markscheme: IB.qs("#pMs").checked, showTopics: IB.qs("#pTopics").checked, paper: vals(f.paper).length === 1 ? f.paper.value : "",
     }).catch(() => {}).finally(() => (b.disabled = false));
   };
   IB.qs("#sheetBtn").onclick = () => {
