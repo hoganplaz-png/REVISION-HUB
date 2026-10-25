@@ -71,6 +71,9 @@
     subject.levels = subject.levels || (/\bHL$/.test(subject.name) ? ["HL"] : /\bSL$/.test(subject.name) && !subject.hlAvailable ? ["SL"] : ["SL", "HL"]);
     subject.baseName = subject.baseName || subject.name.replace(/\s+(SL|HL)$/, "");
     subject.baseShort = subject.baseShort || (subject.short || subject.baseName).replace(/\s+(SL|HL)$/, "");
+    // sortTopics: list chapters in syllabus order of their codes (e.g. "B1.2" < "C4.1", "1.5" < "1.8" < "2.9")
+    const codeKey = (c) => (String(c).match(/^([A-Z]?)(\d+)\.(\d+)$/) || []).slice(1).map((x, i) => (i ? Number(x) : x));
+    if (subject.sortTopics) subject.topics = subject.topics.slice().sort((a, b) => { const [x, y] = [codeKey(a.code), codeKey(b.code)]; return x[0].localeCompare(y[0]) || x[1] - y[1] || x[2] - y[2]; });
     subject.allTopics = subject.topics;
     subject.allPapers = subject.papers || {};
     subject.allTopics.forEach((t) => prepTopic(subject, t));
@@ -142,7 +145,8 @@
 
   // Topic drills (js/data/drill/<subject>.js): IB-style structured and essay questions, each with an explicit
   // marking rule ("[1] factor + [1] development, twice") and alternative creditworthy points tagged [1].
-  // { units: { a: "Sub-topic name", ... }, qs: [{ u, s: "A" | "C", m: "2+2", t, data?, rule, pts, numeric?, paper?, diff? }] }
+  // { units: { a: "Sub-topic name", ... }, qs: [{ id?, u, s: "A" | "C", m: "2+2", t, data?, rule, pts, numeric?, paper?, diff? }] }
+  // id is optional: set it when a question moves to another topic so saved progress and mistakes still find it.
   IB.addDrill = function (subjectId, byTopic) {
     const s = IB.subjects[subjectId];
     if (!s) return;
@@ -156,7 +160,7 @@
         const marks = String(x.m).split("+").reduce((a, b) => a + Number(b), 0);
         const table = x.data ? `<div class="table-wrap"><table class="data" style="width:auto">${x.data.map((r, ri) => `<tr>${r.map((c) => (ri ? `<td>${c}</td>` : `<th>${c}</th>`)).join("")}</tr>`).join("")}</table></div>` : "";
         const q = {
-          id: `${t.id}-d${base + i + 1}`, subject: s.id, topic: t.id, sec: "drill", paper: x.paper || d.paper || "P2",
+          id: x.id || `${t.id}-d${base + i + 1}`, subject: s.id, topic: t.id, sec: "drill", paper: x.paper || d.paper || "P2",
           type: x.options ? "mcq" : x.s === "C" ? "extended" : "short", marks, diff: x.diff || (x.s === "C" ? 3 : marks <= 2 ? 1 : 2),
           q: (x.html ? x.t : esc(x.t)) + table, ms: x.pts, rule: x.rule, unit: x.u, unitName: t.units[x.u] || x.u, part: x.s,
           alt: x.s !== "C" && !x.numeric && !x.options,

@@ -4,21 +4,30 @@ IB.addExamFrames("math", {
     // ======================= 4.1-4.4, 4.10 Statistics and regression =======================
     "math-9": {
       frames: [
-        { title: "Estimate the mean and standard deviation from grouped data", star: true,
-          paper: "P2", where: "Paper 2 · 4 marks · grouped frequency table given",
-          q: "The times, t minutes, that 50 students spent on homework are summarised: 0 < t ≤ 10: 5; 10 < t ≤ 20: 12; 20 < t ≤ 30: 18; 30 < t ≤ 40: 10; 40 < t ≤ 50: 5. (a) Write down the modal class. (b) Use the mid-interval values to find an estimate of the mean. (c) Find an estimate of the standard deviation.",
+        { id: "math-9-q18", title: "Identify a sampling technique and find a stratified sample", paper: "P1", where: "Paper 1 / 2 · 2–3 marks",
+          q: "A school has 420 students in Year 11 and 280 students in Year 12. A stratified sample of 50 students is to be chosen. (a) Find the number of Year 11 students in the sample. (b) State one reason why a stratified sample may be preferred to a convenience sample.",
           marks: [
-            ["A1", "modal class is 20 < t ≤ 30"],
-            ["(M1)", "use of __mid-interval values__ 5, 15, 25, 35, 45 with the frequencies"],
-            ["A1", "estimated mean = 24.6 minutes"],
-            ["A1", "estimated standard deviation = 11.1 minutes"],
+            ["M1", "420 ÷ 700 × 50"],
+            ["A1", "30 Year 11 students (and 20 Year 12)"],
+            ["R1", "each group (stratum) is represented __in proportion__ to its size, so the sample is __less biased__ / more representative"],
           ],
-          model: "(a) 20 < t ≤ 30. (b) Using mid-interval values 5, 15, 25, 35, 45 with frequencies 5, 12, 18, 10, 5 in the GDC: mean ≈ 1230/50 = 24.6 minutes. (c) σ ≈ 11.1 minutes (11.1283…).",
-          accept: "11.13; σ from the GDC 1-Var Stats with the frequency list; \"estimate\" values only (they are estimates because the raw data is grouped)",
-          reject: "using class boundaries (10, 20, …) instead of mid-points; sₓ (sample sd, 11.2) - IB uses σₓ; the frequency 18 as the modal class",
-          tip: "分組數據一定用組中點（mid-interval）入 GDC 1-Var Stats：L1 放中點，L2 放頻數；標準差抄 σx 唔好抄 Sx。" },
-
-        { title: "Show that a value is an outlier and draw a box-and-whisker diagram", star: true,
+          model: "(a) Year 11: 420/700 × 50 = 30 students (Year 12: 280/700 × 50 = 20). (b) A stratified sample represents each year group in proportion to its size, so it is more representative and less biased than a convenience sample.",
+          accept: "\"representative of the population\"; convenience sample \"may be biased\"",
+          reject: "\"more accurate\" with no reason; 25 from each year (equal, not proportional)",
+          tip: "分層抽樣 = 按比例：組人數 ÷ 總人數 × 樣本大小。記得五種方法：simple random、convenience、systematic、quota、stratified。" },
+        { id: "math-9-f1", title: "Discrete or continuous? Population or sample?", paper: "P1", where: "Paper 1 · 3 marks · definitions in context", q: "A biologist catches 40 fish from a lake and records, for each fish, its length and the number of spots on its back. (a) State the population. (b) Classify each variable as discrete or continuous.", marks: [["A1", "population: all the fish in the lake"], ["A1", "length is continuous (it is measured)"], ["A1", "number of spots is discrete (it is counted)"]], model: "The population is every fish in the lake; the 40 fish caught are the sample. Length is measured, so continuous; the number of spots is counted, so discrete.", accept: "\"the fish in the lake\"", reject: "the 40 fish as the population", tip: "Population = 全部；sample = 抽咗出嚟嗰啲。數得 = discrete，量度 = continuous。" },
+        { id: "math-9-f2", title: "Describe how to take a systematic sample", paper: "P1", where: "Paper 1 · 3 marks · describe a method", q: "A school has a numbered list of 840 students. Describe how to select a systematic sample of 30 students.", marks: [["M1", "sampling interval k = 840 ÷ 30 = 28"], ["A1", "choose a random starting number from 1 to 28"], ["A1", "then take every 28th student on the list after it"]], model: "k = 840/30 = 28. Pick a random number r from 1 to 28, then select students r, r + 28, r + 56, … until 30 students are chosen.", accept: "a random start then every 28th", reject: "always starting at student 1 (no random element)", tip: "Systematic：k = N ÷ n，隨機起點，之後每 k 個揀一個。" },
+        { id: "math-9-f3", title: "Explain why a sample is biased", paper: "P1", where: "Paper 1 · 2 marks · reasoning in context", q: "To estimate the number of hours of television that adults in a city watch each week, a researcher telephones households between 10 am and 12 noon on weekdays. Explain why this sample is likely to be biased.", marks: [["R1", "people who work during the day are unlikely to answer, so they are under-represented"], ["R1", "people at home at that time (e.g. retired people) may watch more television, so the estimate is likely to be too high"]], model: "Only people at home on weekday mornings can be reached, so working adults are under-represented. Those who are at home may watch more television than average, so the sample will tend to overestimate the mean.", accept: "any group excluded with its effect on the estimate", reject: "\"the sample is too small\" with no reference to the method", tip: "Bias 題：講邊啲人被排除 + 對結果有咩影響。" },
+      ],
+      mc: [
+        { id: "math-9-m1", skill: "<strong>Stratified in 10 seconds:</strong> fraction of the population × sample size, for each group.", q: "A club has 60 men and 40 women. A stratified sample of 20 contains how many women?", options: ["8", "10", "12", "4"], answer: 0, why: "40/100 × 20 = 8." },
+        { id: "math-9-m2", skill: "<strong>Random or not?</strong> Simple random, systematic (random start) and stratified samples use chance; quota and convenience samples do not - that is usually the \"disadvantage\" mark.", q: "Which sampling technique does NOT select members at random?", options: ["Quota", "Simple random", "Stratified", "Systematic with a random start"], answer: 0, why: "A quota sample fills each group non-randomly." },
+        { id: "math-9-m3", skill: "<strong>Counted → discrete, measured → continuous</strong>, even when the measurement is rounded.", q: "Which of these is continuous data?", options: ["The time taken to run 100 m", "The number of goals in a match", "The number of siblings", "The number of pages in a book"], answer: 0, why: "Time is measured on a continuous scale." },
+      ],
+    },
+    "math-9b": {
+      frames: [
+        { id: "math-9-q13", title: "Show that a value is an outlier and draw a box-and-whisker diagram", star: true,
           paper: "P1", where: "Paper 1 / 2 · 4–5 marks · five-number summary given",
           q: "The lengths, in cm, of a sample of fish have minimum 12, lower quartile 20, median 26, upper quartile 31 and maximum 49. The largest length that is not an outlier is 41 cm. (a) Show that 49 cm is an outlier. (b) Draw a box-and-whisker diagram for the data, indicating any outliers.",
           marks: [
@@ -35,8 +44,7 @@ IB.addExamFrames("math", {
           accept: "upper whisker to 41 with 49 shown as a dot or cross; a diagram drawn on a labelled scale",
           reject: "whisker drawn to 49 when the outlier is shown; using 1.5 × IQR without adding it to Q₃; \"49 is far from the median\" (no comparison with the fence)",
           tip: "Show that 題要寫出 fence 嘅數同埋「49 > 47.5」呢個比較，先攞到 R1。有 outlier 嘅話，鬚只畫到最大嘅非 outlier。" },
-
-        { title: "Use a cumulative frequency graph: median, IQR, percentiles and \"how many\"", star: true,
+        { id: "math-9-q14", title: "Use a cumulative frequency graph: median, IQR, percentiles and \"how many\"", star: true,
           paper: "P1", where: "Paper 1 / 2 · 3–5 marks · cumulative frequency curve given",
           q: "The cumulative frequency graph for the masses, m grams, of 80 apples passes through (100, 0), (120, 8), (140, 30), (160, 58), (180, 74) and (200, 80). Use the graph to estimate (a) the median mass, (b) the interquartile range, (c) the number of apples with mass greater than 170 g.",
           marks: [
@@ -55,8 +63,57 @@ IB.addExamFrames("math", {
           accept: "values read consistently from the graph within half a small square (e.g. median 145–149, IQR 30–33)",
           reject: "giving 66 for part (c) (that is the number LESS than 170 g); reading Q₁ at 25% of the mass axis instead of the frequency axis",
           tip: "「多過」某個值 = 總數 − 讀到嘅累積頻數。中位數喺 n/2，Q₁ 喺 n/4，第 90 百分位喺 0.9n，全部由 y 軸橫讀過去。" },
-
-        { title: "Find r and the regression line of y on x, then predict", star: true,
+      ],
+      mc: [
+        { id: "math-9-q22", skill: "<strong>Outlier fences in 15 s:</strong> Q₁ − 1.5 IQR and Q₃ + 1.5 IQR. Halve IQR, add it to IQR, then add/subtract from the quartile.",
+          q: "Q₁ = 40, Q₃ = 60. Which value is an outlier?", options: ["12", "35", "88", "92"], answer: 3, why: "IQR = 20, 1.5 × IQR = 30, so the fences are 10 and 90. Only 92 lies outside them." },
+        { skill: "<strong>Spot the word \"estimate\":</strong> grouped data, cumulative frequency graphs and regression predictions are always estimates - write \"approximately\" / give 3 s.f." },
+        { id: "math-9b-m1", skill: "<strong>Percentile on a cf graph:</strong> the pth percentile is read at p% of n on the cumulative frequency axis.", q: "For 80 values, the 90th percentile is read at a cumulative frequency of:", options: ["72", "90", "8", "40"], answer: 0, why: "0.9 × 80 = 72." },
+      ],
+      concepts: [
+        { h: "Histograms, cumulative frequency and percentiles", b: "<p>A <strong>histogram</strong> for continuous data has no gaps between bars (equal class widths in AA). A <strong>cumulative frequency graph</strong> is plotted at the <em>upper class boundaries</em>; read the median at n/2, Q₁ at n/4, Q₃ at 3n/4 and the k-th percentile at k% of n. \"Number greater than a\" = n − cf(a).</p>" },
+      ],
+    },
+    "math-9c": {
+      frames: [
+        { id: "math-9-q12", title: "Estimate the mean and standard deviation from grouped data", star: true,
+          paper: "P2", where: "Paper 2 · 4 marks · grouped frequency table given",
+          q: "The times, t minutes, that 50 students spent on homework are summarised: 0 < t ≤ 10: 5; 10 < t ≤ 20: 12; 20 < t ≤ 30: 18; 30 < t ≤ 40: 10; 40 < t ≤ 50: 5. (a) Write down the modal class. (b) Use the mid-interval values to find an estimate of the mean. (c) Find an estimate of the standard deviation.",
+          marks: [
+            ["A1", "modal class is 20 < t ≤ 30"],
+            ["(M1)", "use of __mid-interval values__ 5, 15, 25, 35, 45 with the frequencies"],
+            ["A1", "estimated mean = 24.6 minutes"],
+            ["A1", "estimated standard deviation = 11.1 minutes"],
+          ],
+          model: "(a) 20 < t ≤ 30. (b) Using mid-interval values 5, 15, 25, 35, 45 with frequencies 5, 12, 18, 10, 5 in the GDC: mean ≈ 1230/50 = 24.6 minutes. (c) σ ≈ 11.1 minutes (11.1283…).",
+          accept: "11.13; σ from the GDC 1-Var Stats with the frequency list; \"estimate\" values only (they are estimates because the raw data is grouped)",
+          reject: "using class boundaries (10, 20, …) instead of mid-points; sₓ (sample sd, 11.2) - IB uses σₓ; the frequency 18 as the modal class",
+          tip: "分組數據一定用組中點（mid-interval）入 GDC 1-Var Stats：L1 放中點，L2 放頻數；標準差抄 σx 唔好抄 Sx。" },
+        { id: "math-9-q19", title: "Effect of a linear change on mean, standard deviation and variance", paper: "P1", where: "Paper 1 · 2–3 marks",
+          q: "The monthly salaries of a company's employees have mean $3000 and standard deviation $400. Every salary is increased by 5% and then a bonus of $200 is added. Find the new mean, the new standard deviation and the new variance.",
+          marks: [
+            ["A1", "new mean = 1.05 × 3000 + 200 = $3350"],
+            ["A1", "new standard deviation = 1.05 × 400 = $420 (__adding 200 does not change the spread__)"],
+            ["A1", "new variance = 420² = 176 400"],
+          ],
+          model: "New mean = 1.05(3000) + 200 = $3350. Multiplying by 1.05 multiplies the standard deviation by 1.05, adding 200 does not affect it: new sd = $420. New variance = 420² = 176 400.",
+          accept: "variance = 1.05² × 400²",
+          reject: "sd = 620 (adding 200 to the sd); variance = 1.05 × 160 000",
+          tip: "加減常數：平均數郁，標準差唔郁。乘常數：兩樣都乘；方差就乘個常數嘅平方。" },
+        { id: "math-9c-f1", title: "Mean of two combined groups", paper: "P1", where: "Paper 1 · 3 marks · totals", q: "In a class, 12 boys have a mean test score of 64 and 18 girls have a mean test score of 71. Find the mean score of the whole class.", marks: [["M1", "totals: 12 × 64 = 768 and 18 × 71 = 1278"], ["M1", "\\(\\frac{768 + 1278}{30}\\)"], ["A1", "68.2"]], numeric: { value: 68.2, tol: 0.01 }, model: "Total of all scores = 768 + 1278 = 2046, so the mean is 2046/30 = 68.2.", accept: "68.2 exactly", reject: "(64 + 71)/2 = 67.5 (groups of different sizes)", tip: "合併平均：先計總和，再除總人數，唔可以直接平均兩個平均數。" },
+        { id: "math-9c-f2", title: "Median and IQR of discrete data", paper: "P1", where: "Paper 1 · 3 marks · ordered list", q: "For the data 4, 7, 8, 10, 11, 13, 15, 18, 21, 24, find the median and the interquartile range.", marks: [["A1", "median = (11 + 13)/2 = 12"], ["M1", "Q₁ = 8 and Q₃ = 18 (medians of the lower and upper halves)"], ["A1", "IQR = 10"]], numeric: { value: 10, tol: 0.001 }, model: "n = 10, so the median is the mean of the 5th and 6th values: 12. Lower half 4, 7, 8, 10, 11 gives Q₁ = 8; upper half 13, 15, 18, 21, 24 gives Q₃ = 18. IQR = 18 − 8 = 10.", accept: "GDC 1-Var Stats values", reject: "IQR = 24 − 4 (that is the range)", tip: "Discrete data：上下半各自搵 median 就係 Q₁、Q₃。" },
+      ],
+      mc: [
+        { id: "math-9-q20", skill: "<strong>Which average / spread?</strong> Outliers or skew → median and IQR; symmetric data → mean and standard deviation. Range and σ are pulled by outliers, IQR is not.",
+          q: "A data set contains one extreme outlier. Which pair of measures best describes it?", options: ["mean and standard deviation", "median and interquartile range", "mean and range", "mode and standard deviation"], answer: 1, why: "Median and IQR depend only on the middle of the data, so the outlier does not affect them." },
+        { id: "math-9-q23", skill: "<strong>GDC sd:</strong> always copy σₓ (population). Sₓ is slightly larger and is wrong for IB AA answers.",
+          paper: "P2", q: "For 2, 4, 4, 4, 5, 5, 7, 9, which value is σ (the IB standard deviation)?", options: ["2", "2.14", "4", "5"], answer: 0, why: "Mean 5, Σ(x − 5)² = 32, σ² = 32/8 = 4, σ = 2. (2.14 is Sₓ.)" },
+        { id: "math-9c-m1", skill: "<strong>Linear change shortcut:</strong> y = ax + b gives ȳ = ax̄ + b and σ_y = |a|σ_x; the + b never touches the spread.", q: "Data have mean 20 and standard deviation 5. Each value is halved and then 3 is subtracted. The new standard deviation is:", options: ["2.5", "−0.5", "5", "7"], answer: 0, why: "Halving halves σ; subtracting 3 does not change it." },
+      ],
+    },
+    "math-9d": {
+      frames: [
+        { id: "math-9-q15", title: "Find r and the regression line of y on x, then predict", star: true,
           paper: "P2", where: "Paper 2 · 4–6 marks · bivariate table given",
           q: "The number of hours of revision, x, and the test score, y, of six students are: x: 2, 4, 5, 7, 8, 10; y: 45, 52, 60, 66, 71, 80. (a) Write down the value of Pearson's product-moment correlation coefficient, r. (b) Write down the equation of the regression line of y on x. (c) Use your equation to estimate the score of a student who revised for 6 hours.",
           marks: [
@@ -72,8 +129,7 @@ IB.addExamFrames("math", {
           accept: "a = 4.381, b = 36.05; answer 62.3 or 62 marks",
           reject: "r = 0.991 (that is r², or copying the wrong GDC line); writing the line as x = …; equation without \"y =\" (loses a mark)",
           tip: "LinReg(ax+b) 出 a、b、r：寫答案要寫晒「y = 4.38x + 36.0」成條方程，3 位有效數字。x = 6 啱啱係 x̄，所以估計值就係 ȳ。" },
-
-        { title: "Interpret r, the gradient a and the intercept b; comment on reliability", star: true,
+        { id: "math-9-q16", title: "Interpret r, the gradient a and the intercept b; comment on reliability", star: true,
           paper: "P2", where: "Paper 2 · 1–3 marks · after a regression line",
           q: "For the data on revision hours x and test score y, r = 0.996 and the regression line of y on x is y = 4.38x + 36.0, for 2 ≤ x ≤ 10. (a) Describe the correlation. (b) Interpret the value 4.38 in context. (c) Explain whether it would be appropriate to use the line to estimate the score of a student who revised for 20 hours.",
           marks: [
@@ -85,8 +141,22 @@ IB.addExamFrames("math", {
           accept: "\"very strong positive\"; b = 36.0 interpreted as the predicted score with no revision (only if asked, and with a caveat)",
           reject: "\"positive correlation\" without strength; \"revision causes higher scores\" (correlation does not imply causation); \"not reliable because r is not 1\"",
           tip: "r 嘅描述要有三樣：強／弱、正／負、linear。解釋斜率一定要用題目情境同單位：「每多一個鐘，分數平均多 4.38」。" },
-
-        { title: "Choose the correct regression line: x on y", paper: "P2", where: "Paper 2 · 2–3 marks · HL and SL (4.10)",
+        { id: "math-9d-f1", title: "Describe the correlation from r in context", paper: "P2", where: "Paper 2 · 2 marks · interpret", q: "For bivariate data on the age of a car, x years, and its value, y dollars, Pearson's correlation coefficient is r = −0.88. Interpret this value in context.", marks: [["A1", "strong negative linear correlation"], ["A1", "older cars tend to have lower values"]], model: "r = −0.88 shows a strong negative linear correlation: as the age of a car increases, its value tends to decrease.", accept: "\"as x increases y tends to decrease\" in context", reject: "\"age causes the value to fall\"", tip: "r：強弱 + 正負 + linear + 情境，四樣齊晒。" },
+        { id: "math-9d-f2", title: "Regression line through the mean point", paper: "P1", where: "Paper 1 · 3 marks · no GDC", q: "For a set of data x̄ = 8 and ȳ = 30. The regression line of y on x is y = 2.5x + b. (a) Find b. (b) Estimate y when x = 10, given that the x-values range from 4 to 14.", marks: [["M1", "the line passes through (8, 30): 30 = 2.5(8) + b"], ["A1", "b = 10"], ["A1", "y = 2.5(10) + 10 = 35"]], numeric: { value: 35, tol: 0.001 }, model: "The regression line passes through the mean point, so 30 = 20 + b and b = 10. Then y = 25 + 10 = 35 (x = 10 is inside the data, so this is interpolation).", accept: "35 with b found", reject: "b = 30 (intercept read from ȳ)", tip: "Regression line 一定經過 (x̄, ȳ)。" },
+      ],
+      mc: [
+        { id: "math-9-q21", skill: "<strong>Mean point trick:</strong> the regression line of y on x always passes through (x̄, ȳ). If x̄ is given, the predicted y is ȳ - no GDC needed.",
+          q: "The regression line of y on x is y = 2x + 3 and x̄ = 4. What is ȳ?", options: ["8", "11", "7", "4"], answer: 1, why: "ȳ = 2(4) + 3 = 11 because the line passes through the mean point." },
+        { id: "math-9d-m1", skill: "<strong>r in one glance:</strong> the sign gives the direction, the size the strength; r ≈ 0 means no LINEAR correlation (there may still be a curve).", q: "Which value of r shows the strongest linear correlation?", options: ["−0.91", "0.85", "0.10", "−0.40"], answer: 0, why: "|−0.91| is the largest." },
+        { id: "math-9d-m2", skill: "<strong>Extrapolation check:</strong> compare the x you are given with the data range first - outside the range the prediction is unreliable however large r is.", q: "A regression line was found from data with 20 ≤ x ≤ 50 and r = 0.97. A prediction is reliable for:", options: ["x = 35", "x = 5", "x = 80", "x = 0"], answer: 0, why: "Only x = 35 lies inside the data range." },
+      ],
+      concepts: [
+        { h: "Line of best fit and the parameters", b: "<p>A line of best fit drawn by eye should pass through the <strong>mean point</strong> (x̄, ȳ). In y = ax + b, <strong>a</strong> is the change in y for each unit increase in x and <strong>b</strong> is the value of y when x = 0 (interpret only if x = 0 is meaningful and inside the data range).</p>" },
+      ],
+    },
+    "math-9e": {
+      frames: [
+        { id: "math-9-q17", title: "Choose the correct regression line: x on y", paper: "P2", where: "Paper 2 · 2–3 marks · HL and SL (4.10)",
           q: "For the revision data, the regression line of x on y is x = 0.226y − 8.10. A student scored 70 marks. Use an appropriate regression line to estimate how many hours the student revised, and justify your choice of line.",
           marks: [
             ["R1", "use x on y because we are estimating __x from a given y__"],
@@ -98,52 +168,71 @@ IB.addExamFrames("math", {
           accept: "7.72–7.74 from unrounded coefficients",
           reject: "rearranging y = 4.38x + 36.0 to give x = 7.75 (wrong line, loses the R1 and the A1)",
           tip: "由 y 估 x 就用 x on y 條線，唔可以將 y on x 條線移項！GDC 將 L1、L2 對調再做 LinReg。" },
-
-        { title: "Identify a sampling technique and find a stratified sample", paper: "P1", where: "Paper 1 / 2 · 2–3 marks",
-          q: "A school has 420 students in Year 11 and 280 students in Year 12. A stratified sample of 50 students is to be chosen. (a) Find the number of Year 11 students in the sample. (b) State one reason why a stratified sample may be preferred to a convenience sample.",
-          marks: [
-            ["M1", "420 ÷ 700 × 50"],
-            ["A1", "30 Year 11 students (and 20 Year 12)"],
-            ["R1", "each group (stratum) is represented __in proportion__ to its size, so the sample is __less biased__ / more representative"],
-          ],
-          model: "(a) Year 11: 420/700 × 50 = 30 students (Year 12: 280/700 × 50 = 20). (b) A stratified sample represents each year group in proportion to its size, so it is more representative and less biased than a convenience sample.",
-          accept: "\"representative of the population\"; convenience sample \"may be biased\"",
-          reject: "\"more accurate\" with no reason; 25 from each year (equal, not proportional)",
-          tip: "分層抽樣 = 按比例：組人數 ÷ 總人數 × 樣本大小。記得五種方法：simple random、convenience、systematic、quota、stratified。" },
-
-        { title: "Effect of a linear change on mean, standard deviation and variance", paper: "P1", where: "Paper 1 · 2–3 marks",
-          q: "The monthly salaries of a company's employees have mean $3000 and standard deviation $400. Every salary is increased by 5% and then a bonus of $200 is added. Find the new mean, the new standard deviation and the new variance.",
-          marks: [
-            ["A1", "new mean = 1.05 × 3000 + 200 = $3350"],
-            ["A1", "new standard deviation = 1.05 × 400 = $420 (__adding 200 does not change the spread__)"],
-            ["A1", "new variance = 420² = 176 400"],
-          ],
-          model: "New mean = 1.05(3000) + 200 = $3350. Multiplying by 1.05 multiplies the standard deviation by 1.05, adding 200 does not affect it: new sd = $420. New variance = 420² = 176 400.",
-          accept: "variance = 1.05² × 400²",
-          reject: "sd = 620 (adding 200 to the sd); variance = 1.05 × 160 000",
-          tip: "加減常數：平均數郁，標準差唔郁。乘常數：兩樣都乘；方差就乘個常數嘅平方。" },
+        { id: "math-9e-f1", title: "Find the regression line of x on y and predict", star: true, paper: "P2", where: "Paper 2 · 4 marks · GDC", q: "The table shows x: 1, 3, 4, 6, 8 and y: 10, 14, 17, 20, 26. (a) Find the equation of the regression line of x on y. (b) Hence estimate x when y = 22.", marks: [["M1", "y-values as the independent list, x-values as the dependent list"], ["A1", "x = 0.443y − 3.31"], ["M1", "x = 0.443(22) − 3.31"], ["A1", "x = 6.44"]], numeric: { value: 6.44, tol: 0.01 }, model: "From the GDC with y as the independent variable, x = 0.443y − 3.31. When y = 22, x = 6.44.", accept: "x = 0.4429y − 3.307", reject: "rearranging the line of y on x (y = 2.15x + 7.94)", tip: "估 x：Xlist 放 y，Ylist 放 x。" },
+        { id: "math-9e-f2", title: "Mean point from the two regression lines", paper: "P1", where: "Paper 1 · 3 marks · simultaneous equations", q: "The regression line of y on x is y = 0.5x + 5 and the regression line of x on y is x = 1.2y − 4. Find x̄ and ȳ.", marks: [["M1", "both lines pass through (x̄, ȳ): x = 1.2(0.5x + 5) − 4"], ["A1", "x̄ = 5"], ["A1", "ȳ = 7.5"]], model: "x = 0.6x + 6 − 4, so 0.4x = 2 and x̄ = 5; then ȳ = 0.5(5) + 5 = 7.5.", accept: "elimination in any order", reject: "setting the two right-hand sides equal", tip: "兩條 regression line 嘅交點就係 (x̄, ȳ)。" },
+        { id: "math-9e-f3", title: "Choose the regression line and justify", paper: "P2", where: "Paper 2 · 2 marks · reasoning", q: "A scientist has the regression line of y on x, y = 4.2x + 15, and the regression line of x on y, x = 0.21y − 2.6, for data with 10 ≤ x ≤ 30. She wants to estimate x when y = 80. State which line she should use, and find the estimate.", marks: [["R1", "x on y, because x is being predicted from a given value of y"], ["A1", "x = 0.21(80) − 2.6 = 14.2"]], numeric: { value: 14.2, tol: 0.01 }, model: "Use x on y since x is the variable being predicted: x = 16.8 − 2.6 = 14.2, which is inside the data range.", accept: "14.2 with the reason", reject: "(80 − 15)/4.2 = 15.5", tip: "估邊個，邊個擺左邊。" },
       ],
       mc: [
-        { skill: "<strong>Which average / spread?</strong> Outliers or skew → median and IQR; symmetric data → mean and standard deviation. Range and σ are pulled by outliers, IQR is not.",
-          q: "A data set contains one extreme outlier. Which pair of measures best describes it?", options: ["mean and standard deviation", "median and interquartile range", "mean and range", "mode and standard deviation"], answer: 1, why: "Median and IQR depend only on the middle of the data, so the outlier does not affect them." },
-        { skill: "<strong>Mean point trick:</strong> the regression line of y on x always passes through (x̄, ȳ). If x̄ is given, the predicted y is ȳ - no GDC needed.",
-          q: "The regression line of y on x is y = 2x + 3 and x̄ = 4. What is ȳ?", options: ["8", "11", "7", "4"], answer: 1, why: "ȳ = 2(4) + 3 = 11 because the line passes through the mean point." },
-        { skill: "<strong>Outlier fences in 15 s:</strong> Q₁ − 1.5 IQR and Q₃ + 1.5 IQR. Halve IQR, add it to IQR, then add/subtract from the quartile.",
-          q: "Q₁ = 40, Q₃ = 60. Which value is an outlier?", options: ["12", "35", "88", "92"], answer: 3, why: "IQR = 20, 1.5 × IQR = 30, so the fences are 10 and 90. Only 92 lies outside them." },
-        { skill: "<strong>Spot the word \"estimate\":</strong> grouped data, cumulative frequency graphs and regression predictions are always estimates - write \"approximately\" / give 3 s.f." },
-        { skill: "<strong>GDC sd:</strong> always copy σₓ (population). Sₓ is slightly larger and is wrong for IB AA answers.",
-          paper: "P2", q: "For 2, 4, 4, 4, 5, 5, 7, 9, which value is σ (the IB standard deviation)?", options: ["2", "2.14", "4", "5"], answer: 0, why: "Mean 5, Σ(x − 5)² = 32, σ² = 32/8 = 4, σ = 2. (2.14 is Sₓ.)" },
-      ],
-      concepts: [
-        { h: "Histograms, cumulative frequency and percentiles", b: "<p>A <strong>histogram</strong> for continuous data has no gaps between bars (equal class widths in AA). A <strong>cumulative frequency graph</strong> is plotted at the <em>upper class boundaries</em>; read the median at n/2, Q₁ at n/4, Q₃ at 3n/4 and the k-th percentile at k% of n. \"Number greater than a\" = n − cf(a).</p>" },
-        { h: "Line of best fit and the parameters", b: "<p>A line of best fit drawn by eye should pass through the <strong>mean point</strong> (x̄, ȳ). In y = ax + b, <strong>a</strong> is the change in y for each unit increase in x and <strong>b</strong> is the value of y when x = 0 (interpret only if x = 0 is meaningful and inside the data range).</p>" },
+        { id: "math-9e-m1", skill: "<strong>Left-hand side = what you predict:</strong> x on y is written x = cy + d and gives x.", q: "To estimate a student's revision time x from her score y, use:", options: ["the regression line of x on y", "the regression line of y on x, rearranged", "the mean of x", "a line through the origin"], answer: 0, why: "x is being predicted from y." },
+        { id: "math-9e-m2", skill: "<strong>Both lines meet at (x̄, ȳ):</strong> substitute one equation into the other to find the mean point.", q: "The regression lines y = 3x − 2 and x = 0.3y + 1 meet at:", options: ["(4, 10)", "(10, 4)", "(−2, 1)", "(1, 1)"], answer: 0, why: "x = 0.3(3x − 2) + 1 gives 0.1x = 0.4, so x = 4 and y = 10." },
+        { id: "math-9e-m3", skill: "<strong>r = ±1 shortcut:</strong> only then are the two regression lines the same; otherwise never rearrange one to get the other.", q: "For which value of r are the regression lines of y on x and of x on y identical?", options: ["r = −1", "r = 0", "r = 0.5", "r = 0.99"], answer: 0, why: "The lines coincide only for perfect correlation." },
       ],
     },
 
     // ======================= 4.5-4.6, 4.11 Probability =======================
     "math-10": {
       frames: [
-        { title: "Complete a Venn diagram and find probabilities from it", star: true,
+        { id: "math-10-q13", title: "Sample space diagram for two dice / spinners", paper: "P1", where: "Paper 1 · 3–5 marks",
+          q: "Two fair four-sided dice, each numbered 1 to 4, are rolled and the scores are added. (a) Find the probability that the sum is 5. (b) Given that at least one die shows a 4, find the probability that the sum is greater than 5.",
+          marks: [
+            ["(M1)", "sample space diagram with __16__ equally likely outcomes"],
+            ["A1", "P(sum = 5) = 4/16 = 1/4"],
+            ["A1", "7 outcomes have at least one 4"],
+            ["A1", "5 of these have sum greater than 5, so P = 5/7"],
+          ],
+          model: "There are 16 equally likely outcomes. Sum 5: (1,4), (2,3), (3,2), (4,1), so P = 4/16 = 1/4. At least one 4: 7 outcomes; of these (4,2), (4,3), (4,4), (2,4), (3,4) have sum > 5, so P = 5/7.",
+          accept: "a correct table or list of outcomes",
+          reject: "8 outcomes with a 4 (counting (4,4) twice); 5/16 for part (b)",
+          tip: "兩粒骰一定畫 4×4（或 6×6）表格，數格仔最穩陣。條件概率：只喺符合條件嗰幾格入面數。" },
+        { id: "math-10-q14", title: "Relative frequency and expected number of occurrences", paper: "P1", where: "Paper 1 · 2–3 marks",
+          q: "A biased coin is thrown 200 times and lands on heads 74 times. (a) Find the relative frequency of heads. (b) Hence find the expected number of heads when the coin is thrown 500 times.",
+          marks: [
+            ["A1", "relative frequency = 74/200 = 0.37"],
+            ["M1", "expected number = n × p = 500 × 0.37"],
+            ["A1", "185 heads"],
+          ],
+          model: "Relative frequency = 74/200 = 0.37. Expected number of heads = 500 × 0.37 = 185.",
+          accept: "37/100",
+          reject: "rounding 185 to a different integer; 74 × 2.5 without the probability idea (still correct numerically, but show np)",
+          tip: "期望次數 = np，可以唔係整數（例如 18.5 都照寫），唔好自己四捨五入。" },
+        { id: "math-10-q15", title: "\"At least one\" and finding the least number of trials", paper: "P2", where: "Paper 2 · 4 marks",
+          q: "A fair six-sided die is rolled n times. Find the least value of n such that the probability of obtaining at least one six is greater than 0.9.",
+          marks: [
+            ["M1", "P(at least one six) = __1 − P(no sixes)__ = 1 − (5/6)ⁿ"],
+            ["M1", "1 − (5/6)ⁿ > 0.9, i.e. (5/6)ⁿ < 0.1"],
+            ["A1", "n > 12.6 (from logs or GDC table)"],
+            ["A1", "least n = 13"],
+          ],
+          numeric: { value: 13, tol: 0 },
+          model: "P(at least one six) = 1 − (5/6)ⁿ > 0.9, so (5/6)ⁿ < 0.1 and n > ln 0.1 / ln(5/6) = 12.63. The least value is n = 13.",
+          accept: "a GDC table showing n = 12 gives 0.888 and n = 13 gives 0.907",
+          reject: "n = 12.6 or n = 12 (must round up to the next integer)",
+          tip: "「至少一次」= 1 − 一次都冇。求最少 n 一定向上取整數，可以用 GDC table 檢查 n = 12 同 13。" },
+        { id: "math-10-f1", title: "List a sample space and find a probability", paper: "P1", where: "Paper 1 · 3 marks · equally likely outcomes", q: "A fair coin is tossed and a fair six-sided die is rolled. (a) Write down the number of outcomes in the sample space. (b) Find the probability of a tail and a number greater than 4.", marks: [["A1", "12 outcomes"], ["M1", "favourable outcomes (T, 5) and (T, 6)"], ["A1", "\\(\\frac{2}{12} = \\frac{1}{6}\\)"]], model: "2 × 6 = 12 equally likely outcomes. Two of them, (T, 5) and (T, 6), are favourable, so the probability is 2/12 = 1/6.", accept: "\\(\\frac{1}{2} \\times \\frac{2}{6}\\)", reject: "1/2 + 1/3 (adding instead of multiplying)", tip: "Sample space：列晒所有 equally likely outcomes 再數。" },
+      ],
+      mc: [
+        { id: "math-10-q18", skill: "<strong>Complement first:</strong> \"at least one\", \"not all the same\" and \"different\" are usually quicker as 1 − P(opposite).",
+          q: "Three fair coins are tossed. P(at least one head) =", options: ["1/8", "3/8", "1/2", "7/8"], answer: 3, why: "1 − P(TTT) = 1 − 1/8 = 7/8." },
+        { id: "math-10-m1", skill: "<strong>Expected number = np</strong> - no rounding: 0.3 × 25 = 7.5 is fine.", q: "The probability that a seed grows is 0.85. In a tray of 60 seeds, the expected number that grow is:", options: ["51", "9", "0.85", "60"], answer: 0, why: "60 × 0.85 = 51." },
+        { id: "math-10-m2", skill: "<strong>Two-dice totals:</strong> 7 is most likely (6/36); totals 2 and 12 are least likely (1/36 each); P(double) = 1/6.", q: "Two fair dice are rolled. P(total = 10) =", options: ["\\(\\frac{1}{12}\\)", "\\(\\frac{1}{11}\\)", "\\(\\frac{1}{6}\\)", "\\(\\frac{5}{36}\\)"], answer: 0, why: "(4, 6), (5, 5), (6, 4): 3/36 = 1/12." },
+      ],
+      concepts: [
+        { h: "Relative frequency and equally likely outcomes", b: "<p>Relative frequency = (number of times the event occurs) ÷ (number of trials); it estimates P(A) and improves as the number of trials increases. P(A) = n(A)/n(U) only when outcomes are <strong>equally likely</strong>. Expected number of occurrences = np.</p>" },
+      ],
+    },
+    "math-10b": {
+      frames: [
+        { id: "math-10-q9", title: "Complete a Venn diagram and find probabilities from it", star: true,
           paper: "P1", where: "Paper 1 · 4–6 marks · numbers in a group given",
           q: "In a class of 30 students, 18 study French (F), 14 study Spanish (S) and 5 study neither. (a) Find the number of students who study both languages. (b) Find the probability that a randomly chosen student studies French only. (c) Given that a student studies French, find the probability that the student also studies Spanish.",
           marks: [
@@ -157,8 +246,27 @@ IB.addExamFrames("math", {
           accept: "unsimplified fractions; decimals to 3 s.f. (0.367, 0.389)",
           reject: "P(S | F) = 7/30 (that is P(F ∩ S)); 7/14",
           tip: "Venn 圖先填中間交集，再填外面。「Given that」= 縮細樣本空間，分母變做條件嗰組人數。" },
-
-        { title: "Tree diagram with conditional probability (reverse the condition)", star: true,
+        { id: "math-10-q12", title: "State, with reason, whether events are mutually exclusive", paper: "P1", where: "Paper 1 · 1–2 marks",
+          q: "For events A and B, P(A) = 0.4, P(B) = 0.35 and P(A ∩ B) = 0.14. State, with a reason, whether A and B are mutually exclusive.",
+          marks: [
+            ["A1", "__not__ mutually exclusive"],
+            ["R1", "because P(A ∩ B) is greater than zero, so both events can __occur together__"],
+          ],
+          model: "A and B are not mutually exclusive, because P(A ∩ B) = 0.14 ≠ 0, so both events can happen at the same time.",
+          accept: "P(A ∪ B) ≠ P(A) + P(B)",
+          reject: "\"not mutually exclusive because they are independent\" (no numerical reason)",
+          tip: "互斥 = 唔可以同時發生 = P(A∩B) = 0。答案要先寫 A1 結論，再寫 R1 原因。" },
+      ],
+      mc: [
+        { id: "math-10-q16", skill: "<strong>Mutually exclusive vs independent:</strong> ME → P(A ∩ B) = 0, add. Independent → P(A ∩ B) = P(A)P(B), multiply. Two events with non-zero probability cannot be both.",
+          q: "P(A) = 0.5, P(B) = 0.2 and A, B are independent. P(A ∪ B) =", options: ["0.7", "0.6", "0.1", "0.8"], answer: 1, why: "0.5 + 0.2 − 0.5 × 0.2 = 0.6." },
+        { skill: "<strong>Fill the Venn from the middle:</strong> write the intersection first, then subtract outwards; the four regions must add to 1 (or n)." },
+        { skill: "<strong>Without replacement:</strong> both numerator and denominator drop by 1 on the second branch. Check that each pair of branches sums to 1." },
+      ],
+    },
+    "math-10c": {
+      frames: [
+        { id: "math-10-q10", title: "Tree diagram with conditional probability (reverse the condition)", star: true,
           paper: "P1", where: "Paper 1 / 2 · 5–6 marks",
           q: "The probability that it rains on a given day is 0.3. If it rains, the probability that Ana is late for school is 0.6; if it does not rain, the probability that she is late is 0.15. (a) Find the probability that Ana is late on a given day. (b) Given that Ana is late, find the probability that it rained.",
           marks: [
@@ -173,8 +281,7 @@ IB.addExamFrames("math", {
           accept: "12/19; 0.63157…",
           reject: "0.6 (that is P(late | rain)); 0.18 as the final answer",
           tip: "條件反轉咗（已知遲到問落雨）就用 P(A∩B)/P(B)：分子係一條 branch，分母係所有遲到 branch 加埋。" },
-
-        { title: "Test whether two events are independent", star: true,
+        { id: "math-10-q11", title: "Test whether two events are independent", star: true,
           paper: "P1", where: "Paper 1 · 3–4 marks · \"Determine whether…\"",
           q: "Events A and B are such that P(A) = 0.4, P(B) = 0.35 and P(A ∪ B) = 0.61. (a) Find P(A ∩ B). (b) Determine whether A and B are independent.",
           marks: [
@@ -187,76 +294,20 @@ IB.addExamFrames("math", {
           accept: "showing P(A | B) = 0.14/0.35 = 0.4 = P(A)",
           reject: "\"independent because they do not affect each other\" with no numerical comparison; \"independent because P(A ∩ B) ≠ 0\"",
           tip: "獨立要用數字證明：計 P(A)P(B)，同 P(A∩B) 比較，寫埋結論句。互斥（P(A∩B)=0）同獨立係兩回事！" },
-
-        { title: "State, with reason, whether events are mutually exclusive", paper: "P1", where: "Paper 1 · 1–2 marks",
-          q: "For events A and B, P(A) = 0.4, P(B) = 0.35 and P(A ∩ B) = 0.14. State, with a reason, whether A and B are mutually exclusive.",
-          marks: [
-            ["A1", "__not__ mutually exclusive"],
-            ["R1", "because P(A ∩ B) is greater than zero, so both events can __occur together__"],
-          ],
-          model: "A and B are not mutually exclusive, because P(A ∩ B) = 0.14 ≠ 0, so both events can happen at the same time.",
-          accept: "P(A ∪ B) ≠ P(A) + P(B)",
-          reject: "\"not mutually exclusive because they are independent\" (no numerical reason)",
-          tip: "互斥 = 唔可以同時發生 = P(A∩B) = 0。答案要先寫 A1 結論，再寫 R1 原因。" },
-
-        { title: "Sample space diagram for two dice / spinners", paper: "P1", where: "Paper 1 · 3–5 marks",
-          q: "Two fair four-sided dice, each numbered 1 to 4, are rolled and the scores are added. (a) Find the probability that the sum is 5. (b) Given that at least one die shows a 4, find the probability that the sum is greater than 5.",
-          marks: [
-            ["(M1)", "sample space diagram with __16__ equally likely outcomes"],
-            ["A1", "P(sum = 5) = 4/16 = 1/4"],
-            ["A1", "7 outcomes have at least one 4"],
-            ["A1", "5 of these have sum greater than 5, so P = 5/7"],
-          ],
-          model: "There are 16 equally likely outcomes. Sum 5: (1,4), (2,3), (3,2), (4,1), so P = 4/16 = 1/4. At least one 4: 7 outcomes; of these (4,2), (4,3), (4,4), (2,4), (3,4) have sum > 5, so P = 5/7.",
-          accept: "a correct table or list of outcomes",
-          reject: "8 outcomes with a 4 (counting (4,4) twice); 5/16 for part (b)",
-          tip: "兩粒骰一定畫 4×4（或 6×6）表格，數格仔最穩陣。條件概率：只喺符合條件嗰幾格入面數。" },
-
-        { title: "Relative frequency and expected number of occurrences", paper: "P1", where: "Paper 1 · 2–3 marks",
-          q: "A biased coin is thrown 200 times and lands on heads 74 times. (a) Find the relative frequency of heads. (b) Hence find the expected number of heads when the coin is thrown 500 times.",
-          marks: [
-            ["A1", "relative frequency = 74/200 = 0.37"],
-            ["M1", "expected number = n × p = 500 × 0.37"],
-            ["A1", "185 heads"],
-          ],
-          model: "Relative frequency = 74/200 = 0.37. Expected number of heads = 500 × 0.37 = 185.",
-          accept: "37/100",
-          reject: "rounding 185 to a different integer; 74 × 2.5 without the probability idea (still correct numerically, but show np)",
-          tip: "期望次數 = np，可以唔係整數（例如 18.5 都照寫），唔好自己四捨五入。" },
-
-        { title: "\"At least one\" and finding the least number of trials", paper: "P2", where: "Paper 2 · 4 marks",
-          q: "A fair six-sided die is rolled n times. Find the least value of n such that the probability of obtaining at least one six is greater than 0.9.",
-          marks: [
-            ["M1", "P(at least one six) = __1 − P(no sixes)__ = 1 − (5/6)ⁿ"],
-            ["M1", "1 − (5/6)ⁿ > 0.9, i.e. (5/6)ⁿ < 0.1"],
-            ["A1", "n > 12.6 (from logs or GDC table)"],
-            ["A1", "least n = 13"],
-          ],
-          numeric: { value: 13, tol: 0 },
-          model: "P(at least one six) = 1 − (5/6)ⁿ > 0.9, so (5/6)ⁿ < 0.1 and n > ln 0.1 / ln(5/6) = 12.63. The least value is n = 13.",
-          accept: "a GDC table showing n = 12 gives 0.888 and n = 13 gives 0.907",
-          reject: "n = 12.6 or n = 12 (must round up to the next integer)",
-          tip: "「至少一次」= 1 − 一次都冇。求最少 n 一定向上取整數，可以用 GDC table 檢查 n = 12 同 13。" },
+        { id: "math-10c-f1", title: "Conditional probability from a two-way table", paper: "P1", where: "Paper 1 · 3 marks · table of outcomes", q: "120 students were asked whether they own a bicycle. Of the 70 boys, 42 own a bicycle; of the 50 girls, 18 own a bicycle. A student who owns a bicycle is chosen at random. Find the probability that the student is a girl.", marks: [["A1", "number who own a bicycle = 42 + 18 = 60"], ["M1", "\\(P(\\text{girl} | \\text{bicycle}) = \\frac{18}{60}\\)"], ["A1", "\\(= \\frac{3}{10}\\)"]], model: "The condition \"owns a bicycle\" restricts the sample space to 60 students, of whom 18 are girls, so the probability is 18/60 = 3/10.", accept: "0.3", reject: "18/50 or 18/120 (wrong denominator)", tip: "Given 嗰個條件 = 新分母：只數擁有單車嘅 60 人。" },
       ],
       mc: [
-        { skill: "<strong>Mutually exclusive vs independent:</strong> ME → P(A ∩ B) = 0, add. Independent → P(A ∩ B) = P(A)P(B), multiply. Two events with non-zero probability cannot be both.",
-          q: "P(A) = 0.5, P(B) = 0.2 and A, B are independent. P(A ∪ B) =", options: ["0.7", "0.6", "0.1", "0.8"], answer: 1, why: "0.5 + 0.2 − 0.5 × 0.2 = 0.6." },
-        { skill: "<strong>Fill the Venn from the middle:</strong> write the intersection first, then subtract outwards; the four regions must add to 1 (or n)." },
-        { skill: "<strong>\"Given that\" = new denominator.</strong> Circle the condition, then count only inside it.",
+        { id: "math-10-q17", skill: "<strong>\"Given that\" = new denominator.</strong> Circle the condition, then count only inside it.",
           q: "In a group, 12 of the 20 girls and 9 of the 25 boys wear glasses. A student who wears glasses is chosen. P(girl) =", options: ["12/20", "12/45", "12/21", "21/45"], answer: 2, why: "Condition: wears glasses (21 students); 12 of them are girls." },
-        { skill: "<strong>Without replacement:</strong> both numerator and denominator drop by 1 on the second branch. Check that each pair of branches sums to 1." },
-        { skill: "<strong>Complement first:</strong> \"at least one\", \"not all the same\" and \"different\" are usually quicker as 1 − P(opposite).",
-          q: "Three fair coins are tossed. P(at least one head) =", options: ["1/8", "3/8", "1/2", "7/8"], answer: 3, why: "1 − P(TTT) = 1 − 1/8 = 7/8." },
-      ],
-      concepts: [
-        { h: "Relative frequency and equally likely outcomes", b: "<p>Relative frequency = (number of times the event occurs) ÷ (number of trials); it estimates P(A) and improves as the number of trials increases. P(A) = n(A)/n(U) only when outcomes are <strong>equally likely</strong>. Expected number of occurrences = np.</p>" },
+        { id: "math-10c-m1", skill: "<strong>P(A|B) from P(A∩B) and P(B):</strong> divide - never multiply.", q: "P(A ∩ B) = 0.15 and P(B) = 0.6. P(A | B) =", options: ["0.25", "0.09", "0.75", "0.4"], answer: 0, why: "0.15 ÷ 0.6 = 0.25." },
+        { id: "math-10c-m2", skill: "<strong>Independence in one line:</strong> if P(A|B) = P(A), knowing B does not change the probability of A - the events are independent.", q: "P(A) = 0.3 and P(A | B) = 0.3. Which statement is true?", options: ["A and B are independent", "A and B are mutually exclusive", "P(A ∩ B) = 0", "P(B) = 0.3"], answer: 0, why: "P(A|B) = P(A) is the definition of independence." },
       ],
     },
 
     // ======================= 4.7-4.9, 4.12 Distributions =======================
     "math-11": {
       frames: [
-        { title: "Discrete probability distribution: find k and E(X)", star: true,
+        { id: "math-11-q12", title: "Discrete probability distribution: find k and E(X)", star: true,
           paper: "P1", where: "Paper 1 · 4–5 marks · table or formula for P(X = x)",
           q: "The probability distribution of a discrete random variable X is given by P(X = x) = kx² for x = 1, 2, 3. (a) Find the exact value of k. (b) Find E(X).",
           marks: [
@@ -270,8 +321,7 @@ IB.addExamFrames("math", {
           accept: "2.57; unsimplified 36/14",
           reject: "k = 1/3; E(X) = 2 (the middle value, not weighted)",
           tip: "未知數 k → 第一句一定係「概率總和 = 1」。E(X) 係 x 乘概率再加埋，唔係平均咗幾個 x 值。" },
-
-        { title: "Fair game: expected gain = 0", star: true,
+        { id: "math-11-q13", title: "Fair game: expected gain = 0", star: true,
           paper: "P1", where: "Paper 1 / 2 · 3–4 marks",
           q: "In a game, a player pays $k to roll a fair six-sided die. The player wins $10 for a 6, $3 for a 4 or a 5 and nothing otherwise. Find the value of k for which the game is fair.",
           marks: [
@@ -285,8 +335,18 @@ IB.addExamFrames("math", {
           accept: "$2.67; gain table with values 10 − k, 3 − k, −k",
           reject: "k = 13/3 (adding the prizes and averaging); stating \"fair\" with no expectation",
           tip: "Fair game = 期望淨收益 E(gain) = 0。如果用淨收益（獎金 − 入場費）列表，記住冇贏都要計 −k。" },
-
-        { title: "Binomial: state the distribution, P(X = r), P(X ≥ r), E(X)", star: true,
+        { id: "math-11-f1", title: "Build a probability distribution, then find E(X)", paper: "P1", where: "Paper 1 · 5 marks · sample space", q: "A fair spinner has four equal sections numbered 1, 1, 2 and 3. It is spun twice and X is the sum of the two scores. (a) Find the probability distribution of X. (b) Find E(X).", marks: [["M1", "listing the outcomes (a 4 × 4 grid)"], ["A1", "P(X = 2) = 1/4, P(X = 3) = 1/4"], ["A1", "P(X = 4) = 5/16, P(X = 5) = 1/8, P(X = 6) = 1/16"], ["M1", "\\(E(X) = \\sum x P(X = x)\\)"], ["A1", "E(X) = 3.5"]], numeric: { value: 3.5, tol: 0.001 }, model: "Each spin gives 1 with probability 1/2 and 2, 3 with probability 1/4 each. Sums: P(2) = 4/16, P(3) = 4/16, P(4) = 5/16, P(5) = 2/16, P(6) = 1/16. E(X) = (8 + 12 + 20 + 10 + 6)/16 = 56/16 = 3.5.", accept: "E(X) = 2 × 1.75", reject: "treating the totals 2 to 6 as equally likely", tip: "先列 sample space，檢查概率加埋等於 1，再計 E(X)。" },
+        { id: "math-11-f2", title: "Expected gain over many games", paper: "P1", where: "Paper 1 · 3 marks · interpret E(X)", q: "In a game the gain, X dollars, of a player has E(X) = −0.40. (a) State, with a reason, whether the game is fair. (b) Find the expected total gain of a player who plays 50 games.", marks: [["R1", "not fair, because E(X) ≠ 0"], ["M1", "50 × (−0.40)"], ["A1", "an expected loss of $20"]], model: "A fair game has E(gain) = 0; here E(X) = −0.40, so the player loses 40 cents per game on average. Over 50 games the expected gain is 50 × (−0.40) = −$20.", accept: "\"expected gain −$20\"", reject: "\"fair because the amount is small\"", tip: "Fair = E(gain) 剛好等於 0；n 局 = n × E(X)。" },
+      ],
+      mc: [
+        { id: "math-11-m1", skill: "<strong>Missing probability:</strong> 1 minus the others - then check it lies between 0 and 1.", q: "P(X = 0) = 0.2, P(X = 1) = 0.45 and P(X = 2) = k. k =", options: ["0.35", "0.65", "0.25", "0.55"], answer: 0, why: "1 − 0.2 − 0.45 = 0.35." },
+        { id: "math-11-m2", skill: "<strong>E(X) as a balance point:</strong> for a symmetric distribution E(X) is the middle value - no calculation needed.", q: "X takes the values 1, 2, 3 with probabilities 0.25, 0.5, 0.25. E(X) =", options: ["2", "1.5", "2.5", "1"], answer: 0, why: "The distribution is symmetric about 2." },
+        { id: "math-11-m3", skill: "<strong>Fair price:</strong> the fair cost to play equals the expected prize E(W).", q: "A game pays $12 with probability 0.25 and nothing otherwise. The cost that makes it fair is:", options: ["$3", "$12", "$4", "$9"], answer: 0, why: "E(W) = 12 × 0.25 = $3." },
+      ],
+    },
+    "math-11b": {
+      frames: [
+        { id: "math-11-q14", title: "Binomial: state the distribution, P(X = r), P(X ≥ r), E(X)", star: true,
           paper: "P2", where: "Paper 2 · 5–7 marks",
           q: "A test has 20 multiple-choice questions, each with 4 options. A student guesses every answer. Let X be the number of correct answers. (a) State the distribution of X, including its parameters. (b) Find P(X = 6). (c) Find P(X ≥ 8). (d) Find E(X).",
           marks: [
@@ -301,8 +361,7 @@ IB.addExamFrames("math", {
           accept: "0.16861; 0.10181; binomcdf(20, 0.25, 8, 20) on some GDCs",
           reject: "P(X ≥ 8) = 1 − P(X ≤ 8) = 0.0409; Bin(0.25, 20) with parameters swapped",
           tip: "≥ 8 就係 1 − P(X ≤ 7)！寫 X ~ B(20, 0.25) 常常有一分，一定要寫埋參數。" },
-
-        { title: "Two-stage problem: normal probability feeds a binomial", star: true,
+        { id: "math-11-q15", title: "Two-stage problem: normal probability feeds a binomial", star: true,
           paper: "P2", where: "Paper 2 · 4–6 marks · very common in Section B",
           q: "The volume of drink in a bottle is normally distributed with mean 500 ml and standard deviation 4 ml. (a) Find the probability that a bottle contains less than 495 ml. (b) A pack has 12 bottles. Find the probability that more than 2 bottles in the pack contain less than 495 ml.",
           marks: [
@@ -315,8 +374,20 @@ IB.addExamFrames("math", {
           accept: "0.1257; using 0.106 giving 0.126",
           reject: "1 − P(Y ≤ 3); using the normal distribution again in part (b)",
           tip: "第一部份個概率就係第二部份二項分佈嘅 p。用 GDC 未四捨五入嘅值（存入 A）先代入，避免 early rounding 失分。" },
-
-        { title: "Normal probabilities and inverse normal", star: true,
+        { id: "math-11b-f1", title: "State the binomial assumptions in context", paper: "P1", where: "Paper 1 · 2 marks · assumptions", q: "A basketball player takes 15 free throws and X is the number she scores. State two assumptions needed to model X with a binomial distribution.", marks: [["R1", "the probability of scoring is the same for every throw"], ["R1", "the throws are independent of each other"]], model: "The number of throws is fixed (15) and each is a score or a miss. We must assume that each throw has the same probability of scoring and that the outcome of one throw does not affect another.", accept: "\"constant p\" and \"independent trials\" in context", reject: "\"there are 15 throws\" (given, not an assumption)", tip: "Assumption 題：p 不變 + 獨立，要用情境字眼。" },
+        { id: "math-11b-f2", title: "Find n and p from the mean and variance", paper: "P1", where: "Paper 1 · 3 marks · E(X) and Var(X)", q: "X ~ B(n, p) with E(X) = 8 and Var(X) = 4.8. Find n and p.", marks: [["M1", "\\(\\frac{np(1-p)}{np} = 1 - p = \\frac{4.8}{8}\\)"], ["A1", "p = 0.4"], ["A1", "n = 20"]], numeric: { value: 20, tol: 0.001 }, model: "Dividing, 1 − p = 0.6, so p = 0.4, and then n = 8/0.4 = 20.", accept: "substitution from np = 8", reject: "p = 0.6 (1 − p and p swapped)", tip: "Var ÷ E = 1 − p。" },
+      ],
+      mc: [
+        { skill: "<strong>Binomial checklist (BINS):</strong> Binary outcomes, Independent trials, fixed Number, Same p. If drawing without replacement from a small group, it is NOT binomial." },
+        { id: "math-11-q20", skill: "<strong>Inequality translation:</strong> \"more than 3\" → 1 − P(X ≤ 3); \"at least 3\" → 1 − P(X ≤ 2); \"fewer than 3\" → P(X ≤ 2).",
+          paper: "P2", q: "X ~ B(10, 0.4). Which expression gives P(X ≥ 4)?", options: ["1 − P(X ≤ 4)", "1 − P(X ≤ 3)", "P(X ≤ 4)", "1 − P(X = 4)"], answer: 1, why: "X ≥ 4 is the complement of X ≤ 3." },
+        { id: "math-11-q22", skill: "<strong>E(X) for binomial = np, Var = np(1 − p):</strong> no table needed.",
+          q: "X ~ B(30, 0.2). Var(X) =", options: ["6", "4.8", "2.19", "24"], answer: 1, why: "30 × 0.2 × 0.8 = 4.8." },
+      ],
+    },
+    "math-11c": {
+      frames: [
+        { id: "math-11-q16", title: "Normal probabilities and inverse normal", star: true,
           paper: "P2", where: "Paper 2 · 3–5 marks · sketch often requested",
           q: "The masses of bags of rice are normally distributed with mean 250 g and standard deviation 6 g. (a) Find the probability that a bag has mass between 240 g and 260 g. (b) 10% of bags have a mass greater than m grams. Find m.",
           marks: [
@@ -331,23 +402,7 @@ IB.addExamFrames("math", {
           accept: "257.7; 0.90442",
           reject: "invNorm(0.1, 250, 6) = 242 (wrong tail - unless the GDC tail is set to RIGHT); using variance 36 as σ",
           tip: "invNorm 預設係左尾面積：「大過 m 嘅有 10%」就要入 0.9。先畫條鐘形曲線塗陰影，確認答案喺平均數嗰邊。" },
-
-        { title: "Find an unknown mean and/or standard deviation using z-scores", star: true,
-          paper: "P2", where: "Paper 2 · 5–6 marks · 4.12",
-          q: "A random variable X ~ N(μ, σ²) satisfies P(X < 30) = 0.2 and P(X > 50) = 0.1. Find the value of μ and the value of σ.",
-          marks: [
-            ["(M1)", "z-values: invNorm(0.2) = −0.8416 and invNorm(0.9) = 1.2816"],
-            ["M1", "setting up __(30 − μ)/σ = −0.8416__ and (50 − μ)/σ = 1.2816"],
-            ["A1", "simultaneous equations μ − 0.8416σ = 30, μ + 1.2816σ = 50"],
-            ["A1", "σ = 9.42"],
-            ["A1", "μ = 37.9"],
-          ],
-          model: "invNorm(0.2) = −0.84162 and invNorm(0.9) = 1.28155. So (30 − μ)/σ = −0.84162 and (50 − μ)/σ = 1.28155, i.e. μ − 0.84162σ = 30 and μ + 1.28155σ = 50. Solving: σ = 9.42 and μ = 37.9.",
-          accept: "σ = 9.4199, μ = 37.928",
-          reject: "invNorm(0.1) used for P(X > 50) = 0.1 (wrong sign of z); answers from rounded z-values like 0.84 and 1.28 if they change the 3 s.f. answer",
-          tip: "μ、σ 唔知 → 一定要標準化：z = (x − μ)/σ，用 invNorm(面積, 0, 1) 搵 z，再解聯立方程。右尾 0.1 對應左尾 0.9！" },
-
-        { title: "Use symmetry of the normal curve (no calculator)", paper: "P1", where: "Paper 1 · 2–3 marks",
+        { id: "math-11-q18", title: "Use symmetry of the normal curve (no calculator)", paper: "P1", where: "Paper 1 · 2–3 marks",
           q: "X ~ N(20, σ²) and P(X < 17) = 0.15. Find P(17 < X < 23).",
           marks: [
             ["(M1)", "by __symmetry__ about μ = 20, P(X > 23) = 0.15"],
@@ -361,8 +416,7 @@ IB.addExamFrames("math", {
           accept: "0.70",
           reject: "0.85; 0.35",
           tip: "Paper 1 冇計數機嘅正態題 = 對稱性：兩邊離 μ 一樣遠，尾巴面積一樣。畫圖一定唔會錯。" },
-
-        { title: "Conditional probability with a normal distribution", paper: "P2", where: "Paper 2 · 3–4 marks",
+        { id: "math-11-q19", title: "Conditional probability with a normal distribution", paper: "P2", where: "Paper 2 · 3–4 marks",
           q: "The time, T minutes, for a bus journey satisfies T ~ N(55, 8²). Given that a journey takes more than 50 minutes, find the probability that it takes more than 60 minutes.",
           marks: [
             ["M1", "P(T > 60 | T > 50) = P(T > 60) / P(T > 50) (since T > 60 is __inside__ T > 50)"],
@@ -376,14 +430,36 @@ IB.addExamFrames("math", {
           tip: "條件概率配正態：分子係兩個條件嘅重疊（通常就係較細嗰個範圍），分母係條件。" },
       ],
       mc: [
-        { skill: "<strong>Binomial checklist (BINS):</strong> Binary outcomes, Independent trials, fixed Number, Same p. If drawing without replacement from a small group, it is NOT binomial." },
-        { skill: "<strong>Inequality translation:</strong> \"more than 3\" → 1 − P(X ≤ 3); \"at least 3\" → 1 − P(X ≤ 2); \"fewer than 3\" → P(X ≤ 2).",
-          paper: "P2", q: "X ~ B(10, 0.4). Which expression gives P(X ≥ 4)?", options: ["1 − P(X ≤ 4)", "1 − P(X ≤ 3)", "P(X ≤ 4)", "1 − P(X = 4)"], answer: 1, why: "X ≥ 4 is the complement of X ≤ 3." },
-        { skill: "<strong>Variance vs sd:</strong> N(μ, σ²) - the second number is the VARIANCE. N(50, 16) means σ = 4.",
+        { id: "math-11-q21", skill: "<strong>Variance vs sd:</strong> N(μ, σ²) - the second number is the VARIANCE. N(50, 16) means σ = 4.",
           q: "X ~ N(50, 16). Approximately 95% of values lie between", options: ["34 and 66", "42 and 58", "46 and 54", "18 and 82"], answer: 1, why: "σ = 4, so μ ± 2σ = 42 to 58." },
         { skill: "<strong>68–95–99.7:</strong> use it to check GDC answers and for Paper 1 estimates. P(X > μ) = 0.5 always." },
-        { skill: "<strong>E(X) for binomial = np, Var = np(1 − p):</strong> no table needed.",
-          q: "X ~ B(30, 0.2). Var(X) =", options: ["6", "4.8", "2.19", "24"], answer: 1, why: "30 × 0.2 × 0.8 = 4.8." },
+        { id: "math-11c-m1", skill: "<strong>Half on each side:</strong> P(X < μ) = 0.5, so P(X > μ + a) = 0.5 − P(μ < X < μ + a).", q: "X ~ N(30, 4²) and P(30 < X < 34) = 0.341. P(X > 34) =", options: ["0.159", "0.341", "0.659", "0.841"], answer: 0, why: "0.5 − 0.341 = 0.159." },
+      ],
+    },
+    "math-11d": {
+      frames: [
+        { id: "math-11-q17", title: "Find an unknown mean and/or standard deviation using z-scores", star: true,
+          paper: "P2", where: "Paper 2 · 5–6 marks · 4.12",
+          q: "A random variable X ~ N(μ, σ²) satisfies P(X < 30) = 0.2 and P(X > 50) = 0.1. Find the value of μ and the value of σ.",
+          marks: [
+            ["(M1)", "z-values: invNorm(0.2) = −0.8416 and invNorm(0.9) = 1.2816"],
+            ["M1", "setting up __(30 − μ)/σ = −0.8416__ and (50 − μ)/σ = 1.2816"],
+            ["A1", "simultaneous equations μ − 0.8416σ = 30, μ + 1.2816σ = 50"],
+            ["A1", "σ = 9.42"],
+            ["A1", "μ = 37.9"],
+          ],
+          model: "invNorm(0.2) = −0.84162 and invNorm(0.9) = 1.28155. So (30 − μ)/σ = −0.84162 and (50 − μ)/σ = 1.28155, i.e. μ − 0.84162σ = 30 and μ + 1.28155σ = 50. Solving: σ = 9.42 and μ = 37.9.",
+          accept: "σ = 9.4199, μ = 37.928",
+          reject: "invNorm(0.1) used for P(X > 50) = 0.1 (wrong sign of z); answers from rounded z-values like 0.84 and 1.28 if they change the 3 s.f. answer",
+          tip: "μ、σ 唔知 → 一定要標準化：z = (x − μ)/σ，用 invNorm(面積, 0, 1) 搵 z，再解聯立方程。右尾 0.1 對應左尾 0.9！" },
+        { id: "math-11d-f1", title: "Find an unknown standard deviation", paper: "P2", where: "Paper 2 · 3 marks · invNorm with 0 and 1", q: "X ~ N(60, σ²) and P(X > 70) = 0.05. Find σ.", marks: [["M1", "z = invNorm(0.95, 0, 1) = 1.645"], ["M1", "\\(\\frac{70 - 60}{\\sigma} = 1.645\\)"], ["A1", "σ = 6.08"]], numeric: { value: 6.08, tol: 0.01 }, model: "The area to the left of 70 is 0.95, so z = 1.645. Then 10/σ = 1.645 and σ = 6.08.", accept: "6.079…", reject: "invNorm(0.05, 0, 1) used with a positive sign", tip: "P(X > 70) = 0.05 → 左面積 0.95。" },
+        { id: "math-11d-f2", title: "Compare two results using z-scores", paper: "P2", where: "Paper 2 · 3 marks · standardise and compare", q: "Ben scored 64 in History (mean 55, standard deviation 6) and 71 in Biology (mean 62, standard deviation 8). In which subject did he perform better relative to the other students? Justify your answer.", marks: [["A1", "History: z = (64 − 55)/6 = 1.5"], ["A1", "Biology: z = (71 − 62)/8 = 1.125"], ["R1", "History, because its z-score is larger"]], model: "Both scores are 9 marks above the mean, but History has the smaller standard deviation, so z = 1.5 for History and 1.125 for Biology: Ben did better in History.", accept: "1.13 for Biology", reject: "comparing the raw scores 64 and 71", tip: "比較唔同測驗：比較 z，唔好比較分數。" },
+        { id: "math-11d-f3", title: "Unknown mean from a percentage", paper: "P2", where: "Paper 2 · 3 marks · one unknown", q: "The heights of a type of plant are normally distributed with standard deviation 4.5 cm. 20% of the plants are taller than 38 cm. Find the mean height.", marks: [["M1", "z = invNorm(0.8, 0, 1) = 0.842"], ["M1", "\\(\\frac{38 - \\mu}{4.5} = 0.842\\)"], ["A1", "μ = 34.2 cm"]], numeric: { value: 34.2, tol: 0.05 }, model: "20% are above 38, so 80% are below: z = 0.8416. Then 38 − μ = 0.8416 × 4.5 = 3.79, so μ = 34.2 cm.", accept: "34.21", reject: "z = −0.842 with 38 above the mean", tip: "高過 38 嘅只有 20% → 38 喺平均之上，z 正數。" },
+      ],
+      mc: [
+        { id: "math-11d-m1", skill: "<strong>z in your head:</strong> z = (x − μ)/σ; a value one σ above the mean has z = 1.", q: "X ~ N(50, 4²). The z-value of x = 44 is:", options: ["−1.5", "1.5", "−6", "−0.375"], answer: 0, why: "(44 − 50)/4 = −1.5." },
+        { id: "math-11d-m2", skill: "<strong>invNorm with 0 and 1:</strong> when μ or σ is unknown, find z from the standard normal, not from X.", q: "To find z when P(X < a) = 0.3 and μ is unknown, use:", options: ["invNorm(0.3, 0, 1)", "invNorm(0.7, 0, 1)", "normalcdf(0.3, 0, 1)", "invNorm(0.3, μ, σ)"], answer: 0, why: "The standard normal needs mean 0 and standard deviation 1, with the area to the left." },
+        { id: "math-11d-m3", skill: "<strong>Sign check:</strong> if less than half the area lies to the left of x, then x is below the mean and z < 0.", q: "X ~ N(μ, σ²) and P(X < k) = 0.1. Which is true?", options: ["k < μ", "k > μ", "k = μ", "k = σ"], answer: 0, why: "Only 10% lies below k, so k is below the mean." },
       ],
     },
 
@@ -500,10 +576,194 @@ IB.addExamFrames("math", {
       ],
     },
 
-    // ======================= 5.1-5.3, 5.6-5.8 Differentiation =======================
+    // ======================= 5.1-5.4, 5.6-5.8 Differentiation (one chapter per sub-topic) =======================
     "math-12": {
       frames: [
-        { title: "Equation of the tangent or normal at a point", star: true,
+        { id: "math-12-n8", title: "Gradient of a chord tends to the gradient of the tangent", star: true,
+          paper: "P1", where: "Paper 1 · 3–4 marks",
+          q: "Let f(x) = x² + 1. (a) Show that the gradient of the chord joining the points where x = 2 and x = 2 + h is 4 + h. (b) Hence find the gradient of the curve at x = 2.",
+          marks: [
+            ["M1", "gradient = (f(2 + h) − f(2)) ÷ h = ((2 + h)² + 1 − 5) ÷ h"],
+            ["A1", "= (4h + h²) ÷ h = 4 + h AG"],
+            ["M1", "__as h → 0__ the chord gradient tends to the gradient of the tangent"],
+            ["A1", "gradient at x = 2 is 4"],
+          ],
+          model: "f(2) = 5 and f(2 + h) = (2 + h)² + 1 = 5 + 4h + h². The chord gradient is (4h + h²)/h = 4 + h. As h → 0 the chord becomes the tangent, so the gradient of the curve at x = 2 is 4.",
+          accept: "a table of chord gradients 4.1, 4.01, 4.001 … → 4",
+          reject: "putting h = 0 before cancelling (0/0); answer 4 + h",
+          tip: "先約走 h 先至可以令 h → 0。Chord 越嚟越短就變 tangent，斜率個 limit 就係 f′(a)。" },
+
+        { id: "math-12-n9", title: "Find the gradient at a point, or the point with a given gradient", star: true,
+          paper: "P1", where: "Paper 1 · 3–4 marks",
+          q: "The curve y = x³ − 3x² + 2 has gradient 9 at two points. Find the coordinates of these points.",
+          marks: [
+            ["A1", "dy/dx = 3x² − 6x"],
+            ["M1", "__setting dy/dx = 9__: 3x² − 6x − 9 = 0"],
+            ["A1", "3(x − 3)(x + 1) = 0, x = 3 or x = −1"],
+            ["A1", "points (3, 2) and (−1, −2)"],
+          ],
+          model: "dy/dx = 3x² − 6x. Setting 3x² − 6x = 9 gives x² − 2x − 3 = 0, so x = 3 or x = −1. y(3) = 27 − 27 + 2 = 2 and y(−1) = −1 − 3 + 2 = −2. The points are (3, 2) and (−1, −2).",
+          accept: "coordinates written as x = 3, y = 2 etc.",
+          reject: "setting y = 9 instead of dy/dx = 9; giving only the x-values",
+          tip: "「Gradient = 9」係 dy/dx = 9，唔係 y = 9。搵到 x 之後要代返原本條式求 y。" },
+
+        { id: "math-12-q19", title: "Rate of change in context (with units and sign)", paper: "P2", where: "Paper 2 · 2–3 marks",
+          q: "The volume of water, V litres, in a tank t minutes after a valve opens is V(t) = 200t e^(−0.5t). Find the rate of change of V when t = 3 and interpret your answer.",
+          marks: [
+            ["(M1)", "V′(t) = 200e^(−0.5t)(1 − 0.5t) or GDC derivative at t = 3"],
+            ["A1", "V′(3) = −22.3 litres per minute"],
+            ["R1", "the volume is __decreasing__ at 22.3 litres per minute when t = 3"],
+          ],
+          numeric: { value: -22.3, tol: 0.05 },
+          model: "V′(t) = 200e^(−0.5t) − 100t e^(−0.5t) = 200e^(−0.5t)(1 − 0.5t). V′(3) = −100e^(−1.5) = −22.3 litres per minute, so the volume is decreasing at about 22.3 litres per minute.",
+          accept: "−22.31; GDC nDeriv value",
+          reject: "22.3 with no sign or no interpretation; units of litres only",
+          tip: "變化率 = dV/dt，單位係「litres per minute」。負數就要講「減緊」，唔好淨係抄個數。" },
+
+        { id: "math-12-n10", title: "Interpret a derivative in context: value, units and meaning", paper: "P2", where: "Paper 2 · 2–3 marks",
+          q: "The population of a town t years after 2020 is modelled by P(t) = 12000e^(0.02t). Find P′(5) and interpret its meaning.",
+          marks: [
+            ["(M1)", "P′(t) = 240e^(0.02t) or GDC derivative at t = 5"],
+            ["A1", "P′(5) = 265 (265.2…)"],
+            ["R1", "in 2025 the population is __increasing__ at about 265 people __per year__"],
+          ],
+          model: "P′(t) = 12000 × 0.02e^(0.02t) = 240e^(0.02t), so P′(5) = 240e^(0.1) = 265.2. In 2025 the population is increasing at a rate of about 265 people per year.",
+          accept: "265.2; \"growing by about 265 people a year at that time\"",
+          reject: "\"the population is 265\"; no units; P(5) = 13262 given as the rate",
+          tip: "Interpret 要講三樣嘢：個數、單位（people per year）、增加定減少。P′(5) 唔係人口，係人口嘅變化率。" },
+      ],
+      mc: [
+        { id: "math-12-n11", skill: "<strong>Gradient = derivative at that point:</strong> f′(a) is the gradient of the tangent at x = a; f(a) is just the height.",
+          q: "For y = x³, the gradient of the curve at x = 2 is", options: ["8", "12", "6", "4"], answer: 1, why: "dy/dx = 3x² = 12 at x = 2 (8 is the y-value)." },
+        { id: "math-12-n12", skill: "<strong>A limit you can recognise:</strong> lim (f(a + h) − f(a))/h as h → 0 is f′(a) - spot the function and the point instead of expanding.",
+          q: "lim as h → 0 of ((3 + h)² − 9)/h =", options: ["0", "3", "6", "9"], answer: 2, why: "It is the gradient of y = x² at x = 3, which is 2(3) = 6." },
+        { id: "math-12-n13", skill: "<strong>Units of a rate:</strong> dV/dt has units (units of V) per (unit of t), e.g. litres per minute; a negative rate means decreasing.",
+          q: "h is a height in metres and t is time in seconds. The units of dh/dt are", options: ["m", "s per m", "m s⁻¹", "m s⁻²"], answer: 2, why: "Metres per second, m s⁻¹." },
+      ],
+    },
+    "math-12b": {
+      frames: [
+        { id: "math-12-q15", title: "Find where a function is increasing or decreasing", paper: "P1", where: "Paper 1 · 3–4 marks",
+          q: "Let f(x) = x³ − 12x + 1. Find the set of values of x for which f is decreasing.",
+          marks: [
+            ["M1", "f′(x) = 3x² − 12"],
+            ["M1", "f decreasing where __f′(x) < 0__: 3x² − 12 < 0"],
+            ["A1", "roots x = ±2"],
+            ["A1", "−2 < x < 2"],
+          ],
+          model: "f′(x) = 3x² − 12. f is decreasing when f′(x) < 0, i.e. x² < 4, so −2 < x < 2.",
+          accept: "−2 ≤ x ≤ 2; ]−2, 2[",
+          reject: "x < 2 only; x < ±2",
+          tip: "遞減 = f′(x) < 0，遞增 = f′(x) > 0。二次不等式畫個 U 形草圖，就知答案喺兩根中間定外面。" },
+
+        { title: "Show that a function is increasing for all x", star: true, paper: "P1", where: "Paper 1 · 2–3 marks",
+          q: "Let f(x) = x³ + 2x − 5. Show that f is increasing for all values of x.",
+          marks: [
+            ["A1", "f′(x) = 3x² + 2"],
+            ["R1", "x² ≥ 0 for all x, so __f′(x) ≥ 2 > 0__"],
+            ["A1", "f′(x) > 0 for all x, hence f is increasing for all x AG"],
+          ],
+          model: "f′(x) = 3x² + 2. Since x² ≥ 0 for every real x, f′(x) ≥ 2 > 0, so f′ is always positive and f is increasing for all x.",
+          accept: "discriminant of 3x² + 2 is negative and the leading coefficient is positive",
+          reject: "checking a few values of x only; \"f′(x) = 0 has no solutions\" with no statement that f′ > 0",
+          tip: "「For all x」要用一個永遠成立嘅理由：x² ≥ 0、eˣ > 0、或者判別式 < 0。代幾個數入去唔算證明。" },
+
+        { title: "Increasing and decreasing intervals from the graph of f′", paper: "P1", where: "Paper 1 · 2–3 marks · graph of y = f′(x) given",
+          q: "The graph of y = f′(x) crosses the x-axis at x = −2 and x = 1, lies above the x-axis for x < −2 and x > 1 and below it for −2 < x < 1. Write down the intervals on which f is increasing and decreasing.",
+          marks: [
+            ["A1", "f increasing for __x < −2__ and __x > 1__ (where f′ > 0)"],
+            ["A1", "f decreasing for −2 < x < 1 (where f′ < 0)"],
+            ["R1", "reason: sign of f′ (graph of f′ above / below the x-axis)"],
+          ],
+          model: "Where the graph of f′ is above the x-axis, f′(x) > 0 and f is increasing: x < −2 and x > 1. Where it is below the axis, f′(x) < 0 and f is decreasing: −2 < x < 1.",
+          accept: "x ≤ −2, x ≥ 1 with the endpoints included",
+          reject: "using where the graph of f′ goes up or down instead of its sign",
+          tip: "睇 f′ 個圖：喺 x 軸上面 = f 升；喺 x 軸下面 = f 跌。唔好睇 f′ 條線自己升定跌。" },
+
+        { title: "Find a constant so that the function is increasing", paper: "P1", where: "Paper 1 · 4–5 marks",
+          q: "Let f(x) = x³ − 3x² + kx. Find the values of k for which f is increasing for all x.",
+          marks: [
+            ["A1", "f′(x) = 3x² − 6x + k"],
+            ["M1", "f′(x) ≥ 0 for all x requires the quadratic to have __no two distinct roots__: discriminant ≤ 0"],
+            ["A1", "36 − 12k ≤ 0"],
+            ["A1", "k ≥ 3"],
+          ],
+          model: "f′(x) = 3x² − 6x + k is a U-shaped quadratic. It is never negative when its discriminant is at most zero: (−6)² − 4(3)(k) = 36 − 12k ≤ 0, so k ≥ 3.",
+          accept: "k > 3 (if strictly positive f′ is required); completing the square: 3(x − 1)² + k − 3 ≥ 0",
+          reject: "k ≤ 3; solving f′ = 0 for x",
+          tip: "要 f′ 永遠 ≥ 0：U 形二次式判別式 ≤ 0（唔可以有兩個根）。" },
+      ],
+      mc: [
+        { skill: "<strong>Sign of a quadratic f′:</strong> a U-shaped f′ is negative between its roots and positive outside them.",
+          q: "f′(x) = x² − 9. f is increasing for", options: ["−3 < x < 3", "x > 3 only", "x < −3 or x > 3", "x > 9"], answer: 2, why: "x² − 9 > 0 outside the roots ±3." },
+        { skill: "<strong>Exponentials never change sign:</strong> e^(kx) > 0 for all x, so the sign of f′ comes from the other factor.",
+          q: "f′(x) = (x − 2)e^x. f is decreasing for", options: ["x < 2", "x > 2", "x < 0", "all x"], answer: 0, why: "e^x > 0, so f′ < 0 exactly when x − 2 < 0." },
+        { skill: "<strong>From a graph of f:</strong> increasing means going up from left to right, whatever the height. A function can be increasing while its values are negative." },
+      ],
+    },
+    "math-12c": {
+      frames: [
+        { title: "Differentiate terms with negative and fractional powers", star: true, paper: "P1", where: "Paper 1 · 3–4 marks",
+          q: "Let f(x) = 2x⁴ − 6/x + 4√x, x > 0. Find f′(x).",
+          marks: [
+            ["M1", "rewriting in __index form__: 2x⁴ − 6x⁻¹ + 4x^(1/2)"],
+            ["A1", "8x³"],
+            ["A1", "+ 6x⁻²"],
+            ["A1", "+ 2x^(−1/2)"],
+          ],
+          model: "f(x) = 2x⁴ − 6x⁻¹ + 4x^(1/2), so f′(x) = 8x³ + 6x⁻² + 2x^(−1/2) = 8x³ + 6/x² + 2/√x.",
+          accept: "any equivalent form, e.g. 8x³ + 6/x² + 2/√x",
+          reject: "−6x⁻² (sign error on the negative power); 4 × ½x^(1/2)",
+          tip: "先改晒做 xⁿ：1/x = x⁻¹，√x = x^½。負指數減 1 會更負（−1 → −2），記住負負得正。" },
+
+        { title: "Simplify a quotient of powers before differentiating", paper: "P1", where: "Paper 1 · 3 marks",
+          q: "Let f(x) = (x³ + 2x² − 5)/x², x ≠ 0. Find f′(x).",
+          marks: [
+            ["M1", "__dividing each term__ by x²: f(x) = x + 2 − 5x⁻²"],
+            ["A1", "f′(x) = 1 + 10x⁻³"],
+            ["A1", "= 1 + 10/x³"],
+          ],
+          model: "Split the fraction: f(x) = x + 2 − 5x⁻². Then f′(x) = 1 + 10x⁻³ = 1 + 10/x³.",
+          accept: "the quotient rule used correctly",
+          reject: "differentiating the top and the bottom separately: (3x² + 4x)/(2x)",
+          tip: "分數上面多項、下面得一個 xⁿ：逐項除開先，唔使用 quotient rule。" },
+
+        { title: "Find unknown coefficients from given gradients", star: true, paper: "P1", where: "Paper 1 · 4–5 marks",
+          q: "Let f(x) = ax² + bx + 3. The gradient of the graph of f at x = 1 is 1 and at x = 2 is 7. Find a and b.",
+          marks: [
+            ["A1", "f′(x) = 2ax + b"],
+            ["M1", "__substituting__ both conditions: 2a + b = 1 and 4a + b = 7"],
+            ["A1", "a = 3"],
+            ["A1", "b = −5"],
+          ],
+          model: "f′(x) = 2ax + b. f′(1) = 2a + b = 1 and f′(2) = 4a + b = 7. Subtracting gives 2a = 6, so a = 3 and b = 1 − 6 = −5.",
+          accept: "solving the simultaneous equations on the GDC (Paper 2)",
+          reject: "using f(1) = 1 (substituting into f instead of f′)",
+          tip: "「Gradient is 1 at x = 1」係 f′(1) = 1。兩個條件 → 兩條方程 → 聯立。" },
+
+        { title: "Differentiate a product of polynomials by expanding", paper: "P1", where: "Paper 1 · 2–3 marks",
+          q: "Let f(x) = (x² + 3)(2x − 1). Find f′(x).",
+          marks: [
+            ["M1", "__expanding__: f(x) = 2x³ − x² + 6x − 3"],
+            ["A1", "f′(x) = 6x² − 2x + 6"],
+          ],
+          model: "Expanding gives f(x) = 2x³ − x² + 6x − 3, so f′(x) = 6x² − 2x + 6.",
+          accept: "the product rule: 2x(2x − 1) + 2(x² + 3), simplified",
+          reject: "multiplying the derivatives: 2x × 2 = 4x",
+          tip: "兩個括號相乘，唔可以「導數乘導數」。SL 5.3 最穩陣係先展開，再逐項微分。" },
+      ],
+      mc: [
+        { id: "math-12-q20", skill: "<strong>Rewrite before you differentiate:</strong> 1/x² = x⁻², √x = x^½, 3/(2x) = (3/2)x⁻¹.",
+          q: "If y = 4/√x, then dy/dx =", options: ["−2x^(−3/2)", "2x^(−1/2)", "−4x^(−3/2)", "8x^(−3/2)"], answer: 0, why: "y = 4x^(−1/2), so dy/dx = −2x^(−3/2)." },
+        { skill: "<strong>Constants vanish, coefficients stay:</strong> d/dx(7) = 0 and d/dx(5x) = 5. Only the power of x changes.",
+          q: "If f(x) = 5x² − 3x + 7, then f′(x) =", options: ["10x − 3", "10x − 3 + 7", "5x − 3", "10x² − 3x"], answer: 0, why: "Each term by the power rule; the constant 7 differentiates to 0." },
+        { skill: "<strong>Fractional powers:</strong> x^(3/2) → (3/2)x^(1/2); x^(−1/2) → −(1/2)x^(−3/2). Subtract 1 from the power.",
+          q: "d/dx (x√x) =", options: ["(3/2)√x", "√x", "(1/2)x^(−1/2)", "(3/2)x^(3/2)"], answer: 0, why: "x√x = x^(3/2), derivative (3/2)x^(1/2)." },
+      ],
+    },
+    "math-12d": {
+      frames: [
+        { id: "math-12-q12", title: "Equation of the tangent or normal at a point", star: true,
           paper: "P1", where: "Paper 1 · 4–5 marks",
           q: "Let f(x) = x³ − 2x² + 1. Find the equation of the normal to the graph of f at the point where x = 2. Give your answer in the form ax + by + c = 0, where a, b, c ∈ ℤ.",
           marks: [
@@ -518,7 +778,164 @@ IB.addExamFrames("math", {
           reject: "gradient −4 or 1/4 for the normal; leaving y = −x/4 + 3/2 when integer form is required",
           tip: "Normal 斜率 = −1 ÷ tangent 斜率（負倒數）。題目要 ax + by + c = 0 嘅整數形式，最後一步要乘走分母。" },
 
-        { title: "Find stationary points and determine their nature", star: true,
+        { title: "Tangent at a point and where it meets the axes", star: true, paper: "P1", where: "Paper 1 · 4–5 marks",
+          q: "Let f(x) = x³ − 2x + 3. (a) Find the equation of the tangent to the graph of f at x = 1. (b) The tangent meets the x-axis at A. Find the x-coordinate of A.",
+          marks: [
+            ["A1", "f(1) = 2, point (1, 2)"],
+            ["M1", "f′(x) = 3x² − 2, __f′(1) = 1__"],
+            ["A1", "y − 2 = 1(x − 1), so y = x + 1"],
+            ["A1", "y = 0 gives x = −1"],
+          ],
+          model: "f(1) = 1 − 2 + 3 = 2. f′(x) = 3x² − 2 so f′(1) = 1. Tangent: y − 2 = x − 1, i.e. y = x + 1. It meets the x-axis where y = 0, so A has x-coordinate −1.",
+          accept: "y − 2 = x − 1 left unsimplified for (a)",
+          reject: "using the gradient function 3x² − 2 in the equation of the line",
+          tip: "條切線係直線：斜率係一個數字 f′(1)，唔可以有 x²。交 x 軸就代 y = 0。" },
+
+        { title: "Tangent parallel to a given line", paper: "P1", where: "Paper 1 · 4 marks",
+          q: "The tangent to the curve y = x² − 5x + 4 at the point P is parallel to the line y = x + 7. Find the equation of the tangent at P.",
+          marks: [
+            ["M1", "__dy/dx = 1__ (same gradient as the line): 2x − 5 = 1"],
+            ["A1", "x = 3"],
+            ["A1", "P = (3, −2)"],
+            ["A1", "y + 2 = 1(x − 3), so y = x − 5"],
+          ],
+          model: "Parallel lines have equal gradients, so 2x − 5 = 1 and x = 3. Then y = 9 − 15 + 4 = −2, so P is (3, −2) and the tangent is y = x − 5.",
+          accept: "x − y − 5 = 0",
+          reject: "y = x + 7 itself; setting y = 1",
+          tip: "Parallel = 斜率一樣。用 dy/dx = 直線斜率搵切點，再寫切線。" },
+
+        { title: "Find constants when a line is a tangent", paper: "P1", where: "Paper 1 · 4–5 marks",
+          q: "The line y = 4x − 3 is a tangent to the curve y = ax² + b at the point where x = 1. Find a and b.",
+          marks: [
+            ["M1", "same gradient: dy/dx = 2ax, __2a = 4__"],
+            ["A1", "a = 2"],
+            ["M1", "same point: at x = 1 the line gives y = 1, so __a + b = 1__"],
+            ["A1", "b = −1"],
+          ],
+          model: "At the point of contact the curve and the line have the same gradient and the same y-value. Gradient: 2a(1) = 4, so a = 2. Point: y = 4(1) − 3 = 1, so a + b = 1 and b = −1.",
+          accept: "solving the two equations in either order",
+          reject: "only using one of the two conditions",
+          tip: "切線條件有兩個：同一點（y 值相等）同同一個斜率（dy/dx 相等），兩條方程解兩個未知數。" },
+      ],
+      mc: [
+        { id: "math-12-q22", skill: "<strong>Tangent equation in 20 s:</strong> y − f(a) = f′(a)(x − a). Normal: swap the gradient for −1/f′(a). Horizontal tangent ⇔ f′(a) = 0.",
+          q: "The gradient of the tangent to y = x² + 3x at x = 1 is", options: ["4", "5", "2", "−1/5"], answer: 1, why: "dy/dx = 2x + 3 = 5 at x = 1." },
+        { skill: "<strong>Normal = negative reciprocal:</strong> tangent gradient m → normal gradient −1/m. m = 0 gives a vertical normal.",
+          q: "The tangent to a curve at P has gradient −2/3. The gradient of the normal at P is", options: ["2/3", "3/2", "−3/2", "−2/3"], answer: 1, why: "−1 ÷ (−2/3) = 3/2." },
+        { skill: "<strong>Horizontal tangent ⇔ f′(a) = 0:</strong> the tangent is then y = f(a) and the normal is x = a.",
+          q: "The tangent to y = x² − 6x + 10 is horizontal at the point", options: ["(3, 1)", "(0, 10)", "(6, 10)", "(−3, 37)"], answer: 0, why: "2x − 6 = 0 at x = 3, y = 9 − 18 + 10 = 1." },
+      ],
+    },
+    "math-12e": {
+      frames: [
+        { id: "math-12-q14", title: "Quotient / product / chain rule \"show that\" then use the result", star: true,
+          paper: "P1", where: "Paper 1 · 4–6 marks · AG line",
+          q: "Let f(x) = (ln x)/x, x > 0. (a) Show that f′(x) = (1 − ln x)/x². (b) Hence find the exact coordinates of the maximum point of the graph of f.",
+          marks: [
+            ["M1", "attempt at __quotient rule__ (or product rule on x⁻¹ ln x)"],
+            ["A1", "f′(x) = ((1/x)·x − ln x · 1)/x²"],
+            ["A1", "= (1 − ln x)/x² AG"],
+            ["M1", "setting f′(x) = 0: 1 − ln x = 0"],
+            ["A1", "x = e"],
+            ["A1", "maximum point (e, 1/e)"],
+          ],
+          model: "Using the quotient rule with u = ln x, v = x: f′(x) = ((1/x)(x) − ln x (1))/x² = (1 − ln x)/x². f′(x) = 0 when ln x = 1, so x = e and f(e) = 1/e. The maximum point is (e, 1/e).",
+          accept: "e⁻¹ for 1/e",
+          reject: "jumping straight to the given answer without the unsimplified quotient line (no A1 for an AG); decimal 2.72",
+          tip: "Show that 題（AG）一定要寫埋中間未化簡嗰行，唔可以直接抄答案。Exact 即係保留 e 同 ln，唔好用小數。" },
+
+        { title: "Chain rule on composite functions", star: true, paper: "P1", where: "Paper 1 · 3–5 marks",
+          q: "Differentiate with respect to x: (a) (3x² − 1)⁴, (b) e^(sin x), (c) ln(x² + 5).",
+          marks: [
+            ["M1", "attempt at the __chain rule__ (outer derivative × inner derivative)"],
+            ["A1", "(a) 4(3x² − 1)³ × 6x = 24x(3x² − 1)³"],
+            ["A1", "(b) cos x · e^(sin x)"],
+            ["A1", "(c) 2x/(x² + 5)"],
+          ],
+          model: "(a) 4(3x² − 1)³ × 6x = 24x(3x² − 1)³. (b) e^(sin x) × cos x. (c) (1/(x² + 5)) × 2x = 2x/(x² + 5).",
+          accept: "unsimplified products such as 4(3x² − 1)³(6x)",
+          reject: "(a) 4(3x² − 1)³ (inner derivative missing); (c) 1/(x² + 5)",
+          tip: "Chain rule：外層照微（入面唔郁）× 入面嘅導數。ln(g) 嘅導數 = g′/g。" },
+
+        { title: "Product rule, then factorise the answer", paper: "P1", where: "Paper 1 · 3–4 marks",
+          q: "Let f(x) = x²e^(−2x). Show that f′(x) = 2x(1 − x)e^(−2x).",
+          marks: [
+            ["M1", "attempt at the __product rule__ with u = x², v = e^(−2x)"],
+            ["A1", "u′ = 2x and v′ = −2e^(−2x)"],
+            ["A1", "f′(x) = 2xe^(−2x) − 2x²e^(−2x)"],
+            ["A1", "= 2x(1 − x)e^(−2x) AG"],
+          ],
+          model: "With u = x² and v = e^(−2x): u′ = 2x, v′ = −2e^(−2x). f′(x) = 2xe^(−2x) + x²(−2e^(−2x)) = 2xe^(−2x) − 2x²e^(−2x) = 2x(1 − x)e^(−2x).",
+          accept: "factorising in a different order before reaching the given form",
+          reject: "v′ = e^(−2x) (chain rule missing); jumping to the AG line",
+          tip: "Product rule 寫埋 u, v, u′, v′ 四格先代入。最後抽公因式 e^(−2x)，先會見到題目個答案。" },
+
+        { title: "Use log laws before differentiating", paper: "P1", where: "Paper 1 · 3 marks",
+          q: "Let f(x) = ln(x³√x), x > 0. Find f′(x).",
+          marks: [
+            ["M1", "__log laws__: ln(x³√x) = ln(x^(7/2)) = (7/2) ln x"],
+            ["A1", "f′(x) = (7/2) × 1/x"],
+            ["A1", "= 7/(2x)"],
+          ],
+          model: "x³√x = x^(7/2), so f(x) = (7/2) ln x and f′(x) = 7/(2x).",
+          accept: "chain rule on ln(x^(7/2)): (7/2)x^(5/2) ÷ x^(7/2) = 7/(2x)",
+          reject: "1/(x³√x)",
+          tip: "ln 入面有乘、除、次方，先用 log 法則拆開，微分快好多。" },
+      ],
+      mc: [
+        { id: "math-12-q21", skill: "<strong>Chain rule on autopilot:</strong> derivative of the outside × derivative of the inside. e^(kx) → ke^(kx), sin(kx) → k cos(kx), ln(kx) → 1/x.",
+          q: "d/dx [ln(5x)] =", options: ["5/x", "1/(5x)", "1/x", "5 ln x"], answer: 2, why: "5/(5x) = 1/x (ln 5x = ln 5 + ln x)." },
+        { skill: "<strong>sin and cos cycle:</strong> sin → cos → −sin → −cos → sin. With a linear inside, multiply by its coefficient.",
+          q: "d/dx [cos(4x)] =", options: ["−4 sin(4x)", "4 sin(4x)", "−sin(4x)", "sin(4x)/4"], answer: 0, why: "−sin(4x) × 4." },
+        { skill: "<strong>Quotient rule order:</strong> \"low d-high minus high d-low, over low squared\": (vu′ − uv′)/v².",
+          q: "d/dx [x/(x + 1)] =", options: ["1/(x + 1)²", "−1/(x + 1)²", "(2x + 1)/(x + 1)²", "1"], answer: 0, why: "((x + 1)(1) − x(1))/(x + 1)² = 1/(x + 1)²." },
+      ],
+    },
+    "math-12f": {
+      frames: [
+        { id: "math-12-q18", title: "Interpret the graph of f′ to find features of f", star: true,
+          paper: "P1", where: "Paper 1 · 3–5 marks · graph of y = f′(x) given",
+          q: "The graph of y = f′(x) is a parabola that crosses the x-axis at x = −1 and x = 3 and has its minimum point at x = 1. f′(x) > 0 for x < −1 and x > 3. (a) Find the x-coordinate of the local maximum of f, justifying your answer. (b) Find the x-coordinate of the point of inflexion of f, justifying your answer.",
+          marks: [
+            ["A1", "local maximum at x = −1"],
+            ["R1", "f′ changes from __positive to negative__ at x = −1"],
+            ["A1", "point of inflexion at x = 1"],
+            ["R1", "f′ has a __minimum__ (turning point) at x = 1, so f″ changes sign there"],
+          ],
+          diagram: { title: "Graph of y = f′(x) = (x + 1)(x − 3)", x: [-3, 5], y: [-5, 8], grid: false,
+                     curves: [{ f: (x) => (x + 1) * (x - 3), label: "y = f′(x)", labelX: 3.6 }], points: [{ at: [-1, 0], label: "max of f" }, { at: [3, 0], label: "min of f" }, { at: [1, -4], label: "inflexion of f", color: "b" }] },
+          model: "(a) At x = −1, f′(x) = 0 and f′ changes from positive to negative, so f has a local maximum at x = −1. (b) f′ has a minimum at x = 1, so f″(1) = 0 and f″ changes sign (from negative to positive); hence f has a point of inflexion at x = 1.",
+          accept: "\"f increasing then decreasing at x = −1\"",
+          reject: "maximum at x = 1 (reading the f′ graph as if it were f); \"inflexion because f′ = 0\"",
+          tip: "睇 f′ 嘅圖：f′ 穿過 x 軸 = f 嘅駐點；f′ 嘅轉折點（最高/最低）= f 嘅拐點。先講清楚你睇緊邊條圖。" },
+
+        { title: "Find where a curve is concave up or concave down", paper: "P1", where: "Paper 1 · 3–4 marks",
+          q: "Let f(x) = x⁴ − 6x² + 2. Find the set of values of x for which the graph of f is concave down.",
+          marks: [
+            ["A1", "f′(x) = 4x³ − 12x"],
+            ["A1", "f″(x) = 12x² − 12"],
+            ["M1", "concave down where __f″(x) < 0__: 12(x² − 1) < 0"],
+            ["A1", "−1 < x < 1"],
+          ],
+          model: "f′(x) = 4x³ − 12x and f″(x) = 12x² − 12 = 12(x − 1)(x + 1). The graph is concave down where f″(x) < 0, i.e. −1 < x < 1.",
+          accept: "−1 ≤ x ≤ 1",
+          reject: "solving f′(x) < 0 (that gives where f is decreasing)",
+          tip: "Concave up / down 睇 f″ 嘅正負，唔係 f′。先微分兩次，再解不等式。" },
+      ],
+      mc: [
+        { skill: "<strong>Read f′ graphs:</strong> f′ above the axis → f increasing; f′ crosses zero → stationary point of f; turning point of f′ → inflexion of f." },
+        { skill: "<strong>Concavity in one line:</strong> f″ &gt; 0 concave up (cup), f″ &lt; 0 concave down (cap). Linear f″ changes sign once.",
+          q: "f(x) = x³ − 6x². The graph is concave up for", options: ["x > 2", "x < 2", "x > 4", "0 < x < 4"], answer: 0, why: "f″(x) = 6x − 12 > 0 when x > 2." },
+        { skill: "<strong>Second derivative of standard functions:</strong> e^(kx) → k²e^(kx); sin(kx) → −k² sin(kx); ln x → −1/x².",
+          q: "If y = e^(3x), then d²y/dx² =", options: ["3e^(3x)", "9e^(3x)", "e^(3x)", "6e^(3x)"], answer: 1, why: "Differentiate twice: 3 × 3 = 9." },
+      ],
+      concepts: [
+        { h: "Concavity and the graphs of f, f′ and f″", b: "<p>f″(x) &gt; 0: f is <strong>concave up</strong> (f′ increasing); f″(x) &lt; 0: <strong>concave down</strong> (f′ decreasing). A <strong>point of inflexion</strong> is where the concavity changes; it may have zero gradient (stationary inflexion) or non-zero gradient. Linking graphs: zeros of f′ ↔ stationary points of f; turning points of f′ ↔ inflexion points of f; sign of f′ ↔ increasing/decreasing f.</p>" },
+      ],
+    },
+    "math-12g": {
+      frames: [
+        { id: "math-12-q13", title: "Find stationary points and determine their nature", star: true,
           paper: "P1", where: "Paper 1 · 5–7 marks",
           q: "Let f(x) = 2x³ − 3x² − 12x + 5. (a) Find the coordinates of the stationary points of the graph of f. (b) Use the second derivative to determine the nature of each stationary point.",
           marks: [
@@ -535,36 +952,7 @@ IB.addExamFrames("math", {
           reject: "stating max/min without the sign of f″ or f′; giving only the x-values when coordinates are asked",
           tip: "駐點要寫坐標 (x, y)！判斷性質一定要寫 f″ 嘅值同 > 0 / < 0，咁先有 R1。" },
 
-        { title: "Quotient / product / chain rule \"show that\" then use the result", star: true,
-          paper: "P1", where: "Paper 1 · 4–6 marks · AG line",
-          q: "Let f(x) = (ln x)/x, x > 0. (a) Show that f′(x) = (1 − ln x)/x². (b) Hence find the exact coordinates of the maximum point of the graph of f.",
-          marks: [
-            ["M1", "attempt at __quotient rule__ (or product rule on x⁻¹ ln x)"],
-            ["A1", "f′(x) = ((1/x)·x − ln x · 1)/x²"],
-            ["A1", "= (1 − ln x)/x² AG"],
-            ["M1", "setting f′(x) = 0: 1 − ln x = 0"],
-            ["A1", "x = e"],
-            ["A1", "maximum point (e, 1/e)"],
-          ],
-          model: "Using the quotient rule with u = ln x, v = x: f′(x) = ((1/x)(x) − ln x (1))/x² = (1 − ln x)/x². f′(x) = 0 when ln x = 1, so x = e and f(e) = 1/e. The maximum point is (e, 1/e).",
-          accept: "e⁻¹ for 1/e",
-          reject: "jumping straight to the given answer without the unsimplified quotient line (no A1 for an AG); decimal 2.72",
-          tip: "Show that 題（AG）一定要寫埋中間未化簡嗰行，唔可以直接抄答案。Exact 即係保留 e 同 ln，唔好用小數。" },
-
-        { title: "Find where a function is increasing or decreasing", paper: "P1", where: "Paper 1 · 3–4 marks",
-          q: "Let f(x) = x³ − 12x + 1. Find the set of values of x for which f is decreasing.",
-          marks: [
-            ["M1", "f′(x) = 3x² − 12"],
-            ["M1", "f decreasing where __f′(x) < 0__: 3x² − 12 < 0"],
-            ["A1", "roots x = ±2"],
-            ["A1", "−2 < x < 2"],
-          ],
-          model: "f′(x) = 3x² − 12. f is decreasing when f′(x) < 0, i.e. x² < 4, so −2 < x < 2.",
-          accept: "−2 ≤ x ≤ 2; ]−2, 2[",
-          reject: "x < 2 only; x < ±2",
-          tip: "遞減 = f′(x) < 0，遞增 = f′(x) > 0。二次不等式畫個 U 形草圖，就知答案喺兩根中間定外面。" },
-
-        { title: "Optimisation: form the function, differentiate, justify the maximum", star: true,
+        { id: "math-12-q16", title: "Optimisation: form the function, differentiate, justify the maximum", star: true,
           paper: "P1", where: "Paper 1 / 2 · 6–8 marks",
           q: "An open box is made from a 30 cm by 30 cm square sheet of card by cutting a square of side x cm from each corner and folding up the sides. (a) Show that the volume of the box is V = x(30 − 2x)². (b) Find the value of x that maximises V and justify that it gives a maximum. (c) Find the maximum volume.",
           marks: [
@@ -580,7 +968,7 @@ IB.addExamFrames("math", {
           reject: "giving x = 5 as \"the maximum volume\"; not rejecting x = 15",
           tip: "優化題四步：寫一個變數嘅函數 → 微分 = 0 → 用 f″ 或者正負號證明係 max → 答返題目問嘅嘢（體積唔係 x）。" },
 
-        { title: "Points of inflexion: f″ = 0 AND f″ changes sign", paper: "P1", where: "Paper 1 · 4–6 marks",
+        { id: "math-12-q17", title: "Points of inflexion: f″ = 0 AND f″ changes sign", paper: "P1", where: "Paper 1 · 4–6 marks",
           q: "Let f(x) = x⁴ − 4x³. Find the coordinates of the points of inflexion of the graph of f, justifying your answer.",
           marks: [
             ["A1", "f′(x) = 4x³ − 12x², f″(x) = 12x² − 24x"],
@@ -595,54 +983,32 @@ IB.addExamFrames("math", {
           reject: "\"f″ = 0 so it is a point of inflexion\" with no sign change; (0, 0) called a maximum",
           tip: "f″ = 0 唔夠！一定要講 f″ 喺嗰點前後轉號（concavity 改變）先係拐點。" },
 
-        { title: "Interpret the graph of f′ to find features of f", star: true,
-          paper: "P1", where: "Paper 1 · 3–5 marks · graph of y = f′(x) given",
-          q: "The graph of y = f′(x) is a parabola that crosses the x-axis at x = −1 and x = 3 and has its minimum point at x = 1. f′(x) > 0 for x < −1 and x > 3. (a) Find the x-coordinate of the local maximum of f, justifying your answer. (b) Find the x-coordinate of the point of inflexion of f, justifying your answer.",
+        { title: "First derivative test: stationary point of inflexion", paper: "P1", where: "Paper 1 · 4–5 marks",
+          q: "Let f(x) = x³ − 3x² + 3x + 1. (a) Show that f has exactly one stationary point. (b) Determine its nature, justifying your answer.",
           marks: [
-            ["A1", "local maximum at x = −1"],
-            ["R1", "f′ changes from __positive to negative__ at x = −1"],
-            ["A1", "point of inflexion at x = 1"],
-            ["R1", "f′ has a __minimum__ (turning point) at x = 1, so f″ changes sign there"],
+            ["A1", "f′(x) = 3x² − 6x + 3 = 3(x − 1)²"],
+            ["A1", "f′(x) = 0 only at x = 1, stationary point (1, 2)"],
+            ["M1", "f″(1) = 0 is inconclusive, so test the __sign of f′ either side__"],
+            ["R1", "f′ > 0 on both sides (f′ does not change sign), so (1, 2) is a __stationary point of inflexion__"],
           ],
-          diagram: { title: "Graph of y = f′(x) = (x + 1)(x − 3)", x: [-3, 5], y: [-5, 8], grid: false,
-                     curves: [{ f: (x) => (x + 1) * (x - 3), label: "y = f′(x)", labelX: 3.6 }], points: [{ at: [-1, 0], label: "max of f" }, { at: [3, 0], label: "min of f" }, { at: [1, -4], label: "inflexion of f", color: "b" }] },
-          model: "(a) At x = −1, f′(x) = 0 and f′ changes from positive to negative, so f has a local maximum at x = −1. (b) f′ has a minimum at x = 1, so f″(1) = 0 and f″ changes sign (from negative to positive); hence f has a point of inflexion at x = 1.",
-          accept: "\"f increasing then decreasing at x = −1\"",
-          reject: "maximum at x = 1 (reading the f′ graph as if it were f); \"inflexion because f′ = 0\"",
-          tip: "睇 f′ 嘅圖：f′ 穿過 x 軸 = f 嘅駐點；f′ 嘅轉折點（最高/最低）= f 嘅拐點。先講清楚你睇緊邊條圖。" },
-
-        { title: "Rate of change in context (with units and sign)", paper: "P2", where: "Paper 2 · 2–3 marks",
-          q: "The volume of water, V litres, in a tank t minutes after a valve opens is V(t) = 200t e^(−0.5t). Find the rate of change of V when t = 3 and interpret your answer.",
-          marks: [
-            ["(M1)", "V′(t) = 200e^(−0.5t)(1 − 0.5t) or GDC derivative at t = 3"],
-            ["A1", "V′(3) = −22.3 litres per minute"],
-            ["R1", "the volume is __decreasing__ at 22.3 litres per minute when t = 3"],
-          ],
-          numeric: { value: -22.3, tol: 0.05 },
-          model: "V′(t) = 200e^(−0.5t) − 100t e^(−0.5t) = 200e^(−0.5t)(1 − 0.5t). V′(3) = −100e^(−1.5) = −22.3 litres per minute, so the volume is decreasing at about 22.3 litres per minute.",
-          accept: "−22.31; GDC nDeriv value",
-          reject: "22.3 with no sign or no interpretation; units of litres only",
-          tip: "變化率 = dV/dt，單位係「litres per minute」。負數就要講「減緊」，唔好淨係抄個數。" },
+          model: "f′(x) = 3(x − 1)², which is zero only at x = 1, so there is exactly one stationary point, (1, 2). f″(x) = 6x − 6 gives f″(1) = 0, which is inconclusive. f′(0.9) > 0 and f′(1.1) > 0, so f′ does not change sign: (1, 2) is a stationary point of inflexion.",
+          accept: "f″ changes sign at x = 1 together with f′(1) = 0",
+          reject: "\"f″(1) = 0 so it is an inflexion\" with no sign test; calling it a maximum or minimum",
+          tip: "f″ = 0 冇結論！要睇 f′ 前後有冇轉號：冇轉號 = 水平拐點（stationary point of inflexion）。" },
       ],
       mc: [
-        { skill: "<strong>Rewrite before you differentiate:</strong> 1/x² = x⁻², √x = x^½, 3/(2x) = (3/2)x⁻¹.",
-          q: "If y = 4/√x, then dy/dx =", options: ["−2x^(−3/2)", "2x^(−1/2)", "−4x^(−3/2)", "8x^(−3/2)"], answer: 0, why: "y = 4x^(−1/2), so dy/dx = −2x^(−3/2)." },
-        { skill: "<strong>Chain rule on autopilot:</strong> derivative of the outside × derivative of the inside. e^(kx) → ke^(kx), sin(kx) → k cos(kx), ln(kx) → 1/x.",
-          q: "d/dx [ln(5x)] =", options: ["5/x", "1/(5x)", "1/x", "5 ln x"], answer: 2, why: "5/(5x) = 1/x (ln 5x = ln 5 + ln x)." },
-        { skill: "<strong>Read f′ graphs:</strong> f′ above the axis → f increasing; f′ crosses zero → stationary point of f; turning point of f′ → inflexion of f." },
-        { skill: "<strong>Tangent equation in 20 s:</strong> y − f(a) = f′(a)(x − a). Normal: swap the gradient for −1/f′(a). Horizontal tangent ⇔ f′(a) = 0.",
-          q: "The gradient of the tangent to y = x² + 3x at x = 1 is", options: ["4", "5", "2", "−1/5"], answer: 1, why: "dy/dx = 2x + 3 = 5 at x = 1." },
         { skill: "<strong>GDC check (Paper 2):</strong> use nDeriv / dy/dx on the graph screen to confirm a gradient, and the max/min tool to confirm a stationary point - but still show the f′ = 0 method in Paper 1." },
-      ],
-      concepts: [
-        { h: "Concavity and the graphs of f, f′ and f″", b: "<p>f″(x) &gt; 0: f is <strong>concave up</strong> (f′ increasing); f″(x) &lt; 0: <strong>concave down</strong> (f′ decreasing). A <strong>point of inflexion</strong> is where the concavity changes; it may have zero gradient (stationary inflexion) or non-zero gradient. Linking graphs: zeros of f′ ↔ stationary points of f; turning points of f′ ↔ inflexion points of f; sign of f′ ↔ increasing/decreasing f.</p>" },
+        { skill: "<strong>Second derivative test in 10 s:</strong> f′(a) = 0 and f″(a) &lt; 0 → maximum; f″(a) &gt; 0 → minimum; f″(a) = 0 → test signs of f′.",
+          q: "f′(2) = 0 and f″(2) = 5. At x = 2, f has", options: ["a local minimum", "a local maximum", "a point of inflexion", "no stationary point"], answer: 0, why: "f″ > 0: concave up, so a minimum." },
+        { skill: "<strong>Answer the question asked:</strong> \"maximum value\" means the y-value; \"where\" means the x-value or the coordinates.",
+          q: "The maximum point of f is (3, 20). The maximum value of f is", options: ["20", "3", "(3, 20)", "23"], answer: 0, why: "The maximum value is the output, 20." },
       ],
     },
 
-    // ======================= 5.4-5.5, 5.10-5.11 Integration and area =======================
+    // ======================= 5.5 Introduction to integration =======================
     "math-13": {
       frames: [
-        { title: "Find f(x) from f′(x) and a point on the curve", star: true,
+        { id: "math-13-q12", title: "Find f(x) from f′(x) and a point on the curve", star: true,
           paper: "P1", where: "Paper 1 · 4–5 marks",
           q: "Let f′(x) = 6x² − 2/x², x ≠ 0. Given that f(1) = 5, find f(x).",
           marks: [
@@ -656,7 +1022,56 @@ IB.addExamFrames("math", {
           reject: "omitting + c (loses the M1 for substitution and the final A1); −2/x³ type errors from differentiating instead",
           tip: "由 f′ 返去 f 一定要 + c，再用畀咗嘅點求 c。1/x² 先寫成 x⁻² 先積分。" },
 
-        { title: "Integration by inspection / substitution (reverse chain rule)", star: true,
+        { id: "math-13-n4", title: "Anti-differentiate ax^n terms (rewrite first)", star: true, paper: "P1", where: "Paper 1 · 3–4 marks",
+          q: "Find ∫ (4x³ − 3/x² + 2) dx.",
+          marks: [
+            ["M1", "rewriting 3/x² as __3x⁻²__"],
+            ["A1", "x⁴"],
+            ["A1", "+ 3x⁻¹ + 2x"],
+            ["A1", "+ C"],
+          ],
+          model: "∫ (4x³ − 3x⁻² + 2) dx = x⁴ − 3x⁻¹/(−1) + 2x + C = x⁴ + 3/x + 2x + C.",
+          accept: "x⁴ + 3x⁻¹ + 2x + C",
+          reject: "−3/x (sign error dividing by −1); answer without + C",
+          tip: "指數加 1、再除以新指數。負指數除以負數會變號，小心。+ C 唔寫會失分。" },
+
+        { id: "math-13-n5", title: "Area under a curve above the x-axis using the GDC", star: true, paper: "P2", where: "Paper 2 · 3–4 marks",
+          q: "The region R is enclosed by the graph of y = 4x − x² + 1, the x-axis and the lines x = 0 and x = 3. Write down an integral for the area of R and find its value.",
+          marks: [
+            ["R1", "the curve is __above the x-axis__ for 0 ≤ x ≤ 3"],
+            ["M1", "area = ∫₀³ (4x − x² + 1) dx (limits and dx shown)"],
+            ["A1", "= 12"],
+          ],
+          model: "For 0 ≤ x ≤ 3, 4x − x² + 1 > 0, so the area is ∫₀³ (4x − x² + 1) dx = [2x² − x³/3 + x]₀³ = 18 − 9 + 3 = 12.",
+          accept: "GDC value 12 with the integral written",
+          reject: "a value with no integral shown; limits 0 and 4",
+          tip: "Paper 2 都要寫條 integral（上下限 + dx）先有 M1。曲線喺 x 軸上面，面積就係個定積分。" },
+
+        { id: "math-13-n6", title: "Definite integral in context (total amount from a rate)", paper: "P2", where: "Paper 2 · 2–3 marks",
+          q: "Water flows into a tank at a rate of r(t) = 30e^(−0.2t) litres per minute. Find the volume of water that flows in during the first 5 minutes.",
+          marks: [
+            ["M1", "volume = __∫₀⁵ r(t) dt__"],
+            ["A1", "= 94.8 litres (94.818…)"],
+          ],
+          model: "The total volume is the integral of the rate: ∫₀⁵ 30e^(−0.2t) dt = 94.8 litres (GDC).",
+          accept: "94.82; exact 150(1 − e⁻¹)",
+          reject: "r(5) = 11.0 (a rate, not a volume)",
+          tip: "「Rate」積分 = 總量。題目畀變化率，問總共幾多，就係定積分。" },
+      ],
+      mc: [
+        { id: "math-13-n1", skill: "<strong>Power rule in reverse:</strong> add 1 to the power, divide by the new power, + C. Check by differentiating.",
+          q: "∫ 5x⁴ dx =", options: ["x⁵ + C", "20x³ + C", "5x⁵ + C", "x⁵/5 + C"], answer: 0, why: "5x⁵/5 = x⁵." },
+        { id: "math-13-n2", skill: "<strong>One point fixes C:</strong> substitute the given point into f(x) = F(x) + C and solve for C.",
+          q: "f′(x) = 2x and f(2) = 1. Then f(x) =", options: ["x² − 3", "x² + 1", "x² − 1", "2x² − 7"], answer: 0, why: "f(x) = x² + C, 4 + C = 1, C = −3." },
+        { id: "math-13-n3", skill: "<strong>Area under a positive curve = the definite integral:</strong> on the GDC use fnInt / ∫dx, but write the integral first.",
+          paper: "P2", q: "The area between y = x² + 1, the x-axis, x = 0 and x = 3 is", options: ["12", "10", "9", "28"], answer: 0, why: "∫₀³ (x² + 1) dx = 9 + 3 = 12." },
+      ],
+    },
+
+    // ======================= 5.10 Indefinite integration and substitution =======================
+    "math-13b": {
+      frames: [
+        { id: "math-13-q13", title: "Integration by inspection / substitution (reverse chain rule)", star: true,
           paper: "P1", where: "Paper 1 · 4–5 marks",
           q: "Show that \\(\\displaystyle\\int_0^2 \\frac{4x}{x^2 + 1}\\,dx = \\ln a\\), and find the value of a.",
           marks: [
@@ -671,7 +1086,7 @@ IB.addExamFrames("math", {
           reject: "a = 5 (forgetting the factor 2); ln(x² + 1) × 4x",
           tip: "見到分子係分母嘅導數（差個常數）→ 答案係 ln|分母|。最後用 log 法則 2 ln 5 = ln 25。" },
 
-        { title: "Integrate composite linear functions: e^(ax+b), cos(ax+b), 1/(ax+b)", paper: "P1", where: "Paper 1 · 3–4 marks",
+        { id: "math-13-q14", title: "Integrate composite linear functions: e^(ax+b), cos(ax+b), 1/(ax+b)", paper: "P1", where: "Paper 1 · 3–4 marks",
           q: "Find \\(\\displaystyle\\int \\left(\\cos 3x + \\frac{4}{2x + 1}\\right) dx\\).",
           marks: [
             ["A1", "(1/3) sin 3x"],
@@ -683,7 +1098,45 @@ IB.addExamFrames("math", {
           reject: "3 sin 3x; 8 ln|2x + 1| (multiplying by the inner derivative instead of dividing)",
           tip: "積分 f(ax + b) 要除以 a（微分先係乘）。完成之後微分返檢查。" },
 
-        { title: "Area between a curve and the x-axis when part is below the axis", star: true,
+        { title: "Integration by substitution, with full working", star: true, paper: "P1", where: "Paper 1 · 4–5 marks",
+          q: "Use the substitution u = x³ + 1 to find ∫ x²(x³ + 1)⁴ dx.",
+          marks: [
+            ["A1", "du/dx = 3x², so __x² dx = (1/3) du__"],
+            ["M1", "integral becomes (1/3) ∫ u⁴ du"],
+            ["A1", "= u⁵/15"],
+            ["A1", "= (x³ + 1)⁵/15 + C"],
+          ],
+          model: "With u = x³ + 1, du = 3x² dx, so x² dx = du/3. ∫ x²(x³ + 1)⁴ dx = (1/3)∫ u⁴ du = u⁵/15 + C = (x³ + 1)⁵/15 + C.",
+          accept: "by inspection without writing u, if correct",
+          reject: "leaving the answer in u; (x³ + 1)⁵/5 (factor 1/3 missing)",
+          tip: "Substitution 三步：u = 入面、x 嘅部份換成 du、積完換返 x。最後一定要寫返 x 同 + C。" },
+
+        { title: "Find f(x) from f′(x) with standard functions", paper: "P1", where: "Paper 1 · 4–5 marks",
+          q: "Let f′(x) = 2cos 2x + e^x. Given that f(0) = 3, find f(x).",
+          marks: [
+            ["A1", "sin 2x"],
+            ["A1", "+ e^x"],
+            ["M1", "__+ c__ and substituting x = 0: 0 + 1 + c = 3"],
+            ["A1", "f(x) = sin 2x + e^x + 2"],
+          ],
+          model: "f(x) = ∫ (2cos 2x + e^x) dx = sin 2x + e^x + c. f(0) = 0 + 1 + c = 3, so c = 2 and f(x) = sin 2x + e^x + 2.",
+          accept: "c written as C",
+          reject: "e⁰ = 0 (giving c = 3); 4 sin 2x",
+          tip: "代 x = 0 時記住 e⁰ = 1、sin 0 = 0、cos 0 = 1。最常喺呢度失分。" },
+      ],
+      mc: [
+        { id: "math-13-q19", skill: "<strong>Differentiate your answer to check:</strong> every indefinite integral can be verified in 10 s by differentiating it.",
+          q: "∫ e^(4x) dx =", options: ["4e^(4x) + c", "e^(4x)/4 + c", "e^(4x+1)/(4x + 1) + c", "e^(4x) + c"], answer: 1, why: "d/dx[e^(4x)/4] = e^(4x)." },
+        { id: "math-13-q20", skill: "<strong>Spot f′/f:</strong> if the top is (a multiple of) the derivative of the bottom, the answer is a ln|bottom|.",
+          q: "∫ 3x²/(x³ + 2) dx =", options: ["ln|x³ + 2| + c", "3 ln|x³ + 2| + c", "x³ ln|x³ + 2| + c", "1/(x³ + 2)² + c"], answer: 0, why: "3x² is exactly the derivative of x³ + 2." },
+        { skill: "<strong>∫ 1/x² ≠ ln x²:</strong> only 1/x (power −1) gives ln. 1/x² = x⁻² integrates to −x⁻¹." },
+      ],
+    },
+
+    // ======================= 5.11 Definite integrals and areas =======================
+    "math-13c": {
+      frames: [
+        { id: "math-13-q15", title: "Area between a curve and the x-axis when part is below the axis", star: true,
           paper: "P1", where: "Paper 1 / 2 · 4–6 marks",
           q: "Find the total area enclosed by the curve y = x² − 3x, the x-axis and the line x = 4.",
           marks: [
@@ -701,7 +1154,7 @@ IB.addExamFrames("math", {
           reject: "∫₀⁴ (x² − 3x) dx = −8/3 (areas cancel); a negative area",
           tip: "曲線落咗 x 軸下面嘅部份，積分出負數；面積一定要喺根拆開，每段取絕對值再加。" },
 
-        { title: "Area between two curves (GDC)", star: true,
+        { id: "math-13-q16", title: "Area between two curves (GDC)", star: true,
           paper: "P2", where: "Paper 2 · 4–5 marks",
           q: "The curves y = 5 − x² and y = eˣ intersect at x = a and x = b, where a < b. (a) Find the values of a and b. (b) Write down an integral that represents the area of the region enclosed by the curves, and find this area.",
           marks: [
@@ -718,7 +1171,7 @@ IB.addExamFrames("math", {
           reject: "an integral without limits or without dx (loses M1); eˣ − (5 − x²) giving −9.67 and quoting it",
           tip: "Paper 2 都要寫低條積分（上減下、上下限、dx），先攞 M1，之後先用 GDC 出答案。交點值要存入記憶，唔好用四捨五入咗嘅數。" },
 
-        { title: "Find an unknown limit from the value of a definite integral", paper: "P1", where: "Paper 1 · 4–5 marks",
+        { id: "math-13-q17", title: "Find an unknown limit from the value of a definite integral", paper: "P1", where: "Paper 1 · 4–5 marks",
           q: "Given that \\(\\displaystyle\\int_0^k (2x + 1)\\,dx = 12\\), where k > 0, find the value of k.",
           marks: [
             ["A1", "[x² + x]₀ᵏ"],
@@ -732,7 +1185,7 @@ IB.addExamFrames("math", {
           reject: "leaving both k = 3 and k = −4",
           tip: "解出兩個答案要按題目條件（k > 0）刪走一個，唔刪會失最後 A1。" },
 
-        { title: "Use properties of definite integrals", paper: "P1", where: "Paper 1 · 3–4 marks",
+        { id: "math-13-q18", title: "Use properties of definite integrals", paper: "P1", where: "Paper 1 · 3–4 marks",
           q: "Given that \\(\\displaystyle\\int_1^3 f(x)\\,dx = 5\\), find (a) \\(\\displaystyle\\int_1^3 (2f(x) + 3)\\,dx\\), (b) \\(\\displaystyle\\int_3^1 f(x)\\,dx\\).",
           marks: [
             ["M1", "splitting: 2∫₁³ f(x) dx + ∫₁³ 3 dx"],
@@ -746,14 +1199,11 @@ IB.addExamFrames("math", {
           tip: "常數 3 積分係 3 × 區間闊度（3 − 1 = 2），唔係 3。上下限調轉 = 變號。" },
       ],
       mc: [
-        { skill: "<strong>Differentiate your answer to check:</strong> every indefinite integral can be verified in 10 s by differentiating it.",
-          q: "∫ e^(4x) dx =", options: ["4e^(4x) + c", "e^(4x)/4 + c", "e^(4x+1)/(4x + 1) + c", "e^(4x) + c"], answer: 1, why: "d/dx[e^(4x)/4] = e^(4x)." },
-        { skill: "<strong>Spot f′/f:</strong> if the top is (a multiple of) the derivative of the bottom, the answer is a ln|bottom|.",
-          q: "∫ 3x²/(x³ + 2) dx =", options: ["ln|x³ + 2| + c", "3 ln|x³ + 2| + c", "x³ ln|x³ + 2| + c", "1/(x³ + 2)² + c"], answer: 0, why: "3x² is exactly the derivative of x³ + 2." },
         { skill: "<strong>Area vs integral:</strong> an integral can be negative, an area cannot. Sketch first and split at x-intercepts." },
-        { skill: "<strong>Paper 2:</strong> write the integral with limits and dx, then use fnInt. For areas between curves, store intersections as A and B on the GDC.",
+        { id: "math-13-q21", skill: "<strong>Paper 2:</strong> write the integral with limits and dx, then use fnInt. For areas between curves, store intersections as A and B on the GDC.",
           paper: "P2", q: "Which expression gives the area between y = x and y = x² for 0 ≤ x ≤ 1?", options: ["∫₀¹ (x² − x) dx", "∫₀¹ (x − x²) dx", "∫₀¹ x dx", "∫₀¹ (x + x²) dx"], answer: 1, why: "y = x is above y = x² on (0, 1): top minus bottom." },
-        { skill: "<strong>∫ 1/x² ≠ ln x²:</strong> only 1/x (power −1) gives ln. 1/x² = x⁻² integrates to −x⁻¹." },
+        { skill: "<strong>Exact answers from logs and e:</strong> ln 1 = 0, ln e = 1, e⁰ = 1, e^(ln a) = a. Keep answers exact when asked.",
+          q: "∫₀^(ln 3) eˣ dx =", options: ["2", "3", "ln 3", "e³ − 1"], answer: 0, why: "[eˣ] from 0 to ln 3 = 3 − 1 = 2." },
       ],
     },
 

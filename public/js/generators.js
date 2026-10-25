@@ -322,7 +322,7 @@
     ],
 
     // ===================== CHEMISTRY =====================
-    "chem-1": [
+    "chem-1b": [
       () => {
         const els = [["Cl", 35, 37, 75.8], ["B", 10, 11, 19.9], ["Cu", 63, 65, 69.2], ["Ga", 69, 71, 60.1], ["Br", 79, 81, 50.7], ["Ag", 107, 109, 51.8]];
         const [s, m1, m2, a] = P(els);
@@ -342,14 +342,16 @@
         return { paper: "P2", marks: 2, diff: 1, q: `${n} mol of solute is dissolved in water to make ${v} cm³ of solution. Calculate the concentration in mol dm⁻³.`, numeric: { value: Number(sig(c)), tol: c * 0.006 }, ms: [`V = ${v / 1000} dm³ [M1]`, `c = ${sig(c)} mol dm⁻³ [A1]`] };
       },
       () => {
-        const n = dp(R(5, 60) / 100, 2), T = R(273, 373), p = R(80, 250);
-        const V = ((n * 8.31 * T) / (p * 1000)) * 1000;
-        return { paper: "P2", marks: 2, diff: 2, q: `Calculate the volume, in dm³, occupied by ${n} mol of an ideal gas at ${T} K and ${p} kPa. (R = 8.31 J K⁻¹ mol⁻¹)`, numeric: { value: Number(sig(V)), tol: V * 0.006 }, ms: [`V = nRT/p = ${n} × 8.31 × ${T}/${p * 1000} m³ [M1]`, `= ${sig(V)} dm³ [A1]`] };
-      },
-      () => {
         const c1 = P([1.0, 2.0, 0.5, 0.25]), c2 = P([0.1, 0.05, 0.2]), v2 = P([100, 250, 500]);
         const v1 = (c2 * v2) / c1;
         return { paper: "P2", marks: 2, diff: 1, q: `What volume, in cm³, of ${c1} mol dm⁻³ stock solution is needed to prepare ${v2} cm³ of ${c2} mol dm⁻³ solution?`, numeric: { value: dp(v1, 2), tol: 0.02 }, ms: [`c₁V₁ = c₂V₂ → V₁ = ${c2} × ${v2}/${c1} [M1]`, `= ${dp(v1, 2)} cm³ [A1]`] };
+      },
+    ],
+    "chem-3b": [
+      () => {
+        const n = dp(R(5, 60) / 100, 2), T = R(273, 373), p = R(80, 250);
+        const V = ((n * 8.31 * T) / (p * 1000)) * 1000;
+        return { paper: "P2", marks: 2, diff: 2, q: `Calculate the volume, in dm³, occupied by ${n} mol of an ideal gas at ${T} K and ${p} kPa. (R = 8.31 J K⁻¹ mol⁻¹)`, numeric: { value: Number(sig(V)), tol: V * 0.006 }, ms: [`V = nRT/p = ${n} × 8.31 × ${T}/${p * 1000} m³ [M1]`, `= ${sig(V)} dm³ [A1]`] };
       },
     ],
     "chem-7": [
@@ -427,7 +429,7 @@
 
     // ===================== MATHEMATICS =====================
     // Paper 1 (no GDC) answers are exact (integers, fractions); Paper 2 answers are exact or 3 s.f., as in IB markschemes.
-    "math-1": [
+    "math-1b": [
       () => {
         const a = R(-10, 20), d = R(-5, 9) || 3, n = R(8, 30);
         const un = a + (n - 1) * d;
@@ -438,11 +440,15 @@
         const s = (n / 2) * (2 * a + (n - 1) * d);
         return { paper: "P1", marks: 3, diff: 2, q: `Find the sum of the first ${n} terms of the arithmetic series ${a} + ${a + d} + ${a + 2 * d} + …`, numeric: { value: s, tol: 0.001 }, ms: [`\\(d = ${d}\\) [A1]`, `\\(S_{${n}} = \\frac{${n}}{2}\\left(2(${a}) + (${n} - 1)(${d})\\right)\\) [M1]`, `\\(S_{${n}} = ${s}\\) [A1]`] };
       },
+    ],
+    "math-1e": [
       () => {
         const a = P([12, 18, 24, 30, 40, 60, 81, 100]), r = P([[1, 2], [1, 3], [2, 3], [3, 4], [1, 4], [-1, 2]]);
         const rv = r[0] / r[1], s = a / (1 - rv), rt = fracTex(r[0], r[1]), st = fracTex(a * r[1], r[1] - r[0]);
         return { paper: "P1", marks: 3, diff: 2, q: `Find the sum to infinity of the geometric series with first term ${a} and common ratio \\(${rt}\\).`, numeric: { value: dp(s, 4), tol: 0.005 }, ms: [`\\(|r| < 1\\), so the sum to infinity exists [R1]`, `\\(S_\\infty = \\frac{${a}}{1 - \\left(${rt}\\right)}\\) [M1]`, `\\(S_\\infty = ${st}\\) [A1]`] };
       },
+    ],
+    "math-1d": [
       () => {
         const pv = R(10, 200) * 100, rate = P([2, 2.5, 3, 4, 4.5, 5, 6]), k = P([1, 4, 12]), n = R(3, 20);
         const fv = pv * Math.pow(1 + rate / (100 * k), k * n);
@@ -455,13 +461,15 @@
         const v = Math.pow(b, e), arg = e < 0 ? `\\frac{1}{${Math.pow(b, -e)}}` : v;
         return { paper: "P1", marks: 1, diff: 1, q: `Write down the value of \\(\\log_{${b}} ${arg}\\).`, numeric: { value: e, tol: 0.001 }, ms: [`\\(${b}^{${e}} = ${arg}\\), so \\(\\log_{${b}} ${arg} = ${e}\\) [A1]`] };
       },
+    ],
+    "math-2c": [
       () => {
         const n0 = R(50, 500), k = P([0.05, 0.08, 0.1, 0.12, 0.2, 0.25]), mult = P([2, 3, 5, 10]);
         const t = Math.log(mult) / k;
         return { paper: "P2", marks: 3, diff: 2, q: `A quantity grows according to \\(N = ${n0}e^{${k}t}\\). Find the time taken for N to reach ${n0 * mult}.`, numeric: { value: Number(s3(t)), tol: t * 0.004 }, ms: [`\\(${n0 * mult} = ${n0}e^{${k}t}\\) (or a GDC graph/solver) [M1]`, `\\(t = \\frac{\\ln ${mult}}{${k}}\\) [A1]`, `\\(t = ${s3(t)}\\) [A1]`] };
       },
     ],
-    "math-3": [
+    "math-3b": [
       () => {
         const n = R(4, 8), a = R(1, 3), b = R(1, 3) * P([1, -1]), r = R(1, n - 1);
         const nCr = (n, r) => { let x = 1; for (let i = 1; i <= r; i++) x = (x * (n - r + i)) / i; return Math.round(x); };
@@ -471,19 +479,21 @@
           ms: [`\\(\\binom{${n}}{${r}}(${a})^{${n - r}}(${bx})^{${r}}\\) (accept \\(\\binom{${n}}{${n - r}}\\)) [M1]`, `\\(${nCr(n, r)} \\times ${Math.pow(a, n - r)} \\times ${br < 0 ? `(${br})` : br}\\) [A1]`, `\\(${coef}\\) [A1]`] };
       },
     ],
-    "math-5": [
+    "math-5b": [
       () => {
         const c = P([4, 9, 16, 25, 36, 49]), a = P([1, 1, 4]);
         const k = 2 * Math.sqrt(a * c);
         return { paper: "P1", marks: 3, diff: 2, q: `Find the positive value of k for which \\(${a === 1 ? "" : a}x^2 + kx + ${c} = 0\\) has two equal real roots.`, numeric: { value: k, tol: 0.001 }, ms: [`\\(\\Delta = k^2 - 4(${a})(${c}) = 0\\) [M1]`, `\\(k^2 = ${4 * a * c}\\) [A1]`, `\\(k = ${k}\\) (reject \\(k = -${k}\\)) [A1]`] };
       },
+    ],
+    "math-5": [
       () => {
         const h = R(-6, 6), k = R(-9, 9), a = P([1, 2, -1, 3]);
         const b = -2 * a * h, c = a * h * h + k;
         return { paper: "P1", marks: 2, diff: 2, q: `Find the y-coordinate of the vertex of \\(y = ${poly([[a, "x^2"], [b, "x"], [c, ""]])}\\).`, numeric: { value: k, tol: 0.001 }, ms: [`\\(x = -\\frac{b}{2a} = ${h}\\) (or completing the square) [M1]`, `\\(y = ${k}\\) [A1]`] };
       },
     ],
-    "math-7": [
+    "math-7b": [
       () => {
         const a = R(4, 15), b = R(4, 15), C = R(25, 140);
         const c = Math.sqrt(a * a + b * b - 2 * a * b * Math.cos((C * Math.PI) / 180));
@@ -494,12 +504,14 @@
         const A = 0.5 * a * b * Math.sin((C * Math.PI) / 180);
         return { paper: "P2", marks: 2, diff: 1, q: `Find the area of a triangle with sides ${a} cm and ${b} cm enclosing an angle of ${C}°.`, numeric: { value: Number(s3(A)), tol: A * 0.005 }, ms: [`\\(\\frac{1}{2}(${a})(${b})\\sin ${C}°\\) [M1]`, `${s3(A)} cm² [A1]`] };
       },
+    ],
+    "math-7d": [
       () => {
         const r = R(3, 20), th = dp(R(3, 30) / 10, 1);
         return { paper: "P2", marks: 2, diff: 1, q: `A sector has radius ${r} cm and angle ${th} radians. Find its area.`, numeric: { value: dp(0.5 * r * r * th, 2), tol: 0.02 }, ms: [`\\(\\frac{1}{2}(${r})^2(${th})\\) [M1]`, `${dp(0.5 * r * r * th, 2)} cm² [A1]`] };
       },
     ],
-    "math-10": [
+    "math-10b": [
       () => {
         const pa = dp(R(2, 6) / 10, 1), pb = dp(R(2, 6) / 10, 1), indep = Math.random() < 0.5;
         const pab = indep ? dp(pa * pb, 2) : dp(Math.min(pa, pb) * P([0.3, 0.5]), 2);
@@ -512,7 +524,7 @@
         return { paper: "P1", marks: 3, diff: 2, q: `A bag contains ${r} red and ${b} blue counters. Two are taken without replacement. Find the probability that both are red.`, numeric: { value: dp(p, 4), tol: 0.0006 }, ms: [`\\(\\frac{${r}}{${t}} \\times \\frac{${r - 1}}{${t - 1}}\\) (multiplying along the branches, second denominator reduced) [M1][A1]`, `\\(${fracTex(r * (r - 1), t * (t - 1))}\\) [A1]`] };
       },
     ],
-    "math-11": [
+    "math-11b": [
       () => {
         const n = R(5, 20), p = P([0.1, 0.2, 0.25, 0.3, 0.4, 0.5]), k = R(1, Math.min(6, n - 1));
         let c = 1; for (let i = 1; i <= k; i++) c = (c * (n - k + i)) / i;
@@ -530,6 +542,17 @@
         const d = 3 * a * x0 * x0 + 2 * b * x0 + c;
         return { paper: "P1", marks: 2, diff: 1, q: `Let \\(f(x) = ${poly([[a, "x^3"], [b, "x^2"], [c, "x"]])}\\). Find the gradient of the curve at x = ${x0}.`, numeric: { value: d, tol: 0.001 }, ms: [`\\(f'(x) = ${poly([[3 * a, "x^2"], [2 * b, "x"], [c, ""]])}\\) [A1]`, `\\(f'(${x0}) = ${d}\\) [A1]`] };
       },
+    ],
+    "math-12c": [
+      () => {
+        const a = R(1, 5), p = R(2, 4), b = P([-6, -4, -3, -2, 2, 3, 4, 6]), x0 = P([1, 2, 3]);
+        const xp = (n) => (n === 1 ? "x" : `x^{${n}}`), co = (c) => (c === 1 ? "" : String(c));
+        const num = a * p * x0 ** (p - 1) * x0 * x0 - b, den = x0 * x0;
+        return { paper: "P1", marks: 3, diff: 2, q: `Let \\(f(x) = ${co(a)}${xp(p)} ${b < 0 ? "-" : "+"} \\frac{${Math.abs(b)}}{x}\\), \\(x \\neq 0\\). Find \\(f'(${x0})\\).`, numeric: { value: dp(num / den, 4), tol: 0.002 },
+          ms: [`rewrite: \\(f(x) = ${co(a)}${xp(p)} ${b < 0 ? "-" : "+"} ${Math.abs(b)}x^{-1}\\) [M1]`, `\\(f'(x) = ${a * p}${xp(p - 1)} ${b < 0 ? "+" : "-"} ${Math.abs(b)}x^{-2}\\) [A1]`, `\\(f'(${x0}) = ${fracTex(num, den)}\\) [A1]`] };
+      },
+    ],
+    "math-12g": [
       () => {
         // f'(x) = 3(x - p)(x - q) with p + q even, so every coefficient is an integer
         const p = R(-4, 1), q = p + 2 * R(1, 3);
@@ -540,6 +563,15 @@
       },
     ],
     "math-13": [
+      () => {
+        const a = R(1, 3), b = R(-3, 3), c = R(-5, 5), x0 = R(0, 2), x1 = x0 + R(1, 2), y0 = R(-5, 8);
+        const F = (x) => a * x ** 3 + b * x * x + c * x;
+        const C = y0 - F(x0), v = F(x1) + C;
+        return { paper: "P1", marks: 4, diff: 2, q: `The gradient of a curve is \\(f'(x) = ${poly([[3 * a, "x^2"], [2 * b, "x"], [c, ""]])}\\) and the curve passes through \\((${x0}, ${y0})\\). Find \\(f(${x1})\\).`, numeric: { value: v, tol: 0.001 },
+          ms: [`\\(f(x) = ${poly([[a, "x^3"], [b, "x^2"], [c, "x"]])} + C\\) [A1]`, `\\(f(${x0}) = ${y0} \\Rightarrow C = ${C}\\) [M1]`, `\\(f(x) = ${poly([[a, "x^3"], [b, "x^2"], [c, "x"], [C, ""]])}\\) [A1]`, `\\(f(${x1}) = ${v}\\) [A1]`] };
+      },
+    ],
+    "math-13c": [
       () => {
         const a = R(1, 4), b = R(-5, 5) || 2, lo = R(0, 2), hi = lo + R(1, 3);
         const F6 = (x) => 2 * a * x ** 3 + 3 * b * x * x; // 6 × antiderivative
@@ -563,7 +595,7 @@
       },
     ],
     // ===================== BIOLOGY =====================
-    "bio-1": [
+    "bio-1b": [
       () => {
         const a = R(15, 35), base = P([["thymine", a], ["adenine", a]]), want = P(["guanine", "cytosine"]);
         const v = (100 - 2 * a) / 2;
@@ -579,7 +611,7 @@
           : { paper: "P2", marks: 2, diff: 2, q: `A micrograph at ×${mag} shows a cell ${imgMm} mm long. Calculate the actual length in µm.`, numeric: { value: actual, tol: 0.01 }, ms: [`${imgMm} mm = ${imgMm * 1000} µm; ÷ ${mag} [M1]`, `= ${actual} µm [A1]`] };
       },
     ],
-    "bio-4": [
+    "bio-4b": [
       () => {
         const N = R(8, 60) * 10, M = R(20, 80), n = R(30, 90);
         const m = Math.max(1, Math.round((M * n) / N));
@@ -587,13 +619,13 @@
         return { paper: "P2", marks: 2, diff: 2, q: `${M} animals were captured, marked and released. Later ${n} were captured, of which ${m} were marked. Estimate the population size using the Lincoln index.`, numeric: { value: Math.round(est), tol: 1 }, ms: [`${M} × ${n} ÷ ${m} [M1]`, `≈ ${Math.round(est)} [A1]`] };
       },
     ],
-    "bio-6": [
+    "bio-6c": [
       () => {
         const l = R(1, 10);
         return { paper: "P2", marks: 2, diff: 1, q: `Calculate the surface area to volume ratio of a cube-shaped cell with sides of ${l} µm. Give the answer as x : 1.`, numeric: { value: dp(6 / l, 2), tol: 0.01 }, ms: [`SA = ${6 * l * l} µm², V = ${l ** 3} µm³ [M1]`, `${dp(6 / l, 2)} : 1 [A1]`] };
       },
     ],
-    "bio-10": [
+    "bio-10b": [
       () => {
         const sf = dp(R(60, 100) / 10, 1), rf = dp(R(10, 95) / 100, 2), d = dp(sf * rf, 2);
         return { paper: "P2", marks: 2, diff: 1, q: `In paper chromatography, a pigment moved ${d} cm and the solvent front moved ${sf} cm. Calculate the Rf value.`, numeric: { value: dp(d / sf, 2), tol: 0.011 }, ms: [`${d} ÷ ${sf} [M1]`, `= ${dp(d / sf, 2)} [A1]`] };

@@ -376,30 +376,33 @@
 
   IB.addExamFrames("math", { topics: {
     "math-1": {
+      diagrams: [],
+      figures: [],
+      frames: [],
+    },
+    "math-1b": {
       diagrams: [
         { title: "Arithmetic sequence uₙ = 3n − 1: terms lie on a straight line (gradient d = 3)", x: [0, 8], y: [0, 24], xLabel: "n", yLabel: "uₙ",
           curves: [{ f: (x) => 3 * x - 1, domain: [0.5, 7.5], color: "muted", dash: true }], points: pts((n) => 3 * n - 1, [1, 2, 3, 4, 5, 6, 7]).map((p, i) => i === 0 ? { ...p, label: "u₁ = 2" } : p) },
+      ],
+    },
+    "math-1c": {
+      diagrams: [
         { title: "Geometric, r > 1: uₙ = 2ⁿ⁻¹ grows exponentially (diverges)", x: [0, 8], y: [0, 70], xLabel: "n", yLabel: "uₙ", grid: false,
           curves: [{ f: (x) => 2 ** (x - 1), domain: [0.5, 7.2], color: "muted", dash: true }], points: pts((n) => 2 ** (n - 1), [1, 2, 3, 4, 5, 6, 7]) },
         { title: "Geometric, 0 < r < 1: uₙ = 16(½)ⁿ⁻¹ decreases towards 0", x: [0, 9], y: [0, 18], xLabel: "n", yLabel: "uₙ",
           curves: [{ f: (x) => 16 * 0.5 ** (x - 1), domain: [0.7, 8.5], color: "muted", dash: true }], points: pts((n) => 16 * 0.5 ** (n - 1), [1, 2, 3, 4, 5, 6, 7, 8]) },
-        { title: "Geometric, −1 < r < 0: uₙ = 8(−½)ⁿ⁻¹ alternates in sign and → 0", x: [0, 9], y: [-5, 9], xLabel: "n", yLabel: "uₙ",
-          points: pts((n) => 8 * (-0.5) ** (n - 1), [1, 2, 3, 4, 5, 6, 7, 8]).map((p, i) => i === 0 ? { ...p, label: "8" } : i === 1 ? { ...p, label: "−4" } : p) },
-        { title: "Geometric, r < −1: uₙ = (−2)ⁿ⁻¹ alternates and grows (diverges)", x: [0, 7], y: [-35, 35], xLabel: "n", yLabel: "uₙ", grid: false,
-          points: pts((n) => (-2) ** (n - 1), [1, 2, 3, 4, 5, 6]) },
-        { title: "Partial sums of 8 + 4 + 2 + … approach S∞ = 16", x: [0, 9], y: [0, 18], xLabel: "n", yLabel: "Sₙ",
-          hlines: [{ y: 16, label: "S∞ = 16" }], points: pts((n) => 16 * (1 - 0.5 ** n), [1, 2, 3, 4, 5, 6, 7, 8]) },
+      ],
+    },
+    "math-1d": {
+      diagrams: [
         { title: "Simple vs compound interest: 1000 at 8 % per year (value in 1000s)", x: [0, 20], y: [0, 5], xLabel: "years", yLabel: "value",
           curves: [{ f: (t) => 1.08 ** t, label: "compound (geometric)", labelX: 13.5 }, { f: (t) => 1 + 0.08 * t, color: "b", label: "simple (arithmetic)", labelX: 15.5 }] },
         { title: "Depreciation: V = 30 000 × 0.85ⁿ (in 1000s) - never reaches 0", x: [0, 15], y: [0, 32], xLabel: "n years", yLabel: "V",
           curves: [{ f: (t) => 30 * 0.85 ** t }], points: [{ at: [0, 30], label: "(0, 30)" }, { at: [5, 30 * 0.85 ** 5], label: "(5, 13.3)" }] },
       ],
-      figures: [
-        { title: "Why a geometric series can have a finite sum", caption: "½ + ¼ + ⅛ + … = 1: each term fills half of what is left", svg: figSumSquare },
-        { title: "Condition for S∞ to exist", caption: "the series converges only when |r| < 1; state this as the reason (R1)", svg: figConverge },
-      ],
       frames: [
-        { title: "Compare simple and compound growth: when does one overtake the other?", paper: "P2", where: "Paper 2 · 4 marks · GDC table or graph",
+        { id: "math-1-q28", title: "Compare simple and compound growth: when does one overtake the other?", paper: "P2", where: "Paper 2 · 4 marks · GDC table or graph",
           q: "Ana invests 5000 USD at 6% simple interest per year. Ben invests 4000 USD at 7% per year compounded annually. Find the least number of complete years after which Ben's investment is worth more than Ana's.",
           marks: [
             ["M1", "Ana: __A = 5000 + 300n__ (arithmetic, d = 300)"],
@@ -413,8 +416,33 @@
           tip: "「完整年數」要向上取整數：寫出 n = 10 同 n = 11 兩行數字做證據，唔好淨係寫交點 10.6。" },
       ],
     },
+    "math-1e": {
+      figures: [
+        { title: "Why a geometric series can have a finite sum", caption: "½ + ¼ + ⅛ + … = 1: each term fills half of what is left", svg: figSumSquare },
+        { title: "Condition for S∞ to exist", caption: "the series converges only when |r| < 1; state this as the reason (R1)", svg: figConverge },
+      ],
+      diagrams: [
+        { title: "Geometric, −1 < r < 0: uₙ = 8(−½)ⁿ⁻¹ alternates in sign and → 0", x: [0, 9], y: [-5, 9], xLabel: "n", yLabel: "uₙ",
+          points: pts((n) => 8 * (-0.5) ** (n - 1), [1, 2, 3, 4, 5, 6, 7, 8]).map((p, i) => i === 0 ? { ...p, label: "8" } : i === 1 ? { ...p, label: "−4" } : p) },
+        { title: "Geometric, r < −1: uₙ = (−2)ⁿ⁻¹ alternates and grows (diverges)", x: [0, 7], y: [-35, 35], xLabel: "n", yLabel: "uₙ", grid: false,
+          points: pts((n) => (-2) ** (n - 1), [1, 2, 3, 4, 5, 6]) },
+        { title: "Partial sums of 8 + 4 + 2 + … approach S∞ = 16", x: [0, 9], y: [0, 18], xLabel: "n", yLabel: "Sₙ",
+          hlines: [{ y: 16, label: "S∞ = 16" }], points: pts((n) => 16 * (1 - 0.5 ** n), [1, 2, 3, 4, 5, 6, 7, 8]) },
+      ],
+    },
 
     "math-2": {
+      diagrams: [],
+      figures: [
+        { title: "Exponential ↔ logarithm", caption: "the definition used to 'un-log' an equation", svg: figExpLog },
+      ],
+      frames: [],
+      concepts: [],
+    },
+    "math-2c": {
+      concepts: [
+        { h: "Half-life and doubling time", b: "<p>For \\(A = A_0e^{kt}\\): doubling time \\(T_2 = \\frac{\\ln 2}{k}\\) (k > 0); half-life \\(T_{1/2} = \\frac{\\ln 2}{|k|}\\) (k < 0). Equivalent base-½ form: \\(A = A_0\\left(\\tfrac12\\right)^{t/T_{1/2}}\\). The graph never reaches 0: the t-axis is a horizontal asymptote. In a model \\(N = a + be^{-kt}\\) (k > 0) the long-term value is a.</p>" },
+      ],
       diagrams: [
         { title: "y = aˣ for a = 2, 3 and ½: all pass through (0, 1), asymptote y = 0", x: [-3, 3], y: [-1, 8], curves: [
           { f: (x) => 2 ** x, label: "2ˣ", labelX: 2.6 }, { f: (x) => 3 ** x, color: "b", label: "3ˣ", labelX: 1.6 }, { f: (x) => 0.5 ** x, color: "c", label: "(½)ˣ", labelX: -2.6 }],
@@ -435,11 +463,8 @@
         { title: "Cooling T = 20 + 70e^(−0.1t): T → room temperature 20 °C", x: [0, 50], y: [0, 100], xLabel: "t / min", yLabel: "T / °C", grid: false,
           curves: [{ f: (t) => 20 + 70 * Math.exp(-0.1 * t) }], hlines: [{ y: 20, label: "T = 20" }], points: [{ at: [0, 90], label: "(0, 90)" }] },
       ],
-      figures: [
-        { title: "Exponential ↔ logarithm", caption: "the definition used to 'un-log' an equation", svg: figExpLog },
-      ],
       frames: [
-        { title: "Half-life model: find k, sketch, and interpret", paper: "P1", where: "Paper 1 · 6 marks · exact answer + sketch",
+        { id: "math-2-q24", title: "Half-life model: find k, sketch, and interpret", paper: "P1", where: "Paper 1 · 6 marks · exact answer + sketch",
           q: "The mass of a substance is \\(m = 80e^{-kt}\\) grams after t years. The mass halves every 5 years. (a) Show that \\(k = \\frac{\\ln 2}{5}\\). (b) Sketch the graph of m against t for t ≥ 0. (c) Write down what happens to m in the long term.",
           marks: [
             ["M1", "40 = 80e^(−5k) ⇒ e^(−5k) = ½"],
@@ -454,20 +479,22 @@
           model: "(a) After 5 years m = 40, so 40 = 80e^(−5k), e^(−5k) = ½, −5k = −ln 2, k = ln 2 / 5. (b) A decreasing exponential curve starting at (0, 80), passing through (5, 40) and (10, 20), approaching but never meeting the t-axis. (c) m → 0 as t → ∞.",
           tip: "ln(½) = −ln 2，負號抵銷就得到 AG。Sketch 要標 y 截距同漸近線 m = 0，唔好畫到條線掂到 t 軸。" },
       ],
-      concepts: [
-        { h: "Half-life and doubling time", b: "<p>For \\(A = A_0e^{kt}\\): doubling time \\(T_2 = \\frac{\\ln 2}{k}\\) (k > 0); half-life \\(T_{1/2} = \\frac{\\ln 2}{|k|}\\) (k < 0). Equivalent base-½ form: \\(A = A_0\\left(\\tfrac12\\right)^{t/T_{1/2}}\\). The graph never reaches 0: the t-axis is a horizontal asymptote. In a model \\(N = a + be^{-kt}\\) (k > 0) the long-term value is a.</p>" },
-      ],
     },
 
     "math-3": {
+      diagrams: [],
+      figures: [
+        { title: "Number sets", caption: "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ (in IB, ℕ includes 0); irrationals are in ℝ but not ℚ", svg: figSets },
+        { title: "Algebraic forms for deductive proof", caption: "start from the general form; finish with a concluding statement", svg: figProofBlocks },
+      ],
+    },
+    "math-3b": {
+      figures: [
+        { title: "Pascal's triangle", caption: "row n gives the binomial coefficients ⁿCᵣ; it is symmetric: ⁿCᵣ = ⁿCₙ₋ᵣ", svg: pascal },
+      ],
       diagrams: [
         { title: "(1 + x)⁴ (curve) is close to 1 + 4x + 6x² near x = 0 - why truncated expansions approximate", x: [-1, 1], y: [-1, 5], curves: [
           { f: (x) => (1 + x) ** 4, label: "(1 + x)⁴", labelX: 0.6 }, { f: (x) => 1 + 4 * x + 6 * x * x, color: "b", dash: true, label: "1 + 4x + 6x²", labelX: -0.95 }] },
-      ],
-      figures: [
-        { title: "Pascal's triangle", caption: "row n gives the binomial coefficients ⁿCᵣ; it is symmetric: ⁿCᵣ = ⁿCₙ₋ᵣ", svg: pascal },
-        { title: "Number sets", caption: "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ (in IB, ℕ includes 0); irrationals are in ℝ but not ℚ", svg: figSets },
-        { title: "Algebraic forms for deductive proof", caption: "start from the general form; finish with a concluding statement", svg: figProofBlocks },
       ],
     },
 
@@ -515,6 +542,15 @@
           points: [{ at: [0, 2], label: "(0, c)" }, { at: [-4, 0], label: "x-int (−4, 0)" }] },
         { title: "Perpendicular lines: m₁m₂ = −1 (y = 2x + 1 and y = −½x + 3)", x: [-6, 6], y: [-4, 4.1], curves: [{ f: (x) => 2 * x + 1, label: "m = 2", labelX: -1.8 }, { f: (x) => -0.5 * x + 3, color: "b", label: "m = −½", labelX: 3.5 }],
           points: [{ at: [0.8, 2.6], label: "(0.8, 2.6)" }] },
+      ],
+      figures: [],
+      frames: [],
+    },
+    "math-4b": {
+      figures: [
+        { title: "Mapping diagrams", caption: "a function maps each x to exactly one y; only one-to-one functions have inverses", svg: figMapping },
+      ],
+      diagrams: [
         { title: "Vertical line test: a circle x² + y² = 9 is NOT a function", x: [-6, 6], y: [-4.05, 4.05], curves: [
           { f: (x) => Math.sqrt(Math.max(0, 9 - x * x)), domain: [-3, 3] }, { f: (x) => -Math.sqrt(Math.max(0, 9 - x * x)), domain: [-3, 3] }],
           vlines: [{ x: 1.5, label: "x = 1.5 meets twice" }], points: [{ at: [1.5, Math.sqrt(6.75)] }, { at: [1.5, -Math.sqrt(6.75)] }] },
@@ -528,24 +564,8 @@
         { title: "Domain and range from the graph: f(x) = √(6 − 2x) + 1, domain x ≤ 3, range f(x) ≥ 1", x: [-6, 5], y: [-1, 6], curves: [{ f: (x) => Math.sqrt(Math.max(0, 6 - 2 * x)) + 1, domain: [-6, 3] }],
           vlines: [{ x: 3, label: "x ≤ 3" }], hlines: [{ y: 1, label: "y ≥ 1" }], points: [{ at: [3, 1], label: "(3, 1) end point" }] },
       ],
-      figures: [
-        { title: "Mapping diagrams", caption: "a function maps each x to exactly one y; only one-to-one functions have inverses", svg: figMapping },
-        { title: "Composite function machine", caption: "(f ∘ g)(x): apply g first, then f", svg: figMachine },
-      ],
       frames: [
-        { title: "Sketch a function on a restricted domain and state its range", paper: "P1", where: "Paper 1 · 4 marks",
-          q: "Let \\(f(x) = x^2 - 4x + 1\\) for \\(0 \\le x \\le 5\\). Sketch the graph of f and hence write down the range of f.",
-          marks: [
-            ["A1", "parabola opening up, drawn __only for 0 ≤ x ≤ 5__ (end points marked)"],
-            ["A1", "vertex __(2, −3)__ (complete the square: (x − 2)² − 3)"],
-            ["A1", "end points (0, 1) and (5, 6)"],
-            ["A1", "range __−3 ≤ f(x) ≤ 6__"],
-          ],
-          diagram: { title: "f(x) = x² − 4x + 1, 0 ≤ x ≤ 5", x: [-1, 6], y: [-4, 7], curves: [{ f: (x) => x * x - 4 * x + 1, domain: [0, 5] }],
-            points: [{ at: [0, 1], label: "(0, 1)" }, { at: [2, -3], label: "(2, −3)" }, { at: [5, 6], label: "(5, 6)" }] },
-          model: "f(x) = (x − 2)² − 3, so the minimum is at (2, −3). f(0) = 1 and f(5) = 6. The graph is the part of the parabola from (0, 1) down to (2, −3) and up to (5, 6). Range: −3 ≤ f(x) ≤ 6.",
-          tip: "Range 唔係 f(0) 同 f(5) 咁簡單：個頂點喺 domain 入面，最細值係 −3，要睇圖先答。" },
-        { title: "Restrict the domain so that an inverse exists", paper: "P1", where: "Paper 1 · 5 marks",
+        { id: "math-4-q23", title: "Restrict the domain so that an inverse exists", paper: "P1", where: "Paper 1 · 5 marks",
           q: "Let \\(f(x) = (x - 1)^2 + 2\\). (a) Explain why f does not have an inverse on ℝ. (b) Given the domain is x ≥ a, find the least value of a for which f⁻¹ exists. (c) Find \\(f^{-1}(x)\\) and state its domain.",
           marks: [
             ["R1", "f is __not one-to-one__ (e.g. f(0) = f(2) = 3; a horizontal line meets it twice)"],
@@ -562,30 +582,41 @@
           tip: "f⁻¹ 嘅 domain = f 嘅 range；揀 ± 號要講理由（y ≥ 1 所以取 +）。" },
       ],
     },
+    "math-4c": {
+      frames: [
+        { id: "math-4-q22", title: "Sketch a function on a restricted domain and state its range", paper: "P1", where: "Paper 1 · 4 marks",
+          q: "Let \\(f(x) = x^2 - 4x + 1\\) for \\(0 \\le x \\le 5\\). Sketch the graph of f and hence write down the range of f.",
+          marks: [
+            ["A1", "parabola opening up, drawn __only for 0 ≤ x ≤ 5__ (end points marked)"],
+            ["A1", "vertex __(2, −3)__ (complete the square: (x − 2)² − 3)"],
+            ["A1", "end points (0, 1) and (5, 6)"],
+            ["A1", "range __−3 ≤ f(x) ≤ 6__"],
+          ],
+          diagram: { title: "f(x) = x² − 4x + 1, 0 ≤ x ≤ 5", x: [-1, 6], y: [-4, 7], curves: [{ f: (x) => x * x - 4 * x + 1, domain: [0, 5] }],
+            points: [{ at: [0, 1], label: "(0, 1)" }, { at: [2, -3], label: "(2, −3)" }, { at: [5, 6], label: "(5, 6)" }] },
+          model: "f(x) = (x − 2)² − 3, so the minimum is at (2, −3). f(0) = 1 and f(5) = 6. The graph is the part of the parabola from (0, 1) down to (2, −3) and up to (5, 6). Range: −3 ≤ f(x) ≤ 6.",
+          tip: "Range 唔係 f(0) 同 f(5) 咁簡單：個頂點喺 domain 入面，最細值係 −3，要睇圖先答。" },
+      ],
+    },
+    "math-4e": {
+      figures: [
+        { title: "Composite function machine", caption: "(f ∘ g)(x): apply g first, then f", svg: figMachine },
+      ],
+    },
 
     "math-5": {
       diagrams: [
-        { title: "Three discriminant cases: Δ > 0 (two roots), Δ = 0 (touches), Δ < 0 (no real roots)", x: [-1, 6], y: [-2, 7], curves: [
-          { f: (x) => x * x - 4 * x + 3, label: "Δ > 0", labelX: 4.3 }, { f: (x) => x * x - 4 * x + 4, color: "b", label: "Δ = 0", labelX: 3.3 }, { f: (x) => x * x - 4 * x + 6, color: "c", label: "Δ < 0", labelX: 2 }],
-          points: [{ at: [1, 0] }, { at: [3, 0] }, { at: [2, 0], label: "(2, 0)", color: "b" }] },
         { title: "a > 0 opens up (minimum); a < 0 opens down (maximum)", x: [-4, 4], y: [-4, 5], curves: [
           { f: (x) => x * x - 2, label: "y = x² − 2", labelX: 2.2 }, { f: (x) => -x * x + 3, color: "b", label: "y = −x² + 3", labelX: 1.4 }],
           points: [{ at: [0, -2], label: "min" }, { at: [0, 3], label: "max", color: "b" }] },
         { title: "Key features of y = x² − 2x − 3 = (x + 1)(x − 3) = (x − 1)² − 4", x: [-3, 5], y: [-5, 6], curves: [{ f: (x) => x * x - 2 * x - 3 }],
           vlines: [{ x: 1, label: "axis x = −b/2a = 1" }], points: [{ at: [-1, 0], label: "(−1, 0)" }, { at: [3, 0], label: "(3, 0)" }, { at: [0, -3], label: "(0, −3)" }, { at: [1, -4], label: "vertex (1, −4)" }] },
-        { title: "Line and parabola y = x²: two points (Δ > 0), tangent (Δ = 0), no meeting (Δ < 0)", x: [-3, 3], y: [-3, 6], curves: [
-          { f: (x) => x * x, color: "muted" }, { f: (x) => x + 2, label: "y = x + 2", labelX: -2.6 }, { f: (x) => 2 * x - 1, color: "b", label: "y = 2x − 1", labelX: 2.1 }, { f: (x) => x - 2, color: "c", label: "y = x − 2", labelX: 1.6 }],
-          points: [{ at: [-1, 1] }, { at: [2, 4] }, { at: [1, 1], label: "tangent (1, 1)", color: "b" }] },
         { title: "Effect of a: y = ½x², y = x², y = 3x² (larger |a| = narrower)", x: [-4, 4], y: [-1, 8], curves: [
           { f: (x) => 0.5 * x * x, color: "c", label: "½x²", labelX: 3.3 }, { f: (x) => x * x, label: "x²", labelX: 2.4 }, { f: (x) => 3 * x * x, color: "b", label: "3x²", labelX: 1.4 }] },
-        { title: "Quadratic inequality x² − x − 6 > 0: graph ABOVE the axis, x < −2 or x > 3", x: [-5, 6], y: [-8, 8], curves: [{ f: (x) => x * x - x - 6 }],
-          points: [{ at: [-2, 0], label: "−2" }, { at: [3, 0], label: "3" }], lines: [{ from: [-5, -0.3], to: [-2, -0.3], color: "c" }, { from: [3, -0.3], to: [6, -0.3], color: "c" }] },
       ],
-      figures: [
-        { title: "Sign of a and Δ together", caption: "the six possible positions of a parabola relative to the x-axis; Δ = b² − 4ac", svg: figDiscGrid },
-      ],
+      figures: [],
       frames: [
-        { title: "Find the equation of a quadratic from its graph", paper: "P1", where: "Paper 1 · 4 marks",
+        { id: "math-5-q21", title: "Find the equation of a quadratic from its graph", paper: "P1", where: "Paper 1 · 4 marks",
           q: "The graph of \\(y = ax^2 + bx + c\\) crosses the x-axis at (−1, 0) and (4, 0) and the y-axis at (0, −8). Find a, b and c, and write down the equation of the axis of symmetry.",
           marks: [
             ["M1", "use factorised form __y = a(x + 1)(x − 4)__"],
@@ -599,8 +630,34 @@
           tip: "有兩個 x 截距就用 factorised form，再用第三點搵 a；唔好假設 a = 1。" },
       ],
     },
+    "math-5b": {
+      figures: [
+        { title: "Sign of a and Δ together", caption: "the six possible positions of a parabola relative to the x-axis; Δ = b² − 4ac", svg: figDiscGrid },
+      ],
+      diagrams: [
+        { title: "Three discriminant cases: Δ > 0 (two roots), Δ = 0 (touches), Δ < 0 (no real roots)", x: [-1, 6], y: [-2, 7], curves: [
+          { f: (x) => x * x - 4 * x + 3, label: "Δ > 0", labelX: 4.3 }, { f: (x) => x * x - 4 * x + 4, color: "b", label: "Δ = 0", labelX: 3.3 }, { f: (x) => x * x - 4 * x + 6, color: "c", label: "Δ < 0", labelX: 2 }],
+          points: [{ at: [1, 0] }, { at: [3, 0] }, { at: [2, 0], label: "(2, 0)", color: "b" }] },
+        { title: "Line and parabola y = x²: two points (Δ > 0), tangent (Δ = 0), no meeting (Δ < 0)", x: [-3, 3], y: [-3, 6], curves: [
+          { f: (x) => x * x, color: "muted" }, { f: (x) => x + 2, label: "y = x + 2", labelX: -2.6 }, { f: (x) => 2 * x - 1, color: "b", label: "y = 2x − 1", labelX: 2.1 }, { f: (x) => x - 2, color: "c", label: "y = x − 2", labelX: 1.6 }],
+          points: [{ at: [-1, 1] }, { at: [2, 4] }, { at: [1, 1], label: "tangent (1, 1)", color: "b" }] },
+        { title: "Quadratic inequality x² − x − 6 > 0: graph ABOVE the axis, x < −2 or x > 3", x: [-5, 6], y: [-8, 8], curves: [{ f: (x) => x * x - x - 6 }],
+          points: [{ at: [-2, 0], label: "−2" }, { at: [3, 0], label: "3" }], lines: [{ from: [-5, -0.3], to: [-2, -0.3], color: "c" }, { from: [3, -0.3], to: [6, -0.3], color: "c" }] },
+      ],
+    },
 
     "math-6": {
+      diagrams: [
+        { title: "Reciprocal function y = 1/x: asymptotes x = 0 and y = 0, self-inverse", x: [-5, 5], y: [-5, 5], curves: [
+          { f: (x) => 1 / x, domain: [0.2, 5], label: "y = 1/x", labelX: 1.4 }, { f: (x) => 1 / x, domain: [-5, -0.2] }] },
+      ],
+      figures: [],
+      frames: [],
+    },
+    "math-6c": {
+      figures: [
+        { title: "Transformations summary", caption: "a point (x, y) on y = f(x) maps to (x + a, y + b), (x, py), (x/q, y), (x, −y), (−x, y)", svg: figTransTable },
+      ],
       diagrams: [
         { title: "Translations: f(x) = x² − 2x (dashed) → f(x) + 2 (up 2) and f(x − 3) (right 3)", x: [-2, 6], y: [-2, 5], curves: [
           { f: (x) => x * x - 2 * x, color: "muted", dash: true, label: "f", labelX: -1 }, { f: (x) => x * x - 2 * x + 2, label: "f(x) + 2", labelX: 2.5 }, { f: (x) => (x - 3) ** 2 - 2 * (x - 3), color: "b", label: "f(x − 3)", labelX: 5.3 }],
@@ -617,17 +674,12 @@
         { title: "Order matters: 2f(x) + 1 (stretch then up 1) vs 2[f(x) + 1] (up 1 then stretch)", x: [-1.5, 3.5], y: [-2, 6], curves: [
           { f: (x) => 2 * (x * x - 2 * x) + 1, label: "2f(x) + 1", labelX: 2.6 }, { f: (x) => 2 * (x * x - 2 * x + 1), color: "b", label: "2[f(x) + 1]", labelX: -0.4 }],
           points: [{ at: [1, -1], label: "(1, −1)" }, { at: [1, 0], label: "(1, 0)", color: "b" }] },
-        { title: "Reciprocal function y = 1/x: asymptotes x = 0 and y = 0, self-inverse", x: [-5, 5], y: [-5, 5], curves: [
-          { f: (x) => 1 / x, domain: [0.2, 5], label: "y = 1/x", labelX: 1.4 }, { f: (x) => 1 / x, domain: [-5, -0.2] }] },
         { title: "Exponential and log transformed: y = eˣ⁻¹ + 2 (asymptote y = 2) and y = ln(x + 1) (asymptote x = −1)", x: [-3, 5], y: [-3, 7], curves: [
           { f: (x) => Math.exp(x - 1) + 2, label: "eˣ⁻¹ + 2", labelX: 2.2 }, { f: (x) => Math.log(x + 1), domain: [-0.98, 5], color: "b", label: "ln(x + 1)", labelX: 2 }],
           hlines: [{ y: 2, label: "y = 2" }], vlines: [{ x: -1, label: "x = −1" }] },
       ],
-      figures: [
-        { title: "Transformations summary", caption: "a point (x, y) on y = f(x) maps to (x + a, y + b), (x, py), (x/q, y), (x, −y), (−x, y)", svg: figTransTable },
-      ],
       frames: [
-        { title: "Given the graph of f, sketch a combined transformation", paper: "P1", where: "Paper 1 · 4 marks · map key points",
+        { id: "math-6-q22", title: "Given the graph of f, sketch a combined transformation", paper: "P1", where: "Paper 1 · 4 marks · map key points",
           q: "The graph of y = f(x) passes through (0, 0), has a minimum at (1, −1) and passes through (2, 0). Sketch the graph of \\(y = 2f(x - 1) + 3\\), labelling the images of these three points.",
           marks: [
             ["M1", "map (x, y) → (__x + 1__, __2y + 3__): right 1, stretch ×2 vertically, then up 3"],
@@ -708,15 +760,10 @@
         { title: "Cuboid: angle between a line and a plane", caption: "project the line onto the plane (AG → AC) and use the right-angled triangle AGC", svg: figCuboid },
         { title: "Right pyramid: height, slant height and the two base angles", caption: "the apex is directly above the centre M of the base", svg: figPyramid },
         { title: "Cone and sphere", caption: "l² = r² + h²; formulas are in the booklet but you must identify r, h and l", svg: figConeSphere },
-        { title: "Triangle notation and formulas", caption: "use the sine rule for a side–angle pair, the cosine rule for SAS or SSS", svg: figTriangle },
-        { title: "Ambiguous case of the sine rule", caption: "when finding an angle with the sine rule, check whether 180° − B also fits (angle sum < 180°)", svg: figAmbig },
-        { title: "Arc, sector and segment", caption: "θ in radians: l = rθ, A = ½r²θ; segment = sector − triangle", svg: figSector },
-        { title: "Angles of elevation and depression", caption: "both measured from the horizontal; they are equal (alternate angles)", svg: figElev },
-        { title: "Bearings", caption: "clockwise from North, three figures; back bearing = bearing ± 180°", svg: figBearing },
         { title: "3D coordinates and distance", caption: "distance and midpoint formulas extend to three coordinates", svg: fig3D },
       ],
       frames: [
-        { title: "Draw a 3D diagram: angle between an edge (or face) and the base of a pyramid", paper: "P1", where: "Paper 1/2 · 5 marks · labelled diagram",
+        { id: "math-7-q25", title: "Draw a 3D diagram: angle between an edge (or face) and the base of a pyramid", paper: "P1", where: "Paper 1/2 · 5 marks · labelled diagram",
           q: "A right pyramid VABCD has a square base of side 6 cm and height 4 cm. M is the centre of the base and N is the midpoint of BC. (a) Find the angle between VA and the base. (b) Find the angle between the face VBC and the base.",
           marks: [
             ["M1", "AC = 6√2, so __AM = 3√2__ (half the diagonal)"],
@@ -728,7 +775,20 @@
           svg: frPyr, svgCaption: "the right angle is at M in both triangles",
           model: "The apex is above M. AM is half the diagonal: ½ × 6√2 = 3√2 ≈ 4.243. In triangle VMA, tan θ = 4 / 4.243, θ ≈ 43.3°. For the face VBC, use the line VN to the midpoint of BC: MN = 3, tan φ = 4/3, φ ≈ 53.1°.",
           tip: "先畫出有直角嘅三角形（VMA、VMN），標好已知邊。Edge 用對角線一半，face 用中點 N。" },
-        { title: "Bearings: draw the diagram, find the distance and the bearing", paper: "P2", where: "Paper 2 · 6 marks",
+      ],
+    },
+    "math-7b": {
+      figures: [
+        { title: "Triangle notation and formulas", caption: "use the sine rule for a side–angle pair, the cosine rule for SAS or SSS", svg: figTriangle },
+      ],
+    },
+    "math-7c": {
+      figures: [
+        { title: "Angles of elevation and depression", caption: "both measured from the horizontal; they are equal (alternate angles)", svg: figElev },
+        { title: "Bearings", caption: "clockwise from North, three figures; back bearing = bearing ± 180°", svg: figBearing },
+      ],
+      frames: [
+        { id: "math-7-q26", title: "Bearings: draw the diagram, find the distance and the bearing", paper: "P2", where: "Paper 2 · 6 marks",
           q: "A ship sails 12 km from P on a bearing of 040° to Q, then 9 km on a bearing of 130° to R. (a) Show that angle PQR = 90°. (b) Find PR. (c) Find the bearing of R from P.",
           marks: [
             ["A1", "diagram with North lines at P and Q, 40° and 130° marked"],
@@ -740,7 +800,26 @@
           svg: frBearing, svgCaption: "back bearing at Q: 040° + 180° = 220°",
           model: "The back bearing from Q to P is 220°. The angle between QP (220°) and QR (130°) is 90°. So PR = √(144 + 81) = 15 km. ∠QPR = arctan(9/12) = 36.87°, and the bearing of R from P is 040° + 36.9° = 076.9° ≈ 077°.",
           tip: "Bearing 一定由 North 順時針、寫三位數。畫 North 線喺每個轉向點，角度先唔會計錯。" },
-        { title: "Ambiguous case: find both possible triangles", paper: "P2", where: "Paper 2 · 5 marks",
+      ],
+    },
+    "math-7d": {
+      figures: [
+        { title: "Arc, sector and segment", caption: "θ in radians: l = rθ, A = ½r²θ; segment = sector − triangle", svg: figSector },
+      ],
+      concepts: [
+        { h: "Area of a segment", b: "<p>Segment = sector − triangle: \\(A = \\frac12 r^2\\theta - \\frac12 r^2\\sin\\theta = \\frac12 r^2(\\theta - \\sin\\theta)\\), θ in radians. Perimeter of a segment = arc + chord, where chord \\(= 2r\\sin\\frac{\\theta}{2}\\) (or use the cosine rule).</p>" },
+      ],
+    },
+
+    "math-8": {
+      figures: [
+        { title: "Ambiguous case of the sine rule", caption: "when finding an angle with the sine rule, check whether 180° − B also fits (angle sum < 180°)", svg: figAmbig },
+        { title: "Unit circle exact values (first quadrant)", caption: "cos θ is the x-coordinate, sin θ the y-coordinate", svg: figUnit },
+        { title: "Quadrant signs and related angles", caption: "'All Students Take Calculus': which ratios are positive; use symmetry to find all solutions", svg: figCAST },
+        { title: "Exact-value triangles", caption: "draw these to recall sin, cos, tan of 30°, 45°, 60° (π/6, π/4, π/3) in Paper 1", svg: figExactTri },
+      ],
+      frames: [
+        { id: "math-7-q27", title: "Ambiguous case: find both possible triangles", paper: "P2", where: "Paper 2 · 5 marks",
           q: "In triangle ABC, A = 40°, a = 7 cm and b = 10 cm. Find the two possible values of angle B and the corresponding lengths of c.",
           marks: [
             ["M1", "sine rule: sin B = 10 sin 40° / 7 = 0.918…"],
@@ -753,12 +832,14 @@
           model: "sin B = 10 sin 40° / 7 = 0.9183, so B = 66.7° or 113.3°. Both are valid because 40° + 113.3° < 180°. Then C = 73.3° giving c = 7 sin 73.3° / sin 40° = 10.4 cm, or C = 26.7° giving c = 4.89 cm.",
           tip: "用 sine rule 搵角，一定要問自己：180° − B 得唔得？b sin A < a < b 就有兩個答案。" },
       ],
-      concepts: [
-        { h: "Area of a segment", b: "<p>Segment = sector − triangle: \\(A = \\frac12 r^2\\theta - \\frac12 r^2\\sin\\theta = \\frac12 r^2(\\theta - \\sin\\theta)\\), θ in radians. Perimeter of a segment = arc + chord, where chord \\(= 2r\\sin\\frac{\\theta}{2}\\) (or use the cosine rule).</p>" },
+    },
+    "math-8b": {
+      diagrams: [
+        { title: "Double-angle identity in pictures: cos 2x = 1 − 2sin²x (the two graphs coincide)", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [
+          { f: (x) => Math.cos(2 * x), label: "cos 2x", labelX: 3.3 }, { f: (x) => 1 - 2 * Math.sin(x) ** 2, color: "b", dash: true }] },
       ],
     },
-
-    "math-8": {
+    "math-8c": {
       diagrams: [
         { title: "y = sin x, 0 ≤ x ≤ 2π: amplitude 1, period 2π", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [{ f: Math.sin }],
           points: [{ at: [Math.PI / 2, 1], label: "(π/2, 1)" }, { at: [Math.PI, 0], label: "π" }, { at: [1.5 * Math.PI, -1], label: "(3π/2, −1)" }, { at: [2 * Math.PI, 0], label: "2π" }] },
@@ -769,22 +850,11 @@
         { title: "y = 2 sin(2(x − π/4)) + 1: amplitude 2, period π, phase shift π/4 right, principal axis y = 1", x: [0, 6.6], y: [-2, 3.6], grid: false,
           curves: [{ f: (x) => 2 * Math.sin(2 * (x - Math.PI / 4)) + 1 }, { f: Math.sin, color: "muted", dash: true }],
           hlines: [{ y: 1, label: "y = 1 (axis)" }, { y: 3, label: "max 3" }, { y: -1, label: "min −1" }], points: [{ at: [Math.PI / 2, 3], label: "(π/2, 3)" }, { at: [Math.PI / 4, 1], label: "(π/4, 1)" }] },
-        { title: "sin x = ½ for 0 ≤ x ≤ 2π: two solutions, x = π/6 and 5π/6", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [{ f: Math.sin }],
-          hlines: [{ y: 0.5, label: "y = ½" }], points: [{ at: [Math.PI / 6, 0.5], label: "π/6" }, { at: [5 * Math.PI / 6, 0.5], label: "5π/6" }] },
-        { title: "sin x and cos x meet at x = π/4 and 5π/4 (tan x = 1); cos x = sin(x + π/2)", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [
-          { f: Math.sin, label: "sin", labelX: 2.6 }, { f: Math.cos, color: "b", label: "cos", labelX: 5.6 }], points: [{ at: [Math.PI / 4, Math.SQRT1_2], label: "π/4" }, { at: [1.25 * Math.PI, -Math.SQRT1_2], label: "5π/4" }] },
         { title: "Period changes: sin 2x (period π) vs sin(x/2) (period 4π)", x: [0, 12.6], y: [-1.5, 1.5], grid: false, curves: [
           { f: (x) => Math.sin(2 * x), label: "sin 2x", labelX: 0.5 }, { f: (x) => Math.sin(x / 2), color: "b", label: "sin(x/2)", labelX: 10.5 }] },
-        { title: "Double-angle identity in pictures: cos 2x = 1 − 2sin²x (the two graphs coincide)", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [
-          { f: (x) => Math.cos(2 * x), label: "cos 2x", labelX: 3.3 }, { f: (x) => 1 - 2 * Math.sin(x) ** 2, color: "b", dash: true }] },
-      ],
-      figures: [
-        { title: "Unit circle exact values (first quadrant)", caption: "cos θ is the x-coordinate, sin θ the y-coordinate", svg: figUnit },
-        { title: "Quadrant signs and related angles", caption: "'All Students Take Calculus': which ratios are positive; use symmetry to find all solutions", svg: figCAST },
-        { title: "Exact-value triangles", caption: "draw these to recall sin, cos, tan of 30°, 45°, 60° (π/6, π/4, π/3) in Paper 1", svg: figExactTri },
       ],
       frames: [
-        { title: "Sketch a transformed tangent graph with its asymptote", paper: "P1", where: "Paper 1 · 4 marks",
+        { id: "math-8-q24", title: "Sketch a transformed tangent graph with its asymptote", paper: "P1", where: "Paper 1 · 4 marks",
           q: "Sketch the graph of \\(y = \\tan\\left(x - \\frac{\\pi}{4}\\right)\\) for \\(0 \\le x \\le \\pi\\), showing any asymptotes and axis intercepts.",
           marks: [
             ["A1", "y-intercept __(0, −1)__ since tan(−π/4) = −1"],
@@ -796,7 +866,17 @@
             vlines: [{ x: 0.75 * Math.PI, label: "x = 3π/4" }], points: [{ at: [0, -1], label: "(0, −1)" }, { at: [Math.PI / 4, 0], label: "(π/4, 0)" }, { at: [Math.PI, -1], label: "(π, −1)" }] },
           model: "This is y = tan x translated π/4 to the right. At x = 0, y = tan(−π/4) = −1. It crosses the x-axis at x = π/4. The asymptote of tan x at π/2 moves to x = 3π/4. The curve increases from (0, −1) through (π/4, 0) towards +∞ at 3π/4, then from −∞ rises to (π, −1).",
           tip: "tan 嘅漸近線喺入面 = π/2 嘅位置；畫虛線同埋寫埋方程 x = 3π/4。" },
-        { title: "Use the graph to find the number of solutions of a trig equation", paper: "P1", where: "Paper 1 · 3 marks",
+      ],
+    },
+    "math-8d": {
+      diagrams: [
+        { title: "sin x = ½ for 0 ≤ x ≤ 2π: two solutions, x = π/6 and 5π/6", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [{ f: Math.sin }],
+          hlines: [{ y: 0.5, label: "y = ½" }], points: [{ at: [Math.PI / 6, 0.5], label: "π/6" }, { at: [5 * Math.PI / 6, 0.5], label: "5π/6" }] },
+        { title: "sin x and cos x meet at x = π/4 and 5π/4 (tan x = 1); cos x = sin(x + π/2)", x: [0, 6.6], y: [-1.5, 1.5], grid: false, curves: [
+          { f: Math.sin, label: "sin", labelX: 2.6 }, { f: Math.cos, color: "b", label: "cos", labelX: 5.6 }], points: [{ at: [Math.PI / 4, Math.SQRT1_2], label: "π/4" }, { at: [1.25 * Math.PI, -Math.SQRT1_2], label: "5π/4" }] },
+      ],
+      frames: [
+        { id: "math-8-q25", title: "Use the graph to find the number of solutions of a trig equation", paper: "P1", where: "Paper 1 · 3 marks",
           q: "Find the number of solutions of \\(\\sin 2x = 0.3\\) for \\(0 \\le x \\le 2\\pi\\), justifying your answer with a sketch.",
           marks: [
             ["M1", "sketch y = sin 2x over [0, 2π]: period π, so __two full cycles__"],

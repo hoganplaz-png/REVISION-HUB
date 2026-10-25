@@ -20,7 +20,7 @@
   const T = {
     /* ---------------- foundations ---------------- */
     ppc: {
-      name: "Production possibilities curve (PPC)", topics: ["econ-1", "econ-8", "econ-11", "econ-18"],
+      name: "Production possibilities curve (PPC)", topics: ["econ-1", "econ-8", "econ-11", "econ-18", "econ-18b"],
       kw: [/\bppc\b|production possibilit/i, /opportunity cost/i, /actual (and|vs\.?) potential|potential output|capital goods|consumer goods/i],
       items: [
         { t: "Axes labelled with two goods (or capital goods / consumer goods)" },
@@ -64,7 +64,7 @@
     },
 
     povcycle: {
-      name: "Poverty cycle (poverty trap)", topics: ["econ-18", "econ-12"],
+      name: "Poverty cycle (poverty trap)", topics: ["econ-18c", "econ-18d", "econ-12"],
       kw: [/poverty (cycle|trap)/i],
       items: [
         { t: "Circular chain drawn with arrows: low incomes → low saving → low investment (physical and human capital) → low productivity → low incomes", key: true },
@@ -78,7 +78,7 @@
 
     /* ---------------- markets ---------------- */
     sd: {
-      name: "Demand and supply (shift)", topics: ["econ-2", "econ-3", "econ-5", "econ-15"],
+      name: "Demand and supply (shift)", topics: ["econ-2", "econ-2b", "econ-3", "econ-5", "econ-5b", "econ-15"],
       kw: [/demand and supply|supply and demand/i, /\b(shift|increase|decrease|rise|fall) in (demand|supply)\b|demand (curve )?shift|supply (curve )?shift/i, /drought|harvest|technology|income|substitute|complement|taste|population|cost of production|world price of/i],
       items: [
         SD_AXES,
@@ -163,7 +163,7 @@
       model: ax("Linear demand: PED > 1 above the midpoint, < 1 below", { lines: [{ from: [0, 9], to: [9, 0], label: "D = AR" }, { from: [0, 9], to: [4.5, 0], label: "MR", color: "b" }, dash([0, 4.5], [4.5, 4.5], "", "start")], texts: [{ at: [1.4, 7.0], text: "PED > 1" }, { at: [4.7, 4.9], text: "PED = 1" }, { at: [6.6, 2.0], text: "PED < 1" }] }),
     },
     pes: {
-      name: "Price elasticity of supply (PES)", topics: ["econ-5"],
+      name: "Price elasticity of supply (PES)", topics: ["econ-5b", "econ-5"],
       kw: [/elasticity of supply|\bpes\b|supply .*(more|less) (price )?elastic|long run than in the short run|three straight-line supply|commodit(y|ies)|agricultur|volatil/i],
       items: [
         SD_AXES,
@@ -179,7 +179,7 @@
 
     /* ---------------- government intervention ---------------- */
     tax: {
-      name: "Indirect tax (specific / ad valorem)", topics: ["econ-6", "econ-7", "econ-5"],
+      name: "Indirect tax (specific / ad valorem)", topics: ["econ-6", "econ-7", "econ-5", "econ-2b"],
       kw: [/indirect tax|excise|specific tax|ad valorem|sugar tax|carbon tax|tax (on|per unit)|tax incidence|burden of (the )?tax|tax revenue/i],
       items: [
         SD_AXES,
@@ -194,7 +194,7 @@
       model: ax("Specific tax: consumers pay Pc, producers receive Pp", { areas: [{ pts: [[0, 6], [4, 6], [4, 4], [0, 4]], color: "b", label: "tax revenue", at: [0.5, 5] }, { pts: [[4, 6], [5, 5], [4, 4]], color: "c", label: "", at: [4.2, 5] }], lines: [{ from: [1, 9], to: [9, 1], label: "D" }, { from: [1, 1], to: [9, 9], label: "S₁", color: "c" }, { from: [1, 3], to: [8, 10], label: "S₁ + tax", color: "b" }, dash([0, 6], [4, 6], "Pc"), dash([0, 4], [4, 4], "Pp"), dash([4, 0], [4, 6], "Q₂"), dash([5, 0], [5, 5], "Q₁")] }),
     },
     subsidy: {
-      name: "Subsidy", topics: ["econ-6", "econ-7", "econ-15"],
+      name: "Subsidy", topics: ["econ-6", "econ-7", "econ-15", "econ-15b", "econ-2b"],
       kw: [/subsid/i],
       items: [
         SD_AXES,
@@ -382,7 +382,7 @@
 
     /* ---------------- macro ---------------- */
     ad: {
-      name: "AD/AS: change in aggregate demand", topics: ["econ-10", "econ-11", "econ-13", "econ-h3", "econ-9"],
+      name: "AD/AS: change in aggregate demand", topics: ["econ-10", "econ-11", "econ-13", "econ-13b", "econ-h3", "econ-9"],
       kw: [/\bad\/as\b|ad-as|aggregate demand/i, /demand-pull|recession|confidence|investment|consumer spending|expansionary|contractionary|monetary policy|fiscal policy|interest rates?|multiplier|recessionary gap|deflationary gap|inflationary gap|government spending/i],
       items: [
         MACRO_AXES,
@@ -410,7 +410,7 @@
       model: macro("Cost-push: SRAS₁ → SRAS₂, APL rises, real GDP falls", { lines: [{ from: [1, 9], to: [9, 1], label: "AD" }, { from: [1, 1], to: [9, 9], label: "SRAS₁", color: "c" }, { from: [0, 2], to: [8, 10], label: "SRAS₂", color: "b" }, dash([0, 5], [5, 5], "APL₁"), dash([0, 6], [4, 6], "APL₂"), dash([5, 0], [5, 5], "Y₁"), dash([4, 0], [4, 6], "Y₂")] }),
     },
     lras: {
-      name: "AD/AS: long-run aggregate supply / potential output", topics: ["econ-10", "econ-14", "econ-18", "econ-11"],
+      name: "AD/AS: long-run aggregate supply / potential output", topics: ["econ-10", "econ-14", "econ-18", "econ-18d", "econ-11"],
       kw: [/\blras\b|long-run aggregate supply|potential output|supply-side|productive capacity|full employment level|immigration|automation|infrastructure|productivity|good deflation|long-run (macroeconomic )?equilibrium|monetarist|new classical|return to its potential/i],
       items: [
         MACRO_AXES,
@@ -424,7 +424,7 @@
       model: macro("Supply-side growth: LRAS₁ → LRAS₂", { lines: [{ from: [1, 9], to: [9, 1], label: "AD" }, { from: [4, 0.5], to: [4, 9.5], label: "LRAS₁", color: "c" }, { from: [6, 0.5], to: [6, 9.5], label: "LRAS₂", color: "b" }, dash([0, 6], [4, 6], "APL₁"), dash([0, 4], [6, 4], "APL₂")] }),
     },
     keynes: {
-      name: "Keynesian AD/AS", topics: ["econ-10", "econ-13"],
+      name: "Keynesian AD/AS", topics: ["econ-10", "econ-13", "econ-13b"],
       kw: [/keynesian/i],
       items: [
         MACRO_AXES,
@@ -493,7 +493,7 @@
 
     /* ---------------- international ---------------- */
     tariff: {
-      name: "Tariff", topics: ["econ-15"],
+      name: "Tariff", topics: ["econ-15b", "econ-15c", "econ-15"],
       kw: [/tariff|import (tax|duty)/i],
       items: [
         SD_AXES,
@@ -507,7 +507,7 @@
       model: ax("Tariff: Pw → Pw + t, imports fall", { lines: [{ from: [1, 9], to: [9, 1], label: "D dom" }, { from: [1, 1], to: [9, 9], label: "S dom", color: "c" }, { from: [0, 2.5], to: [10, 2.5], label: "Pw", color: "b" }, { from: [0, 4], to: [10, 4], label: "Pw + t", color: "b", dash: true }, dash([2.5, 0], [2.5, 2.5], "Q₁"), dash([4, 0], [4, 4], "Q₂"), dash([6, 0], [6, 4], "Q₃"), dash([7.5, 0], [7.5, 2.5], "Q₄")] }),
     },
     quota: {
-      name: "Import quota", topics: ["econ-15"],
+      name: "Import quota", topics: ["econ-15b", "econ-15c", "econ-15"],
       kw: [/quota|import restrictions?/i],
       items: [
         SD_AXES,
@@ -520,7 +520,7 @@
       errors: ["Showing government revenue for a quota (there is none unless licences are auctioned)"],
     },
     "trade-sub": {
-      name: "Production subsidy / free trade gains", topics: ["econ-15", "econ-16"],
+      name: "Production subsidy / free trade gains", topics: ["econ-15", "econ-15b", "econ-16"],
       kw: [/free trade|world price|gains from trade|production subsidy.*(domestic|import)|export subsid|dumping|trade creation|trade diversion/i],
       items: [
         SD_AXES,
@@ -547,7 +547,7 @@
       model: { title: "Demand for the currency rises: appreciation", x: [0, 10], y: [0, 10], origin: false, grid: false, xLabel: "Quantity of €", yLabel: "$ per €", lines: [{ from: [1, 9], to: [9, 1], label: "D€₁" }, { from: [2.5, 9.5], to: [9.5, 2.5], label: "D€₂", color: "b" }, { from: [1, 1], to: [9, 9], label: "S€", color: "c" }, dash([0, 5], [5, 5], "ER₁"), dash([0, 6], [6, 6], "ER₂")], points: [{ at: [5, 5] }, { at: [6, 6] }] },
     },
     jcurve: {
-      name: "J-curve (HL)", topics: ["econ-h4", "econ-17"], hl: true,
+      name: "J-curve (HL)", topics: ["econ-h4", "econ-17", "econ-17b"], hl: true,
       kw: [/j-curve|j curve|marshall-lerner/i],
       items: [
         { t: "Axes labelled Current account balance (+/−) and Time; depreciation marked at a point in time" },

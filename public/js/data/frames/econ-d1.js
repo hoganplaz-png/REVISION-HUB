@@ -208,9 +208,9 @@
     lines: [ln(0, 4, 6, 4, "", "muted", true)], points: [{ at: [4, 4] }, { at: [2, 4] }, { at: [6, 4], label: "4 + 2 = 6" }], texts: [{ at: [-0.1, 3.8], text: "4", anchor: "end" }] };
 
   T["econ-2"] = {
-    diagrams: [dCurve, sCurve, dDec, sInc, hsum, mu, tu, linA, linB, linS],
+    diagrams: [dCurve, dDec, hsum, mu, tu, linA, linB],
     frames: [
-      { title: "Diagram: decrease in demand (inferior good)", paper: "P2", where: "Paper 2 · 4 marks",
+      { id: "econ-2-q23", title: "Diagram: decrease in demand (inferior good)", paper: "P2", where: "Paper 2 · 4 marks",
         q: "Using a demand and supply diagram, explain the effect of rising incomes on the market for second-hand clothes, an inferior good.",
         marks: [
           ["Diagram", "labelled axes, S and D₁, __demand shifts left__ to D₂, new equilibrium at __lower price and lower quantity__ marked on both axes", 2],
@@ -222,19 +222,7 @@
         accept: "\"contraction of supply\" / \"fall in quantity supplied\"",
         reject: "shifting supply; calling it a normal good",
         tip: "Inferior good：收入↑ → D 左移。S 唔郁，係沿 S contraction。" },
-      { title: "Diagram: increase in supply (technology / lower costs)", paper: "P2", where: "Paper 2 · 4 marks",
-        q: "Using a demand and supply diagram, explain the effect of improved battery technology on the market for electric scooters.",
-        marks: [
-          ["Diagram", "labelled axes, D and S₁, __supply shifts right__ to S₂, new equilibrium at __lower price and higher quantity__ marked on both axes", 2],
-          ["M1", "better technology __lowers unit costs__ / raises productivity, so firms supply more at every price"],
-          ["M2", "excess supply at the original price makes price fall, and quantity demanded __extends__ to Q₂"],
-        ],
-        diagram: sInc,
-        model: "Improved battery technology lowers the cost of producing each scooter, so firms are willing and able to supply more at every price: S shifts right from S₁ to S₂. At the original price there is excess supply, so price falls from P₁ to P₂ and quantity demanded extends along D, giving a new equilibrium at a lower price and higher quantity Q₂.",
-        accept: "supply shifting \"down\" (lower cost per unit)",
-        reject: "shifting demand because the product is better (unless argued separately)",
-        tip: "技術進步 = 成本↓ = S 右移；P↓ Q↑。" },
-      { title: "HL: diminishing marginal utility explains the demand curve", hl: true, paper: "P1", where: "Paper 1(a) part / Paper 2 · 4 marks",
+      { id: "econ-2-q25", title: "HL: diminishing marginal utility explains the demand curve", hl: true, paper: "P1", where: "Paper 1(a) part / Paper 2 · 4 marks",
         q: "Explain how the law of diminishing marginal utility can explain why demand curves slope downwards.",
         marks: [
           ["Diagram", "MU falling as quantity consumed rises (and/or TU rising at a decreasing rate)", 1],
@@ -247,7 +235,7 @@
         accept: "MB as the demand curve; TU increasing at a decreasing rate",
         reject: "\"utility falls\" (total utility still rises while MU > 0)",
         tip: "MU 跌唔等於 TU 跌：TU 仲升，只係升得慢；MU = 0 時 TU 最高。" },
-      { title: "HL: plot a linear demand function and show a change in 'a'", hl: true, paper: "P3", where: "Paper 3 · 3-4 marks · graph paper",
+      { id: "econ-2-q26", title: "HL: plot a linear demand function and show a change in 'a'", hl: true, paper: "P3", where: "Paper 3 · 3-4 marks · graph paper",
         q: "The demand for a good is Qd = 20 − 2P. (a) Plot the demand curve. (b) Following a rise in income, demand becomes Qd = 28 − 2P. Plot the new curve and explain the change.",
         marks: [
           ["Plot", "axes P (vertical) and Q (horizontal) labelled; Qd = 20 − 2P drawn from __P = 10 (Q = 0)__ to __Q = 20 (P = 0)__", 1],
@@ -260,7 +248,7 @@
         accept: "the change in a as \"non-price determinant\"",
         reject: "putting P on the horizontal axis; plotting only one point",
         tip: "畫 linear function：搵兩個 intercept（Q = 0 同 P = 0），P 永遠喺 y 軸。" },
-      { title: "Diagram: market demand from individual demands", paper: "P2", where: "Paper 2 · 2 marks",
+      { id: "econ-2-q27", title: "Diagram: market demand from individual demands", paper: "P2", where: "Paper 2 · 2 marks",
         q: "Using a diagram, explain how a market demand curve is derived from individual demand curves.",
         marks: [
           ["Diagram", "two individual demand curves and a market curve that is their __horizontal sum__ (quantities added at each price)", 1],
@@ -274,6 +262,24 @@
     ],
     concepts: [
       { h: "HL: reading linear functions on a diagram", b: "<p>Always put <strong>P on the vertical axis</strong>. For Qd = a − bP: P-intercept = a/b, Q-intercept = a; a change in <em>a</em> shifts D parallel; a larger <em>b</em> makes the curve <strong>flatter</strong> (it pivots about Q = a). For Qs = c + dP: Qs = 0 at P = −c/d; c &lt; 0 → S starts on the P axis, c &gt; 0 → S starts on the Q axis; a change in <em>c</em> shifts S parallel, a larger <em>d</em> makes it flatter.</p>" },
+    ],
+  };
+
+  T["econ-2b"] = {
+    diagrams: [sCurve, sInc, linS],
+    frames: [
+      { id: "econ-2-q24", title: "Diagram: increase in supply (technology / lower costs)", paper: "P2", where: "Paper 2 · 4 marks",
+        q: "Using a demand and supply diagram, explain the effect of improved battery technology on the market for electric scooters.",
+        marks: [
+          ["Diagram", "labelled axes, D and S₁, __supply shifts right__ to S₂, new equilibrium at __lower price and higher quantity__ marked on both axes", 2],
+          ["M1", "better technology __lowers unit costs__ / raises productivity, so firms supply more at every price"],
+          ["M2", "excess supply at the original price makes price fall, and quantity demanded __extends__ to Q₂"],
+        ],
+        diagram: sInc,
+        model: "Improved battery technology lowers the cost of producing each scooter, so firms are willing and able to supply more at every price: S shifts right from S₁ to S₂. At the original price there is excess supply, so price falls from P₁ to P₂ and quantity demanded extends along D, giving a new equilibrium at a lower price and higher quantity Q₂.",
+        accept: "supply shifting \"down\" (lower cost per unit)",
+        reject: "shifting demand because the product is better (unless argued separately)",
+        tip: "技術進步 = 成本↓ = S 右移；P↓ Q↑。" },
     ],
   };
 
@@ -489,10 +495,10 @@
       `<line x1="${r[0]}" y1="130" x2="${r[0]}" y2="142" stroke="currentColor"/>` + tx(r[0], 126, r[1], { a: "middle", s: 11, b: true }) + tx(r[0], 158, r[2], { a: "middle", s: 11 })).join(""));
 
   T["econ-5"] = {
-    diagrams: [ped0, pedInf, pedUnit, pedEl, pedCmp, trHill, pesLines, pesExt, pesTime, yed, harvest],
+    diagrams: [ped0, pedInf, pedUnit, pedEl, pedCmp, trHill, yed, harvest],
     figures: [{ title: "PED and YED value ranges", caption: "PED is quoted as an absolute value; for YED the sign tells you whether the good is normal (+) or inferior (−).", svg: elScale }],
     frames: [
-      { title: "Diagram: extreme and unit-elastic demand curves", paper: "P2", where: "Paper 2 · 2-4 marks · \"Draw a demand curve with a PED of…\"",
+      { id: "econ-5-q25", title: "Diagram: extreme and unit-elastic demand curves", paper: "P2", where: "Paper 2 · 2-4 marks · \"Draw a demand curve with a PED of…\"",
         q: "Draw a demand curve with a price elasticity of demand equal to 1 at every point and explain what happens to total revenue when price changes.",
         marks: [
           ["Diagram", "a __rectangular hyperbola__ (curve, not a straight line), axes labelled, two price-quantity combinations with equal areas", 2],
@@ -504,7 +510,7 @@
         accept: "PED = 0 vertical / PED = ∞ horizontal if those are asked",
         reject: "a straight downward-sloping line labelled PED = 1 (its PED varies)",
         tip: "PED = 1 一定係曲線（P×Q 不變），直線上 PED 會變。" },
-      { title: "Diagram: total revenue and PED along a linear demand curve", paper: "P2", where: "Paper 2 · 4 marks",
+      { id: "econ-5-q26", title: "Diagram: total revenue and PED along a linear demand curve", paper: "P2", where: "Paper 2 · 4 marks",
         q: "Using diagrams, explain why a firm facing a linear demand curve should not always cut its price to raise revenue.",
         marks: [
           ["Diagram", "linear D with elastic upper section / inelastic lower section, or the __TR curve rising to a peak at PED = 1__ and then falling", 2],
@@ -516,19 +522,7 @@
         accept: "MR = 0 at the TR maximum (HL)",
         reject: "\"elasticity is the slope\"",
         tip: "Linear D：上半 elastic、下半 inelastic，中點 PED = 1、TR 最大。" },
-      { title: "Diagram: PES values from straight-line supply curves", paper: "P2", where: "Paper 2 · 2-3 marks",
-        q: "Draw three straight-line supply curves showing PES greater than 1, equal to 1 and less than 1.",
-        marks: [
-          ["Diagram", "S starting on the __price axis__ labelled PES > 1", 1],
-          ["Diagram", "S passing __through the origin__ labelled PES = 1 (any slope)", 1],
-          ["Diagram", "S starting on the __quantity axis__ labelled PES < 1", 1],
-        ],
-        diagram: pesLines,
-        model: "Any straight-line supply curve through the origin has PES = 1 whatever its slope, because the percentage changes in price and quantity are always equal. A straight line that cuts the price axis has PES greater than 1 (elastic), and one that cuts the quantity axis has PES less than 1 (inelastic).",
-        accept: "vertical (PES = 0) and horizontal (PES = ∞) as extra cases",
-        reject: "judging PES only by steepness",
-        tip: "直線 S：碰 P 軸 > 1，過原點 = 1，碰 Q 軸 < 1——唔係睇斜度！" },
-      { title: "Diagram: why a good harvest can lower farmers' income", paper: "P1", where: "Paper 1(a) part / Paper 2 · 4 marks",
+      { id: "econ-5-q28", title: "Diagram: why a good harvest can lower farmers' income", paper: "P1", where: "Paper 1(a) part / Paper 2 · 4 marks",
         q: "Using a diagram, explain why a bumper harvest may reduce farmers' total revenue.",
         marks: [
           ["Diagram", "__inelastic (steep) demand__, supply shifts right S₁ → S₂, __large fall in price__ and small rise in quantity", 2],
@@ -540,7 +534,28 @@
         accept: "price volatility / low PES as extra",
         reject: "elastic demand drawn",
         tip: "Inelastic D + S 右移 → P 大跌、TR 跌。" },
-      { title: "Diagram: PES increases over time", paper: "P2", where: "Paper 2 · 3 marks",
+    ],
+    concepts: [
+      { h: "Drawing elasticities correctly", b: "<ul><li>PED is <strong>not</strong> the slope: a straight demand curve has every PED value along it (elastic above the midpoint, inelastic below).</li><li>PED = 1 everywhere is a rectangular hyperbola; PED = 0 vertical; PED = ∞ horizontal.</li><li>Any straight supply line through the origin has PES = 1.</li><li>When comparing PED or PES, draw both curves <strong>through the same starting point</strong> so the different responses are clear.</li></ul>" },
+    ],
+  };
+
+  T["econ-5b"] = {
+    diagrams: [pesLines, pesExt, pesTime],
+    frames: [
+      { id: "econ-5-q27", title: "Diagram: PES values from straight-line supply curves", paper: "P2", where: "Paper 2 · 2-3 marks",
+        q: "Draw three straight-line supply curves showing PES greater than 1, equal to 1 and less than 1.",
+        marks: [
+          ["Diagram", "S starting on the __price axis__ labelled PES > 1", 1],
+          ["Diagram", "S passing __through the origin__ labelled PES = 1 (any slope)", 1],
+          ["Diagram", "S starting on the __quantity axis__ labelled PES < 1", 1],
+        ],
+        diagram: pesLines,
+        model: "Any straight-line supply curve through the origin has PES = 1 whatever its slope, because the percentage changes in price and quantity are always equal. A straight line that cuts the price axis has PES greater than 1 (elastic), and one that cuts the quantity axis has PES less than 1 (inelastic).",
+        accept: "vertical (PES = 0) and horizontal (PES = ∞) as extra cases",
+        reject: "judging PES only by steepness",
+        tip: "直線 S：碰 P 軸 > 1，過原點 = 1，碰 Q 軸 < 1——唔係睇斜度！" },
+      { id: "econ-5-q29", title: "Diagram: PES increases over time", paper: "P2", where: "Paper 2 · 3 marks",
         q: "Using a diagram, explain why the price elasticity of supply of housing is greater in the long run than in the short run.",
         marks: [
           ["Diagram", "momentary / short-run supply steep or vertical, __long-run supply flatter__ through the same initial point", 1],
@@ -552,9 +567,6 @@
         accept: "spare capacity, stocks, factor mobility as other determinants",
         reject: "confusing PES with PED",
         tip: "時間越長，S 越平（PES 越大）。" },
-    ],
-    concepts: [
-      { h: "Drawing elasticities correctly", b: "<ul><li>PED is <strong>not</strong> the slope: a straight demand curve has every PED value along it (elastic above the midpoint, inelastic below).</li><li>PED = 1 everywhere is a rectangular hyperbola; PED = 0 vertical; PED = ∞ horizontal.</li><li>Any straight supply line through the origin has PES = 1.</li><li>When comparing PED or PES, draw both curves <strong>through the same starting point</strong> so the different responses are clear.</li></ul>" },
     ],
   };
 

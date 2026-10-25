@@ -25,10 +25,26 @@ IB.extend("chem", {
   },
   topics: {
     "chem-1": {
-      formulas: ["\\(A_r = \\frac{\\sum(\\text{mass} \\times \\%)}{100}\\)", "neutrons = A − Z", "electrons in an ion = Z − charge"],
-      methods: ["<strong>Unknown abundance:</strong> let one isotope be x% and the other (100 − x)%, then solve.", "<strong>State changes:</strong> flat sections on a heating curve = energy used to overcome intermolecular forces."],
-      traps: ["Saying isotopes have different chemical properties.", "Saying temperature rises during melting."],
+      formulas: [],
+      methods: ["<strong>State changes:</strong> flat sections on a heating curve = energy used to overcome intermolecular forces."],
+      traps: ["Saying temperature rises during melting."],
       tips: ["Kelvin = °C + 273; temperature ∝ average kinetic energy."],
+    },
+    "chem-1b": {
+      formulas: [
+        "\\(A_r = \\frac{\\sum(\\text{mass} \\times \\%)}{100}\\)",
+        "neutrons = A − Z",
+        "electrons in an ion = Z − charge",
+      ],
+      methods: [
+        "<strong>Unknown abundance:</strong> let one isotope be x% and the other (100 − x)%, then solve.",
+      ],
+      traps: [
+        "Saying isotopes have different chemical properties.",
+      ],
+      tips: [
+        "Electrons in an ion = Z − charge; A<sub>r</sub> has no units and must lie between the lightest and heaviest isotope.",
+      ],
     },
     "chem-2": {
       methods: ["<strong>Aufbau order:</strong> 1s 2s 2p 3s 3p <strong>4s 3d</strong> 4p. Ions of transition metals lose 4s first.", "<strong>Successive IE:</strong> count electrons before the biggest jump = valence electrons = group (s/p block)."],
@@ -36,21 +52,81 @@ IB.extend("chem", {
       tips: ["Convergence: lines in an emission spectrum get closer at higher energy."],
     },
     "chem-3": {
-      formulas: ["\\(n = \\frac{m}{M}\\)", "\\(c = \\frac{n}{V}\\)", "\\(pV = nRT\\)", "\\(c_1V_1 = c_2V_2\\)", "molar volume at STP = 22.7 dm³ mol⁻¹"],
-      methods: ["<strong>Empirical formula table:</strong> mass or % → ÷ Ar → ÷ smallest → whole numbers (×2 or ×3 if you get .5 or .33).", "<strong>pV = nRT units:</strong> Pa, m³, K. kPa × 1000; dm³ ÷ 1000; cm³ ÷ 10⁶."],
-      traps: ["Using cm³ instead of dm³ in c = n/V.", "Using °C in pV = nRT."],
-      tips: ["Real gases deviate at high pressure and low temperature - explain with particle volume and attractive forces."],
+      formulas: ["\\(n = \\frac{m}{M}\\)", "\\(c = \\frac{n}{V}\\)", "\\(c_1V_1 = c_2V_2\\)"],
+      methods: ["<strong>Empirical formula table:</strong> mass or % → ÷ Ar → ÷ smallest → whole numbers (×2 or ×3 if you get .5 or .33)."],
+      traps: ["Using cm³ instead of dm³ in c = n/V."],
+      tips: [
+      "Volumes of reacting gases (same T and p) are in the same ratio as the coefficients - Avogadro's law, no moles needed.",],
+    },
+    "chem-3b": {
+      formulas: [
+        "\\(pV = nRT\\)",
+        "molar volume at STP = 22.7 dm³ mol⁻¹",
+      ],
+      methods: [
+        "<strong>pV = nRT units:</strong> Pa, m³, K. kPa × 1000; dm³ ÷ 1000; cm³ ÷ 10⁶.",
+      ],
+      traps: [
+        "Using °C in pV = nRT.",
+      ],
+      tips: [
+        "Real gases deviate at high pressure and low temperature - explain with particle volume and attractive forces.",
+      ],
     },
     "chem-4": {
+      methods: [
+      "<strong>Ionic formulae:</strong> work out each ion's charge from its group (or the polyatomic ion), then balance the charges; keep polyatomic ions in brackets, e.g. Ca(OH)₂, (NH₄)₂SO₄.",
+      "<strong>Comparing lattice enthalpies / melting points:</strong> compare ion charges first, then ionic radii - higher charge and smaller ions give stronger electrostatic attraction.",],
+      traps: [
+      "Saying solid ionic compounds conduct, or that they conduct because electrons move - the ions must be free to move (molten or aqueous).",],
+      tips: [
+      "Describe an ionic lattice as a 3D regular arrangement of alternating positive and negative ions held by electrostatic attraction in all directions.",],
+    },
+    "chem-4b": {
       table: { head: ["Domains", "Lone pairs", "Shape", "Angle"], rows: [["2", "0", "linear", "180°"], ["3", "0", "trigonal planar", "120°"], ["4", "0", "tetrahedral", "109.5°"], ["4", "1", "trigonal pyramidal", "107°"], ["4", "2", "bent", "104.5°"]] },
-      methods: ["<strong>Shape questions:</strong> Lewis structure → count domains (double bond = 1) → shape → angle.", "<strong>Boiling point comparisons:</strong> name the IMF in each, compare strength, link to energy needed."],
-      traps: ["Saying covalent bonds break when a simple molecular substance boils.", "Calling CO₂ polar because C=O bonds are polar - symmetry cancels them."],
-      tips: ["Hydrogen bonding needs H bonded to N, O or F."],
+      methods: [
+        "<strong>Shape questions:</strong> Lewis structure → count domains (double bond = 1) → shape → angle.",
+        "<strong>Boiling point comparisons:</strong> name the IMF in each, compare strength, link to energy needed.",
+      ],
+      traps: [
+        "Saying covalent bonds break when a simple molecular substance boils.",
+        "Calling CO₂ polar because C=O bonds are polar - symmetry cancels them.",
+      ],
+      tips: [
+        "Hydrogen bonding needs H bonded to N, O or F.",
+      ],
+    },
+    "chem-4c": {
+      methods: [
+        "<strong>Metal strength comparisons:</strong> compare cation charge, ionic radius and the number of delocalized electrons per atom (Na⁺ 1, Mg²⁺ 2, Al³⁺ 3).",
+      ],
+      traps: [
+        "Saying metals conduct because ions move - the delocalized electrons carry the charge.", "Saying metallic bonds break when a metal is hammered - layers slide but the attraction to the electron sea remains.",
+      ],
+      tips: [
+        "Define the metallic bond with all three parts: electrostatic attraction, lattice of cations, delocalized electrons.",
+      ],
     },
     "chem-5": {
-      methods: ["<strong>Trend explanations:</strong> nuclear charge + number of shells + shielding → attraction for outer electrons."],
-      traps: ["Saying radius increases across a period."],
-      tips: ["Know the oxide equations: Na₂O + H₂O → 2NaOH; SO₃ + H₂O → H₂SO₄."],
+      methods: [
+      "<strong>Bonding triangle:</strong> average χ = (χ₁ + χ₂) ÷ 2 on the x-axis, Δχ = χ₁ − χ₂ on the y-axis; read off the region (metallic, covalent, ionic or in between).",
+      "<strong>Repeating units:</strong> open the C=C, keep every substituent on the two-carbon backbone, add brackets with continuation bonds and n.",],
+      traps: [
+      "Drawing a polymer repeating unit with a C=C double bond or with more than two backbone carbons from one monomer.",
+      "Calling an alloy a compound - it is a mixture of a metal with other elements.",],
+      tips: [
+      "Bonding is a continuum: most compounds sit between the corners of the triangle, so describe them as, e.g., polar covalent with some ionic character.",],
+    },
+    "chem-5b": {
+      methods: [
+        "<strong>Trend explanations:</strong> nuclear charge + number of shells + shielding → attraction for outer electrons.",
+      ],
+      traps: [
+        "Saying radius increases across a period.",
+      ],
+      tips: [
+        "Know the oxide equations: Na₂O + H₂O → 2NaOH; SO₃ + H₂O → H₂SO₄.",
+      ],
     },
     "chem-6": {
       table: { head: ["Bond", "IR wavenumber / cm⁻¹"], rows: [["O-H (alcohol)", "3200-3600, broad"], ["O-H (acid)", "2500-3000, very broad"], ["C=O", "1700-1750"], ["C-H", "2850-3090"]] },
@@ -59,11 +135,42 @@ IB.extend("chem", {
       tips: ["IR ranges are in the data booklet - learn how to read the table quickly."],
     },
     "chem-7": {
-      formulas: ["\\(q = mc\\Delta T\\)", "\\(\\Delta H = -\\frac{q}{n}\\)", "\\(\\Delta H = \\sum\\text{bonds broken} - \\sum\\text{bonds formed}\\)"],
-      methods: ["<strong>Calorimetry:</strong> m = mass of water/solution, not the fuel. Convert J → kJ. Temperature rise → negative ΔH.", "<strong>Hess cycles:</strong> reverse an equation → change the sign; multiply → multiply ΔH."],
-      traps: ["Forgetting the negative sign for exothermic ΔH (loses the A mark).", "Using bond enthalpies for liquids - they apply to gases."],
+      formulas: ["\\(q = mc\\Delta T\\)", "\\(\\Delta H = -\\frac{q}{n}\\)"],
+      methods: ["<strong>Calorimetry:</strong> m = mass of water/solution, not the fuel. Convert J → kJ. Temperature rise → negative ΔH."],
+      traps: ["Forgetting the negative sign for exothermic ΔH (loses the A mark)."],
       tips: ["Experimental ΔH is usually less exothermic than literature because of heat loss - suggest insulation, a lid, stirring."],
       diagrams: [{ title: "Exothermic energy profile: products lower than reactants", x: [0, 10], y: [0, 10], origin: false, grid: false, xLabel: "Reaction progress", yLabel: "Energy", curves: [{ f: (x) => 6 - 2.5 * (1 / (1 + Math.exp(-(x - 5) * 1.6))) + 2.8 * Math.exp(-((x - 4.3) ** 2) / 1.6) }], texts: [{ at: [0.8, 6.4], text: "reactants" }, { at: [7.4, 3.9], text: "products" }, { at: [4.6, 9.3], text: "Ea" }, { at: [8.2, 5.2], text: "ΔH < 0" }] }],
+    },
+    "chem-7b": {
+      formulas: [
+        "\\(\\Delta H = \\sum\\text{bonds broken} - \\sum\\text{bonds formed}\\)",
+      ],
+      methods: [
+        "<strong>Hess cycles:</strong> reverse an equation → change the sign; multiply → multiply ΔH.",
+      ],
+      traps: [
+        "Using bond enthalpies for liquids - they apply to gases.",
+      ],
+      tips: [
+        "Bond-enthalpy ΔH = Σ(bonds broken) − Σ(bonds formed); draw full structural formulas first so no bond is missed.",
+      ],
+    },
+    "chem-7c": {
+      formulas: [
+        "specific energy = |ΔH<sub>c</sub>| ÷ M (kJ g⁻¹)",
+        "energy density = specific energy × density (kJ cm⁻³)",
+      ],
+      methods: [
+        "<strong>Balancing combustion:</strong> balance C first (CO₂), then H (H₂O), then O last; halves are allowed, or double everything.",
+        "<strong>Evaluate a fuel:</strong> give an advantage AND a disadvantage - renewability, CO₂ released per kJ, specific energy, land use and safety.",
+      ],
+      traps: [
+        "Calling biofuels completely carbon neutral - growing, processing and transporting them still releases CO₂.",
+        "Confusing specific energy (per mass) with energy density (per volume).",
+      ],
+      tips: [
+        "Incomplete combustion needs a limited supply of oxygen and gives CO and/or C (soot): CO is toxic, soot causes respiratory problems.",
+      ],
     },
     "chem-8": {
       formulas: ["% yield = actual ÷ theoretical × 100", "atom economy = M(desired) ÷ ΣM(reactants) × 100"],
@@ -96,9 +203,22 @@ IB.extend("chem", {
       tips: ["Ethanal: distil as it forms. Ethanoic acid: reflux with excess oxidising agent."],
     },
     "chem-13": {
-      methods: ["<strong>Radical mechanisms:</strong> initiation (UV splits Cl₂) → propagation (radical in, radical out) → termination (two radicals combine).", "<strong>Curly arrows</strong> start at a lone pair or bond and end where the pair goes."],
+      methods: ["<strong>Radical mechanisms:</strong> initiation (UV splits Cl₂) → propagation (radical in, radical out) → termination (two radicals combine)."],
       traps: ["Drawing full arrows for single electrons (use half-headed arrows for radicals)."],
-      tips: ["Bromine water test: orange → colourless for C=C."],
+      tips: [
+      "Propagation steps use one radical and make one radical; termination joins two radicals - count the dots to check every step.",],
+    },
+    "chem-13b": {
+      methods: [
+        "<strong>Curly arrows</strong> start at a lone pair or bond and end where the pair goes.",
+      ],
+      traps: [
+        "Starting a curly arrow from an atom or a positive charge - it must start at a lone pair or a bond (electron pair).",
+        "Saying a nucleophile must be negative - neutral molecules with a lone pair (H₂O, NH₃) are nucleophiles too.",
+      ],
+      tips: [
+        "Bromine water test: orange → colourless for C=C.",
+      ],
     },
   },
 });

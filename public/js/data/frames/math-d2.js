@@ -209,16 +209,8 @@
   },
 
   // ======================= 4.1-4.4, 4.10 Statistics =======================
-  "math-9": {
+  "math-9b": {
     diagrams: [
-      { title: "Strong positive linear correlation (r close to +1)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
-        points: [[1, 1.6], [1.8, 2.1], [2.5, 3.2], [3.1, 3.0], [3.9, 4.5], [4.6, 4.4], [5.2, 5.9], [6.0, 5.8], [6.8, 7.1], [7.5, 7.0], [8.3, 8.4], [9.1, 8.9]].map((p) => ({ at: p })) },
-      { title: "Strong negative linear correlation (r close to −1)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
-        points: [[1, 9.2], [1.7, 8.4], [2.6, 8.1], [3.2, 7.0], [4.0, 6.6], [4.8, 5.5], [5.5, 5.3], [6.1, 4.2], [7.0, 3.8], [7.7, 2.9], [8.4, 2.5], [9.2, 1.4]].map((p) => ({ at: p })) },
-      { title: "No correlation (r close to 0)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
-        points: [[1, 5.2], [1.6, 8.3], [2.4, 2.1], [3.1, 6.7], [3.7, 3.9], [4.5, 9.0], [5.2, 1.6], [5.8, 5.9], [6.6, 7.8], [7.2, 3.1], [8.1, 6.2], [8.8, 2.6], [9.4, 8.6]].map((p) => ({ at: p })) },
-      { title: "Clear non-linear relationship but r ≈ 0: r only measures LINEAR correlation", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
-        points: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => ({ at: [x, 9.6 - 0.45 * (x - 5) ** 2 + (x % 2 ? 0.3 : -0.3)] })) },
       { title: "Frequency histogram (equal class widths, no gaps, continuous scale)", x: [0, 55], y: [0, 17], xLabel: "t (min)", yLabel: "frequency", grid: true,
         lines: [[0, 10, 4], [10, 20, 9], [20, 30, 15], [30, 40, 8], [40, 50, 4]].flatMap(([a, b, f]) => [{ from: [a, 0], to: [a, f] }, { from: [a, f], to: [b, f] }, { from: [b, f], to: [b, 0] }]) },
       { title: "Cumulative frequency curve (n = 80): read Q₁, median, Q₃ at n/4, n/2, 3n/4", x: [0, 105], y: [0, 88], xLabel: "x", yLabel: "cf", grid: false,
@@ -240,14 +232,9 @@
           skewPanel(5, (u) => Math.exp(-(((u - 0.5) / 0.15) ** 2) / 2), [0.1, 0.4, 0.5, 0.6, 0.9], ["symmetric", "mean ≈ median"]) +
           skewPanel(132, (u) => (u / 0.22) * Math.exp(1 - u / 0.22), [0.04, 0.17, 0.29, 0.46, 0.95], ["positive skew", "mean > median"]) +
           skewPanel(259, (u) => ((1 - u) / 0.22) * Math.exp(1 - (1 - u) / 0.22), [0.05, 0.54, 0.71, 0.83, 0.96], ["negative skew", "mean < median"]) + "</svg>" },
-      { title: "Regression line passes through the mean point (x̄, ȳ)", caption: "Use y on x to predict y from x and x on y to predict x from y; both lines pass through (x̄, ȳ). Only interpolate.",
-        svg: G({ label: "Scatter with regression line through mean point", x: [0, 10], y: [0, 10], xl: "x", yl: "y", O: true,
-          dots: [[1, 2.2], [2, 2.6], [3, 4.1], [4, 4.0], [5, 5.6], [6, 5.9], [7, 7.3], [8, 7.6], [9, 9.0]].map((p) => ({ p, c: "b" })).concat([{ p: [5, 5.37], c: "d" }]),
-          curves: [{ f: (x) => 0.85 * x + 1.12, d: [0.5, 9.6], c: "a" }], vl: [{ x: 5, from: 0, to: 5.37 }], hl: [{ y: 5.37, from: 0, to: 5 }],
-          texts: [{ p: [5, 5.37], t: "(x̄, ȳ)", dx: 6, dy: 14, c: "d" }, { p: [7.6, 8.2], t: "y = ax + b", c: "a", dx: -40 }, { p: [9.6, 0.4], t: "interpolate within 1 ≤ x ≤ 9", a: "end" }] }) },
     ],
     frames: [
-      { title: "Draw a cumulative frequency graph from a grouped table", star: true, paper: "P1", where: "Paper 1 / 2 · 4–5 marks · graph paper given",
+      { id: "math-9-q24", title: "Draw a cumulative frequency graph from a grouped table", star: true, paper: "P1", where: "Paper 1 / 2 · 4–5 marks · graph paper given",
         q: "The heights, h cm, of 60 plants are: 140 < h ≤ 150: 6; 150 < h ≤ 160: 14; 160 < h ≤ 170: 22; 170 < h ≤ 180: 13; 180 < h ≤ 190: 5. (a) Write down the cumulative frequencies. (b) Draw the cumulative frequency graph. (c) Use it to estimate the median height.",
         marks: [["A1", "cumulative frequencies 6, 20, 42, 55, 60"], ["A1", "points plotted at the __upper class boundaries__ (150, 6), (160, 20), (170, 42), (180, 55), (190, 60)"], ["A1", "curve (or line segments) starting at (140, 0), axes labelled with scale"], ["(M1)", "reading across from 30"], ["A1", "median ≈ 164.5 cm"]],
         diagram: { title: "Cumulative frequency of 60 plant heights; median read at 30", x: [135, 195], y: [0, 65], xLabel: "h (cm)", yLabel: "cf", grid: true,
@@ -257,7 +244,7 @@
         accept: "a smooth curve or straight line segments; median 163–166 if read from a curve",
         reject: "points plotted at mid-interval values (155, 165, …); curve not starting at (140, 0); bar chart",
         tip: "累積頻數一定畫喺每組嘅「上限」(upper boundary)，同埋要由第一組下限、頻數 0 開始。" },
-      { title: "Compare two distributions using parallel box plots", star: true, paper: "P2", where: "Paper 2 · 4–5 marks",
+      { id: "math-9-q25", title: "Compare two distributions using parallel box plots", star: true, paper: "P2", where: "Paper 2 · 4–5 marks",
         q: "Test scores: Class A has min 32, Q₁ 45, median 58, Q₃ 66, max 80; Class B has min 40, Q₁ 52, median 61, Q₃ 70, max 92. (a) Draw both box plots on the same scale. (b) Compare the two distributions.",
         marks: [["A1", "both boxes and whiskers correct on one common scale"], ["A1", "medians marked at 58 and 61"], ["R1", "Class B has the __higher median__ (61 > 58), so B generally scored higher"], ["R1", "Class A has the larger __IQR__ (21 vs 18), so A's middle 50% is more spread out"]],
         svg: open(380, 150, "Parallel box plots of two classes") +
@@ -267,7 +254,7 @@
         accept: "comparison of range as well as IQR; any valid comparison of a measure of centre AND a measure of spread, in context",
         reject: "listing values without comparing; \"B is better\" with no statistic quoted; comparing only maxima",
         tip: "比較兩組數據：一句講中心 (median)、一句講分佈 (IQR)，每句都要有數字同埋 context（例如「分數」）。" },
-      { title: "Draw a frequency histogram", paper: "P1", where: "Paper 1 · 2–3 marks",
+      { id: "math-9-q26", title: "Draw a frequency histogram", paper: "P1", where: "Paper 1 · 2–3 marks",
         q: "The times, t minutes, of 40 runners are: 0 ≤ t < 10: 4; 10 ≤ t < 20: 9; 20 ≤ t < 30: 15; 30 ≤ t < 40: 8; 40 ≤ t < 50: 4. Draw a frequency histogram.",
         marks: [["A1", "continuous horizontal scale with labelled axes (t, frequency)"], ["A1", "five bars of equal width touching each other (__no gaps__)"], ["A1", "heights 4, 9, 15, 8, 4"]],
         diagram: { title: "Histogram of 40 running times", x: [0, 55], y: [0, 17], xLabel: "t (min)", yLabel: "frequency", grid: true, lines: [[0, 10, 4], [10, 20, 9], [20, 30, 15], [30, 40, 8], [40, 50, 4]].flatMap(([a, b, f]) => [{ from: [a, 0], to: [a, f] }, { from: [a, f], to: [b, f] }, { from: [b, f], to: [b, 0] }]) },
@@ -279,9 +266,35 @@
       { h: "Reading shape from graphs: histograms, box plots and skew", b: "<p>Histograms are for continuous data: adjacent bars, no gaps (AA uses equal class widths, so height = frequency). A <strong>positively skewed</strong> distribution has a long tail to the right: on the box plot the median is nearer Q₁ and the right whisker is longer, and usually mean &gt; median. Negative skew is the reverse. For skewed data or data with outliers, the median and IQR are better summaries than the mean and standard deviation. Box plots drawn on the same scale are used to compare data sets: compare a centre (median) and a spread (IQR or range), in context.</p>" },
     ],
   },
+  "math-9d": {
+    diagrams: [
+      { title: "Strong positive linear correlation (r close to +1)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
+        points: [[1, 1.6], [1.8, 2.1], [2.5, 3.2], [3.1, 3.0], [3.9, 4.5], [4.6, 4.4], [5.2, 5.9], [6.0, 5.8], [6.8, 7.1], [7.5, 7.0], [8.3, 8.4], [9.1, 8.9]].map((p) => ({ at: p })) },
+      { title: "Strong negative linear correlation (r close to −1)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
+        points: [[1, 9.2], [1.7, 8.4], [2.6, 8.1], [3.2, 7.0], [4.0, 6.6], [4.8, 5.5], [5.5, 5.3], [6.1, 4.2], [7.0, 3.8], [7.7, 2.9], [8.4, 2.5], [9.2, 1.4]].map((p) => ({ at: p })) },
+      { title: "No correlation (r close to 0)", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
+        points: [[1, 5.2], [1.6, 8.3], [2.4, 2.1], [3.1, 6.7], [3.7, 3.9], [4.5, 9.0], [5.2, 1.6], [5.8, 5.9], [6.6, 7.8], [7.2, 3.1], [8.1, 6.2], [8.8, 2.6], [9.4, 8.6]].map((p) => ({ at: p })) },
+      { title: "Clear non-linear relationship but r ≈ 0: r only measures LINEAR correlation", x: [0, 10.5], y: [0, 10.5], xLabel: "x", yLabel: "y", grid: false,
+        points: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => ({ at: [x, 9.6 - 0.45 * (x - 5) ** 2 + (x % 2 ? 0.3 : -0.3)] })) },
+    ],
+    figures: [
+      { title: "Regression line passes through the mean point (x̄, ȳ)", caption: "Use y on x to predict y from x and x on y to predict x from y; both lines pass through (x̄, ȳ). Only interpolate.",
+        svg: G({ label: "Scatter with regression line through mean point", x: [0, 10], y: [0, 10], xl: "x", yl: "y", O: true,
+          dots: [[1, 2.2], [2, 2.6], [3, 4.1], [4, 4.0], [5, 5.6], [6, 5.9], [7, 7.3], [8, 7.6], [9, 9.0]].map((p) => ({ p, c: "b" })).concat([{ p: [5, 5.37], c: "d" }]),
+          curves: [{ f: (x) => 0.85 * x + 1.12, d: [0.5, 9.6], c: "a" }], vl: [{ x: 5, from: 0, to: 5.37 }], hl: [{ y: 5.37, from: 0, to: 5 }],
+          texts: [{ p: [5, 5.37], t: "(x̄, ȳ)", dx: 6, dy: 14, c: "d" }, { p: [7.6, 8.2], t: "y = ax + b", c: "a", dx: -40 }, { p: [9.6, 0.4], t: "interpolate within 1 ≤ x ≤ 9", a: "end" }] }) },
+    ],
+  },
 
   // ======================= 4.5-4.6, 4.11 Probability =======================
   "math-10": {
+    figures: [
+      { title: "Sample space diagram: total of two fair dice", caption: "36 equally likely outcomes. P(total = 7) = 6/36 = 1/6 (shaded diagonal).",
+        svg: open(250, 240, "Sample space for two dice") + (() => { let s = ""; for (let r = 0; r < 6; r++) for (let c = 0; c < 6; c++) { const v = r + c + 2; s += `<rect x="${40 + c * 32}" y="${40 + r * 30}" width="32" height="30" fill="${v === 7 ? "var(--fig-a)" : "none"}" fill-opacity=".3" stroke="currentColor" stroke-width=".8"/>` + tx(56 + c * 32, 60 + r * 30, v, { a: "middle" }); }
+          for (let i = 0; i < 6; i++) s += tx(56 + i * 32, 32, i + 1, { a: "middle", b: true }) + tx(26, 60 + i * 30, i + 1, { a: "middle", b: true }); return s; })() + tx(136, 14, "die 2", { a: "middle", s: 11 }) + tx(8, 238, "die 1 (rows)", { s: 11 }) + "</svg>" },
+    ],
+  },
+  "math-10b": {
     figures: [
       { title: "Two-set Venn diagram: the four regions", caption: "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) and P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Fill the overlap first.",
         svg: (() => { const P = vennPaths(95, 165, 85, 55); return open(260, 165, "Two set Venn diagram regions") + `<path d="${P.lens}" fill="var(--fig-a)" fill-opacity=".25"/>` + `<rect x="10" y="10" width="240" height="145" fill="none" stroke="currentColor"/><circle cx="95" cy="85" r="55" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="165" cy="85" r="55" fill="none" stroke="currentColor" stroke-width="1.5"/>` +
@@ -305,12 +318,9 @@
         svg: tree(420, 190, [[22, 95], [140, 50, "A"], [140, 140, "A′"], [262, 25, "B"], [262, 75, "B′"], [262, 115, "B"], [262, 165, "B′"]],
           [[0, 1, "P(A)"], [0, 2, "1 − P(A)"], [1, 3, "P(B | A)"], [1, 4, "P(B′ | A)"], [2, 5, "P(B | A′)"], [2, 6, "P(B′ | A′)"]], "", "Tree diagram",
           tx(282, 29, "P(A ∩ B) = P(A)P(B | A)", { s: 11 }) + tx(282, 79, "P(A ∩ B′)", { s: 11 }) + tx(282, 119, "P(A′ ∩ B)", { s: 11 }) + tx(282, 169, "P(A′ ∩ B′)", { s: 11 }) + `<circle cx="22" cy="95" r="3"/>`) },
-      { title: "Sample space diagram: total of two fair dice", caption: "36 equally likely outcomes. P(total = 7) = 6/36 = 1/6 (shaded diagonal).",
-        svg: open(250, 240, "Sample space for two dice") + (() => { let s = ""; for (let r = 0; r < 6; r++) for (let c = 0; c < 6; c++) { const v = r + c + 2; s += `<rect x="${40 + c * 32}" y="${40 + r * 30}" width="32" height="30" fill="${v === 7 ? "var(--fig-a)" : "none"}" fill-opacity=".3" stroke="currentColor" stroke-width=".8"/>` + tx(56 + c * 32, 60 + r * 30, v, { a: "middle" }); }
-          for (let i = 0; i < 6; i++) s += tx(56 + i * 32, 32, i + 1, { a: "middle", b: true }) + tx(26, 60 + i * 30, i + 1, { a: "middle", b: true }); return s; })() + tx(136, 14, "die 2", { a: "middle", s: 11 }) + tx(8, 238, "die 1 (rows)", { s: 11 }) + "</svg>" },
     ],
     frames: [
-      { title: "Complete a three-set Venn diagram from given totals", star: true, paper: "P1", where: "Paper 1 / 2 · 5–6 marks",
+      { id: "math-10-q19", title: "Complete a three-set Venn diagram from given totals", star: true, paper: "P1", where: "Paper 1 / 2 · 5–6 marks",
         q: "In a group of 50 students, 22 study Biology (B), 25 Chemistry (C) and 20 Physics (P). 8 study B and C, 7 study B and P, 9 study C and P, and 3 study all three. (a) Complete a Venn diagram. (b) Find the number who study none. (c) Find P(exactly one subject). (d) Find P(P | C).",
         marks: [["(M1)", "starting with 3 in the centre and subtracting it from each pair: 5, 4, 6"], ["A1", "one-subject regions 10 (B), 11 (C), 7 (P)"], ["A1", "none = 50 − 46 = 4"], ["A1", "P(exactly one) = 28/50 = 14/25"], ["M1", "denominator n(C) = 25"], ["A1", "P(P | C) = 9/25"]],
         svg: open(300, 235, "Completed three set Venn diagram") + `<rect x="8" y="8" width="284" height="220" fill="none" stroke="currentColor"/><circle cx="120" cy="96" r="62" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="180" cy="96" r="62" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="150" cy="148" r="62" fill="none" stroke="currentColor" stroke-width="1.5"/>` +
@@ -319,14 +329,21 @@
         model: "Centre 3. B∩C only = 8 − 3 = 5, B∩P only = 7 − 3 = 4, C∩P only = 9 − 3 = 6. B only = 22 − 5 − 4 − 3 = 10, C only = 25 − 5 − 6 − 3 = 11, P only = 20 − 4 − 6 − 3 = 7. Total in at least one = 46, so none = 4. (c) 10 + 11 + 7 = 28, so 28/50 = 14/25. (d) Of the 25 Chemistry students, 6 + 3 = 9 also do Physics: 9/25.",
         accept: "0.56 and 0.36", reject: "putting 8, 7, 9 in the pair regions without subtracting the centre; denominator 50 in (d)",
         tip: "三圈 Venn：由中間開始填，每個「兩科」區要減走中間嗰個數，最後先計外面。條件概率分母係「已知」嗰個圈嘅總數。" },
-      { title: "Shade a region described in set notation", paper: "P1", where: "Paper 1 · 1–2 marks",
+      { id: "math-10-q20", title: "Shade a region described in set notation", paper: "P1", where: "Paper 1 · 1–2 marks",
         q: "On a Venn diagram showing events A and B in U, shade the region A ∪ B′.",
         marks: [["A1", "all of circle A shaded"], ["A1", "the region outside both circles shaded; B-only region left unshaded"]],
         svg: open(160, 115, "Shaded A union B complement") + vennPanel(10, 8, 140, 85, "A∪B′", "A ∪ B′") + "</svg>",
         model: "B′ is everything outside B; its union with A adds the overlap A ∩ B. So shade everything except the region 'B only' (A′ ∩ B).",
         accept: "any clear shading/hatching", reject: "shading only A ∩ B′; leaving the outside region unshaded",
         tip: "唔肯定就逐個區（4 個）問：呢區喺唔喺 A？喺唔喺 B′？用 ∪ 就係「其中一個成立」就塗。" },
-      { title: "Tree diagram without replacement, then a reverse conditional", star: true, paper: "P1", where: "Paper 1 · 5–6 marks",
+    ],
+    concepts: [
+      { h: "Venn diagrams with three sets", b: "<p>A three-set Venn diagram has 8 regions. Always fill from the centre: n(A ∩ B ∩ C), then each pair-only region n(A ∩ B) − n(A ∩ B ∩ C), then each single-set region, then the outside (total minus everything inside). Check with n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A∩B) − n(A∩C) − n(B∩C) + n(A∩B∩C). For P(X | Y) the denominator is the total of the region Y only.</p>" },
+    ],
+  },
+  "math-10c": {
+    frames: [
+      { id: "math-10-q21", title: "Tree diagram without replacement, then a reverse conditional", star: true, paper: "P1", where: "Paper 1 · 5–6 marks",
         q: "A bag has 5 red and 3 blue counters. Two are taken at random without replacement. (a) Draw a tree diagram. (b) Find P(both the same colour). (c) Given that both are the same colour, find the probability that both are red.",
         marks: [["A1", "first-stage branches 5/8 and 3/8"], ["A1", "second-stage branches 4/7, 3/7 and 5/7, 2/7"], ["M1", "(5/8)(4/7) + (3/8)(2/7)"], ["A1", "26/56 = 13/28"], ["M1", "(20/56) ÷ (26/56)"], ["A1", "10/13"]],
         svg: tree(400, 190, [[22, 95], [140, 50, "R"], [140, 140, "B"], [262, 25, "R"], [262, 75, "B"], [262, 115, "R"], [262, 165, "B"]], [[0, 1, "5/8"], [0, 2, "3/8"], [1, 3, "4/7"], [1, 4, "3/7"], [2, 5, "5/7"], [2, 6, "2/7"]], "", "Tree without replacement",
@@ -335,13 +352,16 @@
         accept: "0.464, 0.769", reject: "second-stage 5/8 and 3/8 again (that is with replacement)",
         tip: "Without replacement：第二層分母減 1，抽走嗰種顏色分子都減 1。反向條件 = 想要嗰條路 ÷ 所有符合條件嘅路。" },
     ],
-    concepts: [
-      { h: "Venn diagrams with three sets", b: "<p>A three-set Venn diagram has 8 regions. Always fill from the centre: n(A ∩ B ∩ C), then each pair-only region n(A ∩ B) − n(A ∩ B ∩ C), then each single-set region, then the outside (total minus everything inside). Check with n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A∩B) − n(A∩C) − n(B∩C) + n(A∩B∩C). For P(X | Y) the denominator is the total of the region Y only.</p>" },
-    ],
   },
 
   // ======================= 4.7-4.9, 4.12 Distributions =======================
-  "math-11": {
+  "math-11b": {
+    diagrams: [
+      { title: "Binomial B(10, 0.2): positively skewed, mode 2, E(X) = np = 2", x: [-0.8, 10.8], y: [0, 0.36], xLabel: "x", yLabel: "P(X = x)", grid: false, origin: false, lines: bars(bin(10, 0.2)), texts: [0, 2, 4, 6, 8, 10].map((k) => ({ at: [k, -0.025], text: String(k), anchor: "middle" })) },
+      { title: "Binomial B(10, 0.5): symmetric about E(X) = 5", x: [-0.8, 10.8], y: [0, 0.3], xLabel: "x", yLabel: "P(X = x)", grid: false, origin: false, lines: bars(bin(10, 0.5), "b"), texts: [0, 2, 4, 6, 8, 10].map((k) => ({ at: [k, -0.02], text: String(k), anchor: "middle" })) },
+    ],
+  },
+  "math-11c": {
     diagrams: [
       { title: "Normal curve X ~ N(μ, σ²): symmetric about μ; about 68%, 95%, 99.7% within 1, 2, 3 σ", x: [-3.6, 3.6], y: [0, 0.48], xLabel: "x", yLabel: "", grid: false, origin: false, shade: { from: -1, to: 1 },
         curves: [{ f: npdf(0, 1), domain: [-3.6, 3.6], color: "a" }], vlines: [{ x: -2 }, { x: -1 }, { x: 0, label: "μ" }, { x: 1 }, { x: 2 }],
@@ -350,10 +370,6 @@
         curves: [{ f: npdf(0, 1), color: "a", label: "σ = 1", labelX: 0.9 }, { f: npdf(0, 2), color: "b", label: "σ = 2", labelX: 2.8 }], vlines: [{ x: 0, label: "μ" }] },
       { title: "Same σ, different means: the curve is translated horizontally", x: [-4, 9], y: [0, 0.45], xLabel: "x", yLabel: "", grid: false, origin: false,
         curves: [{ f: npdf(0, 1), color: "a", label: "μ = 0", labelX: 0.9 }, { f: npdf(5, 1), color: "b", label: "μ = 5", labelX: 5.9 }] },
-      { title: "Standard normal Z ~ N(0, 1): P(Z < z) is the area to the LEFT of z (shaded: z = 1.2, area 0.885)", x: [-3.6, 3.6], y: [0, 0.45], xLabel: "z", yLabel: "", grid: false, origin: false, shade: { from: -3.6, to: 1.2 },
-        curves: [{ f: npdf(0, 1), color: "a" }], vlines: [{ x: 1.2, label: "z = 1.2" }] },
-      { title: "Binomial B(10, 0.2): positively skewed, mode 2, E(X) = np = 2", x: [-0.8, 10.8], y: [0, 0.36], xLabel: "x", yLabel: "P(X = x)", grid: false, origin: false, lines: bars(bin(10, 0.2)), texts: [0, 2, 4, 6, 8, 10].map((k) => ({ at: [k, -0.025], text: String(k), anchor: "middle" })) },
-      { title: "Binomial B(10, 0.5): symmetric about E(X) = 5", x: [-0.8, 10.8], y: [0, 0.3], xLabel: "x", yLabel: "P(X = x)", grid: false, origin: false, lines: bars(bin(10, 0.5), "b"), texts: [0, 2, 4, 6, 8, 10].map((k) => ({ at: [k, -0.02], text: String(k), anchor: "middle" })) },
     ],
     figures: [
       { title: "Normal areas: left tail, right tail, between - and inverse normal", caption: "Draw the curve, mark μ and the value(s), shade the region. Inverse normal: give the area to the LEFT (or set the tail on the GDC).",
@@ -366,13 +382,19 @@
         }).join("") + "</svg>" },
     ],
     frames: [
-      { title: "Sketch a normal curve, shade the region, then find a probability and an inverse-normal value", star: true, paper: "P2", where: "Paper 2 · 4–5 marks",
+      { id: "math-11-q23", title: "Sketch a normal curve, shade the region, then find a probability and an inverse-normal value", star: true, paper: "P2", where: "Paper 2 · 4–5 marks",
         q: "The masses of eggs are X ~ N(70, 8²) grams. (a) Sketch the distribution and shade the region representing P(X > 82). (b) Find P(X > 82). (c) Find k such that P(X < k) = 0.9.",
         marks: [["A1", "bell-shaped curve symmetric about a labelled mean 70"], ["A1", "82 marked to the right of 70 and the __right tail__ shaded"], ["A1", "P(X > 82) = 0.0668"], ["(M1)", "inverse normal with area 0.9 to the left"], ["A1", "k = 80.3 g"]],
         svg: G({ label: "N(70, 8²) with P(X > 82) shaded", x: [42, 98], y: [0, 0.056], xl: "mass (g)", yl: "", ax: 42, O: false, curves: [{ f: npdf(70, 8), c: "a" }], fills: [{ f: npdf(70, 8), d: [82, 98], c: "a", op: 0.4 }], vl: [{ x: 70, to: npdf(70, 8)(70) }, { x: 82, to: npdf(70, 8)(82) }], xt: [[70, "70"], [82, "82"]], texts: [{ p: [88, 0.012], t: "0.0668", c: "a" }] }),
         model: "(b) P(X > 82) = 0.0668 (GDC normalcdf with lower 82, upper 10⁹⁹, μ = 70, σ = 8). (c) invNorm(0.9, 70, 8) = 80.25…, k ≈ 80.3 g.",
         accept: "0.0668072…; k = 80.25", reject: "shading the left side; standard deviation 64 entered into the GDC",
         tip: "Sketch 要有：鐘形、μ 喺中間、數值標喺正確嗰邊、塗啱區域。Inverse normal 要諗清楚畀嘅係「左邊」定「右邊」面積。" },
+    ],
+  },
+  "math-11d": {
+    diagrams: [
+      { title: "Standard normal Z ~ N(0, 1): P(Z < z) is the area to the LEFT of z (shaded: z = 1.2, area 0.885)", x: [-3.6, 3.6], y: [0, 0.45], xLabel: "z", yLabel: "", grid: false, origin: false, shade: { from: -3.6, to: 1.2 },
+        curves: [{ f: npdf(0, 1), color: "a" }], vlines: [{ x: 1.2, label: "z = 1.2" }] },
     ],
   },
 
@@ -414,29 +436,80 @@
     ],
   },
 
-  // ======================= 5.1-5.3, 5.6-5.8 Differentiation =======================
+  // ======================= 5.1 Introduction to differential calculus =======================
   "math-12": {
     diagrams: [
       { title: "Secants PQ approach the tangent at P(1, 1) on y = x²: gradient → f′(1) = 2", x: [-0.5, 2.6], y: [-1.2, 5], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: (x) => x * x, domain: [-0.5, 2.2], color: "a" }, { f: (x) => 2 * x - 1, domain: [-0.1, 2.5], color: "b", label: "tangent", labelX: 2.3 }, { f: (x) => 3 * x - 2, domain: [0.2, 2.3], color: "muted", dash: true }, { f: (x) => 2.5 * x - 1.5, domain: [0.1, 2.4], color: "muted", dash: true }],
         points: [{ at: [1, 1], label: "P" }, { at: [2, 4], label: "Q₁ (m = 3)" }, { at: [1.5, 2.25], label: "Q₂ (m = 2.5)" }] },
+    ],
+  },
+
+  // ======================= 5.2 Increasing and decreasing functions =======================
+  "math-12b": {
+    diagrams: [
       { title: "f(x) = x³ − 3x (accent) and f′(x) = 3x² − 3 (blue): f′ = 0 at the turning points, f′ < 0 where f decreases", x: [-2.6, 2.6], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f", labelX: 2.15 }, { f: (x) => 3 * x * x - 3, color: "b", label: "f′", labelX: 1.6 }], vlines: [{ x: -1 }, { x: 1 }], points: [{ at: [-1, 2], label: "max" }, { at: [1, -2], label: "min" }, { at: [-1, 0] }, { at: [1, 0] }] },
-      { title: "f(x) = x³ − 3x and f″(x) = 6x (green): f″ = 0 and changes sign at the point of inflexion (0, 0)", x: [-2.6, 2.6], y: [-6, 6], xLabel: "x", yLabel: "y", grid: false,
-        curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f", labelX: 2.2 }, { f: (x) => 6 * x, domain: [-1, 1], color: "c", label: "f″", labelX: 0.7 }],
-        points: [{ at: [0, 0], label: "inflexion" }], texts: [{ at: [-2.3, -5], text: "concave down (f″ < 0)" }, { at: [0.3, 5], text: "concave up (f″ > 0)" }] },
+    ],
+    figures: [
+      { title: "Sign diagram for f′(x) = (x + 1)(x − 3)", caption: "Put the zeros of f′ in order; test the sign of each factor in each interval. + then − gives a maximum, − then + a minimum.",
+        svg: signTable(390, "Sign table for derivative", ["x < −1", "−1", "−1 < x < 3", "3", "x > 3"], [["x + 1", "−", "0", "+", "+", "+"], ["x − 3", "−", "−", "−", "0", "+"], ["f′(x)", "+", "0", "−", "0", "+"], ["f(x)", "↗", "max", "↘", "min", "↗"]], 64, 62) },
+    ],
+  },
+
+  // ======================= 5.4 Tangents and normals =======================
+  "math-12d": {
+    diagrams: [
       { title: "Tangent and normal to y = x² at (1, 1): tangent y = 2x − 1, normal y = −x/2 + 3/2 (gradients multiply to −1)", x: [-1, 3], y: [-0.3, 2.4], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: (x) => x * x, domain: [-1, 1.55], color: "a" }, { f: (x) => 2 * x - 1, domain: [0.4, 1.7], color: "b", label: "tangent", labelX: 1.45 }, { f: (x) => -x / 2 + 1.5, domain: [-0.8, 2.8], color: "c", label: "normal", labelX: 2.3 }], points: [{ at: [1, 1] }] },
-      { title: "Stationary point of inflexion: y = x³ at O has f′(0) = 0 but f′ does not change sign (f′ = 3x² ≥ 0)", x: [-2, 2], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false,
-        curves: [{ f: (x) => x ** 3, color: "a", label: "x³", labelX: 1.5 }, { f: (x) => 3 * x * x, domain: [-1.4, 1.4], color: "b", dash: true, label: "f′ = 3x²", labelX: 0.75 }], points: [{ at: [0, 0] }] },
+    ],
+  },
+
+  // ======================= 5.6 Differentiation rules =======================
+  "math-12e": {
+    diagrams: [
       { title: "d/dx sin x = cos x: the gradient of sin x (accent) at each x equals the value of cos x (blue)", x: [-0.3, 6.6], y: [-1.5, 1.5], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: Math.sin, color: "a", label: "sin x", labelX: 1.2 }, { f: Math.cos, color: "b", label: "cos x", labelX: 5.6 }], vlines: [{ x: PI / 2, label: "π/2" }, { x: 1.5 * PI, label: "3π/2" }] },
       { title: "d/dx ln x = 1/x: ln x (accent) is increasing with decreasing gradient; d/dx eˣ = eˣ (blue)", x: [-2, 4], y: [-2.5, 5], xLabel: "x", yLabel: "y", grid: false,
         curves: [{ f: Math.log, domain: [0.05, 4], color: "a", label: "ln x", labelX: 3.2 }, { f: (x) => 1 / x, domain: [0.2, 4], color: "a", dash: true, label: "1/x", labelX: 3.3 }, { f: Math.exp, domain: [-2, 1.6], color: "b", label: "eˣ", labelX: 1.3 }], points: [{ at: [1, 0] }, { at: [0, 1] }] },
     ],
+  },
+
+  // ======================= 5.7 The second derivative =======================
+  "math-12f": {
+    diagrams: [
+      { title: "f(x) = x³ − 3x and f″(x) = 6x (green): f″ = 0 and changes sign at the point of inflexion (0, 0)", x: [-2.6, 2.6], y: [-6, 6], xLabel: "x", yLabel: "y", grid: false,
+        curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f", labelX: 2.2 }, { f: (x) => 6 * x, domain: [-1, 1], color: "c", label: "f″", labelX: 0.7 }],
+        points: [{ at: [0, 0], label: "inflexion" }], texts: [{ at: [-2.3, -5], text: "concave down (f″ < 0)" }, { at: [0.3, 5], text: "concave up (f″ > 0)" }] },
+    ],
+    frames: [
+      { id: "math-12-q23", title: "Sketch the graph of f′ from the graph of f", star: true, paper: "P1", where: "Paper 1 · 3–4 marks · graph of f given",
+        q: "The graph of f(x) = x³ − 3x has a local maximum at (−1, 2), a local minimum at (1, −2) and a point of inflexion at (0, 0). On the same axes sketch the graph of y = f′(x).",
+        marks: [["A1", "f′ crosses the x-axis at x = −1 and x = 1 (the __stationary points__ of f)"], ["A1", "f′ < 0 for −1 < x < 1 and f′ > 0 outside"], ["A1", "minimum of f′ at x = 0 (the __inflexion__ of f)"], ["A1", "parabola shape, symmetric about x = 0"]],
+        diagram: { title: "f (accent) and f′ (blue): zeros of f′ at the turning points of f; minimum of f′ at the inflexion", x: [-2.6, 2.6], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false, curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f" , labelX: 2.15 }, { f: (x) => 3 * x * x - 3, color: "b", label: "f′", labelX: 1.6 }], points: [{ at: [-1, 0] }, { at: [1, 0] }, { at: [0, -3], label: "(0, −3)" }] },
+        model: "Stationary points of f at x = ±1 become the x-intercepts of f′. f decreases between them, so f′ is negative there; f increases outside, so f′ is positive. The inflexion of f at x = 0 is where the gradient is least, so f′ has its minimum there (f′(0) = −3). f′ is a quadratic opening upwards.",
+        accept: "minimum value not labelled if the shape and x-position are correct", reject: "f′ with turning points at x = ±1; f′ crossing the axis at x = 0",
+        tip: "f 嘅「轉向點」→ f′ 嘅「零點」；f 嘅「拐點」→ f′ 嘅「轉向點」；f 上升嘅地方 f′ 喺 x 軸上面。" },
+      { id: "math-12-q24", title: "Sketch a curve from given derivative information", paper: "P1", where: "Paper 1 · 4 marks",
+        q: "A cubic f satisfies f′(1) = f′(5) = 0, f′(x) > 0 for x < 1 and x > 5, f′(x) < 0 for 1 < x < 5, f″(3) = 0, f(1) = 6, f(5) = −2 and f(0) = 4.25. Sketch y = f(x), labelling the turning points and the point of inflexion.",
+        marks: [["A1", "local maximum at (1, 6) and local minimum at (5, −2)"], ["A1", "increasing before 1 and after 5, decreasing between"], ["A1", "point of inflexion at x = 3 (at (3, 2), midway for a cubic) where concavity changes"], ["A1", "y-intercept 4.25"]],
+        diagram: { title: "f(x) = x³/4 − 9x²/4 + 15x/4 + 17/4: max (1, 6), inflexion (3, 2), min (5, −2)", x: [-1, 7], y: [-5, 9], xLabel: "x", yLabel: "y", grid: false, curves: [{ f: (x) => x ** 3 / 4 - (9 * x * x) / 4 + (15 * x) / 4 + 17 / 4, domain: [-0.8, 6.8], color: "a" }], points: [{ at: [1, 6], label: "max (1, 6)" }, { at: [3, 2], label: "inflexion (3, 2)" }, { at: [5, -2], label: "min (5, −2)" }, { at: [0, 4.25], label: "4.25" }] },
+        model: "f′ changes from + to − at x = 1 (maximum (1, 6)) and from − to + at x = 5 (minimum (5, −2)). f″(3) = 0 with concave down for x < 3 and concave up for x > 3, giving the inflexion at x = 3. The curve passes through (0, 4.25).",
+        accept: "inflexion at x = 3 shown without its y-value", reject: "a smooth curve with corners at the turning points; the maximum lower than the minimum",
+        tip: "由導數資料畫圖：先標 turning points，再用 f′ 正負決定升跌，用 f″ 決定彎向 (concave up/down)。" },
+    ],
+    concepts: [
+      { h: "Reading f, f′ and f″ from each other's graphs", b: "<p>Stationary points of f ↔ zeros of f′. f increasing ↔ f′ &gt; 0 (graph of f′ above the x-axis). Points of inflexion of f ↔ turning points of f′ ↔ zeros of f″ where f″ changes sign. <strong>Concave up</strong> (f″ &gt; 0): gradient increasing, curve lies above its tangents. <strong>Concave down</strong> (f″ &lt; 0): gradient decreasing. A stationary point of inflexion has f′ = 0 with no change of sign of f′ (e.g. y = x³ at O). f″ = 0 alone does not prove an inflexion (e.g. y = x⁴ at O is a minimum).</p>" },
+    ],
+  },
+
+  // ======================= 5.8 Maxima, minima and optimisation =======================
+  "math-12g": {
+    diagrams: [
+      { title: "Stationary point of inflexion: y = x³ at O has f′(0) = 0 but f′ does not change sign (f′ = 3x² ≥ 0)", x: [-2, 2], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false,
+        curves: [{ f: (x) => x ** 3, color: "a", label: "x³", labelX: 1.5 }, { f: (x) => 3 * x * x, domain: [-1.4, 1.4], color: "b", dash: true, label: "f′ = 3x²", labelX: 0.75 }], points: [{ at: [0, 0] }] },
+    ],
     figures: [
-      { title: "Sign diagram for f′(x) = (x + 1)(x − 3)", caption: "Put the zeros of f′ in order; test the sign of each factor in each interval. + then − gives a maximum, − then + a minimum.",
-        svg: signTable(390, "Sign table for derivative", ["x < −1", "−1", "−1 < x < 3", "3", "x > 3"], [["x + 1", "−", "0", "+", "+", "+"], ["x − 3", "−", "−", "−", "0", "+"], ["f′(x)", "+", "0", "−", "0", "+"], ["f(x)", "↗", "max", "↘", "min", "↗"]], 64, 62) },
       { title: "First-derivative test: nature of a stationary point", caption: "A stationary point of inflexion has f′ = 0 with NO change of sign. Second-derivative test: f″ < 0 max, f″ > 0 min, f″ = 0 inconclusive.",
         svg: open(390, 125, "Four types of stationary point") + [[0, "M10 70Q45 5 80 70", "local max", "+ 0 −"], [97, "M10 25Q45 90 80 25", "local min", "− 0 +"], [194, "M10 80C25 45 35 45 45 45C55 45 65 45 80 10", "inflexion (rising)", "+ 0 +"], [291, "M10 10C25 45 35 45 45 45C55 45 65 45 80 80", "inflexion (falling)", "− 0 −"]].map(([ox, d, t, sg]) =>
           `<g transform="translate(${ox + 5} 4)"><path d="${d}" fill="none" stroke="var(--fig-a)" stroke-width="2.2"/><circle cx="45" cy="${t === "local max" ? 37.5 : t === "local min" ? 57.5 : 45}" r="3"/></g>` + tx(ox + 50, 104, t, { a: "middle", s: 11 }) + tx(ox + 50, 119, "f′: " + sg, { a: "middle", s: 11 })).join("") + "</svg>" },
@@ -450,28 +523,9 @@
           ln(90, 35, 143, 35, { c: "a", w: 1.6 }) + tx(116, 30, "r", { a: "middle", i: true, c: "a" }) + ln(160, 37, 160, 133, { w: 1, ar: "ar-m12-2" }) + ln(160, 133, 160, 37, { w: 1, ar: "ar-m12-2" }) + tx(168, 90, "h", { i: true, c: "a" }) +
           tx(185, 60, "V = πr²h", { s: 13 }) + tx(185, 85, "A = 2πr² + 2πrh", { s: 12 }) + tx(185, 108, "(open top: πr² + 2πrh)", { s: 11 }) + "</svg>" },
     ],
-    frames: [
-      { title: "Sketch the graph of f′ from the graph of f", star: true, paper: "P1", where: "Paper 1 · 3–4 marks · graph of f given",
-        q: "The graph of f(x) = x³ − 3x has a local maximum at (−1, 2), a local minimum at (1, −2) and a point of inflexion at (0, 0). On the same axes sketch the graph of y = f′(x).",
-        marks: [["A1", "f′ crosses the x-axis at x = −1 and x = 1 (the __stationary points__ of f)"], ["A1", "f′ < 0 for −1 < x < 1 and f′ > 0 outside"], ["A1", "minimum of f′ at x = 0 (the __inflexion__ of f)"], ["A1", "parabola shape, symmetric about x = 0"]],
-        diagram: { title: "f (accent) and f′ (blue): zeros of f′ at the turning points of f; minimum of f′ at the inflexion", x: [-2.6, 2.6], y: [-4, 6], xLabel: "x", yLabel: "y", grid: false, curves: [{ f: (x) => x ** 3 - 3 * x, color: "a", label: "f" , labelX: 2.15 }, { f: (x) => 3 * x * x - 3, color: "b", label: "f′", labelX: 1.6 }], points: [{ at: [-1, 0] }, { at: [1, 0] }, { at: [0, -3], label: "(0, −3)" }] },
-        model: "Stationary points of f at x = ±1 become the x-intercepts of f′. f decreases between them, so f′ is negative there; f increases outside, so f′ is positive. The inflexion of f at x = 0 is where the gradient is least, so f′ has its minimum there (f′(0) = −3). f′ is a quadratic opening upwards.",
-        accept: "minimum value not labelled if the shape and x-position are correct", reject: "f′ with turning points at x = ±1; f′ crossing the axis at x = 0",
-        tip: "f 嘅「轉向點」→ f′ 嘅「零點」；f 嘅「拐點」→ f′ 嘅「轉向點」；f 上升嘅地方 f′ 喺 x 軸上面。" },
-      { title: "Sketch a curve from given derivative information", paper: "P1", where: "Paper 1 · 4 marks",
-        q: "A cubic f satisfies f′(1) = f′(5) = 0, f′(x) > 0 for x < 1 and x > 5, f′(x) < 0 for 1 < x < 5, f″(3) = 0, f(1) = 6, f(5) = −2 and f(0) = 4.25. Sketch y = f(x), labelling the turning points and the point of inflexion.",
-        marks: [["A1", "local maximum at (1, 6) and local minimum at (5, −2)"], ["A1", "increasing before 1 and after 5, decreasing between"], ["A1", "point of inflexion at x = 3 (at (3, 2), midway for a cubic) where concavity changes"], ["A1", "y-intercept 4.25"]],
-        diagram: { title: "f(x) = x³/4 − 9x²/4 + 15x/4 + 17/4: max (1, 6), inflexion (3, 2), min (5, −2)", x: [-1, 7], y: [-5, 9], xLabel: "x", yLabel: "y", grid: false, curves: [{ f: (x) => x ** 3 / 4 - (9 * x * x) / 4 + (15 * x) / 4 + 17 / 4, domain: [-0.8, 6.8], color: "a" }], points: [{ at: [1, 6], label: "max (1, 6)" }, { at: [3, 2], label: "inflexion (3, 2)" }, { at: [5, -2], label: "min (5, −2)" }, { at: [0, 4.25], label: "4.25" }] },
-        model: "f′ changes from + to − at x = 1 (maximum (1, 6)) and from − to + at x = 5 (minimum (5, −2)). f″(3) = 0 with concave down for x < 3 and concave up for x > 3, giving the inflexion at x = 3. The curve passes through (0, 4.25).",
-        accept: "inflexion at x = 3 shown without its y-value", reject: "a smooth curve with corners at the turning points; the maximum lower than the minimum",
-        tip: "由導數資料畫圖：先標 turning points，再用 f′ 正負決定升跌，用 f″ 決定彎向 (concave up/down)。" },
-    ],
-    concepts: [
-      { h: "Reading f, f′ and f″ from each other's graphs", b: "<p>Stationary points of f ↔ zeros of f′. f increasing ↔ f′ &gt; 0 (graph of f′ above the x-axis). Points of inflexion of f ↔ turning points of f′ ↔ zeros of f″ where f″ changes sign. <strong>Concave up</strong> (f″ &gt; 0): gradient increasing, curve lies above its tangents. <strong>Concave down</strong> (f″ &lt; 0): gradient decreasing. A stationary point of inflexion has f′ = 0 with no change of sign of f′ (e.g. y = x³ at O). f″ = 0 alone does not prove an inflexion (e.g. y = x⁴ at O is a minimum).</p>" },
-    ],
   },
 
-  // ======================= 5.4-5.5, 5.10-5.11 Integration =======================
+  // ======================= 5.5 Introduction to integration =======================
   "math-13": {
     diagrams: [
       { title: "Family of antiderivatives F(x) + C: ∫2x dx = x² + C - same gradient at each x, shifted vertically", x: [-2.6, 2.6], y: [-3, 7], xLabel: "x", yLabel: "y", grid: false,
@@ -480,6 +534,15 @@
     figures: [
       { title: "Definite integral = area between the curve and the x-axis (curve above the axis)", caption: "Area = ∫ₐᵇ f(x) dx = F(b) − F(a) when f(x) ≥ 0 on [a, b]. Here ∫₀⁴ (4x − x²) dx = 32/3.",
         svg: G({ label: "Area under a curve", x: [-0.5, 5], y: [-0.8, 5], xl: "x", yl: "y", curves: [{ f: (x) => 4 * x - x * x, d: [-0.3, 4.4], c: "a" }], fills: [{ f: (x) => 4 * x - x * x, d: [0, 4], c: "a", op: 0.28 }], xt: [[4, "4"]], texts: [{ p: [2, 1.6], t: "A = 32/3", a: "middle" }, { p: [3.3, 4.2], t: "y = 4x − x²", c: "a" }] }) },
+      { title: "Area as the limit of a sum of rectangles", caption: "Left-endpoint rectangles under an increasing curve underestimate the area; as the width → 0 the sum → ∫ₐᵇ f(x) dx.",
+        svg: G({ label: "Rectangles under a curve", x: [-0.3, 4.6], y: [-0.4, 9.5], xl: "x", yl: "y", curves: [{ f: (x) => 0.5 * x * x + 1, d: [0, 4.1], c: "a" }],
+          polys: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5].map((a) => ({ pts: [[a, 0], [a, 0.5 * a * a + 1], [a + 0.5, 0.5 * a * a + 1], [a + 0.5, 0]], close: true, c: "b", fc: "b", op: 0.18, w: 1 })), xt: [[4, "b"]], texts: [{ p: [1.6, 6.5], t: "y = f(x)", c: "a" }] }) },
+    ],
+  },
+
+  // ======================= 5.11 Definite integrals and areas =======================
+  "math-13c": {
+    figures: [
       { title: "Region below the x-axis gives a negative integral", caption: "f(x) = x(x − 1)(x − 3): ∫₀¹ f = 5/12 (above), ∫₁³ f = −8/3 (below). Area = 5/12 + 8/3 = 37/12, but ∫₀³ f = −9/4. On a GDC use ∫|f(x)| dx.",
         svg: G({ label: "Region above and below the axis", x: [-0.4, 3.5], y: [-2.4, 1.4], xl: "x", yl: "y", curves: [{ f: (x) => x * (x - 1) * (x - 3), d: [-0.25, 3.35], c: "a" }], fills: [{ f: (x) => x * (x - 1) * (x - 3), d: [0, 1], c: "c" }, { f: (x) => x * (x - 1) * (x - 3), d: [1, 3], c: "d" }], xt: [[1, "1"], [3, "3"]],
           texts: [{ p: [0.5, 0.25], t: "+", a: "middle", s: 14 }, { p: [2, -0.8], t: "− (negative integral)", a: "middle" }] }) },
@@ -489,19 +552,16 @@
       { title: "Curves that cross: split at each intersection (or integrate |f − g|)", caption: "sin x and cos x cross at π/4: area from 0 to π/2 = ∫₀^(π/4)(cos x − sin x) dx + ∫_(π/4)^(π/2)(sin x − cos x) dx = 2√2 − 2.",
         svg: G({ label: "Crossing curves", x: [-0.2, 2], y: [-0.3, 1.25], xl: "x", yl: "y", curves: [{ f: Math.sin, d: [0, 1.9], c: "a" }, { f: Math.cos, d: [0, 1.9], c: "b" }], fills: [{ f: Math.cos, g: Math.sin, d: [0, PI / 4], c: "b", op: 0.25 }, { f: Math.sin, g: Math.cos, d: [PI / 4, PI / 2], c: "a", op: 0.25 }],
           vl: [{ x: PI / 2, from: 0, to: 1 }], xt: [[PI / 4, "π/4"], [PI / 2, "π/2"]], texts: [{ p: [1.62, 1.04], t: "sin x", c: "a" }, { p: [1.62, 0.18], t: "cos x", c: "b" }] }) },
-      { title: "Area as the limit of a sum of rectangles", caption: "Left-endpoint rectangles under an increasing curve underestimate the area; as the width → 0 the sum → ∫ₐᵇ f(x) dx.",
-        svg: G({ label: "Rectangles under a curve", x: [-0.3, 4.6], y: [-0.4, 9.5], xl: "x", yl: "y", curves: [{ f: (x) => 0.5 * x * x + 1, d: [0, 4.1], c: "a" }],
-          polys: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5].map((a) => ({ pts: [[a, 0], [a, 0.5 * a * a + 1], [a + 0.5, 0.5 * a * a + 1], [a + 0.5, 0]], close: true, c: "b", fc: "b", op: 0.18, w: 1 })), xt: [[4, "b"]], texts: [{ p: [1.6, 6.5], t: "y = f(x)", c: "a" }] }) },
     ],
     frames: [
-      { title: "Shade the region and find its area when part is below the axis", star: true, paper: "P1", where: "Paper 1 · 6–7 marks",
+      { id: "math-13-q22", title: "Shade the region and find its area when part is below the axis", star: true, paper: "P1", where: "Paper 1 · 6–7 marks",
         q: "Let f(x) = x³ − 4x² + 3x. (a) Find the x-intercepts. (b) Sketch y = f(x) for 0 ≤ x ≤ 3 and shade the region enclosed by the curve and the x-axis. (c) Find the total area of the shaded region.",
         marks: [["A1", "x(x − 1)(x − 3) = 0 ⇒ x = 0, 1, 3"], ["A1", "cubic sketch, above the axis on (0, 1) and below on (1, 3)"], ["M1", "splitting the integral at x = 1"], ["A1", "∫₀¹ f dx = 5/12"], ["A1", "∫₁³ f dx = −8/3"], ["A1", "area = 5/12 + 8/3 = 37/12"]],
         svg: G({ label: "Shaded regions of a cubic", x: [-0.4, 3.5], y: [-2.4, 1.4], xl: "x", yl: "y", curves: [{ f: (x) => x * (x - 1) * (x - 3), d: [-0.25, 3.35], c: "a" }], fills: [{ f: (x) => x * (x - 1) * (x - 3), d: [0, 1], c: "c" }, { f: (x) => x * (x - 1) * (x - 3), d: [1, 3], c: "d" }], xt: [[1, "1"], [3, "3"]], texts: [{ p: [0.5, 0.2], t: "5/12", a: "middle" }, { p: [2, -0.8], t: "8/3", a: "middle" }] }),
         model: "(a) f(x) = x(x − 1)(x − 3), so x = 0, 1, 3. (c) F(x) = x⁴/4 − 4x³/3 + 3x²/2. ∫₀¹ f = 1/4 − 4/3 + 3/2 = 5/12. ∫₁³ f = F(3) − F(1) = −9/4 − 5/12 = −8/3. Total area = 5/12 + 8/3 = 37/12 (≈ 3.08).",
         accept: "37/12 ≈ 3.08; −∫₁³ f dx written as the area", reject: "∫₀³ f dx = −9/4 given as the area; a negative area",
         tip: "面積一定係正數！曲線過 x 軸就要喺交點斬開，x 軸下面嗰part 取絕對值再加。" },
-      { title: "Area enclosed between two curves (find the limits first)", paper: "P1", where: "Paper 1 · 5–6 marks",
+      { id: "math-13-q23", title: "Area enclosed between two curves (find the limits first)", paper: "P1", where: "Paper 1 · 5–6 marks",
         q: "The curves y = 4 − x² and y = x + 2 intersect at A and B. (a) Find the x-coordinates of A and B. (b) Write down an integral for the area enclosed between the curves and evaluate it.",
         marks: [["M1", "4 − x² = x + 2 ⇒ x² + x − 2 = 0"], ["A1", "x = −2, x = 1"], ["M1", "∫₋₂¹ [(4 − x²) − (x + 2)] dx (upper − lower)"], ["A1", "[2x − x²/2 − x³/3] from −2 to 1"], ["A1", "area = 9/2"]],
         svg: G({ label: "Region between parabola and line", x: [-3, 2.3], y: [-1.5, 5], xl: "x", yl: "y", curves: [{ f: (x) => 4 - x * x, d: [-2.4, 2.2], c: "a" }, { f: (x) => x + 2, d: [-2.9, 2], c: "b" }], fills: [{ f: (x) => 4 - x * x, g: (x) => x + 2, d: [-2, 1], c: "a", op: 0.3 }], dots: [{ p: [-2, 0] }, { p: [1, 3] }], texts: [{ p: [-2, 0], t: "A", dx: -12, dy: -4 }, { p: [1, 3], t: "B", dx: 6, dy: -6 }] }),

@@ -15,7 +15,7 @@ IB.extend("math", {
 
 IB.addTopics("math", [
   {
-    id: "math-h1", code: "1.10-1.16 AHL", after: "math-3", unit: "Topic 1: Number and algebra (HL)", title: "Counting, complex numbers and proof by induction",
+    id: "math-h1", code: "1.10-1.16 AHL", after: "math-3b", unit: "Topic 1: Number and algebra (HL)", title: "Counting, complex numbers and proof by induction",
     summary: "Permutations and combinations, extension of the binomial theorem, partial fractions, complex numbers (Cartesian, polar, Euler form), De Moivre's theorem, proof by induction, contradiction and counterexample, and systems of linear equations.",
     concepts: [
       { h: "Counting principles", b: "<p>\\(^nP_r = \\frac{n!}{(n-r)!}\\) (order matters), \\(^nC_r = \\frac{n!}{r!(n-r)!}\\) (order does not matter). Restrictions: treat items that must be together as one block; subtract the complement for 'not together'.</p>", yue: "排列講次序，組合唔講次序。要一齊嘅當一舊，唔可以一齊就用總數減。" },
@@ -44,7 +44,7 @@ IB.addTopics("math", [
     ],
   },
   {
-    id: "math-h2", code: "2.12-2.16 AHL", after: "math-6", unit: "Topic 2: Functions (HL)", title: "Polynomials, rational functions and inequalities",
+    id: "math-h2", code: "2.12-2.16 AHL", after: "math-6c", unit: "Topic 2: Functions (HL)", title: "Polynomials, rational functions and inequalities",
     summary: "Factor and remainder theorems, sums and products of roots, rational functions with oblique asymptotes, odd and even functions, self-inverse functions, solving inequalities graphically and analytically, and modulus graphs.",
     concepts: [
       { h: "Factor and remainder theorems", b: "<p>Remainder when P(x) is divided by (x − a) is P(a). If P(a) = 0, (x − a) is a factor. For \\(a_nx^n + … + a_0\\): sum of roots = \\(-\\frac{a_{n-1}}{a_n}\\), product of roots = \\(\\frac{(-1)^na_0}{a_n}\\).</p>", yue: "餘數定理：P(a) 就係除以 (x−a) 嘅餘數；等於零就係因式。" },
@@ -67,7 +67,7 @@ IB.addTopics("math", [
     ],
   },
   {
-    id: "math-h3", code: "3.9-3.19 AHL", after: "math-8", unit: "Topic 3: Geometry and trigonometry (HL)", title: "Further trigonometry and vectors, lines and planes",
+    id: "math-h3", code: "3.9-3.19 AHL", after: "math-8d", unit: "Topic 3: Geometry and trigonometry (HL)", title: "Further trigonometry and vectors, lines and planes",
     summary: "Reciprocal and inverse trig functions, compound and double angle identities, vectors, scalar and vector products, vector equations of lines and planes, intersections and angles.",
     concepts: [
       { h: "Further trigonometry", b: "<p>sec, cosec, cot; \\(1 + \\tan^2\\theta = \\sec^2\\theta\\), \\(1 + \\cot^2\\theta = \\csc^2\\theta\\). Compound angle: \\(\\sin(A \\pm B)\\), \\(\\cos(A \\pm B)\\), \\(\\tan(A \\pm B)\\).</p>" },
@@ -91,7 +91,7 @@ IB.addTopics("math", [
     ],
   },
   {
-    id: "math-h4", code: "5.12-5.19 AHL", after: "math-13", unit: "Topic 5: Calculus (HL)", title: "Further calculus: limits, integration techniques, ODEs and Maclaurin series",
+    id: "math-h4", code: "5.12-5.19 AHL", after: "math-13c", unit: "Topic 5: Calculus (HL)", title: "Further calculus: limits, integration techniques, ODEs and Maclaurin series",
     summary: "Continuity and differentiability, limits and L'Hôpital's rule, implicit differentiation, related rates, derivatives of inverse and reciprocal trig, integration by substitution and parts, volumes of revolution, first-order differential equations (separable, homogeneous, integrating factor, Euler's method) and Maclaurin series.",
     concepts: [
       { h: "L'Hôpital's rule", b: "<p>If \\(\\lim \\frac{f(x)}{g(x)}\\) gives 0/0 or ∞/∞, then it equals \\(\\lim \\frac{f'(x)}{g'(x)}\\) (repeat if needed).</p>" },
@@ -121,7 +121,7 @@ IB.addTopics("math", [
     ],
   },
   {
-    id: "math-h5", code: "4.13-4.14 AHL", after: "math-11", unit: "Topic 4: Statistics and probability (HL)", title: "Bayes' theorem and continuous random variables",
+    id: "math-h5", code: "4.13-4.14 AHL", after: "math-11d", unit: "Topic 4: Statistics and probability (HL)", title: "Bayes' theorem and continuous random variables",
     summary: "Bayes' theorem for two or three events, probability density functions, mode, median, mean and variance of continuous distributions, and linear transformations of random variables.",
     concepts: [
       { h: "Bayes' theorem", b: "<p>\\(P(B\\mid A) = \\frac{P(B)P(A\\mid B)}{P(B)P(A\\mid B) + P(B')P(A\\mid B')}\\). Draw a tree diagram first.</p>", yue: "貝氏定理：先畫樹狀圖，再用『想要嗰條路徑 ÷ 所有可以去到 A 嘅路徑』。" },

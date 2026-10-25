@@ -34,51 +34,192 @@ IB.extend("math", {
   },
   topics: {
     "math-1": {
-      formulas: ["\\(u_n = u_1 + (n-1)d\\)", "\\(S_n = \\frac{n}{2}(u_1 + u_n)\\)", "\\(u_n = u_1r^{n-1}\\)", "\\(S_\\infty = \\frac{u_1}{1-r},\\ |r|<1\\)", "\\(FV = PV\\left(1 + \\frac{r}{100k}\\right)^{kn}\\)"],
-      table: { head: ["", "Arithmetic (AP)", "Geometric (GP)"], rows: [["Test", "\\(u_2 - u_1 = u_3 - u_2 = d\\)", "\\(u_2 \\div u_1 = u_3 \\div u_2 = r\\)"], ["3 consecutive terms a, b, c", "\\(2b = a + c\\)", "\\(b^2 = ac\\)"], ["Sum to infinity", "does not exist", "only when \\(|r| < 1\\)"], ["Real-life cue", "\"increases by 50 each year\"", "\"increases by 5% each year\" → r = 1.05; \"loses 20%\" → r = 0.8"]] },
+      formulas: ["\\(a \\times 10^k,\\ 1 \\le a < 10,\\ k \\in \\mathbb{Z}\\)", "\\((a \\times 10^m)(b \\times 10^n) = ab \\times 10^{m+n}\\)", "\\(\\frac{a \\times 10^m}{b \\times 10^n} = \\frac{a}{b} \\times 10^{m-n}\\)"],
+      methods: [
+        "<strong>Multiply / divide:</strong> work with the a-parts and the powers separately, then re-adjust so that 1 ≤ a &lt; 10: \\(32.4 \\times 10^3 = 3.24 \\times 10^4\\).",
+        "<strong>Add / subtract:</strong> rewrite with the same power of 10 first: \\(6.3 \\times 10^4 - 8 \\times 10^3 = (6.3 - 0.8) \\times 10^4\\).",
+        "<strong>Count the jump:</strong> moving the decimal point n places left adds n to k; moving it right subtracts n.",
+        "<strong>GDC answers:</strong> 2.81E2 means \\(2.81 \\times 10^2\\); write it in proper notation and to 3 s.f.",
+      ],
+      traps: ["Leaving \\(12.8 \\times 10^{-3}\\) or \\(0.5 \\times 10^4\\) as the final answer - not standard form.", "Adding the powers when adding two numbers.", "Copying 'E' notation from the GDC into the answer.", "Sign of k: 0.000 45 has k = −4, not 4."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\((3.2 \\times 10^5)(4 \\times 10^{-8}) = 12.8 \\times 10^{-3}\\), which is in standard form.", "\\(3 \\times 10^4 + 5 \\times 10^3 = 8 \\times 10^7\\)", "\\(0.000\\,45 = 4.5 \\times 10^{4}\\)"],
+      tips: ["Paper 1 standard-form questions are worth 2-3 marks: show the unadjusted answer (e.g. \\(24 \\times 10^3\\)) and then the adjusted one.", "When the question says 'in the form \\(a \\times 10^k\\), where \\(1 \\le a < 10\\), \\(k \\in \\mathbb{Z}\\)', any other form loses the final A1."],
+    },
+    "math-1b": {
+      formulas: ["\\(u_n = u_1 + (n-1)d\\)", "\\(S_n = \\frac{n}{2}(2u_1 + (n-1)d)\\)", "\\(S_n = \\frac{n}{2}(u_1 + u_n)\\)"],
+      table: { head: ["", "Arithmetic (AP)"], rows: [["Test", "\\(u_2 - u_1 = u_3 - u_2 = d\\)"], ["3 consecutive terms a, b, c", "\\(2b = a + c\\)"], ["Graph of \\(u_n\\) against n", "points on a straight line, gradient d"], ["Real-life cue", "\"increases by 50 each year\" → d = 50"]] },
       methods: [
         "<strong>Count terms correctly:</strong> number of terms = top − bottom + 1. \\(\\sum_{k=3}^{20}\\) has <strong>18</strong> terms, not 17.",
-        "<strong>Two terms given → subtract (AP) or divide (GP):</strong> \\(u_{10} - u_4 = 6d\\); \\(u_5 \\div u_2 = r^3\\). One step to d or r - no simultaneous equations needed.",
+        "<strong>Two terms given → subtract:</strong> \\(u_{10} - u_4 = 6d\\). One step to d - no simultaneous equations needed.",
         "<strong>Sum of a linear sigma = number of terms × average of first and last.</strong> \\(\\sum_{k=1}^{20}(4k-1)\\): first 3, last 79 → 20 × 41 = 820.",
         "<strong>Given \\(S_n\\), find \\(u_n\\):</strong> \\(u_n = S_n - S_{n-1}\\) and \\(u_1 = S_1\\).",
         "<strong>Number of terms in an AP:</strong> n = (last − first) ÷ d + 1. Terms 7, 11, …, 83 → n = 20.",
         "<strong>\"Smallest n such that…\"</strong> (Paper 2): set up the inequality and use the GDC table, then state the integer.",
       ],
-      traps: ["Writing nd instead of (n − 1)d.", "\\(r^2 = 4\\) gives \\(r = \\pm 2\\) - keep both until a condition removes one.", "|r| < 1 means −1 < r < 1; r = −2 has no sum to infinity - state the reason (R1).", "Mixing up \\(u_n\\) (one term) and \\(S_n\\) (a total).", "\\(\\sum_{k=1}^{n} c = cn\\), not c."],
+      traps: ["Writing nd instead of (n − 1)d.", "Mixing up \\(u_n\\) (one term) and \\(S_n\\) (a total).", "\\(\\sum_{k=1}^{n} c = cn\\), not c.", "Giving a non-integer n (e.g. 21.6) as the final answer."],
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["\\(u_n = u_1 + nd\\)", "\\(r^2 = 4\\), so \\(r = 2\\) (the root \\(r = -2\\) is dropped).", "\\(r = -2\\), so \\(S_\\infty = \\frac{u_1}{1 - (-2)} = \\frac{u_1}{3}\\).", "Asked for the sum of the first 10 terms, the answer given is \\(u_{10}\\).", "\\(\\sum_{k=1}^{10} 4 = 4\\)"],
-      tips: ["Both AP and GP sum formulas are in the formula booklet - the 3-term relationships are not.", "Financial maths in Paper 2: use the TVM solver but write down the values you entered (N, I%, PV, PMT, FV, P/Y, C/Y) for method marks."],
+      mistakes: ["\\(u_n = u_1 + nd\\)", "Asked for the sum of the first 10 terms, the answer given is \\(u_{10}\\).", "\\(\\sum_{k=1}^{10} 4 = 4\\)"],
+      tips: ["Both arithmetic formulas are in the formula booklet - the 3-term relationship \\(2b = a + c\\) is not.", "For 'which term equals 403?' solve \\(u_1 + (n - 1)d = 403\\) and check n is a positive integer."],
+    },
+    "math-1c": {
+      formulas: ["\\(u_n = u_1r^{n-1}\\)", "\\(S_n = \\frac{u_1(r^n - 1)}{r - 1} = \\frac{u_1(1 - r^n)}{1 - r}\\)"],
+      table: { head: ["", "Geometric (GP)"], rows: [["Test", "\\(u_2 \\div u_1 = u_3 \\div u_2 = r\\)"], ["3 consecutive terms a, b, c", "\\(b^2 = ac\\)"], ["Two terms \\(u_p, u_q\\)", "\\(r^{q-p} = u_q \\div u_p\\)"], ["Real-life cue", "\"increases by 5% each year\" → r = 1.05; \"loses 20%\" → r = 0.8"]] },
+      methods: [
+        "<strong>Two terms given → divide:</strong> \\(u_5 \\div u_2 = r^3\\).",
+        "<strong>Choose the sum formula that keeps numbers positive:</strong> \\(\\frac{u_1(r^n - 1)}{r - 1}\\) for r &gt; 1, \\(\\frac{u_1(1 - r^n)}{1 - r}\\) for r &lt; 1.",
+        "<strong>Find n:</strong> \\(u_1r^{n-1} > k\\) → take logs (Paper 1) or use a GDC table (Paper 2); round up.",
+      ],
+      traps: ["\\(r^2 = 4\\) gives \\(r = \\pm 2\\) - keep both until a condition removes one.", "\\(2 \\times 3^{n-1}\\) is not \\(6^{n-1}\\).", "Dividing by \\(\\ln r\\) when r &lt; 1 reverses an inequality."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(r^2 = 4\\), so \\(r = 2\\) (the root \\(r = -2\\) is dropped).", "\\(u_n = 2 \\times 3^{n-1} = 6^{n-1}\\)"],
+      tips: ["Write the inequality and the GDC values either side of the answer (e.g. \\(S_{10} = 3069 < 5000 < S_{11} = 6141\\)) for full marks.", "Percentage increase of p% gives r = 1 + p/100."],
+    },
+    "math-1d": {
+      formulas: ["\\(FV = PV\\left(1 + \\frac{r}{100k}\\right)^{kn}\\)", "Depreciation: \\(V = V_0\\left(1 - \\frac{r}{100}\\right)^n\\)"],
+      table: { head: ["Compounding", "k", "periods in n years"], rows: [["annually", "1", "n"], ["half-yearly", "2", "2n"], ["quarterly", "4", "4n"], ["monthly", "12", "12n"]] },
+      methods: [
+        "<strong>Periods and rate per period:</strong> 4.5% compounded quarterly for 6 years → 24 periods at 1.125% each.",
+        "<strong>TVM:</strong> N = total periods, I% = annual rate, PV negative, PMT = 0 (single sum), P/Y = C/Y = k.",
+        "<strong>Complete years:</strong> find the value at the two years either side of the target and state the first that works.",
+        "<strong>Find a rate:</strong> \\(1 + \\frac{r}{100} = \\left(\\frac{FV}{PV}\\right)^{1/n}\\), or solve for I% on the TVM solver.",
+      ],
+      traps: ["Using n instead of kn for the number of periods.", "Entering 0.045 instead of 4.5 for I%.", "PV and FV with the same sign on the TVM solver.", "Rounding money to anything other than 2 d.p. (or the accuracy asked)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["$8000 at 4.5% compounded quarterly for 6 years: \\(8000(1.045)^{6}\\).", "A car worth $32 000 depreciating 15% a year is worth \\(32000 \\times 0.15^6\\) after 6 years."],
+      tips: ["Financial maths in Paper 2: use the TVM solver but write down the values you entered (N, I%, PV, PMT, FV, P/Y, C/Y) for method marks.", "Depreciation is compound interest with a negative rate: \\(r = 1 - \\frac{\\text{rate}}{100}\\)."],
+    },
+    "math-1e": {
+      formulas: ["\\(S_\\infty = \\frac{u_1}{1-r},\\ |r|<1\\)"],
+      methods: [
+        "<strong>Check |r| &lt; 1 first</strong> and write it as the reason (R1) before using \\(S_\\infty\\).",
+        "<strong>Unknown in r:</strong> solve \\(-1 < r < 1\\) as a double inequality, e.g. \\(-1 < 2x - 1 < 1 \\Rightarrow 0 < x < 1\\).",
+        "<strong>Recurring decimal:</strong> first term = the repeating block, r = \\(10^{-(\\text{length of block})}\\).",
+        "<strong>Bouncing ball:</strong> total distance = first drop + 2 × \\(S_\\infty\\) of the rebounds.",
+      ],
+      traps: ["|r| &lt; 1 means −1 &lt; r &lt; 1; r = −2 has no sum to infinity - state the reason (R1).", "Using \\(S_\\infty\\) for a finite number of terms.", "Forgetting that a ball travels up and down after each bounce."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(r = -2\\), so \\(S_\\infty = \\frac{u_1}{1 - (-2)} = \\frac{u_1}{3}\\).", "The series converges when \\(2x - 1 < 1\\), i.e. x &lt; 1."],
+      tips: ["Sanity check: for 0 &lt; r &lt; 1 the sum to infinity is larger than the first term.", "\\(S_\\infty\\) is in the formula booklet; the condition |r| &lt; 1 is what earns the R1."],
     },
     "math-2": {
-      formulas: ["\\(a^x = b \\iff x = \\log_a b\\)", "\\(\\log_a xy = \\log_a x + \\log_a y\\)", "\\(\\log_a x^m = m\\log_a x\\)", "\\(\\log_a x = \\frac{\\ln x}{\\ln a}\\)"],
+      formulas: ["\\(a^m a^n = a^{m+n}\\)", "\\(\\frac{a^m}{a^n} = a^{m-n}\\)", "\\((a^m)^n = a^{mn}\\)", "\\(a^{-n} = \\frac{1}{a^n}\\)", "\\(a^x = b \\iff x = \\log_a b\\)"],
       methods: [
         "<strong>Same base trick:</strong> \\(8^x = 4^{x+1}\\) → \\(2^{3x} = 2^{2x+2}\\) → 3x = 2x + 2.",
+        "<strong>Factor out the smallest power:</strong> \\(2^{x+3} - 2^x = 2^x(8 - 1) = 7 \\times 2^x\\).",
+        "<strong>Evaluate a log:</strong> ask 'which power of the base gives this number?' - \\(\\log_3 \\frac{1}{81} = -4\\).",
+        "<strong>Technology:</strong> log and ln keys give \\(\\log_{10}\\) and \\(\\log_e\\) values; give 3 s.f.",
+      ],
+      traps: ["\\((2x^3)^4 = 2x^{12}\\) - the 2 must be raised to the power too.", "\\(a^{-2}\\) is \\(\\frac{1}{a^2}\\), not \\(-a^2\\).", "\\(\\log_a b\\) needs b &gt; 0: \\(\\log 0\\) and \\(\\log(-3)\\) are undefined."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\((2x^3)^4 = 2x^{12}\\)", "\\(3^{-2} = -9\\)", "\\(\\log_2 8 = 4\\)"],
+      tips: ["Know the powers of 2 up to \\(2^{10}\\) and of 3 up to \\(3^5\\) for Paper 1.", "\\(\\log_a 1 = 0\\) and \\(\\log_a a = 1\\) for every base."],
+    },
+    "math-2b": {
+      formulas: ["\\(a^{\\frac{m}{n}} = (\\sqrt[n]{a})^m\\)", "\\(\\log_a xy = \\log_a x + \\log_a y\\)", "\\(\\log_a x^m = m\\log_a x\\)", "\\(\\log_a x = \\frac{\\ln x}{\\ln a}\\)"],
+      methods: [
         "<strong>Hidden quadratic:</strong> \\(9^x - 4\\cdot3^x + 3 = 0\\): let \\(y = 3^x\\) → \\(y^2 - 4y + 3 = 0\\). Reject any y ≤ 0.",
         "<strong>Combine logs first:</strong> turn \\(\\log a + \\log b = c\\) into one log, then un-log.",
-        "<strong>Exponential models:</strong> \\(N = N_0e^{kt}\\): divide by \\(N_0\\) first, then take ln.",
+        "<strong>Different bases:</strong> take ln of both sides, expand, collect the x terms, factorise.",
+        "<strong>Change of base to one base:</strong> \\(\\log_4 x = \\frac{1}{2}\\log_2 x\\).",
       ],
       traps: ["There is <strong>no</strong> law for \\(\\log(a+b)\\).", "Log arguments must be positive - check every solution (x = −5 is often rejected).", "\\((\\ln x)^2 \\neq 2\\ln x\\)."],
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
       mistakes: ["\\(\\log(a + b) = \\log a + \\log b\\)", "\\(\\log_2(x + 3) + \\log_2(x - 3) = 4\\) gives \\(x = \\pm 5\\), and both values are kept.", "\\((\\ln x)^2 = 2\\ln x\\)"],
-      tips: ["Paper 1 wants exact answers like \\(\\frac{\\ln 7}{2\\ln 3}\\) - don't convert to decimals.", "\\(e^x\\) and \\(\\ln x\\) are inverses: reflections in y = x."],
+      tips: ["Paper 1 wants exact answers like \\(\\frac{\\ln 7}{2\\ln 3}\\) - don't convert to decimals.", "Write the domain condition (e.g. x &gt; 8) beside a log equation before solving."],
+    },
+    "math-2c": {
+      formulas: ["\\(N = N_0e^{kt}\\)", "\\(a^x = e^{x\\ln a}\\)", "doubling time \\(\\frac{\\ln 2}{k}\\)"],
+      methods: [
+        "<strong>Exponential models:</strong> \\(N = N_0e^{kt}\\): divide by \\(N_0\\) first, then take ln.",
+        "<strong>Long-term value:</strong> in \\(T = c + Ae^{-kt}\\), T → c as t → ∞.",
+        "<strong>Asymptotes move with translations:</strong> \\(y = e^x + 3\\) has asymptote y = 3; \\(y = \\ln(x - 2)\\) has asymptote x = 2.",
+      ],
+      traps: ["Forgetting the asymptote (as an equation) on a sketch.", "Giving the domain of \\(\\ln(x - 3)\\) as x ≥ 3 instead of x &gt; 3.", "Writing k with the wrong sign for decay."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The graph of \\(y = e^x + 3\\) has horizontal asymptote y = 0.", "The domain of \\(f(x) = \\ln(x - 3)\\) is x ≥ 3."],
+      tips: ["\\(e^x\\) and \\(\\ln x\\) are inverses: reflections in y = x.", "In context questions answer with units and say what the asymptote means (e.g. room temperature)."],
       diagrams: [{ title: "\\(y = 2^x\\) and \\(y = e^{-x}\\)", x: [-3, 3], y: [-1, 6], curves: [{ f: (x) => Math.pow(2, x), label: "2ˣ", labelX: 2.2 }, { f: (x) => Math.exp(-x), color: "b", dash: true, label: "e⁻ˣ", labelX: -2.6 }], points: [{ at: [0, 1], label: "(0, 1)" }], hlines: [{ y: 0 }] }, { title: "\\(y = \\ln x\\)", x: [-1, 6], y: [-3, 3], curves: [{ f: (x) => Math.log(x), domain: [0.03, 6], label: "ln x", labelX: 4.8 }], points: [{ at: [1, 0], label: "(1, 0)" }], vlines: [{ x: 0, label: "x = 0" }] }],
     },
     "math-3": {
-      formulas: ["\\((a+b)^n = \\sum_{r=0}^{n}\\binom{n}{r}a^{n-r}b^r\\)", "\\(\\binom{n}{r} = \\frac{n!}{r!(n-r)!}\\)"],
+      formulas: ["even: 2n · odd: 2n + 1 · consecutive: n, n + 1"],
       table: { head: ["To show something is…", "Write it as"], rows: [["even", "2k, k ∈ ℤ"], ["odd", "2k + 1"], ["consecutive integers", "n, n + 1, n + 2"], ["a multiple of 8", "8 × (an integer expression)"]] },
+      methods: [
+        "<strong>Divisibility proofs:</strong> expand, collect, then factor out the number: \\((n+3)^2 - (n-1)^2 = 8(n+1)\\).",
+        "<strong>Difference of squares saves time:</strong> \\(a^2 - b^2 = (a-b)(a+b)\\).",
+        "<strong>Identities with fractions:</strong> combine the LHS over a common denominator and simplify until it matches the RHS.",
+        "<strong>Disproof:</strong> one counterexample, with the calculation shown, is enough.",
+      ],
+      traps: ["In proofs: working on both sides at once, or starting from the conclusion.", "Checking a few numbers and calling it a proof.", "Missing the concluding sentence (it carries the R1)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["A \"show that\" proof that starts from the result and works on both sides until it reaches 0 = 0.", "\"The statement is true for n = 1, 2 and 3, so it is true for all n.\""],
+      tips: ["Proof layout for full marks: LHS = … = … = RHS, one step per line, then a concluding sentence.", "One counterexample is a complete disproof."],
+    },
+    "math-3b": {
+      formulas: ["\\((a+b)^n = \\sum_{r=0}^{n}\\binom{n}{r}a^{n-r}b^r\\)", "\\(\\binom{n}{r} = \\frac{n!}{r!(n-r)!}\\)"],
       methods: [
         "<strong>Specific term:</strong> write the general term, collect the power of x, set it equal to the target, solve for r.",
         "<strong>Constant term:</strong> power of x = 0. In \\((x - \\frac{2}{x})^6\\): 6 − 2r = 0 → r = 3.",
-        "<strong>Divisibility proofs:</strong> expand, collect, then factor out the number: \\((n+3)^2 - (n-1)^2 = 8(n+1)\\).",
-        "<strong>Difference of squares saves time:</strong> \\(a^2 - b^2 = (a-b)(a+b)\\).",
+        "<strong>Unknown constant:</strong> write the coefficient in terms of k, set it equal to the given value, solve (check k &gt; 0 if stated).",
+        "<strong>Product with a binomial:</strong> \\((1 + 2x)(1 - x)^5\\): the \\(x^3\\) term comes from 1 × (x³ term) + 2x × (x² term).",
       ],
-      traps: ["Forgetting the negative sign inside b, e.g. b = −2x means \\((-2x)^r\\).", "Giving the term instead of the coefficient (or vice versa) - read which is asked.", "In proofs: working on both sides at once, or starting from the conclusion."],
+      traps: ["Forgetting the negative sign inside b, e.g. b = −2x means \\((-2x)^r\\).", "Giving the term instead of the coefficient (or vice versa) - read which is asked.", "Raising only x, not its coefficient: \\((2x)^3 = 8x^3\\)."],
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["The \\(x^3\\) term of \\((1 - 2x)^5\\) is \\(\\binom{5}{3}(2x)^3 = 80x^3\\).", "Asked for the coefficient of \\(x^3\\), the answer given is \\(40x^3\\).", "A \"show that\" proof that starts from the result and works on both sides until it reaches 0 = 0."],
-      tips: ["Proof layout for full marks: LHS = … = … = RHS, one step per line, then a concluding sentence.", "One counterexample is a complete disproof."],
+      mistakes: ["The \\(x^3\\) term of \\((1 - 2x)^5\\) is \\(\\binom{5}{3}(2x)^3 = 80x^3\\).", "Asked for the coefficient of \\(x^3\\), the answer given is \\(40x^3\\)."],
+      tips: ["\\(\\binom{n}{r}\\) is on the GDC (nCr) for Paper 2; in Paper 1 use Pascal's triangle or cancel factorials.", "Sum of all coefficients: put x = 1."],
     },
     "math-4": {
-      formulas: ["\\(m = \\frac{y_2 - y_1}{x_2 - x_1}\\)", "\\(y - y_1 = m(x - x_1)\\)", "\\(m_1m_2 = -1\\) (perpendicular)", "\\((f\\circ g)(x) = f(g(x))\\)"],
+      formulas: ["\\(m = \\frac{y_2 - y_1}{x_2 - x_1}\\)", "\\(y - y_1 = m(x - x_1)\\)", "\\(m_1m_2 = -1\\) (perpendicular)"],
+      methods: [
+        "<strong>Gradient from ax + by + d = 0:</strong> rearrange to y = …; m = −a/b.",
+        "<strong>Perpendicular bisector:</strong> midpoint + negative reciprocal gradient, then \\(y - y_1 = m(x - x_1)\\).",
+        "<strong>Integer form:</strong> multiply out fractions to give ax + by + d = 0 with a, b, d ∈ ℤ.",
+        "<strong>Intersection:</strong> solve the two equations simultaneously (substitution or elimination).",
+      ],
+      traps: ["Inverting the gradient without changing the sign for a perpendicular line.", "Using \\(\\frac{x_2 - x_1}{y_2 - y_1}\\) (upside down).", "Leaving fractions when the question asks for integer coefficients."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The line perpendicular to y = 2x + 1 has gradient \\(\\frac{1}{2}\\).", "The gradient of 3x − 2y = 6 is 3."],
+      tips: ["The equation of a straight line in point-gradient form is in the formula booklet.", "In a linear model, say what the gradient and intercept mean in context, with units."],
+    },
+    "math-4b": {
+      formulas: ["domain of \\(f^{-1}\\) = range of f", "range of \\(f^{-1}\\) = domain of f"],
+      methods: [
+        "<strong>Largest domain:</strong> denominator ≠ 0, even root argument ≥ 0, log argument &gt; 0.",
+        "<strong>Range:</strong> sketch, then use the vertex, asymptotes and end points.",
+        "<strong>Inverse graph:</strong> reflect in y = x - swap the coordinates of key points and swap the asymptotes.",
+        "<strong>Restrict to make one-to-one:</strong> cut a parabola at its vertex (x ≥ h or x ≤ h).",
+      ],
+      traps: ["\\(f^{-1}(x)\\) is <strong>not</strong> \\(\\frac{1}{f(x)}\\).", "Square-root inverses: choose + or − using the restricted domain.", "Forgetting end points on a restricted domain when stating the range."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(f^{-1}(x) = \\frac{1}{f(x)}\\)", "For \\(f(x) = x^2\\), \\(x \\le 0\\), the inverse is \\(f^{-1}(x) = \\sqrt{x}\\)."],
+      tips: ["Domain of \\(f^{-1}\\) = range of f, and the asymptotes swap.", "Only one-to-one functions have an inverse - restrict the domain at the vertex for quadratics."],
+    },
+    "math-4c": {
+      formulas: ["point on the graph: (a, f(a))"],
+      methods: [
+        "<strong>Sketch checklist:</strong> domain, intercepts, turning points, asymptotes (dashed, with equations), end points (● or ○).",
+        "<strong>From the GDC:</strong> choose a window showing all key features, then copy the shape and label points to 3 s.f.",
+        "<strong>Range from a graph:</strong> lowest and highest y-values on the domain, including end points.",
+      ],
+      traps: ["Drawing beyond the given domain.", "Unlabelled intercepts or turning points (each label is often a mark).", "Treating the range as the set of x-values."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["For \\(f(x) = x^2 - 4x + 1\\), \\(0 \\le x \\le 5\\), the range is \\(f(x) \\ge -3\\).", "A sketch of \\(y = 3 - 2x\\), \\(-1 \\le x < 4\\), drawn with a closed dot at (4, −5)."],
+      tips: ["'Sketch' needs shape and labelled features; 'draw' needs accuracy on the given axes.", "In context, restrict the domain to sensible values (time ≥ 0)."],
+    },
+    "math-4d": {
+      formulas: ["zeros: f(x) = 0 · intersections: f(x) = g(x)"],
+      methods: [
+        "<strong>Zeros, max and min:</strong> use the GDC's zero / maximum / minimum tools and give coordinates to 3 s.f.",
+        "<strong>Intersections:</strong> graph both functions and use 'intersect' for each point, or find zeros of f(x) − g(x).",
+        "<strong>Symmetry:</strong> a parabola is symmetric about \\(x = -\\frac{b}{2a}\\); an even function about the y-axis.",
+      ],
+      traps: ["A window that hides a zero or a turning point.", "Giving only the x-coordinate when the question asks for a point.", "Rounding an intermediate GDC value before using it."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The maximum value of \\(f(x) = xe^{-x}\\) is x = 1.", "Asked for the points of intersection, the answer given is x = 2.12."],
+      tips: ["Write the functions you graphed: it earns the method mark if the answer is slightly off.", "If a zero or turning point isn't visible, zoom out or use a table."],
+    },
+    "math-4e": {
+      formulas: ["\\((f\\circ g)(x) = f(g(x))\\)", "\\((f\\circ f^{-1})(x) = x\\)"],
       methods: [
         "<strong>Number inputs:</strong> for \\((f\\circ g)(2)\\), work out g(2) first as a number, then put it into f.",
         "<strong>\\(f^{-1}(a)\\) as a number:</strong> just solve f(x) = a - no need for the inverse formula.",
@@ -86,16 +227,29 @@ IB.extend("math", {
         "<strong>Rational inverse pattern:</strong> \\(\\frac{ax+b}{cx+d} \\to \\frac{dx-b}{-cx+a}\\) - use it to check your answer.",
         "<strong>Verify:</strong> \\((f\\circ f^{-1})(x) = x\\).",
       ],
-      traps: ["\\(f^{-1}(x)\\) is <strong>not</strong> \\(\\frac{1}{f(x)}\\).", "Applying the outer function first in a composite.", "Square-root inverses: choose + or − using the restricted domain."],
+      traps: ["Applying the outer function first in a composite.", "Forgetting to state the domain of \\(f^{-1}\\).", "Expanding \\((3x - 1)^2\\) as \\(9x^2 - 1\\)."],
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["\\(f^{-1}(x) = \\frac{1}{f(x)}\\)", "With \\(f(x) = 2x\\) and \\(g(x) = x + 1\\), \\((f \\circ g)(x) = 2x + 1\\).", "For \\(f(x) = x^2\\), \\(x \\le 0\\), the inverse is \\(f^{-1}(x) = \\sqrt{x}\\)."],
-      tips: ["Domain of \\(f^{-1}\\) = range of f, and the asymptotes swap.", "Only one-to-one functions have an inverse - restrict the domain at the vertex for quadratics."],
+      mistakes: ["With \\(f(x) = 2x\\) and \\(g(x) = x + 1\\), \\((f \\circ g)(x) = 2x + 1\\).", "\\(f(x) = 2x - 3\\) has inverse \\(f^{-1}(x) = \\frac{x - 3}{2}\\)."],
+      tips: ["\\(f \\circ g\\) and \\(g \\circ f\\) are usually different - read the order carefully.", "A function with \\((f \\circ f)(x) = x\\) is self-inverse."],
     },
     "math-5": {
-      formulas: ["\\(x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\)", "\\(\\Delta = b^2 - 4ac\\)", "axis: \\(x = -\\frac{b}{2a}\\)"],
-      table: { head: ["Δ", "Roots", "Graph"], rows: [["Δ > 0", "two distinct real roots", "crosses the x-axis twice"], ["Δ = 0", "one repeated root", "touches the x-axis (tangent)"], ["Δ < 0", "no real roots", "never meets the x-axis"], ["Δ ≥ 0", "real roots", "meets the x-axis"]] },
+      formulas: ["axis: \\(x = -\\frac{b}{2a}\\)", "\\(a(x - h)^2 + k\\): vertex (h, k)", "\\(a(x - p)(x - q)\\): roots p, q"],
       methods: [
         "<strong>Vertex without completing the square:</strong> h = −b/2a, then k = f(h).",
+        "<strong>Axis from the roots:</strong> the midpoint of the roots, \\(x = \\frac{p + q}{2}\\).",
+        "<strong>Maximum / minimum in context:</strong> the vertex gives the optimum value and where it occurs.",
+        "<strong>Range:</strong> \\(f(x) \\ge k\\) if a &gt; 0, \\(f(x) \\le k\\) if a &lt; 0.",
+      ],
+      traps: ["Vertex of \\(a(x + 3)^2 - 1\\) is (−3, −1), not (3, −1).", "Forgetting to multiply by a when completing the square with a ≠ 1.", "Giving the vertex x-value as the maximum value."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The vertex of \\(y = 2(x + 3)^2 - 1\\) is (3, −1).", "\\(2x^2 - 12x + 13 = 2(x - 3)^2 + 4\\)"],
+      tips: ["Label the vertex, both x-intercepts and the y-intercept on every parabola sketch."],
+      diagrams: [{ title: "\\(y = x^2 - 2x - 3\\)", x: [-3, 5], y: [-5, 6], curves: [{ f: (x) => x * x - 2 * x - 3 }], points: [{ at: [-1, 0], label: "−1" }, { at: [3, 0], label: "3" }, { at: [1, -4], label: "vertex (1, −4)" }, { at: [0, -3], label: "(0, −3)" }] }],
+    },
+    "math-5b": {
+      formulas: ["\\(x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\)", "\\(\\Delta = b^2 - 4ac\\)"],
+      table: { head: ["Δ", "Roots", "Graph"], rows: [["Δ > 0", "two distinct real roots", "crosses the x-axis twice"], ["Δ = 0", "one repeated root", "touches the x-axis (tangent)"], ["Δ < 0", "no real roots", "never meets the x-axis"], ["Δ ≥ 0", "real roots", "meets the x-axis"]] },
+      methods: [
         "<strong>Line meets curve:</strong> substitute, rearrange to = 0, use Δ. Tangent: Δ = 0; two points: Δ > 0; none: Δ < 0.",
         "<strong>\"Always positive\":</strong> a > 0 and Δ < 0.",
         "<strong>Quadratic inequalities in 3 steps:</strong> solve = 0 → sketch → read above (> 0) or below (< 0) the axis.",
@@ -105,14 +259,38 @@ IB.extend("math", {
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
       mistakes: ["Solving \\(x^2 = 3x\\) by dividing both sides by x, giving only x = 3.", "The solution of \\(x^2 - x - 6 > 0\\) written as \"x < −2 and x > 3\".", "\"The equation has real roots\", so \\(\\Delta > 0\\)."],
       tips: ["When Δ in terms of k gives another quadratic, solve it as an inequality - sketch it too."],
-      diagrams: [{ title: "\\(y = x^2 - 2x - 3\\)", x: [-3, 5], y: [-5, 6], curves: [{ f: (x) => x * x - 2 * x - 3 }], points: [{ at: [-1, 0], label: "−1" }, { at: [3, 0], label: "3" }, { at: [1, -4], label: "vertex (1, −4)" }, { at: [0, -3], label: "(0, −3)" }] }, { title: "\\(x^2 - x - 6 < 0 \\Rightarrow -2 < x < 3\\)", x: [-4, 5], y: [-7, 6], shade: { from: -2, to: 3 }, curves: [{ f: (x) => x * x - x - 6, color: "c" }], points: [{ at: [-2, 0], label: "−2", color: "c" }, { at: [3, 0], label: "3", color: "c" }] }],
+      diagrams: [{ title: "\\(x^2 - x - 6 < 0 \\Rightarrow -2 < x < 3\\)", x: [-4, 5], y: [-7, 6], shade: { from: -2, to: 3 }, curves: [{ f: (x) => x * x - x - 6, color: "c" }], points: [{ at: [-2, 0], label: "−2", color: "c" }, { at: [3, 0], label: "3", color: "c" }] }],
     },
     "math-6": {
-      formulas: ["VA of \\(\\frac{ax+b}{cx+d}\\): \\(x = -\\frac{d}{c}\\)", "HA: \\(y = \\frac{a}{c}\\)", "\\(y = pf(q(x-h)) + k\\): \\((x, y) \\to (\\frac{x}{q} + h,\\ py + k)\\)"],
+      formulas: ["VA of \\(\\frac{ax+b}{cx+d}\\): \\(x = -\\frac{d}{c}\\)", "HA: \\(y = \\frac{a}{c}\\)"],
+      methods: [
+        "<strong>Rational function in 4 lines:</strong> VA: bottom = 0 · HA: ratio of x-coefficients · y-int: put x = 0 · x-int: top = 0.",
+        "<strong>Rewrite as \\(p + \\frac{q}{x - h}\\)</strong> to read the asymptotes x = h and y = p directly.",
+        "<strong>Self-inverse check:</strong> \\(\\frac{ax + b}{cx - a}\\) is self-inverse (d = −a).",
+      ],
+      traps: ["Sign errors in the VA: \\(\\frac{1}{x + 2}\\) has VA x = −2.", "HA of \\(\\frac{3x - 2}{4 - x}\\) is y = −3 (coefficient of x in the denominator is −1).", "Drawing a branch that crosses the vertical asymptote."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The vertical asymptote of \\(y = \\frac{1}{x + 2}\\) is x = 2.", "The horizontal asymptote of \\(y = \\frac{3x - 2}{4 - x}\\) is y = 3."],
+      tips: ["Asymptotes are written as equations (x = 3, y = 2), not just numbers."],
+      diagrams: [{ title: "\\(y = \\frac{2x+1}{x-1}\\): VA x = 1, HA y = 2", x: [-5, 6], y: [-6, 8], curves: [{ f: (x) => (Math.abs(x - 1) < 0.02 ? NaN : (2 * x + 1) / (x - 1)) }], vlines: [{ x: 1, label: "x = 1" }], hlines: [{ y: 2, label: "y = 2" }], points: [{ at: [0, -1], label: "(0, −1)" }, { at: [-0.5, 0], label: "(−½, 0)" }] }],
+    },
+    "math-6b": {
+      formulas: ["f(x) = g(x) ⇔ f(x) − g(x) = 0"],
+      methods: [
+        "<strong>Clear fractions</strong> by multiplying by the denominator, then solve the polynomial; exclude values that make a denominator zero.",
+        "<strong>Substitution:</strong> \\(y = x^2\\), \\(y = \\sqrt{x}\\) or \\(y = e^x\\) to turn the equation into a quadratic.",
+        "<strong>GDC:</strong> graph both sides and find every intersection; give the x-values to 3 s.f.",
+      ],
+      traps: ["Keeping \\(\\sqrt{x} = -2\\) or \\(e^x = -1\\), which have no solution.", "Missing a second intersection outside the default window.", "Giving y-values when the solutions of the equation (x-values) are asked for."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(x - 5\\sqrt{x} + 6 = 0\\) with \\(y = \\sqrt{x}\\) gives y = 2 or 3, so x = 2 or 3.", "The solution of \\(e^x = 3 - x^2\\) is given as the y-value of the intersection."],
+      tips: ["When the question says 'solve', give the x-values; when it says 'find the points of intersection', give coordinates.", "If no analytic method exists (\\(e^{-x} = x\\)), a GDC answer with the set-up written is full marks."],
+    },
+    "math-6c": {
+      formulas: ["\\(y = pf(q(x-h)) + k\\): \\((x, y) \\to (\\frac{x}{q} + h,\\ py + k)\\)"],
       table: { head: ["Transformation", "Effect", "(x, y) becomes"], rows: [["y = f(x) + b", "translate up b", "(x, y + b)"], ["y = f(x − a)", "translate right a", "(x + a, y)"], ["y = pf(x)", "vertical stretch, s.f. p", "(x, py)"], ["y = f(qx)", "horizontal stretch, s.f. 1/q", "(x/q, y)"], ["y = −f(x)", "reflect in x-axis", "(x, −y)"], ["y = f(−x)", "reflect in y-axis", "(−x, y)"]] },
       methods: [
         "<strong>Changes outside the bracket affect y and do what they say; inside affect x and do the opposite.</strong>",
-        "<strong>Rational function in 4 lines:</strong> VA: bottom = 0 · HA: ratio of x-coefficients · y-int: put x = 0 · x-int: top = 0.",
         "<strong>Factor the inside first:</strong> f(2x − 6) = f(2(x − 3)) → translate right <strong>3</strong>, not 6.",
         "<strong>Asymptotes move with the graph:</strong> \\(y = e^x + 3\\) has HA y = 3.",
       ],
@@ -120,76 +298,315 @@ IB.extend("math", {
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
       mistakes: ["\\(y = f(x + 3)\\) is \\(y = f(x)\\) translated 3 units to the right.", "\\(y = f(2x)\\) is a horizontal stretch with scale factor 2.", "Sketching \\(y = \\frac{1}{x - 2} + 3\\) with its asymptotes still at x = 0 and y = 0."],
       tips: ["Use exact words: \"translation by vector \\(\\binom{a}{b}\\)\", \"vertical stretch with scale factor p\", \"reflection in the x-axis\"."],
-      diagrams: [{ title: "\\(y = \\frac{2x+1}{x-1}\\): VA x = 1, HA y = 2", x: [-5, 6], y: [-6, 8], curves: [{ f: (x) => (Math.abs(x - 1) < 0.02 ? NaN : (2 * x + 1) / (x - 1)) }], vlines: [{ x: 1, label: "x = 1" }], hlines: [{ y: 2, label: "y = 2" }], points: [{ at: [0, -1], label: "(0, −1)" }, { at: [-0.5, 0], label: "(−½, 0)" }] }, { title: "grey \\(y = x^2\\) · accent \\(y = (x-2)^2 + 1\\) · dashed \\(y = -x^2\\)", x: [-3, 5], y: [-5, 7], curves: [{ f: (x) => x * x, color: "muted" }, { f: (x) => (x - 2) * (x - 2) + 1 }, { f: (x) => -x * x, color: "b", dash: true }], points: [{ at: [2, 1], label: "(2, 1)" }] }],
+      diagrams: [{ title: "grey \\(y = x^2\\) · accent \\(y = (x-2)^2 + 1\\) · dashed \\(y = -x^2\\)", x: [-3, 5], y: [-5, 7], curves: [{ f: (x) => x * x, color: "muted" }, { f: (x) => (x - 2) * (x - 2) + 1 }, { f: (x) => -x * x, color: "b", dash: true }], points: [{ at: [2, 1], label: "(2, 1)" }] }],
     },
     "math-7": {
-      formulas: ["\\(\\frac{a}{\\sin A} = \\frac{b}{\\sin B}\\)", "\\(c^2 = a^2 + b^2 - 2ab\\cos C\\)", "Area \\(= \\frac{1}{2}ab\\sin C\\)", "\\(l = r\\theta\\), \\(A = \\frac{1}{2}r^2\\theta\\)"],
+      formulas: ["\\(d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}\\)", "cone \\(V = \\frac{1}{3}\\pi r^2h\\), curved \\(A = \\pi rl\\)", "sphere \\(V = \\frac{4}{3}\\pi r^3\\), \\(A = 4\\pi r^2\\)", "pyramid \\(V = \\frac{1}{3}Ah\\)"],
+      methods: [
+        "<strong>3D problems:</strong> find a right-angled triangle inside the shape and draw it flat.",
+        "<strong>Pyramid angles:</strong> slant edge → use half the base diagonal; sloping face → use half the base side (to the midpoint of an edge).",
+        "<strong>Composite solid:</strong> add the volumes; for surface area count only the faces you can touch.",
+      ],
+      traps: ["Angle between a line and a plane measured to an edge of the base instead of the projection of the line.", "Using the vertical height h instead of the slant height l in the cone curved surface area πrl.", "Forgetting the flat circular face in the total surface area of a hemisphere or cone."],
+      mistakes: ["For a cuboid 8 × 6 × 5, the angle between the space diagonal AG and the base is tan⁻¹(5/8).", "A cone with r = 3 and h = 4 has curved surface area π(3)(4) = 12π.", "A solid hemisphere of radius r has total surface area 2πr²."],
+      tips: ["The volume and surface area formulas are in the formula booklet - check which height (vertical or slant) each formula needs.", "Give 3D lengths to 3 s.f. but keep full values in the GDC for the next part."],
+    },
+    "math-7b": {
+      formulas: ["\\(\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}\\)", "\\(c^2 = a^2 + b^2 - 2ab\\cos C\\)", "\\(\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}\\)", "Area \\(= \\frac{1}{2}ab\\sin C\\)"],
       methods: [
         "<strong>Choose the rule:</strong> two angles or a side-angle pair opposite each other → sine rule; SAS or SSS → cosine rule.",
-        "<strong>Segment area</strong> = sector − triangle = \\(\\frac{1}{2}r^2(\\theta - \\sin\\theta)\\).",
-        "<strong>3D problems:</strong> find a right-angled triangle inside the shape and draw it flat.",
+        "<strong>Finding an angle:</strong> prefer the cosine rule when you know three sides - it never gives an ambiguous answer.",
+        "<strong>Area given:</strong> \\(\\frac{1}{2}ab\\sin C = A\\) gives sin C; the obtuse answer is \\(180° - C\\).",
       ],
-      traps: ["Calculator in degrees when the question is in radians (or vice versa).", "Ambiguous case: the sine rule can give an obtuse angle too (180° − θ).", "Arc and sector formulas need θ in radians."],
-      // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["Evaluating \\(\\sin\\frac{\\pi}{6}\\) on a GDC in degree mode and writing 0.00914.", "\\(\\sin B = 0.8\\), so \\(B = 53.1°\\) only, although \\(B = 126.9°\\) is also possible.", "A sector with radius r and angle 60° has arc length \\(l = r\\theta = 60r\\)."],
-      tips: ["Draw and label the triangle before calculating - it earns method marks and avoids mixing up sides."],
+      traps: ["Calculator in radian mode for a degrees question.", "Using the area formula with an angle that is not between the two sides.", "Evaluating the cosine rule as \\((a^2 + b^2 - 2ab)\\cos C\\)."],
+      mistakes: ["\\(c^2 = 7^2 + 9^2 - 2(7)(9)\\cos 60° = (49 + 81 - 126)\\cos 60° = 2\\).", "The area of a triangle with sides 5 and 6, where 44° is the angle opposite the side 6, is ½(5)(6) sin 44°.", "Evaluating sin 40° on a GDC in radian mode and writing 0.745."],
+      tips: ["Draw and label the triangle before calculating - it earns method marks and avoids mixing up sides.", "Write the formula with the numbers substituted before using the GDC - that line earns the M1."],
+    },
+    "math-7c": {
+      formulas: ["back bearing = bearing ± 180°", "elevation from the bottom = depression from the top", "\\(\\tan\\theta = \\frac{\\text{height}}{\\text{horizontal distance}}\\)"],
+      methods: [
+        "<strong>Bearings:</strong> draw a north line at each point; use co-interior angles (sum 180°) to find the angle inside the triangle.",
+        "<strong>Two angles of elevation:</strong> work in the non-right triangle first (sine rule with the difference of the angles), then use a right-angled triangle for the height.",
+        "<strong>Depression → elevation:</strong> the angle of depression from the top equals the angle of elevation from the bottom.",
+      ],
+      traps: ["Writing a bearing with two figures (45° instead of 045°).", "Measuring an angle of depression from the vertical.", "Using a bearing directly as an angle of the triangle without drawing north lines."],
+      mistakes: ["The bearing of B from A is 070°, so the bearing of A from B is 070° + 90° = 160°.", "From a cliff of height h the angle of depression of a boat is 30°, so tan 30° = d/h, where d is the horizontal distance.", "A ship sailing north-east is on a bearing of 45."],
+      tips: ["Copy the diagram, or draw your own with every given value - it earns marks and stops you from using the wrong angle.", "Give a bearing to the nearest degree with three figures, e.g. 077°."],
+    },
+    "math-7d": {
+      formulas: ["\\(\\pi\\ \\text{rad} = 180°\\)", "\\(l = r\\theta\\)", "\\(A = \\frac{1}{2}r^2\\theta\\)", "segment \\(= \\frac{1}{2}r^2(\\theta - \\sin\\theta)\\)"],
+      methods: [
+        "<strong>Segment area</strong> = sector − triangle = \\(\\frac{1}{2}r^2(\\theta - \\sin\\theta)\\).",
+        "<strong>Degrees ↔ radians:</strong> × π/180 to radians, × 180/π to degrees; learn 30° = π/6, 45° = π/4, 60° = π/3.",
+        "<strong>Unknown r and θ:</strong> write one equation for the perimeter (2r + rθ) and one for the area, then eliminate θ.",
+      ],
+      traps: ["Arc and sector formulas need θ in radians.", "Sector perimeter written without the two radii.", "Segment area found with the triangle ½r² instead of ½r² sin θ."],
+      mistakes: ["A sector with radius r and angle 60° has arc length l = rθ = 60r.", "The perimeter of a sector of radius 5 and angle 1.2 rad is 5 × 1.2 = 6.", "Evaluating \\(\\sin\\frac{\\pi}{6}\\) on a GDC in degree mode and writing 0.00914."],
+      tips: ["Set the GDC to radians for any question about arcs and sectors.", "\"Exact\" means leave π (and surds) in the answer."],
     },
     "math-8": {
-      formulas: ["\\(\\sin^2\\theta + \\cos^2\\theta = 1\\)", "\\(\\sin 2\\theta = 2\\sin\\theta\\cos\\theta\\)", "\\(\\cos 2\\theta = 1 - 2\\sin^2\\theta = 2\\cos^2\\theta - 1\\)", "period of \\(\\sin bx\\) = \\(\\frac{2\\pi}{b}\\)"],
+      formulas: ["\\(\\cos\\theta = x\\), \\(\\sin\\theta = y\\) on the unit circle", "\\(\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}\\)", "\\(\\sin(\\pi - \\theta) = \\sin\\theta\\)", "\\(\\cos(2\\pi - \\theta) = \\cos\\theta\\)"],
       table: { head: ["θ", "0", "π/6", "π/4", "π/3", "π/2"], rows: [["sin θ", "0", "½", "√2/2", "√3/2", "1"], ["cos θ", "1", "√3/2", "√2/2", "½", "0"], ["tan θ", "0", "√3/3", "1", "√3", "undefined"]] },
+      methods: [
+        "<strong>Related angle:</strong> find the acute reference angle and its exact value, then the sign from the quadrant (CAST).",
+        "<strong>Ambiguous case:</strong> after \\(\\sin B = k\\), test \\(180° - B\\): it is valid if \\(A + (180° - B) < 180°\\).",
+        "<strong>Multiples of π/6, π/4, π/3:</strong> locate the angle on the unit circle by counting steps round from 0.",
+      ],
+      traps: ["Forgetting the sign of cos or sin in quadrants 2 to 4.", "Ambiguous case: giving only the acute angle from sin⁻¹.", "Writing tan(π/2) = 0 (it is undefined)."],
+      mistakes: ["\\(\\cos\\frac{2\\pi}{3} = \\frac{1}{2}\\).", "\\(\\sin B = 0.8\\), so \\(B = 53.1°\\) only, although \\(B = 126.9°\\) is also possible.", "\\(\\tan\\frac{\\pi}{2} = 0\\)."],
+      tips: ["Learn the exact-value table - Paper 1 relies on it.", "In an ambiguous-case question state both angles and check that each one gives a valid triangle."],
+    },
+    "math-8b": {
+      formulas: ["\\(\\sin^2\\theta + \\cos^2\\theta = 1\\)", "\\(\\sin 2\\theta = 2\\sin\\theta\\cos\\theta\\)", "\\(\\cos 2\\theta = \\cos^2\\theta - \\sin^2\\theta = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta\\)", "\\(\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}\\)"],
+      methods: [
+        "<strong>One ratio given:</strong> use the Pythagorean identity, then take the sign from the quadrant.",
+        "<strong>Choose the cos 2θ form:</strong> know sin θ → \\(1 - 2\\sin^2\\theta\\); know cos θ → \\(2\\cos^2\\theta - 1\\).",
+        "<strong>Show that:</strong> replace sin 2x and cos 2x first, then simplify one side until it matches the other.",
+      ],
+      traps: ["Taking the positive square root without checking the quadrant.", "\\(\\sin 2\\theta \\ne 2\\sin\\theta\\) and \\(\\cos 2\\theta \\ne 2\\cos\\theta\\).", "Working on both sides of a \"show that\" at once."],
+      mistakes: ["\\(\\sin\\theta = \\frac{3}{5}\\) with \\(\\frac{\\pi}{2} < \\theta < \\pi\\), so \\(\\cos\\theta = \\frac{4}{5}\\).", "\\(\\sin 2x = 2\\sin x\\).", "If \\(\\cos x = 0.6\\) then \\(\\cos 2x = 1.2\\)."],
+      tips: ["The double angle identities are in the formula booklet; the exact values and the quadrant signs are not.", "Leave answers as exact fractions or surds - never with ±."],
+    },
+    "math-8c": {
+      formulas: ["period of \\(\\sin bx\\) and \\(\\cos bx\\) = \\(\\frac{2\\pi}{b}\\)", "period of \\(\\tan bx\\) = \\(\\frac{\\pi}{b}\\)", "amplitude \\(= \\frac{\\max - \\min}{2}\\)", "principal axis \\(y = \\frac{\\max + \\min}{2}\\)"],
+      methods: [
+        "<strong>Modelling y = a sin(b(x − c)) + d:</strong> amplitude = (max − min)/2; d = (max + min)/2; b = 2π/period.",
+        "<strong>Horizontal shift:</strong> factor out b first: \\(\\sin(2x - \\pi) = \\sin\\left(2\\left(x - \\frac{\\pi}{2}\\right)\\right)\\), a shift of \\(\\frac{\\pi}{2}\\) to the right.",
+        "<strong>Context questions:</strong> maximum = d + |a|, minimum = d − |a|, time between maxima = period; solve h(t) = k on the GDC.",
+      ],
+      traps: ["Period written as 2πb instead of 2π/b.", "Reading the shift of sin(2x − π) as π instead of π/2.", "Giving the range as −a ≤ y ≤ a and forgetting d."],
+      mistakes: ["The period of \\(y = 3\\sin(4x)\\) is \\(8\\pi\\).", "\\(y = \\sin(2x - \\pi)\\) is \\(y = \\sin 2x\\) translated π to the right.", "The range of \\(y = 5 - 2\\cos x\\) is \\(-2 \\le y \\le 2\\)."],
+      tips: ["Sketch with the maximum, minimum and intercepts labelled - each labelled point is often a mark.", "In context, check the units of t (hours, minutes, seconds) before finding the period."],
+      diagrams: [
+        { title: "\\(y = \\sin x\\) (accent) and \\(y = \\cos x\\) (dashed), \\(0 \\le x \\le 2\\pi\\)", x: [0, 6.6], y: [-1.5, 1.5], grid: true, curves: [{ f: Math.sin }, { f: Math.cos, color: "b", dash: true }], points: [{ at: [Math.PI / 2, 1], label: "(π/2, 1)" }, { at: [Math.PI, 0], label: "π" }] },
+      ],
+    },
+    "math-8d": {
+      formulas: ["sin: \\(x = \\alpha,\\ \\pi - \\alpha\\)", "cos: \\(x = \\alpha,\\ 2\\pi - \\alpha\\)", "tan: \\(x = \\alpha,\\ \\alpha + \\pi\\)", "\\(\\sin bx = k\\): solve for bx on \\(0 \\le bx \\le 2b\\pi\\)"],
       methods: [
         "<strong>All solutions:</strong> find the principal value, then use symmetry - sin: π − θ; cos: 2π − θ; tan: θ + π.",
         "<strong>sin 2x = k:</strong> double the interval for 2x first, solve, then halve.",
         "<strong>Quadratic in sin x:</strong> factorise \\(2\\sin^2x - \\sin x - 1 = (2\\sin x + 1)(\\sin x - 1)\\).",
-        "<strong>Modelling y = a sin(b(x − c)) + d:</strong> amplitude = (max − min)/2; d = (max + min)/2; b = 2π/period.",
       ],
-      traps: ["Missing solutions in the interval (loses the final A1).", "Using degrees on the GDC for a radians question.", "sign of cos/sin in each quadrant (CAST)."],
-      // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["Solving \\(\\sin x = \\frac{1}{2}\\) for \\(0 \\le x \\le 2\\pi\\) and giving only \\(x = \\frac{\\pi}{6}\\).", "Solving \\(\\cos x = 0.3\\) for \\(0 \\le x \\le 2\\pi\\) and giving x = 72.5 from a GDC in degree mode.", "\\(\\sin\\theta = \\frac{3}{5}\\) with \\(\\frac{\\pi}{2} < \\theta < \\pi\\), so \\(\\cos\\theta = \\frac{4}{5}\\)."],
-      tips: ["Learn the exact-value table - Paper 1 relies on it."],
-      diagrams: [{ title: "\\(y = \\sin x\\) (accent) and \\(y = \\cos x\\) (dashed), \\(0 \\le x \\le 2\\pi\\)", x: [0, 6.6], y: [-1.5, 1.5], grid: true, curves: [{ f: Math.sin }, { f: Math.cos, color: "b", dash: true }], points: [{ at: [Math.PI / 2, 1], label: "(π/2, 1)" }, { at: [Math.PI, 0], label: "π" }] }],
+      traps: ["Missing solutions in the interval (loses the final A1).", "Using degrees on the GDC for a radians question.", "Dividing by sin x and losing the solutions of sin x = 0."],
+      mistakes: ["Solving \\(\\sin x = \\frac{1}{2}\\) for \\(0 \\le x \\le 2\\pi\\) and giving only \\(x = \\frac{\\pi}{6}\\).", "Solving \\(\\cos x = 0.3\\) for \\(0 \\le x \\le 2\\pi\\) and giving x = 72.5 from a GDC in degree mode.", "Solving \\(\\sin 2x = \\sin x\\) by dividing by sin x, which gives only \\(2\\cos x = 1\\)."],
+      tips: ["Sketch the graph on the interval to count the solutions before you solve.", "Write the interval for bx (e.g. \\(0 \\le 2x \\le 4\\pi\\)) as your first line."],
     },
     "math-9": {
-      formulas: ["IQR = Q₃ − Q₁", "outlier: < Q₁ − 1.5×IQR or > Q₃ + 1.5×IQR", "\\(\\bar{x} = \\frac{\\sum fx}{n}\\)"],
-      methods: ["<strong>Effect of transformations:</strong> adding k shifts mean, median, quartiles by k - spread unchanged. Multiplying by k multiplies all of them (and σ) by k.", "<strong>Regression:</strong> use y-on-x to predict y, x-on-y to predict x, and only within the data range."],
-      traps: ["Extrapolating beyond the data.", "Saying correlation proves causation.", "Using sample vs population σ inconsistently - IB uses population σ (σx on GDC)."],
-      // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["A regression line from data with \\(10 \\le x \\le 40\\) is used to give a reliable prediction at x = 90.", "r = 0.95, so more hours of revision cause higher test scores.", "Quoting \\(s_x\\) from the GDC as the standard deviation of a data set, instead of \\(\\sigma_x\\)."],
+      formulas: ["stratum sample = \\(\\frac{\\text{stratum size}}{\\text{population size}} \\times n\\)", "systematic interval \\(k = \\frac{N}{n}\\)"],
+      methods: [
+        "<strong>Name the method:</strong> random from a full list → simple random; every kth → systematic; groups in proportion + random → stratified; groups in proportion + not random → quota; easiest to reach → convenience.",
+        "<strong>Explain bias:</strong> say who is left out or over-represented and how that changes the result.",
+        "<strong>Discrete or continuous:</strong> counted → discrete; measured → continuous.",
+      ],
+      traps: ["Calling a quota sample stratified (stratified needs random selection inside each group).", "Saying a larger sample removes bias - it only reduces random variation.", "Classifying a number of people as continuous data."],
+      mistakes: ["Surveying every 10th customer who leaves a shop is a simple random sample.", "The number of siblings a student has is continuous data.", "A survey posted on social media gives an unbiased sample of all adults."],
+      tips: ["In \"state one disadvantage\" questions give a reason in context, e.g. \"people without internet access cannot respond\".", "Show the proportion calculation for a stratified sample - it earns the M1."],
+    },
+    "math-9b": {
+      formulas: ["IQR = Q₃ − Q₁", "outlier: < Q₁ − 1.5×IQR or > Q₃ + 1.5×IQR", "cf graph: Q₁ at n/4, median at n/2, Q₃ at 3n/4"],
+      methods: [
+        "<strong>Cumulative frequency:</strong> plot at upper class boundaries and join with a smooth curve starting at (lowest boundary, 0).",
+        "<strong>Outlier test:</strong> compute the fence, then compare the value with it in a sentence.",
+        "<strong>Compare box plots:</strong> one comparison of centre (median) and one of spread (IQR or range), in context.",
+      ],
+      traps: ["Plotting cumulative frequency at mid-points instead of upper boundaries.", "Drawing a whisker to an outlier instead of marking it with a cross.", "Reading \"how many more than 25\" directly as cf(25) instead of n − cf(25)."],
+      mistakes: ["A cumulative frequency curve is plotted at the class mid-points.", "Q₁ = 15 and Q₃ = 27, so 40 is an outlier.", "Two box plots are compared using only their maximum values."],
+      tips: ["Show the fence calculation: Q₃ + 1.5 × IQR = …, then write \"so … is an outlier\".", "Read values off a graph to the accuracy of the grid and leave your construction lines visible."],
+    },
+    "math-9c": {
+      formulas: ["\\(\\bar{x} = \\frac{\\sum fx}{n}\\)", "IQR = Q₃ − Q₁", "variance = σ²", "\\(x \\to ax + b\\): mean → \\(a\\bar{x} + b\\), σ → |a|σ"],
+      methods: [
+        "<strong>Effect of transformations:</strong> adding k shifts mean, median, quartiles by k - spread unchanged. Multiplying by k multiplies all of them (and σ) by k.",
+        "<strong>Missing value:</strong> work with totals: total = mean × number of values.",
+        "<strong>Grouped data:</strong> mid-interval values in L1, frequencies in L2, then 1-Var Stats; say that the answer is an estimate.",
+      ],
+      traps: ["Using sample vs population σ inconsistently - IB uses population σ (σx on the GDC).", "Adding a constant to every value and changing σ.", "Using class boundaries instead of mid-interval values for a grouped mean."],
+      mistakes: ["Quoting \\(s_x\\) from the GDC as the standard deviation of a data set, instead of \\(\\sigma_x\\).", "Every value is increased by 4, so the standard deviation also increases by 4.", "Each value is multiplied by 3, so the variance is multiplied by 3."],
+      tips: ["Choose the median and IQR when there are outliers or skew; the mean and σ for symmetric data.", "Give σ to 3 s.f. and say \"estimate\" for grouped data."],
+    },
+    "math-9d": {
+      formulas: ["\\(-1 \\le r \\le 1\\)", "y on x: \\(y = ax + b\\) passes through \\((\\bar{x}, \\bar{y})\\)", "predict y from x only inside the data range"],
+      methods: [
+        "<strong>Regression:</strong> use the line of y on x to predict y from x, and only within the data range.",
+        "<strong>Describe r:</strong> strength (strong / moderate / weak), direction (positive / negative) and the word linear.",
+        "<strong>Line by eye:</strong> draw it through the mean point (x̄, ȳ) with roughly equal numbers of points on each side.",
+      ],
+      traps: ["Extrapolating beyond the data.", "Saying correlation proves causation.", "Describing r without the word \"linear\" or without the direction."],
+      mistakes: ["A regression line from data with \\(10 \\le x \\le 40\\) is used to give a reliable prediction at x = 90.", "r = 0.95, so more hours of revision cause higher test scores.", "r = −0.9 shows weak correlation because it is negative."],
       tips: ["Interpret r in words: \"strong positive linear correlation\".", "Write the regression equation with coefficients to 3 s.f."],
     },
+    "math-9e": {
+      formulas: ["x on y: \\(x = cy + d\\)", "both lines pass through \\((\\bar{x}, \\bar{y})\\)", "predict x from y with x on y"],
+      methods: [
+        "<strong>Which line?</strong> The variable you predict goes on the left: predict x → x on y; predict y → y on x.",
+        "<strong>GDC:</strong> swap the lists - y-values as the independent list - to get x = cy + d.",
+        "<strong>Mean point from two lines:</strong> solve the two regression equations simultaneously.",
+      ],
+      traps: ["Rearranging y = ax + b to predict x.", "Using x on y for a value of y outside the data range.", "Writing the line of x on y in the form y = …"],
+      mistakes: ["The line of y on x is y = 4.38x + 36.0, so the hours for a score of 70 are x = (70 − 36.0)/4.38.", "The two regression lines are the same line whenever r > 0.9.", "The line of x on y is found by entering x as the independent list on the GDC."],
+      tips: ["Say which line you used and why: \"x on y, since x is predicted from y\".", "Check that the given y lies within the y-data before calling the estimate reliable."],
+    },
     "math-10": {
-      formulas: ["\\(P(A\\cup B) = P(A) + P(B) - P(A\\cap B)\\)", "\\(P(A|B) = \\frac{P(A\\cap B)}{P(B)}\\)", "independent: \\(P(A\\cap B) = P(A)P(B)\\)"],
-      methods: ["<strong>Venn diagrams:</strong> fill the intersection first, then work outwards.", "<strong>Tree diagrams:</strong> multiply along branches, add between outcomes. \"Without replacement\" changes the second-stage denominators.", "<strong>\"At least one\"</strong> = 1 − P(none)."],
+      formulas: ["\\(P(A) = \\frac{n(A)}{n(U)}\\)", "\\(P(A') = 1 - P(A)\\)", "expected number = np", "relative frequency = \\(\\frac{\\text{frequency}}{\\text{number of trials}}\\)"],
+      methods: [
+        "<strong>\"At least one\"</strong> = 1 − P(none).",
+        "<strong>Two dice or spinners:</strong> draw the full grid of outcomes, then count.",
+        "<strong>Expected number:</strong> multiply the probability by the number of trials.",
+      ],
+      traps: ["Treating outcomes that are not equally likely (e.g. the totals 2 to 12) as equally likely.", "Rounding an expected number to a whole number when not asked.", "Adding probabilities for \"at least one\" instead of using 1 − P(none)."],
+      mistakes: ["Two dice are rolled; the totals 2, 3, …, 12 are 11 outcomes, so P(total = 7) = 1/11.", "A die is rolled 4 times, so P(at least one six) = 4 × 1/6 = 2/3.", "P(A) = 0.35, so P(A′) = 0.35."],
+      tips: ["Write probabilities as exact fractions or to 3 s.f.", "A probability above 1 or below 0 means a mistake - check before moving on."],
+    },
+    "math-10b": {
+      formulas: ["\\(P(A\\cup B) = P(A) + P(B) - P(A\\cap B)\\)", "mutually exclusive: \\(P(A\\cap B) = 0\\)", "independent: \\(P(A\\cap B) = P(A)P(B)\\)"],
+      methods: [
+        "<strong>Venn diagrams:</strong> fill the intersection first, then work outwards.",
+        "<strong>Tree diagrams:</strong> multiply along branches, add between outcomes. \"Without replacement\" changes the second-stage denominators.",
+        "<strong>Mutually exclusive or independent?</strong> Mutually exclusive → add; independent → multiply.",
+      ],
       traps: ["Confusing mutually exclusive (P(A∩B) = 0) with independent.", "Forgetting to reduce totals when sampling without replacement."],
-      // the same traps as worked-wrong statements, for the "spot the mistake" questions
       mistakes: ["A and B are mutually exclusive with P(A) = 0.3 and P(B) = 0.4, so P(A ∩ B) = 0.3 × 0.4 = 0.12.", "Two counters are taken without replacement from 5 red and 3 blue: P(both red) = \\(\\frac{5}{8} \\times \\frac{5}{8}\\)."],
-      tips: ["To show independence, compute P(A)P(B) and compare it numerically with P(A∩B), then conclude in words."],
+      tips: ["Label every branch of a tree diagram with its probability - the diagram itself often earns marks.", "Shade Venn regions carefully: A ∩ B′ means \"A only\"."],
+    },
+    "math-10c": {
+      formulas: ["\\(P(A|B) = \\frac{P(A\\cap B)}{P(B)}\\)", "independent: \\(P(A|B) = P(A) = P(A|B')\\)", "\\(P(A\\cap B) = P(B)P(A|B)\\)"],
+      methods: [
+        "<strong>\"Given that\" = new denominator:</strong> divide by the probability (or number) of the given event.",
+        "<strong>Reverse conditional from a tree:</strong> \\(P(A|B) = \\frac{P(A\\cap B)}{P(B)}\\), with P(B) the sum of all the branches that end in B.",
+        "<strong>Independence test:</strong> compare P(A|B) with P(A) (or P(A∩B) with P(A)P(B)), then state the conclusion.",
+      ],
+      traps: ["Dividing by P(A) instead of P(B) in P(A|B).", "Concluding independence without showing both numbers.", "Confusing P(A|B) with P(B|A)."],
+      mistakes: ["P(A ∩ B) = 0.12 and P(B) = 0.4, so P(A|B) = 0.12 × 0.4 = 0.048.", "P(rain) = 0.3 and P(late | rain) = 0.6, so P(rain | late) = 0.6.", "P(A) = 0.4 and P(A|B) = 0.4, so A and B are mutually exclusive."],
+      tips: ["To show independence, compute P(A)P(B) and compare it numerically with P(A∩B), then conclude in words.", "Write the conditional formula with numbers substituted - it earns the M1 even if a later value is wrong."],
     },
     "math-11": {
-      formulas: ["\\(X\\sim B(n,p)\\): \\(E(X) = np\\)", "\\(Var(X) = np(1-p)\\)", "\\(z = \\frac{x - \\mu}{\\sigma}\\)", "\\(\\sum P(X = x) = 1\\)"],
-      methods: ["<strong>Binomial on GDC:</strong> binompdf for \"exactly\", binomcdf for \"at most\". P(X ≥ k) = 1 − P(X ≤ k − 1).", "<strong>Normal:</strong> normalcdf for probabilities, invNorm for values. Unknown μ or σ → use z-scores.", "<strong>Fair game:</strong> E(gain) = 0."],
-      traps: ["P(X > 3) for binomial = 1 − P(X ≤ 3), not 1 − P(X ≤ 2).", "Using the variance instead of the standard deviation in normal calculations."],
-      // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["For a binomial X, P(X > 3) = 1 − P(X ≤ 2).", "For \\(X \\sim N(50, 16)\\), entering σ = 16 in the GDC."],
-      tips: ["State the distribution with its parameters, e.g. X ~ B(10, 0.3) - it often earns a mark."],
-      diagrams: [{ title: "Normal curve: ~68% within 1σ, ~95% within 2σ", x: [-3.5, 3.5], y: [-0.05, 0.5], grid: false, shade: { from: -1, to: 1 }, curves: [{ f: (x) => Math.exp(-x * x / 2) / Math.sqrt(2 * Math.PI) }], texts: [{ at: [0, 0.15], text: "68%", anchor: "middle" }, { at: [3.3, -0.03], text: "z", anchor: "end" }] }],
+      formulas: ["\\(\\sum P(X = x) = 1\\)", "\\(E(X) = \\sum x\\,P(X = x)\\)", "fair game: E(gain) = 0"],
+      methods: [
+        "<strong>Fair game:</strong> E(gain) = 0.",
+        "<strong>Unknown k:</strong> add all the probabilities, set the sum equal to 1 and solve.",
+        "<strong>Expected total over n games:</strong> n × E(X).",
+      ],
+      traps: ["Using the prize instead of the gain (prize − cost) in a fair-game question.", "Forgetting that probabilities must lie between 0 and 1 (reject an impossible k).", "Thinking E(X) must be one of the values X can take."],
+      mistakes: ["A game costs $3 and pays $10 with probability 0.2, so the expected gain is 10 × 0.2 = $2.", "\\(P(X = x) = kx\\) for x = 1, 2, 3, so 3k = 1 and \\(k = \\frac{1}{3}\\).", "E(X) = 2.5 is impossible because X only takes whole-number values."],
+      tips: ["Write the distribution as a table before finding E(X).", "State clearly whether a game is fair and give the reason: E(gain) = 0 or E(gain) ≠ 0."],
+    },
+    "math-11b": {
+      formulas: ["\\(P(X = r) = \\binom{n}{r}p^r(1-p)^{n-r}\\)", "\\(E(X) = np\\)", "\\(Var(X) = np(1-p)\\)", "\\(P(X \\ge k) = 1 - P(X \\le k - 1)\\)"],
+      methods: [
+        "<strong>Binomial on GDC:</strong> binompdf for \"exactly\", binomcdf for \"at most\". P(X ≥ k) = 1 − P(X ≤ k − 1).",
+        "<strong>Least n:</strong> P(at least one) = 1 − (1 − p)ⁿ; increase n (GDC table) until it passes the target.",
+        "<strong>Two-stage problems:</strong> find p from another distribution first, then use B(n, p).",
+      ],
+      traps: ["P(X > 3) for binomial = 1 − P(X ≤ 3), not 1 − P(X ≤ 2).", "Using binompdf for \"at most\" (it needs the cdf).", "Using a binomial model when the trials are not independent."],
+      mistakes: ["For a binomial X, P(X > 3) = 1 − P(X ≤ 2).", "For X ~ B(10, 0.3), P(X ≤ 2) is binompdf(10, 0.3, 2).", "For X ~ B(20, 0.25), Var(X) = np = 5."],
+      tips: ["State the distribution with its parameters, e.g. X ~ B(10, 0.3) - it often earns a mark.", "Translate the words into an inequality before using the GDC: \"at least 3\" → X ≥ 3."],
+    },
+    "math-11c": {
+      formulas: ["\\(X \\sim N(\\mu, \\sigma^2)\\)", "68% within 1σ, 95% within 2σ, 99.7% within 3σ", "\\(P(X < \\mu) = 0.5\\)", "invNorm uses the area to the LEFT"],
+      methods: [
+        "<strong>Normal:</strong> normalcdf for probabilities, invNorm for values (area to the left).",
+        "<strong>Symmetry:</strong> P(X < μ − a) = P(X > μ + a); use it in Paper 1 without a GDC.",
+        "<strong>Expected number:</strong> n × P(event) once the normal probability is known.",
+      ],
+      traps: ["Using the variance instead of the standard deviation in normal calculations.", "Entering the area to the right in invNorm.", "Treating P(X ≤ a) and P(X < a) as different values."],
+      mistakes: ["For \\(X \\sim N(50, 16)\\), entering σ = 16 in the GDC.", "The mass exceeded by 10% of apples is invNorm(0.1, 150, 12).", "P(X > μ) = 0.68 for any normal distribution."],
+      tips: ["Sketch and shade the normal curve in every question - it is often worth a mark.", "Write the GDC inputs (bounds, μ, σ) as your working."],
+      diagrams: [
+        { title: "Normal curve: ~68% within 1σ, ~95% within 2σ", x: [-3.5, 3.5], y: [-0.05, 0.5], grid: false, shade: { from: -1, to: 1 }, curves: [{ f: (x) => Math.exp(-x * x / 2) / Math.sqrt(2 * Math.PI) }], texts: [{ at: [0, 0.15], text: "68%", anchor: "middle" }, { at: [3.3, -0.03], text: "z", anchor: "end" }] },
+      ],
+    },
+    "math-11d": {
+      formulas: ["\\(z = \\frac{x - \\mu}{\\sigma}\\)", "\\(Z \\sim N(0, 1)\\)", "\\(x = \\mu + z\\sigma\\)"],
+      methods: [
+        "<strong>Unknown μ or σ:</strong> z = invNorm(area to the left, 0, 1), then solve \\(\\frac{x - \\mu}{\\sigma} = z\\).",
+        "<strong>Both unknown:</strong> write two equations \\(x = \\mu + z\\sigma\\) and solve them simultaneously.",
+        "<strong>Compare performances:</strong> calculate the z-score of each result and compare.",
+      ],
+      traps: ["Using invNorm with the unknown μ and σ instead of 0 and 1.", "Losing the minus sign of z for a value below the mean.", "Using the area to the right when P(X > x) is given."],
+      mistakes: ["P(X > 40) = 0.15, so z = invNorm(0.15, 0, 1) and (40 − μ)/σ = −1.036.", "A score with z = −1.2 is 1.2 marks below the mean.", "For X ~ N(μ, 5²), the z-value of 40 is (40 − μ)/25."],
+      tips: ["Write the z equation with the unknown before solving - it earns the method marks.", "Give μ and σ to 3 s.f. but keep the full z-values in the GDC."],
     },
     "math-12": {
-      formulas: ["\\(\\frac{d}{dx}x^n = nx^{n-1}\\)", "chain: \\(\\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx}\\)", "product: \\((uv)' = u'v + uv'\\)", "quotient: \\(\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}\\)"],
-      methods: ["<strong>Tangent at x = a:</strong> find f(a) and f'(a), then \\(y - f(a) = f'(a)(x - a)\\). Normal gradient = \\(-1/f'(a)\\).", "<strong>Stationary points:</strong> f'(x) = 0, then classify with f''(x) (> 0 min, < 0 max).", "<strong>Optimisation:</strong> write one-variable function → differentiate → set = 0 → justify max/min → answer the question asked.", "<strong>Rewrite before differentiating:</strong> \\(\\frac{1}{\\sqrt{x}} = x^{-1/2}\\)."],
-      traps: ["Point of inflexion needs f'' to <strong>change sign</strong>, not just f'' = 0.", "Giving the x-value when the question asks for the maximum value (y).", "Forgetting the chain rule on \\(e^{3x}\\) or \\(\\sin 2x\\)."],
+      formulas: ["\\(f'(x) = \\lim_{h \\to 0} \\frac{f(x + h) - f(x)}{h}\\)", "gradient of chord \\(= \\frac{f(a + h) - f(a)}{h}\\)", "\\(\\frac{dy}{dx}\\) = rate of change of y with respect to x"],
+      methods: ["<strong>Gradient at a point:</strong> find f′(x), then substitute x = a. The answer is a number, not a function.", "<strong>Where is the gradient k?</strong> Solve f′(x) = k, then find y from the original function.", "<strong>Chord → tangent:</strong> write the chord gradient in terms of h, simplify, then let h → 0.", "<strong>Rate of change in context:</strong> differentiate, substitute, give units (… per …) and say whether the quantity is increasing or decreasing."],
+      traps: ["Substituting into f(x) instead of f′(x) when the gradient is asked.", "Leaving out the units or the sign when interpreting a rate of change.", "Letting h → 0 before cancelling the h in the denominator."],
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["For \\(f(x) = x^4\\), \\(f''(0) = 0\\), so the origin is a point of inflexion.", "Asked for the maximum value of f, the answer given is the x-coordinate of the maximum point.", "\\(\\frac{d}{dx}e^{3x} = e^{3x}\\)"],
+      mistakes: ["For \\(f(x) = x^2\\), the gradient at x = 3 is f(3) = 9.", "\\(V'(3) = -22.3\\), so the volume is 22.3 litres.", "\\(\\frac{(1 + h)^2 - 1}{h}\\) with h = 0 gives \\(\\frac{0}{0}\\), so the gradient at x = 1 does not exist."],
+      tips: ["\"Interpret\" a rate of change: give the number, the units, and whether the quantity is increasing or decreasing at that instant."],
+    },
+    "math-12b": {
+      formulas: ["f increasing \\(\\Leftrightarrow f'(x) > 0\\)", "f decreasing \\(\\Leftrightarrow f'(x) < 0\\)", "stationary \\(\\Leftrightarrow f'(x) = 0\\)"],
+      methods: ["<strong>Intervals:</strong> differentiate → factorise f′ → find its zeros → test the sign in each interval → write the inequality.", "<strong>Quadratic f′:</strong> sketch the parabola of f′; a U-shape is negative between its roots and positive outside.", "<strong>For all x:</strong> show f′(x) > 0 using \\(x^2 \\ge 0\\), \\(e^x > 0\\) or a negative discriminant."],
+      traps: ["Solving f′(x) = 0 and stopping, without testing the sign either side.", "Reading the graph of f′ as if it were the graph of f.", "Writing \\(x < \\pm 2\\) instead of \\(-2 < x < 2\\)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(f'(x) = 3x^2 - 12 = 0\\) gives x = ±2, so f is decreasing for x < 2.", "The graph of f′ is falling for 0 < x < 3, so f is decreasing there.", "\\(f'(x) = x^2 - 4 < 0\\) gives \\(x < \\pm 2\\)."],
+      tips: ["Draw a quick sign diagram of f′ with its zeros marked: it gives the intervals and the nature of the stationary points in one go."],
+    },
+    "math-12c": {
+      formulas: ["\\(\\frac{d}{dx}x^n = nx^{n-1}\\)", "\\(\\frac{d}{dx}(ax^n) = anx^{n-1}\\)", "\\(\\frac{d}{dx}(c) = 0\\)", "\\(\\frac{d}{dx}(f + g) = f' + g'\\)"],
+      methods: ["<strong>Rewrite before differentiating:</strong> \\(\\frac{1}{\\sqrt{x}} = x^{-1/2}\\), \\(\\frac{5}{x} = 5x^{-1}\\).", "<strong>Expand and split:</strong> multiply out brackets and divide each term by the denominator before using the power rule.", "<strong>Unknown coefficients:</strong> differentiate with the letters in, then turn each given gradient into an equation."],
+      traps: ["\\(\\frac{d}{dx}x^{-1} = -x^{-2}\\), not \\(-x^{0}\\) or \\(x^{-2}\\): subtract 1 from a negative power carefully.", "Differentiating a quotient of polynomials term by term (top over bottom).", "Forgetting that the derivative of a constant is zero."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(\\frac{d}{dx}\\left(\\frac{3}{x^2}\\right) = \\frac{3}{2x}\\)", "\\(\\frac{d}{dx}\\left(\\frac{x^3 + 1}{x}\\right) = \\frac{3x^2}{1}\\)", "\\(\\frac{d}{dx}(5x^2 + 7) = 10x + 7\\)"],
+      tips: ["Write the index form as a separate line: it earns the M1 and makes the A1s easy."],
+    },
+    "math-12d": {
+      formulas: ["tangent: \\(y - f(a) = f'(a)(x - a)\\)", "normal gradient \\(= -\\frac{1}{f'(a)}\\)", "perpendicular: \\(m_1 m_2 = -1\\)"],
+      methods: ["<strong>Tangent at x = a:</strong> find f(a) and f'(a), then \\(y - f(a) = f'(a)(x - a)\\). Normal gradient = \\(-1/f'(a)\\).", "<strong>Parallel to a line:</strong> set f′(x) equal to that line's gradient and solve for the point(s).", "<strong>Given tangent line:</strong> use both 'same point' and 'same gradient' to get two equations."],
+      traps: ["Normal gradient written as −m or 1/m instead of −1/m.", "Using f′(a) as the y-coordinate of the point.", "Not giving the equation in the requested form (ax + by + c = 0 with integers)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The tangent to \\(y = x^2\\) at x = 3 has gradient 6, so the normal has gradient −6.", "At x = 2 the gradient is 4, so the tangent is y − 4 = 4(x − 2), using the point (2, 4) for the curve y = x³ − 2x² + 1.", "The tangent at x = 1 is \\(y = 2x\\) because \\(f'(x) = 2x\\)."],
+      tips: ["Write the point (a, f(a)) and the gradient on separate lines before the equation: each earns a mark."],
+    },
+    "math-12e": {
+      formulas: ["\\(\\frac{d}{dx}\\sin x = \\cos x\\), \\(\\frac{d}{dx}\\cos x = -\\sin x\\)", "\\(\\frac{d}{dx}e^x = e^x\\), \\(\\frac{d}{dx}\\ln x = \\frac1x\\)", "chain: \\(\\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx}\\)", "product: \\((uv)' = u'v + uv'\\)", "quotient: \\(\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}\\)"],
+      methods: ["<strong>Chain rule:</strong> derivative of the outside × derivative of the inside: \\(\\frac{d}{dx}\\sin(3x^2) = 6x\\cos(3x^2)\\).", "<strong>Product/quotient:</strong> write u, v, u′, v′ in a small table first, then substitute into the rule.", "<strong>Log laws first:</strong> \\(\\ln(x^2) = 2\\ln x\\), \\(\\ln(5x) = \\ln 5 + \\ln x\\) make differentiation quicker.", "<strong>Simplify:</strong> factorise common factors such as \\(e^{2x}\\) at the end."],
+      traps: ["Forgetting the chain rule on \\(e^{3x}\\) or \\(\\sin 2x\\).", "Quotient rule in the wrong order (uv′ − u′v).", "Writing \\(\\frac{d}{dx}\\ln(3x) = \\frac{1}{3x}\\)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(\\frac{d}{dx}e^{3x} = e^{3x}\\)", "\\(\\frac{d}{dx}(x^2\\sin x) = 2x\\cos x\\)", "\\(\\frac{d}{dx}\\ln(3x) = \\frac{1}{3x}\\)"],
       tips: ["\"Show that\" derivatives: write every step; the final line must match exactly."],
+    },
+    "math-12f": {
+      formulas: ["\\(f''(x) = \\frac{d^2y}{dx^2} = \\frac{d}{dx}\\left(f'(x)\\right)\\)", "concave up: \\(f''(x) > 0\\)", "concave down: \\(f''(x) < 0\\)"],
+      methods: ["<strong>Second derivative:</strong> simplify f′(x) fully, then differentiate again.", "<strong>Concavity intervals:</strong> solve f″(x) > 0 or f″(x) < 0 like any inequality.", "<strong>Graph links:</strong> zeros of f′ = stationary points of f; turning points of f′ = inflexions of f; f′ above the axis = f increasing."],
+      traps: ["Confusing 'f′ is decreasing' (concave down) with 'f is decreasing' (f′ < 0).", "Reading a turning point of the graph of f′ as a maximum of f.", "Differentiating only once when f″ is asked."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The graph of f′ has a minimum at x = 1, so f has a minimum at x = 1.", "f″(x) < 0 for x < 1, so f is decreasing for x < 1.", "For \\(f(x) = x^3\\), \\(f''(x) = 3x^2\\)."],
+      tips: ["When a graph is given, write which function it shows (f, f′ or f″) at the top of your working before reading anything from it."],
+    },
+    "math-12g": {
+      formulas: ["stationary: \\(f'(x) = 0\\)", "\\(f''(x) > 0\\): local minimum; \\(f''(x) < 0\\): local maximum", "inflexion: \\(f''(x) = 0\\) and f″ changes sign"],
+      methods: ["<strong>Stationary points:</strong> f'(x) = 0, then classify with f''(x) (> 0 min, < 0 max) or a sign diagram of f′.", "<strong>Optimisation:</strong> write one-variable function → differentiate → set = 0 → justify max/min → answer the question asked.", "<strong>Inflexion:</strong> solve f″ = 0 and show that f″ changes sign; check f′ there to see whether it is stationary."],
+      traps: ["Point of inflexion needs f'' to <strong>change sign</strong>, not just f'' = 0.", "Giving the x-value when the question asks for the maximum value (y).", "Not rejecting solutions outside the domain (e.g. x = 15 for a box from a 30 cm sheet)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["For \\(f(x) = x^4\\), \\(f''(0) = 0\\), so the origin is a point of inflexion.", "Asked for the maximum value of f, the answer given is the x-coordinate of the maximum point.", "f′(2) = 0, so (2, f(2)) is a local maximum."],
+      tips: ["Optimisation: write a sentence answer with units at the end (\"the maximum volume is 2000 cm³\")."],
       diagrams: [{ title: "\\(y = x^3 - 3x^2 - 9x + 2\\): max (−1, 7), min (3, −25)", x: [-3, 5], y: [-30, 12], curves: [{ f: (x) => x ** 3 - 3 * x * x - 9 * x + 2 }], points: [{ at: [-1, 7], label: "max (−1, 7)" }, { at: [3, -25], label: "min (3, −25)" }] }],
     },
     "math-13": {
-      formulas: ["\\(\\int x^n dx = \\frac{x^{n+1}}{n+1} + C\\)", "\\(\\int \\frac{1}{x}dx = \\ln|x| + C\\)", "\\(\\int e^{ax}dx = \\frac{1}{a}e^{ax} + C\\)", "Area = \\(\\int_a^b (f - g)\\,dx\\)"],
-      methods: ["<strong>Reverse chain rule by inspection:</strong> \\(\\int 2x(x^2+1)^3dx = \\frac{(x^2+1)^4}{4} + C\\) - differentiate your answer to check.", "<strong>Find C</strong> using a given point straight away.", "<strong>Area between curves:</strong> find intersections, then integrate (top − bottom)."],
-      traps: ["Forgetting + C on indefinite integrals.", "Area below the x-axis gives a negative integral - split at the roots and take absolute values.", "\\(\\int \\frac{1}{x^2}dx \\neq \\ln x^2\\)."],
+      formulas: ["\\(\\int ax^n dx = \\frac{ax^{n+1}}{n+1} + C\\ (n \\neq -1)\\)", "area \\(= \\int_a^b f(x)\\,dx\\) when \\(f(x) > 0\\)", "\\(\\int_a^b f(x)\\,dx = F(b) - F(a)\\)"],
+      methods: ["<strong>Integrate term by term:</strong> add 1 to the power, divide by the new power, add one + C.", "<strong>Find C</strong> using a given point straight away, and write f(x) in full.", "<strong>Area under a curve (Paper 2):</strong> find the limits (roots or given lines), write \\(\\int_a^b f(x)\\,dx\\), then use the GDC."],
+      traps: ["Forgetting + C on indefinite integrals.", "Multiplying by the power instead of dividing (differentiating by mistake).", "Writing only the GDC value with no integral and limits."],
       // the same traps as worked-wrong statements, for the "spot the mistake" questions
-      mistakes: ["\\(\\int 2x\\,dx = x^2\\)", "The area between \\(y = x^2 - 3x\\) and the x-axis for \\(0 \\le x \\le 4\\) is \\(\\left|\\int_0^4 (x^2 - 3x)\\,dx\\right| = \\frac{8}{3}\\).", "\\(\\int \\frac{1}{x^2}\\,dx = \\ln x^2 + c\\)"],
+      mistakes: ["\\(\\int 2x\\,dx = x^2\\)", "\\(\\int 3x^2\\,dx = 6x + C\\)", "Given f′(x) = 2x and f(1) = 4, f(x) = x² + 4."],
       tips: ["Paper 2: write the integral with limits, then give the GDC value - the written integral earns the method mark."],
+    },
+    "math-13b": {
+      formulas: ["\\(\\int \\frac{1}{x}dx = \\ln|x| + C\\)", "\\(\\int e^{ax+b}dx = \\frac{1}{a}e^{ax+b} + C\\)", "\\(\\int \\sin(ax+b)dx = -\\frac1a\\cos(ax+b) + C\\)", "\\(\\int \\frac{g'(x)}{g(x)}dx = \\ln|g(x)| + C\\)"],
+      methods: ["<strong>Reverse chain rule by inspection:</strong> \\(\\int 2x(x^2+1)^3dx = \\frac{(x^2+1)^4}{4} + C\\) - differentiate your answer to check.", "<strong>Linear inside:</strong> integrate the outside function and divide by a, the coefficient of x.", "<strong>Substitution:</strong> u = inside function, replace g′(x) dx by du, integrate, substitute back."],
+      traps: ["\\(\\int \\frac{1}{x^2}dx \\neq \\ln x^2\\).", "Multiplying by a instead of dividing for \\(\\int f(ax + b)\\,dx\\).", "\\(\\int \\sin x\\,dx = \\cos x\\) (the minus sign is missing)."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["\\(\\int \\frac{1}{x^2}\\,dx = \\ln x^2 + c\\)", "\\(\\int e^{4x}\\,dx = 4e^{4x} + c\\)", "\\(\\int (x^2 + 1)^3\\,dx = \\frac{(x^2 + 1)^4}{4} + c\\)"],
+      tips: ["If the derivative of the inside is missing (not just a constant factor), inspection does not work: expand first."],
+    },
+    "math-13c": {
+      formulas: ["\\(\\int_a^b f(x)dx = F(b) - F(a)\\)", "\\(\\int_b^a f = -\\int_a^b f\\)", "area \\(= \\int_a^b |f(x)|\\,dx\\)", "Area = \\(\\int_a^b (f - g)\\,dx\\)"],
+      methods: ["<strong>Exact value:</strong> \\([F(x)]_a^b\\), substitute upper minus lower, simplify with ln/e/π rules.", "<strong>Area below the axis:</strong> find the roots, split the integral, add absolute values.", "<strong>Area between curves:</strong> find intersections, then integrate (top − bottom)."],
+      traps: ["Area below the x-axis gives a negative integral - split at the roots and take absolute values.", "Integrating across a root in one go, so areas cancel.", "Using bottom − top and reporting a negative area."],
+      // the same traps as worked-wrong statements, for the "spot the mistake" questions
+      mistakes: ["The area between \\(y = x^2 - 3x\\) and the x-axis for \\(0 \\le x \\le 4\\) is \\(\\left|\\int_0^4 (x^2 - 3x)\\,dx\\right| = \\frac{8}{3}\\).", "\\(\\int_1^3 (f(x) + 3)\\,dx = \\int_1^3 f(x)\\,dx + 3\\)", "\\(\\int_3^1 f(x)\\,dx = \\int_1^3 f(x)\\,dx\\)"],
+      tips: ["Sketch the region first and shade it: it shows where to split and which curve is on top."],
       diagrams: [{ title: "Area between \\(y = 2x\\) and \\(y = x^2\\) is \\(\\frac{4}{3}\\)", x: [-1, 3], y: [-1, 6], shade: { from: 0, to: 2, color: "a" }, curves: [{ f: (x) => 2 * x, color: "b", label: "y = 2x", labelX: 2.4 }, { f: (x) => x * x, label: "y = x²", labelX: 2.2 }], points: [{ at: [2, 4], label: "(2, 4)" }] }],
     },
     "math-14": {
