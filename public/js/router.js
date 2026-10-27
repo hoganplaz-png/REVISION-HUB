@@ -17,6 +17,7 @@
     "mypapers.html": ["mypapers", "js/mypapers.js"],
     "progress.html": ["progress", "js/progress.js"],
     "mistakes.html": ["mistakes", "js/mistakes.js"],
+    "bookmarks.html": ["bookmarks", "js/bookmarks.js"],
     "friends.html": ["friends", "js/friends.js"],
   };
   const parse = () => {
