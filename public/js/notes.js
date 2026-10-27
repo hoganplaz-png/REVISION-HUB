@@ -134,6 +134,8 @@ IB.page = function () {
     const fastSec = IB.fastSection && IB.fastSection(t);
     const sections = (fastSec ? [fastSec] : []).concat(IB.topicSections(t));
     const nQ = IB.topicQuestions(t.id).length;
+    const doneIds = new Set(data.attempts.map((a) => a.id));
+    const nDone = IB.topicQuestions(t.id).filter((q) => doneIds.has(q.id)).length;
     c.innerHTML = `<div class="topic-banner" style="--c:${s.color}" data-reveal>
       <span class="topic-big-num">${String(idx + 1).padStart(2, "0")}</span>
       <div class="topic-banner-body">
@@ -159,7 +161,7 @@ IB.page = function () {
     </nav>
     <div class="topic-sections ${hlOn() ? "" : "hl-off"}" style="--c:${s.color}">${sections.map((x) => x[2]).join("")}
       <section class="card topic-bank" id="sec-practice" data-reveal>
-        <div class="tb-head"><div><span class="eyebrow">Question bank</span><h3>${nQ} questions on ${IB.esc(t.title)}</h3></div>
+        <div class="tb-head"><div><span class="eyebrow">Question bank</span><h3>${nQ} questions on ${IB.esc(t.title)}</h3><p class="small muted" style="margin:4px 0 0">✓ ${nDone}/${nQ} finished</p></div>
           <div class="btn-row no-print">${IB.hasGenerator(t.id) ? '<button class="btn primary small" id="genBtn">+ Fresh calculation</button>' : ""}<a class="btn small" href="questionbank.html?subject=${s.id}&topic=${t.id}">Open in question bank</a><a class="btn small" href="practice.html?subject=${s.id}&topic=${t.id}">Timed quiz</a></div></div>
         <div class="sec-tabs no-print" id="secTabs" role="tablist"></div>
         <p class="small muted" id="secDesc"></p>

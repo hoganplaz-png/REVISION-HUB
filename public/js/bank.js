@@ -251,7 +251,10 @@ IB.page = function () {
     if (drillId) qs = qs.filter((q) => q.id === drillId);
     const pages = Math.max(1, Math.ceil(qs.length / PER_PAGE));
     page = Math.min(page, pages);
-    IB.qs("#count").textContent = `${qs.length} question${qs.length === 1 ? "" : "s"}`;
+    const doneIds = new Set(IB.store.get().attempts.map((a) => a.id));
+    const doneN = qs.filter((q) => doneIds.has(q.id)).length;
+    const countEl = IB.qs("#count");
+    countEl.textContent = `${qs.length} question${qs.length === 1 ? "" : "s"} · ✓ ${doneN}/${qs.length} finished`;
     const list = IB.qs("#list");
     list.innerHTML = qs.length ? "" : `<div class="card muted">No questions match these filters.</div>`;
     let lastHead = null;
@@ -262,7 +265,7 @@ IB.page = function () {
       if (k === "unit") { const t = IB.topic(q.topic); return t ? `${t.code} ${t.title}${q.unitName ? " › " + q.unitName : ""}` : ""; }
       return "";
     };
-    qs.slice((page - 1) * PER_PAGE, page * PER_PAGE).forEach((q, i) => { const h = headOf(q); if (h && h !== lastHead && !drillId) list.appendChild(IB.el(`<h3 class="q-group">${IB.esc(h)}</h3>`)); lastHead = h; list.appendChild(IB.renderQuestion(q, { number: (page - 1) * PER_PAGE + i + 1, onScored: () => f.sec.value === "drill" && drillBar(filtered()) })); });
+    qs.slice((page - 1) * PER_PAGE, page * PER_PAGE).forEach((q, i) => { const h = headOf(q); if (h && h !== lastHead && !drillId) list.appendChild(IB.el(`<h3 class="q-group">${IB.esc(h)}</h3>`)); lastHead = h; list.appendChild(IB.renderQuestion(q, { number: (page - 1) * PER_PAGE + i + 1, onScored: () => { const n = qs.filter((x) => IB.store.get().attempts.some((a) => a.id === x.id)).length; countEl.textContent = `${qs.length} question${qs.length === 1 ? "" : "s"} · ✓ ${n}/${qs.length} finished`; if (f.sec.value === "drill") drillBar(filtered()); } })); });
     const pager = IB.qs("#pager");
     pager.innerHTML = "";
     if (pages > 1) {

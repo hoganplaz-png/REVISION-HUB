@@ -161,6 +161,8 @@ main { padding-bottom: 72px; min-height: 70vh; }
 .pill.chia { background: color-mix(in srgb, var(--chia) 18%, transparent); color: var(--text); }
 .pill.phys { background: color-mix(in srgb, var(--phys) 18%, transparent); color: var(--text); }
 .pill.good { background: var(--good-soft); color: var(--good-ink); }
+.q-done { margin-left: 6px; }
+.q-done[hidden] { display: none; }
 .pill.warn { background: var(--warn-soft); color: var(--warn-ink); }
 .pill.bad { background: var(--bad-soft); color: var(--bad-ink); }
 .muted { color: var(--muted); }

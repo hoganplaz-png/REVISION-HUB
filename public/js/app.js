@@ -823,6 +823,7 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
         ${q.custom ? `<span class="pill good">My past paper · ${esc(q.source)}</span>` : ""}
         ${q.unitName ? `<span class="pill">${esc(q.unitName)}</span>` : ""}
         <span class="marks">[${esc(q.split || String(q.marks))}]</span>
+        <span class="pill good q-done" title="You have marked this question"${IB.store.get().attempts.some((a) => a.id === q.id) ? "" : " hidden"}>✓ Finished</span>
       </div>
       <div class="q-text rich">${q.q}</div>
       <div class="q-answer"></div>
@@ -839,6 +840,8 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
       scored = true;
       IB.recordAttempt(q, score, max, mode || opts.mode || "practice", { ans: card.getAnswer ? card.getAnswer() : "", missing: card._lastFb ? card._lastFb.missing : [] });
       card.dataset.score = score;
+      const doneTag = IB.qs(".q-done", card);
+      if (doneTag) doneTag.hidden = false;
       card.classList.remove("pop", "shake");
       void card.offsetWidth;
       card.classList.add(score >= max ? "pop" : score === 0 ? "shake" : "pop");
