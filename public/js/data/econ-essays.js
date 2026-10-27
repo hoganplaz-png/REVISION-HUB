@@ -197,5 +197,14 @@
       ["Define FDI", "Benefits: capital, technology, jobs, tax", "Costs: profit repatriation, exploitation, environment", "Example, e.g. Vietnam, Ethiopia", "Depends on regulation and linkages", "Compare with aid and trade"], "econ-18-p1-1"],
   ]);
 
+  // The essays below were written against an older topic list; move each to the topic it actually belongs to
+  // (ids are kept, so saved progress still matches). 2.7 government intervention, 2.8 market failure, 2.9 public goods.
+  const old = Object.assign({}, out);
+  ["econ-4", "econ-5", "econ-6", "econ-7", "econ-8", "econ-16"].forEach(k => delete out[k]);
+  out["econ-6"] = old["econ-4"];
+  out["econ-7"] = [].concat(old["econ-5"], old["econ-7"], old["econ-8"]);
+  out["econ-8"] = old["econ-6"];
+  out["econ-17"] = old["econ-16"];
+
   IB.addQuestions("econ", out);
 })();
