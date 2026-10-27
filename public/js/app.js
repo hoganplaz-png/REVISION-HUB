@@ -479,6 +479,55 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:5p
       else d.flags[qid] = Date.now();
     });
 
+
+  // ---------- bookmarks ----------
+  // d.bookmarks[key] = { k: "q"|"n", id, title, label, color, folder, s, t, sub, at, up, del }
+  // key is "q:<questionId>" or "n:<topicId>". Deleting leaves { del: true, up } so a deletion syncs between devices.
+  IB.BM_COLORS = { blue: "#3b5bdb", green: "#1F8A4C", orange: "#E8590C", red: "#C92A2A", purple: "#7048E8", teal: "#0C8599" };
+  IB.bm = {
+    get: (key) => { const b = (IB.store.get().bookmarks || {})[key]; return b && !b.del ? b : null; },
+    list: () => Object.entries(IB.store.get().bookmarks || {}).filter(([, b]) => !b.del).map(([key, b]) => Object.assign({ key }, b)).sort((a, b) => b.at - a.at),
+    folders: () => Array.from(new Set(IB.bm.list().map((b) => b.folder).filter(Boolean))).sort(),
+    set: (key, spec) => IB.store.update((d) => { d.bookmarks = d.bookmarks || {}; const p = d.bookmarks[key]; d.bookmarks[key] = Object.assign({ at: Date.now() }, p && !p.del ? p : {}, spec, { up: Date.now(), del: false }); }),
+    remove: (key) => IB.store.update((d) => { d.bookmarks = d.bookmarks || {}; d.bookmarks[key] = { del: true, up: Date.now() }; }),
+  };
+  // Opens the bookmark editor for one item. spec: { key, k, id, title, s, t, sub }. onChange runs after any save or removal.
+  IB.bookmarkEditor = function (spec, onChange) {
+    const cur = IB.bm.get(spec.key);
+    let color = (cur && cur.color) || "blue";
+    const ov = IB.el(`<div class="bm-overlay" role="dialog" aria-modal="true" aria-label="Bookmark">
+      <div class="bm-dialog card">
+        <h3 style="margin:0 0 4px">${cur ? "Edit bookmark" : "Add bookmark"}</h3>
+        <p class="small muted" style="margin:0 0 10px">${esc(spec.title)}</p>
+        <label class="field">Name<input type="text" class="bm-label" maxlength="60" placeholder="e.g. Revisit before the mock" value="${esc((cur && cur.label) || "")}"></label>
+        <label class="field">Folder<input type="text" class="bm-folder" maxlength="40" list="bmFolders" placeholder="e.g. Paper 2 practice" value="${esc((cur && cur.folder) || "")}"></label>
+        <datalist id="bmFolders">${IB.bm.folders().map((f) => `<option value="${esc(f)}">`).join("")}</datalist>
+        <div class="field" style="display:flex;flex-direction:column;font-size:.84rem;font-weight:700;color:var(--muted);margin-top:8px"><span>Colour</span><div class="bm-colors">${Object.entries(IB.BM_COLORS).map(([n, c]) => `<button type="button" class="bm-dot${n === color ? " on" : ""}" data-c="${n}" style="background:${c}" aria-label="${n}"></button>`).join("")}</div></div>
+        <div class="btn-row" style="margin-top:12px"><button class="btn primary bm-save">${cur ? "Save changes" : "Add bookmark"}</button><button class="btn bm-cancel">Cancel</button>${cur ? `<button class="btn bm-del" style="margin-left:auto">Remove</button>` : ""}</div>
+      </div></div>`);
+    const close = () => ov.remove();
+    IB.qsa(".bm-dot", ov).forEach((b) => (b.onclick = () => { color = b.dataset.c; IB.qsa(".bm-dot", ov).forEach((x) => x.classList.toggle("on", x === b)); }));
+    IB.qs(".bm-cancel", ov).onclick = close;
+    ov.addEventListener("click", (e) => { if (e.target === ov) close(); });
+    ov.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+    IB.qs(".bm-save", ov).onclick = () => {
+      IB.bm.set(spec.key, { k: spec.k, id: spec.id, title: spec.title, s: spec.s, t: spec.t, sub: spec.sub, label: IB.qs(".bm-label", ov).value.trim(), folder: IB.qs(".bm-folder", ov).value.trim(), color });
+      close(); IB.toast("Bookmarked."); if (onChange) onChange();
+    };
+    const del = IB.qs(".bm-del", ov);
+    if (del) del.onclick = () => { IB.bm.remove(spec.key); close(); IB.toast("Bookmark removed."); if (onChange) onChange(); };
+    document.body.appendChild(ov);
+    IB.qs(".bm-label", ov).focus();
+  };
+  // A button that shows whether the item is bookmarked and opens the editor.
+  IB.bookmarkButton = function (spec, cls = "btn small") {
+    const b = IB.el(`<button type="button" class="${cls}"></button>`);
+    const paint = () => { const c = IB.bm.get(spec.key); b.textContent = c ? "🔖 Bookmarked" : "🔖 Bookmark"; b.style.borderColor = c ? IB.BM_COLORS[c.color] || "" : ""; b.title = c ? "Edit or remove this bookmark" : "Bookmark this to find it again"; };
+    paint();
+    b.onclick = () => IB.bookmarkEditor(spec, paint);
+    return b;
+  };
+
   // Mastery per topic: recency-weighted % over the last 20 attempts.
   IB.mastery = function (topicId, data = IB.store.get()) {
     const rows = data.attempts.filter((a) => a.t === topicId).slice(-20);
@@ -823,7 +872,7 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
         ${q.custom ? `<span class="pill good">My past paper · ${esc(q.source)}</span>` : ""}
         ${q.unitName ? `<span class="pill">${esc(q.unitName)}</span>` : ""}
         <span class="marks">[${esc(q.split || String(q.marks))}]</span>
-        <span class="pill good q-done" title="You have marked this question"${IB.store.get().attempts.some((a) => a.id === q.id) ? "" : " hidden"}>✓ Finished</span>
+        <span class="q-done" hidden></span>
       </div>
       <div class="q-text rich">${q.q}</div>
       <div class="q-answer"></div>
@@ -835,13 +884,28 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
     const result = IB.qs(".q-result", card);
     let scored = false;
 
+    // The Finished box: the latest mark you got and whether the question is saved for review.
+    const refreshDone = () => {
+      const d = IB.store.get();
+      const last = d.attempts.filter((a) => a.id === q.id).pop();
+      const box = IB.qs(".q-done", card);
+      if (!last) { box.hidden = true; return; }
+      const pct = last.mx ? last.sc / last.mx : 0;
+      const tone = pct >= 0.8 ? "good" : pct >= 0.4 ? "warn" : "bad";
+      box.hidden = false;
+      box.className = "q-done";
+      box.innerHTML = `<span class="pill good">✓ Finished</span><span class="pill ${tone}" title="Your latest mark">${last.sc}/${last.mx}</span>` +
+        (d.flags[q.id] ? `<span class="pill rev" title="In your review list">★ Saved for review</span>` : `<span class="pill muted-pill" title="Not in your review list">☆ Not saved</span>`);
+    };
+    card.refreshDone = refreshDone;
+    refreshDone();
+
     const finish = (score, max, mode) => {
       if (scored) return;
       scored = true;
       IB.recordAttempt(q, score, max, mode || opts.mode || "practice", { ans: card.getAnswer ? card.getAnswer() : "", missing: card._lastFb ? card._lastFb.missing : [] });
       card.dataset.score = score;
-      const doneTag = IB.qs(".q-done", card);
-      if (doneTag) doneTag.hidden = false;
+      refreshDone();
       card.classList.remove("pop", "shake");
       void card.offsetWidth;
       card.classList.add(score >= max ? "pop" : score === 0 ? "shake" : "pop");
@@ -999,8 +1063,11 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
       flag.onclick = () => {
         IB.toggleFlag(q.id);
         flag.textContent = IB.store.get().flags[q.id] ? "★ Saved" : "☆ Save for review";
+        refreshDone();
       };
       actions.append(flag);
+      const t0 = IB.topic(q.topic);
+      actions.append(IB.bookmarkButton({ key: "q:" + q.id, k: "q", id: q.id, title: IB.plain ? IB.plain(q.q).slice(0, 90) : "Question", s: q.subject, t: q.topic, sub: (t0 ? t0.code + " " + t0.title : "") + (q.paper ? " · " + q.paper : "") }));
       if (IB.config.ai) {
         const tutor = IB.el(`<a class="btn small" href="tutor.html?q=${encodeURIComponent(q.id)}">Ask the AI tutor</a>`);
         if (q.generated) tutor.href = `tutor.html?subject=${q.subject}&prompt=${encodeURIComponent("Help me with this question: " + q.q.replace(/<[^>]+>/g, " "))}`;
@@ -1055,6 +1122,7 @@ Reply with only a JSON object: {"questions": [{"q": "...", "marks": 4, "type": "
         ${link("questionbank.html", "Questions", "bank")}
         ${link("practice.html", "Quizzes", "practice")}
         ${link("mistakes.html", "Mistakes", "mistakes")}
+        ${link("bookmarks.html", "Bookmarks", "bookmarks")}
         ${link("skills.html", "Skills", "skills")}
         ${link("ia.html", "IA &amp; EE", "ia")}
         ${link("coach.html", "Claude Coach", "coach")}

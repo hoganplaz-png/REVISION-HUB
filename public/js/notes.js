@@ -221,6 +221,7 @@ IB.page = function () {
       IB.math(card);
     };
     IB.qsa("a[data-t]", c).forEach((a) => (a.onclick = (e) => { e.preventDefault(); go(s.id, a.dataset.t); }));
+    IB.qs("#readBtn").after(IB.bookmarkButton({ key: "n:" + t.id, k: "n", id: t.id, title: `${t.code} ${t.title}`, s: s.id, t: t.id, sub: s.name + " notes" }, "btn"));
     IB.qs("#readBtn").onclick = (e) => {
       const was = IB.store.get().read[t.id];
       IB.markRead(t.id, !was);

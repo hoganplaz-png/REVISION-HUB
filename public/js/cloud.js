@@ -38,6 +38,8 @@
     out.read = Object.assign({}, a.read, b.read);
     Object.keys(a.read || {}).forEach((k) => { if (b.read && b.read[k]) out.read[k] = Math.max(a.read[k], b.read[k]); });
     out.flags = Object.assign({}, a.flags, b.flags);
+    out.bookmarks = Object.assign({}, a.bookmarks);
+    Object.entries(b.bookmarks || {}).forEach(([k, v]) => { const p = out.bookmarks[k]; if (!p || (v.up || 0) >= (p.up || 0)) out.bookmarks[k] = v; });
     const ex = new Map();
     (a.exams || []).concat(b.exams || []).forEach((e) => ex.set(`${e.at}|${e.title}`, e));
     out.exams = Array.from(ex.values()).sort((x, y) => x.at - y.at);
